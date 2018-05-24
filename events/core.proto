@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package events;
+
+/** For Go, option go_package allows code gen to merge files under one package
+*/
+option go_package = "events";
+
+// Core payload that allows event routing, instrumentation, and tracing
+message Core {
+    string id = 1;
+    string eventName = 2;
+    string topicName = 4;
+    string timestamp = 5;
+}

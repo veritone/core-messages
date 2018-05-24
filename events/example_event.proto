@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "events/core.proto";
+
+package events;
+
+option go_package = "events";
+
+message ExampleEvent {
+    Core core = 1;
+    string firstName = 2;
+    string lastName = 3;
+}
