@@ -21,25 +21,25 @@ export class MentionEmailGenerated extends jspb.Message {
   getType(): string;
   setType(value: string): void;
 
-  getServicename(): string;
-  setServicename(value: string): void;
+  getServiceName(): string;
+  setServiceName(value: string): void;
 
-  getToemail(): string;
-  setToemail(value: string): void;
+  getToEmail(): string;
+  setToEmail(value: string): void;
 
-  getFromemail(): string;
-  setFromemail(value: string): void;
+  getFromEmail(): string;
+  setFromEmail(value: string): void;
 
   getTemplate(): string;
   setTemplate(value: string): void;
 
-  hasPlaceholders(): boolean;
-  clearPlaceholders(): void;
-  getPlaceholders(): MentionEmailGenerated.PlaceHolders | undefined;
-  setPlaceholders(value?: MentionEmailGenerated.PlaceHolders): void;
+  hasPlaceHolders(): boolean;
+  clearPlaceHolders(): void;
+  getPlaceHolders(): MentionEmailGenerated.PlaceHolders | undefined;
+  setPlaceHolders(value?: MentionEmailGenerated.PlaceHolders): void;
 
-  getMergelanguage(): string;
-  setMergelanguage(value: string): void;
+  getMergeLanguage(): string;
+  setMergeLanguage(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MentionEmailGenerated.AsObject;
@@ -57,17 +57,17 @@ export namespace MentionEmailGenerated {
     trace?: events_core_pb.Trace.AsObject,
     event: string,
     type: string,
-    servicename: string,
-    toemail: string,
-    fromemail: string,
+    serviceName: string,
+    toEmail: string,
+    fromEmail: string,
     template: string,
-    placeholders?: MentionEmailGenerated.PlaceHolders.AsObject,
-    mergelanguage: string,
+    placeHolders?: MentionEmailGenerated.PlaceHolders.AsObject,
+    mergeLanguage: string,
   }
 
   export class PlaceHolders extends jspb.Message {
-    getTrackingunitname(): string;
-    setTrackingunitname(value: string): void;
+    getTrackingUnitName(): string;
+    setTrackingUnitName(value: string): void;
 
     getVia(): string;
     setVia(value: string): void;
@@ -92,30 +92,30 @@ export namespace MentionEmailGenerated {
 
   export namespace PlaceHolders {
     export type AsObject = {
-      trackingunitname: string,
+      trackingUnitName: string,
       via: string,
       logouri: string,
       mentionsList: Array<MentionEmailGenerated.PlaceHolders.Mention.AsObject>,
     }
 
     export class Mention extends jspb.Message {
-      getTrackingunitname(): string;
-      setTrackingunitname(value: string): void;
+      getTrackingUnitName(): string;
+      setTrackingUnitName(value: string): void;
 
-      getProgramname(): string;
-      setProgramname(value: string): void;
+      getProgramName(): string;
+      setProgramName(value: string): void;
 
-      getProgramimage(): string;
-      setProgramimage(value: string): void;
+      getProgramImage(): string;
+      setProgramImage(value: string): void;
 
-      getMentiondate(): number;
-      setMentiondate(value: number): void;
+      getMentionDate(): number;
+      setMentionDate(value: number): void;
 
       getSnippets(): string;
       setSnippets(value: string): void;
 
-      getInvitelink(): string;
-      setInvitelink(value: string): void;
+      getInviteLink(): string;
+      setInviteLink(value: string): void;
 
       getVia(): string;
       setVia(value: string): void;
@@ -123,14 +123,14 @@ export namespace MentionEmailGenerated {
       getLogouri(): string;
       setLogouri(value: string): void;
 
-      getCreatoremail(): string;
-      setCreatoremail(value: string): void;
+      getCreatorEmail(): string;
+      setCreatorEmail(value: string): void;
 
-      getUnsubscribehash(): string;
-      setUnsubscribehash(value: string): void;
+      getUnsubscribeHash(): string;
+      setUnsubscribeHash(value: string): void;
 
-      getUnsubscribelink(): string;
-      setUnsubscribelink(value: string): void;
+      getUnsubscribeLink(): string;
+      setUnsubscribeLink(value: string): void;
 
       serializeBinary(): Uint8Array;
       toObject(includeInstance?: boolean): Mention.AsObject;
@@ -144,17 +144,17 @@ export namespace MentionEmailGenerated {
 
     export namespace Mention {
       export type AsObject = {
-        trackingunitname: string,
-        programname: string,
-        programimage: string,
-        mentiondate: number,
+        trackingUnitName: string,
+        programName: string,
+        programImage: string,
+        mentionDate: number,
         snippets: string,
-        invitelink: string,
+        inviteLink: string,
         via: string,
         logouri: string,
-        creatoremail: string,
-        unsubscribehash: string,
-        unsubscribelink: string,
+        creatorEmail: string,
+        unsubscribeHash: string,
+        unsubscribeLink: string,
       }
     }
   }

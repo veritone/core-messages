@@ -12,15 +12,16 @@ import (
 func main() {
 	core := events.Core{
 		Id:        "A Fake UUID",
-		EventName: "FakeEventName",
-		TopicName: "FakeTopicName",
-		Timestamp: time.Now().Format(time.RFC1123),
+		Event:     "FakeEventName",
+		Topic:     "FakeTopicName",
+		Timestamp: time.Now().Unix(),
 	}
 	e := events.ExampleEvent{
 		Core:      &core,
 		FirstName: "FakeFirstName",
 		LastName:  "FakeLastName",
 	}
+
 	raw, err := json.Marshal(e)
 	if err != nil {
 		log.Panic(err)

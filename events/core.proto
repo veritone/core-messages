@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package events;
 
+import "google/protobuf/any.proto";
+
 /** For Go, option go_package allows code gen to merge files under one package
 */
 option go_package = "events";
@@ -21,4 +23,11 @@ message Core {
 message Trace {
     // Trace context, serialized by JaegerTextMapper
     string trace = 1;
+}
+
+// Event is an experiment to dynamically embed arbitrary payload under {data}
+message Event {
+    Core core = 1;
+    Trace trace = 2;
+    google.protobuf.Any data = 3; 
 }

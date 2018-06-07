@@ -58,8 +58,8 @@ proto.events.ExampleEvent.prototype.toObject = function(opt_includeInstance) {
 proto.events.ExampleEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
     core: (f = msg.getCore()) && events_core_pb.Core.toObject(includeInstance, f),
-    firstname: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    lastname: jspb.Message.getFieldWithDefault(msg, 3, "")
+    firstName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    lastName: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -103,11 +103,11 @@ proto.events.ExampleEvent.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setFirstname(value);
+      msg.setFirstName(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setLastname(value);
+      msg.setLastName(value);
       break;
     default:
       reader.skipField();
@@ -145,14 +145,14 @@ proto.events.ExampleEvent.serializeBinaryToWriter = function(message, writer) {
       events_core_pb.Core.serializeBinaryToWriter
     );
   }
-  f = message.getFirstname();
+  f = message.getFirstName();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getLastname();
+  f = message.getLastName();
   if (f.length > 0) {
     writer.writeString(
       3,
@@ -193,31 +193,31 @@ proto.events.ExampleEvent.prototype.hasCore = function() {
 
 
 /**
- * optional string firstName = 2;
+ * optional string first_name = 2;
  * @return {string}
  */
-proto.events.ExampleEvent.prototype.getFirstname = function() {
+proto.events.ExampleEvent.prototype.getFirstName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /** @param {string} value */
-proto.events.ExampleEvent.prototype.setFirstname = function(value) {
+proto.events.ExampleEvent.prototype.setFirstName = function(value) {
   jspb.Message.setField(this, 2, value);
 };
 
 
 /**
- * optional string lastName = 3;
+ * optional string last_name = 3;
  * @return {string}
  */
-proto.events.ExampleEvent.prototype.getLastname = function() {
+proto.events.ExampleEvent.prototype.getLastName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /** @param {string} value */
-proto.events.ExampleEvent.prototype.setLastname = function(value) {
+proto.events.ExampleEvent.prototype.setLastName = function(value) {
   jspb.Message.setField(this, 3, value);
 };
 

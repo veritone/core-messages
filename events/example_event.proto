@@ -8,6 +8,6 @@ option go_package = "events";
 
 message ExampleEvent {
     Core core = 1;
-    string firstName = 2;
-    string lastName = 3;
+    string first_name = 2;
+    string last_name = 3;
 }

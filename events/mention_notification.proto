@@ -13,32 +13,32 @@ message MentionEmailGenerated {
 
     message PlaceHolders {
         message Mention {
-            string trackingUnitName = 1;
-            string programName = 2;
-            string programimage = 3;
-            int64 mentionDate = 4;
+            string tracking_unit_name = 1;
+            string program_name = 2;
+            string program_image = 3;
+            int64 mention_date = 4;
             string snippets = 5;
-            string inviteLink  = 6;
+            string invite_link  = 6;
             string via = 7;
-            string logoURI = 8;
-            string creatorEmail = 9;
-            string unsubscribeHash = 10;
-            string unsubscribeLink = 11;
+            string logouri = 8;
+            string creator_email = 9;
+            string unsubscribe_hash = 10;
+            string unsubscribe_link = 11;
         };
-        string trackingUnitName = 1;
+        string tracking_unit_name = 1;
         string via = 2;
-        string logoURI= 3;
-        repeated Mention Mentions = 4;
+        string logouri= 3;
+        repeated Mention mentions = 4;
     };
     // event and type are required for backward compatilbity
     string event = 3;
     string type = 4;
 
-    string serviceName = 5;
-    string toEmail = 6;
-    string fromEmail = 7;
+    string service_name = 5;
+    string to_email = 6;
+    string from_email = 7;
     string template = 8;
-    PlaceHolders placeHolders = 9;
-    string mergeLanguage = 10;
+    PlaceHolders place_holders = 9;
+    string merge_language = 10;
 }
 

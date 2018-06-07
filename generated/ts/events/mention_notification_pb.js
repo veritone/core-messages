@@ -63,12 +63,12 @@ proto.events.MentionEmailGenerated.toObject = function(includeInstance, msg) {
     trace: (f = msg.getTrace()) && events_core_pb.Trace.toObject(includeInstance, f),
     event: jspb.Message.getFieldWithDefault(msg, 3, ""),
     type: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    servicename: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    toemail: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    fromemail: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    serviceName: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    toEmail: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    fromEmail: jspb.Message.getFieldWithDefault(msg, 7, ""),
     template: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    placeholders: (f = msg.getPlaceholders()) && proto.events.MentionEmailGenerated.PlaceHolders.toObject(includeInstance, f),
-    mergelanguage: jspb.Message.getFieldWithDefault(msg, 10, "")
+    placeHolders: (f = msg.getPlaceHolders()) && proto.events.MentionEmailGenerated.PlaceHolders.toObject(includeInstance, f),
+    mergeLanguage: jspb.Message.getFieldWithDefault(msg, 10, "")
   };
 
   if (includeInstance) {
@@ -125,15 +125,15 @@ proto.events.MentionEmailGenerated.deserializeBinaryFromReader = function(msg, r
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setServicename(value);
+      msg.setServiceName(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setToemail(value);
+      msg.setToEmail(value);
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
-      msg.setFromemail(value);
+      msg.setFromEmail(value);
       break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
@@ -142,11 +142,11 @@ proto.events.MentionEmailGenerated.deserializeBinaryFromReader = function(msg, r
     case 9:
       var value = new proto.events.MentionEmailGenerated.PlaceHolders;
       reader.readMessage(value,proto.events.MentionEmailGenerated.PlaceHolders.deserializeBinaryFromReader);
-      msg.setPlaceholders(value);
+      msg.setPlaceHolders(value);
       break;
     case 10:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMergelanguage(value);
+      msg.setMergeLanguage(value);
       break;
     default:
       reader.skipField();
@@ -206,21 +206,21 @@ proto.events.MentionEmailGenerated.serializeBinaryToWriter = function(message, w
       f
     );
   }
-  f = message.getServicename();
+  f = message.getServiceName();
   if (f.length > 0) {
     writer.writeString(
       5,
       f
     );
   }
-  f = message.getToemail();
+  f = message.getToEmail();
   if (f.length > 0) {
     writer.writeString(
       6,
       f
     );
   }
-  f = message.getFromemail();
+  f = message.getFromEmail();
   if (f.length > 0) {
     writer.writeString(
       7,
@@ -234,7 +234,7 @@ proto.events.MentionEmailGenerated.serializeBinaryToWriter = function(message, w
       f
     );
   }
-  f = message.getPlaceholders();
+  f = message.getPlaceHolders();
   if (f != null) {
     writer.writeMessage(
       9,
@@ -242,7 +242,7 @@ proto.events.MentionEmailGenerated.serializeBinaryToWriter = function(message, w
       proto.events.MentionEmailGenerated.PlaceHolders.serializeBinaryToWriter
     );
   }
-  f = message.getMergelanguage();
+  f = message.getMergeLanguage();
   if (f.length > 0) {
     writer.writeString(
       10,
@@ -305,7 +305,7 @@ proto.events.MentionEmailGenerated.PlaceHolders.prototype.toObject = function(op
  */
 proto.events.MentionEmailGenerated.PlaceHolders.toObject = function(includeInstance, msg) {
   var f, obj = {
-    trackingunitname: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    trackingUnitName: jspb.Message.getFieldWithDefault(msg, 1, ""),
     via: jspb.Message.getFieldWithDefault(msg, 2, ""),
     logouri: jspb.Message.getFieldWithDefault(msg, 3, ""),
     mentionsList: jspb.Message.toObjectList(msg.getMentionsList(),
@@ -348,7 +348,7 @@ proto.events.MentionEmailGenerated.PlaceHolders.deserializeBinaryFromReader = fu
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTrackingunitname(value);
+      msg.setTrackingUnitName(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -391,7 +391,7 @@ proto.events.MentionEmailGenerated.PlaceHolders.prototype.serializeBinary = func
  */
 proto.events.MentionEmailGenerated.PlaceHolders.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getTrackingunitname();
+  f = message.getTrackingUnitName();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -469,17 +469,17 @@ proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.toObject = fun
  */
 proto.events.MentionEmailGenerated.PlaceHolders.Mention.toObject = function(includeInstance, msg) {
   var f, obj = {
-    trackingunitname: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    programname: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    programimage: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    mentiondate: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    trackingUnitName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    programName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    programImage: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    mentionDate: jspb.Message.getFieldWithDefault(msg, 4, 0),
     snippets: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    invitelink: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    inviteLink: jspb.Message.getFieldWithDefault(msg, 6, ""),
     via: jspb.Message.getFieldWithDefault(msg, 7, ""),
     logouri: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    creatoremail: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    unsubscribehash: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    unsubscribelink: jspb.Message.getFieldWithDefault(msg, 11, "")
+    creatorEmail: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    unsubscribeHash: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    unsubscribeLink: jspb.Message.getFieldWithDefault(msg, 11, "")
   };
 
   if (includeInstance) {
@@ -518,19 +518,19 @@ proto.events.MentionEmailGenerated.PlaceHolders.Mention.deserializeBinaryFromRea
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTrackingunitname(value);
+      msg.setTrackingUnitName(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setProgramname(value);
+      msg.setProgramName(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setProgramimage(value);
+      msg.setProgramImage(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setMentiondate(value);
+      msg.setMentionDate(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
@@ -538,7 +538,7 @@ proto.events.MentionEmailGenerated.PlaceHolders.Mention.deserializeBinaryFromRea
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setInvitelink(value);
+      msg.setInviteLink(value);
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
@@ -550,15 +550,15 @@ proto.events.MentionEmailGenerated.PlaceHolders.Mention.deserializeBinaryFromRea
       break;
     case 9:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCreatoremail(value);
+      msg.setCreatorEmail(value);
       break;
     case 10:
       var value = /** @type {string} */ (reader.readString());
-      msg.setUnsubscribehash(value);
+      msg.setUnsubscribeHash(value);
       break;
     case 11:
       var value = /** @type {string} */ (reader.readString());
-      msg.setUnsubscribelink(value);
+      msg.setUnsubscribeLink(value);
       break;
     default:
       reader.skipField();
@@ -588,28 +588,28 @@ proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.serializeBinar
  */
 proto.events.MentionEmailGenerated.PlaceHolders.Mention.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getTrackingunitname();
+  f = message.getTrackingUnitName();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getProgramname();
+  f = message.getProgramName();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getProgramimage();
+  f = message.getProgramImage();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getMentiondate();
+  f = message.getMentionDate();
   if (f !== 0) {
     writer.writeInt64(
       4,
@@ -623,7 +623,7 @@ proto.events.MentionEmailGenerated.PlaceHolders.Mention.serializeBinaryToWriter 
       f
     );
   }
-  f = message.getInvitelink();
+  f = message.getInviteLink();
   if (f.length > 0) {
     writer.writeString(
       6,
@@ -644,21 +644,21 @@ proto.events.MentionEmailGenerated.PlaceHolders.Mention.serializeBinaryToWriter 
       f
     );
   }
-  f = message.getCreatoremail();
+  f = message.getCreatorEmail();
   if (f.length > 0) {
     writer.writeString(
       9,
       f
     );
   }
-  f = message.getUnsubscribehash();
+  f = message.getUnsubscribeHash();
   if (f.length > 0) {
     writer.writeString(
       10,
       f
     );
   }
-  f = message.getUnsubscribelink();
+  f = message.getUnsubscribeLink();
   if (f.length > 0) {
     writer.writeString(
       11,
@@ -669,61 +669,61 @@ proto.events.MentionEmailGenerated.PlaceHolders.Mention.serializeBinaryToWriter 
 
 
 /**
- * optional string trackingUnitName = 1;
+ * optional string tracking_unit_name = 1;
  * @return {string}
  */
-proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.getTrackingunitname = function() {
+proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.getTrackingUnitName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /** @param {string} value */
-proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.setTrackingunitname = function(value) {
+proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.setTrackingUnitName = function(value) {
   jspb.Message.setField(this, 1, value);
 };
 
 
 /**
- * optional string programName = 2;
+ * optional string program_name = 2;
  * @return {string}
  */
-proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.getProgramname = function() {
+proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.getProgramName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /** @param {string} value */
-proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.setProgramname = function(value) {
+proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.setProgramName = function(value) {
   jspb.Message.setField(this, 2, value);
 };
 
 
 /**
- * optional string programimage = 3;
+ * optional string program_image = 3;
  * @return {string}
  */
-proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.getProgramimage = function() {
+proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.getProgramImage = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /** @param {string} value */
-proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.setProgramimage = function(value) {
+proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.setProgramImage = function(value) {
   jspb.Message.setField(this, 3, value);
 };
 
 
 /**
- * optional int64 mentionDate = 4;
+ * optional int64 mention_date = 4;
  * @return {number}
  */
-proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.getMentiondate = function() {
+proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.getMentionDate = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
 /** @param {number} value */
-proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.setMentiondate = function(value) {
+proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.setMentionDate = function(value) {
   jspb.Message.setField(this, 4, value);
 };
 
@@ -744,16 +744,16 @@ proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.setSnippets = 
 
 
 /**
- * optional string inviteLink = 6;
+ * optional string invite_link = 6;
  * @return {string}
  */
-proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.getInvitelink = function() {
+proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.getInviteLink = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
 /** @param {string} value */
-proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.setInvitelink = function(value) {
+proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.setInviteLink = function(value) {
   jspb.Message.setField(this, 6, value);
 };
 
@@ -774,7 +774,7 @@ proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.setVia = funct
 
 
 /**
- * optional string logoURI = 8;
+ * optional string logouri = 8;
  * @return {string}
  */
 proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.getLogouri = function() {
@@ -789,61 +789,61 @@ proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.setLogouri = f
 
 
 /**
- * optional string creatorEmail = 9;
+ * optional string creator_email = 9;
  * @return {string}
  */
-proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.getCreatoremail = function() {
+proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.getCreatorEmail = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
 
 /** @param {string} value */
-proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.setCreatoremail = function(value) {
+proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.setCreatorEmail = function(value) {
   jspb.Message.setField(this, 9, value);
 };
 
 
 /**
- * optional string unsubscribeHash = 10;
+ * optional string unsubscribe_hash = 10;
  * @return {string}
  */
-proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.getUnsubscribehash = function() {
+proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.getUnsubscribeHash = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
 
 /** @param {string} value */
-proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.setUnsubscribehash = function(value) {
+proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.setUnsubscribeHash = function(value) {
   jspb.Message.setField(this, 10, value);
 };
 
 
 /**
- * optional string unsubscribeLink = 11;
+ * optional string unsubscribe_link = 11;
  * @return {string}
  */
-proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.getUnsubscribelink = function() {
+proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.getUnsubscribeLink = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
 
 /** @param {string} value */
-proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.setUnsubscribelink = function(value) {
+proto.events.MentionEmailGenerated.PlaceHolders.Mention.prototype.setUnsubscribeLink = function(value) {
   jspb.Message.setField(this, 11, value);
 };
 
 
 /**
- * optional string trackingUnitName = 1;
+ * optional string tracking_unit_name = 1;
  * @return {string}
  */
-proto.events.MentionEmailGenerated.PlaceHolders.prototype.getTrackingunitname = function() {
+proto.events.MentionEmailGenerated.PlaceHolders.prototype.getTrackingUnitName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /** @param {string} value */
-proto.events.MentionEmailGenerated.PlaceHolders.prototype.setTrackingunitname = function(value) {
+proto.events.MentionEmailGenerated.PlaceHolders.prototype.setTrackingUnitName = function(value) {
   jspb.Message.setField(this, 1, value);
 };
 
@@ -864,7 +864,7 @@ proto.events.MentionEmailGenerated.PlaceHolders.prototype.setVia = function(valu
 
 
 /**
- * optional string logoURI = 3;
+ * optional string logouri = 3;
  * @return {string}
  */
 proto.events.MentionEmailGenerated.PlaceHolders.prototype.getLogouri = function() {
@@ -879,7 +879,7 @@ proto.events.MentionEmailGenerated.PlaceHolders.prototype.setLogouri = function(
 
 
 /**
- * repeated Mention Mentions = 4;
+ * repeated Mention mentions = 4;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
  * @return {!Array.<!proto.events.MentionEmailGenerated.PlaceHolders.Mention>}
@@ -1002,46 +1002,46 @@ proto.events.MentionEmailGenerated.prototype.setType = function(value) {
 
 
 /**
- * optional string serviceName = 5;
+ * optional string service_name = 5;
  * @return {string}
  */
-proto.events.MentionEmailGenerated.prototype.getServicename = function() {
+proto.events.MentionEmailGenerated.prototype.getServiceName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /** @param {string} value */
-proto.events.MentionEmailGenerated.prototype.setServicename = function(value) {
+proto.events.MentionEmailGenerated.prototype.setServiceName = function(value) {
   jspb.Message.setField(this, 5, value);
 };
 
 
 /**
- * optional string toEmail = 6;
+ * optional string to_email = 6;
  * @return {string}
  */
-proto.events.MentionEmailGenerated.prototype.getToemail = function() {
+proto.events.MentionEmailGenerated.prototype.getToEmail = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
 /** @param {string} value */
-proto.events.MentionEmailGenerated.prototype.setToemail = function(value) {
+proto.events.MentionEmailGenerated.prototype.setToEmail = function(value) {
   jspb.Message.setField(this, 6, value);
 };
 
 
 /**
- * optional string fromEmail = 7;
+ * optional string from_email = 7;
  * @return {string}
  */
-proto.events.MentionEmailGenerated.prototype.getFromemail = function() {
+proto.events.MentionEmailGenerated.prototype.getFromEmail = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
 /** @param {string} value */
-proto.events.MentionEmailGenerated.prototype.setFromemail = function(value) {
+proto.events.MentionEmailGenerated.prototype.setFromEmail = function(value) {
   jspb.Message.setField(this, 7, value);
 };
 
@@ -1062,23 +1062,23 @@ proto.events.MentionEmailGenerated.prototype.setTemplate = function(value) {
 
 
 /**
- * optional PlaceHolders placeHolders = 9;
+ * optional PlaceHolders place_holders = 9;
  * @return {?proto.events.MentionEmailGenerated.PlaceHolders}
  */
-proto.events.MentionEmailGenerated.prototype.getPlaceholders = function() {
+proto.events.MentionEmailGenerated.prototype.getPlaceHolders = function() {
   return /** @type{?proto.events.MentionEmailGenerated.PlaceHolders} */ (
     jspb.Message.getWrapperField(this, proto.events.MentionEmailGenerated.PlaceHolders, 9));
 };
 
 
 /** @param {?proto.events.MentionEmailGenerated.PlaceHolders|undefined} value */
-proto.events.MentionEmailGenerated.prototype.setPlaceholders = function(value) {
+proto.events.MentionEmailGenerated.prototype.setPlaceHolders = function(value) {
   jspb.Message.setWrapperField(this, 9, value);
 };
 
 
-proto.events.MentionEmailGenerated.prototype.clearPlaceholders = function() {
-  this.setPlaceholders(undefined);
+proto.events.MentionEmailGenerated.prototype.clearPlaceHolders = function() {
+  this.setPlaceHolders(undefined);
 };
 
 
@@ -1086,22 +1086,22 @@ proto.events.MentionEmailGenerated.prototype.clearPlaceholders = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.events.MentionEmailGenerated.prototype.hasPlaceholders = function() {
+proto.events.MentionEmailGenerated.prototype.hasPlaceHolders = function() {
   return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * optional string mergeLanguage = 10;
+ * optional string merge_language = 10;
  * @return {string}
  */
-proto.events.MentionEmailGenerated.prototype.getMergelanguage = function() {
+proto.events.MentionEmailGenerated.prototype.getMergeLanguage = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
 
 /** @param {string} value */
-proto.events.MentionEmailGenerated.prototype.setMergelanguage = function(value) {
+proto.events.MentionEmailGenerated.prototype.setMergeLanguage = function(value) {
   jspb.Message.setField(this, 10, value);
 };
 
