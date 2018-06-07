@@ -30,6 +30,9 @@ export class MentionEmailGenerated extends jspb.Message {
   getFromEmail(): string;
   setFromEmail(value: string): void;
 
+  getFromName(): string;
+  setFromName(value: string): void;
+
   getTemplate(): string;
   setTemplate(value: string): void;
 
@@ -60,6 +63,7 @@ export namespace MentionEmailGenerated {
     serviceName: string,
     toEmail: string,
     fromEmail: string,
+    fromName: string,
     template: string,
     placeHolders?: MentionEmailGenerated.PlaceHolders.AsObject,
     mergeLanguage: string,

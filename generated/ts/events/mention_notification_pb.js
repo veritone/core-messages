@@ -66,9 +66,10 @@ proto.events.MentionEmailGenerated.toObject = function(includeInstance, msg) {
     serviceName: jspb.Message.getFieldWithDefault(msg, 5, ""),
     toEmail: jspb.Message.getFieldWithDefault(msg, 6, ""),
     fromEmail: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    template: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    fromName: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    template: jspb.Message.getFieldWithDefault(msg, 9, ""),
     placeHolders: (f = msg.getPlaceHolders()) && proto.events.MentionEmailGenerated.PlaceHolders.toObject(includeInstance, f),
-    mergeLanguage: jspb.Message.getFieldWithDefault(msg, 10, "")
+    mergeLanguage: jspb.Message.getFieldWithDefault(msg, 11, "")
   };
 
   if (includeInstance) {
@@ -137,14 +138,18 @@ proto.events.MentionEmailGenerated.deserializeBinaryFromReader = function(msg, r
       break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTemplate(value);
+      msg.setFromName(value);
       break;
     case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTemplate(value);
+      break;
+    case 10:
       var value = new proto.events.MentionEmailGenerated.PlaceHolders;
       reader.readMessage(value,proto.events.MentionEmailGenerated.PlaceHolders.deserializeBinaryFromReader);
       msg.setPlaceHolders(value);
       break;
-    case 10:
+    case 11:
       var value = /** @type {string} */ (reader.readString());
       msg.setMergeLanguage(value);
       break;
@@ -227,17 +232,24 @@ proto.events.MentionEmailGenerated.serializeBinaryToWriter = function(message, w
       f
     );
   }
-  f = message.getTemplate();
+  f = message.getFromName();
   if (f.length > 0) {
     writer.writeString(
       8,
       f
     );
   }
+  f = message.getTemplate();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
   f = message.getPlaceHolders();
   if (f != null) {
     writer.writeMessage(
-      9,
+      10,
       f,
       proto.events.MentionEmailGenerated.PlaceHolders.serializeBinaryToWriter
     );
@@ -245,7 +257,7 @@ proto.events.MentionEmailGenerated.serializeBinaryToWriter = function(message, w
   f = message.getMergeLanguage();
   if (f.length > 0) {
     writer.writeString(
-      10,
+      11,
       f
     );
   }
@@ -1047,33 +1059,48 @@ proto.events.MentionEmailGenerated.prototype.setFromEmail = function(value) {
 
 
 /**
- * optional string template = 8;
+ * optional string from_name = 8;
  * @return {string}
  */
-proto.events.MentionEmailGenerated.prototype.getTemplate = function() {
+proto.events.MentionEmailGenerated.prototype.getFromName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
 
 /** @param {string} value */
-proto.events.MentionEmailGenerated.prototype.setTemplate = function(value) {
+proto.events.MentionEmailGenerated.prototype.setFromName = function(value) {
   jspb.Message.setField(this, 8, value);
 };
 
 
 /**
- * optional PlaceHolders place_holders = 9;
+ * optional string template = 9;
+ * @return {string}
+ */
+proto.events.MentionEmailGenerated.prototype.getTemplate = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/** @param {string} value */
+proto.events.MentionEmailGenerated.prototype.setTemplate = function(value) {
+  jspb.Message.setField(this, 9, value);
+};
+
+
+/**
+ * optional PlaceHolders place_holders = 10;
  * @return {?proto.events.MentionEmailGenerated.PlaceHolders}
  */
 proto.events.MentionEmailGenerated.prototype.getPlaceHolders = function() {
   return /** @type{?proto.events.MentionEmailGenerated.PlaceHolders} */ (
-    jspb.Message.getWrapperField(this, proto.events.MentionEmailGenerated.PlaceHolders, 9));
+    jspb.Message.getWrapperField(this, proto.events.MentionEmailGenerated.PlaceHolders, 10));
 };
 
 
 /** @param {?proto.events.MentionEmailGenerated.PlaceHolders|undefined} value */
 proto.events.MentionEmailGenerated.prototype.setPlaceHolders = function(value) {
-  jspb.Message.setWrapperField(this, 9, value);
+  jspb.Message.setWrapperField(this, 10, value);
 };
 
 
@@ -1087,22 +1114,22 @@ proto.events.MentionEmailGenerated.prototype.clearPlaceHolders = function() {
  * @return {!boolean}
  */
 proto.events.MentionEmailGenerated.prototype.hasPlaceHolders = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
 /**
- * optional string merge_language = 10;
+ * optional string merge_language = 11;
  * @return {string}
  */
 proto.events.MentionEmailGenerated.prototype.getMergeLanguage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
 
 /** @param {string} value */
 proto.events.MentionEmailGenerated.prototype.setMergeLanguage = function(value) {
-  jspb.Message.setField(this, 10, value);
+  jspb.Message.setField(this, 11, value);
 };
 
 
