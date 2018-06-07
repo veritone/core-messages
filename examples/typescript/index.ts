@@ -11,5 +11,21 @@ let example = new exampleEvents.ExampleEvent();
 example.setCore(core);
 example.setFirstName("FakeFirstName");
 example.setLastName("FakeLastName");
-//console.log(JSON.stringify(core.toObject(false)));
-console.log(JSON.stringify(example.toObject(false)));
+console.log(JSON.stringify(example.toObject(false), null, 2));
+
+const input: string = `
+{
+    "core": {
+      "id": "A Fake UUID",
+      "event": "FakeEventName",
+      "topic": "FakeTopicName",
+      "timestamp": "195435435"
+    },
+    "firstName": "FakeFirstName",
+    "lastName": "FakeLastName"
+  }`;
+
+const data = JSON.parse(input) as exampleEvents.ExampleEvent.AsObject;
+console.log("event:", data.core.event);
+console.log("timestamp:", data.core.timestamp);
+console.log("firstName:", data.firstName);

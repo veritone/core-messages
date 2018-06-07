@@ -29,10 +29,10 @@ generate-typescript:
 	events/*.proto
 
 go-example:
-	go run examples/golang/main.go |  python -m json.tool
+	go run examples/golang/main.go 
 
 ts-example:
-	./node_modules/ts-node/dist/bin.js examples/typescript/index.ts | python -m json.tool
+	./node_modules/ts-node/dist/bin.js examples/typescript/index.ts 
 
 
 
