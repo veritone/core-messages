@@ -21,7 +21,7 @@ Install depedencies for typescript: `npm install`
 
 ## Create Builder Image:
 
-This project provides a container image with dependencies for generating golang and typescript code from protobuf files. Simple run
+This project provides a container image with dependencies for generating golang and typescript code from protobuf files. Simply run
 
 ```
 make builder
