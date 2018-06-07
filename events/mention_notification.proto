@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+import "events/core.proto";
+
+package events;
+
+option go_package = "events";
+
+message MentionEmailGenerated {
+    // ensure event has appropriate data for tracing and instrumentation
+    Core core = 1;
+    Trace trace = 2;
+
+    message PlaceHolders {
+        message Mention {
+            string trackingUnitName = 1;
+            string programName = 2;
+            string programimage = 3;
+            int64 mentionDate = 4;
+            string snippets = 5;
+            string inviteLink  = 6;
+            string via = 7;
+            string logoURI = 8;
+            string creatorEmail = 9;
+            string unsubscribeHash = 10;
+            string unsubscribeLink = 11;
+        };
+        string trackingUnitName = 1;
+        string via = 2;
+        string logoURI= 3;
+        repeated Mention Mentions = 4;
+    };
+    // event and type are required for backward compatilbity
+    string event = 3;
+    string type = 4;
+
+    string serviceName = 5;
+    string toEmail = 6;
+    string fromEmail = 7;
+    string template = 8;
+    PlaceHolders placeHolders = 9;
+    string mergeLanguage = 10;
+}
+

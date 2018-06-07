@@ -20,10 +20,14 @@ const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
 // Core payload that allows event routing, instrumentation, and tracing
 type Core struct {
-	Id                   string   `protobuf:"bytes,1,opt,name=id" json:"id,omitempty"`
-	EventName            string   `protobuf:"bytes,2,opt,name=eventName" json:"eventName,omitempty"`
-	TopicName            string   `protobuf:"bytes,4,opt,name=topicName" json:"topicName,omitempty"`
-	Timestamp            string   `protobuf:"bytes,5,opt,name=timestamp" json:"timestamp,omitempty"`
+	// UUID of the event
+	Id string `protobuf:"bytes,1,opt,name=id" json:"id,omitempty"`
+	// the event name, should be automatically
+	Event string `protobuf:"bytes,2,opt,name=event" json:"event,omitempty"`
+	// the topic name
+	Topic string `protobuf:"bytes,4,opt,name=topic" json:"topic,omitempty"`
+	// timestamp when message is created in RFC2822 format
+	Timestamp            int64    `protobuf:"varint,5,opt,name=timestamp" json:"timestamp,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -33,7 +37,7 @@ func (m *Core) Reset()         { *m = Core{} }
 func (m *Core) String() string { return proto.CompactTextString(m) }
 func (*Core) ProtoMessage()    {}
 func (*Core) Descriptor() ([]byte, []int) {
-	return fileDescriptor_core_d2b76da6b9698f29, []int{0}
+	return fileDescriptor_core_496a4ad6d9210cb7, []int{0}
 }
 func (m *Core) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Core.Unmarshal(m, b)
@@ -60,41 +64,82 @@ func (m *Core) GetId() string {
 	return ""
 }
 
-func (m *Core) GetEventName() string {
+func (m *Core) GetEvent() string {
 	if m != nil {
-		return m.EventName
+		return m.Event
 	}
 	return ""
 }
 
-func (m *Core) GetTopicName() string {
+func (m *Core) GetTopic() string {
 	if m != nil {
-		return m.TopicName
+		return m.Topic
 	}
 	return ""
 }
 
-func (m *Core) GetTimestamp() string {
+func (m *Core) GetTimestamp() int64 {
 	if m != nil {
 		return m.Timestamp
+	}
+	return 0
+}
+
+type Trace struct {
+	// Trace context, serialized by JaegerTextMapper
+	Trace                string   `protobuf:"bytes,1,opt,name=trace" json:"trace,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *Trace) Reset()         { *m = Trace{} }
+func (m *Trace) String() string { return proto.CompactTextString(m) }
+func (*Trace) ProtoMessage()    {}
+func (*Trace) Descriptor() ([]byte, []int) {
+	return fileDescriptor_core_496a4ad6d9210cb7, []int{1}
+}
+func (m *Trace) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_Trace.Unmarshal(m, b)
+}
+func (m *Trace) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_Trace.Marshal(b, m, deterministic)
+}
+func (dst *Trace) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Trace.Merge(dst, src)
+}
+func (m *Trace) XXX_Size() int {
+	return xxx_messageInfo_Trace.Size(m)
+}
+func (m *Trace) XXX_DiscardUnknown() {
+	xxx_messageInfo_Trace.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Trace proto.InternalMessageInfo
+
+func (m *Trace) GetTrace() string {
+	if m != nil {
+		return m.Trace
 	}
 	return ""
 }
 
 func init() {
 	proto.RegisterType((*Core)(nil), "events.Core")
+	proto.RegisterType((*Trace)(nil), "events.Trace")
 }
 
-func init() { proto.RegisterFile("events/core.proto", fileDescriptor_core_d2b76da6b9698f29) }
+func init() { proto.RegisterFile("events/core.proto", fileDescriptor_core_496a4ad6d9210cb7) }
 
-var fileDescriptor_core_d2b76da6b9698f29 = []byte{
-	// 126 bytes of a gzipped FileDescriptorProto
+var fileDescriptor_core_496a4ad6d9210cb7 = []byte{
+	// 144 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x12, 0x4c, 0x2d, 0x4b, 0xcd,
 	0x2b, 0x29, 0xd6, 0x4f, 0xce, 0x2f, 0x4a, 0xd5, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x83,
-	0x08, 0x29, 0x15, 0x70, 0xb1, 0x38, 0xe7, 0x17, 0xa5, 0x0a, 0xf1, 0x71, 0x31, 0x65, 0xa6, 0x48,
-	0x30, 0x2a, 0x30, 0x6a, 0x70, 0x06, 0x31, 0x65, 0xa6, 0x08, 0xc9, 0x70, 0x71, 0x82, 0x55, 0xf8,
-	0x25, 0xe6, 0xa6, 0x4a, 0x30, 0x81, 0x85, 0x11, 0x02, 0x20, 0xd9, 0x92, 0xfc, 0x82, 0xcc, 0x64,
-	0xb0, 0x2c, 0x0b, 0x44, 0x16, 0x2e, 0x00, 0x96, 0xcd, 0xcc, 0x4d, 0x2d, 0x2e, 0x49, 0xcc, 0x2d,
-	0x90, 0x60, 0x85, 0xca, 0xc2, 0x04, 0x9c, 0x38, 0xa2, 0xa0, 0x76, 0x27, 0xb1, 0x81, 0x9d, 0x62,
-	0x0c, 0x08, 0x00, 0x00, 0xff, 0xff, 0x30, 0xe1, 0xc8, 0x31, 0x9f, 0x00, 0x00, 0x00,
+	0x08, 0x29, 0x25, 0x70, 0xb1, 0x38, 0xe7, 0x17, 0xa5, 0x0a, 0xf1, 0x71, 0x31, 0x65, 0xa6, 0x48,
+	0x30, 0x2a, 0x30, 0x6a, 0x70, 0x06, 0x31, 0x65, 0xa6, 0x08, 0x89, 0x70, 0xb1, 0x82, 0x55, 0x48,
+	0x30, 0x81, 0x85, 0x20, 0x1c, 0x90, 0x68, 0x49, 0x7e, 0x41, 0x66, 0xb2, 0x04, 0x0b, 0x44, 0x14,
+	0xcc, 0x11, 0x92, 0xe1, 0xe2, 0x2c, 0xc9, 0xcc, 0x4d, 0x2d, 0x2e, 0x49, 0xcc, 0x2d, 0x90, 0x60,
+	0x55, 0x60, 0xd4, 0x60, 0x0e, 0x42, 0x08, 0x28, 0xc9, 0x72, 0xb1, 0x86, 0x14, 0x25, 0x26, 0xa7,
+	0x82, 0x35, 0x83, 0x18, 0x50, 0x5b, 0x20, 0x1c, 0x27, 0x8e, 0x28, 0xa8, 0x53, 0x92, 0xd8, 0xc0,
+	0x2e, 0x33, 0x06, 0x04, 0x00, 0x00, 0xff, 0xff, 0x03, 0x35, 0x0d, 0x7e, 0xae, 0x00, 0x00, 0x00,
 }

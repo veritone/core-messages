@@ -7,14 +7,14 @@ export class Core extends jspb.Message {
   getId(): string;
   setId(value: string): void;
 
-  getEventname(): string;
-  setEventname(value: string): void;
+  getEvent(): string;
+  setEvent(value: string): void;
 
-  getTopicname(): string;
-  setTopicname(value: string): void;
+  getTopic(): string;
+  setTopic(value: string): void;
 
-  getTimestamp(): string;
-  setTimestamp(value: string): void;
+  getTimestamp(): number;
+  setTimestamp(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Core.AsObject;
@@ -29,9 +29,29 @@ export class Core extends jspb.Message {
 export namespace Core {
   export type AsObject = {
     id: string,
-    eventname: string,
-    topicname: string,
-    timestamp: string,
+    event: string,
+    topic: string,
+    timestamp: number,
+  }
+}
+
+export class Trace extends jspb.Message {
+  getTrace(): string;
+  setTrace(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Trace.AsObject;
+  static toObject(includeInstance: boolean, msg: Trace): Trace.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Trace, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Trace;
+  static deserializeBinaryFromReader(message: Trace, reader: jspb.BinaryReader): Trace;
+}
+
+export namespace Trace {
+  export type AsObject = {
+    trace: string,
   }
 }
 

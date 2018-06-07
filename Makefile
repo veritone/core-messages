@@ -1,9 +1,9 @@
 current_dir = $(shell pwd)
 
-all: generate-golang generate-typescript
+all: clean setup generate-golang generate-typescript
 
 clean:
-	rm -r generated
+	rm -rf generated
 
 setup:
 	mkdir -p generated/go

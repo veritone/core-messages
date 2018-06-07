@@ -8,8 +8,17 @@ option go_package = "events";
 
 // Core payload that allows event routing, instrumentation, and tracing
 message Core {
+    // UUID of the event
     string id = 1;
-    string eventName = 2;
-    string topicName = 4;
-    string timestamp = 5;
+    // the event name, should be automatically 
+    string event = 2;
+    // the topic name
+    string topic = 4;
+    // timestamp when message is created in RFC2822 format
+    int64 timestamp = 5;
+}
+
+message Trace {
+    // Trace context, serialized by JaegerTextMapper
+    string trace = 1;
 }
