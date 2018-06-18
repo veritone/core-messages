@@ -11,3 +11,21 @@ message ExampleEvent {
     string first_name = 2;
     string last_name = 3;
 }
+
+message ExampleOne {
+    string data = 1;
+}
+
+message ExampleTwo {
+    int64 number = 1;
+}
+
+message ExampleThree {
+    bool boolean = 1;
+}
+
+message ExampleFour {
+    string data = 2;
+    int64 number = 3;
+    bool boolean = 4;
+}

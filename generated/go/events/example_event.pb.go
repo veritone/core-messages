@@ -19,9 +19,9 @@ var _ = math.Inf
 const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
 type ExampleEvent struct {
-	Core                 *Core    `protobuf:"bytes,1,opt,name=core" json:"core,omitempty"`
-	FirstName            string   `protobuf:"bytes,2,opt,name=first_name,json=firstName" json:"first_name,omitempty"`
-	LastName             string   `protobuf:"bytes,3,opt,name=last_name,json=lastName" json:"last_name,omitempty"`
+	Core                 *Core    `protobuf:"bytes,1,opt,name=core,proto3" json:"core,omitempty"`
+	FirstName            string   `protobuf:"bytes,2,opt,name=first_name,json=firstName,proto3" json:"first_name,omitempty"`
+	LastName             string   `protobuf:"bytes,3,opt,name=last_name,json=lastName,proto3" json:"last_name,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -31,7 +31,7 @@ func (m *ExampleEvent) Reset()         { *m = ExampleEvent{} }
 func (m *ExampleEvent) String() string { return proto.CompactTextString(m) }
 func (*ExampleEvent) ProtoMessage()    {}
 func (*ExampleEvent) Descriptor() ([]byte, []int) {
-	return fileDescriptor_example_event_bf8591765fc864b3, []int{0}
+	return fileDescriptor_example_event_c4fbf57a97944095, []int{0}
 }
 func (m *ExampleEvent) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ExampleEvent.Unmarshal(m, b)
@@ -72,24 +72,202 @@ func (m *ExampleEvent) GetLastName() string {
 	return ""
 }
 
+type ExampleOne struct {
+	Data                 string   `protobuf:"bytes,1,opt,name=data,proto3" json:"data,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ExampleOne) Reset()         { *m = ExampleOne{} }
+func (m *ExampleOne) String() string { return proto.CompactTextString(m) }
+func (*ExampleOne) ProtoMessage()    {}
+func (*ExampleOne) Descriptor() ([]byte, []int) {
+	return fileDescriptor_example_event_c4fbf57a97944095, []int{1}
+}
+func (m *ExampleOne) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ExampleOne.Unmarshal(m, b)
+}
+func (m *ExampleOne) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ExampleOne.Marshal(b, m, deterministic)
+}
+func (dst *ExampleOne) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ExampleOne.Merge(dst, src)
+}
+func (m *ExampleOne) XXX_Size() int {
+	return xxx_messageInfo_ExampleOne.Size(m)
+}
+func (m *ExampleOne) XXX_DiscardUnknown() {
+	xxx_messageInfo_ExampleOne.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ExampleOne proto.InternalMessageInfo
+
+func (m *ExampleOne) GetData() string {
+	if m != nil {
+		return m.Data
+	}
+	return ""
+}
+
+type ExampleTwo struct {
+	Number               int64    `protobuf:"varint,1,opt,name=number,proto3" json:"number,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ExampleTwo) Reset()         { *m = ExampleTwo{} }
+func (m *ExampleTwo) String() string { return proto.CompactTextString(m) }
+func (*ExampleTwo) ProtoMessage()    {}
+func (*ExampleTwo) Descriptor() ([]byte, []int) {
+	return fileDescriptor_example_event_c4fbf57a97944095, []int{2}
+}
+func (m *ExampleTwo) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ExampleTwo.Unmarshal(m, b)
+}
+func (m *ExampleTwo) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ExampleTwo.Marshal(b, m, deterministic)
+}
+func (dst *ExampleTwo) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ExampleTwo.Merge(dst, src)
+}
+func (m *ExampleTwo) XXX_Size() int {
+	return xxx_messageInfo_ExampleTwo.Size(m)
+}
+func (m *ExampleTwo) XXX_DiscardUnknown() {
+	xxx_messageInfo_ExampleTwo.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ExampleTwo proto.InternalMessageInfo
+
+func (m *ExampleTwo) GetNumber() int64 {
+	if m != nil {
+		return m.Number
+	}
+	return 0
+}
+
+type ExampleThree struct {
+	Boolean              bool     `protobuf:"varint,1,opt,name=boolean,proto3" json:"boolean,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ExampleThree) Reset()         { *m = ExampleThree{} }
+func (m *ExampleThree) String() string { return proto.CompactTextString(m) }
+func (*ExampleThree) ProtoMessage()    {}
+func (*ExampleThree) Descriptor() ([]byte, []int) {
+	return fileDescriptor_example_event_c4fbf57a97944095, []int{3}
+}
+func (m *ExampleThree) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ExampleThree.Unmarshal(m, b)
+}
+func (m *ExampleThree) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ExampleThree.Marshal(b, m, deterministic)
+}
+func (dst *ExampleThree) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ExampleThree.Merge(dst, src)
+}
+func (m *ExampleThree) XXX_Size() int {
+	return xxx_messageInfo_ExampleThree.Size(m)
+}
+func (m *ExampleThree) XXX_DiscardUnknown() {
+	xxx_messageInfo_ExampleThree.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ExampleThree proto.InternalMessageInfo
+
+func (m *ExampleThree) GetBoolean() bool {
+	if m != nil {
+		return m.Boolean
+	}
+	return false
+}
+
+type ExampleFour struct {
+	Data                 string   `protobuf:"bytes,2,opt,name=data,proto3" json:"data,omitempty"`
+	Number               int64    `protobuf:"varint,3,opt,name=number,proto3" json:"number,omitempty"`
+	Boolean              bool     `protobuf:"varint,4,opt,name=boolean,proto3" json:"boolean,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ExampleFour) Reset()         { *m = ExampleFour{} }
+func (m *ExampleFour) String() string { return proto.CompactTextString(m) }
+func (*ExampleFour) ProtoMessage()    {}
+func (*ExampleFour) Descriptor() ([]byte, []int) {
+	return fileDescriptor_example_event_c4fbf57a97944095, []int{4}
+}
+func (m *ExampleFour) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ExampleFour.Unmarshal(m, b)
+}
+func (m *ExampleFour) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ExampleFour.Marshal(b, m, deterministic)
+}
+func (dst *ExampleFour) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ExampleFour.Merge(dst, src)
+}
+func (m *ExampleFour) XXX_Size() int {
+	return xxx_messageInfo_ExampleFour.Size(m)
+}
+func (m *ExampleFour) XXX_DiscardUnknown() {
+	xxx_messageInfo_ExampleFour.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ExampleFour proto.InternalMessageInfo
+
+func (m *ExampleFour) GetData() string {
+	if m != nil {
+		return m.Data
+	}
+	return ""
+}
+
+func (m *ExampleFour) GetNumber() int64 {
+	if m != nil {
+		return m.Number
+	}
+	return 0
+}
+
+func (m *ExampleFour) GetBoolean() bool {
+	if m != nil {
+		return m.Boolean
+	}
+	return false
+}
+
 func init() {
 	proto.RegisterType((*ExampleEvent)(nil), "events.ExampleEvent")
+	proto.RegisterType((*ExampleOne)(nil), "events.ExampleOne")
+	proto.RegisterType((*ExampleTwo)(nil), "events.ExampleTwo")
+	proto.RegisterType((*ExampleThree)(nil), "events.ExampleThree")
+	proto.RegisterType((*ExampleFour)(nil), "events.ExampleFour")
 }
 
 func init() {
-	proto.RegisterFile("events/example_event.proto", fileDescriptor_example_event_bf8591765fc864b3)
+	proto.RegisterFile("events/example_event.proto", fileDescriptor_example_event_c4fbf57a97944095)
 }
 
-var fileDescriptor_example_event_bf8591765fc864b3 = []byte{
-	// 151 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x92, 0x4a, 0x2d, 0x4b, 0xcd,
-	0x2b, 0x29, 0xd6, 0x4f, 0xad, 0x48, 0xcc, 0x2d, 0xc8, 0x49, 0x8d, 0x07, 0x73, 0xf5, 0x0a, 0x8a,
-	0xf2, 0x4b, 0xf2, 0x85, 0xd8, 0x20, 0x72, 0x52, 0x82, 0x50, 0x35, 0xc9, 0xf9, 0x45, 0xa9, 0x10,
-	0x29, 0xa5, 0x1c, 0x2e, 0x1e, 0x57, 0x88, 0x0e, 0x57, 0x90, 0x9c, 0x90, 0x02, 0x17, 0x0b, 0x48,
-	0x56, 0x82, 0x51, 0x81, 0x51, 0x83, 0xdb, 0x88, 0x47, 0x0f, 0xa2, 0x43, 0xcf, 0x39, 0xbf, 0x28,
-	0x35, 0x08, 0x2c, 0x23, 0x24, 0xcb, 0xc5, 0x95, 0x96, 0x59, 0x54, 0x5c, 0x12, 0x9f, 0x97, 0x98,
-	0x9b, 0x2a, 0xc1, 0xa4, 0xc0, 0xa8, 0xc1, 0x19, 0xc4, 0x09, 0x16, 0xf1, 0x4b, 0xcc, 0x4d, 0x15,
-	0x92, 0xe6, 0xe2, 0xcc, 0x49, 0x84, 0xc9, 0x32, 0x83, 0x65, 0x39, 0x40, 0x02, 0x20, 0x49, 0x27,
-	0x8e, 0x28, 0xa8, 0x53, 0x92, 0xd8, 0xc0, 0xd6, 0x1b, 0x03, 0x02, 0x00, 0x00, 0xff, 0xff, 0x37,
-	0x4c, 0x44, 0xd7, 0xb7, 0x00, 0x00, 0x00,
+var fileDescriptor_example_event_c4fbf57a97944095 = []byte{
+	// 241 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x54, 0x90, 0xc1, 0x4a, 0xc3, 0x40,
+	0x10, 0x86, 0x49, 0x13, 0x62, 0x32, 0xed, 0xc5, 0x39, 0x48, 0xa8, 0x08, 0x61, 0xf1, 0x90, 0x53,
+	0x04, 0x7d, 0x03, 0xa5, 0x1e, 0x15, 0xd6, 0x9e, 0xbc, 0x94, 0x8d, 0x8e, 0x28, 0x24, 0x3b, 0x65,
+	0x9b, 0xaa, 0x8f, 0x2f, 0x99, 0xdd, 0xc4, 0xf4, 0xb6, 0x33, 0xdf, 0x3f, 0xf3, 0x2d, 0x03, 0x6b,
+	0xfa, 0x26, 0xdb, 0x1f, 0x6e, 0xe8, 0xd7, 0x74, 0xfb, 0x96, 0x76, 0x52, 0xd6, 0x7b, 0xc7, 0x3d,
+	0x63, 0xea, 0xd9, 0xfa, 0x3c, 0x64, 0xde, 0xd8, 0x91, 0x47, 0xaa, 0x85, 0xd5, 0xc6, 0x4f, 0x6c,
+	0x06, 0x86, 0x25, 0x24, 0x03, 0x2d, 0xa2, 0x32, 0xaa, 0x96, 0xb7, 0xab, 0xda, 0x4f, 0xd4, 0x0f,
+	0xec, 0x48, 0x0b, 0xc1, 0x2b, 0x80, 0x8f, 0x2f, 0x77, 0xe8, 0x77, 0xd6, 0x74, 0x54, 0x2c, 0xca,
+	0xa8, 0xca, 0x75, 0x2e, 0x9d, 0x27, 0xd3, 0x11, 0x5e, 0x42, 0xde, 0x9a, 0x91, 0xc6, 0x42, 0xb3,
+	0xa1, 0x31, 0x40, 0x55, 0x02, 0x04, 0xdb, 0xb3, 0x25, 0x44, 0x48, 0xde, 0x4d, 0x6f, 0xc4, 0x95,
+	0x6b, 0x79, 0xab, 0xeb, 0x29, 0xb1, 0xfd, 0x61, 0xbc, 0x80, 0xd4, 0x1e, 0xbb, 0x86, 0x9c, 0x64,
+	0x62, 0x1d, 0x2a, 0x55, 0x4d, 0xbf, 0xde, 0x7e, 0x3a, 0x22, 0x2c, 0xe0, 0xac, 0x61, 0x6e, 0xc9,
+	0x58, 0x09, 0x66, 0x7a, 0x2c, 0xd5, 0x0b, 0x2c, 0x43, 0xf2, 0x91, 0x8f, 0x6e, 0x52, 0x2e, 0xfe,
+	0x95, 0x33, 0x49, 0x3c, 0x97, 0xcc, 0x97, 0x26, 0x27, 0x4b, 0xef, 0xb3, 0xd7, 0x70, 0xd1, 0x26,
+	0x95, 0x2b, 0xde, 0xfd, 0x05, 0x00, 0x00, 0xff, 0xff, 0x2c, 0x8f, 0x0b, 0xa7, 0x7e, 0x01, 0x00,
+	0x00,
 }

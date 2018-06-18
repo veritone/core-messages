@@ -14,16 +14,15 @@ import (
 func main() {
 	core := events.Core{
 		Id:        "A Fake UUID",
-		Event:     "FakeEventName",
-		Topic:     "FakeTopicName",
-		Timestamp: time.Now().Unix(),
+		Name:      "FakeEventName",
+		Timestamp: time.Now().Format(time.RFC1123),
 	}
 	e := &events.ExampleEvent{
 		Core:      &core,
 		FirstName: "FakeFirstName",
 		LastName:  "FakeLastName",
 	}
-
+	fmt.Println("======================== DECODING =====================")
 	raw, err := vJson.JsonMarshaler.MarshalJSON(e)
 	if err != nil {
 		log.Panic(err)
@@ -38,10 +37,9 @@ func main() {
 
 	input := `{
 		"core": {
-			"event": "FakeEventName",
+			"name": "FakeEventName",
 			"id": "A Fake UUID",
-			"timestamp": "32132145",
-			"topic": "FakeTopicName"
+			"timestamp": "Mon, 18 Jun 2018 01:33:40 PDT"
 		},
 		"firstName": "FakeFirstName",
 		"lastName": "FakeLastName"
@@ -52,7 +50,8 @@ func main() {
 	if err != nil {
 		log.Panic(err)
 	}
-	fmt.Printf("\nevent:%s\n", e2.Core.GetEvent())
-	fmt.Printf("timestamp:%d\n", e2.Core.GetTimestamp())
-	fmt.Printf("firstName:%s\n", e2.GetFirstName())
+	fmt.Println("\n======================== ENCODING =====================")
+	fmt.Printf("name: %s\n", e2.Core.GetName())
+	fmt.Printf("timestamp: %s\n", e2.Core.GetTimestamp())
+	fmt.Printf("firstName: %s\n", e2.GetFirstName())
 }

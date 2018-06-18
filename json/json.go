@@ -3,8 +3,8 @@ package json
 import (
 	"bytes"
 
-	"github.com/gogo/protobuf/jsonpb"
-	"github.com/gogo/protobuf/proto"
+	"github.com/golang/protobuf/jsonpb"
+	"github.com/golang/protobuf/proto"
 )
 
 // JsonMarshaler provides default json marshaler that is compatible with eventing data model

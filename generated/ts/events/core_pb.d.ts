@@ -8,14 +8,11 @@ export class Core extends jspb.Message {
   getId(): string;
   setId(value: string): void;
 
-  getEvent(): string;
-  setEvent(value: string): void;
+  getName(): string;
+  setName(value: string): void;
 
-  getTopic(): string;
-  setTopic(value: string): void;
-
-  getTimestamp(): number;
-  setTimestamp(value: number): void;
+  getTimestamp(): string;
+  setTimestamp(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Core.AsObject;
@@ -30,15 +27,18 @@ export class Core extends jspb.Message {
 export namespace Core {
   export type AsObject = {
     id: string,
-    event: string,
-    topic: string,
-    timestamp: number,
+    name: string,
+    timestamp: string,
   }
 }
 
 export class Trace extends jspb.Message {
-  getTrace(): string;
-  setTrace(value: string): void;
+  getTraceContextMap(): jspb.Map<string, string>;
+  clearTraceContextMap(): void;
+  getTraceTagsMap(): jspb.Map<string, string>;
+  clearTraceTagsMap(): void;
+  getServiceName(): string;
+  setServiceName(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Trace.AsObject;
@@ -52,11 +52,13 @@ export class Trace extends jspb.Message {
 
 export namespace Trace {
   export type AsObject = {
-    trace: string,
+    traceContextMap: Array<[string, string]>,
+    traceTagsMap: Array<[string, string]>,
+    serviceName: string,
   }
 }
 
-export class Event extends jspb.Message {
+export class VtEvent extends jspb.Message {
   hasCore(): boolean;
   clearCore(): void;
   getCore(): Core | undefined;
@@ -73,16 +75,16 @@ export class Event extends jspb.Message {
   setData(value?: google_protobuf_any_pb.Any): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Event.AsObject;
-  static toObject(includeInstance: boolean, msg: Event): Event.AsObject;
+  toObject(includeInstance?: boolean): VtEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: VtEvent): VtEvent.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: Event, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Event;
-  static deserializeBinaryFromReader(message: Event, reader: jspb.BinaryReader): Event;
+  static serializeBinaryToWriter(message: VtEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): VtEvent;
+  static deserializeBinaryFromReader(message: VtEvent, reader: jspb.BinaryReader): VtEvent;
 }
 
-export namespace Event {
+export namespace VtEvent {
   export type AsObject = {
     core?: Core.AsObject,
     trace?: Trace.AsObject,
