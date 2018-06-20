@@ -254,9 +254,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| event | [string](#string) |  | event and type are required for backward compatilbity
-
-must match &#39;mention_email_generated&#39; for backward compatibility |
+| event | [string](#string) |  | must match &#39;mention_email_generated&#39; for backward compatibility |
 | type | [string](#string) |  | must be &#39;notification&#39; for backward compatibility |
 | service_name | [string](#string) |  | the service name which generates this payload (hostname) |
 | to_email | [string](#string) |  | email of the receipient |
