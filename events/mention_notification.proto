@@ -29,8 +29,8 @@ message MentionEmailGenerated {
     };
     
     // event and type are required for backward compatilbity
-    string event = 3;                    // must match `mention_email_generated`` for backward compatibility
-    string type = 4;                     // must be `notification` for backward compatibility
+    string event = 3;                    // must match 'mention_email_generated' for backward compatibility
+    string type = 4;                     // must be 'notification' for backward compatibility
 
     string service_name = 5;             // the service name which generates this payload (hostname)
     string to_email = 6;                 // email of the receipient 
@@ -38,6 +38,6 @@ message MentionEmailGenerated {
     string from_name = 8;                // name of the sender
     string template = 9;                 // the email tempalte via mandrill, mention-notification or mention-notification-bulk
     PlaceHolders place_holders = 10;     // the placeholder object
-    string merge_language = 11;          // merge language, should be either `handlers`` or `mandril``
+    string merge_language = 11;          // merge language, should be either 'handlers' or 'mandril'
 }
 

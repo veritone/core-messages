@@ -38,7 +38,7 @@ func (m *MentionEmailGenerated) Reset()         { *m = MentionEmailGenerated{} }
 func (m *MentionEmailGenerated) String() string { return proto.CompactTextString(m) }
 func (*MentionEmailGenerated) ProtoMessage()    {}
 func (*MentionEmailGenerated) Descriptor() ([]byte, []int) {
-	return fileDescriptor_mention_notification_429ffce8d0ec6f8d, []int{0}
+	return fileDescriptor_mention_notification_afcfe7ea38640420, []int{0}
 }
 func (m *MentionEmailGenerated) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_MentionEmailGenerated.Unmarshal(m, b)
@@ -142,7 +142,7 @@ func (m *MentionEmailGenerated_Mention) Reset()         { *m = MentionEmailGener
 func (m *MentionEmailGenerated_Mention) String() string { return proto.CompactTextString(m) }
 func (*MentionEmailGenerated_Mention) ProtoMessage()    {}
 func (*MentionEmailGenerated_Mention) Descriptor() ([]byte, []int) {
-	return fileDescriptor_mention_notification_429ffce8d0ec6f8d, []int{0, 0}
+	return fileDescriptor_mention_notification_afcfe7ea38640420, []int{0, 0}
 }
 func (m *MentionEmailGenerated_Mention) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_MentionEmailGenerated_Mention.Unmarshal(m, b)
@@ -253,7 +253,7 @@ func (m *MentionEmailGenerated_PlaceHolders) Reset()         { *m = MentionEmail
 func (m *MentionEmailGenerated_PlaceHolders) String() string { return proto.CompactTextString(m) }
 func (*MentionEmailGenerated_PlaceHolders) ProtoMessage()    {}
 func (*MentionEmailGenerated_PlaceHolders) Descriptor() ([]byte, []int) {
-	return fileDescriptor_mention_notification_429ffce8d0ec6f8d, []int{0, 1}
+	return fileDescriptor_mention_notification_afcfe7ea38640420, []int{0, 1}
 }
 func (m *MentionEmailGenerated_PlaceHolders) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_MentionEmailGenerated_PlaceHolders.Unmarshal(m, b)
@@ -308,10 +308,10 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("events/mention_notification.proto", fileDescriptor_mention_notification_429ffce8d0ec6f8d)
+	proto.RegisterFile("events/mention_notification.proto", fileDescriptor_mention_notification_afcfe7ea38640420)
 }
 
-var fileDescriptor_mention_notification_429ffce8d0ec6f8d = []byte{
+var fileDescriptor_mention_notification_afcfe7ea38640420 = []byte{
 	// 496 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x94, 0x53, 0x6d, 0x8b, 0xd3, 0x40,
 	0x10, 0xa6, 0x97, 0x5e, 0x93, 0x4e, 0x52, 0xad, 0x8b, 0xc2, 0x1a, 0x11, 0x5b, 0xe5, 0xa0, 0x8a,
