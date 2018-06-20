@@ -643,63 +643,65 @@ Protobuf data structure in {VtEvent.data} </p></td>
                   <td>event</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p>event and type are required for backward compatilbity </p></td>
+                  <td><p>event and type are required for backward compatilbity
+
+must match `mention_email_generated`` for backward compatibility </p></td>
                 </tr>
               
                 <tr>
                   <td>type</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>must be `notification` for backward compatibility </p></td>
                 </tr>
               
                 <tr>
                   <td>service_name</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>the service name which generates this payload (hostname) </p></td>
                 </tr>
               
                 <tr>
                   <td>to_email</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>email of the receipient </p></td>
                 </tr>
               
                 <tr>
                   <td>from_email</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>email of the sender </p></td>
                 </tr>
               
                 <tr>
                   <td>from_name</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>name of the sender </p></td>
                 </tr>
               
                 <tr>
                   <td>template</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>the email tempalte via mandrill, mention-notification or mention-notification-bulk </p></td>
                 </tr>
               
                 <tr>
                   <td>place_holders</td>
                   <td><a href="#events.MentionEmailGenerated.PlaceHolders">MentionEmailGenerated.PlaceHolders</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>the placeholder object </p></td>
                 </tr>
               
                 <tr>
                   <td>merge_language</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>merge language, should be either `handlers`` or `mandril`` </p></td>
                 </tr>
               
             </tbody>
@@ -722,77 +724,77 @@ Protobuf data structure in {VtEvent.data} </p></td>
                   <td>tracking_unit_name</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>the watchlist name </p></td>
                 </tr>
               
                 <tr>
                   <td>program_name</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>program name </p></td>
                 </tr>
               
                 <tr>
                   <td>program_image</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>program image url </p></td>
                 </tr>
               
                 <tr>
                   <td>mention_date</td>
                   <td><a href="#int64">int64</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>mention_date unix seconds </p></td>
                 </tr>
               
                 <tr>
                   <td>snippets</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>mention snippets, 100 characters or less </p></td>
                 </tr>
               
                 <tr>
                   <td>invite_link</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>invite url </p></td>
                 </tr>
               
                 <tr>
                   <td>via</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>via variable (platform) </p></td>
                 </tr>
               
                 <tr>
                   <td>logouri</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>logo url </p></td>
                 </tr>
               
                 <tr>
                   <td>creator_email</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>creator email </p></td>
                 </tr>
               
                 <tr>
                   <td>unsubscribe_hash</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>unsubscribe hash </p></td>
                 </tr>
               
                 <tr>
                   <td>unsubscribe_link</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>unsubscribe link </p></td>
                 </tr>
               
             </tbody>
@@ -815,28 +817,28 @@ Protobuf data structure in {VtEvent.data} </p></td>
                   <td>tracking_unit_name</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>tracking unit name or watchlist name </p></td>
                 </tr>
               
                 <tr>
                   <td>via</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>via </p></td>
                 </tr>
               
                 <tr>
                   <td>logouri</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>logo url </p></td>
                 </tr>
               
                 <tr>
                   <td>mentions</td>
                   <td><a href="#events.MentionEmailGenerated.Mention">MentionEmailGenerated.Mention</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
+                  <td><p>list of mentions </p></td>
                 </tr>
               
             </tbody>

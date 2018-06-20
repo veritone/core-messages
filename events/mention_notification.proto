@@ -8,36 +8,36 @@ option go_package = "events";
 
 message MentionEmailGenerated {
     message Mention {
-        string tracking_unit_name = 1;
-        string program_name = 2;
-        string program_image = 3;
-        int64 mention_date = 4;
-        string snippets = 5;
-        string invite_link  = 6;
-        string via = 7;
-        string logouri = 8;
-        string creator_email = 9;
-        string unsubscribe_hash = 10;
-        string unsubscribe_link = 11;
+        string tracking_unit_name = 1; // the watchlist name
+        string program_name = 2;       // program name
+        string program_image = 3;      // program image url
+        int64 mention_date = 4;        // mention_date unix seconds
+        string snippets = 5;           // mention snippets, 100 characters or less
+        string invite_link  = 6;       // invite url
+        string via = 7;                // via variable (platform)
+        string logouri = 8;            // logo url
+        string creator_email = 9;      // creator email
+        string unsubscribe_hash = 10;  // unsubscribe hash
+        string unsubscribe_link = 11;  // unsubscribe link
     };
 
     message PlaceHolders {
-        string tracking_unit_name = 1;
-        string via = 2;
-        string logouri= 3;
-        repeated Mention mentions = 4;
+        string tracking_unit_name = 1;  // tracking unit name or watchlist name
+        string via = 2;                 // via 
+        string logouri= 3;              // logo url
+        repeated Mention mentions = 4;  // list of mentions
     };
     
     // event and type are required for backward compatilbity
-    string event = 3;
-    string type = 4;
+    string event = 3;                    // must match `mention_email_generated`` for backward compatibility
+    string type = 4;                     // must be `notification` for backward compatibility
 
-    string service_name = 5;
-    string to_email = 6;
-    string from_email = 7;
-    string from_name = 8;
-    string template = 9;
-    PlaceHolders place_holders = 10;
-    string merge_language = 11;
+    string service_name = 5;             // the service name which generates this payload (hostname)
+    string to_email = 6;                 // email of the receipient 
+    string from_email = 7;               // email of the sender
+    string from_name = 8;                // name of the sender
+    string template = 9;                 // the email tempalte via mandrill, mention-notification or mention-notification-bulk
+    PlaceHolders place_holders = 10;     // the placeholder object
+    string merge_language = 11;          // merge language, should be either `handlers`` or `mandril``
 }
 
