@@ -28,7 +28,6 @@ message MentionEmailGenerated {
         repeated Mention mentions = 4;  // list of mentions
     };
     
-    // event and type are required for backward compatilbity
     string event = 3;                    // must match 'mention_email_generated' for backward compatibility
     string type = 4;                     // must be 'notification' for backward compatibility
 
