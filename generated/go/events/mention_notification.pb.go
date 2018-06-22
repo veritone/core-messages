@@ -19,19 +19,15 @@ var _ = math.Inf
 const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
 type MentionEmailGenerated struct {
-	// ensure event has appropriate data for tracing and instrumentation
-	Core  *Core  `protobuf:"bytes,1,opt,name=core" json:"core,omitempty"`
-	Trace *Trace `protobuf:"bytes,2,opt,name=trace" json:"trace,omitempty"`
-	// event and type are required for backward compatilbity
-	Event                string                              `protobuf:"bytes,3,opt,name=event" json:"event,omitempty"`
-	Type                 string                              `protobuf:"bytes,4,opt,name=type" json:"type,omitempty"`
-	ServiceName          string                              `protobuf:"bytes,5,opt,name=service_name,json=serviceName" json:"service_name,omitempty"`
-	ToEmail              string                              `protobuf:"bytes,6,opt,name=to_email,json=toEmail" json:"to_email,omitempty"`
-	FromEmail            string                              `protobuf:"bytes,7,opt,name=from_email,json=fromEmail" json:"from_email,omitempty"`
-	FromName             string                              `protobuf:"bytes,8,opt,name=from_name,json=fromName" json:"from_name,omitempty"`
-	Template             string                              `protobuf:"bytes,9,opt,name=template" json:"template,omitempty"`
-	PlaceHolders         *MentionEmailGenerated_PlaceHolders `protobuf:"bytes,10,opt,name=place_holders,json=placeHolders" json:"place_holders,omitempty"`
-	MergeLanguage        string                              `protobuf:"bytes,11,opt,name=merge_language,json=mergeLanguage" json:"merge_language,omitempty"`
+	Event                string                              `protobuf:"bytes,3,opt,name=event,proto3" json:"event,omitempty"`
+	Type                 string                              `protobuf:"bytes,4,opt,name=type,proto3" json:"type,omitempty"`
+	ServiceName          string                              `protobuf:"bytes,5,opt,name=service_name,json=serviceName,proto3" json:"service_name,omitempty"`
+	ToEmail              string                              `protobuf:"bytes,6,opt,name=to_email,json=toEmail,proto3" json:"to_email,omitempty"`
+	FromEmail            string                              `protobuf:"bytes,7,opt,name=from_email,json=fromEmail,proto3" json:"from_email,omitempty"`
+	FromName             string                              `protobuf:"bytes,8,opt,name=from_name,json=fromName,proto3" json:"from_name,omitempty"`
+	Template             string                              `protobuf:"bytes,9,opt,name=template,proto3" json:"template,omitempty"`
+	PlaceHolders         *MentionEmailGenerated_PlaceHolders `protobuf:"bytes,10,opt,name=place_holders,json=placeHolders,proto3" json:"place_holders,omitempty"`
+	MergeLanguage        string                              `protobuf:"bytes,11,opt,name=merge_language,json=mergeLanguage,proto3" json:"merge_language,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                            `json:"-"`
 	XXX_unrecognized     []byte                              `json:"-"`
 	XXX_sizecache        int32                               `json:"-"`
@@ -41,7 +37,7 @@ func (m *MentionEmailGenerated) Reset()         { *m = MentionEmailGenerated{} }
 func (m *MentionEmailGenerated) String() string { return proto.CompactTextString(m) }
 func (*MentionEmailGenerated) ProtoMessage()    {}
 func (*MentionEmailGenerated) Descriptor() ([]byte, []int) {
-	return fileDescriptor_mention_notification_75f348132726c73e, []int{0}
+	return fileDescriptor_mention_notification_8d1fc4221b4d0adf, []int{0}
 }
 func (m *MentionEmailGenerated) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_MentionEmailGenerated.Unmarshal(m, b)
@@ -60,20 +56,6 @@ func (m *MentionEmailGenerated) XXX_DiscardUnknown() {
 }
 
 var xxx_messageInfo_MentionEmailGenerated proto.InternalMessageInfo
-
-func (m *MentionEmailGenerated) GetCore() *Core {
-	if m != nil {
-		return m.Core
-	}
-	return nil
-}
-
-func (m *MentionEmailGenerated) GetTrace() *Trace {
-	if m != nil {
-		return m.Trace
-	}
-	return nil
-}
 
 func (m *MentionEmailGenerated) GetEvent() string {
 	if m != nil {
@@ -138,21 +120,139 @@ func (m *MentionEmailGenerated) GetMergeLanguage() string {
 	return ""
 }
 
+type MentionEmailGenerated_Mention struct {
+	TrackingUnitName     string   `protobuf:"bytes,1,opt,name=tracking_unit_name,json=trackingUnitName,proto3" json:"tracking_unit_name,omitempty"`
+	ProgramName          string   `protobuf:"bytes,2,opt,name=program_name,json=programName,proto3" json:"program_name,omitempty"`
+	ProgramImage         string   `protobuf:"bytes,3,opt,name=program_image,json=programImage,proto3" json:"program_image,omitempty"`
+	MentionDate          int64    `protobuf:"varint,4,opt,name=mention_date,json=mentionDate,proto3" json:"mention_date,omitempty"`
+	Snippets             string   `protobuf:"bytes,5,opt,name=snippets,proto3" json:"snippets,omitempty"`
+	InviteLink           string   `protobuf:"bytes,6,opt,name=invite_link,json=inviteLink,proto3" json:"invite_link,omitempty"`
+	Via                  string   `protobuf:"bytes,7,opt,name=via,proto3" json:"via,omitempty"`
+	Logouri              string   `protobuf:"bytes,8,opt,name=logouri,proto3" json:"logouri,omitempty"`
+	CreatorEmail         string   `protobuf:"bytes,9,opt,name=creator_email,json=creatorEmail,proto3" json:"creator_email,omitempty"`
+	UnsubscribeHash      string   `protobuf:"bytes,10,opt,name=unsubscribe_hash,json=unsubscribeHash,proto3" json:"unsubscribe_hash,omitempty"`
+	UnsubscribeLink      string   `protobuf:"bytes,11,opt,name=unsubscribe_link,json=unsubscribeLink,proto3" json:"unsubscribe_link,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *MentionEmailGenerated_Mention) Reset()         { *m = MentionEmailGenerated_Mention{} }
+func (m *MentionEmailGenerated_Mention) String() string { return proto.CompactTextString(m) }
+func (*MentionEmailGenerated_Mention) ProtoMessage()    {}
+func (*MentionEmailGenerated_Mention) Descriptor() ([]byte, []int) {
+	return fileDescriptor_mention_notification_8d1fc4221b4d0adf, []int{0, 0}
+}
+func (m *MentionEmailGenerated_Mention) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_MentionEmailGenerated_Mention.Unmarshal(m, b)
+}
+func (m *MentionEmailGenerated_Mention) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_MentionEmailGenerated_Mention.Marshal(b, m, deterministic)
+}
+func (dst *MentionEmailGenerated_Mention) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MentionEmailGenerated_Mention.Merge(dst, src)
+}
+func (m *MentionEmailGenerated_Mention) XXX_Size() int {
+	return xxx_messageInfo_MentionEmailGenerated_Mention.Size(m)
+}
+func (m *MentionEmailGenerated_Mention) XXX_DiscardUnknown() {
+	xxx_messageInfo_MentionEmailGenerated_Mention.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MentionEmailGenerated_Mention proto.InternalMessageInfo
+
+func (m *MentionEmailGenerated_Mention) GetTrackingUnitName() string {
+	if m != nil {
+		return m.TrackingUnitName
+	}
+	return ""
+}
+
+func (m *MentionEmailGenerated_Mention) GetProgramName() string {
+	if m != nil {
+		return m.ProgramName
+	}
+	return ""
+}
+
+func (m *MentionEmailGenerated_Mention) GetProgramImage() string {
+	if m != nil {
+		return m.ProgramImage
+	}
+	return ""
+}
+
+func (m *MentionEmailGenerated_Mention) GetMentionDate() int64 {
+	if m != nil {
+		return m.MentionDate
+	}
+	return 0
+}
+
+func (m *MentionEmailGenerated_Mention) GetSnippets() string {
+	if m != nil {
+		return m.Snippets
+	}
+	return ""
+}
+
+func (m *MentionEmailGenerated_Mention) GetInviteLink() string {
+	if m != nil {
+		return m.InviteLink
+	}
+	return ""
+}
+
+func (m *MentionEmailGenerated_Mention) GetVia() string {
+	if m != nil {
+		return m.Via
+	}
+	return ""
+}
+
+func (m *MentionEmailGenerated_Mention) GetLogouri() string {
+	if m != nil {
+		return m.Logouri
+	}
+	return ""
+}
+
+func (m *MentionEmailGenerated_Mention) GetCreatorEmail() string {
+	if m != nil {
+		return m.CreatorEmail
+	}
+	return ""
+}
+
+func (m *MentionEmailGenerated_Mention) GetUnsubscribeHash() string {
+	if m != nil {
+		return m.UnsubscribeHash
+	}
+	return ""
+}
+
+func (m *MentionEmailGenerated_Mention) GetUnsubscribeLink() string {
+	if m != nil {
+		return m.UnsubscribeLink
+	}
+	return ""
+}
+
 type MentionEmailGenerated_PlaceHolders struct {
-	TrackingUnitName     string                                        `protobuf:"bytes,1,opt,name=tracking_unit_name,json=trackingUnitName" json:"tracking_unit_name,omitempty"`
-	Via                  string                                        `protobuf:"bytes,2,opt,name=via" json:"via,omitempty"`
-	Logouri              string                                        `protobuf:"bytes,3,opt,name=logouri" json:"logouri,omitempty"`
-	Mentions             []*MentionEmailGenerated_PlaceHolders_Mention `protobuf:"bytes,4,rep,name=mentions" json:"mentions,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                                      `json:"-"`
-	XXX_unrecognized     []byte                                        `json:"-"`
-	XXX_sizecache        int32                                         `json:"-"`
+	TrackingUnitName     string                           `protobuf:"bytes,1,opt,name=tracking_unit_name,json=trackingUnitName,proto3" json:"tracking_unit_name,omitempty"`
+	Via                  string                           `protobuf:"bytes,2,opt,name=via,proto3" json:"via,omitempty"`
+	Logouri              string                           `protobuf:"bytes,3,opt,name=logouri,proto3" json:"logouri,omitempty"`
+	Mentions             []*MentionEmailGenerated_Mention `protobuf:"bytes,4,rep,name=mentions,proto3" json:"mentions,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                         `json:"-"`
+	XXX_unrecognized     []byte                           `json:"-"`
+	XXX_sizecache        int32                            `json:"-"`
 }
 
 func (m *MentionEmailGenerated_PlaceHolders) Reset()         { *m = MentionEmailGenerated_PlaceHolders{} }
 func (m *MentionEmailGenerated_PlaceHolders) String() string { return proto.CompactTextString(m) }
 func (*MentionEmailGenerated_PlaceHolders) ProtoMessage()    {}
 func (*MentionEmailGenerated_PlaceHolders) Descriptor() ([]byte, []int) {
-	return fileDescriptor_mention_notification_75f348132726c73e, []int{0, 0}
+	return fileDescriptor_mention_notification_8d1fc4221b4d0adf, []int{0, 1}
 }
 func (m *MentionEmailGenerated_PlaceHolders) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_MentionEmailGenerated_PlaceHolders.Unmarshal(m, b)
@@ -193,179 +293,54 @@ func (m *MentionEmailGenerated_PlaceHolders) GetLogouri() string {
 	return ""
 }
 
-func (m *MentionEmailGenerated_PlaceHolders) GetMentions() []*MentionEmailGenerated_PlaceHolders_Mention {
+func (m *MentionEmailGenerated_PlaceHolders) GetMentions() []*MentionEmailGenerated_Mention {
 	if m != nil {
 		return m.Mentions
 	}
 	return nil
 }
 
-type MentionEmailGenerated_PlaceHolders_Mention struct {
-	TrackingUnitName     string   `protobuf:"bytes,1,opt,name=tracking_unit_name,json=trackingUnitName" json:"tracking_unit_name,omitempty"`
-	ProgramName          string   `protobuf:"bytes,2,opt,name=program_name,json=programName" json:"program_name,omitempty"`
-	ProgramImage         string   `protobuf:"bytes,3,opt,name=program_image,json=programImage" json:"program_image,omitempty"`
-	MentionDate          int64    `protobuf:"varint,4,opt,name=mention_date,json=mentionDate" json:"mention_date,omitempty"`
-	Snippets             string   `protobuf:"bytes,5,opt,name=snippets" json:"snippets,omitempty"`
-	InviteLink           string   `protobuf:"bytes,6,opt,name=invite_link,json=inviteLink" json:"invite_link,omitempty"`
-	Via                  string   `protobuf:"bytes,7,opt,name=via" json:"via,omitempty"`
-	Logouri              string   `protobuf:"bytes,8,opt,name=logouri" json:"logouri,omitempty"`
-	CreatorEmail         string   `protobuf:"bytes,9,opt,name=creator_email,json=creatorEmail" json:"creator_email,omitempty"`
-	UnsubscribeHash      string   `protobuf:"bytes,10,opt,name=unsubscribe_hash,json=unsubscribeHash" json:"unsubscribe_hash,omitempty"`
-	UnsubscribeLink      string   `protobuf:"bytes,11,opt,name=unsubscribe_link,json=unsubscribeLink" json:"unsubscribe_link,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *MentionEmailGenerated_PlaceHolders_Mention) Reset() {
-	*m = MentionEmailGenerated_PlaceHolders_Mention{}
-}
-func (m *MentionEmailGenerated_PlaceHolders_Mention) String() string {
-	return proto.CompactTextString(m)
-}
-func (*MentionEmailGenerated_PlaceHolders_Mention) ProtoMessage() {}
-func (*MentionEmailGenerated_PlaceHolders_Mention) Descriptor() ([]byte, []int) {
-	return fileDescriptor_mention_notification_75f348132726c73e, []int{0, 0, 0}
-}
-func (m *MentionEmailGenerated_PlaceHolders_Mention) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_MentionEmailGenerated_PlaceHolders_Mention.Unmarshal(m, b)
-}
-func (m *MentionEmailGenerated_PlaceHolders_Mention) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_MentionEmailGenerated_PlaceHolders_Mention.Marshal(b, m, deterministic)
-}
-func (dst *MentionEmailGenerated_PlaceHolders_Mention) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_MentionEmailGenerated_PlaceHolders_Mention.Merge(dst, src)
-}
-func (m *MentionEmailGenerated_PlaceHolders_Mention) XXX_Size() int {
-	return xxx_messageInfo_MentionEmailGenerated_PlaceHolders_Mention.Size(m)
-}
-func (m *MentionEmailGenerated_PlaceHolders_Mention) XXX_DiscardUnknown() {
-	xxx_messageInfo_MentionEmailGenerated_PlaceHolders_Mention.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_MentionEmailGenerated_PlaceHolders_Mention proto.InternalMessageInfo
-
-func (m *MentionEmailGenerated_PlaceHolders_Mention) GetTrackingUnitName() string {
-	if m != nil {
-		return m.TrackingUnitName
-	}
-	return ""
-}
-
-func (m *MentionEmailGenerated_PlaceHolders_Mention) GetProgramName() string {
-	if m != nil {
-		return m.ProgramName
-	}
-	return ""
-}
-
-func (m *MentionEmailGenerated_PlaceHolders_Mention) GetProgramImage() string {
-	if m != nil {
-		return m.ProgramImage
-	}
-	return ""
-}
-
-func (m *MentionEmailGenerated_PlaceHolders_Mention) GetMentionDate() int64 {
-	if m != nil {
-		return m.MentionDate
-	}
-	return 0
-}
-
-func (m *MentionEmailGenerated_PlaceHolders_Mention) GetSnippets() string {
-	if m != nil {
-		return m.Snippets
-	}
-	return ""
-}
-
-func (m *MentionEmailGenerated_PlaceHolders_Mention) GetInviteLink() string {
-	if m != nil {
-		return m.InviteLink
-	}
-	return ""
-}
-
-func (m *MentionEmailGenerated_PlaceHolders_Mention) GetVia() string {
-	if m != nil {
-		return m.Via
-	}
-	return ""
-}
-
-func (m *MentionEmailGenerated_PlaceHolders_Mention) GetLogouri() string {
-	if m != nil {
-		return m.Logouri
-	}
-	return ""
-}
-
-func (m *MentionEmailGenerated_PlaceHolders_Mention) GetCreatorEmail() string {
-	if m != nil {
-		return m.CreatorEmail
-	}
-	return ""
-}
-
-func (m *MentionEmailGenerated_PlaceHolders_Mention) GetUnsubscribeHash() string {
-	if m != nil {
-		return m.UnsubscribeHash
-	}
-	return ""
-}
-
-func (m *MentionEmailGenerated_PlaceHolders_Mention) GetUnsubscribeLink() string {
-	if m != nil {
-		return m.UnsubscribeLink
-	}
-	return ""
-}
-
 func init() {
 	proto.RegisterType((*MentionEmailGenerated)(nil), "events.MentionEmailGenerated")
+	proto.RegisterType((*MentionEmailGenerated_Mention)(nil), "events.MentionEmailGenerated.Mention")
 	proto.RegisterType((*MentionEmailGenerated_PlaceHolders)(nil), "events.MentionEmailGenerated.PlaceHolders")
-	proto.RegisterType((*MentionEmailGenerated_PlaceHolders_Mention)(nil), "events.MentionEmailGenerated.PlaceHolders.Mention")
 }
 
 func init() {
-	proto.RegisterFile("events/mention_notification.proto", fileDescriptor_mention_notification_75f348132726c73e)
+	proto.RegisterFile("events/mention_notification.proto", fileDescriptor_mention_notification_8d1fc4221b4d0adf)
 }
 
-var fileDescriptor_mention_notification_75f348132726c73e = []byte{
-	// 533 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x94, 0x53, 0xdd, 0x8e, 0xd3, 0x3c,
-	0x10, 0x55, 0xbf, 0x76, 0x9b, 0x74, 0x92, 0x7e, 0x14, 0x0b, 0x24, 0x53, 0x84, 0x68, 0xa9, 0x90,
-	0x0a, 0x42, 0x45, 0x2a, 0x6f, 0xc0, 0x8f, 0x58, 0xa4, 0x65, 0x41, 0x11, 0xdc, 0x70, 0x13, 0xb9,
-	0xe9, 0x6c, 0x6a, 0x35, 0xb1, 0x23, 0xc7, 0xad, 0xc4, 0x0b, 0xf0, 0x5e, 0xbc, 0x06, 0x4f, 0x83,
-	0x3c, 0x76, 0x56, 0x05, 0xf6, 0x02, 0xee, 0x32, 0xe7, 0x9c, 0x99, 0xcc, 0xcf, 0x31, 0xcc, 0xf1,
-	0x88, 0xca, 0xb6, 0xcf, 0x6b, 0x54, 0x56, 0x6a, 0x95, 0x2b, 0x6d, 0xe5, 0x95, 0x2c, 0x84, 0x0b,
-	0x56, 0x8d, 0xd1, 0x56, 0xb3, 0xa1, 0x97, 0x4c, 0x6f, 0x07, 0x69, 0xa1, 0x0d, 0x7a, 0xea, 0xd1,
-	0x8f, 0x08, 0xee, 0xbe, 0xf7, 0x99, 0x6f, 0x6a, 0x21, 0xab, 0xb7, 0xa8, 0xd0, 0x08, 0x8b, 0x5b,
-	0x36, 0x83, 0x81, 0xd3, 0xf1, 0xde, 0xac, 0xb7, 0x4c, 0xd6, 0xe9, 0xca, 0xe7, 0xae, 0x5e, 0x69,
-	0x83, 0x19, 0x31, 0x6c, 0x01, 0x67, 0xd6, 0x88, 0x02, 0xf9, 0x7f, 0x24, 0x19, 0x77, 0x92, 0x4f,
-	0x0e, 0xcc, 0x3c, 0xc7, 0xee, 0xc0, 0x19, 0xc1, 0xbc, 0x3f, 0xeb, 0x2d, 0x47, 0x99, 0x0f, 0x18,
-	0x83, 0x81, 0xfd, 0xda, 0x20, 0x1f, 0x10, 0x48, 0xdf, 0x6c, 0x0e, 0x69, 0x8b, 0xe6, 0x28, 0x0b,
-	0xcc, 0x95, 0xa8, 0x91, 0x9f, 0x11, 0x97, 0x04, 0xec, 0x52, 0xd4, 0xc8, 0xee, 0x41, 0x6c, 0x75,
-	0x8e, 0xae, 0x51, 0x3e, 0x24, 0x3a, 0xb2, 0x9a, 0xfa, 0x66, 0x0f, 0x00, 0xae, 0x8c, 0xae, 0x03,
-	0x19, 0x11, 0x39, 0x72, 0x88, 0xa7, 0xef, 0x03, 0x05, 0xbe, 0x72, 0x4c, 0x6c, 0xec, 0x00, 0x2a,
-	0x3b, 0x85, 0xd8, 0x62, 0xdd, 0x54, 0xc2, 0x22, 0x1f, 0x79, 0xae, 0x8b, 0xd9, 0x07, 0x18, 0x37,
-	0x95, 0x28, 0x30, 0xdf, 0xe9, 0x6a, 0x8b, 0xa6, 0xe5, 0x40, 0xc3, 0x3e, 0xed, 0x86, 0xbd, 0x71,
-	0x79, 0xab, 0x8f, 0x2e, 0xe5, 0xdc, 0x67, 0x64, 0x69, 0x73, 0x12, 0xb1, 0xc7, 0xf0, 0x7f, 0x8d,
-	0xa6, 0xc4, 0xbc, 0x12, 0xaa, 0x3c, 0x88, 0x12, 0x79, 0x42, 0xbf, 0x1c, 0x13, 0x7a, 0x11, 0xc0,
-	0xe9, 0xf7, 0x01, 0xa4, 0xa7, 0x55, 0xd8, 0x33, 0x60, 0x6e, 0xa3, 0x7b, 0xa9, 0xca, 0xfc, 0xa0,
-	0xa4, 0xf5, 0xa3, 0xf4, 0x28, 0x77, 0xd2, 0x31, 0x9f, 0x95, 0xb4, 0x34, 0xd2, 0x04, 0xfa, 0x47,
-	0x29, 0xe8, 0x32, 0xa3, 0xcc, 0x7d, 0x32, 0x0e, 0x51, 0xa5, 0x4b, 0x7d, 0x30, 0x32, 0x9c, 0xa2,
-	0x0b, 0xd9, 0x25, 0xc4, 0xc1, 0x3c, 0x2d, 0x1f, 0xcc, 0xfa, 0xcb, 0x64, 0xbd, 0xfe, 0xfb, 0xe9,
-	0x3a, 0x49, 0x76, 0x5d, 0x63, 0xfa, 0xad, 0x0f, 0x51, 0x40, 0xff, 0xb1, 0xeb, 0x39, 0xa4, 0x8d,
-	0xd1, 0xa5, 0x11, 0xe1, 0x50, 0xbe, 0xfd, 0x24, 0x60, 0x24, 0x59, 0xc0, 0xb8, 0x93, 0xc8, 0xda,
-	0x6d, 0xcf, 0x0f, 0xd3, 0xe5, 0xbd, 0x73, 0x98, 0xab, 0xd3, 0x3d, 0x87, 0xad, 0x3b, 0xaa, 0xb3,
-	0x59, 0x3f, 0x4b, 0x02, 0xf6, 0xda, 0xdd, 0x75, 0x0a, 0x71, 0xab, 0x64, 0xd3, 0xa0, 0x6d, 0x83,
-	0xd3, 0xae, 0x63, 0xf6, 0x10, 0x12, 0xa9, 0x8e, 0xd2, 0x62, 0x5e, 0x49, 0xb5, 0x0f, 0x4e, 0x03,
-	0x0f, 0x5d, 0x48, 0xb5, 0xef, 0xb6, 0x1b, 0xdd, 0xb8, 0xdd, 0xf8, 0xd7, 0xed, 0x2e, 0x60, 0x5c,
-	0x18, 0x14, 0x56, 0x9b, 0xe0, 0x4d, 0xef, 0xb0, 0x34, 0x80, 0xde, 0x9e, 0x4f, 0x60, 0x72, 0x50,
-	0xed, 0x61, 0xd3, 0x16, 0x46, 0x6e, 0x30, 0xdf, 0x89, 0x76, 0x47, 0x46, 0x1b, 0x65, 0xb7, 0x4e,
-	0xf0, 0x73, 0xd1, 0xee, 0x7e, 0x97, 0x52, 0x87, 0xc9, 0x1f, 0x52, 0xd7, 0xe6, 0xcb, 0xf8, 0x4b,
-	0x78, 0xf9, 0x9b, 0x21, 0xbd, 0xf6, 0x17, 0x3f, 0x03, 0x00, 0x00, 0xff, 0xff, 0x14, 0xea, 0xca,
-	0x00, 0x2d, 0x04, 0x00, 0x00,
+var fileDescriptor_mention_notification_8d1fc4221b4d0adf = []byte{
+	// 496 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x94, 0x53, 0x6d, 0x8b, 0xd3, 0x40,
+	0x10, 0xa6, 0x97, 0x5e, 0x93, 0x4e, 0x52, 0xad, 0x8b, 0xc2, 0x1a, 0x11, 0x5b, 0xe5, 0xa0, 0x8a,
+	0x54, 0x38, 0x7f, 0x81, 0xa2, 0x78, 0xc2, 0xf9, 0x42, 0xc0, 0x2f, 0x7e, 0x09, 0xdb, 0x74, 0x2e,
+	0x5d, 0x9a, 0xec, 0x86, 0xdd, 0x4d, 0xc1, 0x3f, 0x70, 0x7f, 0xc6, 0x3f, 0x29, 0xfb, 0x92, 0xa3,
+	0xea, 0x21, 0xf8, 0x6d, 0xe7, 0x79, 0x66, 0x66, 0xe7, 0x99, 0x67, 0x17, 0x96, 0x78, 0x40, 0x61,
+	0xf4, 0xab, 0x16, 0x85, 0xe1, 0x52, 0x94, 0x42, 0x1a, 0x7e, 0xc5, 0x2b, 0x66, 0x83, 0x75, 0xa7,
+	0xa4, 0x91, 0x64, 0xe2, 0x53, 0xf2, 0x7b, 0x21, 0xb5, 0x92, 0x0a, 0x3d, 0xf5, 0xf4, 0x3a, 0x86,
+	0x07, 0x9f, 0x7c, 0xe5, 0xfb, 0x96, 0xf1, 0xe6, 0x03, 0x0a, 0x54, 0xcc, 0xe0, 0x96, 0xdc, 0x87,
+	0x53, 0x97, 0x4e, 0xa3, 0xc5, 0x68, 0x35, 0x2d, 0x7c, 0x40, 0x08, 0x8c, 0xcd, 0x8f, 0x0e, 0xe9,
+	0xd8, 0x81, 0xee, 0x4c, 0x96, 0x90, 0x69, 0x54, 0x07, 0x5e, 0x61, 0x29, 0x58, 0x8b, 0xf4, 0xd4,
+	0x71, 0x69, 0xc0, 0x3e, 0xb3, 0x16, 0xc9, 0x43, 0x48, 0x8c, 0x2c, 0xd1, 0xde, 0x40, 0x27, 0x8e,
+	0x8e, 0x8d, 0x74, 0x17, 0x92, 0xc7, 0x00, 0x57, 0x4a, 0xb6, 0x81, 0x8c, 0x1d, 0x39, 0xb5, 0x88,
+	0xa7, 0x1f, 0x81, 0x0b, 0x7c, 0xe7, 0xc4, 0xb1, 0x89, 0x05, 0x5c, 0xdb, 0x1c, 0x12, 0x83, 0x6d,
+	0xd7, 0x30, 0x83, 0x74, 0xea, 0xb9, 0x21, 0x26, 0x5f, 0x60, 0xd6, 0x35, 0xac, 0xc2, 0x72, 0x27,
+	0x9b, 0x2d, 0x2a, 0x4d, 0x61, 0x31, 0x5a, 0xa5, 0xe7, 0x2f, 0xd6, 0x7e, 0x09, 0xeb, 0x5b, 0x55,
+	0xaf, 0xbf, 0xda, 0x92, 0x0b, 0x5f, 0x51, 0x64, 0xdd, 0x51, 0x44, 0xce, 0xe0, 0x4e, 0x8b, 0xaa,
+	0xc6, 0xb2, 0x61, 0xa2, 0xee, 0x59, 0x8d, 0x34, 0x75, 0x57, 0xce, 0x1c, 0x7a, 0x19, 0xc0, 0xfc,
+	0x3a, 0x82, 0x38, 0xf4, 0x26, 0x2f, 0x81, 0x18, 0xc5, 0xaa, 0x3d, 0x17, 0x75, 0xd9, 0x0b, 0x6e,
+	0xbc, 0x8a, 0x91, 0x2b, 0x9b, 0x0f, 0xcc, 0x37, 0xc1, 0x8d, 0x53, 0xb3, 0x84, 0xac, 0x53, 0xb2,
+	0x56, 0x2c, 0xa8, 0x3d, 0xf1, 0x7b, 0x0c, 0x98, 0x4b, 0x79, 0x06, 0xb3, 0x21, 0x85, 0xb7, 0x76,
+	0x04, 0x6f, 0xce, 0x50, 0xf7, 0xd1, 0x62, 0xb6, 0xcf, 0xf0, 0x18, 0xb6, 0x76, 0x33, 0xd6, 0xab,
+	0xa8, 0x48, 0x03, 0xf6, 0xce, 0x2e, 0x27, 0x87, 0x44, 0x0b, 0xde, 0x75, 0x68, 0x74, 0xb0, 0xeb,
+	0x26, 0x26, 0x4f, 0x20, 0xe5, 0xe2, 0xc0, 0x0d, 0x96, 0x0d, 0x17, 0xfb, 0x60, 0x17, 0x78, 0xe8,
+	0x92, 0x8b, 0x3d, 0x99, 0x43, 0x74, 0xe0, 0x2c, 0x58, 0x65, 0x8f, 0x84, 0x42, 0xdc, 0xc8, 0x5a,
+	0xf6, 0x8a, 0x07, 0x8b, 0x86, 0xd0, 0x0e, 0x5c, 0x29, 0x64, 0x46, 0xaa, 0x60, 0xb0, 0xb7, 0x29,
+	0x0b, 0xa0, 0xf7, 0xf8, 0x39, 0xcc, 0x7b, 0xa1, 0xfb, 0x8d, 0xae, 0x14, 0xdf, 0x60, 0xb9, 0x63,
+	0x7a, 0xe7, 0xdc, 0x9a, 0x16, 0x77, 0x8f, 0xf0, 0x0b, 0xa6, 0x77, 0x7f, 0xa6, 0xba, 0x09, 0xd3,
+	0xbf, 0x52, 0xed, 0x98, 0xf9, 0xcf, 0x11, 0x64, 0xc7, 0x76, 0xfe, 0xa7, 0x1b, 0x41, 0xe5, 0xc9,
+	0xad, 0x2a, 0xa3, 0xdf, 0x55, 0xbe, 0x81, 0x24, 0x6c, 0x57, 0xd3, 0xf1, 0x22, 0x5a, 0xa5, 0xe7,
+	0x67, 0xff, 0x7e, 0x66, 0x01, 0x2d, 0x6e, 0xca, 0xde, 0x26, 0xdf, 0xc3, 0x2f, 0xdd, 0x4c, 0xdc,
+	0xcf, 0x7c, 0xfd, 0x2b, 0x00, 0x00, 0xff, 0xff, 0x46, 0x3f, 0x27, 0x86, 0xd9, 0x03, 0x00, 0x00,
 }
