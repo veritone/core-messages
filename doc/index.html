@@ -260,6 +260,25 @@
         
           
           <li>
+            <a href="#events%2fnotification.proto">events/notification.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#events.BasicEmail"><span class="badge">M</span>BasicEmail</a>
+                </li>
+              
+                <li>
+                  <a href="#events.SMSNotification"><span class="badge">M</span>SMSNotification</a>
+                </li>
+              
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
             <a href="#events%2ftrigger.proto">events/trigger.proto</a>
             <ul>
               
@@ -837,6 +856,101 @@ Protobuf data structure in {VtEvent.data} </p></td>
                   <td><a href="#events.MentionEmailGenerated.Mention">MentionEmailGenerated.Mention</a></td>
                   <td>repeated</td>
                   <td><p>list of mentions </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+
+      
+
+      
+
+      
+    
+      
+      <div class="file-heading">
+        <h2 id="events/notification.proto">events/notification.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id="events.BasicEmail">BasicEmail</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>from_address</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>email address of sender </p></td>
+                </tr>
+              
+                <tr>
+                  <td>to_address</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>email address of recipient </p></td>
+                </tr>
+              
+                <tr>
+                  <td>subject</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>email subject </p></td>
+                </tr>
+              
+                <tr>
+                  <td>body</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>email body, should be just pure text </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="events.SMSNotification">SMSNotification</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>from_number</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>SMS number of the recipient (number should follow Twilo format) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>to_number</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>SMS number of the sender (number should follow Twilo format) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>message</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>message payload </p></td>
                 </tr>
               
             </tbody>
