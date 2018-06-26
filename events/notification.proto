@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import "events/core.proto";
+
+package events;
+
+option go_package = "events";
+
+
+message BasicEmail {
+    string from_address = 10;     // email address of sender
+    string to_address = 11;       // email address of recipient 
+    string subject = 12;          // email subject
+    string body = 13;             // email body, should be just pure text
+}
+
+message SMSNotification {
+    string from_number = 10;         // SMS number of the recipient (number should follow Twilo format)  
+    string to_number = 11;           // SMS number of the sender (number should follow Twilo format)
+    string message = 12;            // message payload
+}

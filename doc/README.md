@@ -34,6 +34,14 @@
   
   
 
+- [events/notification.proto](#events/notification.proto)
+    - [BasicEmail](#events.BasicEmail)
+    - [SMSNotification](#events.SMSNotification)
+  
+  
+  
+  
+
 - [events/trigger.proto](#events/trigger.proto)
     - [TriggerCacheRefresh](#events.TriggerCacheRefresh)
   
@@ -306,6 +314,57 @@
 | via | [string](#string) |  | via |
 | logouri | [string](#string) |  | logo url |
 | mentions | [MentionEmailGenerated.Mention](#events.MentionEmailGenerated.Mention) | repeated | list of mentions |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="events/notification.proto"/>
+<p align="right"><a href="#top">Top</a></p>
+
+## events/notification.proto
+
+
+
+<a name="events.BasicEmail"/>
+
+### BasicEmail
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| from_address | [string](#string) |  | email address of sender |
+| to_address | [string](#string) |  | email address of recipient |
+| subject | [string](#string) |  | email subject |
+| body | [string](#string) |  | email body, should be just pure text |
+
+
+
+
+
+
+<a name="events.SMSNotification"/>
+
+### SMSNotification
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| from_number | [string](#string) |  | SMS number of the recipient (number should follow Twilo format) |
+| to_number | [string](#string) |  | SMS number of the sender (number should follow Twilo format) |
+| message | [string](#string) |  | message payload |
 
 
 
