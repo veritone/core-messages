@@ -3,7 +3,7 @@ current_dir = $(shell pwd)
 init: builder
 	npm install
 
-all: clean setup generate-golang generate-typescript docs-html docs-md
+all: clean setup generate-golang generate-typescript generate-pbjs docs-html docs-md
 
 clean:
 	rm -rf generated
@@ -11,6 +11,7 @@ clean:
 setup:
 	mkdir -p generated/go
 	mkdir -p generated/ts
+	mkdir -p generated/pbjs
 
 builder:
 	docker build -t veritone/protoc .
@@ -30,6 +31,10 @@ generate-typescript:
 	--ts_out="generated/ts" \
 	-I=. \
 	events/*.proto
+
+generate-pbjs:
+	./node_modules/protobufjs/bin/pbjs -t static-module -w commonjs -o generated/pbjs/compiled.js events/*
+	./node_modules/protobufjs/bin/pbts -o generated/pbjs/compiled.d.ts generated/pbjs/compiled.js
 
 go-example:
 	go run examples/golang/main.go 

@@ -12,6 +12,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/google-protobuf": "^3.2.7",
+    "protobufjs": "^6.8.6",
     "ts-node": "^6.0.5",
     "ts-protoc-gen": "^0.6.0",
     "typescript": "^2.8.3"
