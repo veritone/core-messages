@@ -1,7 +1,5 @@
 syntax = "proto3";
 
-import "events/core.proto";
-
 package events;
 
 option go_package = "events";
@@ -12,6 +10,7 @@ message BasicEmail {
     string to_address = 11;       // email address of recipient 
     string subject = 12;          // email subject
     string body = 13;             // email body, should be just pure text
+    string reply_to = 14;         // reply_to field of the email.
 }
 
 message SMSNotification {
