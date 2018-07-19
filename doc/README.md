@@ -348,6 +348,7 @@
 | to_address | [string](#string) |  | email address of recipient |
 | subject | [string](#string) |  | email subject |
 | body | [string](#string) |  | email body, should be just pure text |
+| reply_to | [string](#string) |  | reply_to field of the email. |
 
 
 

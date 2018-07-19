@@ -2,7 +2,6 @@
 // file: events/notification.proto
 
 import * as jspb from "google-protobuf";
-import * as events_core_pb from "../events/core_pb";
 
 export class BasicEmail extends jspb.Message {
   getFromAddress(): string;
@@ -16,6 +15,9 @@ export class BasicEmail extends jspb.Message {
 
   getBody(): string;
   setBody(value: string): void;
+
+  getReplyTo(): string;
+  setReplyTo(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BasicEmail.AsObject;
@@ -33,6 +35,7 @@ export namespace BasicEmail {
     toAddress: string,
     subject: string,
     body: string,
+    replyTo: string,
   }
 }
 

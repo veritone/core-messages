@@ -11,7 +11,6 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
-var events_core_pb = require('../events/core_pb.js');
 goog.exportSymbol('proto.events.BasicEmail', null, global);
 goog.exportSymbol('proto.events.SMSNotification', null, global);
 
@@ -64,7 +63,8 @@ proto.events.BasicEmail.toObject = function(includeInstance, msg) {
     fromAddress: jspb.Message.getFieldWithDefault(msg, 10, ""),
     toAddress: jspb.Message.getFieldWithDefault(msg, 11, ""),
     subject: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    body: jspb.Message.getFieldWithDefault(msg, 13, "")
+    body: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    replyTo: jspb.Message.getFieldWithDefault(msg, 14, "")
   };
 
   if (includeInstance) {
@@ -116,6 +116,10 @@ proto.events.BasicEmail.deserializeBinaryFromReader = function(msg, reader) {
     case 13:
       var value = /** @type {string} */ (reader.readString());
       msg.setBody(value);
+      break;
+    case 14:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setReplyTo(value);
       break;
     default:
       reader.skipField();
@@ -171,6 +175,13 @@ proto.events.BasicEmail.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       13,
+      f
+    );
+  }
+  f = message.getReplyTo();
+  if (f.length > 0) {
+    writer.writeString(
+      14,
       f
     );
   }
@@ -234,6 +245,21 @@ proto.events.BasicEmail.prototype.getBody = function() {
 /** @param {string} value */
 proto.events.BasicEmail.prototype.setBody = function(value) {
   jspb.Message.setProto3StringField(this, 13, value);
+};
+
+
+/**
+ * optional string reply_to = 14;
+ * @return {string}
+ */
+proto.events.BasicEmail.prototype.getReplyTo = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+};
+
+
+/** @param {string} value */
+proto.events.BasicEmail.prototype.setReplyTo = function(value) {
+  jspb.Message.setProto3StringField(this, 14, value);
 };
 
 
