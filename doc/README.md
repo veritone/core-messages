@@ -29,7 +29,9 @@
     - [MentionEmailGenerated](#events.MentionEmailGenerated)
     - [MentionEmailGenerated.Mention](#events.MentionEmailGenerated.Mention)
     - [MentionEmailGenerated.PlaceHolders](#events.MentionEmailGenerated.PlaceHolders)
+    - [MentionModified](#events.MentionModified)
   
+    - [MentionModified.ActionType](#events.MentionModified.ActionType)
   
   
   
@@ -319,7 +321,40 @@
 
 
 
+
+<a name="events.MentionModified"/>
+
+### MentionModified
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| event | [string](#string) |  | event name |
+| type | [string](#string) |  | event type |
+| mention_id | [int64](#int64) |  | the mention id |
+| organization_id | [int64](#int64) |  | the org id |
+| mention_date | [string](#string) |  | mention date in UTC with RFC1123 format |
+| action_type | [MentionModified.ActionType](#events.MentionModified.ActionType) |  | possible actions that triggered this event |
+
+
+
+
+
  
+
+
+<a name="events.MentionModified.ActionType"/>
+
+### MentionModified.ActionType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| DELETE | 0 |  |
+| UPDATE | 1 |  |
+| INSERT | 2 |  |
+
 
  
 

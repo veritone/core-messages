@@ -4,6 +4,52 @@
 import * as jspb from "google-protobuf";
 import * as events_core_pb from "../events/core_pb";
 
+export class MentionModified extends jspb.Message {
+  getEvent(): string;
+  setEvent(value: string): void;
+
+  getType(): string;
+  setType(value: string): void;
+
+  getMentionId(): number;
+  setMentionId(value: number): void;
+
+  getOrganizationId(): number;
+  setOrganizationId(value: number): void;
+
+  getMentionDate(): string;
+  setMentionDate(value: string): void;
+
+  getActionType(): MentionModified.ActionType;
+  setActionType(value: MentionModified.ActionType): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MentionModified.AsObject;
+  static toObject(includeInstance: boolean, msg: MentionModified): MentionModified.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: MentionModified, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MentionModified;
+  static deserializeBinaryFromReader(message: MentionModified, reader: jspb.BinaryReader): MentionModified;
+}
+
+export namespace MentionModified {
+  export type AsObject = {
+    event: string,
+    type: string,
+    mentionId: number,
+    organizationId: number,
+    mentionDate: string,
+    actionType: MentionModified.ActionType,
+  }
+
+  export enum ActionType {
+    DELETE = 0,
+    UPDATE = 1,
+    INSERT = 2,
+  }
+}
+
 export class MentionEmailGenerated extends jspb.Message {
   getEvent(): string;
   setEvent(value: string): void;

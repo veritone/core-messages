@@ -1833,6 +1833,366 @@ $root.events = (function() {
         return ExampleFour;
     })();
 
+    events.MentionModified = (function() {
+
+        /**
+         * Properties of a MentionModified.
+         * @memberof events
+         * @interface IMentionModified
+         * @property {string|null} [event] MentionModified event
+         * @property {string|null} [type] MentionModified type
+         * @property {number|Long|null} [mentionId] MentionModified mentionId
+         * @property {number|Long|null} [organizationId] MentionModified organizationId
+         * @property {string|null} [mentionDate] MentionModified mentionDate
+         * @property {events.MentionModified.ActionType|null} [actionType] MentionModified actionType
+         */
+
+        /**
+         * Constructs a new MentionModified.
+         * @memberof events
+         * @classdesc Represents a MentionModified.
+         * @implements IMentionModified
+         * @constructor
+         * @param {events.IMentionModified=} [properties] Properties to set
+         */
+        function MentionModified(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * MentionModified event.
+         * @member {string} event
+         * @memberof events.MentionModified
+         * @instance
+         */
+        MentionModified.prototype.event = "";
+
+        /**
+         * MentionModified type.
+         * @member {string} type
+         * @memberof events.MentionModified
+         * @instance
+         */
+        MentionModified.prototype.type = "";
+
+        /**
+         * MentionModified mentionId.
+         * @member {number|Long} mentionId
+         * @memberof events.MentionModified
+         * @instance
+         */
+        MentionModified.prototype.mentionId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+        /**
+         * MentionModified organizationId.
+         * @member {number|Long} organizationId
+         * @memberof events.MentionModified
+         * @instance
+         */
+        MentionModified.prototype.organizationId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+        /**
+         * MentionModified mentionDate.
+         * @member {string} mentionDate
+         * @memberof events.MentionModified
+         * @instance
+         */
+        MentionModified.prototype.mentionDate = "";
+
+        /**
+         * MentionModified actionType.
+         * @member {events.MentionModified.ActionType} actionType
+         * @memberof events.MentionModified
+         * @instance
+         */
+        MentionModified.prototype.actionType = 0;
+
+        /**
+         * Creates a new MentionModified instance using the specified properties.
+         * @function create
+         * @memberof events.MentionModified
+         * @static
+         * @param {events.IMentionModified=} [properties] Properties to set
+         * @returns {events.MentionModified} MentionModified instance
+         */
+        MentionModified.create = function create(properties) {
+            return new MentionModified(properties);
+        };
+
+        /**
+         * Encodes the specified MentionModified message. Does not implicitly {@link events.MentionModified.verify|verify} messages.
+         * @function encode
+         * @memberof events.MentionModified
+         * @static
+         * @param {events.IMentionModified} message MentionModified message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        MentionModified.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.mentionId != null && message.hasOwnProperty("mentionId"))
+                writer.uint32(/* id 1, wireType 0 =*/8).int64(message.mentionId);
+            if (message.event != null && message.hasOwnProperty("event"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.event);
+            if (message.type != null && message.hasOwnProperty("type"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.type);
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                writer.uint32(/* id 12, wireType 0 =*/96).int64(message.organizationId);
+            if (message.mentionDate != null && message.hasOwnProperty("mentionDate"))
+                writer.uint32(/* id 13, wireType 2 =*/106).string(message.mentionDate);
+            if (message.actionType != null && message.hasOwnProperty("actionType"))
+                writer.uint32(/* id 14, wireType 0 =*/112).int32(message.actionType);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified MentionModified message, length delimited. Does not implicitly {@link events.MentionModified.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.MentionModified
+         * @static
+         * @param {events.IMentionModified} message MentionModified message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        MentionModified.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a MentionModified message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.MentionModified
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.MentionModified} MentionModified
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        MentionModified.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.MentionModified();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.event = reader.string();
+                    break;
+                case 11:
+                    message.type = reader.string();
+                    break;
+                case 1:
+                    message.mentionId = reader.int64();
+                    break;
+                case 12:
+                    message.organizationId = reader.int64();
+                    break;
+                case 13:
+                    message.mentionDate = reader.string();
+                    break;
+                case 14:
+                    message.actionType = reader.int32();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a MentionModified message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.MentionModified
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.MentionModified} MentionModified
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        MentionModified.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a MentionModified message.
+         * @function verify
+         * @memberof events.MentionModified
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        MentionModified.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.event != null && message.hasOwnProperty("event"))
+                if (!$util.isString(message.event))
+                    return "event: string expected";
+            if (message.type != null && message.hasOwnProperty("type"))
+                if (!$util.isString(message.type))
+                    return "type: string expected";
+            if (message.mentionId != null && message.hasOwnProperty("mentionId"))
+                if (!$util.isInteger(message.mentionId) && !(message.mentionId && $util.isInteger(message.mentionId.low) && $util.isInteger(message.mentionId.high)))
+                    return "mentionId: integer|Long expected";
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                if (!$util.isInteger(message.organizationId) && !(message.organizationId && $util.isInteger(message.organizationId.low) && $util.isInteger(message.organizationId.high)))
+                    return "organizationId: integer|Long expected";
+            if (message.mentionDate != null && message.hasOwnProperty("mentionDate"))
+                if (!$util.isString(message.mentionDate))
+                    return "mentionDate: string expected";
+            if (message.actionType != null && message.hasOwnProperty("actionType"))
+                switch (message.actionType) {
+                default:
+                    return "actionType: enum value expected";
+                case 0:
+                case 1:
+                case 2:
+                    break;
+                }
+            return null;
+        };
+
+        /**
+         * Creates a MentionModified message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.MentionModified
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.MentionModified} MentionModified
+         */
+        MentionModified.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.MentionModified)
+                return object;
+            var message = new $root.events.MentionModified();
+            if (object.event != null)
+                message.event = String(object.event);
+            if (object.type != null)
+                message.type = String(object.type);
+            if (object.mentionId != null)
+                if ($util.Long)
+                    (message.mentionId = $util.Long.fromValue(object.mentionId)).unsigned = false;
+                else if (typeof object.mentionId === "string")
+                    message.mentionId = parseInt(object.mentionId, 10);
+                else if (typeof object.mentionId === "number")
+                    message.mentionId = object.mentionId;
+                else if (typeof object.mentionId === "object")
+                    message.mentionId = new $util.LongBits(object.mentionId.low >>> 0, object.mentionId.high >>> 0).toNumber();
+            if (object.organizationId != null)
+                if ($util.Long)
+                    (message.organizationId = $util.Long.fromValue(object.organizationId)).unsigned = false;
+                else if (typeof object.organizationId === "string")
+                    message.organizationId = parseInt(object.organizationId, 10);
+                else if (typeof object.organizationId === "number")
+                    message.organizationId = object.organizationId;
+                else if (typeof object.organizationId === "object")
+                    message.organizationId = new $util.LongBits(object.organizationId.low >>> 0, object.organizationId.high >>> 0).toNumber();
+            if (object.mentionDate != null)
+                message.mentionDate = String(object.mentionDate);
+            switch (object.actionType) {
+            case "DELETE":
+            case 0:
+                message.actionType = 0;
+                break;
+            case "UPDATE":
+            case 1:
+                message.actionType = 1;
+                break;
+            case "INSERT":
+            case 2:
+                message.actionType = 2;
+                break;
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a MentionModified message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.MentionModified
+         * @static
+         * @param {events.MentionModified} message MentionModified
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        MentionModified.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.mentionId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.mentionId = options.longs === String ? "0" : 0;
+                object.event = "";
+                object.type = "";
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.organizationId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.organizationId = options.longs === String ? "0" : 0;
+                object.mentionDate = "";
+                object.actionType = options.enums === String ? "DELETE" : 0;
+            }
+            if (message.mentionId != null && message.hasOwnProperty("mentionId"))
+                if (typeof message.mentionId === "number")
+                    object.mentionId = options.longs === String ? String(message.mentionId) : message.mentionId;
+                else
+                    object.mentionId = options.longs === String ? $util.Long.prototype.toString.call(message.mentionId) : options.longs === Number ? new $util.LongBits(message.mentionId.low >>> 0, message.mentionId.high >>> 0).toNumber() : message.mentionId;
+            if (message.event != null && message.hasOwnProperty("event"))
+                object.event = message.event;
+            if (message.type != null && message.hasOwnProperty("type"))
+                object.type = message.type;
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                if (typeof message.organizationId === "number")
+                    object.organizationId = options.longs === String ? String(message.organizationId) : message.organizationId;
+                else
+                    object.organizationId = options.longs === String ? $util.Long.prototype.toString.call(message.organizationId) : options.longs === Number ? new $util.LongBits(message.organizationId.low >>> 0, message.organizationId.high >>> 0).toNumber() : message.organizationId;
+            if (message.mentionDate != null && message.hasOwnProperty("mentionDate"))
+                object.mentionDate = message.mentionDate;
+            if (message.actionType != null && message.hasOwnProperty("actionType"))
+                object.actionType = options.enums === String ? $root.events.MentionModified.ActionType[message.actionType] : message.actionType;
+            return object;
+        };
+
+        /**
+         * Converts this MentionModified to JSON.
+         * @function toJSON
+         * @memberof events.MentionModified
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        MentionModified.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * ActionType enum.
+         * @name events.MentionModified.ActionType
+         * @enum {string}
+         * @property {number} DELETE=0 DELETE value
+         * @property {number} UPDATE=1 UPDATE value
+         * @property {number} INSERT=2 INSERT value
+         */
+        MentionModified.ActionType = (function() {
+            var valuesById = {}, values = Object.create(valuesById);
+            values[valuesById[0] = "DELETE"] = 0;
+            values[valuesById[1] = "UPDATE"] = 1;
+            values[valuesById[2] = "INSERT"] = 2;
+            return values;
+        })();
+
+        return MentionModified;
+    })();
+
     events.MentionEmailGenerated = (function() {
 
         /**

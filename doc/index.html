@@ -252,6 +252,14 @@
                   <a href="#events.MentionEmailGenerated.PlaceHolders"><span class="badge">M</span>MentionEmailGenerated.PlaceHolders</a>
                 </li>
               
+                <li>
+                  <a href="#events.MentionModified"><span class="badge">M</span>MentionModified</a>
+                </li>
+              
+              
+                <li>
+                  <a href="#events.MentionModified.ActionType"><span class="badge">E</span>MentionModified.ActionType</a>
+                </li>
               
               
               
@@ -864,7 +872,94 @@ Protobuf data structure in {VtEvent.data} </p></td>
 
         
       
+        <h3 id="events.MentionModified">MentionModified</h3>
+        <p></p>
 
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>event</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>event name </p></td>
+                </tr>
+              
+                <tr>
+                  <td>type</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>event type </p></td>
+                </tr>
+              
+                <tr>
+                  <td>mention_id</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>the mention id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>organization_id</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>the org id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>mention_date</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>mention date in UTC with RFC1123 format </p></td>
+                </tr>
+              
+                <tr>
+                  <td>action_type</td>
+                  <td><a href="#events.MentionModified.ActionType">MentionModified.ActionType</a></td>
+                  <td></td>
+                  <td><p>possible actions that triggered this event </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+
+      
+        <h3 id="events.MentionModified.ActionType">MentionModified.ActionType</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>DELETE</td>
+                <td>0</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>UPDATE</td>
+                <td>1</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>INSERT</td>
+                <td>2</td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
       
 
       

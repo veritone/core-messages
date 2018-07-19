@@ -795,6 +795,136 @@ export namespace events {
         public toJSON(): { [k: string]: any };
     }
 
+    /** Properties of a MentionModified. */
+    interface IMentionModified {
+
+        /** MentionModified event */
+        event?: (string|null);
+
+        /** MentionModified type */
+        type?: (string|null);
+
+        /** MentionModified mentionId */
+        mentionId?: (number|Long|null);
+
+        /** MentionModified organizationId */
+        organizationId?: (number|Long|null);
+
+        /** MentionModified mentionDate */
+        mentionDate?: (string|null);
+
+        /** MentionModified actionType */
+        actionType?: (events.MentionModified.ActionType|null);
+    }
+
+    /** Represents a MentionModified. */
+    class MentionModified implements IMentionModified {
+
+        /**
+         * Constructs a new MentionModified.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IMentionModified);
+
+        /** MentionModified event. */
+        public event: string;
+
+        /** MentionModified type. */
+        public type: string;
+
+        /** MentionModified mentionId. */
+        public mentionId: (number|Long);
+
+        /** MentionModified organizationId. */
+        public organizationId: (number|Long);
+
+        /** MentionModified mentionDate. */
+        public mentionDate: string;
+
+        /** MentionModified actionType. */
+        public actionType: events.MentionModified.ActionType;
+
+        /**
+         * Creates a new MentionModified instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns MentionModified instance
+         */
+        public static create(properties?: events.IMentionModified): events.MentionModified;
+
+        /**
+         * Encodes the specified MentionModified message. Does not implicitly {@link events.MentionModified.verify|verify} messages.
+         * @param message MentionModified message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IMentionModified, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified MentionModified message, length delimited. Does not implicitly {@link events.MentionModified.verify|verify} messages.
+         * @param message MentionModified message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IMentionModified, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a MentionModified message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns MentionModified
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.MentionModified;
+
+        /**
+         * Decodes a MentionModified message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns MentionModified
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.MentionModified;
+
+        /**
+         * Verifies a MentionModified message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a MentionModified message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns MentionModified
+         */
+        public static fromObject(object: { [k: string]: any }): events.MentionModified;
+
+        /**
+         * Creates a plain object from a MentionModified message. Also converts values to other types if specified.
+         * @param message MentionModified
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.MentionModified, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this MentionModified to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    namespace MentionModified {
+
+        /** ActionType enum. */
+        enum ActionType {
+            DELETE = 0,
+            UPDATE = 1,
+            INSERT = 2
+        }
+    }
+
     /** Properties of a MentionEmailGenerated. */
     interface IMentionEmailGenerated {
 
