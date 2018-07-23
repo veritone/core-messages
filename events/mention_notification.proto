@@ -7,20 +7,29 @@ package events;
 option go_package = "events";
 
 
-message MentionModified {
-    string event = 10;                 // event name
-    string type = 11;                  // event type
-
+// Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
+message MentionModifiedData {
     int64 mention_id = 1;                // the mention id
     int64 organization_id = 12;          // the org id
     string mention_date = 13;            // mention date in UTC with RFC1123 format
-    ActionType action_type = 14;         // possible actions that triggered this event
+}
 
-    enum ActionType {
-        DELETE = 0;
-        UPDATE = 1;
-        INSERT = 2;
-      }
+message MentionUpdated {
+    string event = 10;                 // event name
+    string type = 11;                  // event type
+    MentionModifiedData payload = 12;    
+}
+
+message MentionDeleted {
+    string event = 10;                 // event name
+    string type = 11;                  // event type
+    MentionModifiedData payload = 12;    
+}
+
+message MentionInserted {
+    string event = 10;                 // event name
+    string type = 11;                  // event type
+    MentionModifiedData payload = 12;    
 }
 
 message MentionEmailGenerated {

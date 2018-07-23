@@ -795,134 +795,412 @@ export namespace events {
         public toJSON(): { [k: string]: any };
     }
 
-    /** Properties of a MentionModified. */
-    interface IMentionModified {
+    /** Properties of a MentionModifiedData. */
+    interface IMentionModifiedData {
 
-        /** MentionModified event */
-        event?: (string|null);
-
-        /** MentionModified type */
-        type?: (string|null);
-
-        /** MentionModified mentionId */
+        /** MentionModifiedData mentionId */
         mentionId?: (number|Long|null);
 
-        /** MentionModified organizationId */
+        /** MentionModifiedData organizationId */
         organizationId?: (number|Long|null);
 
-        /** MentionModified mentionDate */
+        /** MentionModifiedData mentionDate */
         mentionDate?: (string|null);
-
-        /** MentionModified actionType */
-        actionType?: (events.MentionModified.ActionType|null);
     }
 
-    /** Represents a MentionModified. */
-    class MentionModified implements IMentionModified {
+    /** Represents a MentionModifiedData. */
+    class MentionModifiedData implements IMentionModifiedData {
 
         /**
-         * Constructs a new MentionModified.
+         * Constructs a new MentionModifiedData.
          * @param [properties] Properties to set
          */
-        constructor(properties?: events.IMentionModified);
+        constructor(properties?: events.IMentionModifiedData);
 
-        /** MentionModified event. */
-        public event: string;
-
-        /** MentionModified type. */
-        public type: string;
-
-        /** MentionModified mentionId. */
+        /** MentionModifiedData mentionId. */
         public mentionId: (number|Long);
 
-        /** MentionModified organizationId. */
+        /** MentionModifiedData organizationId. */
         public organizationId: (number|Long);
 
-        /** MentionModified mentionDate. */
+        /** MentionModifiedData mentionDate. */
         public mentionDate: string;
 
-        /** MentionModified actionType. */
-        public actionType: events.MentionModified.ActionType;
-
         /**
-         * Creates a new MentionModified instance using the specified properties.
+         * Creates a new MentionModifiedData instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns MentionModified instance
+         * @returns MentionModifiedData instance
          */
-        public static create(properties?: events.IMentionModified): events.MentionModified;
+        public static create(properties?: events.IMentionModifiedData): events.MentionModifiedData;
 
         /**
-         * Encodes the specified MentionModified message. Does not implicitly {@link events.MentionModified.verify|verify} messages.
-         * @param message MentionModified message or plain object to encode
+         * Encodes the specified MentionModifiedData message. Does not implicitly {@link events.MentionModifiedData.verify|verify} messages.
+         * @param message MentionModifiedData message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: events.IMentionModified, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: events.IMentionModifiedData, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified MentionModified message, length delimited. Does not implicitly {@link events.MentionModified.verify|verify} messages.
-         * @param message MentionModified message or plain object to encode
+         * Encodes the specified MentionModifiedData message, length delimited. Does not implicitly {@link events.MentionModifiedData.verify|verify} messages.
+         * @param message MentionModifiedData message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: events.IMentionModified, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: events.IMentionModifiedData, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes a MentionModified message from the specified reader or buffer.
+         * Decodes a MentionModifiedData message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns MentionModified
+         * @returns MentionModifiedData
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.MentionModified;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.MentionModifiedData;
 
         /**
-         * Decodes a MentionModified message from the specified reader or buffer, length delimited.
+         * Decodes a MentionModifiedData message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns MentionModified
+         * @returns MentionModifiedData
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.MentionModified;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.MentionModifiedData;
 
         /**
-         * Verifies a MentionModified message.
+         * Verifies a MentionModifiedData message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates a MentionModified message from a plain object. Also converts values to their respective internal types.
+         * Creates a MentionModifiedData message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns MentionModified
+         * @returns MentionModifiedData
          */
-        public static fromObject(object: { [k: string]: any }): events.MentionModified;
+        public static fromObject(object: { [k: string]: any }): events.MentionModifiedData;
 
         /**
-         * Creates a plain object from a MentionModified message. Also converts values to other types if specified.
-         * @param message MentionModified
+         * Creates a plain object from a MentionModifiedData message. Also converts values to other types if specified.
+         * @param message MentionModifiedData
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: events.MentionModified, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: events.MentionModifiedData, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this MentionModified to JSON.
+         * Converts this MentionModifiedData to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
     }
 
-    namespace MentionModified {
+    /** Properties of a MentionUpdated. */
+    interface IMentionUpdated {
 
-        /** ActionType enum. */
-        enum ActionType {
-            DELETE = 0,
-            UPDATE = 1,
-            INSERT = 2
-        }
+        /** MentionUpdated event */
+        event?: (string|null);
+
+        /** MentionUpdated type */
+        type?: (string|null);
+
+        /** MentionUpdated payload */
+        payload?: (events.IMentionModifiedData|null);
+    }
+
+    /** Represents a MentionUpdated. */
+    class MentionUpdated implements IMentionUpdated {
+
+        /**
+         * Constructs a new MentionUpdated.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IMentionUpdated);
+
+        /** MentionUpdated event. */
+        public event: string;
+
+        /** MentionUpdated type. */
+        public type: string;
+
+        /** MentionUpdated payload. */
+        public payload?: (events.IMentionModifiedData|null);
+
+        /**
+         * Creates a new MentionUpdated instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns MentionUpdated instance
+         */
+        public static create(properties?: events.IMentionUpdated): events.MentionUpdated;
+
+        /**
+         * Encodes the specified MentionUpdated message. Does not implicitly {@link events.MentionUpdated.verify|verify} messages.
+         * @param message MentionUpdated message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IMentionUpdated, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified MentionUpdated message, length delimited. Does not implicitly {@link events.MentionUpdated.verify|verify} messages.
+         * @param message MentionUpdated message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IMentionUpdated, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a MentionUpdated message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns MentionUpdated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.MentionUpdated;
+
+        /**
+         * Decodes a MentionUpdated message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns MentionUpdated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.MentionUpdated;
+
+        /**
+         * Verifies a MentionUpdated message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a MentionUpdated message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns MentionUpdated
+         */
+        public static fromObject(object: { [k: string]: any }): events.MentionUpdated;
+
+        /**
+         * Creates a plain object from a MentionUpdated message. Also converts values to other types if specified.
+         * @param message MentionUpdated
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.MentionUpdated, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this MentionUpdated to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a MentionDeleted. */
+    interface IMentionDeleted {
+
+        /** MentionDeleted event */
+        event?: (string|null);
+
+        /** MentionDeleted type */
+        type?: (string|null);
+
+        /** MentionDeleted payload */
+        payload?: (events.IMentionModifiedData|null);
+    }
+
+    /** Represents a MentionDeleted. */
+    class MentionDeleted implements IMentionDeleted {
+
+        /**
+         * Constructs a new MentionDeleted.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IMentionDeleted);
+
+        /** MentionDeleted event. */
+        public event: string;
+
+        /** MentionDeleted type. */
+        public type: string;
+
+        /** MentionDeleted payload. */
+        public payload?: (events.IMentionModifiedData|null);
+
+        /**
+         * Creates a new MentionDeleted instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns MentionDeleted instance
+         */
+        public static create(properties?: events.IMentionDeleted): events.MentionDeleted;
+
+        /**
+         * Encodes the specified MentionDeleted message. Does not implicitly {@link events.MentionDeleted.verify|verify} messages.
+         * @param message MentionDeleted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IMentionDeleted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified MentionDeleted message, length delimited. Does not implicitly {@link events.MentionDeleted.verify|verify} messages.
+         * @param message MentionDeleted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IMentionDeleted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a MentionDeleted message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns MentionDeleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.MentionDeleted;
+
+        /**
+         * Decodes a MentionDeleted message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns MentionDeleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.MentionDeleted;
+
+        /**
+         * Verifies a MentionDeleted message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a MentionDeleted message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns MentionDeleted
+         */
+        public static fromObject(object: { [k: string]: any }): events.MentionDeleted;
+
+        /**
+         * Creates a plain object from a MentionDeleted message. Also converts values to other types if specified.
+         * @param message MentionDeleted
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.MentionDeleted, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this MentionDeleted to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a MentionInserted. */
+    interface IMentionInserted {
+
+        /** MentionInserted event */
+        event?: (string|null);
+
+        /** MentionInserted type */
+        type?: (string|null);
+
+        /** MentionInserted payload */
+        payload?: (events.IMentionModifiedData|null);
+    }
+
+    /** Represents a MentionInserted. */
+    class MentionInserted implements IMentionInserted {
+
+        /**
+         * Constructs a new MentionInserted.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IMentionInserted);
+
+        /** MentionInserted event. */
+        public event: string;
+
+        /** MentionInserted type. */
+        public type: string;
+
+        /** MentionInserted payload. */
+        public payload?: (events.IMentionModifiedData|null);
+
+        /**
+         * Creates a new MentionInserted instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns MentionInserted instance
+         */
+        public static create(properties?: events.IMentionInserted): events.MentionInserted;
+
+        /**
+         * Encodes the specified MentionInserted message. Does not implicitly {@link events.MentionInserted.verify|verify} messages.
+         * @param message MentionInserted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IMentionInserted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified MentionInserted message, length delimited. Does not implicitly {@link events.MentionInserted.verify|verify} messages.
+         * @param message MentionInserted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IMentionInserted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a MentionInserted message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns MentionInserted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.MentionInserted;
+
+        /**
+         * Decodes a MentionInserted message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns MentionInserted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.MentionInserted;
+
+        /**
+         * Verifies a MentionInserted message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a MentionInserted message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns MentionInserted
+         */
+        public static fromObject(object: { [k: string]: any }): events.MentionInserted;
+
+        /**
+         * Creates a plain object from a MentionInserted message. Also converts values to other types if specified.
+         * @param message MentionInserted
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.MentionInserted, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this MentionInserted to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
     }
 
     /** Properties of a MentionEmailGenerated. */

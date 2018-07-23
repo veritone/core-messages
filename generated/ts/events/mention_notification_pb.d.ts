@@ -4,13 +4,7 @@
 import * as jspb from "google-protobuf";
 import * as events_core_pb from "../events/core_pb";
 
-export class MentionModified extends jspb.Message {
-  getEvent(): string;
-  setEvent(value: string): void;
-
-  getType(): string;
-  setType(value: string): void;
-
+export class MentionModifiedData extends jspb.Message {
   getMentionId(): number;
   setMentionId(value: number): void;
 
@@ -20,33 +14,111 @@ export class MentionModified extends jspb.Message {
   getMentionDate(): string;
   setMentionDate(value: string): void;
 
-  getActionType(): MentionModified.ActionType;
-  setActionType(value: MentionModified.ActionType): void;
-
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): MentionModified.AsObject;
-  static toObject(includeInstance: boolean, msg: MentionModified): MentionModified.AsObject;
+  toObject(includeInstance?: boolean): MentionModifiedData.AsObject;
+  static toObject(includeInstance: boolean, msg: MentionModifiedData): MentionModifiedData.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: MentionModified, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): MentionModified;
-  static deserializeBinaryFromReader(message: MentionModified, reader: jspb.BinaryReader): MentionModified;
+  static serializeBinaryToWriter(message: MentionModifiedData, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MentionModifiedData;
+  static deserializeBinaryFromReader(message: MentionModifiedData, reader: jspb.BinaryReader): MentionModifiedData;
 }
 
-export namespace MentionModified {
+export namespace MentionModifiedData {
   export type AsObject = {
-    event: string,
-    type: string,
     mentionId: number,
     organizationId: number,
     mentionDate: string,
-    actionType: MentionModified.ActionType,
   }
+}
 
-  export enum ActionType {
-    DELETE = 0,
-    UPDATE = 1,
-    INSERT = 2,
+export class MentionUpdated extends jspb.Message {
+  getEvent(): string;
+  setEvent(value: string): void;
+
+  getType(): string;
+  setType(value: string): void;
+
+  hasPayload(): boolean;
+  clearPayload(): void;
+  getPayload(): MentionModifiedData | undefined;
+  setPayload(value?: MentionModifiedData): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MentionUpdated.AsObject;
+  static toObject(includeInstance: boolean, msg: MentionUpdated): MentionUpdated.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: MentionUpdated, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MentionUpdated;
+  static deserializeBinaryFromReader(message: MentionUpdated, reader: jspb.BinaryReader): MentionUpdated;
+}
+
+export namespace MentionUpdated {
+  export type AsObject = {
+    event: string,
+    type: string,
+    payload?: MentionModifiedData.AsObject,
+  }
+}
+
+export class MentionDeleted extends jspb.Message {
+  getEvent(): string;
+  setEvent(value: string): void;
+
+  getType(): string;
+  setType(value: string): void;
+
+  hasPayload(): boolean;
+  clearPayload(): void;
+  getPayload(): MentionModifiedData | undefined;
+  setPayload(value?: MentionModifiedData): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MentionDeleted.AsObject;
+  static toObject(includeInstance: boolean, msg: MentionDeleted): MentionDeleted.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: MentionDeleted, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MentionDeleted;
+  static deserializeBinaryFromReader(message: MentionDeleted, reader: jspb.BinaryReader): MentionDeleted;
+}
+
+export namespace MentionDeleted {
+  export type AsObject = {
+    event: string,
+    type: string,
+    payload?: MentionModifiedData.AsObject,
+  }
+}
+
+export class MentionInserted extends jspb.Message {
+  getEvent(): string;
+  setEvent(value: string): void;
+
+  getType(): string;
+  setType(value: string): void;
+
+  hasPayload(): boolean;
+  clearPayload(): void;
+  getPayload(): MentionModifiedData | undefined;
+  setPayload(value?: MentionModifiedData): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MentionInserted.AsObject;
+  static toObject(includeInstance: boolean, msg: MentionInserted): MentionInserted.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: MentionInserted, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MentionInserted;
+  static deserializeBinaryFromReader(message: MentionInserted, reader: jspb.BinaryReader): MentionInserted;
+}
+
+export namespace MentionInserted {
+  export type AsObject = {
+    event: string,
+    type: string,
+    payload?: MentionModifiedData.AsObject,
   }
 }
 

@@ -241,6 +241,10 @@
             <ul>
               
                 <li>
+                  <a href="#events.MentionDeleted"><span class="badge">M</span>MentionDeleted</a>
+                </li>
+              
+                <li>
                   <a href="#events.MentionEmailGenerated"><span class="badge">M</span>MentionEmailGenerated</a>
                 </li>
               
@@ -253,13 +257,17 @@
                 </li>
               
                 <li>
-                  <a href="#events.MentionModified"><span class="badge">M</span>MentionModified</a>
+                  <a href="#events.MentionInserted"><span class="badge">M</span>MentionInserted</a>
                 </li>
-              
               
                 <li>
-                  <a href="#events.MentionModified.ActionType"><span class="badge">E</span>MentionModified.ActionType</a>
+                  <a href="#events.MentionModifiedData"><span class="badge">M</span>MentionModifiedData</a>
                 </li>
+              
+                <li>
+                  <a href="#events.MentionUpdated"><span class="badge">M</span>MentionUpdated</a>
+                </li>
+              
               
               
               
@@ -656,6 +664,43 @@ Protobuf data structure in {VtEvent.data} </p></td>
       <p></p>
 
       
+        <h3 id="events.MentionDeleted">MentionDeleted</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>event</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>event name </p></td>
+                </tr>
+              
+                <tr>
+                  <td>type</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>event type </p></td>
+                </tr>
+              
+                <tr>
+                  <td>payload</td>
+                  <td><a href="#events.MentionModifiedData">MentionModifiedData</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="events.MentionEmailGenerated">MentionEmailGenerated</h3>
         <p></p>
 
@@ -872,7 +917,7 @@ Protobuf data structure in {VtEvent.data} </p></td>
 
         
       
-        <h3 id="events.MentionModified">MentionModified</h3>
+        <h3 id="events.MentionInserted">MentionInserted</h3>
         <p></p>
 
         
@@ -897,6 +942,29 @@ Protobuf data structure in {VtEvent.data} </p></td>
                 </tr>
               
                 <tr>
+                  <td>payload</td>
+                  <td><a href="#events.MentionModifiedData">MentionModifiedData</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="events.MentionModifiedData">MentionModifiedData</h3>
+        <p>Shared structure for MentionUpdate, MentionDeleted, and MentionInserted</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
                   <td>mention_id</td>
                   <td><a href="#int64">int64</a></td>
                   <td></td>
@@ -917,11 +985,41 @@ Protobuf data structure in {VtEvent.data} </p></td>
                   <td><p>mention date in UTC with RFC1123 format </p></td>
                 </tr>
               
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="events.MentionUpdated">MentionUpdated</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
                 <tr>
-                  <td>action_type</td>
-                  <td><a href="#events.MentionModified.ActionType">MentionModified.ActionType</a></td>
+                  <td>event</td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p>possible actions that triggered this event </p></td>
+                  <td><p>event name </p></td>
+                </tr>
+              
+                <tr>
+                  <td>type</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>event type </p></td>
+                </tr>
+              
+                <tr>
+                  <td>payload</td>
+                  <td><a href="#events.MentionModifiedData">MentionModifiedData</a></td>
+                  <td></td>
+                  <td><p> </p></td>
                 </tr>
               
             </tbody>
@@ -931,35 +1029,6 @@ Protobuf data structure in {VtEvent.data} </p></td>
         
       
 
-      
-        <h3 id="events.MentionModified.ActionType">MentionModified.ActionType</h3>
-        <p></p>
-        <table class="enum-table">
-          <thead>
-            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>DELETE</td>
-                <td>0</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>UPDATE</td>
-                <td>1</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>INSERT</td>
-                <td>2</td>
-                <td><p></p></td>
-              </tr>
-            
-          </tbody>
-        </table>
       
 
       

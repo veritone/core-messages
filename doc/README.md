@@ -26,12 +26,14 @@
   
 
 - [events/mention_notification.proto](#events/mention_notification.proto)
+    - [MentionDeleted](#events.MentionDeleted)
     - [MentionEmailGenerated](#events.MentionEmailGenerated)
     - [MentionEmailGenerated.Mention](#events.MentionEmailGenerated.Mention)
     - [MentionEmailGenerated.PlaceHolders](#events.MentionEmailGenerated.PlaceHolders)
-    - [MentionModified](#events.MentionModified)
+    - [MentionInserted](#events.MentionInserted)
+    - [MentionModifiedData](#events.MentionModifiedData)
+    - [MentionUpdated](#events.MentionUpdated)
   
-    - [MentionModified.ActionType](#events.MentionModified.ActionType)
   
   
   
@@ -256,6 +258,23 @@
 
 
 
+<a name="events.MentionDeleted"/>
+
+### MentionDeleted
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| event | [string](#string) |  | event name |
+| type | [string](#string) |  | event type |
+| payload | [MentionModifiedData](#events.MentionModifiedData) |  |  |
+
+
+
+
+
+
 <a name="events.MentionEmailGenerated"/>
 
 ### MentionEmailGenerated
@@ -322,9 +341,9 @@
 
 
 
-<a name="events.MentionModified"/>
+<a name="events.MentionInserted"/>
 
-### MentionModified
+### MentionInserted
 
 
 
@@ -332,29 +351,47 @@
 | ----- | ---- | ----- | ----------- |
 | event | [string](#string) |  | event name |
 | type | [string](#string) |  | event type |
+| payload | [MentionModifiedData](#events.MentionModifiedData) |  |  |
+
+
+
+
+
+
+<a name="events.MentionModifiedData"/>
+
+### MentionModifiedData
+Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
 | mention_id | [int64](#int64) |  | the mention id |
 | organization_id | [int64](#int64) |  | the org id |
 | mention_date | [string](#string) |  | mention date in UTC with RFC1123 format |
-| action_type | [MentionModified.ActionType](#events.MentionModified.ActionType) |  | possible actions that triggered this event |
+
+
+
+
+
+
+<a name="events.MentionUpdated"/>
+
+### MentionUpdated
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| event | [string](#string) |  | event name |
+| type | [string](#string) |  | event type |
+| payload | [MentionModifiedData](#events.MentionModifiedData) |  |  |
 
 
 
 
 
  
-
-
-<a name="events.MentionModified.ActionType"/>
-
-### MentionModified.ActionType
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| DELETE | 0 |  |
-| UPDATE | 1 |  |
-| INSERT | 2 |  |
-
 
  
 
