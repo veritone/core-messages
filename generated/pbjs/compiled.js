@@ -1842,6 +1842,7 @@ $root.events = (function() {
          * @property {number|Long|null} [mentionId] MentionModifiedData mentionId
          * @property {number|Long|null} [organizationId] MentionModifiedData organizationId
          * @property {string|null} [mentionDate] MentionModifiedData mentionDate
+         * @property {string|null} [transactionTimestamp] MentionModifiedData transactionTimestamp
          */
 
         /**
@@ -1884,6 +1885,14 @@ $root.events = (function() {
         MentionModifiedData.prototype.mentionDate = "";
 
         /**
+         * MentionModifiedData transactionTimestamp.
+         * @member {string} transactionTimestamp
+         * @memberof events.MentionModifiedData
+         * @instance
+         */
+        MentionModifiedData.prototype.transactionTimestamp = "";
+
+        /**
          * Creates a new MentionModifiedData instance using the specified properties.
          * @function create
          * @memberof events.MentionModifiedData
@@ -1913,6 +1922,8 @@ $root.events = (function() {
                 writer.uint32(/* id 12, wireType 0 =*/96).int64(message.organizationId);
             if (message.mentionDate != null && message.hasOwnProperty("mentionDate"))
                 writer.uint32(/* id 13, wireType 2 =*/106).string(message.mentionDate);
+            if (message.transactionTimestamp != null && message.hasOwnProperty("transactionTimestamp"))
+                writer.uint32(/* id 14, wireType 2 =*/114).string(message.transactionTimestamp);
             return writer;
         };
 
@@ -1955,6 +1966,9 @@ $root.events = (function() {
                     break;
                 case 13:
                     message.mentionDate = reader.string();
+                    break;
+                case 14:
+                    message.transactionTimestamp = reader.string();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -2000,6 +2014,9 @@ $root.events = (function() {
             if (message.mentionDate != null && message.hasOwnProperty("mentionDate"))
                 if (!$util.isString(message.mentionDate))
                     return "mentionDate: string expected";
+            if (message.transactionTimestamp != null && message.hasOwnProperty("transactionTimestamp"))
+                if (!$util.isString(message.transactionTimestamp))
+                    return "transactionTimestamp: string expected";
             return null;
         };
 
@@ -2035,6 +2052,8 @@ $root.events = (function() {
                     message.organizationId = new $util.LongBits(object.organizationId.low >>> 0, object.organizationId.high >>> 0).toNumber();
             if (object.mentionDate != null)
                 message.mentionDate = String(object.mentionDate);
+            if (object.transactionTimestamp != null)
+                message.transactionTimestamp = String(object.transactionTimestamp);
             return message;
         };
 
@@ -2063,6 +2082,7 @@ $root.events = (function() {
                 } else
                     object.organizationId = options.longs === String ? "0" : 0;
                 object.mentionDate = "";
+                object.transactionTimestamp = "";
             }
             if (message.mentionId != null && message.hasOwnProperty("mentionId"))
                 if (typeof message.mentionId === "number")
@@ -2076,6 +2096,8 @@ $root.events = (function() {
                     object.organizationId = options.longs === String ? $util.Long.prototype.toString.call(message.organizationId) : options.longs === Number ? new $util.LongBits(message.organizationId.low >>> 0, message.organizationId.high >>> 0).toNumber() : message.organizationId;
             if (message.mentionDate != null && message.hasOwnProperty("mentionDate"))
                 object.mentionDate = message.mentionDate;
+            if (message.transactionTimestamp != null && message.hasOwnProperty("transactionTimestamp"))
+                object.transactionTimestamp = message.transactionTimestamp;
             return object;
         };
 

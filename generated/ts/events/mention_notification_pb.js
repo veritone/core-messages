@@ -68,7 +68,8 @@ proto.events.MentionModifiedData.toObject = function(includeInstance, msg) {
   var f, obj = {
     mentionId: jspb.Message.getFieldWithDefault(msg, 1, 0),
     organizationId: jspb.Message.getFieldWithDefault(msg, 12, 0),
-    mentionDate: jspb.Message.getFieldWithDefault(msg, 13, "")
+    mentionDate: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    transactionTimestamp: jspb.Message.getFieldWithDefault(msg, 14, "")
   };
 
   if (includeInstance) {
@@ -116,6 +117,10 @@ proto.events.MentionModifiedData.deserializeBinaryFromReader = function(msg, rea
     case 13:
       var value = /** @type {string} */ (reader.readString());
       msg.setMentionDate(value);
+      break;
+    case 14:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTransactionTimestamp(value);
       break;
     default:
       reader.skipField();
@@ -167,6 +172,13 @@ proto.events.MentionModifiedData.serializeBinaryToWriter = function(message, wri
       f
     );
   }
+  f = message.getTransactionTimestamp();
+  if (f.length > 0) {
+    writer.writeString(
+      14,
+      f
+    );
+  }
 };
 
 
@@ -212,6 +224,21 @@ proto.events.MentionModifiedData.prototype.getMentionDate = function() {
 /** @param {string} value */
 proto.events.MentionModifiedData.prototype.setMentionDate = function(value) {
   jspb.Message.setProto3StringField(this, 13, value);
+};
+
+
+/**
+ * optional string transaction_timestamp = 14;
+ * @return {string}
+ */
+proto.events.MentionModifiedData.prototype.getTransactionTimestamp = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+};
+
+
+/** @param {string} value */
+proto.events.MentionModifiedData.prototype.setTransactionTimestamp = function(value) {
+  jspb.Message.setProto3StringField(this, 14, value);
 };
 
 

@@ -369,6 +369,7 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 | mention_id | [int64](#int64) |  | the mention id |
 | organization_id | [int64](#int64) |  | the org id |
 | mention_date | [string](#string) |  | mention date in UTC with RFC1123 format |
+| transaction_timestamp | [string](#string) |  | transaction timestamp in RFC1123 format, event producer should set this to current time |
 
 
 

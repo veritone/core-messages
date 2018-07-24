@@ -12,6 +12,7 @@ message MentionModifiedData {
     int64 mention_id = 1;                // the mention id
     int64 organization_id = 12;          // the org id
     string mention_date = 13;            // mention date in UTC with RFC1123 format
+    string transaction_timestamp = 14;   // transaction timestamp in RFC1123 format, event producer should set this to current time
 }
 
 message MentionUpdated {

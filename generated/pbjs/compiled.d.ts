@@ -806,6 +806,9 @@ export namespace events {
 
         /** MentionModifiedData mentionDate */
         mentionDate?: (string|null);
+
+        /** MentionModifiedData transactionTimestamp */
+        transactionTimestamp?: (string|null);
     }
 
     /** Represents a MentionModifiedData. */
@@ -825,6 +828,9 @@ export namespace events {
 
         /** MentionModifiedData mentionDate. */
         public mentionDate: string;
+
+        /** MentionModifiedData transactionTimestamp. */
+        public transactionTimestamp: string;
 
         /**
          * Creates a new MentionModifiedData instance using the specified properties.

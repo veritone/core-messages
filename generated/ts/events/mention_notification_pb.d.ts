@@ -14,6 +14,9 @@ export class MentionModifiedData extends jspb.Message {
   getMentionDate(): string;
   setMentionDate(value: string): void;
 
+  getTransactionTimestamp(): string;
+  setTransactionTimestamp(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MentionModifiedData.AsObject;
   static toObject(includeInstance: boolean, msg: MentionModifiedData): MentionModifiedData.AsObject;
@@ -29,6 +32,7 @@ export namespace MentionModifiedData {
     mentionId: number,
     organizationId: number,
     mentionDate: string,
+    transactionTimestamp: string,
   }
 }
 
