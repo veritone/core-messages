@@ -2911,6 +2911,7 @@ $root.events = (function() {
          * @property {string|null} [subject] BasicEmail subject
          * @property {string|null} [body] BasicEmail body
          * @property {string|null} [replyTo] BasicEmail replyTo
+         * @property {string|null} [bodyHtml] BasicEmail bodyHtml
          */
 
         /**
@@ -2969,6 +2970,14 @@ $root.events = (function() {
         BasicEmail.prototype.replyTo = "";
 
         /**
+         * BasicEmail bodyHtml.
+         * @member {string} bodyHtml
+         * @memberof events.BasicEmail
+         * @instance
+         */
+        BasicEmail.prototype.bodyHtml = "";
+
+        /**
          * Creates a new BasicEmail instance using the specified properties.
          * @function create
          * @memberof events.BasicEmail
@@ -3002,6 +3011,8 @@ $root.events = (function() {
                 writer.uint32(/* id 13, wireType 2 =*/106).string(message.body);
             if (message.replyTo != null && message.hasOwnProperty("replyTo"))
                 writer.uint32(/* id 14, wireType 2 =*/114).string(message.replyTo);
+            if (message.bodyHtml != null && message.hasOwnProperty("bodyHtml"))
+                writer.uint32(/* id 15, wireType 2 =*/122).string(message.bodyHtml);
             return writer;
         };
 
@@ -3050,6 +3061,9 @@ $root.events = (function() {
                     break;
                 case 14:
                     message.replyTo = reader.string();
+                    break;
+                case 15:
+                    message.bodyHtml = reader.string();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -3101,6 +3115,9 @@ $root.events = (function() {
             if (message.replyTo != null && message.hasOwnProperty("replyTo"))
                 if (!$util.isString(message.replyTo))
                     return "replyTo: string expected";
+            if (message.bodyHtml != null && message.hasOwnProperty("bodyHtml"))
+                if (!$util.isString(message.bodyHtml))
+                    return "bodyHtml: string expected";
             return null;
         };
 
@@ -3126,6 +3143,8 @@ $root.events = (function() {
                 message.body = String(object.body);
             if (object.replyTo != null)
                 message.replyTo = String(object.replyTo);
+            if (object.bodyHtml != null)
+                message.bodyHtml = String(object.bodyHtml);
             return message;
         };
 
@@ -3148,6 +3167,7 @@ $root.events = (function() {
                 object.subject = "";
                 object.body = "";
                 object.replyTo = "";
+                object.bodyHtml = "";
             }
             if (message.fromAddress != null && message.hasOwnProperty("fromAddress"))
                 object.fromAddress = message.fromAddress;
@@ -3159,6 +3179,8 @@ $root.events = (function() {
                 object.body = message.body;
             if (message.replyTo != null && message.hasOwnProperty("replyTo"))
                 object.replyTo = message.replyTo;
+            if (message.bodyHtml != null && message.hasOwnProperty("bodyHtml"))
+                object.bodyHtml = message.bodyHtml;
             return object;
         };
 

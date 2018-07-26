@@ -1211,6 +1211,9 @@ export namespace events {
 
         /** BasicEmail replyTo */
         replyTo?: (string|null);
+
+        /** BasicEmail bodyHtml */
+        bodyHtml?: (string|null);
     }
 
     /** Represents a BasicEmail. */
@@ -1236,6 +1239,9 @@ export namespace events {
 
         /** BasicEmail replyTo. */
         public replyTo: string;
+
+        /** BasicEmail bodyHtml. */
+        public bodyHtml: string;
 
         /**
          * Creates a new BasicEmail instance using the specified properties.
