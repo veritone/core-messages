@@ -11,6 +11,7 @@ message BasicEmail {
     string subject = 12;          // email subject
     string body = 13;             // email body, should be just pure text
     string reply_to = 14;         // reply_to field of the email.
+    string body_html = 15;         // email body in HTML syntax, this takes precedence over `body` field
 }
 
 message SMSNotification {

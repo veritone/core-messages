@@ -19,6 +19,9 @@ export class BasicEmail extends jspb.Message {
   getReplyTo(): string;
   setReplyTo(value: string): void;
 
+  getBodyHtml(): string;
+  setBodyHtml(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BasicEmail.AsObject;
   static toObject(includeInstance: boolean, msg: BasicEmail): BasicEmail.AsObject;
@@ -36,6 +39,7 @@ export namespace BasicEmail {
     subject: string,
     body: string,
     replyTo: string,
+    bodyHtml: string,
   }
 }
 

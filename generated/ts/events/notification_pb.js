@@ -64,7 +64,8 @@ proto.events.BasicEmail.toObject = function(includeInstance, msg) {
     toAddress: jspb.Message.getFieldWithDefault(msg, 11, ""),
     subject: jspb.Message.getFieldWithDefault(msg, 12, ""),
     body: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    replyTo: jspb.Message.getFieldWithDefault(msg, 14, "")
+    replyTo: jspb.Message.getFieldWithDefault(msg, 14, ""),
+    bodyHtml: jspb.Message.getFieldWithDefault(msg, 15, "")
   };
 
   if (includeInstance) {
@@ -120,6 +121,10 @@ proto.events.BasicEmail.deserializeBinaryFromReader = function(msg, reader) {
     case 14:
       var value = /** @type {string} */ (reader.readString());
       msg.setReplyTo(value);
+      break;
+    case 15:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBodyHtml(value);
       break;
     default:
       reader.skipField();
@@ -182,6 +187,13 @@ proto.events.BasicEmail.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       14,
+      f
+    );
+  }
+  f = message.getBodyHtml();
+  if (f.length > 0) {
+    writer.writeString(
+      15,
       f
     );
   }
@@ -260,6 +272,21 @@ proto.events.BasicEmail.prototype.getReplyTo = function() {
 /** @param {string} value */
 proto.events.BasicEmail.prototype.setReplyTo = function(value) {
   jspb.Message.setProto3StringField(this, 14, value);
+};
+
+
+/**
+ * optional string body_html = 15;
+ * @return {string}
+ */
+proto.events.BasicEmail.prototype.getBodyHtml = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+};
+
+
+/** @param {string} value */
+proto.events.BasicEmail.prototype.setBodyHtml = function(value) {
+  jspb.Message.setProto3StringField(this, 15, value);
 };
 
 

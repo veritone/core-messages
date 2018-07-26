@@ -349,6 +349,7 @@
 | subject | [string](#string) |  | email subject |
 | body | [string](#string) |  | email body, should be just pure text |
 | reply_to | [string](#string) |  | reply_to field of the email. |
+| body_html | [string](#string) |  | email body in HTML syntax, this takes precedence over `body` field |
 
 
 
