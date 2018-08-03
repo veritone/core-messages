@@ -6,6 +6,33 @@ package events;
 
 option go_package = "events";
 
+
+// Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
+message MentionModifiedData {
+    int64 mention_id = 1;                // the mention id
+    int64 organization_id = 12;          // the org id
+    string mention_date = 13;            // mention date in UTC with RFC1123 format
+    string transaction_timestamp = 14;   // transaction timestamp in RFC1123 format, event producer should set this to current time
+}
+
+message MentionUpdated {
+    string event = 10;                 // event name
+    string type = 11;                  // event type
+    MentionModifiedData payload = 12;    
+}
+
+message MentionDeleted {
+    string event = 10;                 // event name
+    string type = 11;                  // event type
+    MentionModifiedData payload = 12;    
+}
+
+message MentionInserted {
+    string event = 10;                 // event name
+    string type = 11;                  // event type
+    MentionModifiedData payload = 12;    
+}
+
 message MentionEmailGenerated {
     message Mention {
         string tracking_unit_name = 1; // the watchlist name

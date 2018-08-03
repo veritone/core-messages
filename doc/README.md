@@ -26,9 +26,13 @@
   
 
 - [events/mention_notification.proto](#events/mention_notification.proto)
+    - [MentionDeleted](#events.MentionDeleted)
     - [MentionEmailGenerated](#events.MentionEmailGenerated)
     - [MentionEmailGenerated.Mention](#events.MentionEmailGenerated.Mention)
     - [MentionEmailGenerated.PlaceHolders](#events.MentionEmailGenerated.PlaceHolders)
+    - [MentionInserted](#events.MentionInserted)
+    - [MentionModifiedData](#events.MentionModifiedData)
+    - [MentionUpdated](#events.MentionUpdated)
   
   
   
@@ -254,6 +258,23 @@
 
 
 
+<a name="events.MentionDeleted"/>
+
+### MentionDeleted
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| event | [string](#string) |  | event name |
+| type | [string](#string) |  | event type |
+| payload | [MentionModifiedData](#events.MentionModifiedData) |  |  |
+
+
+
+
+
+
 <a name="events.MentionEmailGenerated"/>
 
 ### MentionEmailGenerated
@@ -314,6 +335,58 @@
 | via | [string](#string) |  | via |
 | logouri | [string](#string) |  | logo url |
 | mentions | [MentionEmailGenerated.Mention](#events.MentionEmailGenerated.Mention) | repeated | list of mentions |
+
+
+
+
+
+
+<a name="events.MentionInserted"/>
+
+### MentionInserted
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| event | [string](#string) |  | event name |
+| type | [string](#string) |  | event type |
+| payload | [MentionModifiedData](#events.MentionModifiedData) |  |  |
+
+
+
+
+
+
+<a name="events.MentionModifiedData"/>
+
+### MentionModifiedData
+Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| mention_id | [int64](#int64) |  | the mention id |
+| organization_id | [int64](#int64) |  | the org id |
+| mention_date | [string](#string) |  | mention date in UTC with RFC1123 format |
+| transaction_timestamp | [string](#string) |  | transaction timestamp in RFC1123 format, event producer should set this to current time |
+
+
+
+
+
+
+<a name="events.MentionUpdated"/>
+
+### MentionUpdated
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| event | [string](#string) |  | event name |
+| type | [string](#string) |  | event type |
+| payload | [MentionModifiedData](#events.MentionModifiedData) |  |  |
 
 
 
