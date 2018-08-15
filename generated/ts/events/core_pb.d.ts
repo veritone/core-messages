@@ -14,6 +14,18 @@ export class Core extends jspb.Message {
   getTimestamp(): string;
   setTimestamp(value: string): void;
 
+  getType(): string;
+  setType(value: string): void;
+
+  getServiceName(): string;
+  setServiceName(value: string): void;
+
+  getApplicationId(): string;
+  setApplicationId(value: string): void;
+
+  getEventId(): string;
+  setEventId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Core.AsObject;
   static toObject(includeInstance: boolean, msg: Core): Core.AsObject;
@@ -29,6 +41,10 @@ export namespace Core {
     id: string,
     name: string,
     timestamp: string,
+    type: string,
+    serviceName: string,
+    applicationId: string,
+    eventId: string,
   }
 }
 
@@ -69,6 +85,8 @@ export class VtEvent extends jspb.Message {
   getTrace(): Trace | undefined;
   setTrace(value?: Trace): void;
 
+  getBaggageMap(): jspb.Map<string, string>;
+  clearBaggageMap(): void;
   hasData(): boolean;
   clearData(): void;
   getData(): google_protobuf_any_pb.Any | undefined;
@@ -88,6 +106,7 @@ export namespace VtEvent {
   export type AsObject = {
     core?: Core.AsObject,
     trace?: Trace.AsObject,
+    baggageMap: Array<[string, string]>,
     data?: google_protobuf_any_pb.Any.AsObject,
   }
 }

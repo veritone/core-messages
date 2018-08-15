@@ -198,6 +198,25 @@
                   <a href="#events.VtEvent"><span class="badge">M</span>VtEvent</a>
                 </li>
               
+                <li>
+                  <a href="#events.VtEvent.BaggageEntry"><span class="badge">M</span>VtEvent.BaggageEntry</a>
+                </li>
+              
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#events%2fengine.proto">events/engine.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#events.EngineBuildApproved"><span class="badge">M</span>EngineBuildApproved</a>
+                </li>
+              
               
               
               
@@ -342,15 +361,42 @@ It will be propagate through the system </p></td>
                   <td>name</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p>Read-only and auto-generated. The name of the event is automatically computed based on 
-Protobuf data structure in {VtEvent.data} </p></td>
+                  <td><p>The name of the event is </p></td>
                 </tr>
               
                 <tr>
                   <td>timestamp</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p>Read-only and auto-generated. Messaging library will compute the timestamp in UTC when a message is produced. </p></td>
+                  <td><p>Read-only and auto-generated. Messaging library will compute the timestamp in RFC1123Z when a message is produced. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>type</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>the type of the event </p></td>
+                </tr>
+              
+                <tr>
+                  <td>service_name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Messaging library will default to value from `hostname` if not set */ </p></td>
+                </tr>
+              
+                <tr>
+                  <td>application_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Application Id which owns the event. For internal components, it should be set to &#34;system&#34; </p></td>
+                </tr>
+              
+                <tr>
+                  <td>event_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The event id that matches with event_id in Event Registry Table </p></td>
                 </tr>
               
             </tbody>
@@ -380,7 +426,7 @@ Protobuf data structure in {VtEvent.data} </p></td>
                   <td>trace_tags</td>
                   <td><a href="#events.Trace.TraceTagsEntry">Trace.TraceTagsEntry</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
+                  <td><p>Open Tracing trace context. </p></td>
                 </tr>
               
                 <tr>
@@ -481,8 +527,117 @@ Protobuf data structure in {VtEvent.data} </p></td>
                 </tr>
               
                 <tr>
+                  <td>baggage</td>
+                  <td><a href="#events.VtEvent.BaggageEntry">VtEvent.BaggageEntry</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
                   <td>data</td>
                   <td><a href="#google.protobuf.Any">google.protobuf.Any</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="events.VtEvent.BaggageEntry">VtEvent.BaggageEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+
+      
+
+      
+
+      
+    
+      
+      <div class="file-heading">
+        <h2 id="events/engine.proto">events/engine.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id="events.EngineBuildApproved">EngineBuildApproved</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>user_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>engine_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>build_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>organization_id</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>status_code</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>action</td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package events;
+
+option go_package = "events";
+
+message EngineBuildApproved {
+    string user_id = 10;     
+    string engine_id = 11;       
+    string build_id = 12;          
+    int64 organization_id = 13;             
+    int32 status_code = 14;         
+    string action = 15;         
+}
+

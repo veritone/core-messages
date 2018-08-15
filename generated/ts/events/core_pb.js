@@ -64,7 +64,11 @@ proto.events.Core.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    timestamp: jspb.Message.getFieldWithDefault(msg, 3, "")
+    timestamp: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    type: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    serviceName: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    applicationId: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    eventId: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -112,6 +116,22 @@ proto.events.Core.deserializeBinaryFromReader = function(msg, reader) {
     case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setTimestamp(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setType(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setServiceName(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setApplicationId(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEventId(value);
       break;
     default:
       reader.skipField();
@@ -163,6 +183,34 @@ proto.events.Core.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getType();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getServiceName();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getApplicationId();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = message.getEventId();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
 };
 
 
@@ -208,6 +256,66 @@ proto.events.Core.prototype.getTimestamp = function() {
 /** @param {string} value */
 proto.events.Core.prototype.setTimestamp = function(value) {
   jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string type = 4;
+ * @return {string}
+ */
+proto.events.Core.prototype.getType = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/** @param {string} value */
+proto.events.Core.prototype.setType = function(value) {
+  jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string service_name = 5;
+ * @return {string}
+ */
+proto.events.Core.prototype.getServiceName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/** @param {string} value */
+proto.events.Core.prototype.setServiceName = function(value) {
+  jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string application_id = 6;
+ * @return {string}
+ */
+proto.events.Core.prototype.getApplicationId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/** @param {string} value */
+proto.events.Core.prototype.setApplicationId = function(value) {
+  jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional string event_id = 7;
+ * @return {string}
+ */
+proto.events.Core.prototype.getEventId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/** @param {string} value */
+proto.events.Core.prototype.setEventId = function(value) {
+  jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
@@ -460,6 +568,7 @@ proto.events.VtEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
     core: (f = msg.getCore()) && proto.events.Core.toObject(includeInstance, f),
     trace: (f = msg.getTrace()) && proto.events.Trace.toObject(includeInstance, f),
+    baggageMap: (f = msg.getBaggageMap()) ? f.toObject(includeInstance, undefined) : [],
     data: (f = msg.getData()) && google_protobuf_any_pb.Any.toObject(includeInstance, f)
   };
 
@@ -506,6 +615,12 @@ proto.events.VtEvent.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.events.Trace;
       reader.readMessage(value,proto.events.Trace.deserializeBinaryFromReader);
       msg.setTrace(value);
+      break;
+    case 3:
+      var value = msg.getBaggageMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString);
+         });
       break;
     case 15:
       var value = new google_protobuf_any_pb.Any;
@@ -556,6 +671,10 @@ proto.events.VtEvent.serializeBinaryToWriter = function(message, writer) {
       f,
       proto.events.Trace.serializeBinaryToWriter
     );
+  }
+  f = message.getBaggageMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
   f = message.getData();
   if (f != null) {
@@ -625,6 +744,24 @@ proto.events.VtEvent.prototype.clearTrace = function() {
  */
 proto.events.VtEvent.prototype.hasTrace = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * map<string, string> baggage = 3;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
+ */
+proto.events.VtEvent.prototype.getBaggageMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
+      null));
+};
+
+
+proto.events.VtEvent.prototype.clearBaggageMap = function() {
+  this.getBaggageMap().clear();
 };
 
 

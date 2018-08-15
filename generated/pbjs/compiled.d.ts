@@ -12,14 +12,23 @@ export namespace events {
          */
         id?: (string|null);
 
-        /**
-         * Read-only and auto-generated. The name of the event is automatically computed based on
-         * Protobuf data structure in {VtEvent.data}
-         */
+        /** The name of the event is */
         name?: (string|null);
 
-        /** Read-only and auto-generated. Messaging library will compute the timestamp in UTC when a message is produced. */
+        /** Core timestamp */
         timestamp?: (string|null);
+
+        /** Core type */
+        type?: (string|null);
+
+        /** Core serviceName */
+        serviceName?: (string|null);
+
+        /** Core applicationId */
+        applicationId?: (string|null);
+
+        /** Core eventId */
+        eventId?: (string|null);
     }
 
     /** Represents a Core. */
@@ -37,14 +46,23 @@ export namespace events {
          */
         public id: string;
 
-        /**
-         * Read-only and auto-generated. The name of the event is automatically computed based on
-         * Protobuf data structure in {VtEvent.data}
-         */
+        /** The name of the event is */
         public name: string;
 
-        /** Read-only and auto-generated. Messaging library will compute the timestamp in UTC when a message is produced. */
+        /** Core timestamp. */
         public timestamp: string;
+
+        /** Core type. */
+        public type: string;
+
+        /** Core serviceName. */
+        public serviceName: string;
+
+        /** Core applicationId. */
+        public applicationId: string;
+
+        /** Core eventId. */
+        public eventId: string;
 
         /**
          * Creates a new Core instance using the specified properties.
@@ -123,7 +141,7 @@ export namespace events {
         /** Open Tracing trace context. */
         traceContext?: ({ [k: string]: string }|null);
 
-        /** Trace traceTags */
+        /** Open Tracing trace context. */
         traceTags?: ({ [k: string]: string }|null);
 
         /** Trace serviceName */
@@ -142,7 +160,7 @@ export namespace events {
         /** Open Tracing trace context. */
         public traceContext: { [k: string]: string };
 
-        /** Trace traceTags. */
+        /** Open Tracing trace context. */
         public traceTags: { [k: string]: string };
 
         /** Trace serviceName. */
@@ -228,6 +246,9 @@ export namespace events {
         /** VtEvent trace */
         trace?: (events.ITrace|null);
 
+        /** VtEvent baggage */
+        baggage?: ({ [k: string]: string }|null);
+
         /** VtEvent data */
         data?: (google.protobuf.IAny|null);
     }
@@ -246,6 +267,9 @@ export namespace events {
 
         /** VtEvent trace. */
         public trace?: (events.ITrace|null);
+
+        /** VtEvent baggage. */
+        public baggage: { [k: string]: string };
 
         /** VtEvent data. */
         public data?: (google.protobuf.IAny|null);
@@ -316,6 +340,126 @@ export namespace events {
 
         /**
          * Converts this VtEvent to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an EngineBuildApproved. */
+    interface IEngineBuildApproved {
+
+        /** EngineBuildApproved userId */
+        userId?: (string|null);
+
+        /** EngineBuildApproved engineId */
+        engineId?: (string|null);
+
+        /** EngineBuildApproved buildId */
+        buildId?: (string|null);
+
+        /** EngineBuildApproved organizationId */
+        organizationId?: (number|Long|null);
+
+        /** EngineBuildApproved statusCode */
+        statusCode?: (number|null);
+
+        /** EngineBuildApproved action */
+        action?: (string|null);
+    }
+
+    /** Represents an EngineBuildApproved. */
+    class EngineBuildApproved implements IEngineBuildApproved {
+
+        /**
+         * Constructs a new EngineBuildApproved.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IEngineBuildApproved);
+
+        /** EngineBuildApproved userId. */
+        public userId: string;
+
+        /** EngineBuildApproved engineId. */
+        public engineId: string;
+
+        /** EngineBuildApproved buildId. */
+        public buildId: string;
+
+        /** EngineBuildApproved organizationId. */
+        public organizationId: (number|Long);
+
+        /** EngineBuildApproved statusCode. */
+        public statusCode: number;
+
+        /** EngineBuildApproved action. */
+        public action: string;
+
+        /**
+         * Creates a new EngineBuildApproved instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns EngineBuildApproved instance
+         */
+        public static create(properties?: events.IEngineBuildApproved): events.EngineBuildApproved;
+
+        /**
+         * Encodes the specified EngineBuildApproved message. Does not implicitly {@link events.EngineBuildApproved.verify|verify} messages.
+         * @param message EngineBuildApproved message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IEngineBuildApproved, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified EngineBuildApproved message, length delimited. Does not implicitly {@link events.EngineBuildApproved.verify|verify} messages.
+         * @param message EngineBuildApproved message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IEngineBuildApproved, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an EngineBuildApproved message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns EngineBuildApproved
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.EngineBuildApproved;
+
+        /**
+         * Decodes an EngineBuildApproved message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns EngineBuildApproved
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.EngineBuildApproved;
+
+        /**
+         * Verifies an EngineBuildApproved message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an EngineBuildApproved message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns EngineBuildApproved
+         */
+        public static fromObject(object: { [k: string]: any }): events.EngineBuildApproved;
+
+        /**
+         * Creates a plain object from an EngineBuildApproved message. Also converts values to other types if specified.
+         * @param message EngineBuildApproved
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.EngineBuildApproved, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this EngineBuildApproved to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
