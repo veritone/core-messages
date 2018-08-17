@@ -49,7 +49,9 @@
 - [events/notification.proto](#events/notification.proto)
     - [BasicEmail](#events.BasicEmail)
     - [SMSNotification](#events.SMSNotification)
+    - [Webhook](#events.Webhook)
   
+    - [Webhook.Encoding](#events.Webhook.Encoding)
   
   
   
@@ -513,7 +515,37 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 
 
 
+
+<a name="events.Webhook"/>
+
+### Webhook
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| url | [string](#string) |  | Webhook URL that payload should be posted to |
+| encoding | [Webhook.Encoding](#events.Webhook.Encoding) |  | Encoding format for the payload |
+| payload | [google.protobuf.Any](#google.protobuf.Any) |  | the custom payload |
+
+
+
+
+
  
+
+
+<a name="events.Webhook.Encoding"/>
+
+### Webhook.Encoding
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| JSON | 0 |  |
+| PROTO_BIN | 1 |  |
+| PROTO_64 | 2 |  |
+
 
  
 

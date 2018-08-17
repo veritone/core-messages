@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "google/protobuf/any.proto";
+
 package events;
 
 option go_package = "events";
@@ -18,4 +20,16 @@ message SMSNotification {
     string from_number = 10;         // SMS number of the recipient (number should follow Twilo format)  
     string to_number = 11;           // SMS number of the sender (number should follow Twilo format)
     string message = 12;            // message payload
+}
+
+message Webhook {
+    enum Encoding {
+        JSON = 0;
+        PROTO_BIN = 1;
+        PROTO_64 = 2;
+    }
+
+    string url = 5;     // Webhook URL that payload should be posted to
+    Encoding encoding = 6;  // Encoding format for the payload
+    google.protobuf.Any payload = 7;    // the custom payload
 }

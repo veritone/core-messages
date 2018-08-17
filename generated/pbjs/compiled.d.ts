@@ -1992,6 +1992,118 @@ export namespace events {
         public toJSON(): { [k: string]: any };
     }
 
+    /** Properties of a Webhook. */
+    interface IWebhook {
+
+        /** Webhook url */
+        url?: (string|null);
+
+        /** Webhook encoding */
+        encoding?: (events.Webhook.Encoding|null);
+
+        /** Webhook payload */
+        payload?: (google.protobuf.IAny|null);
+    }
+
+    /** Represents a Webhook. */
+    class Webhook implements IWebhook {
+
+        /**
+         * Constructs a new Webhook.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IWebhook);
+
+        /** Webhook url. */
+        public url: string;
+
+        /** Webhook encoding. */
+        public encoding: events.Webhook.Encoding;
+
+        /** Webhook payload. */
+        public payload?: (google.protobuf.IAny|null);
+
+        /**
+         * Creates a new Webhook instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns Webhook instance
+         */
+        public static create(properties?: events.IWebhook): events.Webhook;
+
+        /**
+         * Encodes the specified Webhook message. Does not implicitly {@link events.Webhook.verify|verify} messages.
+         * @param message Webhook message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IWebhook, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified Webhook message, length delimited. Does not implicitly {@link events.Webhook.verify|verify} messages.
+         * @param message Webhook message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IWebhook, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a Webhook message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns Webhook
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.Webhook;
+
+        /**
+         * Decodes a Webhook message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns Webhook
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.Webhook;
+
+        /**
+         * Verifies a Webhook message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a Webhook message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns Webhook
+         */
+        public static fromObject(object: { [k: string]: any }): events.Webhook;
+
+        /**
+         * Creates a plain object from a Webhook message. Also converts values to other types if specified.
+         * @param message Webhook
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.Webhook, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this Webhook to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    namespace Webhook {
+
+        /** Encoding enum. */
+        enum Encoding {
+            JSON = 0,
+            PROTO_BIN = 1,
+            PROTO_64 = 2
+        }
+    }
+
     /** Properties of a TriggerCacheRefresh. */
     interface ITriggerCacheRefresh {
     }

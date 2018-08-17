@@ -2,6 +2,7 @@
 // file: events/notification.proto
 
 import * as jspb from "google-protobuf";
+import * as google_protobuf_any_pb from "google-protobuf/google/protobuf/any_pb";
 
 export class BasicEmail extends jspb.Message {
   getFromAddress(): string;
@@ -68,6 +69,42 @@ export namespace SMSNotification {
     fromNumber: string,
     toNumber: string,
     message: string,
+  }
+}
+
+export class Webhook extends jspb.Message {
+  getUrl(): string;
+  setUrl(value: string): void;
+
+  getEncoding(): Webhook.Encoding;
+  setEncoding(value: Webhook.Encoding): void;
+
+  hasPayload(): boolean;
+  clearPayload(): void;
+  getPayload(): google_protobuf_any_pb.Any | undefined;
+  setPayload(value?: google_protobuf_any_pb.Any): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Webhook.AsObject;
+  static toObject(includeInstance: boolean, msg: Webhook): Webhook.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Webhook, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Webhook;
+  static deserializeBinaryFromReader(message: Webhook, reader: jspb.BinaryReader): Webhook;
+}
+
+export namespace Webhook {
+  export type AsObject = {
+    url: string,
+    encoding: Webhook.Encoding,
+    payload?: google_protobuf_any_pb.Any.AsObject,
+  }
+
+  export enum Encoding {
+    JSON = 0,
+    PROTO_BIN = 1,
+    PROTO_64 = 2,
   }
 }
 

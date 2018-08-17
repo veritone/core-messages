@@ -306,6 +306,14 @@
                   <a href="#events.SMSNotification"><span class="badge">M</span>SMSNotification</a>
                 </li>
               
+                <li>
+                  <a href="#events.Webhook"><span class="badge">M</span>Webhook</a>
+                </li>
+              
+              
+                <li>
+                  <a href="#events.Webhook.Encoding"><span class="badge">E</span>Webhook.Encoding</a>
+                </li>
               
               
               
@@ -1320,7 +1328,73 @@ It will be propagate through the system. Similar to correlationId </p></td>
 
         
       
+        <h3 id="events.Webhook">Webhook</h3>
+        <p></p>
 
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>url</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Webhook URL that payload should be posted to </p></td>
+                </tr>
+              
+                <tr>
+                  <td>encoding</td>
+                  <td><a href="#events.Webhook.Encoding">Webhook.Encoding</a></td>
+                  <td></td>
+                  <td><p>Encoding format for the payload </p></td>
+                </tr>
+              
+                <tr>
+                  <td>payload</td>
+                  <td><a href="#google.protobuf.Any">google.protobuf.Any</a></td>
+                  <td></td>
+                  <td><p>the custom payload </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+
+      
+        <h3 id="events.Webhook.Encoding">Webhook.Encoding</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>JSON</td>
+                <td>0</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>PROTO_BIN</td>
+                <td>1</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>PROTO_64</td>
+                <td>2</td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
       
 
       
