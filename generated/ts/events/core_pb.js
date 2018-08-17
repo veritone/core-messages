@@ -68,7 +68,10 @@ proto.events.Core.toObject = function(includeInstance, msg) {
     type: jspb.Message.getFieldWithDefault(msg, 4, ""),
     serviceName: jspb.Message.getFieldWithDefault(msg, 5, ""),
     applicationId: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    eventId: jspb.Message.getFieldWithDefault(msg, 7, "")
+    eventId: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    userId: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    tokenId: jspb.Message.getFieldWithDefault(msg, 10, "")
   };
 
   if (includeInstance) {
@@ -132,6 +135,18 @@ proto.events.Core.deserializeBinaryFromReader = function(msg, reader) {
     case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setEventId(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrganizationId(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserId(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTokenId(value);
       break;
     default:
       reader.skipField();
@@ -208,6 +223,27 @@ proto.events.Core.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       7,
+      f
+    );
+  }
+  f = message.getOrganizationId();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
+  f = message.getUserId();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
+  f = message.getTokenId();
+  if (f.length > 0) {
+    writer.writeString(
+      10,
       f
     );
   }
@@ -316,6 +352,51 @@ proto.events.Core.prototype.getEventId = function() {
 /** @param {string} value */
 proto.events.Core.prototype.setEventId = function(value) {
   jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional string organization_id = 8;
+ * @return {string}
+ */
+proto.events.Core.prototype.getOrganizationId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/** @param {string} value */
+proto.events.Core.prototype.setOrganizationId = function(value) {
+  jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string user_id = 9;
+ * @return {string}
+ */
+proto.events.Core.prototype.getUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/** @param {string} value */
+proto.events.Core.prototype.setUserId = function(value) {
+  jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional string token_id = 10;
+ * @return {string}
+ */
+proto.events.Core.prototype.getTokenId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/** @param {string} value */
+proto.events.Core.prototype.setTokenId = function(value) {
+  jspb.Message.setProto3StringField(this, 10, value);
 };
 
 

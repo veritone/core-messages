@@ -26,6 +26,15 @@ export class Core extends jspb.Message {
   getEventId(): string;
   setEventId(value: string): void;
 
+  getOrganizationId(): string;
+  setOrganizationId(value: string): void;
+
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  getTokenId(): string;
+  setTokenId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Core.AsObject;
   static toObject(includeInstance: boolean, msg: Core): Core.AsObject;
@@ -45,6 +54,9 @@ export namespace Core {
     serviceName: string,
     applicationId: string,
     eventId: string,
+    organizationId: string,
+    userId: string,
+    tokenId: string,
   }
 }
 
