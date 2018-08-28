@@ -971,6 +971,1574 @@ $root.events = (function() {
         return VtEvent;
     })();
 
+    events.EngineBuildUploadCompleted = (function() {
+
+        /**
+         * Properties of an EngineBuildUploadCompleted.
+         * @memberof events
+         * @interface IEngineBuildUploadCompleted
+         * @property {string|null} [userId] EngineBuildUploadCompleted userId
+         * @property {string|null} [jobId] EngineBuildUploadCompleted jobId
+         * @property {string|null} [assetId] EngineBuildUploadCompleted assetId
+         * @property {string|null} [success] EngineBuildUploadCompleted success
+         */
+
+        /**
+         * Constructs a new EngineBuildUploadCompleted.
+         * @memberof events
+         * @classdesc Represents an EngineBuildUploadCompleted.
+         * @implements IEngineBuildUploadCompleted
+         * @constructor
+         * @param {events.IEngineBuildUploadCompleted=} [properties] Properties to set
+         */
+        function EngineBuildUploadCompleted(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * EngineBuildUploadCompleted userId.
+         * @member {string} userId
+         * @memberof events.EngineBuildUploadCompleted
+         * @instance
+         */
+        EngineBuildUploadCompleted.prototype.userId = "";
+
+        /**
+         * EngineBuildUploadCompleted jobId.
+         * @member {string} jobId
+         * @memberof events.EngineBuildUploadCompleted
+         * @instance
+         */
+        EngineBuildUploadCompleted.prototype.jobId = "";
+
+        /**
+         * EngineBuildUploadCompleted assetId.
+         * @member {string} assetId
+         * @memberof events.EngineBuildUploadCompleted
+         * @instance
+         */
+        EngineBuildUploadCompleted.prototype.assetId = "";
+
+        /**
+         * EngineBuildUploadCompleted success.
+         * @member {string} success
+         * @memberof events.EngineBuildUploadCompleted
+         * @instance
+         */
+        EngineBuildUploadCompleted.prototype.success = "";
+
+        /**
+         * Creates a new EngineBuildUploadCompleted instance using the specified properties.
+         * @function create
+         * @memberof events.EngineBuildUploadCompleted
+         * @static
+         * @param {events.IEngineBuildUploadCompleted=} [properties] Properties to set
+         * @returns {events.EngineBuildUploadCompleted} EngineBuildUploadCompleted instance
+         */
+        EngineBuildUploadCompleted.create = function create(properties) {
+            return new EngineBuildUploadCompleted(properties);
+        };
+
+        /**
+         * Encodes the specified EngineBuildUploadCompleted message. Does not implicitly {@link events.EngineBuildUploadCompleted.verify|verify} messages.
+         * @function encode
+         * @memberof events.EngineBuildUploadCompleted
+         * @static
+         * @param {events.IEngineBuildUploadCompleted} message EngineBuildUploadCompleted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildUploadCompleted.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.userId);
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.jobId);
+            if (message.assetId != null && message.hasOwnProperty("assetId"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.assetId);
+            if (message.success != null && message.hasOwnProperty("success"))
+                writer.uint32(/* id 13, wireType 2 =*/106).string(message.success);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified EngineBuildUploadCompleted message, length delimited. Does not implicitly {@link events.EngineBuildUploadCompleted.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.EngineBuildUploadCompleted
+         * @static
+         * @param {events.IEngineBuildUploadCompleted} message EngineBuildUploadCompleted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildUploadCompleted.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an EngineBuildUploadCompleted message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.EngineBuildUploadCompleted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.EngineBuildUploadCompleted} EngineBuildUploadCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildUploadCompleted.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.EngineBuildUploadCompleted();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.userId = reader.string();
+                    break;
+                case 11:
+                    message.jobId = reader.string();
+                    break;
+                case 12:
+                    message.assetId = reader.string();
+                    break;
+                case 13:
+                    message.success = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an EngineBuildUploadCompleted message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.EngineBuildUploadCompleted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.EngineBuildUploadCompleted} EngineBuildUploadCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildUploadCompleted.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an EngineBuildUploadCompleted message.
+         * @function verify
+         * @memberof events.EngineBuildUploadCompleted
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        EngineBuildUploadCompleted.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                if (!$util.isString(message.userId))
+                    return "userId: string expected";
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                if (!$util.isString(message.jobId))
+                    return "jobId: string expected";
+            if (message.assetId != null && message.hasOwnProperty("assetId"))
+                if (!$util.isString(message.assetId))
+                    return "assetId: string expected";
+            if (message.success != null && message.hasOwnProperty("success"))
+                if (!$util.isString(message.success))
+                    return "success: string expected";
+            return null;
+        };
+
+        /**
+         * Creates an EngineBuildUploadCompleted message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.EngineBuildUploadCompleted
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.EngineBuildUploadCompleted} EngineBuildUploadCompleted
+         */
+        EngineBuildUploadCompleted.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.EngineBuildUploadCompleted)
+                return object;
+            var message = new $root.events.EngineBuildUploadCompleted();
+            if (object.userId != null)
+                message.userId = String(object.userId);
+            if (object.jobId != null)
+                message.jobId = String(object.jobId);
+            if (object.assetId != null)
+                message.assetId = String(object.assetId);
+            if (object.success != null)
+                message.success = String(object.success);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an EngineBuildUploadCompleted message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.EngineBuildUploadCompleted
+         * @static
+         * @param {events.EngineBuildUploadCompleted} message EngineBuildUploadCompleted
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        EngineBuildUploadCompleted.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.userId = "";
+                object.jobId = "";
+                object.assetId = "";
+                object.success = "";
+            }
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                object.userId = message.userId;
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                object.jobId = message.jobId;
+            if (message.assetId != null && message.hasOwnProperty("assetId"))
+                object.assetId = message.assetId;
+            if (message.success != null && message.hasOwnProperty("success"))
+                object.success = message.success;
+            return object;
+        };
+
+        /**
+         * Converts this EngineBuildUploadCompleted to JSON.
+         * @function toJSON
+         * @memberof events.EngineBuildUploadCompleted
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        EngineBuildUploadCompleted.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return EngineBuildUploadCompleted;
+    })();
+
+    events.EngineBuildManifestProcessed = (function() {
+
+        /**
+         * Properties of an EngineBuildManifestProcessed.
+         * @memberof events
+         * @interface IEngineBuildManifestProcessed
+         * @property {string|null} [userId] EngineBuildManifestProcessed userId
+         * @property {string|null} [jobId] EngineBuildManifestProcessed jobId
+         * @property {string|null} [success] EngineBuildManifestProcessed success
+         * @property {string|null} [engineId] EngineBuildManifestProcessed engineId
+         * @property {string|null} [buildId] EngineBuildManifestProcessed buildId
+         */
+
+        /**
+         * Constructs a new EngineBuildManifestProcessed.
+         * @memberof events
+         * @classdesc Represents an EngineBuildManifestProcessed.
+         * @implements IEngineBuildManifestProcessed
+         * @constructor
+         * @param {events.IEngineBuildManifestProcessed=} [properties] Properties to set
+         */
+        function EngineBuildManifestProcessed(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * EngineBuildManifestProcessed userId.
+         * @member {string} userId
+         * @memberof events.EngineBuildManifestProcessed
+         * @instance
+         */
+        EngineBuildManifestProcessed.prototype.userId = "";
+
+        /**
+         * EngineBuildManifestProcessed jobId.
+         * @member {string} jobId
+         * @memberof events.EngineBuildManifestProcessed
+         * @instance
+         */
+        EngineBuildManifestProcessed.prototype.jobId = "";
+
+        /**
+         * EngineBuildManifestProcessed success.
+         * @member {string} success
+         * @memberof events.EngineBuildManifestProcessed
+         * @instance
+         */
+        EngineBuildManifestProcessed.prototype.success = "";
+
+        /**
+         * EngineBuildManifestProcessed engineId.
+         * @member {string} engineId
+         * @memberof events.EngineBuildManifestProcessed
+         * @instance
+         */
+        EngineBuildManifestProcessed.prototype.engineId = "";
+
+        /**
+         * EngineBuildManifestProcessed buildId.
+         * @member {string} buildId
+         * @memberof events.EngineBuildManifestProcessed
+         * @instance
+         */
+        EngineBuildManifestProcessed.prototype.buildId = "";
+
+        /**
+         * Creates a new EngineBuildManifestProcessed instance using the specified properties.
+         * @function create
+         * @memberof events.EngineBuildManifestProcessed
+         * @static
+         * @param {events.IEngineBuildManifestProcessed=} [properties] Properties to set
+         * @returns {events.EngineBuildManifestProcessed} EngineBuildManifestProcessed instance
+         */
+        EngineBuildManifestProcessed.create = function create(properties) {
+            return new EngineBuildManifestProcessed(properties);
+        };
+
+        /**
+         * Encodes the specified EngineBuildManifestProcessed message. Does not implicitly {@link events.EngineBuildManifestProcessed.verify|verify} messages.
+         * @function encode
+         * @memberof events.EngineBuildManifestProcessed
+         * @static
+         * @param {events.IEngineBuildManifestProcessed} message EngineBuildManifestProcessed message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildManifestProcessed.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.userId);
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.jobId);
+            if (message.success != null && message.hasOwnProperty("success"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.success);
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                writer.uint32(/* id 13, wireType 2 =*/106).string(message.engineId);
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                writer.uint32(/* id 14, wireType 2 =*/114).string(message.buildId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified EngineBuildManifestProcessed message, length delimited. Does not implicitly {@link events.EngineBuildManifestProcessed.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.EngineBuildManifestProcessed
+         * @static
+         * @param {events.IEngineBuildManifestProcessed} message EngineBuildManifestProcessed message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildManifestProcessed.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an EngineBuildManifestProcessed message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.EngineBuildManifestProcessed
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.EngineBuildManifestProcessed} EngineBuildManifestProcessed
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildManifestProcessed.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.EngineBuildManifestProcessed();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.userId = reader.string();
+                    break;
+                case 11:
+                    message.jobId = reader.string();
+                    break;
+                case 12:
+                    message.success = reader.string();
+                    break;
+                case 13:
+                    message.engineId = reader.string();
+                    break;
+                case 14:
+                    message.buildId = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an EngineBuildManifestProcessed message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.EngineBuildManifestProcessed
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.EngineBuildManifestProcessed} EngineBuildManifestProcessed
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildManifestProcessed.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an EngineBuildManifestProcessed message.
+         * @function verify
+         * @memberof events.EngineBuildManifestProcessed
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        EngineBuildManifestProcessed.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                if (!$util.isString(message.userId))
+                    return "userId: string expected";
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                if (!$util.isString(message.jobId))
+                    return "jobId: string expected";
+            if (message.success != null && message.hasOwnProperty("success"))
+                if (!$util.isString(message.success))
+                    return "success: string expected";
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                if (!$util.isString(message.engineId))
+                    return "engineId: string expected";
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                if (!$util.isString(message.buildId))
+                    return "buildId: string expected";
+            return null;
+        };
+
+        /**
+         * Creates an EngineBuildManifestProcessed message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.EngineBuildManifestProcessed
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.EngineBuildManifestProcessed} EngineBuildManifestProcessed
+         */
+        EngineBuildManifestProcessed.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.EngineBuildManifestProcessed)
+                return object;
+            var message = new $root.events.EngineBuildManifestProcessed();
+            if (object.userId != null)
+                message.userId = String(object.userId);
+            if (object.jobId != null)
+                message.jobId = String(object.jobId);
+            if (object.success != null)
+                message.success = String(object.success);
+            if (object.engineId != null)
+                message.engineId = String(object.engineId);
+            if (object.buildId != null)
+                message.buildId = String(object.buildId);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an EngineBuildManifestProcessed message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.EngineBuildManifestProcessed
+         * @static
+         * @param {events.EngineBuildManifestProcessed} message EngineBuildManifestProcessed
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        EngineBuildManifestProcessed.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.userId = "";
+                object.jobId = "";
+                object.success = "";
+                object.engineId = "";
+                object.buildId = "";
+            }
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                object.userId = message.userId;
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                object.jobId = message.jobId;
+            if (message.success != null && message.hasOwnProperty("success"))
+                object.success = message.success;
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                object.engineId = message.engineId;
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                object.buildId = message.buildId;
+            return object;
+        };
+
+        /**
+         * Converts this EngineBuildManifestProcessed to JSON.
+         * @function toJSON
+         * @memberof events.EngineBuildManifestProcessed
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        EngineBuildManifestProcessed.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return EngineBuildManifestProcessed;
+    })();
+
+    events.EngineBuildVulnerabilityChecked = (function() {
+
+        /**
+         * Properties of an EngineBuildVulnerabilityChecked.
+         * @memberof events
+         * @interface IEngineBuildVulnerabilityChecked
+         * @property {string|null} [userId] EngineBuildVulnerabilityChecked userId
+         * @property {string|null} [jobId] EngineBuildVulnerabilityChecked jobId
+         * @property {string|null} [assetId] EngineBuildVulnerabilityChecked assetId
+         * @property {string|null} [success] EngineBuildVulnerabilityChecked success
+         * @property {string|null} [engineId] EngineBuildVulnerabilityChecked engineId
+         * @property {string|null} [buildId] EngineBuildVulnerabilityChecked buildId
+         */
+
+        /**
+         * Constructs a new EngineBuildVulnerabilityChecked.
+         * @memberof events
+         * @classdesc Represents an EngineBuildVulnerabilityChecked.
+         * @implements IEngineBuildVulnerabilityChecked
+         * @constructor
+         * @param {events.IEngineBuildVulnerabilityChecked=} [properties] Properties to set
+         */
+        function EngineBuildVulnerabilityChecked(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * EngineBuildVulnerabilityChecked userId.
+         * @member {string} userId
+         * @memberof events.EngineBuildVulnerabilityChecked
+         * @instance
+         */
+        EngineBuildVulnerabilityChecked.prototype.userId = "";
+
+        /**
+         * EngineBuildVulnerabilityChecked jobId.
+         * @member {string} jobId
+         * @memberof events.EngineBuildVulnerabilityChecked
+         * @instance
+         */
+        EngineBuildVulnerabilityChecked.prototype.jobId = "";
+
+        /**
+         * EngineBuildVulnerabilityChecked assetId.
+         * @member {string} assetId
+         * @memberof events.EngineBuildVulnerabilityChecked
+         * @instance
+         */
+        EngineBuildVulnerabilityChecked.prototype.assetId = "";
+
+        /**
+         * EngineBuildVulnerabilityChecked success.
+         * @member {string} success
+         * @memberof events.EngineBuildVulnerabilityChecked
+         * @instance
+         */
+        EngineBuildVulnerabilityChecked.prototype.success = "";
+
+        /**
+         * EngineBuildVulnerabilityChecked engineId.
+         * @member {string} engineId
+         * @memberof events.EngineBuildVulnerabilityChecked
+         * @instance
+         */
+        EngineBuildVulnerabilityChecked.prototype.engineId = "";
+
+        /**
+         * EngineBuildVulnerabilityChecked buildId.
+         * @member {string} buildId
+         * @memberof events.EngineBuildVulnerabilityChecked
+         * @instance
+         */
+        EngineBuildVulnerabilityChecked.prototype.buildId = "";
+
+        /**
+         * Creates a new EngineBuildVulnerabilityChecked instance using the specified properties.
+         * @function create
+         * @memberof events.EngineBuildVulnerabilityChecked
+         * @static
+         * @param {events.IEngineBuildVulnerabilityChecked=} [properties] Properties to set
+         * @returns {events.EngineBuildVulnerabilityChecked} EngineBuildVulnerabilityChecked instance
+         */
+        EngineBuildVulnerabilityChecked.create = function create(properties) {
+            return new EngineBuildVulnerabilityChecked(properties);
+        };
+
+        /**
+         * Encodes the specified EngineBuildVulnerabilityChecked message. Does not implicitly {@link events.EngineBuildVulnerabilityChecked.verify|verify} messages.
+         * @function encode
+         * @memberof events.EngineBuildVulnerabilityChecked
+         * @static
+         * @param {events.IEngineBuildVulnerabilityChecked} message EngineBuildVulnerabilityChecked message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildVulnerabilityChecked.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.userId);
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.jobId);
+            if (message.assetId != null && message.hasOwnProperty("assetId"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.assetId);
+            if (message.success != null && message.hasOwnProperty("success"))
+                writer.uint32(/* id 13, wireType 2 =*/106).string(message.success);
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                writer.uint32(/* id 14, wireType 2 =*/114).string(message.engineId);
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                writer.uint32(/* id 15, wireType 2 =*/122).string(message.buildId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified EngineBuildVulnerabilityChecked message, length delimited. Does not implicitly {@link events.EngineBuildVulnerabilityChecked.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.EngineBuildVulnerabilityChecked
+         * @static
+         * @param {events.IEngineBuildVulnerabilityChecked} message EngineBuildVulnerabilityChecked message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildVulnerabilityChecked.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an EngineBuildVulnerabilityChecked message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.EngineBuildVulnerabilityChecked
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.EngineBuildVulnerabilityChecked} EngineBuildVulnerabilityChecked
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildVulnerabilityChecked.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.EngineBuildVulnerabilityChecked();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.userId = reader.string();
+                    break;
+                case 11:
+                    message.jobId = reader.string();
+                    break;
+                case 12:
+                    message.assetId = reader.string();
+                    break;
+                case 13:
+                    message.success = reader.string();
+                    break;
+                case 14:
+                    message.engineId = reader.string();
+                    break;
+                case 15:
+                    message.buildId = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an EngineBuildVulnerabilityChecked message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.EngineBuildVulnerabilityChecked
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.EngineBuildVulnerabilityChecked} EngineBuildVulnerabilityChecked
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildVulnerabilityChecked.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an EngineBuildVulnerabilityChecked message.
+         * @function verify
+         * @memberof events.EngineBuildVulnerabilityChecked
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        EngineBuildVulnerabilityChecked.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                if (!$util.isString(message.userId))
+                    return "userId: string expected";
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                if (!$util.isString(message.jobId))
+                    return "jobId: string expected";
+            if (message.assetId != null && message.hasOwnProperty("assetId"))
+                if (!$util.isString(message.assetId))
+                    return "assetId: string expected";
+            if (message.success != null && message.hasOwnProperty("success"))
+                if (!$util.isString(message.success))
+                    return "success: string expected";
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                if (!$util.isString(message.engineId))
+                    return "engineId: string expected";
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                if (!$util.isString(message.buildId))
+                    return "buildId: string expected";
+            return null;
+        };
+
+        /**
+         * Creates an EngineBuildVulnerabilityChecked message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.EngineBuildVulnerabilityChecked
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.EngineBuildVulnerabilityChecked} EngineBuildVulnerabilityChecked
+         */
+        EngineBuildVulnerabilityChecked.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.EngineBuildVulnerabilityChecked)
+                return object;
+            var message = new $root.events.EngineBuildVulnerabilityChecked();
+            if (object.userId != null)
+                message.userId = String(object.userId);
+            if (object.jobId != null)
+                message.jobId = String(object.jobId);
+            if (object.assetId != null)
+                message.assetId = String(object.assetId);
+            if (object.success != null)
+                message.success = String(object.success);
+            if (object.engineId != null)
+                message.engineId = String(object.engineId);
+            if (object.buildId != null)
+                message.buildId = String(object.buildId);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an EngineBuildVulnerabilityChecked message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.EngineBuildVulnerabilityChecked
+         * @static
+         * @param {events.EngineBuildVulnerabilityChecked} message EngineBuildVulnerabilityChecked
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        EngineBuildVulnerabilityChecked.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.userId = "";
+                object.jobId = "";
+                object.assetId = "";
+                object.success = "";
+                object.engineId = "";
+                object.buildId = "";
+            }
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                object.userId = message.userId;
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                object.jobId = message.jobId;
+            if (message.assetId != null && message.hasOwnProperty("assetId"))
+                object.assetId = message.assetId;
+            if (message.success != null && message.hasOwnProperty("success"))
+                object.success = message.success;
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                object.engineId = message.engineId;
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                object.buildId = message.buildId;
+            return object;
+        };
+
+        /**
+         * Converts this EngineBuildVulnerabilityChecked to JSON.
+         * @function toJSON
+         * @memberof events.EngineBuildVulnerabilityChecked
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        EngineBuildVulnerabilityChecked.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return EngineBuildVulnerabilityChecked;
+    })();
+
+    events.EngineBuildTestReportDone = (function() {
+
+        /**
+         * Properties of an EngineBuildTestReportDone.
+         * @memberof events
+         * @interface IEngineBuildTestReportDone
+         * @property {string|null} [userId] EngineBuildTestReportDone userId
+         * @property {string|null} [jobId] EngineBuildTestReportDone jobId
+         * @property {string|null} [success] EngineBuildTestReportDone success
+         * @property {string|null} [engineId] EngineBuildTestReportDone engineId
+         * @property {string|null} [buildId] EngineBuildTestReportDone buildId
+         */
+
+        /**
+         * Constructs a new EngineBuildTestReportDone.
+         * @memberof events
+         * @classdesc Represents an EngineBuildTestReportDone.
+         * @implements IEngineBuildTestReportDone
+         * @constructor
+         * @param {events.IEngineBuildTestReportDone=} [properties] Properties to set
+         */
+        function EngineBuildTestReportDone(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * EngineBuildTestReportDone userId.
+         * @member {string} userId
+         * @memberof events.EngineBuildTestReportDone
+         * @instance
+         */
+        EngineBuildTestReportDone.prototype.userId = "";
+
+        /**
+         * EngineBuildTestReportDone jobId.
+         * @member {string} jobId
+         * @memberof events.EngineBuildTestReportDone
+         * @instance
+         */
+        EngineBuildTestReportDone.prototype.jobId = "";
+
+        /**
+         * EngineBuildTestReportDone success.
+         * @member {string} success
+         * @memberof events.EngineBuildTestReportDone
+         * @instance
+         */
+        EngineBuildTestReportDone.prototype.success = "";
+
+        /**
+         * EngineBuildTestReportDone engineId.
+         * @member {string} engineId
+         * @memberof events.EngineBuildTestReportDone
+         * @instance
+         */
+        EngineBuildTestReportDone.prototype.engineId = "";
+
+        /**
+         * EngineBuildTestReportDone buildId.
+         * @member {string} buildId
+         * @memberof events.EngineBuildTestReportDone
+         * @instance
+         */
+        EngineBuildTestReportDone.prototype.buildId = "";
+
+        /**
+         * Creates a new EngineBuildTestReportDone instance using the specified properties.
+         * @function create
+         * @memberof events.EngineBuildTestReportDone
+         * @static
+         * @param {events.IEngineBuildTestReportDone=} [properties] Properties to set
+         * @returns {events.EngineBuildTestReportDone} EngineBuildTestReportDone instance
+         */
+        EngineBuildTestReportDone.create = function create(properties) {
+            return new EngineBuildTestReportDone(properties);
+        };
+
+        /**
+         * Encodes the specified EngineBuildTestReportDone message. Does not implicitly {@link events.EngineBuildTestReportDone.verify|verify} messages.
+         * @function encode
+         * @memberof events.EngineBuildTestReportDone
+         * @static
+         * @param {events.IEngineBuildTestReportDone} message EngineBuildTestReportDone message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildTestReportDone.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.userId);
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.jobId);
+            if (message.success != null && message.hasOwnProperty("success"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.success);
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                writer.uint32(/* id 13, wireType 2 =*/106).string(message.engineId);
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                writer.uint32(/* id 14, wireType 2 =*/114).string(message.buildId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified EngineBuildTestReportDone message, length delimited. Does not implicitly {@link events.EngineBuildTestReportDone.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.EngineBuildTestReportDone
+         * @static
+         * @param {events.IEngineBuildTestReportDone} message EngineBuildTestReportDone message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildTestReportDone.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an EngineBuildTestReportDone message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.EngineBuildTestReportDone
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.EngineBuildTestReportDone} EngineBuildTestReportDone
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildTestReportDone.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.EngineBuildTestReportDone();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.userId = reader.string();
+                    break;
+                case 11:
+                    message.jobId = reader.string();
+                    break;
+                case 12:
+                    message.success = reader.string();
+                    break;
+                case 13:
+                    message.engineId = reader.string();
+                    break;
+                case 14:
+                    message.buildId = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an EngineBuildTestReportDone message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.EngineBuildTestReportDone
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.EngineBuildTestReportDone} EngineBuildTestReportDone
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildTestReportDone.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an EngineBuildTestReportDone message.
+         * @function verify
+         * @memberof events.EngineBuildTestReportDone
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        EngineBuildTestReportDone.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                if (!$util.isString(message.userId))
+                    return "userId: string expected";
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                if (!$util.isString(message.jobId))
+                    return "jobId: string expected";
+            if (message.success != null && message.hasOwnProperty("success"))
+                if (!$util.isString(message.success))
+                    return "success: string expected";
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                if (!$util.isString(message.engineId))
+                    return "engineId: string expected";
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                if (!$util.isString(message.buildId))
+                    return "buildId: string expected";
+            return null;
+        };
+
+        /**
+         * Creates an EngineBuildTestReportDone message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.EngineBuildTestReportDone
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.EngineBuildTestReportDone} EngineBuildTestReportDone
+         */
+        EngineBuildTestReportDone.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.EngineBuildTestReportDone)
+                return object;
+            var message = new $root.events.EngineBuildTestReportDone();
+            if (object.userId != null)
+                message.userId = String(object.userId);
+            if (object.jobId != null)
+                message.jobId = String(object.jobId);
+            if (object.success != null)
+                message.success = String(object.success);
+            if (object.engineId != null)
+                message.engineId = String(object.engineId);
+            if (object.buildId != null)
+                message.buildId = String(object.buildId);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an EngineBuildTestReportDone message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.EngineBuildTestReportDone
+         * @static
+         * @param {events.EngineBuildTestReportDone} message EngineBuildTestReportDone
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        EngineBuildTestReportDone.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.userId = "";
+                object.jobId = "";
+                object.success = "";
+                object.engineId = "";
+                object.buildId = "";
+            }
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                object.userId = message.userId;
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                object.jobId = message.jobId;
+            if (message.success != null && message.hasOwnProperty("success"))
+                object.success = message.success;
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                object.engineId = message.engineId;
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                object.buildId = message.buildId;
+            return object;
+        };
+
+        /**
+         * Converts this EngineBuildTestReportDone to JSON.
+         * @function toJSON
+         * @memberof events.EngineBuildTestReportDone
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        EngineBuildTestReportDone.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return EngineBuildTestReportDone;
+    })();
+
+    events.engineBuildDeploySuccess = (function() {
+
+        /**
+         * Properties of an engineBuildDeploySuccess.
+         * @memberof events
+         * @interface IengineBuildDeploySuccess
+         * @property {string|null} [userId] engineBuildDeploySuccess userId
+         * @property {string|null} [engineId] engineBuildDeploySuccess engineId
+         * @property {string|null} [buildId] engineBuildDeploySuccess buildId
+         */
+
+        /**
+         * Constructs a new engineBuildDeploySuccess.
+         * @memberof events
+         * @classdesc Represents an engineBuildDeploySuccess.
+         * @implements IengineBuildDeploySuccess
+         * @constructor
+         * @param {events.IengineBuildDeploySuccess=} [properties] Properties to set
+         */
+        function engineBuildDeploySuccess(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * engineBuildDeploySuccess userId.
+         * @member {string} userId
+         * @memberof events.engineBuildDeploySuccess
+         * @instance
+         */
+        engineBuildDeploySuccess.prototype.userId = "";
+
+        /**
+         * engineBuildDeploySuccess engineId.
+         * @member {string} engineId
+         * @memberof events.engineBuildDeploySuccess
+         * @instance
+         */
+        engineBuildDeploySuccess.prototype.engineId = "";
+
+        /**
+         * engineBuildDeploySuccess buildId.
+         * @member {string} buildId
+         * @memberof events.engineBuildDeploySuccess
+         * @instance
+         */
+        engineBuildDeploySuccess.prototype.buildId = "";
+
+        /**
+         * Creates a new engineBuildDeploySuccess instance using the specified properties.
+         * @function create
+         * @memberof events.engineBuildDeploySuccess
+         * @static
+         * @param {events.IengineBuildDeploySuccess=} [properties] Properties to set
+         * @returns {events.engineBuildDeploySuccess} engineBuildDeploySuccess instance
+         */
+        engineBuildDeploySuccess.create = function create(properties) {
+            return new engineBuildDeploySuccess(properties);
+        };
+
+        /**
+         * Encodes the specified engineBuildDeploySuccess message. Does not implicitly {@link events.engineBuildDeploySuccess.verify|verify} messages.
+         * @function encode
+         * @memberof events.engineBuildDeploySuccess
+         * @static
+         * @param {events.IengineBuildDeploySuccess} message engineBuildDeploySuccess message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        engineBuildDeploySuccess.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.userId);
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.engineId);
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.buildId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified engineBuildDeploySuccess message, length delimited. Does not implicitly {@link events.engineBuildDeploySuccess.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.engineBuildDeploySuccess
+         * @static
+         * @param {events.IengineBuildDeploySuccess} message engineBuildDeploySuccess message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        engineBuildDeploySuccess.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an engineBuildDeploySuccess message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.engineBuildDeploySuccess
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.engineBuildDeploySuccess} engineBuildDeploySuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        engineBuildDeploySuccess.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.engineBuildDeploySuccess();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.userId = reader.string();
+                    break;
+                case 11:
+                    message.engineId = reader.string();
+                    break;
+                case 12:
+                    message.buildId = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an engineBuildDeploySuccess message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.engineBuildDeploySuccess
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.engineBuildDeploySuccess} engineBuildDeploySuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        engineBuildDeploySuccess.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an engineBuildDeploySuccess message.
+         * @function verify
+         * @memberof events.engineBuildDeploySuccess
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        engineBuildDeploySuccess.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                if (!$util.isString(message.userId))
+                    return "userId: string expected";
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                if (!$util.isString(message.engineId))
+                    return "engineId: string expected";
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                if (!$util.isString(message.buildId))
+                    return "buildId: string expected";
+            return null;
+        };
+
+        /**
+         * Creates an engineBuildDeploySuccess message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.engineBuildDeploySuccess
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.engineBuildDeploySuccess} engineBuildDeploySuccess
+         */
+        engineBuildDeploySuccess.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.engineBuildDeploySuccess)
+                return object;
+            var message = new $root.events.engineBuildDeploySuccess();
+            if (object.userId != null)
+                message.userId = String(object.userId);
+            if (object.engineId != null)
+                message.engineId = String(object.engineId);
+            if (object.buildId != null)
+                message.buildId = String(object.buildId);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an engineBuildDeploySuccess message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.engineBuildDeploySuccess
+         * @static
+         * @param {events.engineBuildDeploySuccess} message engineBuildDeploySuccess
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        engineBuildDeploySuccess.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.userId = "";
+                object.engineId = "";
+                object.buildId = "";
+            }
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                object.userId = message.userId;
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                object.engineId = message.engineId;
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                object.buildId = message.buildId;
+            return object;
+        };
+
+        /**
+         * Converts this engineBuildDeploySuccess to JSON.
+         * @function toJSON
+         * @memberof events.engineBuildDeploySuccess
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        engineBuildDeploySuccess.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return engineBuildDeploySuccess;
+    })();
+
+    events.engineBuildDeployFail = (function() {
+
+        /**
+         * Properties of an engineBuildDeployFail.
+         * @memberof events
+         * @interface IengineBuildDeployFail
+         * @property {string|null} [userId] engineBuildDeployFail userId
+         * @property {string|null} [engineId] engineBuildDeployFail engineId
+         * @property {string|null} [buildId] engineBuildDeployFail buildId
+         */
+
+        /**
+         * Constructs a new engineBuildDeployFail.
+         * @memberof events
+         * @classdesc Represents an engineBuildDeployFail.
+         * @implements IengineBuildDeployFail
+         * @constructor
+         * @param {events.IengineBuildDeployFail=} [properties] Properties to set
+         */
+        function engineBuildDeployFail(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * engineBuildDeployFail userId.
+         * @member {string} userId
+         * @memberof events.engineBuildDeployFail
+         * @instance
+         */
+        engineBuildDeployFail.prototype.userId = "";
+
+        /**
+         * engineBuildDeployFail engineId.
+         * @member {string} engineId
+         * @memberof events.engineBuildDeployFail
+         * @instance
+         */
+        engineBuildDeployFail.prototype.engineId = "";
+
+        /**
+         * engineBuildDeployFail buildId.
+         * @member {string} buildId
+         * @memberof events.engineBuildDeployFail
+         * @instance
+         */
+        engineBuildDeployFail.prototype.buildId = "";
+
+        /**
+         * Creates a new engineBuildDeployFail instance using the specified properties.
+         * @function create
+         * @memberof events.engineBuildDeployFail
+         * @static
+         * @param {events.IengineBuildDeployFail=} [properties] Properties to set
+         * @returns {events.engineBuildDeployFail} engineBuildDeployFail instance
+         */
+        engineBuildDeployFail.create = function create(properties) {
+            return new engineBuildDeployFail(properties);
+        };
+
+        /**
+         * Encodes the specified engineBuildDeployFail message. Does not implicitly {@link events.engineBuildDeployFail.verify|verify} messages.
+         * @function encode
+         * @memberof events.engineBuildDeployFail
+         * @static
+         * @param {events.IengineBuildDeployFail} message engineBuildDeployFail message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        engineBuildDeployFail.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.userId);
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.engineId);
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.buildId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified engineBuildDeployFail message, length delimited. Does not implicitly {@link events.engineBuildDeployFail.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.engineBuildDeployFail
+         * @static
+         * @param {events.IengineBuildDeployFail} message engineBuildDeployFail message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        engineBuildDeployFail.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an engineBuildDeployFail message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.engineBuildDeployFail
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.engineBuildDeployFail} engineBuildDeployFail
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        engineBuildDeployFail.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.engineBuildDeployFail();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.userId = reader.string();
+                    break;
+                case 11:
+                    message.engineId = reader.string();
+                    break;
+                case 12:
+                    message.buildId = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an engineBuildDeployFail message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.engineBuildDeployFail
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.engineBuildDeployFail} engineBuildDeployFail
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        engineBuildDeployFail.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an engineBuildDeployFail message.
+         * @function verify
+         * @memberof events.engineBuildDeployFail
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        engineBuildDeployFail.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                if (!$util.isString(message.userId))
+                    return "userId: string expected";
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                if (!$util.isString(message.engineId))
+                    return "engineId: string expected";
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                if (!$util.isString(message.buildId))
+                    return "buildId: string expected";
+            return null;
+        };
+
+        /**
+         * Creates an engineBuildDeployFail message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.engineBuildDeployFail
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.engineBuildDeployFail} engineBuildDeployFail
+         */
+        engineBuildDeployFail.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.engineBuildDeployFail)
+                return object;
+            var message = new $root.events.engineBuildDeployFail();
+            if (object.userId != null)
+                message.userId = String(object.userId);
+            if (object.engineId != null)
+                message.engineId = String(object.engineId);
+            if (object.buildId != null)
+                message.buildId = String(object.buildId);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an engineBuildDeployFail message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.engineBuildDeployFail
+         * @static
+         * @param {events.engineBuildDeployFail} message engineBuildDeployFail
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        engineBuildDeployFail.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.userId = "";
+                object.engineId = "";
+                object.buildId = "";
+            }
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                object.userId = message.userId;
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                object.engineId = message.engineId;
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                object.buildId = message.buildId;
+            return object;
+        };
+
+        /**
+         * Converts this engineBuildDeployFail to JSON.
+         * @function toJSON
+         * @memberof events.engineBuildDeployFail
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        engineBuildDeployFail.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return engineBuildDeployFail;
+    })();
+
     events.EngineBuildApproved = (function() {
 
         /**
@@ -1281,6 +2849,1080 @@ $root.events = (function() {
         };
 
         return EngineBuildApproved;
+    })();
+
+    events.EngineBuildDisapprove = (function() {
+
+        /**
+         * Properties of an EngineBuildDisapprove.
+         * @memberof events
+         * @interface IEngineBuildDisapprove
+         * @property {string|null} [userId] EngineBuildDisapprove userId
+         * @property {string|null} [engineId] EngineBuildDisapprove engineId
+         * @property {string|null} [buildId] EngineBuildDisapprove buildId
+         * @property {number|Long|null} [organizationId] EngineBuildDisapprove organizationId
+         * @property {number|null} [statusCode] EngineBuildDisapprove statusCode
+         * @property {string|null} [action] EngineBuildDisapprove action
+         */
+
+        /**
+         * Constructs a new EngineBuildDisapprove.
+         * @memberof events
+         * @classdesc Represents an EngineBuildDisapprove.
+         * @implements IEngineBuildDisapprove
+         * @constructor
+         * @param {events.IEngineBuildDisapprove=} [properties] Properties to set
+         */
+        function EngineBuildDisapprove(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * EngineBuildDisapprove userId.
+         * @member {string} userId
+         * @memberof events.EngineBuildDisapprove
+         * @instance
+         */
+        EngineBuildDisapprove.prototype.userId = "";
+
+        /**
+         * EngineBuildDisapprove engineId.
+         * @member {string} engineId
+         * @memberof events.EngineBuildDisapprove
+         * @instance
+         */
+        EngineBuildDisapprove.prototype.engineId = "";
+
+        /**
+         * EngineBuildDisapprove buildId.
+         * @member {string} buildId
+         * @memberof events.EngineBuildDisapprove
+         * @instance
+         */
+        EngineBuildDisapprove.prototype.buildId = "";
+
+        /**
+         * EngineBuildDisapprove organizationId.
+         * @member {number|Long} organizationId
+         * @memberof events.EngineBuildDisapprove
+         * @instance
+         */
+        EngineBuildDisapprove.prototype.organizationId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+        /**
+         * EngineBuildDisapprove statusCode.
+         * @member {number} statusCode
+         * @memberof events.EngineBuildDisapprove
+         * @instance
+         */
+        EngineBuildDisapprove.prototype.statusCode = 0;
+
+        /**
+         * EngineBuildDisapprove action.
+         * @member {string} action
+         * @memberof events.EngineBuildDisapprove
+         * @instance
+         */
+        EngineBuildDisapprove.prototype.action = "";
+
+        /**
+         * Creates a new EngineBuildDisapprove instance using the specified properties.
+         * @function create
+         * @memberof events.EngineBuildDisapprove
+         * @static
+         * @param {events.IEngineBuildDisapprove=} [properties] Properties to set
+         * @returns {events.EngineBuildDisapprove} EngineBuildDisapprove instance
+         */
+        EngineBuildDisapprove.create = function create(properties) {
+            return new EngineBuildDisapprove(properties);
+        };
+
+        /**
+         * Encodes the specified EngineBuildDisapprove message. Does not implicitly {@link events.EngineBuildDisapprove.verify|verify} messages.
+         * @function encode
+         * @memberof events.EngineBuildDisapprove
+         * @static
+         * @param {events.IEngineBuildDisapprove} message EngineBuildDisapprove message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildDisapprove.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.userId);
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.engineId);
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.buildId);
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                writer.uint32(/* id 13, wireType 0 =*/104).int64(message.organizationId);
+            if (message.statusCode != null && message.hasOwnProperty("statusCode"))
+                writer.uint32(/* id 14, wireType 0 =*/112).int32(message.statusCode);
+            if (message.action != null && message.hasOwnProperty("action"))
+                writer.uint32(/* id 15, wireType 2 =*/122).string(message.action);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified EngineBuildDisapprove message, length delimited. Does not implicitly {@link events.EngineBuildDisapprove.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.EngineBuildDisapprove
+         * @static
+         * @param {events.IEngineBuildDisapprove} message EngineBuildDisapprove message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildDisapprove.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an EngineBuildDisapprove message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.EngineBuildDisapprove
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.EngineBuildDisapprove} EngineBuildDisapprove
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildDisapprove.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.EngineBuildDisapprove();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.userId = reader.string();
+                    break;
+                case 11:
+                    message.engineId = reader.string();
+                    break;
+                case 12:
+                    message.buildId = reader.string();
+                    break;
+                case 13:
+                    message.organizationId = reader.int64();
+                    break;
+                case 14:
+                    message.statusCode = reader.int32();
+                    break;
+                case 15:
+                    message.action = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an EngineBuildDisapprove message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.EngineBuildDisapprove
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.EngineBuildDisapprove} EngineBuildDisapprove
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildDisapprove.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an EngineBuildDisapprove message.
+         * @function verify
+         * @memberof events.EngineBuildDisapprove
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        EngineBuildDisapprove.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                if (!$util.isString(message.userId))
+                    return "userId: string expected";
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                if (!$util.isString(message.engineId))
+                    return "engineId: string expected";
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                if (!$util.isString(message.buildId))
+                    return "buildId: string expected";
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                if (!$util.isInteger(message.organizationId) && !(message.organizationId && $util.isInteger(message.organizationId.low) && $util.isInteger(message.organizationId.high)))
+                    return "organizationId: integer|Long expected";
+            if (message.statusCode != null && message.hasOwnProperty("statusCode"))
+                if (!$util.isInteger(message.statusCode))
+                    return "statusCode: integer expected";
+            if (message.action != null && message.hasOwnProperty("action"))
+                if (!$util.isString(message.action))
+                    return "action: string expected";
+            return null;
+        };
+
+        /**
+         * Creates an EngineBuildDisapprove message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.EngineBuildDisapprove
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.EngineBuildDisapprove} EngineBuildDisapprove
+         */
+        EngineBuildDisapprove.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.EngineBuildDisapprove)
+                return object;
+            var message = new $root.events.EngineBuildDisapprove();
+            if (object.userId != null)
+                message.userId = String(object.userId);
+            if (object.engineId != null)
+                message.engineId = String(object.engineId);
+            if (object.buildId != null)
+                message.buildId = String(object.buildId);
+            if (object.organizationId != null)
+                if ($util.Long)
+                    (message.organizationId = $util.Long.fromValue(object.organizationId)).unsigned = false;
+                else if (typeof object.organizationId === "string")
+                    message.organizationId = parseInt(object.organizationId, 10);
+                else if (typeof object.organizationId === "number")
+                    message.organizationId = object.organizationId;
+                else if (typeof object.organizationId === "object")
+                    message.organizationId = new $util.LongBits(object.organizationId.low >>> 0, object.organizationId.high >>> 0).toNumber();
+            if (object.statusCode != null)
+                message.statusCode = object.statusCode | 0;
+            if (object.action != null)
+                message.action = String(object.action);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an EngineBuildDisapprove message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.EngineBuildDisapprove
+         * @static
+         * @param {events.EngineBuildDisapprove} message EngineBuildDisapprove
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        EngineBuildDisapprove.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.userId = "";
+                object.engineId = "";
+                object.buildId = "";
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.organizationId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.organizationId = options.longs === String ? "0" : 0;
+                object.statusCode = 0;
+                object.action = "";
+            }
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                object.userId = message.userId;
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                object.engineId = message.engineId;
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                object.buildId = message.buildId;
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                if (typeof message.organizationId === "number")
+                    object.organizationId = options.longs === String ? String(message.organizationId) : message.organizationId;
+                else
+                    object.organizationId = options.longs === String ? $util.Long.prototype.toString.call(message.organizationId) : options.longs === Number ? new $util.LongBits(message.organizationId.low >>> 0, message.organizationId.high >>> 0).toNumber() : message.organizationId;
+            if (message.statusCode != null && message.hasOwnProperty("statusCode"))
+                object.statusCode = message.statusCode;
+            if (message.action != null && message.hasOwnProperty("action"))
+                object.action = message.action;
+            return object;
+        };
+
+        /**
+         * Converts this EngineBuildDisapprove to JSON.
+         * @function toJSON
+         * @memberof events.EngineBuildDisapprove
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        EngineBuildDisapprove.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return EngineBuildDisapprove;
+    })();
+
+    events.EngineBuildCreate = (function() {
+
+        /**
+         * Properties of an EngineBuildCreate.
+         * @memberof events
+         * @interface IEngineBuildCreate
+         * @property {string|null} [engineId] EngineBuildCreate engineId
+         * @property {string|null} [buildId] EngineBuildCreate buildId
+         * @property {number|null} [statusCode] EngineBuildCreate statusCode
+         * @property {string|null} [action] EngineBuildCreate action
+         */
+
+        /**
+         * Constructs a new EngineBuildCreate.
+         * @memberof events
+         * @classdesc Represents an EngineBuildCreate.
+         * @implements IEngineBuildCreate
+         * @constructor
+         * @param {events.IEngineBuildCreate=} [properties] Properties to set
+         */
+        function EngineBuildCreate(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * EngineBuildCreate engineId.
+         * @member {string} engineId
+         * @memberof events.EngineBuildCreate
+         * @instance
+         */
+        EngineBuildCreate.prototype.engineId = "";
+
+        /**
+         * EngineBuildCreate buildId.
+         * @member {string} buildId
+         * @memberof events.EngineBuildCreate
+         * @instance
+         */
+        EngineBuildCreate.prototype.buildId = "";
+
+        /**
+         * EngineBuildCreate statusCode.
+         * @member {number} statusCode
+         * @memberof events.EngineBuildCreate
+         * @instance
+         */
+        EngineBuildCreate.prototype.statusCode = 0;
+
+        /**
+         * EngineBuildCreate action.
+         * @member {string} action
+         * @memberof events.EngineBuildCreate
+         * @instance
+         */
+        EngineBuildCreate.prototype.action = "";
+
+        /**
+         * Creates a new EngineBuildCreate instance using the specified properties.
+         * @function create
+         * @memberof events.EngineBuildCreate
+         * @static
+         * @param {events.IEngineBuildCreate=} [properties] Properties to set
+         * @returns {events.EngineBuildCreate} EngineBuildCreate instance
+         */
+        EngineBuildCreate.create = function create(properties) {
+            return new EngineBuildCreate(properties);
+        };
+
+        /**
+         * Encodes the specified EngineBuildCreate message. Does not implicitly {@link events.EngineBuildCreate.verify|verify} messages.
+         * @function encode
+         * @memberof events.EngineBuildCreate
+         * @static
+         * @param {events.IEngineBuildCreate} message EngineBuildCreate message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildCreate.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.engineId);
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.buildId);
+            if (message.statusCode != null && message.hasOwnProperty("statusCode"))
+                writer.uint32(/* id 13, wireType 0 =*/104).int32(message.statusCode);
+            if (message.action != null && message.hasOwnProperty("action"))
+                writer.uint32(/* id 14, wireType 2 =*/114).string(message.action);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified EngineBuildCreate message, length delimited. Does not implicitly {@link events.EngineBuildCreate.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.EngineBuildCreate
+         * @static
+         * @param {events.IEngineBuildCreate} message EngineBuildCreate message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildCreate.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an EngineBuildCreate message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.EngineBuildCreate
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.EngineBuildCreate} EngineBuildCreate
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildCreate.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.EngineBuildCreate();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 11:
+                    message.engineId = reader.string();
+                    break;
+                case 12:
+                    message.buildId = reader.string();
+                    break;
+                case 13:
+                    message.statusCode = reader.int32();
+                    break;
+                case 14:
+                    message.action = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an EngineBuildCreate message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.EngineBuildCreate
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.EngineBuildCreate} EngineBuildCreate
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildCreate.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an EngineBuildCreate message.
+         * @function verify
+         * @memberof events.EngineBuildCreate
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        EngineBuildCreate.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                if (!$util.isString(message.engineId))
+                    return "engineId: string expected";
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                if (!$util.isString(message.buildId))
+                    return "buildId: string expected";
+            if (message.statusCode != null && message.hasOwnProperty("statusCode"))
+                if (!$util.isInteger(message.statusCode))
+                    return "statusCode: integer expected";
+            if (message.action != null && message.hasOwnProperty("action"))
+                if (!$util.isString(message.action))
+                    return "action: string expected";
+            return null;
+        };
+
+        /**
+         * Creates an EngineBuildCreate message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.EngineBuildCreate
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.EngineBuildCreate} EngineBuildCreate
+         */
+        EngineBuildCreate.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.EngineBuildCreate)
+                return object;
+            var message = new $root.events.EngineBuildCreate();
+            if (object.engineId != null)
+                message.engineId = String(object.engineId);
+            if (object.buildId != null)
+                message.buildId = String(object.buildId);
+            if (object.statusCode != null)
+                message.statusCode = object.statusCode | 0;
+            if (object.action != null)
+                message.action = String(object.action);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an EngineBuildCreate message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.EngineBuildCreate
+         * @static
+         * @param {events.EngineBuildCreate} message EngineBuildCreate
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        EngineBuildCreate.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.engineId = "";
+                object.buildId = "";
+                object.statusCode = 0;
+                object.action = "";
+            }
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                object.engineId = message.engineId;
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                object.buildId = message.buildId;
+            if (message.statusCode != null && message.hasOwnProperty("statusCode"))
+                object.statusCode = message.statusCode;
+            if (message.action != null && message.hasOwnProperty("action"))
+                object.action = message.action;
+            return object;
+        };
+
+        /**
+         * Converts this EngineBuildCreate to JSON.
+         * @function toJSON
+         * @memberof events.EngineBuildCreate
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        EngineBuildCreate.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return EngineBuildCreate;
+    })();
+
+    events.EngineBuildUpload = (function() {
+
+        /**
+         * Properties of an EngineBuildUpload.
+         * @memberof events
+         * @interface IEngineBuildUpload
+         * @property {string|null} [engineId] EngineBuildUpload engineId
+         * @property {string|null} [buildId] EngineBuildUpload buildId
+         * @property {number|null} [statusCode] EngineBuildUpload statusCode
+         * @property {string|null} [action] EngineBuildUpload action
+         */
+
+        /**
+         * Constructs a new EngineBuildUpload.
+         * @memberof events
+         * @classdesc Represents an EngineBuildUpload.
+         * @implements IEngineBuildUpload
+         * @constructor
+         * @param {events.IEngineBuildUpload=} [properties] Properties to set
+         */
+        function EngineBuildUpload(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * EngineBuildUpload engineId.
+         * @member {string} engineId
+         * @memberof events.EngineBuildUpload
+         * @instance
+         */
+        EngineBuildUpload.prototype.engineId = "";
+
+        /**
+         * EngineBuildUpload buildId.
+         * @member {string} buildId
+         * @memberof events.EngineBuildUpload
+         * @instance
+         */
+        EngineBuildUpload.prototype.buildId = "";
+
+        /**
+         * EngineBuildUpload statusCode.
+         * @member {number} statusCode
+         * @memberof events.EngineBuildUpload
+         * @instance
+         */
+        EngineBuildUpload.prototype.statusCode = 0;
+
+        /**
+         * EngineBuildUpload action.
+         * @member {string} action
+         * @memberof events.EngineBuildUpload
+         * @instance
+         */
+        EngineBuildUpload.prototype.action = "";
+
+        /**
+         * Creates a new EngineBuildUpload instance using the specified properties.
+         * @function create
+         * @memberof events.EngineBuildUpload
+         * @static
+         * @param {events.IEngineBuildUpload=} [properties] Properties to set
+         * @returns {events.EngineBuildUpload} EngineBuildUpload instance
+         */
+        EngineBuildUpload.create = function create(properties) {
+            return new EngineBuildUpload(properties);
+        };
+
+        /**
+         * Encodes the specified EngineBuildUpload message. Does not implicitly {@link events.EngineBuildUpload.verify|verify} messages.
+         * @function encode
+         * @memberof events.EngineBuildUpload
+         * @static
+         * @param {events.IEngineBuildUpload} message EngineBuildUpload message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildUpload.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.engineId);
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.buildId);
+            if (message.statusCode != null && message.hasOwnProperty("statusCode"))
+                writer.uint32(/* id 13, wireType 0 =*/104).int32(message.statusCode);
+            if (message.action != null && message.hasOwnProperty("action"))
+                writer.uint32(/* id 14, wireType 2 =*/114).string(message.action);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified EngineBuildUpload message, length delimited. Does not implicitly {@link events.EngineBuildUpload.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.EngineBuildUpload
+         * @static
+         * @param {events.IEngineBuildUpload} message EngineBuildUpload message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildUpload.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an EngineBuildUpload message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.EngineBuildUpload
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.EngineBuildUpload} EngineBuildUpload
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildUpload.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.EngineBuildUpload();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 11:
+                    message.engineId = reader.string();
+                    break;
+                case 12:
+                    message.buildId = reader.string();
+                    break;
+                case 13:
+                    message.statusCode = reader.int32();
+                    break;
+                case 14:
+                    message.action = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an EngineBuildUpload message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.EngineBuildUpload
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.EngineBuildUpload} EngineBuildUpload
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildUpload.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an EngineBuildUpload message.
+         * @function verify
+         * @memberof events.EngineBuildUpload
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        EngineBuildUpload.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                if (!$util.isString(message.engineId))
+                    return "engineId: string expected";
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                if (!$util.isString(message.buildId))
+                    return "buildId: string expected";
+            if (message.statusCode != null && message.hasOwnProperty("statusCode"))
+                if (!$util.isInteger(message.statusCode))
+                    return "statusCode: integer expected";
+            if (message.action != null && message.hasOwnProperty("action"))
+                if (!$util.isString(message.action))
+                    return "action: string expected";
+            return null;
+        };
+
+        /**
+         * Creates an EngineBuildUpload message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.EngineBuildUpload
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.EngineBuildUpload} EngineBuildUpload
+         */
+        EngineBuildUpload.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.EngineBuildUpload)
+                return object;
+            var message = new $root.events.EngineBuildUpload();
+            if (object.engineId != null)
+                message.engineId = String(object.engineId);
+            if (object.buildId != null)
+                message.buildId = String(object.buildId);
+            if (object.statusCode != null)
+                message.statusCode = object.statusCode | 0;
+            if (object.action != null)
+                message.action = String(object.action);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an EngineBuildUpload message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.EngineBuildUpload
+         * @static
+         * @param {events.EngineBuildUpload} message EngineBuildUpload
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        EngineBuildUpload.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.engineId = "";
+                object.buildId = "";
+                object.statusCode = 0;
+                object.action = "";
+            }
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                object.engineId = message.engineId;
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                object.buildId = message.buildId;
+            if (message.statusCode != null && message.hasOwnProperty("statusCode"))
+                object.statusCode = message.statusCode;
+            if (message.action != null && message.hasOwnProperty("action"))
+                object.action = message.action;
+            return object;
+        };
+
+        /**
+         * Converts this EngineBuildUpload to JSON.
+         * @function toJSON
+         * @memberof events.EngineBuildUpload
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        EngineBuildUpload.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return EngineBuildUpload;
+    })();
+
+    events.EngineBuildInvalidate = (function() {
+
+        /**
+         * Properties of an EngineBuildInvalidate.
+         * @memberof events
+         * @interface IEngineBuildInvalidate
+         * @property {string|null} [engineId] EngineBuildInvalidate engineId
+         * @property {string|null} [buildId] EngineBuildInvalidate buildId
+         * @property {number|null} [statusCode] EngineBuildInvalidate statusCode
+         * @property {string|null} [action] EngineBuildInvalidate action
+         */
+
+        /**
+         * Constructs a new EngineBuildInvalidate.
+         * @memberof events
+         * @classdesc Represents an EngineBuildInvalidate.
+         * @implements IEngineBuildInvalidate
+         * @constructor
+         * @param {events.IEngineBuildInvalidate=} [properties] Properties to set
+         */
+        function EngineBuildInvalidate(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * EngineBuildInvalidate engineId.
+         * @member {string} engineId
+         * @memberof events.EngineBuildInvalidate
+         * @instance
+         */
+        EngineBuildInvalidate.prototype.engineId = "";
+
+        /**
+         * EngineBuildInvalidate buildId.
+         * @member {string} buildId
+         * @memberof events.EngineBuildInvalidate
+         * @instance
+         */
+        EngineBuildInvalidate.prototype.buildId = "";
+
+        /**
+         * EngineBuildInvalidate statusCode.
+         * @member {number} statusCode
+         * @memberof events.EngineBuildInvalidate
+         * @instance
+         */
+        EngineBuildInvalidate.prototype.statusCode = 0;
+
+        /**
+         * EngineBuildInvalidate action.
+         * @member {string} action
+         * @memberof events.EngineBuildInvalidate
+         * @instance
+         */
+        EngineBuildInvalidate.prototype.action = "";
+
+        /**
+         * Creates a new EngineBuildInvalidate instance using the specified properties.
+         * @function create
+         * @memberof events.EngineBuildInvalidate
+         * @static
+         * @param {events.IEngineBuildInvalidate=} [properties] Properties to set
+         * @returns {events.EngineBuildInvalidate} EngineBuildInvalidate instance
+         */
+        EngineBuildInvalidate.create = function create(properties) {
+            return new EngineBuildInvalidate(properties);
+        };
+
+        /**
+         * Encodes the specified EngineBuildInvalidate message. Does not implicitly {@link events.EngineBuildInvalidate.verify|verify} messages.
+         * @function encode
+         * @memberof events.EngineBuildInvalidate
+         * @static
+         * @param {events.IEngineBuildInvalidate} message EngineBuildInvalidate message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildInvalidate.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.engineId);
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.buildId);
+            if (message.statusCode != null && message.hasOwnProperty("statusCode"))
+                writer.uint32(/* id 13, wireType 0 =*/104).int32(message.statusCode);
+            if (message.action != null && message.hasOwnProperty("action"))
+                writer.uint32(/* id 14, wireType 2 =*/114).string(message.action);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified EngineBuildInvalidate message, length delimited. Does not implicitly {@link events.EngineBuildInvalidate.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.EngineBuildInvalidate
+         * @static
+         * @param {events.IEngineBuildInvalidate} message EngineBuildInvalidate message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildInvalidate.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an EngineBuildInvalidate message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.EngineBuildInvalidate
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.EngineBuildInvalidate} EngineBuildInvalidate
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildInvalidate.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.EngineBuildInvalidate();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 11:
+                    message.engineId = reader.string();
+                    break;
+                case 12:
+                    message.buildId = reader.string();
+                    break;
+                case 13:
+                    message.statusCode = reader.int32();
+                    break;
+                case 14:
+                    message.action = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an EngineBuildInvalidate message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.EngineBuildInvalidate
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.EngineBuildInvalidate} EngineBuildInvalidate
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildInvalidate.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an EngineBuildInvalidate message.
+         * @function verify
+         * @memberof events.EngineBuildInvalidate
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        EngineBuildInvalidate.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                if (!$util.isString(message.engineId))
+                    return "engineId: string expected";
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                if (!$util.isString(message.buildId))
+                    return "buildId: string expected";
+            if (message.statusCode != null && message.hasOwnProperty("statusCode"))
+                if (!$util.isInteger(message.statusCode))
+                    return "statusCode: integer expected";
+            if (message.action != null && message.hasOwnProperty("action"))
+                if (!$util.isString(message.action))
+                    return "action: string expected";
+            return null;
+        };
+
+        /**
+         * Creates an EngineBuildInvalidate message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.EngineBuildInvalidate
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.EngineBuildInvalidate} EngineBuildInvalidate
+         */
+        EngineBuildInvalidate.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.EngineBuildInvalidate)
+                return object;
+            var message = new $root.events.EngineBuildInvalidate();
+            if (object.engineId != null)
+                message.engineId = String(object.engineId);
+            if (object.buildId != null)
+                message.buildId = String(object.buildId);
+            if (object.statusCode != null)
+                message.statusCode = object.statusCode | 0;
+            if (object.action != null)
+                message.action = String(object.action);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an EngineBuildInvalidate message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.EngineBuildInvalidate
+         * @static
+         * @param {events.EngineBuildInvalidate} message EngineBuildInvalidate
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        EngineBuildInvalidate.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.engineId = "";
+                object.buildId = "";
+                object.statusCode = 0;
+                object.action = "";
+            }
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                object.engineId = message.engineId;
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                object.buildId = message.buildId;
+            if (message.statusCode != null && message.hasOwnProperty("statusCode"))
+                object.statusCode = message.statusCode;
+            if (message.action != null && message.hasOwnProperty("action"))
+                object.action = message.action;
+            return object;
+        };
+
+        /**
+         * Converts this EngineBuildInvalidate to JSON.
+         * @function toJSON
+         * @memberof events.EngineBuildInvalidate
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        EngineBuildInvalidate.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return EngineBuildInvalidate;
     })();
 
     events.ExampleEvent = (function() {

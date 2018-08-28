@@ -18,6 +18,394 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
+type EngineBuildUploadCompleted struct {
+	UserId               string   `protobuf:"bytes,10,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	JobId                string   `protobuf:"bytes,11,opt,name=job_id,json=jobId,proto3" json:"job_id,omitempty"`
+	AssetId              string   `protobuf:"bytes,12,opt,name=asset_id,json=assetId,proto3" json:"asset_id,omitempty"`
+	Success              string   `protobuf:"bytes,13,opt,name=success,proto3" json:"success,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *EngineBuildUploadCompleted) Reset()         { *m = EngineBuildUploadCompleted{} }
+func (m *EngineBuildUploadCompleted) String() string { return proto.CompactTextString(m) }
+func (*EngineBuildUploadCompleted) ProtoMessage()    {}
+func (*EngineBuildUploadCompleted) Descriptor() ([]byte, []int) {
+	return fileDescriptor_engine_1f207bca8e6374e5, []int{0}
+}
+func (m *EngineBuildUploadCompleted) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_EngineBuildUploadCompleted.Unmarshal(m, b)
+}
+func (m *EngineBuildUploadCompleted) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_EngineBuildUploadCompleted.Marshal(b, m, deterministic)
+}
+func (dst *EngineBuildUploadCompleted) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_EngineBuildUploadCompleted.Merge(dst, src)
+}
+func (m *EngineBuildUploadCompleted) XXX_Size() int {
+	return xxx_messageInfo_EngineBuildUploadCompleted.Size(m)
+}
+func (m *EngineBuildUploadCompleted) XXX_DiscardUnknown() {
+	xxx_messageInfo_EngineBuildUploadCompleted.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_EngineBuildUploadCompleted proto.InternalMessageInfo
+
+func (m *EngineBuildUploadCompleted) GetUserId() string {
+	if m != nil {
+		return m.UserId
+	}
+	return ""
+}
+
+func (m *EngineBuildUploadCompleted) GetJobId() string {
+	if m != nil {
+		return m.JobId
+	}
+	return ""
+}
+
+func (m *EngineBuildUploadCompleted) GetAssetId() string {
+	if m != nil {
+		return m.AssetId
+	}
+	return ""
+}
+
+func (m *EngineBuildUploadCompleted) GetSuccess() string {
+	if m != nil {
+		return m.Success
+	}
+	return ""
+}
+
+type EngineBuildManifestProcessed struct {
+	UserId               string   `protobuf:"bytes,10,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	JobId                string   `protobuf:"bytes,11,opt,name=job_id,json=jobId,proto3" json:"job_id,omitempty"`
+	Success              string   `protobuf:"bytes,12,opt,name=success,proto3" json:"success,omitempty"`
+	EngineId             string   `protobuf:"bytes,13,opt,name=engine_id,json=engineId,proto3" json:"engine_id,omitempty"`
+	BuildId              string   `protobuf:"bytes,14,opt,name=build_id,json=buildId,proto3" json:"build_id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *EngineBuildManifestProcessed) Reset()         { *m = EngineBuildManifestProcessed{} }
+func (m *EngineBuildManifestProcessed) String() string { return proto.CompactTextString(m) }
+func (*EngineBuildManifestProcessed) ProtoMessage()    {}
+func (*EngineBuildManifestProcessed) Descriptor() ([]byte, []int) {
+	return fileDescriptor_engine_1f207bca8e6374e5, []int{1}
+}
+func (m *EngineBuildManifestProcessed) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_EngineBuildManifestProcessed.Unmarshal(m, b)
+}
+func (m *EngineBuildManifestProcessed) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_EngineBuildManifestProcessed.Marshal(b, m, deterministic)
+}
+func (dst *EngineBuildManifestProcessed) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_EngineBuildManifestProcessed.Merge(dst, src)
+}
+func (m *EngineBuildManifestProcessed) XXX_Size() int {
+	return xxx_messageInfo_EngineBuildManifestProcessed.Size(m)
+}
+func (m *EngineBuildManifestProcessed) XXX_DiscardUnknown() {
+	xxx_messageInfo_EngineBuildManifestProcessed.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_EngineBuildManifestProcessed proto.InternalMessageInfo
+
+func (m *EngineBuildManifestProcessed) GetUserId() string {
+	if m != nil {
+		return m.UserId
+	}
+	return ""
+}
+
+func (m *EngineBuildManifestProcessed) GetJobId() string {
+	if m != nil {
+		return m.JobId
+	}
+	return ""
+}
+
+func (m *EngineBuildManifestProcessed) GetSuccess() string {
+	if m != nil {
+		return m.Success
+	}
+	return ""
+}
+
+func (m *EngineBuildManifestProcessed) GetEngineId() string {
+	if m != nil {
+		return m.EngineId
+	}
+	return ""
+}
+
+func (m *EngineBuildManifestProcessed) GetBuildId() string {
+	if m != nil {
+		return m.BuildId
+	}
+	return ""
+}
+
+type EngineBuildVulnerabilityChecked struct {
+	UserId               string   `protobuf:"bytes,10,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	JobId                string   `protobuf:"bytes,11,opt,name=job_id,json=jobId,proto3" json:"job_id,omitempty"`
+	AssetId              string   `protobuf:"bytes,12,opt,name=asset_id,json=assetId,proto3" json:"asset_id,omitempty"`
+	Success              string   `protobuf:"bytes,13,opt,name=success,proto3" json:"success,omitempty"`
+	EngineId             string   `protobuf:"bytes,14,opt,name=engine_id,json=engineId,proto3" json:"engine_id,omitempty"`
+	BuildId              string   `protobuf:"bytes,15,opt,name=build_id,json=buildId,proto3" json:"build_id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *EngineBuildVulnerabilityChecked) Reset()         { *m = EngineBuildVulnerabilityChecked{} }
+func (m *EngineBuildVulnerabilityChecked) String() string { return proto.CompactTextString(m) }
+func (*EngineBuildVulnerabilityChecked) ProtoMessage()    {}
+func (*EngineBuildVulnerabilityChecked) Descriptor() ([]byte, []int) {
+	return fileDescriptor_engine_1f207bca8e6374e5, []int{2}
+}
+func (m *EngineBuildVulnerabilityChecked) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_EngineBuildVulnerabilityChecked.Unmarshal(m, b)
+}
+func (m *EngineBuildVulnerabilityChecked) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_EngineBuildVulnerabilityChecked.Marshal(b, m, deterministic)
+}
+func (dst *EngineBuildVulnerabilityChecked) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_EngineBuildVulnerabilityChecked.Merge(dst, src)
+}
+func (m *EngineBuildVulnerabilityChecked) XXX_Size() int {
+	return xxx_messageInfo_EngineBuildVulnerabilityChecked.Size(m)
+}
+func (m *EngineBuildVulnerabilityChecked) XXX_DiscardUnknown() {
+	xxx_messageInfo_EngineBuildVulnerabilityChecked.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_EngineBuildVulnerabilityChecked proto.InternalMessageInfo
+
+func (m *EngineBuildVulnerabilityChecked) GetUserId() string {
+	if m != nil {
+		return m.UserId
+	}
+	return ""
+}
+
+func (m *EngineBuildVulnerabilityChecked) GetJobId() string {
+	if m != nil {
+		return m.JobId
+	}
+	return ""
+}
+
+func (m *EngineBuildVulnerabilityChecked) GetAssetId() string {
+	if m != nil {
+		return m.AssetId
+	}
+	return ""
+}
+
+func (m *EngineBuildVulnerabilityChecked) GetSuccess() string {
+	if m != nil {
+		return m.Success
+	}
+	return ""
+}
+
+func (m *EngineBuildVulnerabilityChecked) GetEngineId() string {
+	if m != nil {
+		return m.EngineId
+	}
+	return ""
+}
+
+func (m *EngineBuildVulnerabilityChecked) GetBuildId() string {
+	if m != nil {
+		return m.BuildId
+	}
+	return ""
+}
+
+type EngineBuildTestReportDone struct {
+	UserId               string   `protobuf:"bytes,10,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	JobId                string   `protobuf:"bytes,11,opt,name=job_id,json=jobId,proto3" json:"job_id,omitempty"`
+	Success              string   `protobuf:"bytes,12,opt,name=success,proto3" json:"success,omitempty"`
+	EngineId             string   `protobuf:"bytes,13,opt,name=engine_id,json=engineId,proto3" json:"engine_id,omitempty"`
+	BuildId              string   `protobuf:"bytes,14,opt,name=build_id,json=buildId,proto3" json:"build_id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *EngineBuildTestReportDone) Reset()         { *m = EngineBuildTestReportDone{} }
+func (m *EngineBuildTestReportDone) String() string { return proto.CompactTextString(m) }
+func (*EngineBuildTestReportDone) ProtoMessage()    {}
+func (*EngineBuildTestReportDone) Descriptor() ([]byte, []int) {
+	return fileDescriptor_engine_1f207bca8e6374e5, []int{3}
+}
+func (m *EngineBuildTestReportDone) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_EngineBuildTestReportDone.Unmarshal(m, b)
+}
+func (m *EngineBuildTestReportDone) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_EngineBuildTestReportDone.Marshal(b, m, deterministic)
+}
+func (dst *EngineBuildTestReportDone) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_EngineBuildTestReportDone.Merge(dst, src)
+}
+func (m *EngineBuildTestReportDone) XXX_Size() int {
+	return xxx_messageInfo_EngineBuildTestReportDone.Size(m)
+}
+func (m *EngineBuildTestReportDone) XXX_DiscardUnknown() {
+	xxx_messageInfo_EngineBuildTestReportDone.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_EngineBuildTestReportDone proto.InternalMessageInfo
+
+func (m *EngineBuildTestReportDone) GetUserId() string {
+	if m != nil {
+		return m.UserId
+	}
+	return ""
+}
+
+func (m *EngineBuildTestReportDone) GetJobId() string {
+	if m != nil {
+		return m.JobId
+	}
+	return ""
+}
+
+func (m *EngineBuildTestReportDone) GetSuccess() string {
+	if m != nil {
+		return m.Success
+	}
+	return ""
+}
+
+func (m *EngineBuildTestReportDone) GetEngineId() string {
+	if m != nil {
+		return m.EngineId
+	}
+	return ""
+}
+
+func (m *EngineBuildTestReportDone) GetBuildId() string {
+	if m != nil {
+		return m.BuildId
+	}
+	return ""
+}
+
+type EngineBuildDeploySuccess struct {
+	UserId               string   `protobuf:"bytes,10,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	EngineId             string   `protobuf:"bytes,11,opt,name=engine_id,json=engineId,proto3" json:"engine_id,omitempty"`
+	BuildId              string   `protobuf:"bytes,12,opt,name=build_id,json=buildId,proto3" json:"build_id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *EngineBuildDeploySuccess) Reset()         { *m = EngineBuildDeploySuccess{} }
+func (m *EngineBuildDeploySuccess) String() string { return proto.CompactTextString(m) }
+func (*EngineBuildDeploySuccess) ProtoMessage()    {}
+func (*EngineBuildDeploySuccess) Descriptor() ([]byte, []int) {
+	return fileDescriptor_engine_1f207bca8e6374e5, []int{4}
+}
+func (m *EngineBuildDeploySuccess) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_EngineBuildDeploySuccess.Unmarshal(m, b)
+}
+func (m *EngineBuildDeploySuccess) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_EngineBuildDeploySuccess.Marshal(b, m, deterministic)
+}
+func (dst *EngineBuildDeploySuccess) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_EngineBuildDeploySuccess.Merge(dst, src)
+}
+func (m *EngineBuildDeploySuccess) XXX_Size() int {
+	return xxx_messageInfo_EngineBuildDeploySuccess.Size(m)
+}
+func (m *EngineBuildDeploySuccess) XXX_DiscardUnknown() {
+	xxx_messageInfo_EngineBuildDeploySuccess.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_EngineBuildDeploySuccess proto.InternalMessageInfo
+
+func (m *EngineBuildDeploySuccess) GetUserId() string {
+	if m != nil {
+		return m.UserId
+	}
+	return ""
+}
+
+func (m *EngineBuildDeploySuccess) GetEngineId() string {
+	if m != nil {
+		return m.EngineId
+	}
+	return ""
+}
+
+func (m *EngineBuildDeploySuccess) GetBuildId() string {
+	if m != nil {
+		return m.BuildId
+	}
+	return ""
+}
+
+type EngineBuildDeployFail struct {
+	UserId               string   `protobuf:"bytes,10,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	EngineId             string   `protobuf:"bytes,11,opt,name=engine_id,json=engineId,proto3" json:"engine_id,omitempty"`
+	BuildId              string   `protobuf:"bytes,12,opt,name=build_id,json=buildId,proto3" json:"build_id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *EngineBuildDeployFail) Reset()         { *m = EngineBuildDeployFail{} }
+func (m *EngineBuildDeployFail) String() string { return proto.CompactTextString(m) }
+func (*EngineBuildDeployFail) ProtoMessage()    {}
+func (*EngineBuildDeployFail) Descriptor() ([]byte, []int) {
+	return fileDescriptor_engine_1f207bca8e6374e5, []int{5}
+}
+func (m *EngineBuildDeployFail) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_EngineBuildDeployFail.Unmarshal(m, b)
+}
+func (m *EngineBuildDeployFail) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_EngineBuildDeployFail.Marshal(b, m, deterministic)
+}
+func (dst *EngineBuildDeployFail) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_EngineBuildDeployFail.Merge(dst, src)
+}
+func (m *EngineBuildDeployFail) XXX_Size() int {
+	return xxx_messageInfo_EngineBuildDeployFail.Size(m)
+}
+func (m *EngineBuildDeployFail) XXX_DiscardUnknown() {
+	xxx_messageInfo_EngineBuildDeployFail.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_EngineBuildDeployFail proto.InternalMessageInfo
+
+func (m *EngineBuildDeployFail) GetUserId() string {
+	if m != nil {
+		return m.UserId
+	}
+	return ""
+}
+
+func (m *EngineBuildDeployFail) GetEngineId() string {
+	if m != nil {
+		return m.EngineId
+	}
+	return ""
+}
+
+func (m *EngineBuildDeployFail) GetBuildId() string {
+	if m != nil {
+		return m.BuildId
+	}
+	return ""
+}
+
 type EngineBuildApproved struct {
 	UserId               string   `protobuf:"bytes,10,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	EngineId             string   `protobuf:"bytes,11,opt,name=engine_id,json=engineId,proto3" json:"engine_id,omitempty"`
@@ -34,7 +422,7 @@ func (m *EngineBuildApproved) Reset()         { *m = EngineBuildApproved{} }
 func (m *EngineBuildApproved) String() string { return proto.CompactTextString(m) }
 func (*EngineBuildApproved) ProtoMessage()    {}
 func (*EngineBuildApproved) Descriptor() ([]byte, []int) {
-	return fileDescriptor_engine_31fd0c4be2186869, []int{0}
+	return fileDescriptor_engine_1f207bca8e6374e5, []int{6}
 }
 func (m *EngineBuildApproved) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_EngineBuildApproved.Unmarshal(m, b)
@@ -96,25 +484,314 @@ func (m *EngineBuildApproved) GetAction() string {
 	return ""
 }
 
-func init() {
-	proto.RegisterType((*EngineBuildApproved)(nil), "events.EngineBuildApproved")
+type EngineBuildDisapprove struct {
+	UserId               string   `protobuf:"bytes,10,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	EngineId             string   `protobuf:"bytes,11,opt,name=engine_id,json=engineId,proto3" json:"engine_id,omitempty"`
+	BuildId              string   `protobuf:"bytes,12,opt,name=build_id,json=buildId,proto3" json:"build_id,omitempty"`
+	OrganizationId       int64    `protobuf:"varint,13,opt,name=organization_id,json=organizationId,proto3" json:"organization_id,omitempty"`
+	StatusCode           int32    `protobuf:"varint,14,opt,name=status_code,json=statusCode,proto3" json:"status_code,omitempty"`
+	Action               string   `protobuf:"bytes,15,opt,name=action,proto3" json:"action,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
 }
 
-func init() { proto.RegisterFile("events/engine.proto", fileDescriptor_engine_31fd0c4be2186869) }
+func (m *EngineBuildDisapprove) Reset()         { *m = EngineBuildDisapprove{} }
+func (m *EngineBuildDisapprove) String() string { return proto.CompactTextString(m) }
+func (*EngineBuildDisapprove) ProtoMessage()    {}
+func (*EngineBuildDisapprove) Descriptor() ([]byte, []int) {
+	return fileDescriptor_engine_1f207bca8e6374e5, []int{7}
+}
+func (m *EngineBuildDisapprove) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_EngineBuildDisapprove.Unmarshal(m, b)
+}
+func (m *EngineBuildDisapprove) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_EngineBuildDisapprove.Marshal(b, m, deterministic)
+}
+func (dst *EngineBuildDisapprove) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_EngineBuildDisapprove.Merge(dst, src)
+}
+func (m *EngineBuildDisapprove) XXX_Size() int {
+	return xxx_messageInfo_EngineBuildDisapprove.Size(m)
+}
+func (m *EngineBuildDisapprove) XXX_DiscardUnknown() {
+	xxx_messageInfo_EngineBuildDisapprove.DiscardUnknown(m)
+}
 
-var fileDescriptor_engine_31fd0c4be2186869 = []byte{
-	// 205 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x4c, 0x8f, 0xb1, 0x4a, 0xc6, 0x30,
-	0x14, 0x85, 0x09, 0x62, 0xfe, 0xfe, 0xb7, 0xda, 0x42, 0x0a, 0x5a, 0x71, 0xb0, 0xb8, 0xd8, 0x49,
-	0x07, 0x9f, 0xc0, 0x8a, 0x43, 0xd6, 0x8e, 0x2e, 0x25, 0xed, 0xbd, 0x94, 0x80, 0x24, 0x25, 0x49,
-	0x3b, 0xf8, 0x84, 0x3e, 0x96, 0x24, 0x71, 0x70, 0x3c, 0xdf, 0x77, 0x39, 0xdc, 0x03, 0x0d, 0x1d,
-	0x64, 0x82, 0x7f, 0x21, 0xb3, 0x6a, 0x43, 0xcf, 0x9b, 0xb3, 0xc1, 0x0a, 0x9e, 0xe1, 0xe3, 0x0f,
-	0x83, 0xe6, 0x23, 0x89, 0x61, 0xd7, 0x5f, 0xf8, 0xb6, 0x6d, 0xce, 0x1e, 0x84, 0xe2, 0x16, 0x4e,
-	0xbb, 0x27, 0x37, 0x69, 0x6c, 0xa1, 0x63, 0xfd, 0x79, 0xe4, 0x31, 0x4a, 0x14, 0xf7, 0x70, 0xce,
-	0x45, 0x51, 0x95, 0x49, 0x15, 0x19, 0x48, 0x14, 0x77, 0x50, 0xcc, 0xb1, 0x26, 0xba, 0xab, 0xe4,
-	0x4e, 0x29, 0x4b, 0x14, 0x4f, 0x50, 0x5b, 0xb7, 0x2a, 0xa3, 0xbf, 0x55, 0xd0, 0xd6, 0xc4, 0x8b,
-	0xeb, 0x8e, 0xf5, 0x17, 0x63, 0xf5, 0x1f, 0x4b, 0x14, 0x0f, 0x50, 0xfa, 0xa0, 0xc2, 0xee, 0xa7,
-	0xc5, 0x22, 0xb5, 0x55, 0xc7, 0xfa, 0xcb, 0x11, 0x32, 0x7a, 0xb7, 0x48, 0xe2, 0x06, 0xb8, 0x5a,
-	0xe2, 0x71, 0x5b, 0xe7, 0xcf, 0x72, 0x1a, 0x8a, 0xcf, 0xbf, 0x51, 0x33, 0x4f, 0x1b, 0x5f, 0x7f,
-	0x03, 0x00, 0x00, 0xff, 0xff, 0x98, 0x95, 0xed, 0x0f, 0xfa, 0x00, 0x00, 0x00,
+var xxx_messageInfo_EngineBuildDisapprove proto.InternalMessageInfo
+
+func (m *EngineBuildDisapprove) GetUserId() string {
+	if m != nil {
+		return m.UserId
+	}
+	return ""
+}
+
+func (m *EngineBuildDisapprove) GetEngineId() string {
+	if m != nil {
+		return m.EngineId
+	}
+	return ""
+}
+
+func (m *EngineBuildDisapprove) GetBuildId() string {
+	if m != nil {
+		return m.BuildId
+	}
+	return ""
+}
+
+func (m *EngineBuildDisapprove) GetOrganizationId() int64 {
+	if m != nil {
+		return m.OrganizationId
+	}
+	return 0
+}
+
+func (m *EngineBuildDisapprove) GetStatusCode() int32 {
+	if m != nil {
+		return m.StatusCode
+	}
+	return 0
+}
+
+func (m *EngineBuildDisapprove) GetAction() string {
+	if m != nil {
+		return m.Action
+	}
+	return ""
+}
+
+type EngineBuildCreate struct {
+	EngineId             string   `protobuf:"bytes,11,opt,name=engine_id,json=engineId,proto3" json:"engine_id,omitempty"`
+	BuildId              string   `protobuf:"bytes,12,opt,name=build_id,json=buildId,proto3" json:"build_id,omitempty"`
+	StatusCode           int32    `protobuf:"varint,13,opt,name=status_code,json=statusCode,proto3" json:"status_code,omitempty"`
+	Action               string   `protobuf:"bytes,14,opt,name=action,proto3" json:"action,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *EngineBuildCreate) Reset()         { *m = EngineBuildCreate{} }
+func (m *EngineBuildCreate) String() string { return proto.CompactTextString(m) }
+func (*EngineBuildCreate) ProtoMessage()    {}
+func (*EngineBuildCreate) Descriptor() ([]byte, []int) {
+	return fileDescriptor_engine_1f207bca8e6374e5, []int{8}
+}
+func (m *EngineBuildCreate) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_EngineBuildCreate.Unmarshal(m, b)
+}
+func (m *EngineBuildCreate) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_EngineBuildCreate.Marshal(b, m, deterministic)
+}
+func (dst *EngineBuildCreate) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_EngineBuildCreate.Merge(dst, src)
+}
+func (m *EngineBuildCreate) XXX_Size() int {
+	return xxx_messageInfo_EngineBuildCreate.Size(m)
+}
+func (m *EngineBuildCreate) XXX_DiscardUnknown() {
+	xxx_messageInfo_EngineBuildCreate.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_EngineBuildCreate proto.InternalMessageInfo
+
+func (m *EngineBuildCreate) GetEngineId() string {
+	if m != nil {
+		return m.EngineId
+	}
+	return ""
+}
+
+func (m *EngineBuildCreate) GetBuildId() string {
+	if m != nil {
+		return m.BuildId
+	}
+	return ""
+}
+
+func (m *EngineBuildCreate) GetStatusCode() int32 {
+	if m != nil {
+		return m.StatusCode
+	}
+	return 0
+}
+
+func (m *EngineBuildCreate) GetAction() string {
+	if m != nil {
+		return m.Action
+	}
+	return ""
+}
+
+type EngineBuildUpload struct {
+	EngineId             string   `protobuf:"bytes,11,opt,name=engine_id,json=engineId,proto3" json:"engine_id,omitempty"`
+	BuildId              string   `protobuf:"bytes,12,opt,name=build_id,json=buildId,proto3" json:"build_id,omitempty"`
+	StatusCode           int32    `protobuf:"varint,13,opt,name=status_code,json=statusCode,proto3" json:"status_code,omitempty"`
+	Action               string   `protobuf:"bytes,14,opt,name=action,proto3" json:"action,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *EngineBuildUpload) Reset()         { *m = EngineBuildUpload{} }
+func (m *EngineBuildUpload) String() string { return proto.CompactTextString(m) }
+func (*EngineBuildUpload) ProtoMessage()    {}
+func (*EngineBuildUpload) Descriptor() ([]byte, []int) {
+	return fileDescriptor_engine_1f207bca8e6374e5, []int{9}
+}
+func (m *EngineBuildUpload) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_EngineBuildUpload.Unmarshal(m, b)
+}
+func (m *EngineBuildUpload) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_EngineBuildUpload.Marshal(b, m, deterministic)
+}
+func (dst *EngineBuildUpload) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_EngineBuildUpload.Merge(dst, src)
+}
+func (m *EngineBuildUpload) XXX_Size() int {
+	return xxx_messageInfo_EngineBuildUpload.Size(m)
+}
+func (m *EngineBuildUpload) XXX_DiscardUnknown() {
+	xxx_messageInfo_EngineBuildUpload.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_EngineBuildUpload proto.InternalMessageInfo
+
+func (m *EngineBuildUpload) GetEngineId() string {
+	if m != nil {
+		return m.EngineId
+	}
+	return ""
+}
+
+func (m *EngineBuildUpload) GetBuildId() string {
+	if m != nil {
+		return m.BuildId
+	}
+	return ""
+}
+
+func (m *EngineBuildUpload) GetStatusCode() int32 {
+	if m != nil {
+		return m.StatusCode
+	}
+	return 0
+}
+
+func (m *EngineBuildUpload) GetAction() string {
+	if m != nil {
+		return m.Action
+	}
+	return ""
+}
+
+type EngineBuildInvalidate struct {
+	EngineId             string   `protobuf:"bytes,11,opt,name=engine_id,json=engineId,proto3" json:"engine_id,omitempty"`
+	BuildId              string   `protobuf:"bytes,12,opt,name=build_id,json=buildId,proto3" json:"build_id,omitempty"`
+	StatusCode           int32    `protobuf:"varint,13,opt,name=status_code,json=statusCode,proto3" json:"status_code,omitempty"`
+	Action               string   `protobuf:"bytes,14,opt,name=action,proto3" json:"action,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *EngineBuildInvalidate) Reset()         { *m = EngineBuildInvalidate{} }
+func (m *EngineBuildInvalidate) String() string { return proto.CompactTextString(m) }
+func (*EngineBuildInvalidate) ProtoMessage()    {}
+func (*EngineBuildInvalidate) Descriptor() ([]byte, []int) {
+	return fileDescriptor_engine_1f207bca8e6374e5, []int{10}
+}
+func (m *EngineBuildInvalidate) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_EngineBuildInvalidate.Unmarshal(m, b)
+}
+func (m *EngineBuildInvalidate) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_EngineBuildInvalidate.Marshal(b, m, deterministic)
+}
+func (dst *EngineBuildInvalidate) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_EngineBuildInvalidate.Merge(dst, src)
+}
+func (m *EngineBuildInvalidate) XXX_Size() int {
+	return xxx_messageInfo_EngineBuildInvalidate.Size(m)
+}
+func (m *EngineBuildInvalidate) XXX_DiscardUnknown() {
+	xxx_messageInfo_EngineBuildInvalidate.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_EngineBuildInvalidate proto.InternalMessageInfo
+
+func (m *EngineBuildInvalidate) GetEngineId() string {
+	if m != nil {
+		return m.EngineId
+	}
+	return ""
+}
+
+func (m *EngineBuildInvalidate) GetBuildId() string {
+	if m != nil {
+		return m.BuildId
+	}
+	return ""
+}
+
+func (m *EngineBuildInvalidate) GetStatusCode() int32 {
+	if m != nil {
+		return m.StatusCode
+	}
+	return 0
+}
+
+func (m *EngineBuildInvalidate) GetAction() string {
+	if m != nil {
+		return m.Action
+	}
+	return ""
+}
+
+func init() {
+	proto.RegisterType((*EngineBuildUploadCompleted)(nil), "events.EngineBuildUploadCompleted")
+	proto.RegisterType((*EngineBuildManifestProcessed)(nil), "events.EngineBuildManifestProcessed")
+	proto.RegisterType((*EngineBuildVulnerabilityChecked)(nil), "events.EngineBuildVulnerabilityChecked")
+	proto.RegisterType((*EngineBuildTestReportDone)(nil), "events.EngineBuildTestReportDone")
+	proto.RegisterType((*EngineBuildDeploySuccess)(nil), "events.engineBuildDeploySuccess")
+	proto.RegisterType((*EngineBuildDeployFail)(nil), "events.engineBuildDeployFail")
+	proto.RegisterType((*EngineBuildApproved)(nil), "events.EngineBuildApproved")
+	proto.RegisterType((*EngineBuildDisapprove)(nil), "events.EngineBuildDisapprove")
+	proto.RegisterType((*EngineBuildCreate)(nil), "events.EngineBuildCreate")
+	proto.RegisterType((*EngineBuildUpload)(nil), "events.EngineBuildUpload")
+	proto.RegisterType((*EngineBuildInvalidate)(nil), "events.EngineBuildInvalidate")
+}
+
+func init() { proto.RegisterFile("events/engine.proto", fileDescriptor_engine_1f207bca8e6374e5) }
+
+var fileDescriptor_engine_1f207bca8e6374e5 = []byte{
+	// 440 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xd4, 0x95, 0x4f, 0x8b, 0xd4, 0x30,
+	0x18, 0xc6, 0x09, 0xb2, 0x9d, 0xd9, 0x77, 0x66, 0x67, 0x31, 0xcb, 0x68, 0x57, 0x85, 0x95, 0x5e,
+	0xf4, 0xa4, 0x07, 0x3f, 0x81, 0xdb, 0x51, 0xe8, 0x41, 0x90, 0xfa, 0xe7, 0xe0, 0x65, 0x49, 0x9b,
+	0xd7, 0xdd, 0xec, 0xc6, 0xa4, 0x24, 0xe9, 0xc0, 0x7a, 0x13, 0x3c, 0xf8, 0x25, 0x04, 0x3f, 0x89,
+	0x67, 0xf1, 0x53, 0x49, 0x9a, 0x8a, 0xa9, 0x62, 0x0f, 0x83, 0x8c, 0x7a, 0x7c, 0xdf, 0xb7, 0xe9,
+	0xf3, 0x7b, 0x9e, 0x84, 0x04, 0x0e, 0x70, 0x8d, 0xca, 0xd9, 0xfb, 0xa8, 0x4e, 0x85, 0xc2, 0x7b,
+	0x8d, 0xd1, 0x4e, 0xd3, 0x24, 0x34, 0xb3, 0x77, 0x04, 0x6e, 0x3c, 0xea, 0x06, 0xc7, 0xad, 0x90,
+	0xfc, 0x45, 0x23, 0x35, 0xe3, 0xb9, 0x7e, 0xd3, 0x48, 0x74, 0xc8, 0xe9, 0x75, 0x98, 0xb4, 0x16,
+	0xcd, 0x89, 0xe0, 0x29, 0xdc, 0x26, 0x77, 0x77, 0xcb, 0xc4, 0x97, 0x05, 0xa7, 0x4b, 0x48, 0xce,
+	0x75, 0xe5, 0xfb, 0xb3, 0xae, 0xbf, 0x73, 0xae, 0xab, 0x82, 0xd3, 0x43, 0x98, 0x32, 0x6b, 0xd1,
+	0xf9, 0xc1, 0xbc, 0x1b, 0x4c, 0xba, 0xba, 0xe0, 0x34, 0x85, 0x89, 0x6d, 0xeb, 0x1a, 0xad, 0x4d,
+	0xf7, 0xc2, 0xa4, 0x2f, 0xb3, 0x4f, 0x04, 0x6e, 0x45, 0x0c, 0x4f, 0x98, 0x12, 0xaf, 0xd1, 0xba,
+	0xa7, 0x46, 0xfb, 0xf1, 0x06, 0x14, 0x91, 0xd4, 0x7c, 0x20, 0x45, 0x6f, 0xc2, 0x6e, 0x88, 0xc1,
+	0xaf, 0x09, 0x18, 0xd3, 0xd0, 0x08, 0xf0, 0x95, 0x07, 0xf0, 0xb3, 0x45, 0x58, 0xd7, 0xd5, 0x05,
+	0xcf, 0x3e, 0x13, 0x38, 0x8a, 0x10, 0x5f, 0xb6, 0x52, 0xa1, 0x61, 0x95, 0x90, 0xc2, 0x5d, 0xe6,
+	0x67, 0x58, 0x5f, 0x6c, 0x29, 0xab, 0xa1, 0x81, 0xc5, 0x88, 0x81, 0xfd, 0xa1, 0x81, 0x8f, 0x04,
+	0x0e, 0x23, 0x03, 0xcf, 0xd1, 0xba, 0x12, 0x1b, 0x6d, 0xdc, 0x4a, 0x2b, 0xfc, 0x07, 0x02, 0xbe,
+	0x80, 0x14, 0x7f, 0xe0, 0xad, 0xb0, 0x91, 0xfa, 0xf2, 0x59, 0xff, 0xcf, 0xdf, 0xd2, 0x0d, 0xc4,
+	0x66, 0x23, 0x62, 0xf3, 0xa1, 0xd8, 0x19, 0x2c, 0x7f, 0x11, 0x7b, 0xcc, 0x84, 0xfc, 0xf3, 0x4a,
+	0x5f, 0x08, 0x1c, 0x44, 0xb1, 0x3f, 0x6c, 0x1a, 0xa3, 0xd7, 0x63, 0x67, 0x65, 0x43, 0x21, 0x7a,
+	0x07, 0xf6, 0xb5, 0x39, 0x65, 0x4a, 0xbc, 0x65, 0x4e, 0x68, 0xf5, 0x3d, 0xfd, 0x2b, 0xe5, 0x22,
+	0x6e, 0x17, 0x9c, 0x1e, 0xc1, 0xcc, 0x3a, 0xe6, 0x5a, 0x7b, 0x52, 0x6b, 0x8e, 0xdd, 0x36, 0xec,
+	0x94, 0x10, 0x5a, 0xb9, 0xe6, 0x48, 0xaf, 0x41, 0xc2, 0x6a, 0xff, 0x71, 0x7f, 0x84, 0xfa, 0x2a,
+	0xfb, 0x4a, 0x60, 0x19, 0x59, 0x59, 0x09, 0xcb, 0x82, 0x9b, 0xff, 0xd1, 0xcc, 0x7b, 0x02, 0x57,
+	0x23, 0x33, 0xb9, 0x41, 0xe6, 0x70, 0x63, 0xde, 0x9f, 0x30, 0xf6, 0x46, 0x30, 0x16, 0x63, 0x18,
+	0xe1, 0xf6, 0xdd, 0x3e, 0xc6, 0x87, 0xe1, 0xd6, 0x16, 0x6a, 0xcd, 0xa4, 0xe0, 0x7f, 0x23, 0x91,
+	0xe3, 0xe9, 0xab, 0xfe, 0x65, 0xaa, 0x92, 0xee, 0xa1, 0x7a, 0xf0, 0x2d, 0x00, 0x00, 0xff, 0xff,
+	0x47, 0x07, 0x0b, 0xe6, 0xbf, 0x06, 0x00, 0x00,
 }

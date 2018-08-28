@@ -1,5 +1,5 @@
 # Protocol Documentation
-<a name="top"/>
+<a name="top"></a>
 
 ## Table of Contents
 
@@ -17,6 +17,16 @@
 
 - [events/engine.proto](#events/engine.proto)
     - [EngineBuildApproved](#events.EngineBuildApproved)
+    - [EngineBuildCreate](#events.EngineBuildCreate)
+    - [EngineBuildDisapprove](#events.EngineBuildDisapprove)
+    - [EngineBuildInvalidate](#events.EngineBuildInvalidate)
+    - [EngineBuildManifestProcessed](#events.EngineBuildManifestProcessed)
+    - [EngineBuildTestReportDone](#events.EngineBuildTestReportDone)
+    - [EngineBuildUpload](#events.EngineBuildUpload)
+    - [EngineBuildUploadCompleted](#events.EngineBuildUploadCompleted)
+    - [EngineBuildVulnerabilityChecked](#events.EngineBuildVulnerabilityChecked)
+    - [engineBuildDeployFail](#events.engineBuildDeployFail)
+    - [engineBuildDeploySuccess](#events.engineBuildDeploySuccess)
   
   
   
@@ -67,14 +77,14 @@
 
 
 
-<a name="events/core.proto"/>
+<a name="events/core.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## events/core.proto
 
 
 
-<a name="events.Core"/>
+<a name="events.Core"></a>
 
 ### Core
 
@@ -98,7 +108,7 @@
 
 
 
-<a name="events.Trace"/>
+<a name="events.Trace"></a>
 
 ### Trace
 
@@ -115,7 +125,7 @@
 
 
 
-<a name="events.Trace.TraceContextEntry"/>
+<a name="events.Trace.TraceContextEntry"></a>
 
 ### Trace.TraceContextEntry
 
@@ -131,7 +141,7 @@
 
 
 
-<a name="events.Trace.TraceTagsEntry"/>
+<a name="events.Trace.TraceTagsEntry"></a>
 
 ### Trace.TraceTagsEntry
 
@@ -147,7 +157,7 @@
 
 
 
-<a name="events.VtEvent"/>
+<a name="events.VtEvent"></a>
 
 ### VtEvent
 
@@ -165,7 +175,7 @@
 
 
 
-<a name="events.VtEvent.BaggageEntry"/>
+<a name="events.VtEvent.BaggageEntry"></a>
 
 ### VtEvent.BaggageEntry
 
@@ -190,14 +200,14 @@
 
 
 
-<a name="events/engine.proto"/>
+<a name="events/engine.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## events/engine.proto
 
 
 
-<a name="events.EngineBuildApproved"/>
+<a name="events.EngineBuildApproved"></a>
 
 ### EngineBuildApproved
 
@@ -216,7 +226,189 @@
 
 
 
- 
+
+<a name="events.EngineBuildCreate"></a>
+
+### EngineBuildCreate
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| engine_id | [string](#string) |  |  |
+| build_id | [string](#string) |  |  |
+| status_code | [int32](#int32) |  |  |
+| action | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.EngineBuildDisapprove"></a>
+
+### EngineBuildDisapprove
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| engine_id | [string](#string) |  |  |
+| build_id | [string](#string) |  |  |
+| organization_id | [int64](#int64) |  |  |
+| status_code | [int32](#int32) |  |  |
+| action | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.EngineBuildInvalidate"></a>
+
+### EngineBuildInvalidate
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| engine_id | [string](#string) |  |  |
+| build_id | [string](#string) |  |  |
+| status_code | [int32](#int32) |  |  |
+| action | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.EngineBuildManifestProcessed"></a>
+
+### EngineBuildManifestProcessed
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| job_id | [string](#string) |  |  |
+| success | [string](#string) |  |  |
+| engine_id | [string](#string) |  |  |
+| build_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.EngineBuildTestReportDone"></a>
+
+### EngineBuildTestReportDone
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| job_id | [string](#string) |  |  |
+| success | [string](#string) |  |  |
+| engine_id | [string](#string) |  |  |
+| build_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.EngineBuildUpload"></a>
+
+### EngineBuildUpload
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| engine_id | [string](#string) |  |  |
+| build_id | [string](#string) |  |  |
+| status_code | [int32](#int32) |  |  |
+| action | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.EngineBuildUploadCompleted"></a>
+
+### EngineBuildUploadCompleted
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| job_id | [string](#string) |  |  |
+| asset_id | [string](#string) |  |  |
+| success | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.EngineBuildVulnerabilityChecked"></a>
+
+### EngineBuildVulnerabilityChecked
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| job_id | [string](#string) |  |  |
+| asset_id | [string](#string) |  |  |
+| success | [string](#string) |  |  |
+| engine_id | [string](#string) |  |  |
+| build_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.engineBuildDeployFail"></a>
+
+### engineBuildDeployFail
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| engine_id | [string](#string) |  |  |
+| build_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.engineBuildDeploySuccess"></a>
+
+### engineBuildDeploySuccess
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| engine_id | [string](#string) |  |  |
+| build_id | [string](#string) |  |  |
+
+
+
+
 
  
 
@@ -224,16 +416,18 @@
 
  
 
+ 
 
 
-<a name="events/example_event.proto"/>
+
+<a name="events/example_event.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## events/example_event.proto
 
 
 
-<a name="events.ExampleEvent"/>
+<a name="events.ExampleEvent"></a>
 
 ### ExampleEvent
 
@@ -250,7 +444,7 @@
 
 
 
-<a name="events.ExampleFour"/>
+<a name="events.ExampleFour"></a>
 
 ### ExampleFour
 
@@ -267,7 +461,7 @@
 
 
 
-<a name="events.ExampleOne"/>
+<a name="events.ExampleOne"></a>
 
 ### ExampleOne
 
@@ -282,7 +476,7 @@
 
 
 
-<a name="events.ExampleThree"/>
+<a name="events.ExampleThree"></a>
 
 ### ExampleThree
 
@@ -297,7 +491,7 @@
 
 
 
-<a name="events.ExampleTwo"/>
+<a name="events.ExampleTwo"></a>
 
 ### ExampleTwo
 
@@ -321,14 +515,14 @@
 
 
 
-<a name="events/mention_notification.proto"/>
+<a name="events/mention_notification.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## events/mention_notification.proto
 
 
 
-<a name="events.MentionDeleted"/>
+<a name="events.MentionDeleted"></a>
 
 ### MentionDeleted
 
@@ -345,7 +539,7 @@
 
 
 
-<a name="events.MentionEmailGenerated"/>
+<a name="events.MentionEmailGenerated"></a>
 
 ### MentionEmailGenerated
 
@@ -368,7 +562,7 @@
 
 
 
-<a name="events.MentionEmailGenerated.Mention"/>
+<a name="events.MentionEmailGenerated.Mention"></a>
 
 ### MentionEmailGenerated.Mention
 
@@ -393,7 +587,7 @@
 
 
 
-<a name="events.MentionEmailGenerated.PlaceHolders"/>
+<a name="events.MentionEmailGenerated.PlaceHolders"></a>
 
 ### MentionEmailGenerated.PlaceHolders
 
@@ -411,7 +605,7 @@
 
 
 
-<a name="events.MentionInserted"/>
+<a name="events.MentionInserted"></a>
 
 ### MentionInserted
 
@@ -428,7 +622,7 @@
 
 
 
-<a name="events.MentionModifiedData"/>
+<a name="events.MentionModifiedData"></a>
 
 ### MentionModifiedData
 Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
@@ -446,7 +640,7 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 
 
 
-<a name="events.MentionUpdated"/>
+<a name="events.MentionUpdated"></a>
 
 ### MentionUpdated
 
@@ -472,14 +666,14 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 
 
 
-<a name="events/notification.proto"/>
+<a name="events/notification.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## events/notification.proto
 
 
 
-<a name="events.BasicEmail"/>
+<a name="events.BasicEmail"></a>
 
 ### BasicEmail
 
@@ -499,7 +693,7 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 
 
 
-<a name="events.SMSNotification"/>
+<a name="events.SMSNotification"></a>
 
 ### SMSNotification
 
@@ -516,7 +710,7 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 
 
 
-<a name="events.Webhook"/>
+<a name="events.Webhook"></a>
 
 ### Webhook
 
@@ -535,7 +729,7 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
  
 
 
-<a name="events.Webhook.Encoding"/>
+<a name="events.Webhook.Encoding"></a>
 
 ### Webhook.Encoding
 
@@ -555,14 +749,14 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 
 
 
-<a name="events/trigger.proto"/>
+<a name="events/trigger.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## events/trigger.proto
 
 
 
-<a name="events.TriggerCacheRefresh"/>
+<a name="events.TriggerCacheRefresh"></a>
 
 ### TriggerCacheRefresh
 

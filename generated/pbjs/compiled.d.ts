@@ -363,6 +363,666 @@ export namespace events {
         public toJSON(): { [k: string]: any };
     }
 
+    /** Properties of an EngineBuildUploadCompleted. */
+    interface IEngineBuildUploadCompleted {
+
+        /** EngineBuildUploadCompleted userId */
+        userId?: (string|null);
+
+        /** EngineBuildUploadCompleted jobId */
+        jobId?: (string|null);
+
+        /** EngineBuildUploadCompleted assetId */
+        assetId?: (string|null);
+
+        /** EngineBuildUploadCompleted success */
+        success?: (string|null);
+    }
+
+    /** Represents an EngineBuildUploadCompleted. */
+    class EngineBuildUploadCompleted implements IEngineBuildUploadCompleted {
+
+        /**
+         * Constructs a new EngineBuildUploadCompleted.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IEngineBuildUploadCompleted);
+
+        /** EngineBuildUploadCompleted userId. */
+        public userId: string;
+
+        /** EngineBuildUploadCompleted jobId. */
+        public jobId: string;
+
+        /** EngineBuildUploadCompleted assetId. */
+        public assetId: string;
+
+        /** EngineBuildUploadCompleted success. */
+        public success: string;
+
+        /**
+         * Creates a new EngineBuildUploadCompleted instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns EngineBuildUploadCompleted instance
+         */
+        public static create(properties?: events.IEngineBuildUploadCompleted): events.EngineBuildUploadCompleted;
+
+        /**
+         * Encodes the specified EngineBuildUploadCompleted message. Does not implicitly {@link events.EngineBuildUploadCompleted.verify|verify} messages.
+         * @param message EngineBuildUploadCompleted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IEngineBuildUploadCompleted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified EngineBuildUploadCompleted message, length delimited. Does not implicitly {@link events.EngineBuildUploadCompleted.verify|verify} messages.
+         * @param message EngineBuildUploadCompleted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IEngineBuildUploadCompleted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an EngineBuildUploadCompleted message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns EngineBuildUploadCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.EngineBuildUploadCompleted;
+
+        /**
+         * Decodes an EngineBuildUploadCompleted message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns EngineBuildUploadCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.EngineBuildUploadCompleted;
+
+        /**
+         * Verifies an EngineBuildUploadCompleted message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an EngineBuildUploadCompleted message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns EngineBuildUploadCompleted
+         */
+        public static fromObject(object: { [k: string]: any }): events.EngineBuildUploadCompleted;
+
+        /**
+         * Creates a plain object from an EngineBuildUploadCompleted message. Also converts values to other types if specified.
+         * @param message EngineBuildUploadCompleted
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.EngineBuildUploadCompleted, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this EngineBuildUploadCompleted to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an EngineBuildManifestProcessed. */
+    interface IEngineBuildManifestProcessed {
+
+        /** EngineBuildManifestProcessed userId */
+        userId?: (string|null);
+
+        /** EngineBuildManifestProcessed jobId */
+        jobId?: (string|null);
+
+        /** EngineBuildManifestProcessed success */
+        success?: (string|null);
+
+        /** EngineBuildManifestProcessed engineId */
+        engineId?: (string|null);
+
+        /** EngineBuildManifestProcessed buildId */
+        buildId?: (string|null);
+    }
+
+    /** Represents an EngineBuildManifestProcessed. */
+    class EngineBuildManifestProcessed implements IEngineBuildManifestProcessed {
+
+        /**
+         * Constructs a new EngineBuildManifestProcessed.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IEngineBuildManifestProcessed);
+
+        /** EngineBuildManifestProcessed userId. */
+        public userId: string;
+
+        /** EngineBuildManifestProcessed jobId. */
+        public jobId: string;
+
+        /** EngineBuildManifestProcessed success. */
+        public success: string;
+
+        /** EngineBuildManifestProcessed engineId. */
+        public engineId: string;
+
+        /** EngineBuildManifestProcessed buildId. */
+        public buildId: string;
+
+        /**
+         * Creates a new EngineBuildManifestProcessed instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns EngineBuildManifestProcessed instance
+         */
+        public static create(properties?: events.IEngineBuildManifestProcessed): events.EngineBuildManifestProcessed;
+
+        /**
+         * Encodes the specified EngineBuildManifestProcessed message. Does not implicitly {@link events.EngineBuildManifestProcessed.verify|verify} messages.
+         * @param message EngineBuildManifestProcessed message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IEngineBuildManifestProcessed, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified EngineBuildManifestProcessed message, length delimited. Does not implicitly {@link events.EngineBuildManifestProcessed.verify|verify} messages.
+         * @param message EngineBuildManifestProcessed message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IEngineBuildManifestProcessed, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an EngineBuildManifestProcessed message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns EngineBuildManifestProcessed
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.EngineBuildManifestProcessed;
+
+        /**
+         * Decodes an EngineBuildManifestProcessed message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns EngineBuildManifestProcessed
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.EngineBuildManifestProcessed;
+
+        /**
+         * Verifies an EngineBuildManifestProcessed message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an EngineBuildManifestProcessed message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns EngineBuildManifestProcessed
+         */
+        public static fromObject(object: { [k: string]: any }): events.EngineBuildManifestProcessed;
+
+        /**
+         * Creates a plain object from an EngineBuildManifestProcessed message. Also converts values to other types if specified.
+         * @param message EngineBuildManifestProcessed
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.EngineBuildManifestProcessed, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this EngineBuildManifestProcessed to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an EngineBuildVulnerabilityChecked. */
+    interface IEngineBuildVulnerabilityChecked {
+
+        /** EngineBuildVulnerabilityChecked userId */
+        userId?: (string|null);
+
+        /** EngineBuildVulnerabilityChecked jobId */
+        jobId?: (string|null);
+
+        /** EngineBuildVulnerabilityChecked assetId */
+        assetId?: (string|null);
+
+        /** EngineBuildVulnerabilityChecked success */
+        success?: (string|null);
+
+        /** EngineBuildVulnerabilityChecked engineId */
+        engineId?: (string|null);
+
+        /** EngineBuildVulnerabilityChecked buildId */
+        buildId?: (string|null);
+    }
+
+    /** Represents an EngineBuildVulnerabilityChecked. */
+    class EngineBuildVulnerabilityChecked implements IEngineBuildVulnerabilityChecked {
+
+        /**
+         * Constructs a new EngineBuildVulnerabilityChecked.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IEngineBuildVulnerabilityChecked);
+
+        /** EngineBuildVulnerabilityChecked userId. */
+        public userId: string;
+
+        /** EngineBuildVulnerabilityChecked jobId. */
+        public jobId: string;
+
+        /** EngineBuildVulnerabilityChecked assetId. */
+        public assetId: string;
+
+        /** EngineBuildVulnerabilityChecked success. */
+        public success: string;
+
+        /** EngineBuildVulnerabilityChecked engineId. */
+        public engineId: string;
+
+        /** EngineBuildVulnerabilityChecked buildId. */
+        public buildId: string;
+
+        /**
+         * Creates a new EngineBuildVulnerabilityChecked instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns EngineBuildVulnerabilityChecked instance
+         */
+        public static create(properties?: events.IEngineBuildVulnerabilityChecked): events.EngineBuildVulnerabilityChecked;
+
+        /**
+         * Encodes the specified EngineBuildVulnerabilityChecked message. Does not implicitly {@link events.EngineBuildVulnerabilityChecked.verify|verify} messages.
+         * @param message EngineBuildVulnerabilityChecked message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IEngineBuildVulnerabilityChecked, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified EngineBuildVulnerabilityChecked message, length delimited. Does not implicitly {@link events.EngineBuildVulnerabilityChecked.verify|verify} messages.
+         * @param message EngineBuildVulnerabilityChecked message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IEngineBuildVulnerabilityChecked, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an EngineBuildVulnerabilityChecked message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns EngineBuildVulnerabilityChecked
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.EngineBuildVulnerabilityChecked;
+
+        /**
+         * Decodes an EngineBuildVulnerabilityChecked message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns EngineBuildVulnerabilityChecked
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.EngineBuildVulnerabilityChecked;
+
+        /**
+         * Verifies an EngineBuildVulnerabilityChecked message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an EngineBuildVulnerabilityChecked message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns EngineBuildVulnerabilityChecked
+         */
+        public static fromObject(object: { [k: string]: any }): events.EngineBuildVulnerabilityChecked;
+
+        /**
+         * Creates a plain object from an EngineBuildVulnerabilityChecked message. Also converts values to other types if specified.
+         * @param message EngineBuildVulnerabilityChecked
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.EngineBuildVulnerabilityChecked, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this EngineBuildVulnerabilityChecked to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an EngineBuildTestReportDone. */
+    interface IEngineBuildTestReportDone {
+
+        /** EngineBuildTestReportDone userId */
+        userId?: (string|null);
+
+        /** EngineBuildTestReportDone jobId */
+        jobId?: (string|null);
+
+        /** EngineBuildTestReportDone success */
+        success?: (string|null);
+
+        /** EngineBuildTestReportDone engineId */
+        engineId?: (string|null);
+
+        /** EngineBuildTestReportDone buildId */
+        buildId?: (string|null);
+    }
+
+    /** Represents an EngineBuildTestReportDone. */
+    class EngineBuildTestReportDone implements IEngineBuildTestReportDone {
+
+        /**
+         * Constructs a new EngineBuildTestReportDone.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IEngineBuildTestReportDone);
+
+        /** EngineBuildTestReportDone userId. */
+        public userId: string;
+
+        /** EngineBuildTestReportDone jobId. */
+        public jobId: string;
+
+        /** EngineBuildTestReportDone success. */
+        public success: string;
+
+        /** EngineBuildTestReportDone engineId. */
+        public engineId: string;
+
+        /** EngineBuildTestReportDone buildId. */
+        public buildId: string;
+
+        /**
+         * Creates a new EngineBuildTestReportDone instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns EngineBuildTestReportDone instance
+         */
+        public static create(properties?: events.IEngineBuildTestReportDone): events.EngineBuildTestReportDone;
+
+        /**
+         * Encodes the specified EngineBuildTestReportDone message. Does not implicitly {@link events.EngineBuildTestReportDone.verify|verify} messages.
+         * @param message EngineBuildTestReportDone message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IEngineBuildTestReportDone, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified EngineBuildTestReportDone message, length delimited. Does not implicitly {@link events.EngineBuildTestReportDone.verify|verify} messages.
+         * @param message EngineBuildTestReportDone message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IEngineBuildTestReportDone, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an EngineBuildTestReportDone message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns EngineBuildTestReportDone
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.EngineBuildTestReportDone;
+
+        /**
+         * Decodes an EngineBuildTestReportDone message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns EngineBuildTestReportDone
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.EngineBuildTestReportDone;
+
+        /**
+         * Verifies an EngineBuildTestReportDone message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an EngineBuildTestReportDone message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns EngineBuildTestReportDone
+         */
+        public static fromObject(object: { [k: string]: any }): events.EngineBuildTestReportDone;
+
+        /**
+         * Creates a plain object from an EngineBuildTestReportDone message. Also converts values to other types if specified.
+         * @param message EngineBuildTestReportDone
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.EngineBuildTestReportDone, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this EngineBuildTestReportDone to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an engineBuildDeploySuccess. */
+    interface IengineBuildDeploySuccess {
+
+        /** engineBuildDeploySuccess userId */
+        userId?: (string|null);
+
+        /** engineBuildDeploySuccess engineId */
+        engineId?: (string|null);
+
+        /** engineBuildDeploySuccess buildId */
+        buildId?: (string|null);
+    }
+
+    /** Represents an engineBuildDeploySuccess. */
+    class engineBuildDeploySuccess implements IengineBuildDeploySuccess {
+
+        /**
+         * Constructs a new engineBuildDeploySuccess.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IengineBuildDeploySuccess);
+
+        /** engineBuildDeploySuccess userId. */
+        public userId: string;
+
+        /** engineBuildDeploySuccess engineId. */
+        public engineId: string;
+
+        /** engineBuildDeploySuccess buildId. */
+        public buildId: string;
+
+        /**
+         * Creates a new engineBuildDeploySuccess instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns engineBuildDeploySuccess instance
+         */
+        public static create(properties?: events.IengineBuildDeploySuccess): events.engineBuildDeploySuccess;
+
+        /**
+         * Encodes the specified engineBuildDeploySuccess message. Does not implicitly {@link events.engineBuildDeploySuccess.verify|verify} messages.
+         * @param message engineBuildDeploySuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IengineBuildDeploySuccess, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified engineBuildDeploySuccess message, length delimited. Does not implicitly {@link events.engineBuildDeploySuccess.verify|verify} messages.
+         * @param message engineBuildDeploySuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IengineBuildDeploySuccess, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an engineBuildDeploySuccess message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns engineBuildDeploySuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.engineBuildDeploySuccess;
+
+        /**
+         * Decodes an engineBuildDeploySuccess message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns engineBuildDeploySuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.engineBuildDeploySuccess;
+
+        /**
+         * Verifies an engineBuildDeploySuccess message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an engineBuildDeploySuccess message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns engineBuildDeploySuccess
+         */
+        public static fromObject(object: { [k: string]: any }): events.engineBuildDeploySuccess;
+
+        /**
+         * Creates a plain object from an engineBuildDeploySuccess message. Also converts values to other types if specified.
+         * @param message engineBuildDeploySuccess
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.engineBuildDeploySuccess, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this engineBuildDeploySuccess to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an engineBuildDeployFail. */
+    interface IengineBuildDeployFail {
+
+        /** engineBuildDeployFail userId */
+        userId?: (string|null);
+
+        /** engineBuildDeployFail engineId */
+        engineId?: (string|null);
+
+        /** engineBuildDeployFail buildId */
+        buildId?: (string|null);
+    }
+
+    /** Represents an engineBuildDeployFail. */
+    class engineBuildDeployFail implements IengineBuildDeployFail {
+
+        /**
+         * Constructs a new engineBuildDeployFail.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IengineBuildDeployFail);
+
+        /** engineBuildDeployFail userId. */
+        public userId: string;
+
+        /** engineBuildDeployFail engineId. */
+        public engineId: string;
+
+        /** engineBuildDeployFail buildId. */
+        public buildId: string;
+
+        /**
+         * Creates a new engineBuildDeployFail instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns engineBuildDeployFail instance
+         */
+        public static create(properties?: events.IengineBuildDeployFail): events.engineBuildDeployFail;
+
+        /**
+         * Encodes the specified engineBuildDeployFail message. Does not implicitly {@link events.engineBuildDeployFail.verify|verify} messages.
+         * @param message engineBuildDeployFail message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IengineBuildDeployFail, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified engineBuildDeployFail message, length delimited. Does not implicitly {@link events.engineBuildDeployFail.verify|verify} messages.
+         * @param message engineBuildDeployFail message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IengineBuildDeployFail, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an engineBuildDeployFail message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns engineBuildDeployFail
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.engineBuildDeployFail;
+
+        /**
+         * Decodes an engineBuildDeployFail message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns engineBuildDeployFail
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.engineBuildDeployFail;
+
+        /**
+         * Verifies an engineBuildDeployFail message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an engineBuildDeployFail message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns engineBuildDeployFail
+         */
+        public static fromObject(object: { [k: string]: any }): events.engineBuildDeployFail;
+
+        /**
+         * Creates a plain object from an engineBuildDeployFail message. Also converts values to other types if specified.
+         * @param message engineBuildDeployFail
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.engineBuildDeployFail, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this engineBuildDeployFail to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
     /** Properties of an EngineBuildApproved. */
     interface IEngineBuildApproved {
 
@@ -478,6 +1138,450 @@ export namespace events {
 
         /**
          * Converts this EngineBuildApproved to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an EngineBuildDisapprove. */
+    interface IEngineBuildDisapprove {
+
+        /** EngineBuildDisapprove userId */
+        userId?: (string|null);
+
+        /** EngineBuildDisapprove engineId */
+        engineId?: (string|null);
+
+        /** EngineBuildDisapprove buildId */
+        buildId?: (string|null);
+
+        /** EngineBuildDisapprove organizationId */
+        organizationId?: (number|Long|null);
+
+        /** EngineBuildDisapprove statusCode */
+        statusCode?: (number|null);
+
+        /** EngineBuildDisapprove action */
+        action?: (string|null);
+    }
+
+    /** Represents an EngineBuildDisapprove. */
+    class EngineBuildDisapprove implements IEngineBuildDisapprove {
+
+        /**
+         * Constructs a new EngineBuildDisapprove.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IEngineBuildDisapprove);
+
+        /** EngineBuildDisapprove userId. */
+        public userId: string;
+
+        /** EngineBuildDisapprove engineId. */
+        public engineId: string;
+
+        /** EngineBuildDisapprove buildId. */
+        public buildId: string;
+
+        /** EngineBuildDisapprove organizationId. */
+        public organizationId: (number|Long);
+
+        /** EngineBuildDisapprove statusCode. */
+        public statusCode: number;
+
+        /** EngineBuildDisapprove action. */
+        public action: string;
+
+        /**
+         * Creates a new EngineBuildDisapprove instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns EngineBuildDisapprove instance
+         */
+        public static create(properties?: events.IEngineBuildDisapprove): events.EngineBuildDisapprove;
+
+        /**
+         * Encodes the specified EngineBuildDisapprove message. Does not implicitly {@link events.EngineBuildDisapprove.verify|verify} messages.
+         * @param message EngineBuildDisapprove message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IEngineBuildDisapprove, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified EngineBuildDisapprove message, length delimited. Does not implicitly {@link events.EngineBuildDisapprove.verify|verify} messages.
+         * @param message EngineBuildDisapprove message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IEngineBuildDisapprove, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an EngineBuildDisapprove message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns EngineBuildDisapprove
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.EngineBuildDisapprove;
+
+        /**
+         * Decodes an EngineBuildDisapprove message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns EngineBuildDisapprove
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.EngineBuildDisapprove;
+
+        /**
+         * Verifies an EngineBuildDisapprove message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an EngineBuildDisapprove message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns EngineBuildDisapprove
+         */
+        public static fromObject(object: { [k: string]: any }): events.EngineBuildDisapprove;
+
+        /**
+         * Creates a plain object from an EngineBuildDisapprove message. Also converts values to other types if specified.
+         * @param message EngineBuildDisapprove
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.EngineBuildDisapprove, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this EngineBuildDisapprove to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an EngineBuildCreate. */
+    interface IEngineBuildCreate {
+
+        /** EngineBuildCreate engineId */
+        engineId?: (string|null);
+
+        /** EngineBuildCreate buildId */
+        buildId?: (string|null);
+
+        /** EngineBuildCreate statusCode */
+        statusCode?: (number|null);
+
+        /** EngineBuildCreate action */
+        action?: (string|null);
+    }
+
+    /** Represents an EngineBuildCreate. */
+    class EngineBuildCreate implements IEngineBuildCreate {
+
+        /**
+         * Constructs a new EngineBuildCreate.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IEngineBuildCreate);
+
+        /** EngineBuildCreate engineId. */
+        public engineId: string;
+
+        /** EngineBuildCreate buildId. */
+        public buildId: string;
+
+        /** EngineBuildCreate statusCode. */
+        public statusCode: number;
+
+        /** EngineBuildCreate action. */
+        public action: string;
+
+        /**
+         * Creates a new EngineBuildCreate instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns EngineBuildCreate instance
+         */
+        public static create(properties?: events.IEngineBuildCreate): events.EngineBuildCreate;
+
+        /**
+         * Encodes the specified EngineBuildCreate message. Does not implicitly {@link events.EngineBuildCreate.verify|verify} messages.
+         * @param message EngineBuildCreate message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IEngineBuildCreate, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified EngineBuildCreate message, length delimited. Does not implicitly {@link events.EngineBuildCreate.verify|verify} messages.
+         * @param message EngineBuildCreate message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IEngineBuildCreate, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an EngineBuildCreate message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns EngineBuildCreate
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.EngineBuildCreate;
+
+        /**
+         * Decodes an EngineBuildCreate message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns EngineBuildCreate
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.EngineBuildCreate;
+
+        /**
+         * Verifies an EngineBuildCreate message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an EngineBuildCreate message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns EngineBuildCreate
+         */
+        public static fromObject(object: { [k: string]: any }): events.EngineBuildCreate;
+
+        /**
+         * Creates a plain object from an EngineBuildCreate message. Also converts values to other types if specified.
+         * @param message EngineBuildCreate
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.EngineBuildCreate, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this EngineBuildCreate to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an EngineBuildUpload. */
+    interface IEngineBuildUpload {
+
+        /** EngineBuildUpload engineId */
+        engineId?: (string|null);
+
+        /** EngineBuildUpload buildId */
+        buildId?: (string|null);
+
+        /** EngineBuildUpload statusCode */
+        statusCode?: (number|null);
+
+        /** EngineBuildUpload action */
+        action?: (string|null);
+    }
+
+    /** Represents an EngineBuildUpload. */
+    class EngineBuildUpload implements IEngineBuildUpload {
+
+        /**
+         * Constructs a new EngineBuildUpload.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IEngineBuildUpload);
+
+        /** EngineBuildUpload engineId. */
+        public engineId: string;
+
+        /** EngineBuildUpload buildId. */
+        public buildId: string;
+
+        /** EngineBuildUpload statusCode. */
+        public statusCode: number;
+
+        /** EngineBuildUpload action. */
+        public action: string;
+
+        /**
+         * Creates a new EngineBuildUpload instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns EngineBuildUpload instance
+         */
+        public static create(properties?: events.IEngineBuildUpload): events.EngineBuildUpload;
+
+        /**
+         * Encodes the specified EngineBuildUpload message. Does not implicitly {@link events.EngineBuildUpload.verify|verify} messages.
+         * @param message EngineBuildUpload message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IEngineBuildUpload, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified EngineBuildUpload message, length delimited. Does not implicitly {@link events.EngineBuildUpload.verify|verify} messages.
+         * @param message EngineBuildUpload message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IEngineBuildUpload, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an EngineBuildUpload message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns EngineBuildUpload
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.EngineBuildUpload;
+
+        /**
+         * Decodes an EngineBuildUpload message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns EngineBuildUpload
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.EngineBuildUpload;
+
+        /**
+         * Verifies an EngineBuildUpload message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an EngineBuildUpload message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns EngineBuildUpload
+         */
+        public static fromObject(object: { [k: string]: any }): events.EngineBuildUpload;
+
+        /**
+         * Creates a plain object from an EngineBuildUpload message. Also converts values to other types if specified.
+         * @param message EngineBuildUpload
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.EngineBuildUpload, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this EngineBuildUpload to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an EngineBuildInvalidate. */
+    interface IEngineBuildInvalidate {
+
+        /** EngineBuildInvalidate engineId */
+        engineId?: (string|null);
+
+        /** EngineBuildInvalidate buildId */
+        buildId?: (string|null);
+
+        /** EngineBuildInvalidate statusCode */
+        statusCode?: (number|null);
+
+        /** EngineBuildInvalidate action */
+        action?: (string|null);
+    }
+
+    /** Represents an EngineBuildInvalidate. */
+    class EngineBuildInvalidate implements IEngineBuildInvalidate {
+
+        /**
+         * Constructs a new EngineBuildInvalidate.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IEngineBuildInvalidate);
+
+        /** EngineBuildInvalidate engineId. */
+        public engineId: string;
+
+        /** EngineBuildInvalidate buildId. */
+        public buildId: string;
+
+        /** EngineBuildInvalidate statusCode. */
+        public statusCode: number;
+
+        /** EngineBuildInvalidate action. */
+        public action: string;
+
+        /**
+         * Creates a new EngineBuildInvalidate instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns EngineBuildInvalidate instance
+         */
+        public static create(properties?: events.IEngineBuildInvalidate): events.EngineBuildInvalidate;
+
+        /**
+         * Encodes the specified EngineBuildInvalidate message. Does not implicitly {@link events.EngineBuildInvalidate.verify|verify} messages.
+         * @param message EngineBuildInvalidate message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IEngineBuildInvalidate, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified EngineBuildInvalidate message, length delimited. Does not implicitly {@link events.EngineBuildInvalidate.verify|verify} messages.
+         * @param message EngineBuildInvalidate message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IEngineBuildInvalidate, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an EngineBuildInvalidate message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns EngineBuildInvalidate
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.EngineBuildInvalidate;
+
+        /**
+         * Decodes an EngineBuildInvalidate message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns EngineBuildInvalidate
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.EngineBuildInvalidate;
+
+        /**
+         * Verifies an EngineBuildInvalidate message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an EngineBuildInvalidate message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns EngineBuildInvalidate
+         */
+        public static fromObject(object: { [k: string]: any }): events.EngineBuildInvalidate;
+
+        /**
+         * Creates a plain object from an EngineBuildInvalidate message. Also converts values to other types if specified.
+         * @param message EngineBuildInvalidate
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.EngineBuildInvalidate, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this EngineBuildInvalidate to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
