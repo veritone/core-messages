@@ -8,13 +8,13 @@ message EngineBuildUploadCompleted {
     string user_id = 10;
     string job_id = 11;
     string asset_id = 12;
-    string success = 13;
+    bool success = 13;
 }
 
 message EngineBuildManifestProcessed {
     string user_id = 10;
     string job_id = 11;
-    string success = 12;
+    bool success = 12;
     string engine_id = 13;
     string build_id = 14;
 }
@@ -23,7 +23,7 @@ message EngineBuildVulnerabilityChecked {
     string user_id = 10;
     string job_id = 11;
     string asset_id = 12;
-    string success = 13;
+    bool success = 13;
     string engine_id = 14;
     string build_id = 15;
 }
@@ -31,7 +31,7 @@ message EngineBuildVulnerabilityChecked {
 message EngineBuildTestReportDone {
     string user_id = 10;
     string job_id = 11;
-    string success = 12;
+    bool success = 12;
     string engine_id = 13;
     string build_id = 14;
 }

@@ -13,8 +13,8 @@ export class EngineBuildUploadCompleted extends jspb.Message {
   getAssetId(): string;
   setAssetId(value: string): void;
 
-  getSuccess(): string;
-  setSuccess(value: string): void;
+  getSuccess(): boolean;
+  setSuccess(value: boolean): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EngineBuildUploadCompleted.AsObject;
@@ -31,7 +31,7 @@ export namespace EngineBuildUploadCompleted {
     userId: string,
     jobId: string,
     assetId: string,
-    success: string,
+    success: boolean,
   }
 }
 
@@ -42,8 +42,8 @@ export class EngineBuildManifestProcessed extends jspb.Message {
   getJobId(): string;
   setJobId(value: string): void;
 
-  getSuccess(): string;
-  setSuccess(value: string): void;
+  getSuccess(): boolean;
+  setSuccess(value: boolean): void;
 
   getEngineId(): string;
   setEngineId(value: string): void;
@@ -65,7 +65,7 @@ export namespace EngineBuildManifestProcessed {
   export type AsObject = {
     userId: string,
     jobId: string,
-    success: string,
+    success: boolean,
     engineId: string,
     buildId: string,
   }
@@ -81,8 +81,8 @@ export class EngineBuildVulnerabilityChecked extends jspb.Message {
   getAssetId(): string;
   setAssetId(value: string): void;
 
-  getSuccess(): string;
-  setSuccess(value: string): void;
+  getSuccess(): boolean;
+  setSuccess(value: boolean): void;
 
   getEngineId(): string;
   setEngineId(value: string): void;
@@ -105,7 +105,7 @@ export namespace EngineBuildVulnerabilityChecked {
     userId: string,
     jobId: string,
     assetId: string,
-    success: string,
+    success: boolean,
     engineId: string,
     buildId: string,
   }
@@ -118,8 +118,8 @@ export class EngineBuildTestReportDone extends jspb.Message {
   getJobId(): string;
   setJobId(value: string): void;
 
-  getSuccess(): string;
-  setSuccess(value: string): void;
+  getSuccess(): boolean;
+  setSuccess(value: boolean): void;
 
   getEngineId(): string;
   setEngineId(value: string): void;
@@ -141,7 +141,7 @@ export namespace EngineBuildTestReportDone {
   export type AsObject = {
     userId: string,
     jobId: string,
-    success: string,
+    success: boolean,
     engineId: string,
     buildId: string,
   }

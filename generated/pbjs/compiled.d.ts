@@ -376,7 +376,7 @@ export namespace events {
         assetId?: (string|null);
 
         /** EngineBuildUploadCompleted success */
-        success?: (string|null);
+        success?: (boolean|null);
     }
 
     /** Represents an EngineBuildUploadCompleted. */
@@ -398,7 +398,7 @@ export namespace events {
         public assetId: string;
 
         /** EngineBuildUploadCompleted success. */
-        public success: string;
+        public success: boolean;
 
         /**
          * Creates a new EngineBuildUploadCompleted instance using the specified properties.
@@ -481,7 +481,7 @@ export namespace events {
         jobId?: (string|null);
 
         /** EngineBuildManifestProcessed success */
-        success?: (string|null);
+        success?: (boolean|null);
 
         /** EngineBuildManifestProcessed engineId */
         engineId?: (string|null);
@@ -506,7 +506,7 @@ export namespace events {
         public jobId: string;
 
         /** EngineBuildManifestProcessed success. */
-        public success: string;
+        public success: boolean;
 
         /** EngineBuildManifestProcessed engineId. */
         public engineId: string;
@@ -598,7 +598,7 @@ export namespace events {
         assetId?: (string|null);
 
         /** EngineBuildVulnerabilityChecked success */
-        success?: (string|null);
+        success?: (boolean|null);
 
         /** EngineBuildVulnerabilityChecked engineId */
         engineId?: (string|null);
@@ -626,7 +626,7 @@ export namespace events {
         public assetId: string;
 
         /** EngineBuildVulnerabilityChecked success. */
-        public success: string;
+        public success: boolean;
 
         /** EngineBuildVulnerabilityChecked engineId. */
         public engineId: string;
@@ -715,7 +715,7 @@ export namespace events {
         jobId?: (string|null);
 
         /** EngineBuildTestReportDone success */
-        success?: (string|null);
+        success?: (boolean|null);
 
         /** EngineBuildTestReportDone engineId */
         engineId?: (string|null);
@@ -740,7 +740,7 @@ export namespace events {
         public jobId: string;
 
         /** EngineBuildTestReportDone success. */
-        public success: string;
+        public success: boolean;
 
         /** EngineBuildTestReportDone engineId. */
         public engineId: string;

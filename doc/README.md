@@ -293,7 +293,7 @@
 | ----- | ---- | ----- | ----------- |
 | user_id | [string](#string) |  |  |
 | job_id | [string](#string) |  |  |
-| success | [string](#string) |  |  |
+| success | [bool](#bool) |  |  |
 | engine_id | [string](#string) |  |  |
 | build_id | [string](#string) |  |  |
 
@@ -312,7 +312,7 @@
 | ----- | ---- | ----- | ----------- |
 | user_id | [string](#string) |  |  |
 | job_id | [string](#string) |  |  |
-| success | [string](#string) |  |  |
+| success | [bool](#bool) |  |  |
 | engine_id | [string](#string) |  |  |
 | build_id | [string](#string) |  |  |
 
@@ -350,7 +350,7 @@
 | user_id | [string](#string) |  |  |
 | job_id | [string](#string) |  |  |
 | asset_id | [string](#string) |  |  |
-| success | [string](#string) |  |  |
+| success | [bool](#bool) |  |  |
 
 
 
@@ -368,7 +368,7 @@
 | user_id | [string](#string) |  |  |
 | job_id | [string](#string) |  |  |
 | asset_id | [string](#string) |  |  |
-| success | [string](#string) |  |  |
+| success | [bool](#bool) |  |  |
 | engine_id | [string](#string) |  |  |
 | build_id | [string](#string) |  |  |
 

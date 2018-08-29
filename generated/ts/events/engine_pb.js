@@ -72,7 +72,7 @@ proto.events.EngineBuildUploadCompleted.toObject = function(includeInstance, msg
     userId: jspb.Message.getFieldWithDefault(msg, 10, ""),
     jobId: jspb.Message.getFieldWithDefault(msg, 11, ""),
     assetId: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    success: jspb.Message.getFieldWithDefault(msg, 13, "")
+    success: jspb.Message.getFieldWithDefault(msg, 13, false)
   };
 
   if (includeInstance) {
@@ -122,7 +122,7 @@ proto.events.EngineBuildUploadCompleted.deserializeBinaryFromReader = function(m
       msg.setAssetId(value);
       break;
     case 13:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {boolean} */ (reader.readBool());
       msg.setSuccess(value);
       break;
     default:
@@ -176,8 +176,8 @@ proto.events.EngineBuildUploadCompleted.serializeBinaryToWriter = function(messa
     );
   }
   f = message.getSuccess();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f) {
+    writer.writeBool(
       13,
       f
     );
@@ -231,17 +231,19 @@ proto.events.EngineBuildUploadCompleted.prototype.setAssetId = function(value) {
 
 
 /**
- * optional string success = 13;
- * @return {string}
+ * optional bool success = 13;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
  */
 proto.events.EngineBuildUploadCompleted.prototype.getSuccess = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 13, false));
 };
 
 
-/** @param {string} value */
+/** @param {boolean} value */
 proto.events.EngineBuildUploadCompleted.prototype.setSuccess = function(value) {
-  jspb.Message.setProto3StringField(this, 13, value);
+  jspb.Message.setProto3BooleanField(this, 13, value);
 };
 
 
@@ -294,7 +296,7 @@ proto.events.EngineBuildManifestProcessed.toObject = function(includeInstance, m
   var f, obj = {
     userId: jspb.Message.getFieldWithDefault(msg, 10, ""),
     jobId: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    success: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    success: jspb.Message.getFieldWithDefault(msg, 12, false),
     engineId: jspb.Message.getFieldWithDefault(msg, 13, ""),
     buildId: jspb.Message.getFieldWithDefault(msg, 14, "")
   };
@@ -342,7 +344,7 @@ proto.events.EngineBuildManifestProcessed.deserializeBinaryFromReader = function
       msg.setJobId(value);
       break;
     case 12:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {boolean} */ (reader.readBool());
       msg.setSuccess(value);
       break;
     case 13:
@@ -397,8 +399,8 @@ proto.events.EngineBuildManifestProcessed.serializeBinaryToWriter = function(mes
     );
   }
   f = message.getSuccess();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f) {
+    writer.writeBool(
       12,
       f
     );
@@ -451,17 +453,19 @@ proto.events.EngineBuildManifestProcessed.prototype.setJobId = function(value) {
 
 
 /**
- * optional string success = 12;
- * @return {string}
+ * optional bool success = 12;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
  */
 proto.events.EngineBuildManifestProcessed.prototype.getSuccess = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 12, false));
 };
 
 
-/** @param {string} value */
+/** @param {boolean} value */
 proto.events.EngineBuildManifestProcessed.prototype.setSuccess = function(value) {
-  jspb.Message.setProto3StringField(this, 12, value);
+  jspb.Message.setProto3BooleanField(this, 12, value);
 };
 
 
@@ -545,7 +549,7 @@ proto.events.EngineBuildVulnerabilityChecked.toObject = function(includeInstance
     userId: jspb.Message.getFieldWithDefault(msg, 10, ""),
     jobId: jspb.Message.getFieldWithDefault(msg, 11, ""),
     assetId: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    success: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    success: jspb.Message.getFieldWithDefault(msg, 13, false),
     engineId: jspb.Message.getFieldWithDefault(msg, 14, ""),
     buildId: jspb.Message.getFieldWithDefault(msg, 15, "")
   };
@@ -597,7 +601,7 @@ proto.events.EngineBuildVulnerabilityChecked.deserializeBinaryFromReader = funct
       msg.setAssetId(value);
       break;
     case 13:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {boolean} */ (reader.readBool());
       msg.setSuccess(value);
       break;
     case 14:
@@ -659,8 +663,8 @@ proto.events.EngineBuildVulnerabilityChecked.serializeBinaryToWriter = function(
     );
   }
   f = message.getSuccess();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f) {
+    writer.writeBool(
       13,
       f
     );
@@ -728,17 +732,19 @@ proto.events.EngineBuildVulnerabilityChecked.prototype.setAssetId = function(val
 
 
 /**
- * optional string success = 13;
- * @return {string}
+ * optional bool success = 13;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
  */
 proto.events.EngineBuildVulnerabilityChecked.prototype.getSuccess = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 13, false));
 };
 
 
-/** @param {string} value */
+/** @param {boolean} value */
 proto.events.EngineBuildVulnerabilityChecked.prototype.setSuccess = function(value) {
-  jspb.Message.setProto3StringField(this, 13, value);
+  jspb.Message.setProto3BooleanField(this, 13, value);
 };
 
 
@@ -821,7 +827,7 @@ proto.events.EngineBuildTestReportDone.toObject = function(includeInstance, msg)
   var f, obj = {
     userId: jspb.Message.getFieldWithDefault(msg, 10, ""),
     jobId: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    success: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    success: jspb.Message.getFieldWithDefault(msg, 12, false),
     engineId: jspb.Message.getFieldWithDefault(msg, 13, ""),
     buildId: jspb.Message.getFieldWithDefault(msg, 14, "")
   };
@@ -869,7 +875,7 @@ proto.events.EngineBuildTestReportDone.deserializeBinaryFromReader = function(ms
       msg.setJobId(value);
       break;
     case 12:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {boolean} */ (reader.readBool());
       msg.setSuccess(value);
       break;
     case 13:
@@ -924,8 +930,8 @@ proto.events.EngineBuildTestReportDone.serializeBinaryToWriter = function(messag
     );
   }
   f = message.getSuccess();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f) {
+    writer.writeBool(
       12,
       f
     );
@@ -978,17 +984,19 @@ proto.events.EngineBuildTestReportDone.prototype.setJobId = function(value) {
 
 
 /**
- * optional string success = 12;
- * @return {string}
+ * optional bool success = 12;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
  */
 proto.events.EngineBuildTestReportDone.prototype.getSuccess = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 12, false));
 };
 
 
-/** @param {string} value */
+/** @param {boolean} value */
 proto.events.EngineBuildTestReportDone.prototype.setSuccess = function(value) {
-  jspb.Message.setProto3StringField(this, 12, value);
+  jspb.Message.setProto3BooleanField(this, 12, value);
 };
 
 

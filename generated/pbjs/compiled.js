@@ -980,7 +980,7 @@ $root.events = (function() {
          * @property {string|null} [userId] EngineBuildUploadCompleted userId
          * @property {string|null} [jobId] EngineBuildUploadCompleted jobId
          * @property {string|null} [assetId] EngineBuildUploadCompleted assetId
-         * @property {string|null} [success] EngineBuildUploadCompleted success
+         * @property {boolean|null} [success] EngineBuildUploadCompleted success
          */
 
         /**
@@ -1024,11 +1024,11 @@ $root.events = (function() {
 
         /**
          * EngineBuildUploadCompleted success.
-         * @member {string} success
+         * @member {boolean} success
          * @memberof events.EngineBuildUploadCompleted
          * @instance
          */
-        EngineBuildUploadCompleted.prototype.success = "";
+        EngineBuildUploadCompleted.prototype.success = false;
 
         /**
          * Creates a new EngineBuildUploadCompleted instance using the specified properties.
@@ -1061,7 +1061,7 @@ $root.events = (function() {
             if (message.assetId != null && message.hasOwnProperty("assetId"))
                 writer.uint32(/* id 12, wireType 2 =*/98).string(message.assetId);
             if (message.success != null && message.hasOwnProperty("success"))
-                writer.uint32(/* id 13, wireType 2 =*/106).string(message.success);
+                writer.uint32(/* id 13, wireType 0 =*/104).bool(message.success);
             return writer;
         };
 
@@ -1106,7 +1106,7 @@ $root.events = (function() {
                     message.assetId = reader.string();
                     break;
                 case 13:
-                    message.success = reader.string();
+                    message.success = reader.bool();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -1153,8 +1153,8 @@ $root.events = (function() {
                 if (!$util.isString(message.assetId))
                     return "assetId: string expected";
             if (message.success != null && message.hasOwnProperty("success"))
-                if (!$util.isString(message.success))
-                    return "success: string expected";
+                if (typeof message.success !== "boolean")
+                    return "success: boolean expected";
             return null;
         };
 
@@ -1177,7 +1177,7 @@ $root.events = (function() {
             if (object.assetId != null)
                 message.assetId = String(object.assetId);
             if (object.success != null)
-                message.success = String(object.success);
+                message.success = Boolean(object.success);
             return message;
         };
 
@@ -1198,7 +1198,7 @@ $root.events = (function() {
                 object.userId = "";
                 object.jobId = "";
                 object.assetId = "";
-                object.success = "";
+                object.success = false;
             }
             if (message.userId != null && message.hasOwnProperty("userId"))
                 object.userId = message.userId;
@@ -1233,7 +1233,7 @@ $root.events = (function() {
          * @interface IEngineBuildManifestProcessed
          * @property {string|null} [userId] EngineBuildManifestProcessed userId
          * @property {string|null} [jobId] EngineBuildManifestProcessed jobId
-         * @property {string|null} [success] EngineBuildManifestProcessed success
+         * @property {boolean|null} [success] EngineBuildManifestProcessed success
          * @property {string|null} [engineId] EngineBuildManifestProcessed engineId
          * @property {string|null} [buildId] EngineBuildManifestProcessed buildId
          */
@@ -1271,11 +1271,11 @@ $root.events = (function() {
 
         /**
          * EngineBuildManifestProcessed success.
-         * @member {string} success
+         * @member {boolean} success
          * @memberof events.EngineBuildManifestProcessed
          * @instance
          */
-        EngineBuildManifestProcessed.prototype.success = "";
+        EngineBuildManifestProcessed.prototype.success = false;
 
         /**
          * EngineBuildManifestProcessed engineId.
@@ -1322,7 +1322,7 @@ $root.events = (function() {
             if (message.jobId != null && message.hasOwnProperty("jobId"))
                 writer.uint32(/* id 11, wireType 2 =*/90).string(message.jobId);
             if (message.success != null && message.hasOwnProperty("success"))
-                writer.uint32(/* id 12, wireType 2 =*/98).string(message.success);
+                writer.uint32(/* id 12, wireType 0 =*/96).bool(message.success);
             if (message.engineId != null && message.hasOwnProperty("engineId"))
                 writer.uint32(/* id 13, wireType 2 =*/106).string(message.engineId);
             if (message.buildId != null && message.hasOwnProperty("buildId"))
@@ -1368,7 +1368,7 @@ $root.events = (function() {
                     message.jobId = reader.string();
                     break;
                 case 12:
-                    message.success = reader.string();
+                    message.success = reader.bool();
                     break;
                 case 13:
                     message.engineId = reader.string();
@@ -1418,8 +1418,8 @@ $root.events = (function() {
                 if (!$util.isString(message.jobId))
                     return "jobId: string expected";
             if (message.success != null && message.hasOwnProperty("success"))
-                if (!$util.isString(message.success))
-                    return "success: string expected";
+                if (typeof message.success !== "boolean")
+                    return "success: boolean expected";
             if (message.engineId != null && message.hasOwnProperty("engineId"))
                 if (!$util.isString(message.engineId))
                     return "engineId: string expected";
@@ -1446,7 +1446,7 @@ $root.events = (function() {
             if (object.jobId != null)
                 message.jobId = String(object.jobId);
             if (object.success != null)
-                message.success = String(object.success);
+                message.success = Boolean(object.success);
             if (object.engineId != null)
                 message.engineId = String(object.engineId);
             if (object.buildId != null)
@@ -1470,7 +1470,7 @@ $root.events = (function() {
             if (options.defaults) {
                 object.userId = "";
                 object.jobId = "";
-                object.success = "";
+                object.success = false;
                 object.engineId = "";
                 object.buildId = "";
             }
@@ -1510,7 +1510,7 @@ $root.events = (function() {
          * @property {string|null} [userId] EngineBuildVulnerabilityChecked userId
          * @property {string|null} [jobId] EngineBuildVulnerabilityChecked jobId
          * @property {string|null} [assetId] EngineBuildVulnerabilityChecked assetId
-         * @property {string|null} [success] EngineBuildVulnerabilityChecked success
+         * @property {boolean|null} [success] EngineBuildVulnerabilityChecked success
          * @property {string|null} [engineId] EngineBuildVulnerabilityChecked engineId
          * @property {string|null} [buildId] EngineBuildVulnerabilityChecked buildId
          */
@@ -1556,11 +1556,11 @@ $root.events = (function() {
 
         /**
          * EngineBuildVulnerabilityChecked success.
-         * @member {string} success
+         * @member {boolean} success
          * @memberof events.EngineBuildVulnerabilityChecked
          * @instance
          */
-        EngineBuildVulnerabilityChecked.prototype.success = "";
+        EngineBuildVulnerabilityChecked.prototype.success = false;
 
         /**
          * EngineBuildVulnerabilityChecked engineId.
@@ -1609,7 +1609,7 @@ $root.events = (function() {
             if (message.assetId != null && message.hasOwnProperty("assetId"))
                 writer.uint32(/* id 12, wireType 2 =*/98).string(message.assetId);
             if (message.success != null && message.hasOwnProperty("success"))
-                writer.uint32(/* id 13, wireType 2 =*/106).string(message.success);
+                writer.uint32(/* id 13, wireType 0 =*/104).bool(message.success);
             if (message.engineId != null && message.hasOwnProperty("engineId"))
                 writer.uint32(/* id 14, wireType 2 =*/114).string(message.engineId);
             if (message.buildId != null && message.hasOwnProperty("buildId"))
@@ -1658,7 +1658,7 @@ $root.events = (function() {
                     message.assetId = reader.string();
                     break;
                 case 13:
-                    message.success = reader.string();
+                    message.success = reader.bool();
                     break;
                 case 14:
                     message.engineId = reader.string();
@@ -1711,8 +1711,8 @@ $root.events = (function() {
                 if (!$util.isString(message.assetId))
                     return "assetId: string expected";
             if (message.success != null && message.hasOwnProperty("success"))
-                if (!$util.isString(message.success))
-                    return "success: string expected";
+                if (typeof message.success !== "boolean")
+                    return "success: boolean expected";
             if (message.engineId != null && message.hasOwnProperty("engineId"))
                 if (!$util.isString(message.engineId))
                     return "engineId: string expected";
@@ -1741,7 +1741,7 @@ $root.events = (function() {
             if (object.assetId != null)
                 message.assetId = String(object.assetId);
             if (object.success != null)
-                message.success = String(object.success);
+                message.success = Boolean(object.success);
             if (object.engineId != null)
                 message.engineId = String(object.engineId);
             if (object.buildId != null)
@@ -1766,7 +1766,7 @@ $root.events = (function() {
                 object.userId = "";
                 object.jobId = "";
                 object.assetId = "";
-                object.success = "";
+                object.success = false;
                 object.engineId = "";
                 object.buildId = "";
             }
@@ -1807,7 +1807,7 @@ $root.events = (function() {
          * @interface IEngineBuildTestReportDone
          * @property {string|null} [userId] EngineBuildTestReportDone userId
          * @property {string|null} [jobId] EngineBuildTestReportDone jobId
-         * @property {string|null} [success] EngineBuildTestReportDone success
+         * @property {boolean|null} [success] EngineBuildTestReportDone success
          * @property {string|null} [engineId] EngineBuildTestReportDone engineId
          * @property {string|null} [buildId] EngineBuildTestReportDone buildId
          */
@@ -1845,11 +1845,11 @@ $root.events = (function() {
 
         /**
          * EngineBuildTestReportDone success.
-         * @member {string} success
+         * @member {boolean} success
          * @memberof events.EngineBuildTestReportDone
          * @instance
          */
-        EngineBuildTestReportDone.prototype.success = "";
+        EngineBuildTestReportDone.prototype.success = false;
 
         /**
          * EngineBuildTestReportDone engineId.
@@ -1896,7 +1896,7 @@ $root.events = (function() {
             if (message.jobId != null && message.hasOwnProperty("jobId"))
                 writer.uint32(/* id 11, wireType 2 =*/90).string(message.jobId);
             if (message.success != null && message.hasOwnProperty("success"))
-                writer.uint32(/* id 12, wireType 2 =*/98).string(message.success);
+                writer.uint32(/* id 12, wireType 0 =*/96).bool(message.success);
             if (message.engineId != null && message.hasOwnProperty("engineId"))
                 writer.uint32(/* id 13, wireType 2 =*/106).string(message.engineId);
             if (message.buildId != null && message.hasOwnProperty("buildId"))
@@ -1942,7 +1942,7 @@ $root.events = (function() {
                     message.jobId = reader.string();
                     break;
                 case 12:
-                    message.success = reader.string();
+                    message.success = reader.bool();
                     break;
                 case 13:
                     message.engineId = reader.string();
@@ -1992,8 +1992,8 @@ $root.events = (function() {
                 if (!$util.isString(message.jobId))
                     return "jobId: string expected";
             if (message.success != null && message.hasOwnProperty("success"))
-                if (!$util.isString(message.success))
-                    return "success: string expected";
+                if (typeof message.success !== "boolean")
+                    return "success: boolean expected";
             if (message.engineId != null && message.hasOwnProperty("engineId"))
                 if (!$util.isString(message.engineId))
                     return "engineId: string expected";
@@ -2020,7 +2020,7 @@ $root.events = (function() {
             if (object.jobId != null)
                 message.jobId = String(object.jobId);
             if (object.success != null)
-                message.success = String(object.success);
+                message.success = Boolean(object.success);
             if (object.engineId != null)
                 message.engineId = String(object.engineId);
             if (object.buildId != null)
@@ -2044,7 +2044,7 @@ $root.events = (function() {
             if (options.defaults) {
                 object.userId = "";
                 object.jobId = "";
-                object.success = "";
+                object.success = false;
                 object.engineId = "";
                 object.buildId = "";
             }
