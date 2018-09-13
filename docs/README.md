@@ -1,7 +1,15 @@
 # Protocol Documentation
-<a name="top"></a>
+<a name="top"/>
 
 ## Table of Contents
+
+- [events/authentication.proto](#events/authentication.proto)
+    - [LoginFailed](#events.LoginFailed)
+    - [LoginSucceeded](#events.LoginSucceeded)
+  
+  
+  
+  
 
 - [events/core.proto](#events/core.proto)
     - [Core](#events.Core)
@@ -77,14 +85,70 @@
 
 
 
-<a name="events/core.proto"></a>
+<a name="events/authentication.proto"/>
+<p align="right"><a href="#top">Top</a></p>
+
+## events/authentication.proto
+
+
+
+<a name="events.LoginFailed"/>
+
+### LoginFailed
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_name | [string](#string) |  |  |
+| user_agent | [string](#string) |  |  |
+| ip | [string](#string) |  |  |
+| request_url | [string](#string) |  |  |
+| user_id | [string](#string) |  |  |
+| organization_id | [int64](#int64) |  |  |
+
+
+
+
+
+
+<a name="events.LoginSucceeded"/>
+
+### LoginSucceeded
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_name | [string](#string) |  |  |
+| user_agent | [string](#string) |  |  |
+| ip | [string](#string) |  |  |
+| request_url | [string](#string) |  |  |
+| user_id | [string](#string) |  |  |
+| organization_id | [int64](#int64) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="events/core.proto"/>
 <p align="right"><a href="#top">Top</a></p>
 
 ## events/core.proto
 
 
 
-<a name="events.Core"></a>
+<a name="events.Core"/>
 
 ### Core
 
@@ -108,7 +172,7 @@
 
 
 
-<a name="events.Trace"></a>
+<a name="events.Trace"/>
 
 ### Trace
 
@@ -125,7 +189,7 @@
 
 
 
-<a name="events.Trace.TraceContextEntry"></a>
+<a name="events.Trace.TraceContextEntry"/>
 
 ### Trace.TraceContextEntry
 
@@ -141,7 +205,7 @@
 
 
 
-<a name="events.Trace.TraceTagsEntry"></a>
+<a name="events.Trace.TraceTagsEntry"/>
 
 ### Trace.TraceTagsEntry
 
@@ -157,7 +221,7 @@
 
 
 
-<a name="events.VtEvent"></a>
+<a name="events.VtEvent"/>
 
 ### VtEvent
 
@@ -175,7 +239,7 @@
 
 
 
-<a name="events.VtEvent.BaggageEntry"></a>
+<a name="events.VtEvent.BaggageEntry"/>
 
 ### VtEvent.BaggageEntry
 
@@ -200,14 +264,14 @@
 
 
 
-<a name="events/engine.proto"></a>
+<a name="events/engine.proto"/>
 <p align="right"><a href="#top">Top</a></p>
 
 ## events/engine.proto
 
 
 
-<a name="events.EngineBuildApproved"></a>
+<a name="events.EngineBuildApproved"/>
 
 ### EngineBuildApproved
 
@@ -227,7 +291,7 @@
 
 
 
-<a name="events.EngineBuildCreate"></a>
+<a name="events.EngineBuildCreate"/>
 
 ### EngineBuildCreate
 
@@ -245,7 +309,7 @@
 
 
 
-<a name="events.EngineBuildDisapprove"></a>
+<a name="events.EngineBuildDisapprove"/>
 
 ### EngineBuildDisapprove
 
@@ -265,7 +329,7 @@
 
 
 
-<a name="events.EngineBuildInvalidate"></a>
+<a name="events.EngineBuildInvalidate"/>
 
 ### EngineBuildInvalidate
 
@@ -283,7 +347,7 @@
 
 
 
-<a name="events.EngineBuildManifestProcessed"></a>
+<a name="events.EngineBuildManifestProcessed"/>
 
 ### EngineBuildManifestProcessed
 
@@ -302,7 +366,7 @@
 
 
 
-<a name="events.EngineBuildTestReportDone"></a>
+<a name="events.EngineBuildTestReportDone"/>
 
 ### EngineBuildTestReportDone
 
@@ -321,7 +385,7 @@
 
 
 
-<a name="events.EngineBuildUpload"></a>
+<a name="events.EngineBuildUpload"/>
 
 ### EngineBuildUpload
 
@@ -339,7 +403,7 @@
 
 
 
-<a name="events.EngineBuildUploadCompleted"></a>
+<a name="events.EngineBuildUploadCompleted"/>
 
 ### EngineBuildUploadCompleted
 
@@ -357,7 +421,7 @@
 
 
 
-<a name="events.EngineBuildVulnerabilityChecked"></a>
+<a name="events.EngineBuildVulnerabilityChecked"/>
 
 ### EngineBuildVulnerabilityChecked
 
@@ -377,7 +441,7 @@
 
 
 
-<a name="events.engineBuildDeployFail"></a>
+<a name="events.engineBuildDeployFail"/>
 
 ### engineBuildDeployFail
 
@@ -394,7 +458,7 @@
 
 
 
-<a name="events.engineBuildDeploySuccess"></a>
+<a name="events.engineBuildDeploySuccess"/>
 
 ### engineBuildDeploySuccess
 
@@ -420,14 +484,14 @@
 
 
 
-<a name="events/example_event.proto"></a>
+<a name="events/example_event.proto"/>
 <p align="right"><a href="#top">Top</a></p>
 
 ## events/example_event.proto
 
 
 
-<a name="events.ExampleEvent"></a>
+<a name="events.ExampleEvent"/>
 
 ### ExampleEvent
 
@@ -444,7 +508,7 @@
 
 
 
-<a name="events.ExampleFour"></a>
+<a name="events.ExampleFour"/>
 
 ### ExampleFour
 
@@ -461,7 +525,7 @@
 
 
 
-<a name="events.ExampleOne"></a>
+<a name="events.ExampleOne"/>
 
 ### ExampleOne
 
@@ -476,7 +540,7 @@
 
 
 
-<a name="events.ExampleThree"></a>
+<a name="events.ExampleThree"/>
 
 ### ExampleThree
 
@@ -491,7 +555,7 @@
 
 
 
-<a name="events.ExampleTwo"></a>
+<a name="events.ExampleTwo"/>
 
 ### ExampleTwo
 
@@ -515,14 +579,14 @@
 
 
 
-<a name="events/mention_notification.proto"></a>
+<a name="events/mention_notification.proto"/>
 <p align="right"><a href="#top">Top</a></p>
 
 ## events/mention_notification.proto
 
 
 
-<a name="events.MentionDeleted"></a>
+<a name="events.MentionDeleted"/>
 
 ### MentionDeleted
 
@@ -539,7 +603,7 @@
 
 
 
-<a name="events.MentionEmailGenerated"></a>
+<a name="events.MentionEmailGenerated"/>
 
 ### MentionEmailGenerated
 
@@ -562,7 +626,7 @@
 
 
 
-<a name="events.MentionEmailGenerated.Mention"></a>
+<a name="events.MentionEmailGenerated.Mention"/>
 
 ### MentionEmailGenerated.Mention
 
@@ -587,7 +651,7 @@
 
 
 
-<a name="events.MentionEmailGenerated.PlaceHolders"></a>
+<a name="events.MentionEmailGenerated.PlaceHolders"/>
 
 ### MentionEmailGenerated.PlaceHolders
 
@@ -605,7 +669,7 @@
 
 
 
-<a name="events.MentionInserted"></a>
+<a name="events.MentionInserted"/>
 
 ### MentionInserted
 
@@ -622,7 +686,7 @@
 
 
 
-<a name="events.MentionModifiedData"></a>
+<a name="events.MentionModifiedData"/>
 
 ### MentionModifiedData
 Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
@@ -640,7 +704,7 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 
 
 
-<a name="events.MentionUpdated"></a>
+<a name="events.MentionUpdated"/>
 
 ### MentionUpdated
 
@@ -666,14 +730,14 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 
 
 
-<a name="events/notification.proto"></a>
+<a name="events/notification.proto"/>
 <p align="right"><a href="#top">Top</a></p>
 
 ## events/notification.proto
 
 
 
-<a name="events.BasicEmail"></a>
+<a name="events.BasicEmail"/>
 
 ### BasicEmail
 
@@ -693,7 +757,7 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 
 
 
-<a name="events.SMSNotification"></a>
+<a name="events.SMSNotification"/>
 
 ### SMSNotification
 
@@ -710,7 +774,7 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 
 
 
-<a name="events.Webhook"></a>
+<a name="events.Webhook"/>
 
 ### Webhook
 
@@ -729,7 +793,7 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
  
 
 
-<a name="events.Webhook.Encoding"></a>
+<a name="events.Webhook.Encoding"/>
 
 ### Webhook.Encoding
 
@@ -749,14 +813,14 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 
 
 
-<a name="events/trigger.proto"></a>
+<a name="events/trigger.proto"/>
 <p align="right"><a href="#top">Top</a></p>
 
 ## events/trigger.proto
 
 
 
-<a name="events.TriggerCacheRefresh"></a>
+<a name="events.TriggerCacheRefresh"/>
 
 ### TriggerCacheRefresh
 

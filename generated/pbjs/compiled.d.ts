@@ -3,6 +3,246 @@ import * as $protobuf from "protobufjs";
 /** Namespace events. */
 export namespace events {
 
+    /** Properties of a LoginSucceeded. */
+    interface ILoginSucceeded {
+
+        /** LoginSucceeded userName */
+        userName?: (string|null);
+
+        /** LoginSucceeded userAgent */
+        userAgent?: (string|null);
+
+        /** LoginSucceeded ip */
+        ip?: (string|null);
+
+        /** LoginSucceeded requestUrl */
+        requestUrl?: (string|null);
+
+        /** LoginSucceeded userId */
+        userId?: (string|null);
+
+        /** LoginSucceeded organizationId */
+        organizationId?: (number|Long|null);
+    }
+
+    /** Represents a LoginSucceeded. */
+    class LoginSucceeded implements ILoginSucceeded {
+
+        /**
+         * Constructs a new LoginSucceeded.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.ILoginSucceeded);
+
+        /** LoginSucceeded userName. */
+        public userName: string;
+
+        /** LoginSucceeded userAgent. */
+        public userAgent: string;
+
+        /** LoginSucceeded ip. */
+        public ip: string;
+
+        /** LoginSucceeded requestUrl. */
+        public requestUrl: string;
+
+        /** LoginSucceeded userId. */
+        public userId: string;
+
+        /** LoginSucceeded organizationId. */
+        public organizationId: (number|Long);
+
+        /**
+         * Creates a new LoginSucceeded instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns LoginSucceeded instance
+         */
+        public static create(properties?: events.ILoginSucceeded): events.LoginSucceeded;
+
+        /**
+         * Encodes the specified LoginSucceeded message. Does not implicitly {@link events.LoginSucceeded.verify|verify} messages.
+         * @param message LoginSucceeded message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.ILoginSucceeded, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified LoginSucceeded message, length delimited. Does not implicitly {@link events.LoginSucceeded.verify|verify} messages.
+         * @param message LoginSucceeded message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.ILoginSucceeded, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a LoginSucceeded message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns LoginSucceeded
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.LoginSucceeded;
+
+        /**
+         * Decodes a LoginSucceeded message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns LoginSucceeded
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.LoginSucceeded;
+
+        /**
+         * Verifies a LoginSucceeded message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a LoginSucceeded message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns LoginSucceeded
+         */
+        public static fromObject(object: { [k: string]: any }): events.LoginSucceeded;
+
+        /**
+         * Creates a plain object from a LoginSucceeded message. Also converts values to other types if specified.
+         * @param message LoginSucceeded
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.LoginSucceeded, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this LoginSucceeded to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a LoginFailed. */
+    interface ILoginFailed {
+
+        /** LoginFailed userName */
+        userName?: (string|null);
+
+        /** LoginFailed userAgent */
+        userAgent?: (string|null);
+
+        /** LoginFailed ip */
+        ip?: (string|null);
+
+        /** LoginFailed requestUrl */
+        requestUrl?: (string|null);
+
+        /** LoginFailed userId */
+        userId?: (string|null);
+
+        /** LoginFailed organizationId */
+        organizationId?: (number|Long|null);
+    }
+
+    /** Represents a LoginFailed. */
+    class LoginFailed implements ILoginFailed {
+
+        /**
+         * Constructs a new LoginFailed.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.ILoginFailed);
+
+        /** LoginFailed userName. */
+        public userName: string;
+
+        /** LoginFailed userAgent. */
+        public userAgent: string;
+
+        /** LoginFailed ip. */
+        public ip: string;
+
+        /** LoginFailed requestUrl. */
+        public requestUrl: string;
+
+        /** LoginFailed userId. */
+        public userId: string;
+
+        /** LoginFailed organizationId. */
+        public organizationId: (number|Long);
+
+        /**
+         * Creates a new LoginFailed instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns LoginFailed instance
+         */
+        public static create(properties?: events.ILoginFailed): events.LoginFailed;
+
+        /**
+         * Encodes the specified LoginFailed message. Does not implicitly {@link events.LoginFailed.verify|verify} messages.
+         * @param message LoginFailed message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.ILoginFailed, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified LoginFailed message, length delimited. Does not implicitly {@link events.LoginFailed.verify|verify} messages.
+         * @param message LoginFailed message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.ILoginFailed, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a LoginFailed message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns LoginFailed
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.LoginFailed;
+
+        /**
+         * Decodes a LoginFailed message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns LoginFailed
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.LoginFailed;
+
+        /**
+         * Verifies a LoginFailed message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a LoginFailed message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns LoginFailed
+         */
+        public static fromObject(object: { [k: string]: any }): events.LoginFailed;
+
+        /**
+         * Creates a plain object from a LoginFailed message. Also converts values to other types if specified.
+         * @param message LoginFailed
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.LoginFailed, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this LoginFailed to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
     /** Properties of a Core. */
     interface ICore {
 

@@ -1,0 +1,22 @@
+
+syntax = "proto3";
+package events;
+option go_package = "events";
+
+message LoginSucceeded  {
+    string user_name = 10;
+    string user_agent = 11;
+    string ip = 12;
+    string request_url = 13;
+    string user_id = 14;
+    int64 organization_id = 15;
+}
+
+message LoginFailed {
+    string user_name = 10;
+    string user_agent = 11;
+    string ip = 12;
+    string request_url = 13;
+    string user_id = 14;
+    int64 organization_id = 15;
+}

@@ -18,6 +18,630 @@ $root.events = (function() {
      */
     var events = {};
 
+    events.LoginSucceeded = (function() {
+
+        /**
+         * Properties of a LoginSucceeded.
+         * @memberof events
+         * @interface ILoginSucceeded
+         * @property {string|null} [userName] LoginSucceeded userName
+         * @property {string|null} [userAgent] LoginSucceeded userAgent
+         * @property {string|null} [ip] LoginSucceeded ip
+         * @property {string|null} [requestUrl] LoginSucceeded requestUrl
+         * @property {string|null} [userId] LoginSucceeded userId
+         * @property {number|Long|null} [organizationId] LoginSucceeded organizationId
+         */
+
+        /**
+         * Constructs a new LoginSucceeded.
+         * @memberof events
+         * @classdesc Represents a LoginSucceeded.
+         * @implements ILoginSucceeded
+         * @constructor
+         * @param {events.ILoginSucceeded=} [properties] Properties to set
+         */
+        function LoginSucceeded(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * LoginSucceeded userName.
+         * @member {string} userName
+         * @memberof events.LoginSucceeded
+         * @instance
+         */
+        LoginSucceeded.prototype.userName = "";
+
+        /**
+         * LoginSucceeded userAgent.
+         * @member {string} userAgent
+         * @memberof events.LoginSucceeded
+         * @instance
+         */
+        LoginSucceeded.prototype.userAgent = "";
+
+        /**
+         * LoginSucceeded ip.
+         * @member {string} ip
+         * @memberof events.LoginSucceeded
+         * @instance
+         */
+        LoginSucceeded.prototype.ip = "";
+
+        /**
+         * LoginSucceeded requestUrl.
+         * @member {string} requestUrl
+         * @memberof events.LoginSucceeded
+         * @instance
+         */
+        LoginSucceeded.prototype.requestUrl = "";
+
+        /**
+         * LoginSucceeded userId.
+         * @member {string} userId
+         * @memberof events.LoginSucceeded
+         * @instance
+         */
+        LoginSucceeded.prototype.userId = "";
+
+        /**
+         * LoginSucceeded organizationId.
+         * @member {number|Long} organizationId
+         * @memberof events.LoginSucceeded
+         * @instance
+         */
+        LoginSucceeded.prototype.organizationId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+        /**
+         * Creates a new LoginSucceeded instance using the specified properties.
+         * @function create
+         * @memberof events.LoginSucceeded
+         * @static
+         * @param {events.ILoginSucceeded=} [properties] Properties to set
+         * @returns {events.LoginSucceeded} LoginSucceeded instance
+         */
+        LoginSucceeded.create = function create(properties) {
+            return new LoginSucceeded(properties);
+        };
+
+        /**
+         * Encodes the specified LoginSucceeded message. Does not implicitly {@link events.LoginSucceeded.verify|verify} messages.
+         * @function encode
+         * @memberof events.LoginSucceeded
+         * @static
+         * @param {events.ILoginSucceeded} message LoginSucceeded message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        LoginSucceeded.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.userName);
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.userAgent);
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.ip);
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                writer.uint32(/* id 13, wireType 2 =*/106).string(message.requestUrl);
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                writer.uint32(/* id 14, wireType 2 =*/114).string(message.userId);
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                writer.uint32(/* id 15, wireType 0 =*/120).int64(message.organizationId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified LoginSucceeded message, length delimited. Does not implicitly {@link events.LoginSucceeded.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.LoginSucceeded
+         * @static
+         * @param {events.ILoginSucceeded} message LoginSucceeded message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        LoginSucceeded.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a LoginSucceeded message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.LoginSucceeded
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.LoginSucceeded} LoginSucceeded
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        LoginSucceeded.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.LoginSucceeded();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.userName = reader.string();
+                    break;
+                case 11:
+                    message.userAgent = reader.string();
+                    break;
+                case 12:
+                    message.ip = reader.string();
+                    break;
+                case 13:
+                    message.requestUrl = reader.string();
+                    break;
+                case 14:
+                    message.userId = reader.string();
+                    break;
+                case 15:
+                    message.organizationId = reader.int64();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a LoginSucceeded message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.LoginSucceeded
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.LoginSucceeded} LoginSucceeded
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        LoginSucceeded.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a LoginSucceeded message.
+         * @function verify
+         * @memberof events.LoginSucceeded
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        LoginSucceeded.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                if (!$util.isString(message.userName))
+                    return "userName: string expected";
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                if (!$util.isString(message.userAgent))
+                    return "userAgent: string expected";
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                if (!$util.isString(message.ip))
+                    return "ip: string expected";
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                if (!$util.isString(message.requestUrl))
+                    return "requestUrl: string expected";
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                if (!$util.isString(message.userId))
+                    return "userId: string expected";
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                if (!$util.isInteger(message.organizationId) && !(message.organizationId && $util.isInteger(message.organizationId.low) && $util.isInteger(message.organizationId.high)))
+                    return "organizationId: integer|Long expected";
+            return null;
+        };
+
+        /**
+         * Creates a LoginSucceeded message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.LoginSucceeded
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.LoginSucceeded} LoginSucceeded
+         */
+        LoginSucceeded.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.LoginSucceeded)
+                return object;
+            var message = new $root.events.LoginSucceeded();
+            if (object.userName != null)
+                message.userName = String(object.userName);
+            if (object.userAgent != null)
+                message.userAgent = String(object.userAgent);
+            if (object.ip != null)
+                message.ip = String(object.ip);
+            if (object.requestUrl != null)
+                message.requestUrl = String(object.requestUrl);
+            if (object.userId != null)
+                message.userId = String(object.userId);
+            if (object.organizationId != null)
+                if ($util.Long)
+                    (message.organizationId = $util.Long.fromValue(object.organizationId)).unsigned = false;
+                else if (typeof object.organizationId === "string")
+                    message.organizationId = parseInt(object.organizationId, 10);
+                else if (typeof object.organizationId === "number")
+                    message.organizationId = object.organizationId;
+                else if (typeof object.organizationId === "object")
+                    message.organizationId = new $util.LongBits(object.organizationId.low >>> 0, object.organizationId.high >>> 0).toNumber();
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a LoginSucceeded message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.LoginSucceeded
+         * @static
+         * @param {events.LoginSucceeded} message LoginSucceeded
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        LoginSucceeded.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.userName = "";
+                object.userAgent = "";
+                object.ip = "";
+                object.requestUrl = "";
+                object.userId = "";
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.organizationId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.organizationId = options.longs === String ? "0" : 0;
+            }
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                object.userName = message.userName;
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                object.userAgent = message.userAgent;
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                object.ip = message.ip;
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                object.requestUrl = message.requestUrl;
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                object.userId = message.userId;
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                if (typeof message.organizationId === "number")
+                    object.organizationId = options.longs === String ? String(message.organizationId) : message.organizationId;
+                else
+                    object.organizationId = options.longs === String ? $util.Long.prototype.toString.call(message.organizationId) : options.longs === Number ? new $util.LongBits(message.organizationId.low >>> 0, message.organizationId.high >>> 0).toNumber() : message.organizationId;
+            return object;
+        };
+
+        /**
+         * Converts this LoginSucceeded to JSON.
+         * @function toJSON
+         * @memberof events.LoginSucceeded
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        LoginSucceeded.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return LoginSucceeded;
+    })();
+
+    events.LoginFailed = (function() {
+
+        /**
+         * Properties of a LoginFailed.
+         * @memberof events
+         * @interface ILoginFailed
+         * @property {string|null} [userName] LoginFailed userName
+         * @property {string|null} [userAgent] LoginFailed userAgent
+         * @property {string|null} [ip] LoginFailed ip
+         * @property {string|null} [requestUrl] LoginFailed requestUrl
+         * @property {string|null} [userId] LoginFailed userId
+         * @property {number|Long|null} [organizationId] LoginFailed organizationId
+         */
+
+        /**
+         * Constructs a new LoginFailed.
+         * @memberof events
+         * @classdesc Represents a LoginFailed.
+         * @implements ILoginFailed
+         * @constructor
+         * @param {events.ILoginFailed=} [properties] Properties to set
+         */
+        function LoginFailed(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * LoginFailed userName.
+         * @member {string} userName
+         * @memberof events.LoginFailed
+         * @instance
+         */
+        LoginFailed.prototype.userName = "";
+
+        /**
+         * LoginFailed userAgent.
+         * @member {string} userAgent
+         * @memberof events.LoginFailed
+         * @instance
+         */
+        LoginFailed.prototype.userAgent = "";
+
+        /**
+         * LoginFailed ip.
+         * @member {string} ip
+         * @memberof events.LoginFailed
+         * @instance
+         */
+        LoginFailed.prototype.ip = "";
+
+        /**
+         * LoginFailed requestUrl.
+         * @member {string} requestUrl
+         * @memberof events.LoginFailed
+         * @instance
+         */
+        LoginFailed.prototype.requestUrl = "";
+
+        /**
+         * LoginFailed userId.
+         * @member {string} userId
+         * @memberof events.LoginFailed
+         * @instance
+         */
+        LoginFailed.prototype.userId = "";
+
+        /**
+         * LoginFailed organizationId.
+         * @member {number|Long} organizationId
+         * @memberof events.LoginFailed
+         * @instance
+         */
+        LoginFailed.prototype.organizationId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+        /**
+         * Creates a new LoginFailed instance using the specified properties.
+         * @function create
+         * @memberof events.LoginFailed
+         * @static
+         * @param {events.ILoginFailed=} [properties] Properties to set
+         * @returns {events.LoginFailed} LoginFailed instance
+         */
+        LoginFailed.create = function create(properties) {
+            return new LoginFailed(properties);
+        };
+
+        /**
+         * Encodes the specified LoginFailed message. Does not implicitly {@link events.LoginFailed.verify|verify} messages.
+         * @function encode
+         * @memberof events.LoginFailed
+         * @static
+         * @param {events.ILoginFailed} message LoginFailed message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        LoginFailed.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.userName);
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.userAgent);
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.ip);
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                writer.uint32(/* id 13, wireType 2 =*/106).string(message.requestUrl);
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                writer.uint32(/* id 14, wireType 2 =*/114).string(message.userId);
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                writer.uint32(/* id 15, wireType 0 =*/120).int64(message.organizationId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified LoginFailed message, length delimited. Does not implicitly {@link events.LoginFailed.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.LoginFailed
+         * @static
+         * @param {events.ILoginFailed} message LoginFailed message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        LoginFailed.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a LoginFailed message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.LoginFailed
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.LoginFailed} LoginFailed
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        LoginFailed.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.LoginFailed();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.userName = reader.string();
+                    break;
+                case 11:
+                    message.userAgent = reader.string();
+                    break;
+                case 12:
+                    message.ip = reader.string();
+                    break;
+                case 13:
+                    message.requestUrl = reader.string();
+                    break;
+                case 14:
+                    message.userId = reader.string();
+                    break;
+                case 15:
+                    message.organizationId = reader.int64();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a LoginFailed message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.LoginFailed
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.LoginFailed} LoginFailed
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        LoginFailed.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a LoginFailed message.
+         * @function verify
+         * @memberof events.LoginFailed
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        LoginFailed.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                if (!$util.isString(message.userName))
+                    return "userName: string expected";
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                if (!$util.isString(message.userAgent))
+                    return "userAgent: string expected";
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                if (!$util.isString(message.ip))
+                    return "ip: string expected";
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                if (!$util.isString(message.requestUrl))
+                    return "requestUrl: string expected";
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                if (!$util.isString(message.userId))
+                    return "userId: string expected";
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                if (!$util.isInteger(message.organizationId) && !(message.organizationId && $util.isInteger(message.organizationId.low) && $util.isInteger(message.organizationId.high)))
+                    return "organizationId: integer|Long expected";
+            return null;
+        };
+
+        /**
+         * Creates a LoginFailed message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.LoginFailed
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.LoginFailed} LoginFailed
+         */
+        LoginFailed.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.LoginFailed)
+                return object;
+            var message = new $root.events.LoginFailed();
+            if (object.userName != null)
+                message.userName = String(object.userName);
+            if (object.userAgent != null)
+                message.userAgent = String(object.userAgent);
+            if (object.ip != null)
+                message.ip = String(object.ip);
+            if (object.requestUrl != null)
+                message.requestUrl = String(object.requestUrl);
+            if (object.userId != null)
+                message.userId = String(object.userId);
+            if (object.organizationId != null)
+                if ($util.Long)
+                    (message.organizationId = $util.Long.fromValue(object.organizationId)).unsigned = false;
+                else if (typeof object.organizationId === "string")
+                    message.organizationId = parseInt(object.organizationId, 10);
+                else if (typeof object.organizationId === "number")
+                    message.organizationId = object.organizationId;
+                else if (typeof object.organizationId === "object")
+                    message.organizationId = new $util.LongBits(object.organizationId.low >>> 0, object.organizationId.high >>> 0).toNumber();
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a LoginFailed message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.LoginFailed
+         * @static
+         * @param {events.LoginFailed} message LoginFailed
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        LoginFailed.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.userName = "";
+                object.userAgent = "";
+                object.ip = "";
+                object.requestUrl = "";
+                object.userId = "";
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.organizationId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.organizationId = options.longs === String ? "0" : 0;
+            }
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                object.userName = message.userName;
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                object.userAgent = message.userAgent;
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                object.ip = message.ip;
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                object.requestUrl = message.requestUrl;
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                object.userId = message.userId;
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                if (typeof message.organizationId === "number")
+                    object.organizationId = options.longs === String ? String(message.organizationId) : message.organizationId;
+                else
+                    object.organizationId = options.longs === String ? $util.Long.prototype.toString.call(message.organizationId) : options.longs === Number ? new $util.LongBits(message.organizationId.low >>> 0, message.organizationId.high >>> 0).toNumber() : message.organizationId;
+            return object;
+        };
+
+        /**
+         * Converts this LoginFailed to JSON.
+         * @function toJSON
+         * @memberof events.LoginFailed
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        LoginFailed.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return LoginFailed;
+    })();
+
     events.Core = (function() {
 
         /**
