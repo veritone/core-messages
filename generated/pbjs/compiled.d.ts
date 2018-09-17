@@ -2301,6 +2301,306 @@ export namespace events {
         public toJSON(): { [k: string]: any };
     }
 
+    /** Properties of a JobCreated. */
+    interface IJobCreated {
+
+        /** JobCreated jobId */
+        jobId?: (string|null);
+
+        /** JobCreated timestampMs */
+        timestampMs?: (string|null);
+    }
+
+    /** Represents a JobCreated. */
+    class JobCreated implements IJobCreated {
+
+        /**
+         * Constructs a new JobCreated.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IJobCreated);
+
+        /** JobCreated jobId. */
+        public jobId: string;
+
+        /** JobCreated timestampMs. */
+        public timestampMs: string;
+
+        /**
+         * Creates a new JobCreated instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns JobCreated instance
+         */
+        public static create(properties?: events.IJobCreated): events.JobCreated;
+
+        /**
+         * Encodes the specified JobCreated message. Does not implicitly {@link events.JobCreated.verify|verify} messages.
+         * @param message JobCreated message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IJobCreated, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified JobCreated message, length delimited. Does not implicitly {@link events.JobCreated.verify|verify} messages.
+         * @param message JobCreated message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IJobCreated, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a JobCreated message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns JobCreated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.JobCreated;
+
+        /**
+         * Decodes a JobCreated message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns JobCreated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.JobCreated;
+
+        /**
+         * Verifies a JobCreated message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a JobCreated message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns JobCreated
+         */
+        public static fromObject(object: { [k: string]: any }): events.JobCreated;
+
+        /**
+         * Creates a plain object from a JobCreated message. Also converts values to other types if specified.
+         * @param message JobCreated
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.JobCreated, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this JobCreated to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a JobCompleted. */
+    interface IJobCompleted {
+
+        /** JobCompleted jobId */
+        jobId?: (string|null);
+
+        /** JobCompleted timestampMs */
+        timestampMs?: (string|null);
+
+        /** JobCompleted jobStatus */
+        jobStatus?: (string|null);
+    }
+
+    /** Represents a JobCompleted. */
+    class JobCompleted implements IJobCompleted {
+
+        /**
+         * Constructs a new JobCompleted.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IJobCompleted);
+
+        /** JobCompleted jobId. */
+        public jobId: string;
+
+        /** JobCompleted timestampMs. */
+        public timestampMs: string;
+
+        /** JobCompleted jobStatus. */
+        public jobStatus: string;
+
+        /**
+         * Creates a new JobCompleted instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns JobCompleted instance
+         */
+        public static create(properties?: events.IJobCompleted): events.JobCompleted;
+
+        /**
+         * Encodes the specified JobCompleted message. Does not implicitly {@link events.JobCompleted.verify|verify} messages.
+         * @param message JobCompleted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IJobCompleted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified JobCompleted message, length delimited. Does not implicitly {@link events.JobCompleted.verify|verify} messages.
+         * @param message JobCompleted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IJobCompleted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a JobCompleted message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns JobCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.JobCompleted;
+
+        /**
+         * Decodes a JobCompleted message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns JobCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.JobCompleted;
+
+        /**
+         * Verifies a JobCompleted message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a JobCompleted message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns JobCompleted
+         */
+        public static fromObject(object: { [k: string]: any }): events.JobCompleted;
+
+        /**
+         * Creates a plain object from a JobCompleted message. Also converts values to other types if specified.
+         * @param message JobCompleted
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.JobCompleted, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this JobCompleted to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a JobFailed. */
+    interface IJobFailed {
+
+        /** JobFailed jobId */
+        jobId?: (string|null);
+
+        /** JobFailed timestampMs */
+        timestampMs?: (string|null);
+
+        /** JobFailed jobStatus */
+        jobStatus?: (string|null);
+    }
+
+    /** Represents a JobFailed. */
+    class JobFailed implements IJobFailed {
+
+        /**
+         * Constructs a new JobFailed.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IJobFailed);
+
+        /** JobFailed jobId. */
+        public jobId: string;
+
+        /** JobFailed timestampMs. */
+        public timestampMs: string;
+
+        /** JobFailed jobStatus. */
+        public jobStatus: string;
+
+        /**
+         * Creates a new JobFailed instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns JobFailed instance
+         */
+        public static create(properties?: events.IJobFailed): events.JobFailed;
+
+        /**
+         * Encodes the specified JobFailed message. Does not implicitly {@link events.JobFailed.verify|verify} messages.
+         * @param message JobFailed message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IJobFailed, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified JobFailed message, length delimited. Does not implicitly {@link events.JobFailed.verify|verify} messages.
+         * @param message JobFailed message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IJobFailed, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a JobFailed message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns JobFailed
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.JobFailed;
+
+        /**
+         * Decodes a JobFailed message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns JobFailed
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.JobFailed;
+
+        /**
+         * Verifies a JobFailed message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a JobFailed message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns JobFailed
+         */
+        public static fromObject(object: { [k: string]: any }): events.JobFailed;
+
+        /**
+         * Creates a plain object from a JobFailed message. Also converts values to other types if specified.
+         * @param message JobFailed
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.JobFailed, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this JobFailed to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
     /** Properties of a MentionModifiedData. */
     interface IMentionModifiedData {
 
@@ -3331,6 +3631,306 @@ export namespace events {
 
         /**
          * Converts this SMSNotification to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a TaskQueued. */
+    interface ITaskQueued {
+
+        /** TaskQueued taskId */
+        taskId?: (string|null);
+
+        /** TaskQueued timestampMs */
+        timestampMs?: (string|null);
+    }
+
+    /** Represents a TaskQueued. */
+    class TaskQueued implements ITaskQueued {
+
+        /**
+         * Constructs a new TaskQueued.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.ITaskQueued);
+
+        /** TaskQueued taskId. */
+        public taskId: string;
+
+        /** TaskQueued timestampMs. */
+        public timestampMs: string;
+
+        /**
+         * Creates a new TaskQueued instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns TaskQueued instance
+         */
+        public static create(properties?: events.ITaskQueued): events.TaskQueued;
+
+        /**
+         * Encodes the specified TaskQueued message. Does not implicitly {@link events.TaskQueued.verify|verify} messages.
+         * @param message TaskQueued message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.ITaskQueued, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified TaskQueued message, length delimited. Does not implicitly {@link events.TaskQueued.verify|verify} messages.
+         * @param message TaskQueued message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.ITaskQueued, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a TaskQueued message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns TaskQueued
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.TaskQueued;
+
+        /**
+         * Decodes a TaskQueued message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns TaskQueued
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.TaskQueued;
+
+        /**
+         * Verifies a TaskQueued message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a TaskQueued message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns TaskQueued
+         */
+        public static fromObject(object: { [k: string]: any }): events.TaskQueued;
+
+        /**
+         * Creates a plain object from a TaskQueued message. Also converts values to other types if specified.
+         * @param message TaskQueued
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.TaskQueued, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this TaskQueued to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a TaskUpdated. */
+    interface ITaskUpdated {
+
+        /** TaskUpdated taskId */
+        taskId?: (string|null);
+
+        /** TaskUpdated timestampMs */
+        timestampMs?: (string|null);
+
+        /** TaskUpdated taskStatus */
+        taskStatus?: (string|null);
+    }
+
+    /** Represents a TaskUpdated. */
+    class TaskUpdated implements ITaskUpdated {
+
+        /**
+         * Constructs a new TaskUpdated.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.ITaskUpdated);
+
+        /** TaskUpdated taskId. */
+        public taskId: string;
+
+        /** TaskUpdated timestampMs. */
+        public timestampMs: string;
+
+        /** TaskUpdated taskStatus. */
+        public taskStatus: string;
+
+        /**
+         * Creates a new TaskUpdated instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns TaskUpdated instance
+         */
+        public static create(properties?: events.ITaskUpdated): events.TaskUpdated;
+
+        /**
+         * Encodes the specified TaskUpdated message. Does not implicitly {@link events.TaskUpdated.verify|verify} messages.
+         * @param message TaskUpdated message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.ITaskUpdated, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified TaskUpdated message, length delimited. Does not implicitly {@link events.TaskUpdated.verify|verify} messages.
+         * @param message TaskUpdated message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.ITaskUpdated, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a TaskUpdated message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns TaskUpdated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.TaskUpdated;
+
+        /**
+         * Decodes a TaskUpdated message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns TaskUpdated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.TaskUpdated;
+
+        /**
+         * Verifies a TaskUpdated message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a TaskUpdated message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns TaskUpdated
+         */
+        public static fromObject(object: { [k: string]: any }): events.TaskUpdated;
+
+        /**
+         * Creates a plain object from a TaskUpdated message. Also converts values to other types if specified.
+         * @param message TaskUpdated
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.TaskUpdated, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this TaskUpdated to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a TaskCompleted. */
+    interface ITaskCompleted {
+
+        /** TaskCompleted taskId */
+        taskId?: (string|null);
+
+        /** TaskCompleted timestampMs */
+        timestampMs?: (string|null);
+
+        /** TaskCompleted taskStatus */
+        taskStatus?: (string|null);
+    }
+
+    /** Represents a TaskCompleted. */
+    class TaskCompleted implements ITaskCompleted {
+
+        /**
+         * Constructs a new TaskCompleted.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.ITaskCompleted);
+
+        /** TaskCompleted taskId. */
+        public taskId: string;
+
+        /** TaskCompleted timestampMs. */
+        public timestampMs: string;
+
+        /** TaskCompleted taskStatus. */
+        public taskStatus: string;
+
+        /**
+         * Creates a new TaskCompleted instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns TaskCompleted instance
+         */
+        public static create(properties?: events.ITaskCompleted): events.TaskCompleted;
+
+        /**
+         * Encodes the specified TaskCompleted message. Does not implicitly {@link events.TaskCompleted.verify|verify} messages.
+         * @param message TaskCompleted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.ITaskCompleted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified TaskCompleted message, length delimited. Does not implicitly {@link events.TaskCompleted.verify|verify} messages.
+         * @param message TaskCompleted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.ITaskCompleted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a TaskCompleted message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns TaskCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.TaskCompleted;
+
+        /**
+         * Decodes a TaskCompleted message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns TaskCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.TaskCompleted;
+
+        /**
+         * Verifies a TaskCompleted message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a TaskCompleted message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns TaskCompleted
+         */
+        public static fromObject(object: { [k: string]: any }): events.TaskCompleted;
+
+        /**
+         * Creates a plain object from a TaskCompleted message. Also converts values to other types if specified.
+         * @param message TaskCompleted
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.TaskCompleted, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this TaskCompleted to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };

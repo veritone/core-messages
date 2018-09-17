@@ -5607,6 +5607,680 @@ $root.events = (function() {
         return ExampleFour;
     })();
 
+    events.JobCreated = (function() {
+
+        /**
+         * Properties of a JobCreated.
+         * @memberof events
+         * @interface IJobCreated
+         * @property {string|null} [jobId] JobCreated jobId
+         * @property {string|null} [timestampMs] JobCreated timestampMs
+         */
+
+        /**
+         * Constructs a new JobCreated.
+         * @memberof events
+         * @classdesc Represents a JobCreated.
+         * @implements IJobCreated
+         * @constructor
+         * @param {events.IJobCreated=} [properties] Properties to set
+         */
+        function JobCreated(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * JobCreated jobId.
+         * @member {string} jobId
+         * @memberof events.JobCreated
+         * @instance
+         */
+        JobCreated.prototype.jobId = "";
+
+        /**
+         * JobCreated timestampMs.
+         * @member {string} timestampMs
+         * @memberof events.JobCreated
+         * @instance
+         */
+        JobCreated.prototype.timestampMs = "";
+
+        /**
+         * Creates a new JobCreated instance using the specified properties.
+         * @function create
+         * @memberof events.JobCreated
+         * @static
+         * @param {events.IJobCreated=} [properties] Properties to set
+         * @returns {events.JobCreated} JobCreated instance
+         */
+        JobCreated.create = function create(properties) {
+            return new JobCreated(properties);
+        };
+
+        /**
+         * Encodes the specified JobCreated message. Does not implicitly {@link events.JobCreated.verify|verify} messages.
+         * @function encode
+         * @memberof events.JobCreated
+         * @static
+         * @param {events.IJobCreated} message JobCreated message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        JobCreated.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.jobId);
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.timestampMs);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified JobCreated message, length delimited. Does not implicitly {@link events.JobCreated.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.JobCreated
+         * @static
+         * @param {events.IJobCreated} message JobCreated message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        JobCreated.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a JobCreated message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.JobCreated
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.JobCreated} JobCreated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        JobCreated.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.JobCreated();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.jobId = reader.string();
+                    break;
+                case 11:
+                    message.timestampMs = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a JobCreated message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.JobCreated
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.JobCreated} JobCreated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        JobCreated.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a JobCreated message.
+         * @function verify
+         * @memberof events.JobCreated
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        JobCreated.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                if (!$util.isString(message.jobId))
+                    return "jobId: string expected";
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                if (!$util.isString(message.timestampMs))
+                    return "timestampMs: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a JobCreated message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.JobCreated
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.JobCreated} JobCreated
+         */
+        JobCreated.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.JobCreated)
+                return object;
+            var message = new $root.events.JobCreated();
+            if (object.jobId != null)
+                message.jobId = String(object.jobId);
+            if (object.timestampMs != null)
+                message.timestampMs = String(object.timestampMs);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a JobCreated message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.JobCreated
+         * @static
+         * @param {events.JobCreated} message JobCreated
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        JobCreated.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.jobId = "";
+                object.timestampMs = "";
+            }
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                object.jobId = message.jobId;
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                object.timestampMs = message.timestampMs;
+            return object;
+        };
+
+        /**
+         * Converts this JobCreated to JSON.
+         * @function toJSON
+         * @memberof events.JobCreated
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        JobCreated.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return JobCreated;
+    })();
+
+    events.JobCompleted = (function() {
+
+        /**
+         * Properties of a JobCompleted.
+         * @memberof events
+         * @interface IJobCompleted
+         * @property {string|null} [jobId] JobCompleted jobId
+         * @property {string|null} [timestampMs] JobCompleted timestampMs
+         * @property {string|null} [jobStatus] JobCompleted jobStatus
+         */
+
+        /**
+         * Constructs a new JobCompleted.
+         * @memberof events
+         * @classdesc Represents a JobCompleted.
+         * @implements IJobCompleted
+         * @constructor
+         * @param {events.IJobCompleted=} [properties] Properties to set
+         */
+        function JobCompleted(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * JobCompleted jobId.
+         * @member {string} jobId
+         * @memberof events.JobCompleted
+         * @instance
+         */
+        JobCompleted.prototype.jobId = "";
+
+        /**
+         * JobCompleted timestampMs.
+         * @member {string} timestampMs
+         * @memberof events.JobCompleted
+         * @instance
+         */
+        JobCompleted.prototype.timestampMs = "";
+
+        /**
+         * JobCompleted jobStatus.
+         * @member {string} jobStatus
+         * @memberof events.JobCompleted
+         * @instance
+         */
+        JobCompleted.prototype.jobStatus = "";
+
+        /**
+         * Creates a new JobCompleted instance using the specified properties.
+         * @function create
+         * @memberof events.JobCompleted
+         * @static
+         * @param {events.IJobCompleted=} [properties] Properties to set
+         * @returns {events.JobCompleted} JobCompleted instance
+         */
+        JobCompleted.create = function create(properties) {
+            return new JobCompleted(properties);
+        };
+
+        /**
+         * Encodes the specified JobCompleted message. Does not implicitly {@link events.JobCompleted.verify|verify} messages.
+         * @function encode
+         * @memberof events.JobCompleted
+         * @static
+         * @param {events.IJobCompleted} message JobCompleted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        JobCompleted.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.jobId);
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.timestampMs);
+            if (message.jobStatus != null && message.hasOwnProperty("jobStatus"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.jobStatus);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified JobCompleted message, length delimited. Does not implicitly {@link events.JobCompleted.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.JobCompleted
+         * @static
+         * @param {events.IJobCompleted} message JobCompleted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        JobCompleted.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a JobCompleted message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.JobCompleted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.JobCompleted} JobCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        JobCompleted.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.JobCompleted();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.jobId = reader.string();
+                    break;
+                case 11:
+                    message.timestampMs = reader.string();
+                    break;
+                case 12:
+                    message.jobStatus = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a JobCompleted message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.JobCompleted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.JobCompleted} JobCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        JobCompleted.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a JobCompleted message.
+         * @function verify
+         * @memberof events.JobCompleted
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        JobCompleted.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                if (!$util.isString(message.jobId))
+                    return "jobId: string expected";
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                if (!$util.isString(message.timestampMs))
+                    return "timestampMs: string expected";
+            if (message.jobStatus != null && message.hasOwnProperty("jobStatus"))
+                if (!$util.isString(message.jobStatus))
+                    return "jobStatus: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a JobCompleted message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.JobCompleted
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.JobCompleted} JobCompleted
+         */
+        JobCompleted.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.JobCompleted)
+                return object;
+            var message = new $root.events.JobCompleted();
+            if (object.jobId != null)
+                message.jobId = String(object.jobId);
+            if (object.timestampMs != null)
+                message.timestampMs = String(object.timestampMs);
+            if (object.jobStatus != null)
+                message.jobStatus = String(object.jobStatus);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a JobCompleted message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.JobCompleted
+         * @static
+         * @param {events.JobCompleted} message JobCompleted
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        JobCompleted.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.jobId = "";
+                object.timestampMs = "";
+                object.jobStatus = "";
+            }
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                object.jobId = message.jobId;
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                object.timestampMs = message.timestampMs;
+            if (message.jobStatus != null && message.hasOwnProperty("jobStatus"))
+                object.jobStatus = message.jobStatus;
+            return object;
+        };
+
+        /**
+         * Converts this JobCompleted to JSON.
+         * @function toJSON
+         * @memberof events.JobCompleted
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        JobCompleted.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return JobCompleted;
+    })();
+
+    events.JobFailed = (function() {
+
+        /**
+         * Properties of a JobFailed.
+         * @memberof events
+         * @interface IJobFailed
+         * @property {string|null} [jobId] JobFailed jobId
+         * @property {string|null} [timestampMs] JobFailed timestampMs
+         * @property {string|null} [jobStatus] JobFailed jobStatus
+         */
+
+        /**
+         * Constructs a new JobFailed.
+         * @memberof events
+         * @classdesc Represents a JobFailed.
+         * @implements IJobFailed
+         * @constructor
+         * @param {events.IJobFailed=} [properties] Properties to set
+         */
+        function JobFailed(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * JobFailed jobId.
+         * @member {string} jobId
+         * @memberof events.JobFailed
+         * @instance
+         */
+        JobFailed.prototype.jobId = "";
+
+        /**
+         * JobFailed timestampMs.
+         * @member {string} timestampMs
+         * @memberof events.JobFailed
+         * @instance
+         */
+        JobFailed.prototype.timestampMs = "";
+
+        /**
+         * JobFailed jobStatus.
+         * @member {string} jobStatus
+         * @memberof events.JobFailed
+         * @instance
+         */
+        JobFailed.prototype.jobStatus = "";
+
+        /**
+         * Creates a new JobFailed instance using the specified properties.
+         * @function create
+         * @memberof events.JobFailed
+         * @static
+         * @param {events.IJobFailed=} [properties] Properties to set
+         * @returns {events.JobFailed} JobFailed instance
+         */
+        JobFailed.create = function create(properties) {
+            return new JobFailed(properties);
+        };
+
+        /**
+         * Encodes the specified JobFailed message. Does not implicitly {@link events.JobFailed.verify|verify} messages.
+         * @function encode
+         * @memberof events.JobFailed
+         * @static
+         * @param {events.IJobFailed} message JobFailed message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        JobFailed.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.jobId);
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.timestampMs);
+            if (message.jobStatus != null && message.hasOwnProperty("jobStatus"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.jobStatus);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified JobFailed message, length delimited. Does not implicitly {@link events.JobFailed.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.JobFailed
+         * @static
+         * @param {events.IJobFailed} message JobFailed message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        JobFailed.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a JobFailed message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.JobFailed
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.JobFailed} JobFailed
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        JobFailed.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.JobFailed();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.jobId = reader.string();
+                    break;
+                case 11:
+                    message.timestampMs = reader.string();
+                    break;
+                case 12:
+                    message.jobStatus = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a JobFailed message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.JobFailed
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.JobFailed} JobFailed
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        JobFailed.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a JobFailed message.
+         * @function verify
+         * @memberof events.JobFailed
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        JobFailed.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                if (!$util.isString(message.jobId))
+                    return "jobId: string expected";
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                if (!$util.isString(message.timestampMs))
+                    return "timestampMs: string expected";
+            if (message.jobStatus != null && message.hasOwnProperty("jobStatus"))
+                if (!$util.isString(message.jobStatus))
+                    return "jobStatus: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a JobFailed message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.JobFailed
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.JobFailed} JobFailed
+         */
+        JobFailed.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.JobFailed)
+                return object;
+            var message = new $root.events.JobFailed();
+            if (object.jobId != null)
+                message.jobId = String(object.jobId);
+            if (object.timestampMs != null)
+                message.timestampMs = String(object.timestampMs);
+            if (object.jobStatus != null)
+                message.jobStatus = String(object.jobStatus);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a JobFailed message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.JobFailed
+         * @static
+         * @param {events.JobFailed} message JobFailed
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        JobFailed.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.jobId = "";
+                object.timestampMs = "";
+                object.jobStatus = "";
+            }
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                object.jobId = message.jobId;
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                object.timestampMs = message.timestampMs;
+            if (message.jobStatus != null && message.hasOwnProperty("jobStatus"))
+                object.jobStatus = message.jobStatus;
+            return object;
+        };
+
+        /**
+         * Converts this JobFailed to JSON.
+         * @function toJSON
+         * @memberof events.JobFailed
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        JobFailed.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return JobFailed;
+    })();
+
     events.MentionModifiedData = (function() {
 
         /**
@@ -8195,6 +8869,680 @@ $root.events = (function() {
         };
 
         return SMSNotification;
+    })();
+
+    events.TaskQueued = (function() {
+
+        /**
+         * Properties of a TaskQueued.
+         * @memberof events
+         * @interface ITaskQueued
+         * @property {string|null} [taskId] TaskQueued taskId
+         * @property {string|null} [timestampMs] TaskQueued timestampMs
+         */
+
+        /**
+         * Constructs a new TaskQueued.
+         * @memberof events
+         * @classdesc Represents a TaskQueued.
+         * @implements ITaskQueued
+         * @constructor
+         * @param {events.ITaskQueued=} [properties] Properties to set
+         */
+        function TaskQueued(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * TaskQueued taskId.
+         * @member {string} taskId
+         * @memberof events.TaskQueued
+         * @instance
+         */
+        TaskQueued.prototype.taskId = "";
+
+        /**
+         * TaskQueued timestampMs.
+         * @member {string} timestampMs
+         * @memberof events.TaskQueued
+         * @instance
+         */
+        TaskQueued.prototype.timestampMs = "";
+
+        /**
+         * Creates a new TaskQueued instance using the specified properties.
+         * @function create
+         * @memberof events.TaskQueued
+         * @static
+         * @param {events.ITaskQueued=} [properties] Properties to set
+         * @returns {events.TaskQueued} TaskQueued instance
+         */
+        TaskQueued.create = function create(properties) {
+            return new TaskQueued(properties);
+        };
+
+        /**
+         * Encodes the specified TaskQueued message. Does not implicitly {@link events.TaskQueued.verify|verify} messages.
+         * @function encode
+         * @memberof events.TaskQueued
+         * @static
+         * @param {events.ITaskQueued} message TaskQueued message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        TaskQueued.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.taskId);
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.timestampMs);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified TaskQueued message, length delimited. Does not implicitly {@link events.TaskQueued.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.TaskQueued
+         * @static
+         * @param {events.ITaskQueued} message TaskQueued message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        TaskQueued.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a TaskQueued message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.TaskQueued
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.TaskQueued} TaskQueued
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        TaskQueued.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.TaskQueued();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.taskId = reader.string();
+                    break;
+                case 11:
+                    message.timestampMs = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a TaskQueued message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.TaskQueued
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.TaskQueued} TaskQueued
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        TaskQueued.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a TaskQueued message.
+         * @function verify
+         * @memberof events.TaskQueued
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        TaskQueued.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                if (!$util.isString(message.taskId))
+                    return "taskId: string expected";
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                if (!$util.isString(message.timestampMs))
+                    return "timestampMs: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a TaskQueued message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.TaskQueued
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.TaskQueued} TaskQueued
+         */
+        TaskQueued.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.TaskQueued)
+                return object;
+            var message = new $root.events.TaskQueued();
+            if (object.taskId != null)
+                message.taskId = String(object.taskId);
+            if (object.timestampMs != null)
+                message.timestampMs = String(object.timestampMs);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a TaskQueued message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.TaskQueued
+         * @static
+         * @param {events.TaskQueued} message TaskQueued
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        TaskQueued.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.taskId = "";
+                object.timestampMs = "";
+            }
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                object.taskId = message.taskId;
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                object.timestampMs = message.timestampMs;
+            return object;
+        };
+
+        /**
+         * Converts this TaskQueued to JSON.
+         * @function toJSON
+         * @memberof events.TaskQueued
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        TaskQueued.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return TaskQueued;
+    })();
+
+    events.TaskUpdated = (function() {
+
+        /**
+         * Properties of a TaskUpdated.
+         * @memberof events
+         * @interface ITaskUpdated
+         * @property {string|null} [taskId] TaskUpdated taskId
+         * @property {string|null} [timestampMs] TaskUpdated timestampMs
+         * @property {string|null} [taskStatus] TaskUpdated taskStatus
+         */
+
+        /**
+         * Constructs a new TaskUpdated.
+         * @memberof events
+         * @classdesc Represents a TaskUpdated.
+         * @implements ITaskUpdated
+         * @constructor
+         * @param {events.ITaskUpdated=} [properties] Properties to set
+         */
+        function TaskUpdated(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * TaskUpdated taskId.
+         * @member {string} taskId
+         * @memberof events.TaskUpdated
+         * @instance
+         */
+        TaskUpdated.prototype.taskId = "";
+
+        /**
+         * TaskUpdated timestampMs.
+         * @member {string} timestampMs
+         * @memberof events.TaskUpdated
+         * @instance
+         */
+        TaskUpdated.prototype.timestampMs = "";
+
+        /**
+         * TaskUpdated taskStatus.
+         * @member {string} taskStatus
+         * @memberof events.TaskUpdated
+         * @instance
+         */
+        TaskUpdated.prototype.taskStatus = "";
+
+        /**
+         * Creates a new TaskUpdated instance using the specified properties.
+         * @function create
+         * @memberof events.TaskUpdated
+         * @static
+         * @param {events.ITaskUpdated=} [properties] Properties to set
+         * @returns {events.TaskUpdated} TaskUpdated instance
+         */
+        TaskUpdated.create = function create(properties) {
+            return new TaskUpdated(properties);
+        };
+
+        /**
+         * Encodes the specified TaskUpdated message. Does not implicitly {@link events.TaskUpdated.verify|verify} messages.
+         * @function encode
+         * @memberof events.TaskUpdated
+         * @static
+         * @param {events.ITaskUpdated} message TaskUpdated message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        TaskUpdated.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.taskId);
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.timestampMs);
+            if (message.taskStatus != null && message.hasOwnProperty("taskStatus"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.taskStatus);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified TaskUpdated message, length delimited. Does not implicitly {@link events.TaskUpdated.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.TaskUpdated
+         * @static
+         * @param {events.ITaskUpdated} message TaskUpdated message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        TaskUpdated.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a TaskUpdated message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.TaskUpdated
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.TaskUpdated} TaskUpdated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        TaskUpdated.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.TaskUpdated();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.taskId = reader.string();
+                    break;
+                case 11:
+                    message.timestampMs = reader.string();
+                    break;
+                case 12:
+                    message.taskStatus = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a TaskUpdated message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.TaskUpdated
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.TaskUpdated} TaskUpdated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        TaskUpdated.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a TaskUpdated message.
+         * @function verify
+         * @memberof events.TaskUpdated
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        TaskUpdated.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                if (!$util.isString(message.taskId))
+                    return "taskId: string expected";
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                if (!$util.isString(message.timestampMs))
+                    return "timestampMs: string expected";
+            if (message.taskStatus != null && message.hasOwnProperty("taskStatus"))
+                if (!$util.isString(message.taskStatus))
+                    return "taskStatus: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a TaskUpdated message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.TaskUpdated
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.TaskUpdated} TaskUpdated
+         */
+        TaskUpdated.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.TaskUpdated)
+                return object;
+            var message = new $root.events.TaskUpdated();
+            if (object.taskId != null)
+                message.taskId = String(object.taskId);
+            if (object.timestampMs != null)
+                message.timestampMs = String(object.timestampMs);
+            if (object.taskStatus != null)
+                message.taskStatus = String(object.taskStatus);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a TaskUpdated message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.TaskUpdated
+         * @static
+         * @param {events.TaskUpdated} message TaskUpdated
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        TaskUpdated.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.taskId = "";
+                object.timestampMs = "";
+                object.taskStatus = "";
+            }
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                object.taskId = message.taskId;
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                object.timestampMs = message.timestampMs;
+            if (message.taskStatus != null && message.hasOwnProperty("taskStatus"))
+                object.taskStatus = message.taskStatus;
+            return object;
+        };
+
+        /**
+         * Converts this TaskUpdated to JSON.
+         * @function toJSON
+         * @memberof events.TaskUpdated
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        TaskUpdated.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return TaskUpdated;
+    })();
+
+    events.TaskCompleted = (function() {
+
+        /**
+         * Properties of a TaskCompleted.
+         * @memberof events
+         * @interface ITaskCompleted
+         * @property {string|null} [taskId] TaskCompleted taskId
+         * @property {string|null} [timestampMs] TaskCompleted timestampMs
+         * @property {string|null} [taskStatus] TaskCompleted taskStatus
+         */
+
+        /**
+         * Constructs a new TaskCompleted.
+         * @memberof events
+         * @classdesc Represents a TaskCompleted.
+         * @implements ITaskCompleted
+         * @constructor
+         * @param {events.ITaskCompleted=} [properties] Properties to set
+         */
+        function TaskCompleted(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * TaskCompleted taskId.
+         * @member {string} taskId
+         * @memberof events.TaskCompleted
+         * @instance
+         */
+        TaskCompleted.prototype.taskId = "";
+
+        /**
+         * TaskCompleted timestampMs.
+         * @member {string} timestampMs
+         * @memberof events.TaskCompleted
+         * @instance
+         */
+        TaskCompleted.prototype.timestampMs = "";
+
+        /**
+         * TaskCompleted taskStatus.
+         * @member {string} taskStatus
+         * @memberof events.TaskCompleted
+         * @instance
+         */
+        TaskCompleted.prototype.taskStatus = "";
+
+        /**
+         * Creates a new TaskCompleted instance using the specified properties.
+         * @function create
+         * @memberof events.TaskCompleted
+         * @static
+         * @param {events.ITaskCompleted=} [properties] Properties to set
+         * @returns {events.TaskCompleted} TaskCompleted instance
+         */
+        TaskCompleted.create = function create(properties) {
+            return new TaskCompleted(properties);
+        };
+
+        /**
+         * Encodes the specified TaskCompleted message. Does not implicitly {@link events.TaskCompleted.verify|verify} messages.
+         * @function encode
+         * @memberof events.TaskCompleted
+         * @static
+         * @param {events.ITaskCompleted} message TaskCompleted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        TaskCompleted.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.taskId);
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.timestampMs);
+            if (message.taskStatus != null && message.hasOwnProperty("taskStatus"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.taskStatus);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified TaskCompleted message, length delimited. Does not implicitly {@link events.TaskCompleted.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.TaskCompleted
+         * @static
+         * @param {events.ITaskCompleted} message TaskCompleted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        TaskCompleted.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a TaskCompleted message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.TaskCompleted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.TaskCompleted} TaskCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        TaskCompleted.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.TaskCompleted();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.taskId = reader.string();
+                    break;
+                case 11:
+                    message.timestampMs = reader.string();
+                    break;
+                case 12:
+                    message.taskStatus = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a TaskCompleted message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.TaskCompleted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.TaskCompleted} TaskCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        TaskCompleted.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a TaskCompleted message.
+         * @function verify
+         * @memberof events.TaskCompleted
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        TaskCompleted.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                if (!$util.isString(message.taskId))
+                    return "taskId: string expected";
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                if (!$util.isString(message.timestampMs))
+                    return "timestampMs: string expected";
+            if (message.taskStatus != null && message.hasOwnProperty("taskStatus"))
+                if (!$util.isString(message.taskStatus))
+                    return "taskStatus: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a TaskCompleted message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.TaskCompleted
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.TaskCompleted} TaskCompleted
+         */
+        TaskCompleted.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.TaskCompleted)
+                return object;
+            var message = new $root.events.TaskCompleted();
+            if (object.taskId != null)
+                message.taskId = String(object.taskId);
+            if (object.timestampMs != null)
+                message.timestampMs = String(object.timestampMs);
+            if (object.taskStatus != null)
+                message.taskStatus = String(object.taskStatus);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a TaskCompleted message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.TaskCompleted
+         * @static
+         * @param {events.TaskCompleted} message TaskCompleted
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        TaskCompleted.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.taskId = "";
+                object.timestampMs = "";
+                object.taskStatus = "";
+            }
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                object.taskId = message.taskId;
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                object.timestampMs = message.timestampMs;
+            if (message.taskStatus != null && message.hasOwnProperty("taskStatus"))
+                object.taskStatus = message.taskStatus;
+            return object;
+        };
+
+        /**
+         * Converts this TaskCompleted to JSON.
+         * @function toJSON
+         * @memberof events.TaskCompleted
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        TaskCompleted.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return TaskCompleted;
     })();
 
     events.TriggerCacheRefresh = (function() {

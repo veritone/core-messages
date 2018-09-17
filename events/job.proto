@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package events;
+
+option go_package = "events";
+
+
+message JobCreated {
+    string job_id = 10;
+    string timestamp_ms = 11;
+}
+
+message JobCompleted {
+    string job_id = 10;
+    string timestamp_ms = 11;
+    string job_status = 12;
+}
+
+message JobFailed {
+    string job_id = 10;
+    string timestamp_ms = 11;
+    string job_status = 12;
+}
