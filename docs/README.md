@@ -1,5 +1,5 @@
 # Protocol Documentation
-<a name="top"/>
+<a name="top"></a>
 
 ## Table of Contents
 
@@ -51,6 +51,15 @@
   
   
 
+- [events/job.proto](#events/job.proto)
+    - [JobCompleted](#events.JobCompleted)
+    - [JobCreated](#events.JobCreated)
+    - [JobFailed](#events.JobFailed)
+  
+  
+  
+  
+
 - [events/mention_notification.proto](#events/mention_notification.proto)
     - [MentionDeleted](#events.MentionDeleted)
     - [MentionEmailGenerated](#events.MentionEmailGenerated)
@@ -72,6 +81,15 @@
   
   
 
+- [events/task.proto](#events/task.proto)
+    - [TaskCompleted](#events.TaskCompleted)
+    - [TaskQueued](#events.TaskQueued)
+    - [TaskUpdated](#events.TaskUpdated)
+  
+  
+  
+  
+
 - [events/trigger.proto](#events/trigger.proto)
     - [TriggerCacheRefresh](#events.TriggerCacheRefresh)
   
@@ -83,14 +101,14 @@
 
 
 
-<a name="events/authentication.proto"/>
+<a name="events/authentication.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## events/authentication.proto
 
 
 
-<a name="events.LoginFailed"/>
+<a name="events.LoginFailed"></a>
 
 ### LoginFailed
 
@@ -110,7 +128,7 @@
 
 
 
-<a name="events.LoginSucceeded"/>
+<a name="events.LoginSucceeded"></a>
 
 ### LoginSucceeded
 
@@ -139,14 +157,14 @@
 
 
 
-<a name="events/core.proto"/>
+<a name="events/core.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## events/core.proto
 
 
 
-<a name="events.Core"/>
+<a name="events.Core"></a>
 
 ### Core
 
@@ -170,7 +188,7 @@
 
 
 
-<a name="events.Trace"/>
+<a name="events.Trace"></a>
 
 ### Trace
 
@@ -187,7 +205,7 @@
 
 
 
-<a name="events.Trace.TraceContextEntry"/>
+<a name="events.Trace.TraceContextEntry"></a>
 
 ### Trace.TraceContextEntry
 
@@ -203,7 +221,7 @@
 
 
 
-<a name="events.Trace.TraceTagsEntry"/>
+<a name="events.Trace.TraceTagsEntry"></a>
 
 ### Trace.TraceTagsEntry
 
@@ -219,7 +237,7 @@
 
 
 
-<a name="events.VtEvent"/>
+<a name="events.VtEvent"></a>
 
 ### VtEvent
 
@@ -237,7 +255,7 @@
 
 
 
-<a name="events.VtEvent.BaggageEntry"/>
+<a name="events.VtEvent.BaggageEntry"></a>
 
 ### VtEvent.BaggageEntry
 
@@ -262,14 +280,14 @@
 
 
 
-<a name="events/engine.proto"/>
+<a name="events/engine.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## events/engine.proto
 
 
 
-<a name="events.EngineBuildApproved"/>
+<a name="events.EngineBuildApproved"></a>
 
 ### EngineBuildApproved
 
@@ -289,7 +307,7 @@
 
 
 
-<a name="events.EngineBuildCreate"/>
+<a name="events.EngineBuildCreate"></a>
 
 ### EngineBuildCreate
 
@@ -307,7 +325,7 @@
 
 
 
-<a name="events.EngineBuildDisapprove"/>
+<a name="events.EngineBuildDisapprove"></a>
 
 ### EngineBuildDisapprove
 
@@ -327,7 +345,7 @@
 
 
 
-<a name="events.EngineBuildInvalidate"/>
+<a name="events.EngineBuildInvalidate"></a>
 
 ### EngineBuildInvalidate
 
@@ -345,7 +363,7 @@
 
 
 
-<a name="events.EngineBuildManifestProcessed"/>
+<a name="events.EngineBuildManifestProcessed"></a>
 
 ### EngineBuildManifestProcessed
 
@@ -364,7 +382,7 @@
 
 
 
-<a name="events.EngineBuildTestReportDone"/>
+<a name="events.EngineBuildTestReportDone"></a>
 
 ### EngineBuildTestReportDone
 
@@ -383,7 +401,7 @@
 
 
 
-<a name="events.EngineBuildUpload"/>
+<a name="events.EngineBuildUpload"></a>
 
 ### EngineBuildUpload
 
@@ -401,7 +419,7 @@
 
 
 
-<a name="events.EngineBuildUploadCompleted"/>
+<a name="events.EngineBuildUploadCompleted"></a>
 
 ### EngineBuildUploadCompleted
 
@@ -419,7 +437,7 @@
 
 
 
-<a name="events.EngineBuildVulnerabilityChecked"/>
+<a name="events.EngineBuildVulnerabilityChecked"></a>
 
 ### EngineBuildVulnerabilityChecked
 
@@ -439,7 +457,7 @@
 
 
 
-<a name="events.engineBuildDeployFail"/>
+<a name="events.engineBuildDeployFail"></a>
 
 ### engineBuildDeployFail
 
@@ -456,7 +474,7 @@
 
 
 
-<a name="events.engineBuildDeploySuccess"/>
+<a name="events.engineBuildDeploySuccess"></a>
 
 ### engineBuildDeploySuccess
 
@@ -482,14 +500,14 @@
 
 
 
-<a name="events/example_event.proto"/>
+<a name="events/example_event.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## events/example_event.proto
 
 
 
-<a name="events.ExampleEvent"/>
+<a name="events.ExampleEvent"></a>
 
 ### ExampleEvent
 
@@ -506,7 +524,7 @@
 
 
 
-<a name="events.ExampleFour"/>
+<a name="events.ExampleFour"></a>
 
 ### ExampleFour
 
@@ -523,7 +541,7 @@
 
 
 
-<a name="events.ExampleOne"/>
+<a name="events.ExampleOne"></a>
 
 ### ExampleOne
 
@@ -538,7 +556,7 @@
 
 
 
-<a name="events.ExampleThree"/>
+<a name="events.ExampleThree"></a>
 
 ### ExampleThree
 
@@ -553,7 +571,7 @@
 
 
 
-<a name="events.ExampleTwo"/>
+<a name="events.ExampleTwo"></a>
 
 ### ExampleTwo
 
@@ -577,14 +595,80 @@
 
 
 
-<a name="events/mention_notification.proto"/>
+<a name="events/job.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## events/job.proto
+
+
+
+<a name="events.JobCompleted"></a>
+
+### JobCompleted
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| job_id | [string](#string) |  |  |
+| timestamp_ms | [string](#string) |  |  |
+| job_status | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.JobCreated"></a>
+
+### JobCreated
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| job_id | [string](#string) |  |  |
+| timestamp_ms | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.JobFailed"></a>
+
+### JobFailed
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| job_id | [string](#string) |  |  |
+| timestamp_ms | [string](#string) |  |  |
+| job_status | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="events/mention_notification.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## events/mention_notification.proto
 
 
 
-<a name="events.MentionDeleted"/>
+<a name="events.MentionDeleted"></a>
 
 ### MentionDeleted
 
@@ -601,7 +685,7 @@
 
 
 
-<a name="events.MentionEmailGenerated"/>
+<a name="events.MentionEmailGenerated"></a>
 
 ### MentionEmailGenerated
 
@@ -624,7 +708,7 @@
 
 
 
-<a name="events.MentionEmailGenerated.Mention"/>
+<a name="events.MentionEmailGenerated.Mention"></a>
 
 ### MentionEmailGenerated.Mention
 
@@ -649,7 +733,7 @@
 
 
 
-<a name="events.MentionEmailGenerated.PlaceHolders"/>
+<a name="events.MentionEmailGenerated.PlaceHolders"></a>
 
 ### MentionEmailGenerated.PlaceHolders
 
@@ -667,7 +751,7 @@
 
 
 
-<a name="events.MentionInserted"/>
+<a name="events.MentionInserted"></a>
 
 ### MentionInserted
 
@@ -684,7 +768,7 @@
 
 
 
-<a name="events.MentionModifiedData"/>
+<a name="events.MentionModifiedData"></a>
 
 ### MentionModifiedData
 Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
@@ -702,7 +786,7 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 
 
 
-<a name="events.MentionUpdated"/>
+<a name="events.MentionUpdated"></a>
 
 ### MentionUpdated
 
@@ -728,14 +812,14 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 
 
 
-<a name="events/notification.proto"/>
+<a name="events/notification.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## events/notification.proto
 
 
 
-<a name="events.BasicEmail"/>
+<a name="events.BasicEmail"></a>
 
 ### BasicEmail
 
@@ -755,7 +839,7 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 
 
 
-<a name="events.SMSNotification"/>
+<a name="events.SMSNotification"></a>
 
 ### SMSNotification
 
@@ -781,14 +865,80 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 
 
 
-<a name="events/trigger.proto"/>
+<a name="events/task.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## events/task.proto
+
+
+
+<a name="events.TaskCompleted"></a>
+
+### TaskCompleted
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| task_id | [string](#string) |  |  |
+| timestamp_ms | [string](#string) |  |  |
+| task_status | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.TaskQueued"></a>
+
+### TaskQueued
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| task_id | [string](#string) |  |  |
+| timestamp_ms | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.TaskUpdated"></a>
+
+### TaskUpdated
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| task_id | [string](#string) |  |  |
+| timestamp_ms | [string](#string) |  |  |
+| task_status | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="events/trigger.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## events/trigger.proto
 
 
 
-<a name="events.TriggerCacheRefresh"/>
+<a name="events.TriggerCacheRefresh"></a>
 
 ### TriggerCacheRefresh
 
