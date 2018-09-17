@@ -4,6 +4,9 @@
 ## Table of Contents
 
 - [events/authentication.proto](#events/authentication.proto)
+    - [ActionUserForbidden](#events.ActionUserForbidden)
+    - [Impersonated](#events.Impersonated)
+    - [LoginAttemptsExceeded](#events.LoginAttemptsExceeded)
     - [LoginFailed](#events.LoginFailed)
     - [LoginSucceeded](#events.LoginSucceeded)
   
@@ -87,6 +90,67 @@
 <p align="right"><a href="#top">Top</a></p>
 
 ## events/authentication.proto
+
+
+
+<a name="events.ActionUserForbidden"/>
+
+### ActionUserForbidden
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_name | [string](#string) |  |  |
+| user_agent | [string](#string) |  |  |
+| ip | [string](#string) |  |  |
+| request_url | [string](#string) |  |  |
+| user_id | [string](#string) |  |  |
+| organization_id | [int64](#int64) |  |  |
+| impersontated_user_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.Impersonated"/>
+
+### Impersonated
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_name | [string](#string) |  |  |
+| user_agent | [string](#string) |  |  |
+| ip | [string](#string) |  |  |
+| request_url | [string](#string) |  |  |
+| user_id | [string](#string) |  |  |
+| organization_id | [int64](#int64) |  |  |
+| impersontated_user_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.LoginAttemptsExceeded"/>
+
+### LoginAttemptsExceeded
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_name | [string](#string) |  |  |
+| user_agent | [string](#string) |  |  |
+| ip | [string](#string) |  |  |
+| request_url | [string](#string) |  |  |
+| user_id | [string](#string) |  |  |
+
+
+
 
 
 

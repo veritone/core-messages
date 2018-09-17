@@ -243,6 +243,372 @@ export namespace events {
         public toJSON(): { [k: string]: any };
     }
 
+    /** Properties of a LoginAttemptsExceeded. */
+    interface ILoginAttemptsExceeded {
+
+        /** LoginAttemptsExceeded userName */
+        userName?: (string|null);
+
+        /** LoginAttemptsExceeded userAgent */
+        userAgent?: (string|null);
+
+        /** LoginAttemptsExceeded ip */
+        ip?: (string|null);
+
+        /** LoginAttemptsExceeded requestUrl */
+        requestUrl?: (string|null);
+
+        /** LoginAttemptsExceeded userId */
+        userId?: (string|null);
+    }
+
+    /** Represents a LoginAttemptsExceeded. */
+    class LoginAttemptsExceeded implements ILoginAttemptsExceeded {
+
+        /**
+         * Constructs a new LoginAttemptsExceeded.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.ILoginAttemptsExceeded);
+
+        /** LoginAttemptsExceeded userName. */
+        public userName: string;
+
+        /** LoginAttemptsExceeded userAgent. */
+        public userAgent: string;
+
+        /** LoginAttemptsExceeded ip. */
+        public ip: string;
+
+        /** LoginAttemptsExceeded requestUrl. */
+        public requestUrl: string;
+
+        /** LoginAttemptsExceeded userId. */
+        public userId: string;
+
+        /**
+         * Creates a new LoginAttemptsExceeded instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns LoginAttemptsExceeded instance
+         */
+        public static create(properties?: events.ILoginAttemptsExceeded): events.LoginAttemptsExceeded;
+
+        /**
+         * Encodes the specified LoginAttemptsExceeded message. Does not implicitly {@link events.LoginAttemptsExceeded.verify|verify} messages.
+         * @param message LoginAttemptsExceeded message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.ILoginAttemptsExceeded, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified LoginAttemptsExceeded message, length delimited. Does not implicitly {@link events.LoginAttemptsExceeded.verify|verify} messages.
+         * @param message LoginAttemptsExceeded message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.ILoginAttemptsExceeded, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a LoginAttemptsExceeded message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns LoginAttemptsExceeded
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.LoginAttemptsExceeded;
+
+        /**
+         * Decodes a LoginAttemptsExceeded message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns LoginAttemptsExceeded
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.LoginAttemptsExceeded;
+
+        /**
+         * Verifies a LoginAttemptsExceeded message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a LoginAttemptsExceeded message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns LoginAttemptsExceeded
+         */
+        public static fromObject(object: { [k: string]: any }): events.LoginAttemptsExceeded;
+
+        /**
+         * Creates a plain object from a LoginAttemptsExceeded message. Also converts values to other types if specified.
+         * @param message LoginAttemptsExceeded
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.LoginAttemptsExceeded, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this LoginAttemptsExceeded to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an Impersonated. */
+    interface IImpersonated {
+
+        /** Impersonated userName */
+        userName?: (string|null);
+
+        /** Impersonated userAgent */
+        userAgent?: (string|null);
+
+        /** Impersonated ip */
+        ip?: (string|null);
+
+        /** Impersonated requestUrl */
+        requestUrl?: (string|null);
+
+        /** Impersonated userId */
+        userId?: (string|null);
+
+        /** Impersonated organizationId */
+        organizationId?: (number|Long|null);
+
+        /** Impersonated impersontatedUserId */
+        impersontatedUserId?: (string|null);
+    }
+
+    /** Represents an Impersonated. */
+    class Impersonated implements IImpersonated {
+
+        /**
+         * Constructs a new Impersonated.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IImpersonated);
+
+        /** Impersonated userName. */
+        public userName: string;
+
+        /** Impersonated userAgent. */
+        public userAgent: string;
+
+        /** Impersonated ip. */
+        public ip: string;
+
+        /** Impersonated requestUrl. */
+        public requestUrl: string;
+
+        /** Impersonated userId. */
+        public userId: string;
+
+        /** Impersonated organizationId. */
+        public organizationId: (number|Long);
+
+        /** Impersonated impersontatedUserId. */
+        public impersontatedUserId: string;
+
+        /**
+         * Creates a new Impersonated instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns Impersonated instance
+         */
+        public static create(properties?: events.IImpersonated): events.Impersonated;
+
+        /**
+         * Encodes the specified Impersonated message. Does not implicitly {@link events.Impersonated.verify|verify} messages.
+         * @param message Impersonated message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IImpersonated, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified Impersonated message, length delimited. Does not implicitly {@link events.Impersonated.verify|verify} messages.
+         * @param message Impersonated message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IImpersonated, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an Impersonated message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns Impersonated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.Impersonated;
+
+        /**
+         * Decodes an Impersonated message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns Impersonated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.Impersonated;
+
+        /**
+         * Verifies an Impersonated message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an Impersonated message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns Impersonated
+         */
+        public static fromObject(object: { [k: string]: any }): events.Impersonated;
+
+        /**
+         * Creates a plain object from an Impersonated message. Also converts values to other types if specified.
+         * @param message Impersonated
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.Impersonated, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this Impersonated to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an ActionUserForbidden. */
+    interface IActionUserForbidden {
+
+        /** ActionUserForbidden userName */
+        userName?: (string|null);
+
+        /** ActionUserForbidden userAgent */
+        userAgent?: (string|null);
+
+        /** ActionUserForbidden ip */
+        ip?: (string|null);
+
+        /** ActionUserForbidden requestUrl */
+        requestUrl?: (string|null);
+
+        /** ActionUserForbidden userId */
+        userId?: (string|null);
+
+        /** ActionUserForbidden organizationId */
+        organizationId?: (number|Long|null);
+
+        /** ActionUserForbidden impersontatedUserId */
+        impersontatedUserId?: (string|null);
+    }
+
+    /** Represents an ActionUserForbidden. */
+    class ActionUserForbidden implements IActionUserForbidden {
+
+        /**
+         * Constructs a new ActionUserForbidden.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IActionUserForbidden);
+
+        /** ActionUserForbidden userName. */
+        public userName: string;
+
+        /** ActionUserForbidden userAgent. */
+        public userAgent: string;
+
+        /** ActionUserForbidden ip. */
+        public ip: string;
+
+        /** ActionUserForbidden requestUrl. */
+        public requestUrl: string;
+
+        /** ActionUserForbidden userId. */
+        public userId: string;
+
+        /** ActionUserForbidden organizationId. */
+        public organizationId: (number|Long);
+
+        /** ActionUserForbidden impersontatedUserId. */
+        public impersontatedUserId: string;
+
+        /**
+         * Creates a new ActionUserForbidden instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns ActionUserForbidden instance
+         */
+        public static create(properties?: events.IActionUserForbidden): events.ActionUserForbidden;
+
+        /**
+         * Encodes the specified ActionUserForbidden message. Does not implicitly {@link events.ActionUserForbidden.verify|verify} messages.
+         * @param message ActionUserForbidden message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IActionUserForbidden, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified ActionUserForbidden message, length delimited. Does not implicitly {@link events.ActionUserForbidden.verify|verify} messages.
+         * @param message ActionUserForbidden message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IActionUserForbidden, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an ActionUserForbidden message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns ActionUserForbidden
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.ActionUserForbidden;
+
+        /**
+         * Decodes an ActionUserForbidden message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns ActionUserForbidden
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.ActionUserForbidden;
+
+        /**
+         * Verifies an ActionUserForbidden message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an ActionUserForbidden message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns ActionUserForbidden
+         */
+        public static fromObject(object: { [k: string]: any }): events.ActionUserForbidden;
+
+        /**
+         * Creates a plain object from an ActionUserForbidden message. Also converts values to other types if specified.
+         * @param message ActionUserForbidden
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.ActionUserForbidden, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this ActionUserForbidden to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
     /** Properties of a Core. */
     interface ICore {
 

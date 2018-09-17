@@ -34,7 +34,7 @@ func (m *LoginSucceeded) Reset()         { *m = LoginSucceeded{} }
 func (m *LoginSucceeded) String() string { return proto.CompactTextString(m) }
 func (*LoginSucceeded) ProtoMessage()    {}
 func (*LoginSucceeded) Descriptor() ([]byte, []int) {
-	return fileDescriptor_authentication_99d9197a60d1d4a6, []int{0}
+	return fileDescriptor_authentication_11897f3138b460fb, []int{0}
 }
 func (m *LoginSucceeded) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_LoginSucceeded.Unmarshal(m, b)
@@ -112,7 +112,7 @@ func (m *LoginFailed) Reset()         { *m = LoginFailed{} }
 func (m *LoginFailed) String() string { return proto.CompactTextString(m) }
 func (*LoginFailed) ProtoMessage()    {}
 func (*LoginFailed) Descriptor() ([]byte, []int) {
-	return fileDescriptor_authentication_99d9197a60d1d4a6, []int{1}
+	return fileDescriptor_authentication_11897f3138b460fb, []int{1}
 }
 func (m *LoginFailed) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_LoginFailed.Unmarshal(m, b)
@@ -174,30 +174,279 @@ func (m *LoginFailed) GetOrganizationId() int64 {
 	return 0
 }
 
+type LoginAttemptsExceeded struct {
+	UserName             string   `protobuf:"bytes,10,opt,name=user_name,json=userName,proto3" json:"user_name,omitempty"`
+	UserAgent            string   `protobuf:"bytes,11,opt,name=user_agent,json=userAgent,proto3" json:"user_agent,omitempty"`
+	Ip                   string   `protobuf:"bytes,12,opt,name=ip,proto3" json:"ip,omitempty"`
+	RequestUrl           string   `protobuf:"bytes,13,opt,name=request_url,json=requestUrl,proto3" json:"request_url,omitempty"`
+	UserId               string   `protobuf:"bytes,14,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *LoginAttemptsExceeded) Reset()         { *m = LoginAttemptsExceeded{} }
+func (m *LoginAttemptsExceeded) String() string { return proto.CompactTextString(m) }
+func (*LoginAttemptsExceeded) ProtoMessage()    {}
+func (*LoginAttemptsExceeded) Descriptor() ([]byte, []int) {
+	return fileDescriptor_authentication_11897f3138b460fb, []int{2}
+}
+func (m *LoginAttemptsExceeded) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_LoginAttemptsExceeded.Unmarshal(m, b)
+}
+func (m *LoginAttemptsExceeded) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_LoginAttemptsExceeded.Marshal(b, m, deterministic)
+}
+func (dst *LoginAttemptsExceeded) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_LoginAttemptsExceeded.Merge(dst, src)
+}
+func (m *LoginAttemptsExceeded) XXX_Size() int {
+	return xxx_messageInfo_LoginAttemptsExceeded.Size(m)
+}
+func (m *LoginAttemptsExceeded) XXX_DiscardUnknown() {
+	xxx_messageInfo_LoginAttemptsExceeded.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_LoginAttemptsExceeded proto.InternalMessageInfo
+
+func (m *LoginAttemptsExceeded) GetUserName() string {
+	if m != nil {
+		return m.UserName
+	}
+	return ""
+}
+
+func (m *LoginAttemptsExceeded) GetUserAgent() string {
+	if m != nil {
+		return m.UserAgent
+	}
+	return ""
+}
+
+func (m *LoginAttemptsExceeded) GetIp() string {
+	if m != nil {
+		return m.Ip
+	}
+	return ""
+}
+
+func (m *LoginAttemptsExceeded) GetRequestUrl() string {
+	if m != nil {
+		return m.RequestUrl
+	}
+	return ""
+}
+
+func (m *LoginAttemptsExceeded) GetUserId() string {
+	if m != nil {
+		return m.UserId
+	}
+	return ""
+}
+
+type Impersonated struct {
+	UserName             string   `protobuf:"bytes,10,opt,name=user_name,json=userName,proto3" json:"user_name,omitempty"`
+	UserAgent            string   `protobuf:"bytes,11,opt,name=user_agent,json=userAgent,proto3" json:"user_agent,omitempty"`
+	Ip                   string   `protobuf:"bytes,12,opt,name=ip,proto3" json:"ip,omitempty"`
+	RequestUrl           string   `protobuf:"bytes,13,opt,name=request_url,json=requestUrl,proto3" json:"request_url,omitempty"`
+	UserId               string   `protobuf:"bytes,14,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	OrganizationId       int64    `protobuf:"varint,15,opt,name=organization_id,json=organizationId,proto3" json:"organization_id,omitempty"`
+	ImpersontatedUserId  string   `protobuf:"bytes,16,opt,name=impersontated_user_id,json=impersontatedUserId,proto3" json:"impersontated_user_id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *Impersonated) Reset()         { *m = Impersonated{} }
+func (m *Impersonated) String() string { return proto.CompactTextString(m) }
+func (*Impersonated) ProtoMessage()    {}
+func (*Impersonated) Descriptor() ([]byte, []int) {
+	return fileDescriptor_authentication_11897f3138b460fb, []int{3}
+}
+func (m *Impersonated) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_Impersonated.Unmarshal(m, b)
+}
+func (m *Impersonated) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_Impersonated.Marshal(b, m, deterministic)
+}
+func (dst *Impersonated) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Impersonated.Merge(dst, src)
+}
+func (m *Impersonated) XXX_Size() int {
+	return xxx_messageInfo_Impersonated.Size(m)
+}
+func (m *Impersonated) XXX_DiscardUnknown() {
+	xxx_messageInfo_Impersonated.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Impersonated proto.InternalMessageInfo
+
+func (m *Impersonated) GetUserName() string {
+	if m != nil {
+		return m.UserName
+	}
+	return ""
+}
+
+func (m *Impersonated) GetUserAgent() string {
+	if m != nil {
+		return m.UserAgent
+	}
+	return ""
+}
+
+func (m *Impersonated) GetIp() string {
+	if m != nil {
+		return m.Ip
+	}
+	return ""
+}
+
+func (m *Impersonated) GetRequestUrl() string {
+	if m != nil {
+		return m.RequestUrl
+	}
+	return ""
+}
+
+func (m *Impersonated) GetUserId() string {
+	if m != nil {
+		return m.UserId
+	}
+	return ""
+}
+
+func (m *Impersonated) GetOrganizationId() int64 {
+	if m != nil {
+		return m.OrganizationId
+	}
+	return 0
+}
+
+func (m *Impersonated) GetImpersontatedUserId() string {
+	if m != nil {
+		return m.ImpersontatedUserId
+	}
+	return ""
+}
+
+type ActionUserForbidden struct {
+	UserName             string   `protobuf:"bytes,10,opt,name=user_name,json=userName,proto3" json:"user_name,omitempty"`
+	UserAgent            string   `protobuf:"bytes,11,opt,name=user_agent,json=userAgent,proto3" json:"user_agent,omitempty"`
+	Ip                   string   `protobuf:"bytes,12,opt,name=ip,proto3" json:"ip,omitempty"`
+	RequestUrl           string   `protobuf:"bytes,13,opt,name=request_url,json=requestUrl,proto3" json:"request_url,omitempty"`
+	UserId               string   `protobuf:"bytes,14,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	OrganizationId       int64    `protobuf:"varint,15,opt,name=organization_id,json=organizationId,proto3" json:"organization_id,omitempty"`
+	ImpersontatedUserId  string   `protobuf:"bytes,16,opt,name=impersontated_user_id,json=impersontatedUserId,proto3" json:"impersontated_user_id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ActionUserForbidden) Reset()         { *m = ActionUserForbidden{} }
+func (m *ActionUserForbidden) String() string { return proto.CompactTextString(m) }
+func (*ActionUserForbidden) ProtoMessage()    {}
+func (*ActionUserForbidden) Descriptor() ([]byte, []int) {
+	return fileDescriptor_authentication_11897f3138b460fb, []int{4}
+}
+func (m *ActionUserForbidden) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ActionUserForbidden.Unmarshal(m, b)
+}
+func (m *ActionUserForbidden) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ActionUserForbidden.Marshal(b, m, deterministic)
+}
+func (dst *ActionUserForbidden) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ActionUserForbidden.Merge(dst, src)
+}
+func (m *ActionUserForbidden) XXX_Size() int {
+	return xxx_messageInfo_ActionUserForbidden.Size(m)
+}
+func (m *ActionUserForbidden) XXX_DiscardUnknown() {
+	xxx_messageInfo_ActionUserForbidden.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ActionUserForbidden proto.InternalMessageInfo
+
+func (m *ActionUserForbidden) GetUserName() string {
+	if m != nil {
+		return m.UserName
+	}
+	return ""
+}
+
+func (m *ActionUserForbidden) GetUserAgent() string {
+	if m != nil {
+		return m.UserAgent
+	}
+	return ""
+}
+
+func (m *ActionUserForbidden) GetIp() string {
+	if m != nil {
+		return m.Ip
+	}
+	return ""
+}
+
+func (m *ActionUserForbidden) GetRequestUrl() string {
+	if m != nil {
+		return m.RequestUrl
+	}
+	return ""
+}
+
+func (m *ActionUserForbidden) GetUserId() string {
+	if m != nil {
+		return m.UserId
+	}
+	return ""
+}
+
+func (m *ActionUserForbidden) GetOrganizationId() int64 {
+	if m != nil {
+		return m.OrganizationId
+	}
+	return 0
+}
+
+func (m *ActionUserForbidden) GetImpersontatedUserId() string {
+	if m != nil {
+		return m.ImpersontatedUserId
+	}
+	return ""
+}
+
 func init() {
 	proto.RegisterType((*LoginSucceeded)(nil), "events.LoginSucceeded")
 	proto.RegisterType((*LoginFailed)(nil), "events.LoginFailed")
+	proto.RegisterType((*LoginAttemptsExceeded)(nil), "events.LoginAttemptsExceeded")
+	proto.RegisterType((*Impersonated)(nil), "events.Impersonated")
+	proto.RegisterType((*ActionUserForbidden)(nil), "events.ActionUserForbidden")
 }
 
 func init() {
-	proto.RegisterFile("events/authentication.proto", fileDescriptor_authentication_99d9197a60d1d4a6)
+	proto.RegisterFile("events/authentication.proto", fileDescriptor_authentication_11897f3138b460fb)
 }
 
-var fileDescriptor_authentication_99d9197a60d1d4a6 = []byte{
-	// 227 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xd4, 0x91, 0xc1, 0x4a, 0xc4, 0x30,
-	0x10, 0x86, 0xc9, 0x0a, 0x75, 0x77, 0xaa, 0x59, 0xc8, 0xc5, 0xc0, 0x22, 0x2e, 0x7b, 0xb1, 0x27,
-	0x3d, 0xf8, 0x04, 0x7a, 0x10, 0x0a, 0xe2, 0xa1, 0xe2, 0xc5, 0x4b, 0x89, 0xcd, 0x50, 0x07, 0xda,
-	0xa4, 0xa6, 0x89, 0x07, 0x9f, 0x4d, 0xf0, 0xd5, 0x24, 0x63, 0x0f, 0xbe, 0x82, 0xc7, 0x7c, 0xdf,
-	0x4f, 0xf8, 0x87, 0x1f, 0x76, 0xf8, 0x81, 0x2e, 0xce, 0xd7, 0x26, 0xc5, 0x37, 0x74, 0x91, 0x3a,
-	0x13, 0xc9, 0xbb, 0xab, 0x29, 0xf8, 0xe8, 0x55, 0xf1, 0x2b, 0x0f, 0xdf, 0x02, 0xe4, 0x83, 0xef,
-	0xc9, 0x3d, 0xa5, 0xae, 0x43, 0xb4, 0x68, 0xd5, 0x0e, 0x36, 0x69, 0xc6, 0xd0, 0x3a, 0x33, 0xa2,
-	0x86, 0xbd, 0xa8, 0x36, 0xcd, 0x3a, 0x83, 0x47, 0x33, 0xa2, 0x3a, 0x07, 0x60, 0x69, 0x7a, 0x74,
-	0x51, 0x97, 0x6c, 0x39, 0x7e, 0x9b, 0x81, 0x92, 0xb0, 0xa2, 0x49, 0x9f, 0x30, 0x5e, 0xd1, 0xa4,
-	0x2e, 0xa0, 0x0c, 0xf8, 0x9e, 0x70, 0x8e, 0x6d, 0x0a, 0x83, 0x3e, 0x65, 0x01, 0x0b, 0x7a, 0x0e,
-	0x83, 0x3a, 0x83, 0x63, 0xfe, 0x8f, 0xac, 0x96, 0x2c, 0x8b, 0xfc, 0xac, 0xad, 0xba, 0x84, 0xad,
-	0x0f, 0xbd, 0x71, 0xf4, 0xc9, 0xb5, 0x73, 0x60, 0xbb, 0x17, 0xd5, 0x51, 0x23, 0xff, 0xe2, 0xda,
-	0x1e, 0xbe, 0x04, 0x94, 0x7c, 0xc1, 0xbd, 0xa1, 0xe1, 0xdf, 0xd5, 0xbf, 0x5b, 0xbf, 0x2c, 0x53,
-	0xbc, 0x16, 0xbc, 0xcc, 0xcd, 0x4f, 0x00, 0x00, 0x00, 0xff, 0xff, 0xbe, 0x32, 0x56, 0xd0, 0xb8,
-	0x01, 0x00, 0x00,
+var fileDescriptor_authentication_11897f3138b460fb = []byte{
+	// 300 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe4, 0x94, 0xc1, 0x4a, 0xc3, 0x40,
+	0x10, 0x86, 0xd9, 0x0a, 0xb5, 0x9d, 0xd6, 0x54, 0xb6, 0x14, 0x03, 0x45, 0x2c, 0xbd, 0xd8, 0x93,
+	0x82, 0x3e, 0x41, 0x05, 0x0b, 0x05, 0xf1, 0x50, 0xe9, 0xc5, 0x4b, 0xd8, 0x66, 0x87, 0xb8, 0x90,
+	0xec, 0xc6, 0xcd, 0x44, 0xc4, 0x77, 0xf1, 0x4d, 0x04, 0x9f, 0xc9, 0x9b, 0x47, 0xd9, 0x69, 0x04,
+	0x7d, 0x03, 0x8b, 0xc7, 0x7c, 0xdf, 0xf0, 0xf3, 0x4f, 0x16, 0x06, 0xc6, 0xf8, 0x84, 0x96, 0xaa,
+	0x73, 0x55, 0xd3, 0x03, 0x5a, 0x32, 0xa9, 0x22, 0xe3, 0xec, 0x59, 0xe9, 0x1d, 0x39, 0xd9, 0xde,
+	0xca, 0xe9, 0xbb, 0x80, 0xe8, 0xc6, 0x65, 0xc6, 0xde, 0xd5, 0x69, 0x8a, 0xa8, 0x51, 0xcb, 0x31,
+	0x74, 0xeb, 0x0a, 0x7d, 0x62, 0x55, 0x81, 0x31, 0x4c, 0xc4, 0xac, 0xbb, 0xea, 0x04, 0x70, 0xab,
+	0x0a, 0x94, 0xc7, 0x00, 0x2c, 0x55, 0x86, 0x96, 0xe2, 0x1e, 0x5b, 0x1e, 0x9f, 0x07, 0x20, 0x23,
+	0x68, 0x99, 0x32, 0xee, 0x33, 0x6e, 0x99, 0x52, 0x9e, 0x40, 0xcf, 0xe3, 0x63, 0x8d, 0x15, 0x25,
+	0xb5, 0xcf, 0xe3, 0x03, 0x16, 0xd0, 0xa0, 0xb5, 0xcf, 0xe5, 0x11, 0xec, 0x73, 0x9e, 0xd1, 0x71,
+	0xc4, 0xb2, 0x1d, 0x3e, 0x97, 0x5a, 0x9e, 0xc2, 0xc0, 0xf9, 0x4c, 0x59, 0xf3, 0xc2, 0xb5, 0xc3,
+	0xc0, 0x60, 0x22, 0x66, 0x7b, 0xab, 0xe8, 0x27, 0x5e, 0xea, 0xe9, 0x9b, 0x80, 0x1e, 0x6f, 0xb0,
+	0x50, 0x26, 0xdf, 0xbd, 0xfa, 0xaf, 0x02, 0x46, 0x5c, 0x7f, 0x4e, 0x84, 0x45, 0x49, 0xd5, 0xf5,
+	0xf3, 0x5f, 0x7a, 0x87, 0xe9, 0x87, 0x80, 0xfe, 0xb2, 0x28, 0xd1, 0x57, 0xce, 0x2a, 0xda, 0xb9,
+	0xff, 0x2b, 0x2f, 0x60, 0x64, 0x9a, 0xfa, 0x14, 0xfa, 0x27, 0xdf, 0x79, 0x87, 0x9c, 0x37, 0xfc,
+	0x25, 0xd7, 0xdb, 0x9d, 0x3f, 0x05, 0x0c, 0xe7, 0x69, 0x08, 0x08, 0x60, 0xe1, 0xfc, 0xc6, 0x68,
+	0x8d, 0xf6, 0x1f, 0xac, 0x7e, 0xd5, 0xb9, 0x6f, 0x2e, 0xc3, 0xa6, 0xcd, 0x87, 0xe2, 0xf2, 0x2b,
+	0x00, 0x00, 0xff, 0xff, 0x83, 0x86, 0x0a, 0x17, 0x47, 0x04, 0x00, 0x00,
 }

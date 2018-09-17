@@ -83,3 +83,127 @@ export namespace LoginFailed {
   }
 }
 
+export class LoginAttemptsExceeded extends jspb.Message {
+  getUserName(): string;
+  setUserName(value: string): void;
+
+  getUserAgent(): string;
+  setUserAgent(value: string): void;
+
+  getIp(): string;
+  setIp(value: string): void;
+
+  getRequestUrl(): string;
+  setRequestUrl(value: string): void;
+
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LoginAttemptsExceeded.AsObject;
+  static toObject(includeInstance: boolean, msg: LoginAttemptsExceeded): LoginAttemptsExceeded.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: LoginAttemptsExceeded, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LoginAttemptsExceeded;
+  static deserializeBinaryFromReader(message: LoginAttemptsExceeded, reader: jspb.BinaryReader): LoginAttemptsExceeded;
+}
+
+export namespace LoginAttemptsExceeded {
+  export type AsObject = {
+    userName: string,
+    userAgent: string,
+    ip: string,
+    requestUrl: string,
+    userId: string,
+  }
+}
+
+export class Impersonated extends jspb.Message {
+  getUserName(): string;
+  setUserName(value: string): void;
+
+  getUserAgent(): string;
+  setUserAgent(value: string): void;
+
+  getIp(): string;
+  setIp(value: string): void;
+
+  getRequestUrl(): string;
+  setRequestUrl(value: string): void;
+
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  getOrganizationId(): number;
+  setOrganizationId(value: number): void;
+
+  getImpersontatedUserId(): string;
+  setImpersontatedUserId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Impersonated.AsObject;
+  static toObject(includeInstance: boolean, msg: Impersonated): Impersonated.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Impersonated, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Impersonated;
+  static deserializeBinaryFromReader(message: Impersonated, reader: jspb.BinaryReader): Impersonated;
+}
+
+export namespace Impersonated {
+  export type AsObject = {
+    userName: string,
+    userAgent: string,
+    ip: string,
+    requestUrl: string,
+    userId: string,
+    organizationId: number,
+    impersontatedUserId: string,
+  }
+}
+
+export class ActionUserForbidden extends jspb.Message {
+  getUserName(): string;
+  setUserName(value: string): void;
+
+  getUserAgent(): string;
+  setUserAgent(value: string): void;
+
+  getIp(): string;
+  setIp(value: string): void;
+
+  getRequestUrl(): string;
+  setRequestUrl(value: string): void;
+
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  getOrganizationId(): number;
+  setOrganizationId(value: number): void;
+
+  getImpersontatedUserId(): string;
+  setImpersontatedUserId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ActionUserForbidden.AsObject;
+  static toObject(includeInstance: boolean, msg: ActionUserForbidden): ActionUserForbidden.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ActionUserForbidden, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ActionUserForbidden;
+  static deserializeBinaryFromReader(message: ActionUserForbidden, reader: jspb.BinaryReader): ActionUserForbidden;
+}
+
+export namespace ActionUserForbidden {
+  export type AsObject = {
+    userName: string,
+    userAgent: string,
+    ip: string,
+    requestUrl: string,
+    userId: string,
+    organizationId: number,
+    impersontatedUserId: string,
+  }
+}
+
