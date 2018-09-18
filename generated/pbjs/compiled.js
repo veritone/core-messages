@@ -18,6 +18,244 @@ $root.events = (function() {
      */
     var events = {};
 
+    events.AssetUploaded = (function() {
+
+        /**
+         * Properties of an AssetUploaded.
+         * @memberof events
+         * @interface IAssetUploaded
+         * @property {number|Long|null} [assetId] AssetUploaded assetId
+         * @property {number|Long|null} [recordingId] AssetUploaded recordingId
+         */
+
+        /**
+         * Constructs a new AssetUploaded.
+         * @memberof events
+         * @classdesc Represents an AssetUploaded.
+         * @implements IAssetUploaded
+         * @constructor
+         * @param {events.IAssetUploaded=} [properties] Properties to set
+         */
+        function AssetUploaded(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * AssetUploaded assetId.
+         * @member {number|Long} assetId
+         * @memberof events.AssetUploaded
+         * @instance
+         */
+        AssetUploaded.prototype.assetId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+        /**
+         * AssetUploaded recordingId.
+         * @member {number|Long} recordingId
+         * @memberof events.AssetUploaded
+         * @instance
+         */
+        AssetUploaded.prototype.recordingId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+        /**
+         * Creates a new AssetUploaded instance using the specified properties.
+         * @function create
+         * @memberof events.AssetUploaded
+         * @static
+         * @param {events.IAssetUploaded=} [properties] Properties to set
+         * @returns {events.AssetUploaded} AssetUploaded instance
+         */
+        AssetUploaded.create = function create(properties) {
+            return new AssetUploaded(properties);
+        };
+
+        /**
+         * Encodes the specified AssetUploaded message. Does not implicitly {@link events.AssetUploaded.verify|verify} messages.
+         * @function encode
+         * @memberof events.AssetUploaded
+         * @static
+         * @param {events.IAssetUploaded} message AssetUploaded message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        AssetUploaded.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.assetId != null && message.hasOwnProperty("assetId"))
+                writer.uint32(/* id 10, wireType 0 =*/80).int64(message.assetId);
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                writer.uint32(/* id 11, wireType 0 =*/88).int64(message.recordingId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified AssetUploaded message, length delimited. Does not implicitly {@link events.AssetUploaded.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.AssetUploaded
+         * @static
+         * @param {events.IAssetUploaded} message AssetUploaded message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        AssetUploaded.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an AssetUploaded message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.AssetUploaded
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.AssetUploaded} AssetUploaded
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        AssetUploaded.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.AssetUploaded();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.assetId = reader.int64();
+                    break;
+                case 11:
+                    message.recordingId = reader.int64();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an AssetUploaded message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.AssetUploaded
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.AssetUploaded} AssetUploaded
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        AssetUploaded.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an AssetUploaded message.
+         * @function verify
+         * @memberof events.AssetUploaded
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        AssetUploaded.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.assetId != null && message.hasOwnProperty("assetId"))
+                if (!$util.isInteger(message.assetId) && !(message.assetId && $util.isInteger(message.assetId.low) && $util.isInteger(message.assetId.high)))
+                    return "assetId: integer|Long expected";
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                if (!$util.isInteger(message.recordingId) && !(message.recordingId && $util.isInteger(message.recordingId.low) && $util.isInteger(message.recordingId.high)))
+                    return "recordingId: integer|Long expected";
+            return null;
+        };
+
+        /**
+         * Creates an AssetUploaded message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.AssetUploaded
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.AssetUploaded} AssetUploaded
+         */
+        AssetUploaded.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.AssetUploaded)
+                return object;
+            var message = new $root.events.AssetUploaded();
+            if (object.assetId != null)
+                if ($util.Long)
+                    (message.assetId = $util.Long.fromValue(object.assetId)).unsigned = false;
+                else if (typeof object.assetId === "string")
+                    message.assetId = parseInt(object.assetId, 10);
+                else if (typeof object.assetId === "number")
+                    message.assetId = object.assetId;
+                else if (typeof object.assetId === "object")
+                    message.assetId = new $util.LongBits(object.assetId.low >>> 0, object.assetId.high >>> 0).toNumber();
+            if (object.recordingId != null)
+                if ($util.Long)
+                    (message.recordingId = $util.Long.fromValue(object.recordingId)).unsigned = false;
+                else if (typeof object.recordingId === "string")
+                    message.recordingId = parseInt(object.recordingId, 10);
+                else if (typeof object.recordingId === "number")
+                    message.recordingId = object.recordingId;
+                else if (typeof object.recordingId === "object")
+                    message.recordingId = new $util.LongBits(object.recordingId.low >>> 0, object.recordingId.high >>> 0).toNumber();
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an AssetUploaded message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.AssetUploaded
+         * @static
+         * @param {events.AssetUploaded} message AssetUploaded
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        AssetUploaded.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.assetId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.assetId = options.longs === String ? "0" : 0;
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.recordingId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.recordingId = options.longs === String ? "0" : 0;
+            }
+            if (message.assetId != null && message.hasOwnProperty("assetId"))
+                if (typeof message.assetId === "number")
+                    object.assetId = options.longs === String ? String(message.assetId) : message.assetId;
+                else
+                    object.assetId = options.longs === String ? $util.Long.prototype.toString.call(message.assetId) : options.longs === Number ? new $util.LongBits(message.assetId.low >>> 0, message.assetId.high >>> 0).toNumber() : message.assetId;
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                if (typeof message.recordingId === "number")
+                    object.recordingId = options.longs === String ? String(message.recordingId) : message.recordingId;
+                else
+                    object.recordingId = options.longs === String ? $util.Long.prototype.toString.call(message.recordingId) : options.longs === Number ? new $util.LongBits(message.recordingId.low >>> 0, message.recordingId.high >>> 0).toNumber() : message.recordingId;
+            return object;
+        };
+
+        /**
+         * Converts this AssetUploaded to JSON.
+         * @function toJSON
+         * @memberof events.AssetUploaded
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        AssetUploaded.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return AssetUploaded;
+    })();
+
     events.LoginSucceeded = (function() {
 
         /**

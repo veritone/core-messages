@@ -3,6 +3,13 @@
 
 ## Table of Contents
 
+- [events/asset.proto](#events/asset.proto)
+    - [AssetUploaded](#events.AssetUploaded)
+  
+  
+  
+  
+
 - [events/authentication.proto](#events/authentication.proto)
     - [ActionTokenForbidden](#events.ActionTokenForbidden)
     - [ActionUserForbidden](#events.ActionUserForbidden)
@@ -84,6 +91,38 @@
   
 
 - [Scalar Value Types](#scalar-value-types)
+
+
+
+<a name="events/asset.proto"/>
+<p align="right"><a href="#top">Top</a></p>
+
+## events/asset.proto
+
+
+
+<a name="events.AssetUploaded"/>
+
+### AssetUploaded
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| assetId | [int64](#int64) |  |  |
+| recordingId | [int64](#int64) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
 
 
 

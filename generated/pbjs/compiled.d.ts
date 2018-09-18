@@ -3,6 +3,102 @@ import * as $protobuf from "protobufjs";
 /** Namespace events. */
 export namespace events {
 
+    /** Properties of an AssetUploaded. */
+    interface IAssetUploaded {
+
+        /** AssetUploaded assetId */
+        assetId?: (number|Long|null);
+
+        /** AssetUploaded recordingId */
+        recordingId?: (number|Long|null);
+    }
+
+    /** Represents an AssetUploaded. */
+    class AssetUploaded implements IAssetUploaded {
+
+        /**
+         * Constructs a new AssetUploaded.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IAssetUploaded);
+
+        /** AssetUploaded assetId. */
+        public assetId: (number|Long);
+
+        /** AssetUploaded recordingId. */
+        public recordingId: (number|Long);
+
+        /**
+         * Creates a new AssetUploaded instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns AssetUploaded instance
+         */
+        public static create(properties?: events.IAssetUploaded): events.AssetUploaded;
+
+        /**
+         * Encodes the specified AssetUploaded message. Does not implicitly {@link events.AssetUploaded.verify|verify} messages.
+         * @param message AssetUploaded message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IAssetUploaded, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified AssetUploaded message, length delimited. Does not implicitly {@link events.AssetUploaded.verify|verify} messages.
+         * @param message AssetUploaded message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IAssetUploaded, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an AssetUploaded message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns AssetUploaded
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.AssetUploaded;
+
+        /**
+         * Decodes an AssetUploaded message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns AssetUploaded
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.AssetUploaded;
+
+        /**
+         * Verifies an AssetUploaded message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an AssetUploaded message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns AssetUploaded
+         */
+        public static fromObject(object: { [k: string]: any }): events.AssetUploaded;
+
+        /**
+         * Creates a plain object from an AssetUploaded message. Also converts values to other types if specified.
+         * @param message AssetUploaded
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.AssetUploaded, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this AssetUploaded to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
     /** Properties of a LoginSucceeded. */
     interface ILoginSucceeded {
 
