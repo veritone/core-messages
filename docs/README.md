@@ -4,6 +4,7 @@
 ## Table of Contents
 
 - [events/authentication.proto](#events/authentication.proto)
+    - [ActionTokenForbidden](#events.ActionTokenForbidden)
     - [ActionUserForbidden](#events.ActionUserForbidden)
     - [Impersonated](#events.Impersonated)
     - [LoginAttemptsExceeded](#events.LoginAttemptsExceeded)
@@ -93,6 +94,23 @@
 
 
 
+<a name="events.ActionTokenForbidden"/>
+
+### ActionTokenForbidden
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_agent | [string](#string) |  |  |
+| ip | [string](#string) |  |  |
+| request_url | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="events.ActionUserForbidden"/>
 
 ### ActionUserForbidden
@@ -107,7 +125,6 @@
 | request_url | [string](#string) |  |  |
 | user_id | [string](#string) |  |  |
 | organization_id | [int64](#int64) |  |  |
-| impersontated_user_id | [string](#string) |  |  |
 
 
 
@@ -147,7 +164,6 @@
 | user_agent | [string](#string) |  |  |
 | ip | [string](#string) |  |  |
 | request_url | [string](#string) |  |  |
-| user_id | [string](#string) |  |  |
 
 
 
@@ -166,8 +182,6 @@
 | user_agent | [string](#string) |  |  |
 | ip | [string](#string) |  |  |
 | request_url | [string](#string) |  |  |
-| user_id | [string](#string) |  |  |
-| organization_id | [int64](#int64) |  |  |
 
 
 

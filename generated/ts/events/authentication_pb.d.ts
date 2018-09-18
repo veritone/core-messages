@@ -56,12 +56,6 @@ export class LoginFailed extends jspb.Message {
   getRequestUrl(): string;
   setRequestUrl(value: string): void;
 
-  getUserId(): string;
-  setUserId(value: string): void;
-
-  getOrganizationId(): number;
-  setOrganizationId(value: number): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LoginFailed.AsObject;
   static toObject(includeInstance: boolean, msg: LoginFailed): LoginFailed.AsObject;
@@ -78,8 +72,6 @@ export namespace LoginFailed {
     userAgent: string,
     ip: string,
     requestUrl: string,
-    userId: string,
-    organizationId: number,
   }
 }
 
@@ -95,9 +87,6 @@ export class LoginAttemptsExceeded extends jspb.Message {
 
   getRequestUrl(): string;
   setRequestUrl(value: string): void;
-
-  getUserId(): string;
-  setUserId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LoginAttemptsExceeded.AsObject;
@@ -115,7 +104,6 @@ export namespace LoginAttemptsExceeded {
     userAgent: string,
     ip: string,
     requestUrl: string,
-    userId: string,
   }
 }
 
@@ -182,9 +170,6 @@ export class ActionUserForbidden extends jspb.Message {
   getOrganizationId(): number;
   setOrganizationId(value: number): void;
 
-  getImpersontatedUserId(): string;
-  setImpersontatedUserId(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ActionUserForbidden.AsObject;
   static toObject(includeInstance: boolean, msg: ActionUserForbidden): ActionUserForbidden.AsObject;
@@ -203,7 +188,34 @@ export namespace ActionUserForbidden {
     requestUrl: string,
     userId: string,
     organizationId: number,
-    impersontatedUserId: string,
+  }
+}
+
+export class ActionTokenForbidden extends jspb.Message {
+  getUserAgent(): string;
+  setUserAgent(value: string): void;
+
+  getIp(): string;
+  setIp(value: string): void;
+
+  getRequestUrl(): string;
+  setRequestUrl(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ActionTokenForbidden.AsObject;
+  static toObject(includeInstance: boolean, msg: ActionTokenForbidden): ActionTokenForbidden.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ActionTokenForbidden, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ActionTokenForbidden;
+  static deserializeBinaryFromReader(message: ActionTokenForbidden, reader: jspb.BinaryReader): ActionTokenForbidden;
+}
+
+export namespace ActionTokenForbidden {
+  export type AsObject = {
+    userAgent: string,
+    ip: string,
+    requestUrl: string,
   }
 }
 

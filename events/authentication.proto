@@ -17,8 +17,6 @@ message LoginFailed {
     string user_agent = 11;
     string ip = 12;
     string request_url = 13;
-    string user_id = 14;
-    int64 organization_id = 15;
 }
 
 message LoginAttemptsExceeded {
@@ -26,7 +24,6 @@ message LoginAttemptsExceeded {
     string user_agent = 11;
     string ip = 12;
     string request_url = 13;
-    string user_id = 14;
 }
 
 message Impersonated {
@@ -46,5 +43,10 @@ message ActionUserForbidden  {
     string request_url = 13;
     string user_id = 14;
     int64 organization_id = 15;
-    string impersontated_user_id = 16;
+}
+
+message ActionTokenForbidden {
+    string user_agent = 11;
+    string ip = 12;
+    string request_url = 13;
 }

@@ -34,7 +34,7 @@ func (m *LoginSucceeded) Reset()         { *m = LoginSucceeded{} }
 func (m *LoginSucceeded) String() string { return proto.CompactTextString(m) }
 func (*LoginSucceeded) ProtoMessage()    {}
 func (*LoginSucceeded) Descriptor() ([]byte, []int) {
-	return fileDescriptor_authentication_11897f3138b460fb, []int{0}
+	return fileDescriptor_authentication_c0559713f9e0e912, []int{0}
 }
 func (m *LoginSucceeded) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_LoginSucceeded.Unmarshal(m, b)
@@ -101,8 +101,6 @@ type LoginFailed struct {
 	UserAgent            string   `protobuf:"bytes,11,opt,name=user_agent,json=userAgent,proto3" json:"user_agent,omitempty"`
 	Ip                   string   `protobuf:"bytes,12,opt,name=ip,proto3" json:"ip,omitempty"`
 	RequestUrl           string   `protobuf:"bytes,13,opt,name=request_url,json=requestUrl,proto3" json:"request_url,omitempty"`
-	UserId               string   `protobuf:"bytes,14,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	OrganizationId       int64    `protobuf:"varint,15,opt,name=organization_id,json=organizationId,proto3" json:"organization_id,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -112,7 +110,7 @@ func (m *LoginFailed) Reset()         { *m = LoginFailed{} }
 func (m *LoginFailed) String() string { return proto.CompactTextString(m) }
 func (*LoginFailed) ProtoMessage()    {}
 func (*LoginFailed) Descriptor() ([]byte, []int) {
-	return fileDescriptor_authentication_11897f3138b460fb, []int{1}
+	return fileDescriptor_authentication_c0559713f9e0e912, []int{1}
 }
 func (m *LoginFailed) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_LoginFailed.Unmarshal(m, b)
@@ -160,26 +158,11 @@ func (m *LoginFailed) GetRequestUrl() string {
 	return ""
 }
 
-func (m *LoginFailed) GetUserId() string {
-	if m != nil {
-		return m.UserId
-	}
-	return ""
-}
-
-func (m *LoginFailed) GetOrganizationId() int64 {
-	if m != nil {
-		return m.OrganizationId
-	}
-	return 0
-}
-
 type LoginAttemptsExceeded struct {
 	UserName             string   `protobuf:"bytes,10,opt,name=user_name,json=userName,proto3" json:"user_name,omitempty"`
 	UserAgent            string   `protobuf:"bytes,11,opt,name=user_agent,json=userAgent,proto3" json:"user_agent,omitempty"`
 	Ip                   string   `protobuf:"bytes,12,opt,name=ip,proto3" json:"ip,omitempty"`
 	RequestUrl           string   `protobuf:"bytes,13,opt,name=request_url,json=requestUrl,proto3" json:"request_url,omitempty"`
-	UserId               string   `protobuf:"bytes,14,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -189,7 +172,7 @@ func (m *LoginAttemptsExceeded) Reset()         { *m = LoginAttemptsExceeded{} }
 func (m *LoginAttemptsExceeded) String() string { return proto.CompactTextString(m) }
 func (*LoginAttemptsExceeded) ProtoMessage()    {}
 func (*LoginAttemptsExceeded) Descriptor() ([]byte, []int) {
-	return fileDescriptor_authentication_11897f3138b460fb, []int{2}
+	return fileDescriptor_authentication_c0559713f9e0e912, []int{2}
 }
 func (m *LoginAttemptsExceeded) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_LoginAttemptsExceeded.Unmarshal(m, b)
@@ -237,13 +220,6 @@ func (m *LoginAttemptsExceeded) GetRequestUrl() string {
 	return ""
 }
 
-func (m *LoginAttemptsExceeded) GetUserId() string {
-	if m != nil {
-		return m.UserId
-	}
-	return ""
-}
-
 type Impersonated struct {
 	UserName             string   `protobuf:"bytes,10,opt,name=user_name,json=userName,proto3" json:"user_name,omitempty"`
 	UserAgent            string   `protobuf:"bytes,11,opt,name=user_agent,json=userAgent,proto3" json:"user_agent,omitempty"`
@@ -261,7 +237,7 @@ func (m *Impersonated) Reset()         { *m = Impersonated{} }
 func (m *Impersonated) String() string { return proto.CompactTextString(m) }
 func (*Impersonated) ProtoMessage()    {}
 func (*Impersonated) Descriptor() ([]byte, []int) {
-	return fileDescriptor_authentication_11897f3138b460fb, []int{3}
+	return fileDescriptor_authentication_c0559713f9e0e912, []int{3}
 }
 func (m *Impersonated) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Impersonated.Unmarshal(m, b)
@@ -337,7 +313,6 @@ type ActionUserForbidden struct {
 	RequestUrl           string   `protobuf:"bytes,13,opt,name=request_url,json=requestUrl,proto3" json:"request_url,omitempty"`
 	UserId               string   `protobuf:"bytes,14,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	OrganizationId       int64    `protobuf:"varint,15,opt,name=organization_id,json=organizationId,proto3" json:"organization_id,omitempty"`
-	ImpersontatedUserId  string   `protobuf:"bytes,16,opt,name=impersontated_user_id,json=impersontatedUserId,proto3" json:"impersontated_user_id,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -347,7 +322,7 @@ func (m *ActionUserForbidden) Reset()         { *m = ActionUserForbidden{} }
 func (m *ActionUserForbidden) String() string { return proto.CompactTextString(m) }
 func (*ActionUserForbidden) ProtoMessage()    {}
 func (*ActionUserForbidden) Descriptor() ([]byte, []int) {
-	return fileDescriptor_authentication_11897f3138b460fb, []int{4}
+	return fileDescriptor_authentication_c0559713f9e0e912, []int{4}
 }
 func (m *ActionUserForbidden) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ActionUserForbidden.Unmarshal(m, b)
@@ -409,9 +384,56 @@ func (m *ActionUserForbidden) GetOrganizationId() int64 {
 	return 0
 }
 
-func (m *ActionUserForbidden) GetImpersontatedUserId() string {
+type ActionTokenForbidden struct {
+	UserAgent            string   `protobuf:"bytes,11,opt,name=user_agent,json=userAgent,proto3" json:"user_agent,omitempty"`
+	Ip                   string   `protobuf:"bytes,12,opt,name=ip,proto3" json:"ip,omitempty"`
+	RequestUrl           string   `protobuf:"bytes,13,opt,name=request_url,json=requestUrl,proto3" json:"request_url,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ActionTokenForbidden) Reset()         { *m = ActionTokenForbidden{} }
+func (m *ActionTokenForbidden) String() string { return proto.CompactTextString(m) }
+func (*ActionTokenForbidden) ProtoMessage()    {}
+func (*ActionTokenForbidden) Descriptor() ([]byte, []int) {
+	return fileDescriptor_authentication_c0559713f9e0e912, []int{5}
+}
+func (m *ActionTokenForbidden) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ActionTokenForbidden.Unmarshal(m, b)
+}
+func (m *ActionTokenForbidden) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ActionTokenForbidden.Marshal(b, m, deterministic)
+}
+func (dst *ActionTokenForbidden) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ActionTokenForbidden.Merge(dst, src)
+}
+func (m *ActionTokenForbidden) XXX_Size() int {
+	return xxx_messageInfo_ActionTokenForbidden.Size(m)
+}
+func (m *ActionTokenForbidden) XXX_DiscardUnknown() {
+	xxx_messageInfo_ActionTokenForbidden.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ActionTokenForbidden proto.InternalMessageInfo
+
+func (m *ActionTokenForbidden) GetUserAgent() string {
 	if m != nil {
-		return m.ImpersontatedUserId
+		return m.UserAgent
+	}
+	return ""
+}
+
+func (m *ActionTokenForbidden) GetIp() string {
+	if m != nil {
+		return m.Ip
+	}
+	return ""
+}
+
+func (m *ActionTokenForbidden) GetRequestUrl() string {
+	if m != nil {
+		return m.RequestUrl
 	}
 	return ""
 }
@@ -422,31 +444,33 @@ func init() {
 	proto.RegisterType((*LoginAttemptsExceeded)(nil), "events.LoginAttemptsExceeded")
 	proto.RegisterType((*Impersonated)(nil), "events.Impersonated")
 	proto.RegisterType((*ActionUserForbidden)(nil), "events.ActionUserForbidden")
+	proto.RegisterType((*ActionTokenForbidden)(nil), "events.ActionTokenForbidden")
 }
 
 func init() {
-	proto.RegisterFile("events/authentication.proto", fileDescriptor_authentication_11897f3138b460fb)
+	proto.RegisterFile("events/authentication.proto", fileDescriptor_authentication_c0559713f9e0e912)
 }
 
-var fileDescriptor_authentication_11897f3138b460fb = []byte{
-	// 300 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe4, 0x94, 0xc1, 0x4a, 0xc3, 0x40,
-	0x10, 0x86, 0xd9, 0x0a, 0xb5, 0x9d, 0xd6, 0x54, 0xb6, 0x14, 0x03, 0x45, 0x2c, 0xbd, 0xd8, 0x93,
-	0x82, 0x3e, 0x41, 0x05, 0x0b, 0x05, 0xf1, 0x50, 0xe9, 0xc5, 0x4b, 0xd8, 0x66, 0x87, 0xb8, 0x90,
-	0xec, 0xc6, 0xcd, 0x44, 0xc4, 0x77, 0xf1, 0x4d, 0x04, 0x9f, 0xc9, 0x9b, 0x47, 0xd9, 0x69, 0x04,
-	0x7d, 0x03, 0x8b, 0xc7, 0x7c, 0xdf, 0xf0, 0xf3, 0x4f, 0x16, 0x06, 0xc6, 0xf8, 0x84, 0x96, 0xaa,
-	0x73, 0x55, 0xd3, 0x03, 0x5a, 0x32, 0xa9, 0x22, 0xe3, 0xec, 0x59, 0xe9, 0x1d, 0x39, 0xd9, 0xde,
-	0xca, 0xe9, 0xbb, 0x80, 0xe8, 0xc6, 0x65, 0xc6, 0xde, 0xd5, 0x69, 0x8a, 0xa8, 0x51, 0xcb, 0x31,
-	0x74, 0xeb, 0x0a, 0x7d, 0x62, 0x55, 0x81, 0x31, 0x4c, 0xc4, 0xac, 0xbb, 0xea, 0x04, 0x70, 0xab,
-	0x0a, 0x94, 0xc7, 0x00, 0x2c, 0x55, 0x86, 0x96, 0xe2, 0x1e, 0x5b, 0x1e, 0x9f, 0x07, 0x20, 0x23,
-	0x68, 0x99, 0x32, 0xee, 0x33, 0x6e, 0x99, 0x52, 0x9e, 0x40, 0xcf, 0xe3, 0x63, 0x8d, 0x15, 0x25,
-	0xb5, 0xcf, 0xe3, 0x03, 0x16, 0xd0, 0xa0, 0xb5, 0xcf, 0xe5, 0x11, 0xec, 0x73, 0x9e, 0xd1, 0x71,
-	0xc4, 0xb2, 0x1d, 0x3e, 0x97, 0x5a, 0x9e, 0xc2, 0xc0, 0xf9, 0x4c, 0x59, 0xf3, 0xc2, 0xb5, 0xc3,
-	0xc0, 0x60, 0x22, 0x66, 0x7b, 0xab, 0xe8, 0x27, 0x5e, 0xea, 0xe9, 0x9b, 0x80, 0x1e, 0x6f, 0xb0,
-	0x50, 0x26, 0xdf, 0xbd, 0xfa, 0xaf, 0x02, 0x46, 0x5c, 0x7f, 0x4e, 0x84, 0x45, 0x49, 0xd5, 0xf5,
-	0xf3, 0x5f, 0x7a, 0x87, 0xe9, 0x87, 0x80, 0xfe, 0xb2, 0x28, 0xd1, 0x57, 0xce, 0x2a, 0xda, 0xb9,
-	0xff, 0x2b, 0x2f, 0x60, 0x64, 0x9a, 0xfa, 0x14, 0xfa, 0x27, 0xdf, 0x79, 0x87, 0x9c, 0x37, 0xfc,
-	0x25, 0xd7, 0xdb, 0x9d, 0x3f, 0x05, 0x0c, 0xe7, 0x69, 0x08, 0x08, 0x60, 0xe1, 0xfc, 0xc6, 0x68,
-	0x8d, 0xf6, 0x1f, 0xac, 0x7e, 0xd5, 0xb9, 0x6f, 0x2e, 0xc3, 0xa6, 0xcd, 0x87, 0xe2, 0xf2, 0x2b,
-	0x00, 0x00, 0xff, 0xff, 0x83, 0x86, 0x0a, 0x17, 0x47, 0x04, 0x00, 0x00,
+var fileDescriptor_authentication_c0559713f9e0e912 = []byte{
+	// 315 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xd4, 0x94, 0x4f, 0x4b, 0x02, 0x41,
+	0x18, 0xc6, 0x19, 0x03, 0xd3, 0x57, 0x5b, 0x63, 0x4c, 0x5a, 0x90, 0x48, 0xf6, 0x92, 0xa7, 0x82,
+	0xfa, 0x04, 0x06, 0x09, 0x42, 0x74, 0xb0, 0xbc, 0x74, 0x91, 0x71, 0xe7, 0xcd, 0x86, 0xdc, 0x99,
+	0x6d, 0xf6, 0xdd, 0x08, 0xcf, 0x7d, 0xaf, 0x2e, 0x7d, 0xa1, 0xbe, 0x41, 0xcc, 0xab, 0x51, 0xdd,
+	0xa3, 0xf0, 0xb8, 0xcf, 0xef, 0xe5, 0xd9, 0xe7, 0x99, 0x7f, 0xd0, 0xc5, 0x27, 0xb4, 0x54, 0x9c,
+	0xa8, 0x92, 0xee, 0xd1, 0x92, 0x49, 0x15, 0x19, 0x67, 0x8f, 0x73, 0xef, 0xc8, 0xc9, 0xea, 0x0a,
+	0x26, 0xaf, 0x02, 0xa2, 0x4b, 0x37, 0x37, 0xf6, 0xba, 0x4c, 0x53, 0x44, 0x8d, 0x5a, 0x76, 0xa1,
+	0x5e, 0x16, 0xe8, 0xa7, 0x56, 0x65, 0x18, 0x43, 0x4f, 0xf4, 0xeb, 0xe3, 0x5a, 0x10, 0xae, 0x54,
+	0x86, 0xf2, 0x00, 0x80, 0xa1, 0x9a, 0xa3, 0xa5, 0xb8, 0xc1, 0x94, 0xc7, 0x07, 0x41, 0x90, 0x11,
+	0x54, 0x4c, 0x1e, 0x37, 0x59, 0xae, 0x98, 0x5c, 0x1e, 0x42, 0xc3, 0xe3, 0x63, 0x89, 0x05, 0x4d,
+	0x4b, 0xbf, 0x88, 0x77, 0x18, 0xc0, 0x5a, 0x9a, 0xf8, 0x85, 0xdc, 0x87, 0x6d, 0xf6, 0x33, 0x3a,
+	0x8e, 0x18, 0x56, 0xc3, 0xe7, 0x48, 0xcb, 0x23, 0x68, 0x39, 0x3f, 0x57, 0xd6, 0x2c, 0x39, 0x76,
+	0x18, 0x68, 0xf5, 0x44, 0x7f, 0x6b, 0x1c, 0x7d, 0x97, 0x47, 0x3a, 0x59, 0x42, 0x83, 0x0b, 0x0c,
+	0x95, 0x59, 0xfc, 0x71, 0xfa, 0xe4, 0x45, 0x40, 0x87, 0x7f, 0x3e, 0x20, 0xc2, 0x2c, 0xa7, 0xe2,
+	0xe2, 0xf9, 0x1f, 0x16, 0x31, 0x79, 0x17, 0xd0, 0x1c, 0x65, 0x39, 0xfa, 0xc2, 0x59, 0x45, 0x1b,
+	0xb7, 0x85, 0xf2, 0x14, 0x3a, 0x66, 0x1d, 0x9f, 0x42, 0xfe, 0xe9, 0xa7, 0xdf, 0x2e, 0xfb, 0xb5,
+	0x7f, 0xc0, 0x09, 0x9b, 0x27, 0x6f, 0x02, 0xda, 0x83, 0x34, 0x18, 0x04, 0x61, 0xe8, 0xfc, 0xcc,
+	0x68, 0x8d, 0x76, 0xd3, 0x4e, 0xef, 0x1d, 0xec, 0xad, 0x5a, 0xdc, 0xb8, 0x07, 0xb4, 0x5f, 0x35,
+	0x7e, 0x39, 0xe9, 0x79, 0xed, 0x76, 0x7d, 0xe3, 0x67, 0x55, 0x7e, 0x00, 0xce, 0x3e, 0x02, 0x00,
+	0x00, 0xff, 0xff, 0xca, 0x68, 0x41, 0x0e, 0x1f, 0x04, 0x00, 0x00,
 }

@@ -137,12 +137,6 @@ export namespace events {
 
         /** LoginFailed requestUrl */
         requestUrl?: (string|null);
-
-        /** LoginFailed userId */
-        userId?: (string|null);
-
-        /** LoginFailed organizationId */
-        organizationId?: (number|Long|null);
     }
 
     /** Represents a LoginFailed. */
@@ -165,12 +159,6 @@ export namespace events {
 
         /** LoginFailed requestUrl. */
         public requestUrl: string;
-
-        /** LoginFailed userId. */
-        public userId: string;
-
-        /** LoginFailed organizationId. */
-        public organizationId: (number|Long);
 
         /**
          * Creates a new LoginFailed instance using the specified properties.
@@ -257,9 +245,6 @@ export namespace events {
 
         /** LoginAttemptsExceeded requestUrl */
         requestUrl?: (string|null);
-
-        /** LoginAttemptsExceeded userId */
-        userId?: (string|null);
     }
 
     /** Represents a LoginAttemptsExceeded. */
@@ -282,9 +267,6 @@ export namespace events {
 
         /** LoginAttemptsExceeded requestUrl. */
         public requestUrl: string;
-
-        /** LoginAttemptsExceeded userId. */
-        public userId: string;
 
         /**
          * Creates a new LoginAttemptsExceeded instance using the specified properties.
@@ -503,9 +485,6 @@ export namespace events {
 
         /** ActionUserForbidden organizationId */
         organizationId?: (number|Long|null);
-
-        /** ActionUserForbidden impersontatedUserId */
-        impersontatedUserId?: (string|null);
     }
 
     /** Represents an ActionUserForbidden. */
@@ -534,9 +513,6 @@ export namespace events {
 
         /** ActionUserForbidden organizationId. */
         public organizationId: (number|Long);
-
-        /** ActionUserForbidden impersontatedUserId. */
-        public impersontatedUserId: string;
 
         /**
          * Creates a new ActionUserForbidden instance using the specified properties.
@@ -604,6 +580,108 @@ export namespace events {
 
         /**
          * Converts this ActionUserForbidden to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an ActionTokenForbidden. */
+    interface IActionTokenForbidden {
+
+        /** ActionTokenForbidden userAgent */
+        userAgent?: (string|null);
+
+        /** ActionTokenForbidden ip */
+        ip?: (string|null);
+
+        /** ActionTokenForbidden requestUrl */
+        requestUrl?: (string|null);
+    }
+
+    /** Represents an ActionTokenForbidden. */
+    class ActionTokenForbidden implements IActionTokenForbidden {
+
+        /**
+         * Constructs a new ActionTokenForbidden.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IActionTokenForbidden);
+
+        /** ActionTokenForbidden userAgent. */
+        public userAgent: string;
+
+        /** ActionTokenForbidden ip. */
+        public ip: string;
+
+        /** ActionTokenForbidden requestUrl. */
+        public requestUrl: string;
+
+        /**
+         * Creates a new ActionTokenForbidden instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns ActionTokenForbidden instance
+         */
+        public static create(properties?: events.IActionTokenForbidden): events.ActionTokenForbidden;
+
+        /**
+         * Encodes the specified ActionTokenForbidden message. Does not implicitly {@link events.ActionTokenForbidden.verify|verify} messages.
+         * @param message ActionTokenForbidden message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IActionTokenForbidden, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified ActionTokenForbidden message, length delimited. Does not implicitly {@link events.ActionTokenForbidden.verify|verify} messages.
+         * @param message ActionTokenForbidden message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IActionTokenForbidden, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an ActionTokenForbidden message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns ActionTokenForbidden
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.ActionTokenForbidden;
+
+        /**
+         * Decodes an ActionTokenForbidden message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns ActionTokenForbidden
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.ActionTokenForbidden;
+
+        /**
+         * Verifies an ActionTokenForbidden message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an ActionTokenForbidden message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns ActionTokenForbidden
+         */
+        public static fromObject(object: { [k: string]: any }): events.ActionTokenForbidden;
+
+        /**
+         * Creates a plain object from an ActionTokenForbidden message. Also converts values to other types if specified.
+         * @param message ActionTokenForbidden
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.ActionTokenForbidden, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this ActionTokenForbidden to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };

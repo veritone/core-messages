@@ -179,6 +179,10 @@
             <ul>
               
                 <li>
+                  <a href="#events.ActionTokenForbidden"><span class="badge">M</span>ActionTokenForbidden</a>
+                </li>
+              
+                <li>
                   <a href="#events.ActionUserForbidden"><span class="badge">M</span>ActionUserForbidden</a>
                 </li>
               
@@ -410,6 +414,43 @@
       <p></p>
 
       
+        <h3 id="events.ActionTokenForbidden">ActionTokenForbidden</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>user_agent</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ip</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>request_url</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="events.ActionUserForbidden">ActionUserForbidden</h3>
         <p></p>
 
@@ -458,13 +499,6 @@
                 <tr>
                   <td>organization_id</td>
                   <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>impersontated_user_id</td>
-                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -578,13 +612,6 @@
                   <td><p> </p></td>
                 </tr>
               
-                <tr>
-                  <td>user_id</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
             </tbody>
           </table>
         
@@ -625,20 +652,6 @@
                 <tr>
                   <td>request_url</td>
                   <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>user_id</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>organization_id</td>
-                  <td><a href="#int64">int64</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
