@@ -10183,6 +10183,2134 @@ $root.events = (function() {
         return SMSNotification;
     })();
 
+    events.RecordingImageExtracted = (function() {
+
+        /**
+         * Properties of a RecordingImageExtracted.
+         * @memberof events
+         * @interface IRecordingImageExtracted
+         * @property {string|null} [jobId] RecordingImageExtracted jobId
+         * @property {string|null} [taskId] RecordingImageExtracted taskId
+         * @property {number|null} [sampleIndex] RecordingImageExtracted sampleIndex
+         * @property {number|null} [sampleRatePerSec] RecordingImageExtracted sampleRatePerSec
+         * @property {string|null} [uri] RecordingImageExtracted uri
+         */
+
+        /**
+         * Constructs a new RecordingImageExtracted.
+         * @memberof events
+         * @classdesc Represents a RecordingImageExtracted.
+         * @implements IRecordingImageExtracted
+         * @constructor
+         * @param {events.IRecordingImageExtracted=} [properties] Properties to set
+         */
+        function RecordingImageExtracted(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * RecordingImageExtracted jobId.
+         * @member {string} jobId
+         * @memberof events.RecordingImageExtracted
+         * @instance
+         */
+        RecordingImageExtracted.prototype.jobId = "";
+
+        /**
+         * RecordingImageExtracted taskId.
+         * @member {string} taskId
+         * @memberof events.RecordingImageExtracted
+         * @instance
+         */
+        RecordingImageExtracted.prototype.taskId = "";
+
+        /**
+         * RecordingImageExtracted sampleIndex.
+         * @member {number} sampleIndex
+         * @memberof events.RecordingImageExtracted
+         * @instance
+         */
+        RecordingImageExtracted.prototype.sampleIndex = 0;
+
+        /**
+         * RecordingImageExtracted sampleRatePerSec.
+         * @member {number} sampleRatePerSec
+         * @memberof events.RecordingImageExtracted
+         * @instance
+         */
+        RecordingImageExtracted.prototype.sampleRatePerSec = 0;
+
+        /**
+         * RecordingImageExtracted uri.
+         * @member {string} uri
+         * @memberof events.RecordingImageExtracted
+         * @instance
+         */
+        RecordingImageExtracted.prototype.uri = "";
+
+        /**
+         * Creates a new RecordingImageExtracted instance using the specified properties.
+         * @function create
+         * @memberof events.RecordingImageExtracted
+         * @static
+         * @param {events.IRecordingImageExtracted=} [properties] Properties to set
+         * @returns {events.RecordingImageExtracted} RecordingImageExtracted instance
+         */
+        RecordingImageExtracted.create = function create(properties) {
+            return new RecordingImageExtracted(properties);
+        };
+
+        /**
+         * Encodes the specified RecordingImageExtracted message. Does not implicitly {@link events.RecordingImageExtracted.verify|verify} messages.
+         * @function encode
+         * @memberof events.RecordingImageExtracted
+         * @static
+         * @param {events.IRecordingImageExtracted} message RecordingImageExtracted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RecordingImageExtracted.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.jobId);
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.taskId);
+            if (message.sampleIndex != null && message.hasOwnProperty("sampleIndex"))
+                writer.uint32(/* id 12, wireType 0 =*/96).int32(message.sampleIndex);
+            if (message.sampleRatePerSec != null && message.hasOwnProperty("sampleRatePerSec"))
+                writer.uint32(/* id 13, wireType 1 =*/105).double(message.sampleRatePerSec);
+            if (message.uri != null && message.hasOwnProperty("uri"))
+                writer.uint32(/* id 14, wireType 2 =*/114).string(message.uri);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified RecordingImageExtracted message, length delimited. Does not implicitly {@link events.RecordingImageExtracted.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.RecordingImageExtracted
+         * @static
+         * @param {events.IRecordingImageExtracted} message RecordingImageExtracted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RecordingImageExtracted.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a RecordingImageExtracted message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.RecordingImageExtracted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.RecordingImageExtracted} RecordingImageExtracted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RecordingImageExtracted.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.RecordingImageExtracted();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.jobId = reader.string();
+                    break;
+                case 11:
+                    message.taskId = reader.string();
+                    break;
+                case 12:
+                    message.sampleIndex = reader.int32();
+                    break;
+                case 13:
+                    message.sampleRatePerSec = reader.double();
+                    break;
+                case 14:
+                    message.uri = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a RecordingImageExtracted message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.RecordingImageExtracted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.RecordingImageExtracted} RecordingImageExtracted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RecordingImageExtracted.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a RecordingImageExtracted message.
+         * @function verify
+         * @memberof events.RecordingImageExtracted
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        RecordingImageExtracted.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                if (!$util.isString(message.jobId))
+                    return "jobId: string expected";
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                if (!$util.isString(message.taskId))
+                    return "taskId: string expected";
+            if (message.sampleIndex != null && message.hasOwnProperty("sampleIndex"))
+                if (!$util.isInteger(message.sampleIndex))
+                    return "sampleIndex: integer expected";
+            if (message.sampleRatePerSec != null && message.hasOwnProperty("sampleRatePerSec"))
+                if (typeof message.sampleRatePerSec !== "number")
+                    return "sampleRatePerSec: number expected";
+            if (message.uri != null && message.hasOwnProperty("uri"))
+                if (!$util.isString(message.uri))
+                    return "uri: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a RecordingImageExtracted message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.RecordingImageExtracted
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.RecordingImageExtracted} RecordingImageExtracted
+         */
+        RecordingImageExtracted.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.RecordingImageExtracted)
+                return object;
+            var message = new $root.events.RecordingImageExtracted();
+            if (object.jobId != null)
+                message.jobId = String(object.jobId);
+            if (object.taskId != null)
+                message.taskId = String(object.taskId);
+            if (object.sampleIndex != null)
+                message.sampleIndex = object.sampleIndex | 0;
+            if (object.sampleRatePerSec != null)
+                message.sampleRatePerSec = Number(object.sampleRatePerSec);
+            if (object.uri != null)
+                message.uri = String(object.uri);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a RecordingImageExtracted message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.RecordingImageExtracted
+         * @static
+         * @param {events.RecordingImageExtracted} message RecordingImageExtracted
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        RecordingImageExtracted.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.jobId = "";
+                object.taskId = "";
+                object.sampleIndex = 0;
+                object.sampleRatePerSec = 0;
+                object.uri = "";
+            }
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                object.jobId = message.jobId;
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                object.taskId = message.taskId;
+            if (message.sampleIndex != null && message.hasOwnProperty("sampleIndex"))
+                object.sampleIndex = message.sampleIndex;
+            if (message.sampleRatePerSec != null && message.hasOwnProperty("sampleRatePerSec"))
+                object.sampleRatePerSec = options.json && !isFinite(message.sampleRatePerSec) ? String(message.sampleRatePerSec) : message.sampleRatePerSec;
+            if (message.uri != null && message.hasOwnProperty("uri"))
+                object.uri = message.uri;
+            return object;
+        };
+
+        /**
+         * Converts this RecordingImageExtracted to JSON.
+         * @function toJSON
+         * @memberof events.RecordingImageExtracted
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        RecordingImageExtracted.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return RecordingImageExtracted;
+    })();
+
+    events.RecordingVideoFragmentCaptured = (function() {
+
+        /**
+         * Properties of a RecordingVideoFragmentCaptured.
+         * @memberof events
+         * @interface IRecordingVideoFragmentCaptured
+         * @property {string|null} [jobId] RecordingVideoFragmentCaptured jobId
+         * @property {string|null} [taskId] RecordingVideoFragmentCaptured taskId
+         * @property {number|null} [sampleIndex] RecordingVideoFragmentCaptured sampleIndex
+         * @property {number|null} [relativeStartTimeMs] RecordingVideoFragmentCaptured relativeStartTimeMs
+         * @property {number|null} [relativeEndTimeMs] RecordingVideoFragmentCaptured relativeEndTimeMs
+         * @property {string|null} [uri] RecordingVideoFragmentCaptured uri
+         */
+
+        /**
+         * Constructs a new RecordingVideoFragmentCaptured.
+         * @memberof events
+         * @classdesc Represents a RecordingVideoFragmentCaptured.
+         * @implements IRecordingVideoFragmentCaptured
+         * @constructor
+         * @param {events.IRecordingVideoFragmentCaptured=} [properties] Properties to set
+         */
+        function RecordingVideoFragmentCaptured(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * RecordingVideoFragmentCaptured jobId.
+         * @member {string} jobId
+         * @memberof events.RecordingVideoFragmentCaptured
+         * @instance
+         */
+        RecordingVideoFragmentCaptured.prototype.jobId = "";
+
+        /**
+         * RecordingVideoFragmentCaptured taskId.
+         * @member {string} taskId
+         * @memberof events.RecordingVideoFragmentCaptured
+         * @instance
+         */
+        RecordingVideoFragmentCaptured.prototype.taskId = "";
+
+        /**
+         * RecordingVideoFragmentCaptured sampleIndex.
+         * @member {number} sampleIndex
+         * @memberof events.RecordingVideoFragmentCaptured
+         * @instance
+         */
+        RecordingVideoFragmentCaptured.prototype.sampleIndex = 0;
+
+        /**
+         * RecordingVideoFragmentCaptured relativeStartTimeMs.
+         * @member {number} relativeStartTimeMs
+         * @memberof events.RecordingVideoFragmentCaptured
+         * @instance
+         */
+        RecordingVideoFragmentCaptured.prototype.relativeStartTimeMs = 0;
+
+        /**
+         * RecordingVideoFragmentCaptured relativeEndTimeMs.
+         * @member {number} relativeEndTimeMs
+         * @memberof events.RecordingVideoFragmentCaptured
+         * @instance
+         */
+        RecordingVideoFragmentCaptured.prototype.relativeEndTimeMs = 0;
+
+        /**
+         * RecordingVideoFragmentCaptured uri.
+         * @member {string} uri
+         * @memberof events.RecordingVideoFragmentCaptured
+         * @instance
+         */
+        RecordingVideoFragmentCaptured.prototype.uri = "";
+
+        /**
+         * Creates a new RecordingVideoFragmentCaptured instance using the specified properties.
+         * @function create
+         * @memberof events.RecordingVideoFragmentCaptured
+         * @static
+         * @param {events.IRecordingVideoFragmentCaptured=} [properties] Properties to set
+         * @returns {events.RecordingVideoFragmentCaptured} RecordingVideoFragmentCaptured instance
+         */
+        RecordingVideoFragmentCaptured.create = function create(properties) {
+            return new RecordingVideoFragmentCaptured(properties);
+        };
+
+        /**
+         * Encodes the specified RecordingVideoFragmentCaptured message. Does not implicitly {@link events.RecordingVideoFragmentCaptured.verify|verify} messages.
+         * @function encode
+         * @memberof events.RecordingVideoFragmentCaptured
+         * @static
+         * @param {events.IRecordingVideoFragmentCaptured} message RecordingVideoFragmentCaptured message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RecordingVideoFragmentCaptured.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.jobId);
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.taskId);
+            if (message.sampleIndex != null && message.hasOwnProperty("sampleIndex"))
+                writer.uint32(/* id 12, wireType 0 =*/96).int32(message.sampleIndex);
+            if (message.relativeStartTimeMs != null && message.hasOwnProperty("relativeStartTimeMs"))
+                writer.uint32(/* id 13, wireType 0 =*/104).int32(message.relativeStartTimeMs);
+            if (message.relativeEndTimeMs != null && message.hasOwnProperty("relativeEndTimeMs"))
+                writer.uint32(/* id 14, wireType 0 =*/112).int32(message.relativeEndTimeMs);
+            if (message.uri != null && message.hasOwnProperty("uri"))
+                writer.uint32(/* id 15, wireType 2 =*/122).string(message.uri);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified RecordingVideoFragmentCaptured message, length delimited. Does not implicitly {@link events.RecordingVideoFragmentCaptured.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.RecordingVideoFragmentCaptured
+         * @static
+         * @param {events.IRecordingVideoFragmentCaptured} message RecordingVideoFragmentCaptured message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RecordingVideoFragmentCaptured.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a RecordingVideoFragmentCaptured message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.RecordingVideoFragmentCaptured
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.RecordingVideoFragmentCaptured} RecordingVideoFragmentCaptured
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RecordingVideoFragmentCaptured.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.RecordingVideoFragmentCaptured();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.jobId = reader.string();
+                    break;
+                case 11:
+                    message.taskId = reader.string();
+                    break;
+                case 12:
+                    message.sampleIndex = reader.int32();
+                    break;
+                case 13:
+                    message.relativeStartTimeMs = reader.int32();
+                    break;
+                case 14:
+                    message.relativeEndTimeMs = reader.int32();
+                    break;
+                case 15:
+                    message.uri = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a RecordingVideoFragmentCaptured message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.RecordingVideoFragmentCaptured
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.RecordingVideoFragmentCaptured} RecordingVideoFragmentCaptured
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RecordingVideoFragmentCaptured.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a RecordingVideoFragmentCaptured message.
+         * @function verify
+         * @memberof events.RecordingVideoFragmentCaptured
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        RecordingVideoFragmentCaptured.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                if (!$util.isString(message.jobId))
+                    return "jobId: string expected";
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                if (!$util.isString(message.taskId))
+                    return "taskId: string expected";
+            if (message.sampleIndex != null && message.hasOwnProperty("sampleIndex"))
+                if (!$util.isInteger(message.sampleIndex))
+                    return "sampleIndex: integer expected";
+            if (message.relativeStartTimeMs != null && message.hasOwnProperty("relativeStartTimeMs"))
+                if (!$util.isInteger(message.relativeStartTimeMs))
+                    return "relativeStartTimeMs: integer expected";
+            if (message.relativeEndTimeMs != null && message.hasOwnProperty("relativeEndTimeMs"))
+                if (!$util.isInteger(message.relativeEndTimeMs))
+                    return "relativeEndTimeMs: integer expected";
+            if (message.uri != null && message.hasOwnProperty("uri"))
+                if (!$util.isString(message.uri))
+                    return "uri: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a RecordingVideoFragmentCaptured message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.RecordingVideoFragmentCaptured
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.RecordingVideoFragmentCaptured} RecordingVideoFragmentCaptured
+         */
+        RecordingVideoFragmentCaptured.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.RecordingVideoFragmentCaptured)
+                return object;
+            var message = new $root.events.RecordingVideoFragmentCaptured();
+            if (object.jobId != null)
+                message.jobId = String(object.jobId);
+            if (object.taskId != null)
+                message.taskId = String(object.taskId);
+            if (object.sampleIndex != null)
+                message.sampleIndex = object.sampleIndex | 0;
+            if (object.relativeStartTimeMs != null)
+                message.relativeStartTimeMs = object.relativeStartTimeMs | 0;
+            if (object.relativeEndTimeMs != null)
+                message.relativeEndTimeMs = object.relativeEndTimeMs | 0;
+            if (object.uri != null)
+                message.uri = String(object.uri);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a RecordingVideoFragmentCaptured message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.RecordingVideoFragmentCaptured
+         * @static
+         * @param {events.RecordingVideoFragmentCaptured} message RecordingVideoFragmentCaptured
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        RecordingVideoFragmentCaptured.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.jobId = "";
+                object.taskId = "";
+                object.sampleIndex = 0;
+                object.relativeStartTimeMs = 0;
+                object.relativeEndTimeMs = 0;
+                object.uri = "";
+            }
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                object.jobId = message.jobId;
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                object.taskId = message.taskId;
+            if (message.sampleIndex != null && message.hasOwnProperty("sampleIndex"))
+                object.sampleIndex = message.sampleIndex;
+            if (message.relativeStartTimeMs != null && message.hasOwnProperty("relativeStartTimeMs"))
+                object.relativeStartTimeMs = message.relativeStartTimeMs;
+            if (message.relativeEndTimeMs != null && message.hasOwnProperty("relativeEndTimeMs"))
+                object.relativeEndTimeMs = message.relativeEndTimeMs;
+            if (message.uri != null && message.hasOwnProperty("uri"))
+                object.uri = message.uri;
+            return object;
+        };
+
+        /**
+         * Converts this RecordingVideoFragmentCaptured to JSON.
+         * @function toJSON
+         * @memberof events.RecordingVideoFragmentCaptured
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        RecordingVideoFragmentCaptured.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return RecordingVideoFragmentCaptured;
+    })();
+
+    events.RecordingAudioFragmentCaptured = (function() {
+
+        /**
+         * Properties of a RecordingAudioFragmentCaptured.
+         * @memberof events
+         * @interface IRecordingAudioFragmentCaptured
+         * @property {string|null} [jobId] RecordingAudioFragmentCaptured jobId
+         * @property {string|null} [taskId] RecordingAudioFragmentCaptured taskId
+         * @property {number|null} [sampleIndex] RecordingAudioFragmentCaptured sampleIndex
+         * @property {number|null} [relativeStartTimeMs] RecordingAudioFragmentCaptured relativeStartTimeMs
+         * @property {number|null} [relativeEndTimeMs] RecordingAudioFragmentCaptured relativeEndTimeMs
+         * @property {string|null} [uri] RecordingAudioFragmentCaptured uri
+         */
+
+        /**
+         * Constructs a new RecordingAudioFragmentCaptured.
+         * @memberof events
+         * @classdesc Represents a RecordingAudioFragmentCaptured.
+         * @implements IRecordingAudioFragmentCaptured
+         * @constructor
+         * @param {events.IRecordingAudioFragmentCaptured=} [properties] Properties to set
+         */
+        function RecordingAudioFragmentCaptured(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * RecordingAudioFragmentCaptured jobId.
+         * @member {string} jobId
+         * @memberof events.RecordingAudioFragmentCaptured
+         * @instance
+         */
+        RecordingAudioFragmentCaptured.prototype.jobId = "";
+
+        /**
+         * RecordingAudioFragmentCaptured taskId.
+         * @member {string} taskId
+         * @memberof events.RecordingAudioFragmentCaptured
+         * @instance
+         */
+        RecordingAudioFragmentCaptured.prototype.taskId = "";
+
+        /**
+         * RecordingAudioFragmentCaptured sampleIndex.
+         * @member {number} sampleIndex
+         * @memberof events.RecordingAudioFragmentCaptured
+         * @instance
+         */
+        RecordingAudioFragmentCaptured.prototype.sampleIndex = 0;
+
+        /**
+         * RecordingAudioFragmentCaptured relativeStartTimeMs.
+         * @member {number} relativeStartTimeMs
+         * @memberof events.RecordingAudioFragmentCaptured
+         * @instance
+         */
+        RecordingAudioFragmentCaptured.prototype.relativeStartTimeMs = 0;
+
+        /**
+         * RecordingAudioFragmentCaptured relativeEndTimeMs.
+         * @member {number} relativeEndTimeMs
+         * @memberof events.RecordingAudioFragmentCaptured
+         * @instance
+         */
+        RecordingAudioFragmentCaptured.prototype.relativeEndTimeMs = 0;
+
+        /**
+         * RecordingAudioFragmentCaptured uri.
+         * @member {string} uri
+         * @memberof events.RecordingAudioFragmentCaptured
+         * @instance
+         */
+        RecordingAudioFragmentCaptured.prototype.uri = "";
+
+        /**
+         * Creates a new RecordingAudioFragmentCaptured instance using the specified properties.
+         * @function create
+         * @memberof events.RecordingAudioFragmentCaptured
+         * @static
+         * @param {events.IRecordingAudioFragmentCaptured=} [properties] Properties to set
+         * @returns {events.RecordingAudioFragmentCaptured} RecordingAudioFragmentCaptured instance
+         */
+        RecordingAudioFragmentCaptured.create = function create(properties) {
+            return new RecordingAudioFragmentCaptured(properties);
+        };
+
+        /**
+         * Encodes the specified RecordingAudioFragmentCaptured message. Does not implicitly {@link events.RecordingAudioFragmentCaptured.verify|verify} messages.
+         * @function encode
+         * @memberof events.RecordingAudioFragmentCaptured
+         * @static
+         * @param {events.IRecordingAudioFragmentCaptured} message RecordingAudioFragmentCaptured message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RecordingAudioFragmentCaptured.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.jobId);
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.taskId);
+            if (message.sampleIndex != null && message.hasOwnProperty("sampleIndex"))
+                writer.uint32(/* id 12, wireType 0 =*/96).int32(message.sampleIndex);
+            if (message.relativeStartTimeMs != null && message.hasOwnProperty("relativeStartTimeMs"))
+                writer.uint32(/* id 13, wireType 0 =*/104).int32(message.relativeStartTimeMs);
+            if (message.relativeEndTimeMs != null && message.hasOwnProperty("relativeEndTimeMs"))
+                writer.uint32(/* id 14, wireType 0 =*/112).int32(message.relativeEndTimeMs);
+            if (message.uri != null && message.hasOwnProperty("uri"))
+                writer.uint32(/* id 15, wireType 2 =*/122).string(message.uri);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified RecordingAudioFragmentCaptured message, length delimited. Does not implicitly {@link events.RecordingAudioFragmentCaptured.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.RecordingAudioFragmentCaptured
+         * @static
+         * @param {events.IRecordingAudioFragmentCaptured} message RecordingAudioFragmentCaptured message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RecordingAudioFragmentCaptured.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a RecordingAudioFragmentCaptured message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.RecordingAudioFragmentCaptured
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.RecordingAudioFragmentCaptured} RecordingAudioFragmentCaptured
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RecordingAudioFragmentCaptured.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.RecordingAudioFragmentCaptured();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.jobId = reader.string();
+                    break;
+                case 11:
+                    message.taskId = reader.string();
+                    break;
+                case 12:
+                    message.sampleIndex = reader.int32();
+                    break;
+                case 13:
+                    message.relativeStartTimeMs = reader.int32();
+                    break;
+                case 14:
+                    message.relativeEndTimeMs = reader.int32();
+                    break;
+                case 15:
+                    message.uri = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a RecordingAudioFragmentCaptured message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.RecordingAudioFragmentCaptured
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.RecordingAudioFragmentCaptured} RecordingAudioFragmentCaptured
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RecordingAudioFragmentCaptured.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a RecordingAudioFragmentCaptured message.
+         * @function verify
+         * @memberof events.RecordingAudioFragmentCaptured
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        RecordingAudioFragmentCaptured.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                if (!$util.isString(message.jobId))
+                    return "jobId: string expected";
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                if (!$util.isString(message.taskId))
+                    return "taskId: string expected";
+            if (message.sampleIndex != null && message.hasOwnProperty("sampleIndex"))
+                if (!$util.isInteger(message.sampleIndex))
+                    return "sampleIndex: integer expected";
+            if (message.relativeStartTimeMs != null && message.hasOwnProperty("relativeStartTimeMs"))
+                if (!$util.isInteger(message.relativeStartTimeMs))
+                    return "relativeStartTimeMs: integer expected";
+            if (message.relativeEndTimeMs != null && message.hasOwnProperty("relativeEndTimeMs"))
+                if (!$util.isInteger(message.relativeEndTimeMs))
+                    return "relativeEndTimeMs: integer expected";
+            if (message.uri != null && message.hasOwnProperty("uri"))
+                if (!$util.isString(message.uri))
+                    return "uri: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a RecordingAudioFragmentCaptured message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.RecordingAudioFragmentCaptured
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.RecordingAudioFragmentCaptured} RecordingAudioFragmentCaptured
+         */
+        RecordingAudioFragmentCaptured.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.RecordingAudioFragmentCaptured)
+                return object;
+            var message = new $root.events.RecordingAudioFragmentCaptured();
+            if (object.jobId != null)
+                message.jobId = String(object.jobId);
+            if (object.taskId != null)
+                message.taskId = String(object.taskId);
+            if (object.sampleIndex != null)
+                message.sampleIndex = object.sampleIndex | 0;
+            if (object.relativeStartTimeMs != null)
+                message.relativeStartTimeMs = object.relativeStartTimeMs | 0;
+            if (object.relativeEndTimeMs != null)
+                message.relativeEndTimeMs = object.relativeEndTimeMs | 0;
+            if (object.uri != null)
+                message.uri = String(object.uri);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a RecordingAudioFragmentCaptured message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.RecordingAudioFragmentCaptured
+         * @static
+         * @param {events.RecordingAudioFragmentCaptured} message RecordingAudioFragmentCaptured
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        RecordingAudioFragmentCaptured.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.jobId = "";
+                object.taskId = "";
+                object.sampleIndex = 0;
+                object.relativeStartTimeMs = 0;
+                object.relativeEndTimeMs = 0;
+                object.uri = "";
+            }
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                object.jobId = message.jobId;
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                object.taskId = message.taskId;
+            if (message.sampleIndex != null && message.hasOwnProperty("sampleIndex"))
+                object.sampleIndex = message.sampleIndex;
+            if (message.relativeStartTimeMs != null && message.hasOwnProperty("relativeStartTimeMs"))
+                object.relativeStartTimeMs = message.relativeStartTimeMs;
+            if (message.relativeEndTimeMs != null && message.hasOwnProperty("relativeEndTimeMs"))
+                object.relativeEndTimeMs = message.relativeEndTimeMs;
+            if (message.uri != null && message.hasOwnProperty("uri"))
+                object.uri = message.uri;
+            return object;
+        };
+
+        /**
+         * Converts this RecordingAudioFragmentCaptured to JSON.
+         * @function toJSON
+         * @memberof events.RecordingAudioFragmentCaptured
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        RecordingAudioFragmentCaptured.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return RecordingAudioFragmentCaptured;
+    })();
+
+    events.RecordingCompleted = (function() {
+
+        /**
+         * Properties of a RecordingCompleted.
+         * @memberof events
+         * @interface IRecordingCompleted
+         * @property {string|null} [jobId] RecordingCompleted jobId
+         * @property {string|null} [taskId] RecordingCompleted taskId
+         * @property {string|null} [recordingId] RecordingCompleted recordingId
+         */
+
+        /**
+         * Constructs a new RecordingCompleted.
+         * @memberof events
+         * @classdesc Represents a RecordingCompleted.
+         * @implements IRecordingCompleted
+         * @constructor
+         * @param {events.IRecordingCompleted=} [properties] Properties to set
+         */
+        function RecordingCompleted(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * RecordingCompleted jobId.
+         * @member {string} jobId
+         * @memberof events.RecordingCompleted
+         * @instance
+         */
+        RecordingCompleted.prototype.jobId = "";
+
+        /**
+         * RecordingCompleted taskId.
+         * @member {string} taskId
+         * @memberof events.RecordingCompleted
+         * @instance
+         */
+        RecordingCompleted.prototype.taskId = "";
+
+        /**
+         * RecordingCompleted recordingId.
+         * @member {string} recordingId
+         * @memberof events.RecordingCompleted
+         * @instance
+         */
+        RecordingCompleted.prototype.recordingId = "";
+
+        /**
+         * Creates a new RecordingCompleted instance using the specified properties.
+         * @function create
+         * @memberof events.RecordingCompleted
+         * @static
+         * @param {events.IRecordingCompleted=} [properties] Properties to set
+         * @returns {events.RecordingCompleted} RecordingCompleted instance
+         */
+        RecordingCompleted.create = function create(properties) {
+            return new RecordingCompleted(properties);
+        };
+
+        /**
+         * Encodes the specified RecordingCompleted message. Does not implicitly {@link events.RecordingCompleted.verify|verify} messages.
+         * @function encode
+         * @memberof events.RecordingCompleted
+         * @static
+         * @param {events.IRecordingCompleted} message RecordingCompleted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RecordingCompleted.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.jobId);
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.taskId);
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.recordingId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified RecordingCompleted message, length delimited. Does not implicitly {@link events.RecordingCompleted.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.RecordingCompleted
+         * @static
+         * @param {events.IRecordingCompleted} message RecordingCompleted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RecordingCompleted.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a RecordingCompleted message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.RecordingCompleted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.RecordingCompleted} RecordingCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RecordingCompleted.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.RecordingCompleted();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.jobId = reader.string();
+                    break;
+                case 11:
+                    message.taskId = reader.string();
+                    break;
+                case 12:
+                    message.recordingId = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a RecordingCompleted message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.RecordingCompleted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.RecordingCompleted} RecordingCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RecordingCompleted.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a RecordingCompleted message.
+         * @function verify
+         * @memberof events.RecordingCompleted
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        RecordingCompleted.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                if (!$util.isString(message.jobId))
+                    return "jobId: string expected";
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                if (!$util.isString(message.taskId))
+                    return "taskId: string expected";
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                if (!$util.isString(message.recordingId))
+                    return "recordingId: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a RecordingCompleted message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.RecordingCompleted
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.RecordingCompleted} RecordingCompleted
+         */
+        RecordingCompleted.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.RecordingCompleted)
+                return object;
+            var message = new $root.events.RecordingCompleted();
+            if (object.jobId != null)
+                message.jobId = String(object.jobId);
+            if (object.taskId != null)
+                message.taskId = String(object.taskId);
+            if (object.recordingId != null)
+                message.recordingId = String(object.recordingId);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a RecordingCompleted message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.RecordingCompleted
+         * @static
+         * @param {events.RecordingCompleted} message RecordingCompleted
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        RecordingCompleted.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.jobId = "";
+                object.taskId = "";
+                object.recordingId = "";
+            }
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                object.jobId = message.jobId;
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                object.taskId = message.taskId;
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                object.recordingId = message.recordingId;
+            return object;
+        };
+
+        /**
+         * Converts this RecordingCompleted to JSON.
+         * @function toJSON
+         * @memberof events.RecordingCompleted
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        RecordingCompleted.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return RecordingCompleted;
+    })();
+
+    events.RecordingAssetCreated = (function() {
+
+        /**
+         * Properties of a RecordingAssetCreated.
+         * @memberof events
+         * @interface IRecordingAssetCreated
+         * @property {string|null} [assetId] RecordingAssetCreated assetId
+         * @property {string|null} [taskId] RecordingAssetCreated taskId
+         * @property {string|null} [recordingId] RecordingAssetCreated recordingId
+         * @property {string|null} [assetType] RecordingAssetCreated assetType
+         * @property {string|null} [uri] RecordingAssetCreated uri
+         */
+
+        /**
+         * Constructs a new RecordingAssetCreated.
+         * @memberof events
+         * @classdesc Represents a RecordingAssetCreated.
+         * @implements IRecordingAssetCreated
+         * @constructor
+         * @param {events.IRecordingAssetCreated=} [properties] Properties to set
+         */
+        function RecordingAssetCreated(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * RecordingAssetCreated assetId.
+         * @member {string} assetId
+         * @memberof events.RecordingAssetCreated
+         * @instance
+         */
+        RecordingAssetCreated.prototype.assetId = "";
+
+        /**
+         * RecordingAssetCreated taskId.
+         * @member {string} taskId
+         * @memberof events.RecordingAssetCreated
+         * @instance
+         */
+        RecordingAssetCreated.prototype.taskId = "";
+
+        /**
+         * RecordingAssetCreated recordingId.
+         * @member {string} recordingId
+         * @memberof events.RecordingAssetCreated
+         * @instance
+         */
+        RecordingAssetCreated.prototype.recordingId = "";
+
+        /**
+         * RecordingAssetCreated assetType.
+         * @member {string} assetType
+         * @memberof events.RecordingAssetCreated
+         * @instance
+         */
+        RecordingAssetCreated.prototype.assetType = "";
+
+        /**
+         * RecordingAssetCreated uri.
+         * @member {string} uri
+         * @memberof events.RecordingAssetCreated
+         * @instance
+         */
+        RecordingAssetCreated.prototype.uri = "";
+
+        /**
+         * Creates a new RecordingAssetCreated instance using the specified properties.
+         * @function create
+         * @memberof events.RecordingAssetCreated
+         * @static
+         * @param {events.IRecordingAssetCreated=} [properties] Properties to set
+         * @returns {events.RecordingAssetCreated} RecordingAssetCreated instance
+         */
+        RecordingAssetCreated.create = function create(properties) {
+            return new RecordingAssetCreated(properties);
+        };
+
+        /**
+         * Encodes the specified RecordingAssetCreated message. Does not implicitly {@link events.RecordingAssetCreated.verify|verify} messages.
+         * @function encode
+         * @memberof events.RecordingAssetCreated
+         * @static
+         * @param {events.IRecordingAssetCreated} message RecordingAssetCreated message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RecordingAssetCreated.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.assetId != null && message.hasOwnProperty("assetId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.assetId);
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.taskId);
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.recordingId);
+            if (message.assetType != null && message.hasOwnProperty("assetType"))
+                writer.uint32(/* id 13, wireType 2 =*/106).string(message.assetType);
+            if (message.uri != null && message.hasOwnProperty("uri"))
+                writer.uint32(/* id 14, wireType 2 =*/114).string(message.uri);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified RecordingAssetCreated message, length delimited. Does not implicitly {@link events.RecordingAssetCreated.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.RecordingAssetCreated
+         * @static
+         * @param {events.IRecordingAssetCreated} message RecordingAssetCreated message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RecordingAssetCreated.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a RecordingAssetCreated message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.RecordingAssetCreated
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.RecordingAssetCreated} RecordingAssetCreated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RecordingAssetCreated.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.RecordingAssetCreated();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.assetId = reader.string();
+                    break;
+                case 11:
+                    message.taskId = reader.string();
+                    break;
+                case 12:
+                    message.recordingId = reader.string();
+                    break;
+                case 13:
+                    message.assetType = reader.string();
+                    break;
+                case 14:
+                    message.uri = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a RecordingAssetCreated message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.RecordingAssetCreated
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.RecordingAssetCreated} RecordingAssetCreated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RecordingAssetCreated.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a RecordingAssetCreated message.
+         * @function verify
+         * @memberof events.RecordingAssetCreated
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        RecordingAssetCreated.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.assetId != null && message.hasOwnProperty("assetId"))
+                if (!$util.isString(message.assetId))
+                    return "assetId: string expected";
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                if (!$util.isString(message.taskId))
+                    return "taskId: string expected";
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                if (!$util.isString(message.recordingId))
+                    return "recordingId: string expected";
+            if (message.assetType != null && message.hasOwnProperty("assetType"))
+                if (!$util.isString(message.assetType))
+                    return "assetType: string expected";
+            if (message.uri != null && message.hasOwnProperty("uri"))
+                if (!$util.isString(message.uri))
+                    return "uri: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a RecordingAssetCreated message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.RecordingAssetCreated
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.RecordingAssetCreated} RecordingAssetCreated
+         */
+        RecordingAssetCreated.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.RecordingAssetCreated)
+                return object;
+            var message = new $root.events.RecordingAssetCreated();
+            if (object.assetId != null)
+                message.assetId = String(object.assetId);
+            if (object.taskId != null)
+                message.taskId = String(object.taskId);
+            if (object.recordingId != null)
+                message.recordingId = String(object.recordingId);
+            if (object.assetType != null)
+                message.assetType = String(object.assetType);
+            if (object.uri != null)
+                message.uri = String(object.uri);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a RecordingAssetCreated message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.RecordingAssetCreated
+         * @static
+         * @param {events.RecordingAssetCreated} message RecordingAssetCreated
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        RecordingAssetCreated.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.assetId = "";
+                object.taskId = "";
+                object.recordingId = "";
+                object.assetType = "";
+                object.uri = "";
+            }
+            if (message.assetId != null && message.hasOwnProperty("assetId"))
+                object.assetId = message.assetId;
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                object.taskId = message.taskId;
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                object.recordingId = message.recordingId;
+            if (message.assetType != null && message.hasOwnProperty("assetType"))
+                object.assetType = message.assetType;
+            if (message.uri != null && message.hasOwnProperty("uri"))
+                object.uri = message.uri;
+            return object;
+        };
+
+        /**
+         * Converts this RecordingAssetCreated to JSON.
+         * @function toJSON
+         * @memberof events.RecordingAssetCreated
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        RecordingAssetCreated.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return RecordingAssetCreated;
+    })();
+
+    events.RecordingCreated = (function() {
+
+        /**
+         * Properties of a RecordingCreated.
+         * @memberof events
+         * @interface IRecordingCreated
+         * @property {string|null} [recordingId] RecordingCreated recordingId
+         */
+
+        /**
+         * Constructs a new RecordingCreated.
+         * @memberof events
+         * @classdesc Represents a RecordingCreated.
+         * @implements IRecordingCreated
+         * @constructor
+         * @param {events.IRecordingCreated=} [properties] Properties to set
+         */
+        function RecordingCreated(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * RecordingCreated recordingId.
+         * @member {string} recordingId
+         * @memberof events.RecordingCreated
+         * @instance
+         */
+        RecordingCreated.prototype.recordingId = "";
+
+        /**
+         * Creates a new RecordingCreated instance using the specified properties.
+         * @function create
+         * @memberof events.RecordingCreated
+         * @static
+         * @param {events.IRecordingCreated=} [properties] Properties to set
+         * @returns {events.RecordingCreated} RecordingCreated instance
+         */
+        RecordingCreated.create = function create(properties) {
+            return new RecordingCreated(properties);
+        };
+
+        /**
+         * Encodes the specified RecordingCreated message. Does not implicitly {@link events.RecordingCreated.verify|verify} messages.
+         * @function encode
+         * @memberof events.RecordingCreated
+         * @static
+         * @param {events.IRecordingCreated} message RecordingCreated message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RecordingCreated.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.recordingId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified RecordingCreated message, length delimited. Does not implicitly {@link events.RecordingCreated.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.RecordingCreated
+         * @static
+         * @param {events.IRecordingCreated} message RecordingCreated message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RecordingCreated.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a RecordingCreated message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.RecordingCreated
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.RecordingCreated} RecordingCreated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RecordingCreated.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.RecordingCreated();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.recordingId = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a RecordingCreated message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.RecordingCreated
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.RecordingCreated} RecordingCreated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RecordingCreated.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a RecordingCreated message.
+         * @function verify
+         * @memberof events.RecordingCreated
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        RecordingCreated.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                if (!$util.isString(message.recordingId))
+                    return "recordingId: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a RecordingCreated message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.RecordingCreated
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.RecordingCreated} RecordingCreated
+         */
+        RecordingCreated.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.RecordingCreated)
+                return object;
+            var message = new $root.events.RecordingCreated();
+            if (object.recordingId != null)
+                message.recordingId = String(object.recordingId);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a RecordingCreated message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.RecordingCreated
+         * @static
+         * @param {events.RecordingCreated} message RecordingCreated
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        RecordingCreated.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults)
+                object.recordingId = "";
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                object.recordingId = message.recordingId;
+            return object;
+        };
+
+        /**
+         * Converts this RecordingCreated to JSON.
+         * @function toJSON
+         * @memberof events.RecordingCreated
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        RecordingCreated.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return RecordingCreated;
+    })();
+
+    events.RecordingInserted = (function() {
+
+        /**
+         * Properties of a RecordingInserted.
+         * @memberof events
+         * @interface IRecordingInserted
+         * @property {string|null} [recordingId] RecordingInserted recordingId
+         */
+
+        /**
+         * Constructs a new RecordingInserted.
+         * @memberof events
+         * @classdesc Represents a RecordingInserted.
+         * @implements IRecordingInserted
+         * @constructor
+         * @param {events.IRecordingInserted=} [properties] Properties to set
+         */
+        function RecordingInserted(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * RecordingInserted recordingId.
+         * @member {string} recordingId
+         * @memberof events.RecordingInserted
+         * @instance
+         */
+        RecordingInserted.prototype.recordingId = "";
+
+        /**
+         * Creates a new RecordingInserted instance using the specified properties.
+         * @function create
+         * @memberof events.RecordingInserted
+         * @static
+         * @param {events.IRecordingInserted=} [properties] Properties to set
+         * @returns {events.RecordingInserted} RecordingInserted instance
+         */
+        RecordingInserted.create = function create(properties) {
+            return new RecordingInserted(properties);
+        };
+
+        /**
+         * Encodes the specified RecordingInserted message. Does not implicitly {@link events.RecordingInserted.verify|verify} messages.
+         * @function encode
+         * @memberof events.RecordingInserted
+         * @static
+         * @param {events.IRecordingInserted} message RecordingInserted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RecordingInserted.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.recordingId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified RecordingInserted message, length delimited. Does not implicitly {@link events.RecordingInserted.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.RecordingInserted
+         * @static
+         * @param {events.IRecordingInserted} message RecordingInserted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RecordingInserted.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a RecordingInserted message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.RecordingInserted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.RecordingInserted} RecordingInserted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RecordingInserted.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.RecordingInserted();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.recordingId = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a RecordingInserted message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.RecordingInserted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.RecordingInserted} RecordingInserted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RecordingInserted.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a RecordingInserted message.
+         * @function verify
+         * @memberof events.RecordingInserted
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        RecordingInserted.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                if (!$util.isString(message.recordingId))
+                    return "recordingId: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a RecordingInserted message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.RecordingInserted
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.RecordingInserted} RecordingInserted
+         */
+        RecordingInserted.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.RecordingInserted)
+                return object;
+            var message = new $root.events.RecordingInserted();
+            if (object.recordingId != null)
+                message.recordingId = String(object.recordingId);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a RecordingInserted message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.RecordingInserted
+         * @static
+         * @param {events.RecordingInserted} message RecordingInserted
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        RecordingInserted.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults)
+                object.recordingId = "";
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                object.recordingId = message.recordingId;
+            return object;
+        };
+
+        /**
+         * Converts this RecordingInserted to JSON.
+         * @function toJSON
+         * @memberof events.RecordingInserted
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        RecordingInserted.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return RecordingInserted;
+    })();
+
+    events.RecordingDeleted = (function() {
+
+        /**
+         * Properties of a RecordingDeleted.
+         * @memberof events
+         * @interface IRecordingDeleted
+         * @property {string|null} [recordingId] RecordingDeleted recordingId
+         */
+
+        /**
+         * Constructs a new RecordingDeleted.
+         * @memberof events
+         * @classdesc Represents a RecordingDeleted.
+         * @implements IRecordingDeleted
+         * @constructor
+         * @param {events.IRecordingDeleted=} [properties] Properties to set
+         */
+        function RecordingDeleted(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * RecordingDeleted recordingId.
+         * @member {string} recordingId
+         * @memberof events.RecordingDeleted
+         * @instance
+         */
+        RecordingDeleted.prototype.recordingId = "";
+
+        /**
+         * Creates a new RecordingDeleted instance using the specified properties.
+         * @function create
+         * @memberof events.RecordingDeleted
+         * @static
+         * @param {events.IRecordingDeleted=} [properties] Properties to set
+         * @returns {events.RecordingDeleted} RecordingDeleted instance
+         */
+        RecordingDeleted.create = function create(properties) {
+            return new RecordingDeleted(properties);
+        };
+
+        /**
+         * Encodes the specified RecordingDeleted message. Does not implicitly {@link events.RecordingDeleted.verify|verify} messages.
+         * @function encode
+         * @memberof events.RecordingDeleted
+         * @static
+         * @param {events.IRecordingDeleted} message RecordingDeleted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RecordingDeleted.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.recordingId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified RecordingDeleted message, length delimited. Does not implicitly {@link events.RecordingDeleted.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.RecordingDeleted
+         * @static
+         * @param {events.IRecordingDeleted} message RecordingDeleted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RecordingDeleted.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a RecordingDeleted message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.RecordingDeleted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.RecordingDeleted} RecordingDeleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RecordingDeleted.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.RecordingDeleted();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.recordingId = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a RecordingDeleted message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.RecordingDeleted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.RecordingDeleted} RecordingDeleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RecordingDeleted.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a RecordingDeleted message.
+         * @function verify
+         * @memberof events.RecordingDeleted
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        RecordingDeleted.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                if (!$util.isString(message.recordingId))
+                    return "recordingId: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a RecordingDeleted message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.RecordingDeleted
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.RecordingDeleted} RecordingDeleted
+         */
+        RecordingDeleted.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.RecordingDeleted)
+                return object;
+            var message = new $root.events.RecordingDeleted();
+            if (object.recordingId != null)
+                message.recordingId = String(object.recordingId);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a RecordingDeleted message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.RecordingDeleted
+         * @static
+         * @param {events.RecordingDeleted} message RecordingDeleted
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        RecordingDeleted.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults)
+                object.recordingId = "";
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                object.recordingId = message.recordingId;
+            return object;
+        };
+
+        /**
+         * Converts this RecordingDeleted to JSON.
+         * @function toJSON
+         * @memberof events.RecordingDeleted
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        RecordingDeleted.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return RecordingDeleted;
+    })();
+
+    events.RecordingCognitionCompleted = (function() {
+
+        /**
+         * Properties of a RecordingCognitionCompleted.
+         * @memberof events
+         * @interface IRecordingCognitionCompleted
+         * @property {string|null} [recordingId] RecordingCognitionCompleted recordingId
+         */
+
+        /**
+         * Constructs a new RecordingCognitionCompleted.
+         * @memberof events
+         * @classdesc Represents a RecordingCognitionCompleted.
+         * @implements IRecordingCognitionCompleted
+         * @constructor
+         * @param {events.IRecordingCognitionCompleted=} [properties] Properties to set
+         */
+        function RecordingCognitionCompleted(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * RecordingCognitionCompleted recordingId.
+         * @member {string} recordingId
+         * @memberof events.RecordingCognitionCompleted
+         * @instance
+         */
+        RecordingCognitionCompleted.prototype.recordingId = "";
+
+        /**
+         * Creates a new RecordingCognitionCompleted instance using the specified properties.
+         * @function create
+         * @memberof events.RecordingCognitionCompleted
+         * @static
+         * @param {events.IRecordingCognitionCompleted=} [properties] Properties to set
+         * @returns {events.RecordingCognitionCompleted} RecordingCognitionCompleted instance
+         */
+        RecordingCognitionCompleted.create = function create(properties) {
+            return new RecordingCognitionCompleted(properties);
+        };
+
+        /**
+         * Encodes the specified RecordingCognitionCompleted message. Does not implicitly {@link events.RecordingCognitionCompleted.verify|verify} messages.
+         * @function encode
+         * @memberof events.RecordingCognitionCompleted
+         * @static
+         * @param {events.IRecordingCognitionCompleted} message RecordingCognitionCompleted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RecordingCognitionCompleted.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.recordingId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified RecordingCognitionCompleted message, length delimited. Does not implicitly {@link events.RecordingCognitionCompleted.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.RecordingCognitionCompleted
+         * @static
+         * @param {events.IRecordingCognitionCompleted} message RecordingCognitionCompleted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RecordingCognitionCompleted.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a RecordingCognitionCompleted message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.RecordingCognitionCompleted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.RecordingCognitionCompleted} RecordingCognitionCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RecordingCognitionCompleted.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.RecordingCognitionCompleted();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.recordingId = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a RecordingCognitionCompleted message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.RecordingCognitionCompleted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.RecordingCognitionCompleted} RecordingCognitionCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RecordingCognitionCompleted.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a RecordingCognitionCompleted message.
+         * @function verify
+         * @memberof events.RecordingCognitionCompleted
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        RecordingCognitionCompleted.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                if (!$util.isString(message.recordingId))
+                    return "recordingId: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a RecordingCognitionCompleted message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.RecordingCognitionCompleted
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.RecordingCognitionCompleted} RecordingCognitionCompleted
+         */
+        RecordingCognitionCompleted.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.RecordingCognitionCompleted)
+                return object;
+            var message = new $root.events.RecordingCognitionCompleted();
+            if (object.recordingId != null)
+                message.recordingId = String(object.recordingId);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a RecordingCognitionCompleted message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.RecordingCognitionCompleted
+         * @static
+         * @param {events.RecordingCognitionCompleted} message RecordingCognitionCompleted
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        RecordingCognitionCompleted.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults)
+                object.recordingId = "";
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                object.recordingId = message.recordingId;
+            return object;
+        };
+
+        /**
+         * Converts this RecordingCognitionCompleted to JSON.
+         * @function toJSON
+         * @memberof events.RecordingCognitionCompleted
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        RecordingCognitionCompleted.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return RecordingCognitionCompleted;
+    })();
+
     events.TaskQueued = (function() {
 
         /**

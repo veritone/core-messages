@@ -1,0 +1,59 @@
+syntax = "proto3";
+package events;
+option go_package = "events";
+
+message RecordingImageExtracted {
+    string job_id = 10;
+    string task_id = 11;
+    int32 sample_index = 12;
+    double sample_rate_per_sec = 13;
+    string uri = 14;
+}
+
+message RecordingVideoFragmentCaptured {
+    string job_id = 10;
+    string task_id = 11;
+    int32 sample_index = 12;
+    int32 relative_start_time_ms = 13;
+    int32 relative_end_time_ms = 14;
+    string uri = 15;
+}
+
+message RecordingAudioFragmentCaptured {
+    string job_id = 10;
+    string task_id = 11;
+    int32 sample_index = 12;
+    int32 relative_start_time_ms = 13;
+    int32 relative_end_time_ms = 14;
+    string uri = 15;
+}
+
+message RecordingCompleted {
+    string job_id = 10;
+    string task_id = 11;
+    string recording_id = 12;
+}
+
+message RecordingAssetCreated {
+    string asset_id = 10;
+    string task_id = 11;
+    string recording_id = 12;
+    string asset_type = 13;
+    string uri = 14;
+}
+
+message RecordingCreated {
+    string recording_id = 10;
+}
+
+message RecordingInserted {
+    string recording_id = 10;
+}
+
+message RecordingDeleted {
+    string recording_id = 10;
+}
+
+message RecordingCognitionCompleted {
+    string recording_id = 10;
+}

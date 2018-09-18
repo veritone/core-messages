@@ -4176,6 +4176,936 @@ export namespace events {
         public toJSON(): { [k: string]: any };
     }
 
+    /** Properties of a RecordingImageExtracted. */
+    interface IRecordingImageExtracted {
+
+        /** RecordingImageExtracted jobId */
+        jobId?: (string|null);
+
+        /** RecordingImageExtracted taskId */
+        taskId?: (string|null);
+
+        /** RecordingImageExtracted sampleIndex */
+        sampleIndex?: (number|null);
+
+        /** RecordingImageExtracted sampleRatePerSec */
+        sampleRatePerSec?: (number|null);
+
+        /** RecordingImageExtracted uri */
+        uri?: (string|null);
+    }
+
+    /** Represents a RecordingImageExtracted. */
+    class RecordingImageExtracted implements IRecordingImageExtracted {
+
+        /**
+         * Constructs a new RecordingImageExtracted.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IRecordingImageExtracted);
+
+        /** RecordingImageExtracted jobId. */
+        public jobId: string;
+
+        /** RecordingImageExtracted taskId. */
+        public taskId: string;
+
+        /** RecordingImageExtracted sampleIndex. */
+        public sampleIndex: number;
+
+        /** RecordingImageExtracted sampleRatePerSec. */
+        public sampleRatePerSec: number;
+
+        /** RecordingImageExtracted uri. */
+        public uri: string;
+
+        /**
+         * Creates a new RecordingImageExtracted instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns RecordingImageExtracted instance
+         */
+        public static create(properties?: events.IRecordingImageExtracted): events.RecordingImageExtracted;
+
+        /**
+         * Encodes the specified RecordingImageExtracted message. Does not implicitly {@link events.RecordingImageExtracted.verify|verify} messages.
+         * @param message RecordingImageExtracted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IRecordingImageExtracted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified RecordingImageExtracted message, length delimited. Does not implicitly {@link events.RecordingImageExtracted.verify|verify} messages.
+         * @param message RecordingImageExtracted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IRecordingImageExtracted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a RecordingImageExtracted message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns RecordingImageExtracted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.RecordingImageExtracted;
+
+        /**
+         * Decodes a RecordingImageExtracted message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns RecordingImageExtracted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.RecordingImageExtracted;
+
+        /**
+         * Verifies a RecordingImageExtracted message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a RecordingImageExtracted message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns RecordingImageExtracted
+         */
+        public static fromObject(object: { [k: string]: any }): events.RecordingImageExtracted;
+
+        /**
+         * Creates a plain object from a RecordingImageExtracted message. Also converts values to other types if specified.
+         * @param message RecordingImageExtracted
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.RecordingImageExtracted, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this RecordingImageExtracted to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a RecordingVideoFragmentCaptured. */
+    interface IRecordingVideoFragmentCaptured {
+
+        /** RecordingVideoFragmentCaptured jobId */
+        jobId?: (string|null);
+
+        /** RecordingVideoFragmentCaptured taskId */
+        taskId?: (string|null);
+
+        /** RecordingVideoFragmentCaptured sampleIndex */
+        sampleIndex?: (number|null);
+
+        /** RecordingVideoFragmentCaptured relativeStartTimeMs */
+        relativeStartTimeMs?: (number|null);
+
+        /** RecordingVideoFragmentCaptured relativeEndTimeMs */
+        relativeEndTimeMs?: (number|null);
+
+        /** RecordingVideoFragmentCaptured uri */
+        uri?: (string|null);
+    }
+
+    /** Represents a RecordingVideoFragmentCaptured. */
+    class RecordingVideoFragmentCaptured implements IRecordingVideoFragmentCaptured {
+
+        /**
+         * Constructs a new RecordingVideoFragmentCaptured.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IRecordingVideoFragmentCaptured);
+
+        /** RecordingVideoFragmentCaptured jobId. */
+        public jobId: string;
+
+        /** RecordingVideoFragmentCaptured taskId. */
+        public taskId: string;
+
+        /** RecordingVideoFragmentCaptured sampleIndex. */
+        public sampleIndex: number;
+
+        /** RecordingVideoFragmentCaptured relativeStartTimeMs. */
+        public relativeStartTimeMs: number;
+
+        /** RecordingVideoFragmentCaptured relativeEndTimeMs. */
+        public relativeEndTimeMs: number;
+
+        /** RecordingVideoFragmentCaptured uri. */
+        public uri: string;
+
+        /**
+         * Creates a new RecordingVideoFragmentCaptured instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns RecordingVideoFragmentCaptured instance
+         */
+        public static create(properties?: events.IRecordingVideoFragmentCaptured): events.RecordingVideoFragmentCaptured;
+
+        /**
+         * Encodes the specified RecordingVideoFragmentCaptured message. Does not implicitly {@link events.RecordingVideoFragmentCaptured.verify|verify} messages.
+         * @param message RecordingVideoFragmentCaptured message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IRecordingVideoFragmentCaptured, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified RecordingVideoFragmentCaptured message, length delimited. Does not implicitly {@link events.RecordingVideoFragmentCaptured.verify|verify} messages.
+         * @param message RecordingVideoFragmentCaptured message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IRecordingVideoFragmentCaptured, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a RecordingVideoFragmentCaptured message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns RecordingVideoFragmentCaptured
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.RecordingVideoFragmentCaptured;
+
+        /**
+         * Decodes a RecordingVideoFragmentCaptured message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns RecordingVideoFragmentCaptured
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.RecordingVideoFragmentCaptured;
+
+        /**
+         * Verifies a RecordingVideoFragmentCaptured message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a RecordingVideoFragmentCaptured message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns RecordingVideoFragmentCaptured
+         */
+        public static fromObject(object: { [k: string]: any }): events.RecordingVideoFragmentCaptured;
+
+        /**
+         * Creates a plain object from a RecordingVideoFragmentCaptured message. Also converts values to other types if specified.
+         * @param message RecordingVideoFragmentCaptured
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.RecordingVideoFragmentCaptured, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this RecordingVideoFragmentCaptured to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a RecordingAudioFragmentCaptured. */
+    interface IRecordingAudioFragmentCaptured {
+
+        /** RecordingAudioFragmentCaptured jobId */
+        jobId?: (string|null);
+
+        /** RecordingAudioFragmentCaptured taskId */
+        taskId?: (string|null);
+
+        /** RecordingAudioFragmentCaptured sampleIndex */
+        sampleIndex?: (number|null);
+
+        /** RecordingAudioFragmentCaptured relativeStartTimeMs */
+        relativeStartTimeMs?: (number|null);
+
+        /** RecordingAudioFragmentCaptured relativeEndTimeMs */
+        relativeEndTimeMs?: (number|null);
+
+        /** RecordingAudioFragmentCaptured uri */
+        uri?: (string|null);
+    }
+
+    /** Represents a RecordingAudioFragmentCaptured. */
+    class RecordingAudioFragmentCaptured implements IRecordingAudioFragmentCaptured {
+
+        /**
+         * Constructs a new RecordingAudioFragmentCaptured.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IRecordingAudioFragmentCaptured);
+
+        /** RecordingAudioFragmentCaptured jobId. */
+        public jobId: string;
+
+        /** RecordingAudioFragmentCaptured taskId. */
+        public taskId: string;
+
+        /** RecordingAudioFragmentCaptured sampleIndex. */
+        public sampleIndex: number;
+
+        /** RecordingAudioFragmentCaptured relativeStartTimeMs. */
+        public relativeStartTimeMs: number;
+
+        /** RecordingAudioFragmentCaptured relativeEndTimeMs. */
+        public relativeEndTimeMs: number;
+
+        /** RecordingAudioFragmentCaptured uri. */
+        public uri: string;
+
+        /**
+         * Creates a new RecordingAudioFragmentCaptured instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns RecordingAudioFragmentCaptured instance
+         */
+        public static create(properties?: events.IRecordingAudioFragmentCaptured): events.RecordingAudioFragmentCaptured;
+
+        /**
+         * Encodes the specified RecordingAudioFragmentCaptured message. Does not implicitly {@link events.RecordingAudioFragmentCaptured.verify|verify} messages.
+         * @param message RecordingAudioFragmentCaptured message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IRecordingAudioFragmentCaptured, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified RecordingAudioFragmentCaptured message, length delimited. Does not implicitly {@link events.RecordingAudioFragmentCaptured.verify|verify} messages.
+         * @param message RecordingAudioFragmentCaptured message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IRecordingAudioFragmentCaptured, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a RecordingAudioFragmentCaptured message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns RecordingAudioFragmentCaptured
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.RecordingAudioFragmentCaptured;
+
+        /**
+         * Decodes a RecordingAudioFragmentCaptured message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns RecordingAudioFragmentCaptured
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.RecordingAudioFragmentCaptured;
+
+        /**
+         * Verifies a RecordingAudioFragmentCaptured message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a RecordingAudioFragmentCaptured message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns RecordingAudioFragmentCaptured
+         */
+        public static fromObject(object: { [k: string]: any }): events.RecordingAudioFragmentCaptured;
+
+        /**
+         * Creates a plain object from a RecordingAudioFragmentCaptured message. Also converts values to other types if specified.
+         * @param message RecordingAudioFragmentCaptured
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.RecordingAudioFragmentCaptured, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this RecordingAudioFragmentCaptured to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a RecordingCompleted. */
+    interface IRecordingCompleted {
+
+        /** RecordingCompleted jobId */
+        jobId?: (string|null);
+
+        /** RecordingCompleted taskId */
+        taskId?: (string|null);
+
+        /** RecordingCompleted recordingId */
+        recordingId?: (string|null);
+    }
+
+    /** Represents a RecordingCompleted. */
+    class RecordingCompleted implements IRecordingCompleted {
+
+        /**
+         * Constructs a new RecordingCompleted.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IRecordingCompleted);
+
+        /** RecordingCompleted jobId. */
+        public jobId: string;
+
+        /** RecordingCompleted taskId. */
+        public taskId: string;
+
+        /** RecordingCompleted recordingId. */
+        public recordingId: string;
+
+        /**
+         * Creates a new RecordingCompleted instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns RecordingCompleted instance
+         */
+        public static create(properties?: events.IRecordingCompleted): events.RecordingCompleted;
+
+        /**
+         * Encodes the specified RecordingCompleted message. Does not implicitly {@link events.RecordingCompleted.verify|verify} messages.
+         * @param message RecordingCompleted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IRecordingCompleted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified RecordingCompleted message, length delimited. Does not implicitly {@link events.RecordingCompleted.verify|verify} messages.
+         * @param message RecordingCompleted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IRecordingCompleted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a RecordingCompleted message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns RecordingCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.RecordingCompleted;
+
+        /**
+         * Decodes a RecordingCompleted message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns RecordingCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.RecordingCompleted;
+
+        /**
+         * Verifies a RecordingCompleted message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a RecordingCompleted message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns RecordingCompleted
+         */
+        public static fromObject(object: { [k: string]: any }): events.RecordingCompleted;
+
+        /**
+         * Creates a plain object from a RecordingCompleted message. Also converts values to other types if specified.
+         * @param message RecordingCompleted
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.RecordingCompleted, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this RecordingCompleted to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a RecordingAssetCreated. */
+    interface IRecordingAssetCreated {
+
+        /** RecordingAssetCreated assetId */
+        assetId?: (string|null);
+
+        /** RecordingAssetCreated taskId */
+        taskId?: (string|null);
+
+        /** RecordingAssetCreated recordingId */
+        recordingId?: (string|null);
+
+        /** RecordingAssetCreated assetType */
+        assetType?: (string|null);
+
+        /** RecordingAssetCreated uri */
+        uri?: (string|null);
+    }
+
+    /** Represents a RecordingAssetCreated. */
+    class RecordingAssetCreated implements IRecordingAssetCreated {
+
+        /**
+         * Constructs a new RecordingAssetCreated.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IRecordingAssetCreated);
+
+        /** RecordingAssetCreated assetId. */
+        public assetId: string;
+
+        /** RecordingAssetCreated taskId. */
+        public taskId: string;
+
+        /** RecordingAssetCreated recordingId. */
+        public recordingId: string;
+
+        /** RecordingAssetCreated assetType. */
+        public assetType: string;
+
+        /** RecordingAssetCreated uri. */
+        public uri: string;
+
+        /**
+         * Creates a new RecordingAssetCreated instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns RecordingAssetCreated instance
+         */
+        public static create(properties?: events.IRecordingAssetCreated): events.RecordingAssetCreated;
+
+        /**
+         * Encodes the specified RecordingAssetCreated message. Does not implicitly {@link events.RecordingAssetCreated.verify|verify} messages.
+         * @param message RecordingAssetCreated message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IRecordingAssetCreated, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified RecordingAssetCreated message, length delimited. Does not implicitly {@link events.RecordingAssetCreated.verify|verify} messages.
+         * @param message RecordingAssetCreated message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IRecordingAssetCreated, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a RecordingAssetCreated message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns RecordingAssetCreated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.RecordingAssetCreated;
+
+        /**
+         * Decodes a RecordingAssetCreated message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns RecordingAssetCreated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.RecordingAssetCreated;
+
+        /**
+         * Verifies a RecordingAssetCreated message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a RecordingAssetCreated message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns RecordingAssetCreated
+         */
+        public static fromObject(object: { [k: string]: any }): events.RecordingAssetCreated;
+
+        /**
+         * Creates a plain object from a RecordingAssetCreated message. Also converts values to other types if specified.
+         * @param message RecordingAssetCreated
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.RecordingAssetCreated, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this RecordingAssetCreated to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a RecordingCreated. */
+    interface IRecordingCreated {
+
+        /** RecordingCreated recordingId */
+        recordingId?: (string|null);
+    }
+
+    /** Represents a RecordingCreated. */
+    class RecordingCreated implements IRecordingCreated {
+
+        /**
+         * Constructs a new RecordingCreated.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IRecordingCreated);
+
+        /** RecordingCreated recordingId. */
+        public recordingId: string;
+
+        /**
+         * Creates a new RecordingCreated instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns RecordingCreated instance
+         */
+        public static create(properties?: events.IRecordingCreated): events.RecordingCreated;
+
+        /**
+         * Encodes the specified RecordingCreated message. Does not implicitly {@link events.RecordingCreated.verify|verify} messages.
+         * @param message RecordingCreated message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IRecordingCreated, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified RecordingCreated message, length delimited. Does not implicitly {@link events.RecordingCreated.verify|verify} messages.
+         * @param message RecordingCreated message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IRecordingCreated, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a RecordingCreated message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns RecordingCreated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.RecordingCreated;
+
+        /**
+         * Decodes a RecordingCreated message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns RecordingCreated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.RecordingCreated;
+
+        /**
+         * Verifies a RecordingCreated message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a RecordingCreated message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns RecordingCreated
+         */
+        public static fromObject(object: { [k: string]: any }): events.RecordingCreated;
+
+        /**
+         * Creates a plain object from a RecordingCreated message. Also converts values to other types if specified.
+         * @param message RecordingCreated
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.RecordingCreated, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this RecordingCreated to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a RecordingInserted. */
+    interface IRecordingInserted {
+
+        /** RecordingInserted recordingId */
+        recordingId?: (string|null);
+    }
+
+    /** Represents a RecordingInserted. */
+    class RecordingInserted implements IRecordingInserted {
+
+        /**
+         * Constructs a new RecordingInserted.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IRecordingInserted);
+
+        /** RecordingInserted recordingId. */
+        public recordingId: string;
+
+        /**
+         * Creates a new RecordingInserted instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns RecordingInserted instance
+         */
+        public static create(properties?: events.IRecordingInserted): events.RecordingInserted;
+
+        /**
+         * Encodes the specified RecordingInserted message. Does not implicitly {@link events.RecordingInserted.verify|verify} messages.
+         * @param message RecordingInserted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IRecordingInserted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified RecordingInserted message, length delimited. Does not implicitly {@link events.RecordingInserted.verify|verify} messages.
+         * @param message RecordingInserted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IRecordingInserted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a RecordingInserted message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns RecordingInserted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.RecordingInserted;
+
+        /**
+         * Decodes a RecordingInserted message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns RecordingInserted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.RecordingInserted;
+
+        /**
+         * Verifies a RecordingInserted message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a RecordingInserted message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns RecordingInserted
+         */
+        public static fromObject(object: { [k: string]: any }): events.RecordingInserted;
+
+        /**
+         * Creates a plain object from a RecordingInserted message. Also converts values to other types if specified.
+         * @param message RecordingInserted
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.RecordingInserted, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this RecordingInserted to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a RecordingDeleted. */
+    interface IRecordingDeleted {
+
+        /** RecordingDeleted recordingId */
+        recordingId?: (string|null);
+    }
+
+    /** Represents a RecordingDeleted. */
+    class RecordingDeleted implements IRecordingDeleted {
+
+        /**
+         * Constructs a new RecordingDeleted.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IRecordingDeleted);
+
+        /** RecordingDeleted recordingId. */
+        public recordingId: string;
+
+        /**
+         * Creates a new RecordingDeleted instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns RecordingDeleted instance
+         */
+        public static create(properties?: events.IRecordingDeleted): events.RecordingDeleted;
+
+        /**
+         * Encodes the specified RecordingDeleted message. Does not implicitly {@link events.RecordingDeleted.verify|verify} messages.
+         * @param message RecordingDeleted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IRecordingDeleted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified RecordingDeleted message, length delimited. Does not implicitly {@link events.RecordingDeleted.verify|verify} messages.
+         * @param message RecordingDeleted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IRecordingDeleted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a RecordingDeleted message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns RecordingDeleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.RecordingDeleted;
+
+        /**
+         * Decodes a RecordingDeleted message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns RecordingDeleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.RecordingDeleted;
+
+        /**
+         * Verifies a RecordingDeleted message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a RecordingDeleted message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns RecordingDeleted
+         */
+        public static fromObject(object: { [k: string]: any }): events.RecordingDeleted;
+
+        /**
+         * Creates a plain object from a RecordingDeleted message. Also converts values to other types if specified.
+         * @param message RecordingDeleted
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.RecordingDeleted, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this RecordingDeleted to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a RecordingCognitionCompleted. */
+    interface IRecordingCognitionCompleted {
+
+        /** RecordingCognitionCompleted recordingId */
+        recordingId?: (string|null);
+    }
+
+    /** Represents a RecordingCognitionCompleted. */
+    class RecordingCognitionCompleted implements IRecordingCognitionCompleted {
+
+        /**
+         * Constructs a new RecordingCognitionCompleted.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IRecordingCognitionCompleted);
+
+        /** RecordingCognitionCompleted recordingId. */
+        public recordingId: string;
+
+        /**
+         * Creates a new RecordingCognitionCompleted instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns RecordingCognitionCompleted instance
+         */
+        public static create(properties?: events.IRecordingCognitionCompleted): events.RecordingCognitionCompleted;
+
+        /**
+         * Encodes the specified RecordingCognitionCompleted message. Does not implicitly {@link events.RecordingCognitionCompleted.verify|verify} messages.
+         * @param message RecordingCognitionCompleted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IRecordingCognitionCompleted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified RecordingCognitionCompleted message, length delimited. Does not implicitly {@link events.RecordingCognitionCompleted.verify|verify} messages.
+         * @param message RecordingCognitionCompleted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IRecordingCognitionCompleted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a RecordingCognitionCompleted message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns RecordingCognitionCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.RecordingCognitionCompleted;
+
+        /**
+         * Decodes a RecordingCognitionCompleted message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns RecordingCognitionCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.RecordingCognitionCompleted;
+
+        /**
+         * Verifies a RecordingCognitionCompleted message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a RecordingCognitionCompleted message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns RecordingCognitionCompleted
+         */
+        public static fromObject(object: { [k: string]: any }): events.RecordingCognitionCompleted;
+
+        /**
+         * Creates a plain object from a RecordingCognitionCompleted message. Also converts values to other types if specified.
+         * @param message RecordingCognitionCompleted
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.RecordingCognitionCompleted, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this RecordingCognitionCompleted to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
     /** Properties of a TaskQueued. */
     interface ITaskQueued {
 
