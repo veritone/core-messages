@@ -62,6 +62,15 @@
   
   
 
+- [events/job.proto](#events/job.proto)
+    - [JobCompleted](#events.JobCompleted)
+    - [JobCreated](#events.JobCreated)
+    - [JobFailed](#events.JobFailed)
+  
+  
+  
+  
+
 - [events/mention_notification.proto](#events/mention_notification.proto)
     - [MentionDeleted](#events.MentionDeleted)
     - [MentionEmailGenerated](#events.MentionEmailGenerated)
@@ -78,6 +87,15 @@
 - [events/notification.proto](#events/notification.proto)
     - [BasicEmail](#events.BasicEmail)
     - [SMSNotification](#events.SMSNotification)
+  
+  
+  
+  
+
+- [events/task.proto](#events/task.proto)
+    - [TaskCompleted](#events.TaskCompleted)
+    - [TaskQueued](#events.TaskQueued)
+    - [TaskUpdated](#events.TaskUpdated)
   
   
   
@@ -694,6 +712,72 @@
 
 
 
+<a name="events/job.proto"/>
+<p align="right"><a href="#top">Top</a></p>
+
+## events/job.proto
+
+
+
+<a name="events.JobCompleted"/>
+
+### JobCompleted
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| job_id | [string](#string) |  |  |
+| timestamp_ms | [string](#string) |  |  |
+| job_status | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.JobCreated"/>
+
+### JobCreated
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| job_id | [string](#string) |  |  |
+| timestamp_ms | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.JobFailed"/>
+
+### JobFailed
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| job_id | [string](#string) |  |  |
+| timestamp_ms | [string](#string) |  |  |
+| job_status | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="events/mention_notification.proto"/>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -883,6 +967,72 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 | from_number | [string](#string) |  | SMS number of the recipient (number should follow Twilo format) |
 | to_number | [string](#string) |  | SMS number of the sender (number should follow Twilo format) |
 | message | [string](#string) |  | message payload |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="events/task.proto"/>
+<p align="right"><a href="#top">Top</a></p>
+
+## events/task.proto
+
+
+
+<a name="events.TaskCompleted"/>
+
+### TaskCompleted
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| task_id | [string](#string) |  |  |
+| timestamp_ms | [string](#string) |  |  |
+| task_status | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.TaskQueued"/>
+
+### TaskQueued
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| task_id | [string](#string) |  |  |
+| timestamp_ms | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.TaskUpdated"/>
+
+### TaskUpdated
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| task_id | [string](#string) |  |  |
+| timestamp_ms | [string](#string) |  |  |
+| task_status | [string](#string) |  |  |
 
 
 
