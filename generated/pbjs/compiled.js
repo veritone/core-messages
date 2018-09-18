@@ -18,6 +18,244 @@ $root.events = (function() {
      */
     var events = {};
 
+    events.AssetUploaded = (function() {
+
+        /**
+         * Properties of an AssetUploaded.
+         * @memberof events
+         * @interface IAssetUploaded
+         * @property {number|Long|null} [assetId] AssetUploaded assetId
+         * @property {number|Long|null} [recordingId] AssetUploaded recordingId
+         */
+
+        /**
+         * Constructs a new AssetUploaded.
+         * @memberof events
+         * @classdesc Represents an AssetUploaded.
+         * @implements IAssetUploaded
+         * @constructor
+         * @param {events.IAssetUploaded=} [properties] Properties to set
+         */
+        function AssetUploaded(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * AssetUploaded assetId.
+         * @member {number|Long} assetId
+         * @memberof events.AssetUploaded
+         * @instance
+         */
+        AssetUploaded.prototype.assetId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+        /**
+         * AssetUploaded recordingId.
+         * @member {number|Long} recordingId
+         * @memberof events.AssetUploaded
+         * @instance
+         */
+        AssetUploaded.prototype.recordingId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+        /**
+         * Creates a new AssetUploaded instance using the specified properties.
+         * @function create
+         * @memberof events.AssetUploaded
+         * @static
+         * @param {events.IAssetUploaded=} [properties] Properties to set
+         * @returns {events.AssetUploaded} AssetUploaded instance
+         */
+        AssetUploaded.create = function create(properties) {
+            return new AssetUploaded(properties);
+        };
+
+        /**
+         * Encodes the specified AssetUploaded message. Does not implicitly {@link events.AssetUploaded.verify|verify} messages.
+         * @function encode
+         * @memberof events.AssetUploaded
+         * @static
+         * @param {events.IAssetUploaded} message AssetUploaded message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        AssetUploaded.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.assetId != null && message.hasOwnProperty("assetId"))
+                writer.uint32(/* id 10, wireType 0 =*/80).int64(message.assetId);
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                writer.uint32(/* id 11, wireType 0 =*/88).int64(message.recordingId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified AssetUploaded message, length delimited. Does not implicitly {@link events.AssetUploaded.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.AssetUploaded
+         * @static
+         * @param {events.IAssetUploaded} message AssetUploaded message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        AssetUploaded.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an AssetUploaded message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.AssetUploaded
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.AssetUploaded} AssetUploaded
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        AssetUploaded.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.AssetUploaded();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.assetId = reader.int64();
+                    break;
+                case 11:
+                    message.recordingId = reader.int64();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an AssetUploaded message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.AssetUploaded
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.AssetUploaded} AssetUploaded
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        AssetUploaded.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an AssetUploaded message.
+         * @function verify
+         * @memberof events.AssetUploaded
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        AssetUploaded.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.assetId != null && message.hasOwnProperty("assetId"))
+                if (!$util.isInteger(message.assetId) && !(message.assetId && $util.isInteger(message.assetId.low) && $util.isInteger(message.assetId.high)))
+                    return "assetId: integer|Long expected";
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                if (!$util.isInteger(message.recordingId) && !(message.recordingId && $util.isInteger(message.recordingId.low) && $util.isInteger(message.recordingId.high)))
+                    return "recordingId: integer|Long expected";
+            return null;
+        };
+
+        /**
+         * Creates an AssetUploaded message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.AssetUploaded
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.AssetUploaded} AssetUploaded
+         */
+        AssetUploaded.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.AssetUploaded)
+                return object;
+            var message = new $root.events.AssetUploaded();
+            if (object.assetId != null)
+                if ($util.Long)
+                    (message.assetId = $util.Long.fromValue(object.assetId)).unsigned = false;
+                else if (typeof object.assetId === "string")
+                    message.assetId = parseInt(object.assetId, 10);
+                else if (typeof object.assetId === "number")
+                    message.assetId = object.assetId;
+                else if (typeof object.assetId === "object")
+                    message.assetId = new $util.LongBits(object.assetId.low >>> 0, object.assetId.high >>> 0).toNumber();
+            if (object.recordingId != null)
+                if ($util.Long)
+                    (message.recordingId = $util.Long.fromValue(object.recordingId)).unsigned = false;
+                else if (typeof object.recordingId === "string")
+                    message.recordingId = parseInt(object.recordingId, 10);
+                else if (typeof object.recordingId === "number")
+                    message.recordingId = object.recordingId;
+                else if (typeof object.recordingId === "object")
+                    message.recordingId = new $util.LongBits(object.recordingId.low >>> 0, object.recordingId.high >>> 0).toNumber();
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an AssetUploaded message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.AssetUploaded
+         * @static
+         * @param {events.AssetUploaded} message AssetUploaded
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        AssetUploaded.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.assetId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.assetId = options.longs === String ? "0" : 0;
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.recordingId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.recordingId = options.longs === String ? "0" : 0;
+            }
+            if (message.assetId != null && message.hasOwnProperty("assetId"))
+                if (typeof message.assetId === "number")
+                    object.assetId = options.longs === String ? String(message.assetId) : message.assetId;
+                else
+                    object.assetId = options.longs === String ? $util.Long.prototype.toString.call(message.assetId) : options.longs === Number ? new $util.LongBits(message.assetId.low >>> 0, message.assetId.high >>> 0).toNumber() : message.assetId;
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                if (typeof message.recordingId === "number")
+                    object.recordingId = options.longs === String ? String(message.recordingId) : message.recordingId;
+                else
+                    object.recordingId = options.longs === String ? $util.Long.prototype.toString.call(message.recordingId) : options.longs === Number ? new $util.LongBits(message.recordingId.low >>> 0, message.recordingId.high >>> 0).toNumber() : message.recordingId;
+            return object;
+        };
+
+        /**
+         * Converts this AssetUploaded to JSON.
+         * @function toJSON
+         * @memberof events.AssetUploaded
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        AssetUploaded.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return AssetUploaded;
+    })();
+
     events.LoginSucceeded = (function() {
 
         /**
@@ -340,8 +578,6 @@ $root.events = (function() {
          * @property {string|null} [userAgent] LoginFailed userAgent
          * @property {string|null} [ip] LoginFailed ip
          * @property {string|null} [requestUrl] LoginFailed requestUrl
-         * @property {string|null} [userId] LoginFailed userId
-         * @property {number|Long|null} [organizationId] LoginFailed organizationId
          */
 
         /**
@@ -392,22 +628,6 @@ $root.events = (function() {
         LoginFailed.prototype.requestUrl = "";
 
         /**
-         * LoginFailed userId.
-         * @member {string} userId
-         * @memberof events.LoginFailed
-         * @instance
-         */
-        LoginFailed.prototype.userId = "";
-
-        /**
-         * LoginFailed organizationId.
-         * @member {number|Long} organizationId
-         * @memberof events.LoginFailed
-         * @instance
-         */
-        LoginFailed.prototype.organizationId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
-
-        /**
          * Creates a new LoginFailed instance using the specified properties.
          * @function create
          * @memberof events.LoginFailed
@@ -439,10 +659,6 @@ $root.events = (function() {
                 writer.uint32(/* id 12, wireType 2 =*/98).string(message.ip);
             if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
                 writer.uint32(/* id 13, wireType 2 =*/106).string(message.requestUrl);
-            if (message.userId != null && message.hasOwnProperty("userId"))
-                writer.uint32(/* id 14, wireType 2 =*/114).string(message.userId);
-            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
-                writer.uint32(/* id 15, wireType 0 =*/120).int64(message.organizationId);
             return writer;
         };
 
@@ -488,12 +704,6 @@ $root.events = (function() {
                     break;
                 case 13:
                     message.requestUrl = reader.string();
-                    break;
-                case 14:
-                    message.userId = reader.string();
-                    break;
-                case 15:
-                    message.organizationId = reader.int64();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -542,12 +752,6 @@ $root.events = (function() {
             if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
                 if (!$util.isString(message.requestUrl))
                     return "requestUrl: string expected";
-            if (message.userId != null && message.hasOwnProperty("userId"))
-                if (!$util.isString(message.userId))
-                    return "userId: string expected";
-            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
-                if (!$util.isInteger(message.organizationId) && !(message.organizationId && $util.isInteger(message.organizationId.low) && $util.isInteger(message.organizationId.high)))
-                    return "organizationId: integer|Long expected";
             return null;
         };
 
@@ -571,6 +775,882 @@ $root.events = (function() {
                 message.ip = String(object.ip);
             if (object.requestUrl != null)
                 message.requestUrl = String(object.requestUrl);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a LoginFailed message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.LoginFailed
+         * @static
+         * @param {events.LoginFailed} message LoginFailed
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        LoginFailed.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.userName = "";
+                object.userAgent = "";
+                object.ip = "";
+                object.requestUrl = "";
+            }
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                object.userName = message.userName;
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                object.userAgent = message.userAgent;
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                object.ip = message.ip;
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                object.requestUrl = message.requestUrl;
+            return object;
+        };
+
+        /**
+         * Converts this LoginFailed to JSON.
+         * @function toJSON
+         * @memberof events.LoginFailed
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        LoginFailed.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return LoginFailed;
+    })();
+
+    events.LoginAttemptsExceeded = (function() {
+
+        /**
+         * Properties of a LoginAttemptsExceeded.
+         * @memberof events
+         * @interface ILoginAttemptsExceeded
+         * @property {string|null} [userName] LoginAttemptsExceeded userName
+         * @property {string|null} [userAgent] LoginAttemptsExceeded userAgent
+         * @property {string|null} [ip] LoginAttemptsExceeded ip
+         * @property {string|null} [requestUrl] LoginAttemptsExceeded requestUrl
+         */
+
+        /**
+         * Constructs a new LoginAttemptsExceeded.
+         * @memberof events
+         * @classdesc Represents a LoginAttemptsExceeded.
+         * @implements ILoginAttemptsExceeded
+         * @constructor
+         * @param {events.ILoginAttemptsExceeded=} [properties] Properties to set
+         */
+        function LoginAttemptsExceeded(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * LoginAttemptsExceeded userName.
+         * @member {string} userName
+         * @memberof events.LoginAttemptsExceeded
+         * @instance
+         */
+        LoginAttemptsExceeded.prototype.userName = "";
+
+        /**
+         * LoginAttemptsExceeded userAgent.
+         * @member {string} userAgent
+         * @memberof events.LoginAttemptsExceeded
+         * @instance
+         */
+        LoginAttemptsExceeded.prototype.userAgent = "";
+
+        /**
+         * LoginAttemptsExceeded ip.
+         * @member {string} ip
+         * @memberof events.LoginAttemptsExceeded
+         * @instance
+         */
+        LoginAttemptsExceeded.prototype.ip = "";
+
+        /**
+         * LoginAttemptsExceeded requestUrl.
+         * @member {string} requestUrl
+         * @memberof events.LoginAttemptsExceeded
+         * @instance
+         */
+        LoginAttemptsExceeded.prototype.requestUrl = "";
+
+        /**
+         * Creates a new LoginAttemptsExceeded instance using the specified properties.
+         * @function create
+         * @memberof events.LoginAttemptsExceeded
+         * @static
+         * @param {events.ILoginAttemptsExceeded=} [properties] Properties to set
+         * @returns {events.LoginAttemptsExceeded} LoginAttemptsExceeded instance
+         */
+        LoginAttemptsExceeded.create = function create(properties) {
+            return new LoginAttemptsExceeded(properties);
+        };
+
+        /**
+         * Encodes the specified LoginAttemptsExceeded message. Does not implicitly {@link events.LoginAttemptsExceeded.verify|verify} messages.
+         * @function encode
+         * @memberof events.LoginAttemptsExceeded
+         * @static
+         * @param {events.ILoginAttemptsExceeded} message LoginAttemptsExceeded message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        LoginAttemptsExceeded.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.userName);
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.userAgent);
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.ip);
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                writer.uint32(/* id 13, wireType 2 =*/106).string(message.requestUrl);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified LoginAttemptsExceeded message, length delimited. Does not implicitly {@link events.LoginAttemptsExceeded.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.LoginAttemptsExceeded
+         * @static
+         * @param {events.ILoginAttemptsExceeded} message LoginAttemptsExceeded message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        LoginAttemptsExceeded.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a LoginAttemptsExceeded message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.LoginAttemptsExceeded
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.LoginAttemptsExceeded} LoginAttemptsExceeded
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        LoginAttemptsExceeded.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.LoginAttemptsExceeded();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.userName = reader.string();
+                    break;
+                case 11:
+                    message.userAgent = reader.string();
+                    break;
+                case 12:
+                    message.ip = reader.string();
+                    break;
+                case 13:
+                    message.requestUrl = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a LoginAttemptsExceeded message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.LoginAttemptsExceeded
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.LoginAttemptsExceeded} LoginAttemptsExceeded
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        LoginAttemptsExceeded.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a LoginAttemptsExceeded message.
+         * @function verify
+         * @memberof events.LoginAttemptsExceeded
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        LoginAttemptsExceeded.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                if (!$util.isString(message.userName))
+                    return "userName: string expected";
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                if (!$util.isString(message.userAgent))
+                    return "userAgent: string expected";
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                if (!$util.isString(message.ip))
+                    return "ip: string expected";
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                if (!$util.isString(message.requestUrl))
+                    return "requestUrl: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a LoginAttemptsExceeded message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.LoginAttemptsExceeded
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.LoginAttemptsExceeded} LoginAttemptsExceeded
+         */
+        LoginAttemptsExceeded.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.LoginAttemptsExceeded)
+                return object;
+            var message = new $root.events.LoginAttemptsExceeded();
+            if (object.userName != null)
+                message.userName = String(object.userName);
+            if (object.userAgent != null)
+                message.userAgent = String(object.userAgent);
+            if (object.ip != null)
+                message.ip = String(object.ip);
+            if (object.requestUrl != null)
+                message.requestUrl = String(object.requestUrl);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a LoginAttemptsExceeded message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.LoginAttemptsExceeded
+         * @static
+         * @param {events.LoginAttemptsExceeded} message LoginAttemptsExceeded
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        LoginAttemptsExceeded.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.userName = "";
+                object.userAgent = "";
+                object.ip = "";
+                object.requestUrl = "";
+            }
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                object.userName = message.userName;
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                object.userAgent = message.userAgent;
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                object.ip = message.ip;
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                object.requestUrl = message.requestUrl;
+            return object;
+        };
+
+        /**
+         * Converts this LoginAttemptsExceeded to JSON.
+         * @function toJSON
+         * @memberof events.LoginAttemptsExceeded
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        LoginAttemptsExceeded.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return LoginAttemptsExceeded;
+    })();
+
+    events.Impersonated = (function() {
+
+        /**
+         * Properties of an Impersonated.
+         * @memberof events
+         * @interface IImpersonated
+         * @property {string|null} [userName] Impersonated userName
+         * @property {string|null} [userAgent] Impersonated userAgent
+         * @property {string|null} [ip] Impersonated ip
+         * @property {string|null} [requestUrl] Impersonated requestUrl
+         * @property {string|null} [userId] Impersonated userId
+         * @property {number|Long|null} [organizationId] Impersonated organizationId
+         * @property {string|null} [impersontatedUserId] Impersonated impersontatedUserId
+         */
+
+        /**
+         * Constructs a new Impersonated.
+         * @memberof events
+         * @classdesc Represents an Impersonated.
+         * @implements IImpersonated
+         * @constructor
+         * @param {events.IImpersonated=} [properties] Properties to set
+         */
+        function Impersonated(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * Impersonated userName.
+         * @member {string} userName
+         * @memberof events.Impersonated
+         * @instance
+         */
+        Impersonated.prototype.userName = "";
+
+        /**
+         * Impersonated userAgent.
+         * @member {string} userAgent
+         * @memberof events.Impersonated
+         * @instance
+         */
+        Impersonated.prototype.userAgent = "";
+
+        /**
+         * Impersonated ip.
+         * @member {string} ip
+         * @memberof events.Impersonated
+         * @instance
+         */
+        Impersonated.prototype.ip = "";
+
+        /**
+         * Impersonated requestUrl.
+         * @member {string} requestUrl
+         * @memberof events.Impersonated
+         * @instance
+         */
+        Impersonated.prototype.requestUrl = "";
+
+        /**
+         * Impersonated userId.
+         * @member {string} userId
+         * @memberof events.Impersonated
+         * @instance
+         */
+        Impersonated.prototype.userId = "";
+
+        /**
+         * Impersonated organizationId.
+         * @member {number|Long} organizationId
+         * @memberof events.Impersonated
+         * @instance
+         */
+        Impersonated.prototype.organizationId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+        /**
+         * Impersonated impersontatedUserId.
+         * @member {string} impersontatedUserId
+         * @memberof events.Impersonated
+         * @instance
+         */
+        Impersonated.prototype.impersontatedUserId = "";
+
+        /**
+         * Creates a new Impersonated instance using the specified properties.
+         * @function create
+         * @memberof events.Impersonated
+         * @static
+         * @param {events.IImpersonated=} [properties] Properties to set
+         * @returns {events.Impersonated} Impersonated instance
+         */
+        Impersonated.create = function create(properties) {
+            return new Impersonated(properties);
+        };
+
+        /**
+         * Encodes the specified Impersonated message. Does not implicitly {@link events.Impersonated.verify|verify} messages.
+         * @function encode
+         * @memberof events.Impersonated
+         * @static
+         * @param {events.IImpersonated} message Impersonated message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        Impersonated.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.userName);
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.userAgent);
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.ip);
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                writer.uint32(/* id 13, wireType 2 =*/106).string(message.requestUrl);
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                writer.uint32(/* id 14, wireType 2 =*/114).string(message.userId);
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                writer.uint32(/* id 15, wireType 0 =*/120).int64(message.organizationId);
+            if (message.impersontatedUserId != null && message.hasOwnProperty("impersontatedUserId"))
+                writer.uint32(/* id 16, wireType 2 =*/130).string(message.impersontatedUserId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified Impersonated message, length delimited. Does not implicitly {@link events.Impersonated.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.Impersonated
+         * @static
+         * @param {events.IImpersonated} message Impersonated message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        Impersonated.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an Impersonated message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.Impersonated
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.Impersonated} Impersonated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        Impersonated.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.Impersonated();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.userName = reader.string();
+                    break;
+                case 11:
+                    message.userAgent = reader.string();
+                    break;
+                case 12:
+                    message.ip = reader.string();
+                    break;
+                case 13:
+                    message.requestUrl = reader.string();
+                    break;
+                case 14:
+                    message.userId = reader.string();
+                    break;
+                case 15:
+                    message.organizationId = reader.int64();
+                    break;
+                case 16:
+                    message.impersontatedUserId = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an Impersonated message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.Impersonated
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.Impersonated} Impersonated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        Impersonated.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an Impersonated message.
+         * @function verify
+         * @memberof events.Impersonated
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        Impersonated.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                if (!$util.isString(message.userName))
+                    return "userName: string expected";
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                if (!$util.isString(message.userAgent))
+                    return "userAgent: string expected";
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                if (!$util.isString(message.ip))
+                    return "ip: string expected";
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                if (!$util.isString(message.requestUrl))
+                    return "requestUrl: string expected";
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                if (!$util.isString(message.userId))
+                    return "userId: string expected";
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                if (!$util.isInteger(message.organizationId) && !(message.organizationId && $util.isInteger(message.organizationId.low) && $util.isInteger(message.organizationId.high)))
+                    return "organizationId: integer|Long expected";
+            if (message.impersontatedUserId != null && message.hasOwnProperty("impersontatedUserId"))
+                if (!$util.isString(message.impersontatedUserId))
+                    return "impersontatedUserId: string expected";
+            return null;
+        };
+
+        /**
+         * Creates an Impersonated message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.Impersonated
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.Impersonated} Impersonated
+         */
+        Impersonated.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.Impersonated)
+                return object;
+            var message = new $root.events.Impersonated();
+            if (object.userName != null)
+                message.userName = String(object.userName);
+            if (object.userAgent != null)
+                message.userAgent = String(object.userAgent);
+            if (object.ip != null)
+                message.ip = String(object.ip);
+            if (object.requestUrl != null)
+                message.requestUrl = String(object.requestUrl);
+            if (object.userId != null)
+                message.userId = String(object.userId);
+            if (object.organizationId != null)
+                if ($util.Long)
+                    (message.organizationId = $util.Long.fromValue(object.organizationId)).unsigned = false;
+                else if (typeof object.organizationId === "string")
+                    message.organizationId = parseInt(object.organizationId, 10);
+                else if (typeof object.organizationId === "number")
+                    message.organizationId = object.organizationId;
+                else if (typeof object.organizationId === "object")
+                    message.organizationId = new $util.LongBits(object.organizationId.low >>> 0, object.organizationId.high >>> 0).toNumber();
+            if (object.impersontatedUserId != null)
+                message.impersontatedUserId = String(object.impersontatedUserId);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an Impersonated message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.Impersonated
+         * @static
+         * @param {events.Impersonated} message Impersonated
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        Impersonated.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.userName = "";
+                object.userAgent = "";
+                object.ip = "";
+                object.requestUrl = "";
+                object.userId = "";
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.organizationId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.organizationId = options.longs === String ? "0" : 0;
+                object.impersontatedUserId = "";
+            }
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                object.userName = message.userName;
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                object.userAgent = message.userAgent;
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                object.ip = message.ip;
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                object.requestUrl = message.requestUrl;
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                object.userId = message.userId;
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                if (typeof message.organizationId === "number")
+                    object.organizationId = options.longs === String ? String(message.organizationId) : message.organizationId;
+                else
+                    object.organizationId = options.longs === String ? $util.Long.prototype.toString.call(message.organizationId) : options.longs === Number ? new $util.LongBits(message.organizationId.low >>> 0, message.organizationId.high >>> 0).toNumber() : message.organizationId;
+            if (message.impersontatedUserId != null && message.hasOwnProperty("impersontatedUserId"))
+                object.impersontatedUserId = message.impersontatedUserId;
+            return object;
+        };
+
+        /**
+         * Converts this Impersonated to JSON.
+         * @function toJSON
+         * @memberof events.Impersonated
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        Impersonated.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return Impersonated;
+    })();
+
+    events.ActionUserForbidden = (function() {
+
+        /**
+         * Properties of an ActionUserForbidden.
+         * @memberof events
+         * @interface IActionUserForbidden
+         * @property {string|null} [userName] ActionUserForbidden userName
+         * @property {string|null} [userAgent] ActionUserForbidden userAgent
+         * @property {string|null} [ip] ActionUserForbidden ip
+         * @property {string|null} [requestUrl] ActionUserForbidden requestUrl
+         * @property {string|null} [userId] ActionUserForbidden userId
+         * @property {number|Long|null} [organizationId] ActionUserForbidden organizationId
+         */
+
+        /**
+         * Constructs a new ActionUserForbidden.
+         * @memberof events
+         * @classdesc Represents an ActionUserForbidden.
+         * @implements IActionUserForbidden
+         * @constructor
+         * @param {events.IActionUserForbidden=} [properties] Properties to set
+         */
+        function ActionUserForbidden(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * ActionUserForbidden userName.
+         * @member {string} userName
+         * @memberof events.ActionUserForbidden
+         * @instance
+         */
+        ActionUserForbidden.prototype.userName = "";
+
+        /**
+         * ActionUserForbidden userAgent.
+         * @member {string} userAgent
+         * @memberof events.ActionUserForbidden
+         * @instance
+         */
+        ActionUserForbidden.prototype.userAgent = "";
+
+        /**
+         * ActionUserForbidden ip.
+         * @member {string} ip
+         * @memberof events.ActionUserForbidden
+         * @instance
+         */
+        ActionUserForbidden.prototype.ip = "";
+
+        /**
+         * ActionUserForbidden requestUrl.
+         * @member {string} requestUrl
+         * @memberof events.ActionUserForbidden
+         * @instance
+         */
+        ActionUserForbidden.prototype.requestUrl = "";
+
+        /**
+         * ActionUserForbidden userId.
+         * @member {string} userId
+         * @memberof events.ActionUserForbidden
+         * @instance
+         */
+        ActionUserForbidden.prototype.userId = "";
+
+        /**
+         * ActionUserForbidden organizationId.
+         * @member {number|Long} organizationId
+         * @memberof events.ActionUserForbidden
+         * @instance
+         */
+        ActionUserForbidden.prototype.organizationId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+        /**
+         * Creates a new ActionUserForbidden instance using the specified properties.
+         * @function create
+         * @memberof events.ActionUserForbidden
+         * @static
+         * @param {events.IActionUserForbidden=} [properties] Properties to set
+         * @returns {events.ActionUserForbidden} ActionUserForbidden instance
+         */
+        ActionUserForbidden.create = function create(properties) {
+            return new ActionUserForbidden(properties);
+        };
+
+        /**
+         * Encodes the specified ActionUserForbidden message. Does not implicitly {@link events.ActionUserForbidden.verify|verify} messages.
+         * @function encode
+         * @memberof events.ActionUserForbidden
+         * @static
+         * @param {events.IActionUserForbidden} message ActionUserForbidden message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        ActionUserForbidden.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.userName);
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.userAgent);
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.ip);
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                writer.uint32(/* id 13, wireType 2 =*/106).string(message.requestUrl);
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                writer.uint32(/* id 14, wireType 2 =*/114).string(message.userId);
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                writer.uint32(/* id 15, wireType 0 =*/120).int64(message.organizationId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified ActionUserForbidden message, length delimited. Does not implicitly {@link events.ActionUserForbidden.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.ActionUserForbidden
+         * @static
+         * @param {events.IActionUserForbidden} message ActionUserForbidden message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        ActionUserForbidden.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an ActionUserForbidden message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.ActionUserForbidden
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.ActionUserForbidden} ActionUserForbidden
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        ActionUserForbidden.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.ActionUserForbidden();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.userName = reader.string();
+                    break;
+                case 11:
+                    message.userAgent = reader.string();
+                    break;
+                case 12:
+                    message.ip = reader.string();
+                    break;
+                case 13:
+                    message.requestUrl = reader.string();
+                    break;
+                case 14:
+                    message.userId = reader.string();
+                    break;
+                case 15:
+                    message.organizationId = reader.int64();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an ActionUserForbidden message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.ActionUserForbidden
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.ActionUserForbidden} ActionUserForbidden
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        ActionUserForbidden.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an ActionUserForbidden message.
+         * @function verify
+         * @memberof events.ActionUserForbidden
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        ActionUserForbidden.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                if (!$util.isString(message.userName))
+                    return "userName: string expected";
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                if (!$util.isString(message.userAgent))
+                    return "userAgent: string expected";
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                if (!$util.isString(message.ip))
+                    return "ip: string expected";
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                if (!$util.isString(message.requestUrl))
+                    return "requestUrl: string expected";
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                if (!$util.isString(message.userId))
+                    return "userId: string expected";
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                if (!$util.isInteger(message.organizationId) && !(message.organizationId && $util.isInteger(message.organizationId.low) && $util.isInteger(message.organizationId.high)))
+                    return "organizationId: integer|Long expected";
+            return null;
+        };
+
+        /**
+         * Creates an ActionUserForbidden message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.ActionUserForbidden
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.ActionUserForbidden} ActionUserForbidden
+         */
+        ActionUserForbidden.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.ActionUserForbidden)
+                return object;
+            var message = new $root.events.ActionUserForbidden();
+            if (object.userName != null)
+                message.userName = String(object.userName);
+            if (object.userAgent != null)
+                message.userAgent = String(object.userAgent);
+            if (object.ip != null)
+                message.ip = String(object.ip);
+            if (object.requestUrl != null)
+                message.requestUrl = String(object.requestUrl);
             if (object.userId != null)
                 message.userId = String(object.userId);
             if (object.organizationId != null)
@@ -586,15 +1666,15 @@ $root.events = (function() {
         };
 
         /**
-         * Creates a plain object from a LoginFailed message. Also converts values to other types if specified.
+         * Creates a plain object from an ActionUserForbidden message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof events.LoginFailed
+         * @memberof events.ActionUserForbidden
          * @static
-         * @param {events.LoginFailed} message LoginFailed
+         * @param {events.ActionUserForbidden} message ActionUserForbidden
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        LoginFailed.toObject = function toObject(message, options) {
+        ActionUserForbidden.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
@@ -629,17 +1709,249 @@ $root.events = (function() {
         };
 
         /**
-         * Converts this LoginFailed to JSON.
+         * Converts this ActionUserForbidden to JSON.
          * @function toJSON
-         * @memberof events.LoginFailed
+         * @memberof events.ActionUserForbidden
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        LoginFailed.prototype.toJSON = function toJSON() {
+        ActionUserForbidden.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
-        return LoginFailed;
+        return ActionUserForbidden;
+    })();
+
+    events.ActionTokenForbidden = (function() {
+
+        /**
+         * Properties of an ActionTokenForbidden.
+         * @memberof events
+         * @interface IActionTokenForbidden
+         * @property {string|null} [userAgent] ActionTokenForbidden userAgent
+         * @property {string|null} [ip] ActionTokenForbidden ip
+         * @property {string|null} [requestUrl] ActionTokenForbidden requestUrl
+         */
+
+        /**
+         * Constructs a new ActionTokenForbidden.
+         * @memberof events
+         * @classdesc Represents an ActionTokenForbidden.
+         * @implements IActionTokenForbidden
+         * @constructor
+         * @param {events.IActionTokenForbidden=} [properties] Properties to set
+         */
+        function ActionTokenForbidden(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * ActionTokenForbidden userAgent.
+         * @member {string} userAgent
+         * @memberof events.ActionTokenForbidden
+         * @instance
+         */
+        ActionTokenForbidden.prototype.userAgent = "";
+
+        /**
+         * ActionTokenForbidden ip.
+         * @member {string} ip
+         * @memberof events.ActionTokenForbidden
+         * @instance
+         */
+        ActionTokenForbidden.prototype.ip = "";
+
+        /**
+         * ActionTokenForbidden requestUrl.
+         * @member {string} requestUrl
+         * @memberof events.ActionTokenForbidden
+         * @instance
+         */
+        ActionTokenForbidden.prototype.requestUrl = "";
+
+        /**
+         * Creates a new ActionTokenForbidden instance using the specified properties.
+         * @function create
+         * @memberof events.ActionTokenForbidden
+         * @static
+         * @param {events.IActionTokenForbidden=} [properties] Properties to set
+         * @returns {events.ActionTokenForbidden} ActionTokenForbidden instance
+         */
+        ActionTokenForbidden.create = function create(properties) {
+            return new ActionTokenForbidden(properties);
+        };
+
+        /**
+         * Encodes the specified ActionTokenForbidden message. Does not implicitly {@link events.ActionTokenForbidden.verify|verify} messages.
+         * @function encode
+         * @memberof events.ActionTokenForbidden
+         * @static
+         * @param {events.IActionTokenForbidden} message ActionTokenForbidden message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        ActionTokenForbidden.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.userAgent);
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.ip);
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                writer.uint32(/* id 13, wireType 2 =*/106).string(message.requestUrl);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified ActionTokenForbidden message, length delimited. Does not implicitly {@link events.ActionTokenForbidden.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.ActionTokenForbidden
+         * @static
+         * @param {events.IActionTokenForbidden} message ActionTokenForbidden message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        ActionTokenForbidden.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an ActionTokenForbidden message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.ActionTokenForbidden
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.ActionTokenForbidden} ActionTokenForbidden
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        ActionTokenForbidden.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.ActionTokenForbidden();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 11:
+                    message.userAgent = reader.string();
+                    break;
+                case 12:
+                    message.ip = reader.string();
+                    break;
+                case 13:
+                    message.requestUrl = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an ActionTokenForbidden message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.ActionTokenForbidden
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.ActionTokenForbidden} ActionTokenForbidden
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        ActionTokenForbidden.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an ActionTokenForbidden message.
+         * @function verify
+         * @memberof events.ActionTokenForbidden
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        ActionTokenForbidden.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                if (!$util.isString(message.userAgent))
+                    return "userAgent: string expected";
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                if (!$util.isString(message.ip))
+                    return "ip: string expected";
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                if (!$util.isString(message.requestUrl))
+                    return "requestUrl: string expected";
+            return null;
+        };
+
+        /**
+         * Creates an ActionTokenForbidden message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.ActionTokenForbidden
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.ActionTokenForbidden} ActionTokenForbidden
+         */
+        ActionTokenForbidden.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.ActionTokenForbidden)
+                return object;
+            var message = new $root.events.ActionTokenForbidden();
+            if (object.userAgent != null)
+                message.userAgent = String(object.userAgent);
+            if (object.ip != null)
+                message.ip = String(object.ip);
+            if (object.requestUrl != null)
+                message.requestUrl = String(object.requestUrl);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an ActionTokenForbidden message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.ActionTokenForbidden
+         * @static
+         * @param {events.ActionTokenForbidden} message ActionTokenForbidden
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        ActionTokenForbidden.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.userAgent = "";
+                object.ip = "";
+                object.requestUrl = "";
+            }
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                object.userAgent = message.userAgent;
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                object.ip = message.ip;
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                object.requestUrl = message.requestUrl;
+            return object;
+        };
+
+        /**
+         * Converts this ActionTokenForbidden to JSON.
+         * @function toJSON
+         * @memberof events.ActionTokenForbidden
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        ActionTokenForbidden.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return ActionTokenForbidden;
     })();
 
     events.Core = (function() {
