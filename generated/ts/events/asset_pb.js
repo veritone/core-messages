@@ -59,8 +59,8 @@ proto.events.AssetUploaded.prototype.toObject = function(opt_includeInstance) {
  */
 proto.events.AssetUploaded.toObject = function(includeInstance, msg) {
   var f, obj = {
-    assetid: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    recordingid: jspb.Message.getFieldWithDefault(msg, 11, 0)
+    assetid: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    recordingid: jspb.Message.getFieldWithDefault(msg, 11, "")
   };
 
   if (includeInstance) {
@@ -98,11 +98,11 @@ proto.events.AssetUploaded.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 10:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setAssetid(value);
       break;
     case 11:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setRecordingid(value);
       break;
     default:
@@ -135,15 +135,15 @@ proto.events.AssetUploaded.prototype.serializeBinary = function() {
 proto.events.AssetUploaded.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAssetid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (f.length > 0) {
+    writer.writeString(
       10,
       f
     );
   }
   f = message.getRecordingid();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (f.length > 0) {
+    writer.writeString(
       11,
       f
     );
@@ -152,32 +152,32 @@ proto.events.AssetUploaded.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional int64 assetId = 10;
- * @return {number}
+ * optional string assetId = 10;
+ * @return {string}
  */
 proto.events.AssetUploaded.prototype.getAssetid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
 
-/** @param {number} value */
+/** @param {string} value */
 proto.events.AssetUploaded.prototype.setAssetid = function(value) {
-  jspb.Message.setProto3IntField(this, 10, value);
+  jspb.Message.setProto3StringField(this, 10, value);
 };
 
 
 /**
- * optional int64 recordingId = 11;
- * @return {number}
+ * optional string recordingId = 11;
+ * @return {string}
  */
 proto.events.AssetUploaded.prototype.getRecordingid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
 
-/** @param {number} value */
+/** @param {string} value */
 proto.events.AssetUploaded.prototype.setRecordingid = function(value) {
-  jspb.Message.setProto3IntField(this, 11, value);
+  jspb.Message.setProto3StringField(this, 11, value);
 };
 
 

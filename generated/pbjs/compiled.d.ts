@@ -7,10 +7,10 @@ export namespace events {
     interface IAssetUploaded {
 
         /** AssetUploaded assetId */
-        assetId?: (number|Long|null);
+        assetId?: (string|null);
 
         /** AssetUploaded recordingId */
-        recordingId?: (number|Long|null);
+        recordingId?: (string|null);
     }
 
     /** Represents an AssetUploaded. */
@@ -23,10 +23,10 @@ export namespace events {
         constructor(properties?: events.IAssetUploaded);
 
         /** AssetUploaded assetId. */
-        public assetId: (number|Long);
+        public assetId: string;
 
         /** AssetUploaded recordingId. */
-        public recordingId: (number|Long);
+        public recordingId: string;
 
         /**
          * Creates a new AssetUploaded instance using the specified properties.

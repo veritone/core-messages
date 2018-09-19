@@ -24,8 +24,8 @@ $root.events = (function() {
          * Properties of an AssetUploaded.
          * @memberof events
          * @interface IAssetUploaded
-         * @property {number|Long|null} [assetId] AssetUploaded assetId
-         * @property {number|Long|null} [recordingId] AssetUploaded recordingId
+         * @property {string|null} [assetId] AssetUploaded assetId
+         * @property {string|null} [recordingId] AssetUploaded recordingId
          */
 
         /**
@@ -45,19 +45,19 @@ $root.events = (function() {
 
         /**
          * AssetUploaded assetId.
-         * @member {number|Long} assetId
+         * @member {string} assetId
          * @memberof events.AssetUploaded
          * @instance
          */
-        AssetUploaded.prototype.assetId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+        AssetUploaded.prototype.assetId = "";
 
         /**
          * AssetUploaded recordingId.
-         * @member {number|Long} recordingId
+         * @member {string} recordingId
          * @memberof events.AssetUploaded
          * @instance
          */
-        AssetUploaded.prototype.recordingId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+        AssetUploaded.prototype.recordingId = "";
 
         /**
          * Creates a new AssetUploaded instance using the specified properties.
@@ -84,9 +84,9 @@ $root.events = (function() {
             if (!writer)
                 writer = $Writer.create();
             if (message.assetId != null && message.hasOwnProperty("assetId"))
-                writer.uint32(/* id 10, wireType 0 =*/80).int64(message.assetId);
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.assetId);
             if (message.recordingId != null && message.hasOwnProperty("recordingId"))
-                writer.uint32(/* id 11, wireType 0 =*/88).int64(message.recordingId);
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.recordingId);
             return writer;
         };
 
@@ -122,10 +122,10 @@ $root.events = (function() {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 10:
-                    message.assetId = reader.int64();
+                    message.assetId = reader.string();
                     break;
                 case 11:
-                    message.recordingId = reader.int64();
+                    message.recordingId = reader.string();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -163,11 +163,11 @@ $root.events = (function() {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.assetId != null && message.hasOwnProperty("assetId"))
-                if (!$util.isInteger(message.assetId) && !(message.assetId && $util.isInteger(message.assetId.low) && $util.isInteger(message.assetId.high)))
-                    return "assetId: integer|Long expected";
+                if (!$util.isString(message.assetId))
+                    return "assetId: string expected";
             if (message.recordingId != null && message.hasOwnProperty("recordingId"))
-                if (!$util.isInteger(message.recordingId) && !(message.recordingId && $util.isInteger(message.recordingId.low) && $util.isInteger(message.recordingId.high)))
-                    return "recordingId: integer|Long expected";
+                if (!$util.isString(message.recordingId))
+                    return "recordingId: string expected";
             return null;
         };
 
@@ -184,23 +184,9 @@ $root.events = (function() {
                 return object;
             var message = new $root.events.AssetUploaded();
             if (object.assetId != null)
-                if ($util.Long)
-                    (message.assetId = $util.Long.fromValue(object.assetId)).unsigned = false;
-                else if (typeof object.assetId === "string")
-                    message.assetId = parseInt(object.assetId, 10);
-                else if (typeof object.assetId === "number")
-                    message.assetId = object.assetId;
-                else if (typeof object.assetId === "object")
-                    message.assetId = new $util.LongBits(object.assetId.low >>> 0, object.assetId.high >>> 0).toNumber();
+                message.assetId = String(object.assetId);
             if (object.recordingId != null)
-                if ($util.Long)
-                    (message.recordingId = $util.Long.fromValue(object.recordingId)).unsigned = false;
-                else if (typeof object.recordingId === "string")
-                    message.recordingId = parseInt(object.recordingId, 10);
-                else if (typeof object.recordingId === "number")
-                    message.recordingId = object.recordingId;
-                else if (typeof object.recordingId === "object")
-                    message.recordingId = new $util.LongBits(object.recordingId.low >>> 0, object.recordingId.high >>> 0).toNumber();
+                message.recordingId = String(object.recordingId);
             return message;
         };
 
@@ -218,27 +204,13 @@ $root.events = (function() {
                 options = {};
             var object = {};
             if (options.defaults) {
-                if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
-                    object.assetId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
-                } else
-                    object.assetId = options.longs === String ? "0" : 0;
-                if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
-                    object.recordingId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
-                } else
-                    object.recordingId = options.longs === String ? "0" : 0;
+                object.assetId = "";
+                object.recordingId = "";
             }
             if (message.assetId != null && message.hasOwnProperty("assetId"))
-                if (typeof message.assetId === "number")
-                    object.assetId = options.longs === String ? String(message.assetId) : message.assetId;
-                else
-                    object.assetId = options.longs === String ? $util.Long.prototype.toString.call(message.assetId) : options.longs === Number ? new $util.LongBits(message.assetId.low >>> 0, message.assetId.high >>> 0).toNumber() : message.assetId;
+                object.assetId = message.assetId;
             if (message.recordingId != null && message.hasOwnProperty("recordingId"))
-                if (typeof message.recordingId === "number")
-                    object.recordingId = options.longs === String ? String(message.recordingId) : message.recordingId;
-                else
-                    object.recordingId = options.longs === String ? $util.Long.prototype.toString.call(message.recordingId) : options.longs === Number ? new $util.LongBits(message.recordingId.low >>> 0, message.recordingId.high >>> 0).toNumber() : message.recordingId;
+                object.recordingId = message.recordingId;
             return object;
         };
 

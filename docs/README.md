@@ -142,8 +142,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| assetId | [int64](#int64) |  |  |
-| recordingId | [int64](#int64) |  |  |
+| assetId | [string](#string) |  |  |
+| recordingId | [string](#string) |  |  |
 
 
 
