@@ -4,6 +4,6 @@ package events;
 option go_package = "events";
 
 message AssetUploaded  {
-   int64 assetId = 10;
-   int64 recordingId = 11;
+   string assetId = 10;
+   string recordingId = 11;
 }
