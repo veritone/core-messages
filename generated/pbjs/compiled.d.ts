@@ -5021,6 +5021,9 @@ export namespace events {
 
         /** RecordingCognitionCompleted recordingId */
         recordingId?: (string|null);
+
+        /** RecordingCognitionCompleted payload */
+        payload?: (events.RecordingCognitionCompleted.IPayload|null);
     }
 
     /** Represents a RecordingCognitionCompleted. */
@@ -5034,6 +5037,9 @@ export namespace events {
 
         /** RecordingCognitionCompleted recordingId. */
         public recordingId: string;
+
+        /** RecordingCognitionCompleted payload. */
+        public payload?: (events.RecordingCognitionCompleted.IPayload|null);
 
         /**
          * Creates a new RecordingCognitionCompleted instance using the specified properties.
@@ -5104,6 +5110,147 @@ export namespace events {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
+    }
+
+    namespace RecordingCognitionCompleted {
+
+        /** Properties of a Payload. */
+        interface IPayload {
+
+            /** Payload jobId */
+            jobId?: (string|null);
+
+            /** Payload taskId */
+            taskId?: (string|null);
+
+            /** Payload applicationId */
+            applicationId?: (string|null);
+
+            /** Payload organizationId */
+            organizationId?: (number|Long|null);
+
+            /** Payload libraryId */
+            libraryId?: (string|null);
+
+            /** Payload indexOverride */
+            indexOverride?: (string|null);
+
+            /** Payload token */
+            token?: (string|null);
+
+            /** Payload assetId */
+            assetId?: (string|null);
+
+            /** Payload skipMentionGeneration */
+            skipMentionGeneration?: (boolean|null);
+        }
+
+        /** Represents a Payload. */
+        class Payload implements IPayload {
+
+            /**
+             * Constructs a new Payload.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: events.RecordingCognitionCompleted.IPayload);
+
+            /** Payload jobId. */
+            public jobId: string;
+
+            /** Payload taskId. */
+            public taskId: string;
+
+            /** Payload applicationId. */
+            public applicationId: string;
+
+            /** Payload organizationId. */
+            public organizationId: (number|Long);
+
+            /** Payload libraryId. */
+            public libraryId: string;
+
+            /** Payload indexOverride. */
+            public indexOverride: string;
+
+            /** Payload token. */
+            public token: string;
+
+            /** Payload assetId. */
+            public assetId: string;
+
+            /** Payload skipMentionGeneration. */
+            public skipMentionGeneration: boolean;
+
+            /**
+             * Creates a new Payload instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Payload instance
+             */
+            public static create(properties?: events.RecordingCognitionCompleted.IPayload): events.RecordingCognitionCompleted.Payload;
+
+            /**
+             * Encodes the specified Payload message. Does not implicitly {@link events.RecordingCognitionCompleted.Payload.verify|verify} messages.
+             * @param message Payload message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: events.RecordingCognitionCompleted.IPayload, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified Payload message, length delimited. Does not implicitly {@link events.RecordingCognitionCompleted.Payload.verify|verify} messages.
+             * @param message Payload message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: events.RecordingCognitionCompleted.IPayload, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Payload message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Payload
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.RecordingCognitionCompleted.Payload;
+
+            /**
+             * Decodes a Payload message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns Payload
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.RecordingCognitionCompleted.Payload;
+
+            /**
+             * Verifies a Payload message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a Payload message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns Payload
+             */
+            public static fromObject(object: { [k: string]: any }): events.RecordingCognitionCompleted.Payload;
+
+            /**
+             * Creates a plain object from a Payload message. Also converts values to other types if specified.
+             * @param message Payload
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: events.RecordingCognitionCompleted.Payload, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this Payload to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
     }
 
     /** Properties of a TaskQueued. */

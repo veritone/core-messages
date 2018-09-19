@@ -247,6 +247,11 @@ export class RecordingCognitionCompleted extends jspb.Message {
   getRecordingId(): string;
   setRecordingId(value: string): void;
 
+  hasPayload(): boolean;
+  clearPayload(): void;
+  getPayload(): RecordingCognitionCompleted.Payload | undefined;
+  setPayload(value?: RecordingCognitionCompleted.Payload): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RecordingCognitionCompleted.AsObject;
   static toObject(includeInstance: boolean, msg: RecordingCognitionCompleted): RecordingCognitionCompleted.AsObject;
@@ -260,6 +265,59 @@ export class RecordingCognitionCompleted extends jspb.Message {
 export namespace RecordingCognitionCompleted {
   export type AsObject = {
     recordingId: string,
+    payload?: RecordingCognitionCompleted.Payload.AsObject,
+  }
+
+  export class Payload extends jspb.Message {
+    getJobId(): string;
+    setJobId(value: string): void;
+
+    getTaskId(): string;
+    setTaskId(value: string): void;
+
+    getApplicationId(): string;
+    setApplicationId(value: string): void;
+
+    getOrganizationId(): number;
+    setOrganizationId(value: number): void;
+
+    getLibraryId(): string;
+    setLibraryId(value: string): void;
+
+    getIndexOverride(): string;
+    setIndexOverride(value: string): void;
+
+    getToken(): string;
+    setToken(value: string): void;
+
+    getAssetId(): string;
+    setAssetId(value: string): void;
+
+    getSkipMentionGeneration(): boolean;
+    setSkipMentionGeneration(value: boolean): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Payload.AsObject;
+    static toObject(includeInstance: boolean, msg: Payload): Payload.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Payload, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Payload;
+    static deserializeBinaryFromReader(message: Payload, reader: jspb.BinaryReader): Payload;
+  }
+
+  export namespace Payload {
+    export type AsObject = {
+      jobId: string,
+      taskId: string,
+      applicationId: string,
+      organizationId: number,
+      libraryId: string,
+      indexOverride: string,
+      token: string,
+      assetId: string,
+      skipMentionGeneration: boolean,
+    }
   }
 }
 

@@ -12103,6 +12103,7 @@ $root.events = (function() {
          * @memberof events
          * @interface IRecordingCognitionCompleted
          * @property {string|null} [recordingId] RecordingCognitionCompleted recordingId
+         * @property {events.RecordingCognitionCompleted.IPayload|null} [payload] RecordingCognitionCompleted payload
          */
 
         /**
@@ -12127,6 +12128,14 @@ $root.events = (function() {
          * @instance
          */
         RecordingCognitionCompleted.prototype.recordingId = "";
+
+        /**
+         * RecordingCognitionCompleted payload.
+         * @member {events.RecordingCognitionCompleted.IPayload|null|undefined} payload
+         * @memberof events.RecordingCognitionCompleted
+         * @instance
+         */
+        RecordingCognitionCompleted.prototype.payload = null;
 
         /**
          * Creates a new RecordingCognitionCompleted instance using the specified properties.
@@ -12154,6 +12163,8 @@ $root.events = (function() {
                 writer = $Writer.create();
             if (message.recordingId != null && message.hasOwnProperty("recordingId"))
                 writer.uint32(/* id 10, wireType 2 =*/82).string(message.recordingId);
+            if (message.payload != null && message.hasOwnProperty("payload"))
+                $root.events.RecordingCognitionCompleted.Payload.encode(message.payload, writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
             return writer;
         };
 
@@ -12190,6 +12201,9 @@ $root.events = (function() {
                 switch (tag >>> 3) {
                 case 10:
                     message.recordingId = reader.string();
+                    break;
+                case 11:
+                    message.payload = $root.events.RecordingCognitionCompleted.Payload.decode(reader, reader.uint32());
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -12229,6 +12243,11 @@ $root.events = (function() {
             if (message.recordingId != null && message.hasOwnProperty("recordingId"))
                 if (!$util.isString(message.recordingId))
                     return "recordingId: string expected";
+            if (message.payload != null && message.hasOwnProperty("payload")) {
+                var error = $root.events.RecordingCognitionCompleted.Payload.verify(message.payload);
+                if (error)
+                    return "payload." + error;
+            }
             return null;
         };
 
@@ -12246,6 +12265,11 @@ $root.events = (function() {
             var message = new $root.events.RecordingCognitionCompleted();
             if (object.recordingId != null)
                 message.recordingId = String(object.recordingId);
+            if (object.payload != null) {
+                if (typeof object.payload !== "object")
+                    throw TypeError(".events.RecordingCognitionCompleted.payload: object expected");
+                message.payload = $root.events.RecordingCognitionCompleted.Payload.fromObject(object.payload);
+            }
             return message;
         };
 
@@ -12262,10 +12286,14 @@ $root.events = (function() {
             if (!options)
                 options = {};
             var object = {};
-            if (options.defaults)
+            if (options.defaults) {
                 object.recordingId = "";
+                object.payload = null;
+            }
             if (message.recordingId != null && message.hasOwnProperty("recordingId"))
                 object.recordingId = message.recordingId;
+            if (message.payload != null && message.hasOwnProperty("payload"))
+                object.payload = $root.events.RecordingCognitionCompleted.Payload.toObject(message.payload, options);
             return object;
         };
 
@@ -12279,6 +12307,384 @@ $root.events = (function() {
         RecordingCognitionCompleted.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
+
+        RecordingCognitionCompleted.Payload = (function() {
+
+            /**
+             * Properties of a Payload.
+             * @memberof events.RecordingCognitionCompleted
+             * @interface IPayload
+             * @property {string|null} [jobId] Payload jobId
+             * @property {string|null} [taskId] Payload taskId
+             * @property {string|null} [applicationId] Payload applicationId
+             * @property {number|Long|null} [organizationId] Payload organizationId
+             * @property {string|null} [libraryId] Payload libraryId
+             * @property {string|null} [indexOverride] Payload indexOverride
+             * @property {string|null} [token] Payload token
+             * @property {string|null} [assetId] Payload assetId
+             * @property {boolean|null} [skipMentionGeneration] Payload skipMentionGeneration
+             */
+
+            /**
+             * Constructs a new Payload.
+             * @memberof events.RecordingCognitionCompleted
+             * @classdesc Represents a Payload.
+             * @implements IPayload
+             * @constructor
+             * @param {events.RecordingCognitionCompleted.IPayload=} [properties] Properties to set
+             */
+            function Payload(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Payload jobId.
+             * @member {string} jobId
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @instance
+             */
+            Payload.prototype.jobId = "";
+
+            /**
+             * Payload taskId.
+             * @member {string} taskId
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @instance
+             */
+            Payload.prototype.taskId = "";
+
+            /**
+             * Payload applicationId.
+             * @member {string} applicationId
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @instance
+             */
+            Payload.prototype.applicationId = "";
+
+            /**
+             * Payload organizationId.
+             * @member {number|Long} organizationId
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @instance
+             */
+            Payload.prototype.organizationId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * Payload libraryId.
+             * @member {string} libraryId
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @instance
+             */
+            Payload.prototype.libraryId = "";
+
+            /**
+             * Payload indexOverride.
+             * @member {string} indexOverride
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @instance
+             */
+            Payload.prototype.indexOverride = "";
+
+            /**
+             * Payload token.
+             * @member {string} token
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @instance
+             */
+            Payload.prototype.token = "";
+
+            /**
+             * Payload assetId.
+             * @member {string} assetId
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @instance
+             */
+            Payload.prototype.assetId = "";
+
+            /**
+             * Payload skipMentionGeneration.
+             * @member {boolean} skipMentionGeneration
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @instance
+             */
+            Payload.prototype.skipMentionGeneration = false;
+
+            /**
+             * Creates a new Payload instance using the specified properties.
+             * @function create
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @static
+             * @param {events.RecordingCognitionCompleted.IPayload=} [properties] Properties to set
+             * @returns {events.RecordingCognitionCompleted.Payload} Payload instance
+             */
+            Payload.create = function create(properties) {
+                return new Payload(properties);
+            };
+
+            /**
+             * Encodes the specified Payload message. Does not implicitly {@link events.RecordingCognitionCompleted.Payload.verify|verify} messages.
+             * @function encode
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @static
+             * @param {events.RecordingCognitionCompleted.IPayload} message Payload message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Payload.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.jobId != null && message.hasOwnProperty("jobId"))
+                    writer.uint32(/* id 10, wireType 2 =*/82).string(message.jobId);
+                if (message.taskId != null && message.hasOwnProperty("taskId"))
+                    writer.uint32(/* id 11, wireType 2 =*/90).string(message.taskId);
+                if (message.applicationId != null && message.hasOwnProperty("applicationId"))
+                    writer.uint32(/* id 12, wireType 2 =*/98).string(message.applicationId);
+                if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                    writer.uint32(/* id 13, wireType 0 =*/104).int64(message.organizationId);
+                if (message.libraryId != null && message.hasOwnProperty("libraryId"))
+                    writer.uint32(/* id 14, wireType 2 =*/114).string(message.libraryId);
+                if (message.indexOverride != null && message.hasOwnProperty("indexOverride"))
+                    writer.uint32(/* id 15, wireType 2 =*/122).string(message.indexOverride);
+                if (message.token != null && message.hasOwnProperty("token"))
+                    writer.uint32(/* id 16, wireType 2 =*/130).string(message.token);
+                if (message.assetId != null && message.hasOwnProperty("assetId"))
+                    writer.uint32(/* id 17, wireType 2 =*/138).string(message.assetId);
+                if (message.skipMentionGeneration != null && message.hasOwnProperty("skipMentionGeneration"))
+                    writer.uint32(/* id 18, wireType 0 =*/144).bool(message.skipMentionGeneration);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified Payload message, length delimited. Does not implicitly {@link events.RecordingCognitionCompleted.Payload.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @static
+             * @param {events.RecordingCognitionCompleted.IPayload} message Payload message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Payload.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a Payload message from the specified reader or buffer.
+             * @function decode
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {events.RecordingCognitionCompleted.Payload} Payload
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Payload.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.RecordingCognitionCompleted.Payload();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 10:
+                        message.jobId = reader.string();
+                        break;
+                    case 11:
+                        message.taskId = reader.string();
+                        break;
+                    case 12:
+                        message.applicationId = reader.string();
+                        break;
+                    case 13:
+                        message.organizationId = reader.int64();
+                        break;
+                    case 14:
+                        message.libraryId = reader.string();
+                        break;
+                    case 15:
+                        message.indexOverride = reader.string();
+                        break;
+                    case 16:
+                        message.token = reader.string();
+                        break;
+                    case 17:
+                        message.assetId = reader.string();
+                        break;
+                    case 18:
+                        message.skipMentionGeneration = reader.bool();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a Payload message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {events.RecordingCognitionCompleted.Payload} Payload
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Payload.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a Payload message.
+             * @function verify
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Payload.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.jobId != null && message.hasOwnProperty("jobId"))
+                    if (!$util.isString(message.jobId))
+                        return "jobId: string expected";
+                if (message.taskId != null && message.hasOwnProperty("taskId"))
+                    if (!$util.isString(message.taskId))
+                        return "taskId: string expected";
+                if (message.applicationId != null && message.hasOwnProperty("applicationId"))
+                    if (!$util.isString(message.applicationId))
+                        return "applicationId: string expected";
+                if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                    if (!$util.isInteger(message.organizationId) && !(message.organizationId && $util.isInteger(message.organizationId.low) && $util.isInteger(message.organizationId.high)))
+                        return "organizationId: integer|Long expected";
+                if (message.libraryId != null && message.hasOwnProperty("libraryId"))
+                    if (!$util.isString(message.libraryId))
+                        return "libraryId: string expected";
+                if (message.indexOverride != null && message.hasOwnProperty("indexOverride"))
+                    if (!$util.isString(message.indexOverride))
+                        return "indexOverride: string expected";
+                if (message.token != null && message.hasOwnProperty("token"))
+                    if (!$util.isString(message.token))
+                        return "token: string expected";
+                if (message.assetId != null && message.hasOwnProperty("assetId"))
+                    if (!$util.isString(message.assetId))
+                        return "assetId: string expected";
+                if (message.skipMentionGeneration != null && message.hasOwnProperty("skipMentionGeneration"))
+                    if (typeof message.skipMentionGeneration !== "boolean")
+                        return "skipMentionGeneration: boolean expected";
+                return null;
+            };
+
+            /**
+             * Creates a Payload message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {events.RecordingCognitionCompleted.Payload} Payload
+             */
+            Payload.fromObject = function fromObject(object) {
+                if (object instanceof $root.events.RecordingCognitionCompleted.Payload)
+                    return object;
+                var message = new $root.events.RecordingCognitionCompleted.Payload();
+                if (object.jobId != null)
+                    message.jobId = String(object.jobId);
+                if (object.taskId != null)
+                    message.taskId = String(object.taskId);
+                if (object.applicationId != null)
+                    message.applicationId = String(object.applicationId);
+                if (object.organizationId != null)
+                    if ($util.Long)
+                        (message.organizationId = $util.Long.fromValue(object.organizationId)).unsigned = false;
+                    else if (typeof object.organizationId === "string")
+                        message.organizationId = parseInt(object.organizationId, 10);
+                    else if (typeof object.organizationId === "number")
+                        message.organizationId = object.organizationId;
+                    else if (typeof object.organizationId === "object")
+                        message.organizationId = new $util.LongBits(object.organizationId.low >>> 0, object.organizationId.high >>> 0).toNumber();
+                if (object.libraryId != null)
+                    message.libraryId = String(object.libraryId);
+                if (object.indexOverride != null)
+                    message.indexOverride = String(object.indexOverride);
+                if (object.token != null)
+                    message.token = String(object.token);
+                if (object.assetId != null)
+                    message.assetId = String(object.assetId);
+                if (object.skipMentionGeneration != null)
+                    message.skipMentionGeneration = Boolean(object.skipMentionGeneration);
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a Payload message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @static
+             * @param {events.RecordingCognitionCompleted.Payload} message Payload
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Payload.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.jobId = "";
+                    object.taskId = "";
+                    object.applicationId = "";
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.organizationId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.organizationId = options.longs === String ? "0" : 0;
+                    object.libraryId = "";
+                    object.indexOverride = "";
+                    object.token = "";
+                    object.assetId = "";
+                    object.skipMentionGeneration = false;
+                }
+                if (message.jobId != null && message.hasOwnProperty("jobId"))
+                    object.jobId = message.jobId;
+                if (message.taskId != null && message.hasOwnProperty("taskId"))
+                    object.taskId = message.taskId;
+                if (message.applicationId != null && message.hasOwnProperty("applicationId"))
+                    object.applicationId = message.applicationId;
+                if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                    if (typeof message.organizationId === "number")
+                        object.organizationId = options.longs === String ? String(message.organizationId) : message.organizationId;
+                    else
+                        object.organizationId = options.longs === String ? $util.Long.prototype.toString.call(message.organizationId) : options.longs === Number ? new $util.LongBits(message.organizationId.low >>> 0, message.organizationId.high >>> 0).toNumber() : message.organizationId;
+                if (message.libraryId != null && message.hasOwnProperty("libraryId"))
+                    object.libraryId = message.libraryId;
+                if (message.indexOverride != null && message.hasOwnProperty("indexOverride"))
+                    object.indexOverride = message.indexOverride;
+                if (message.token != null && message.hasOwnProperty("token"))
+                    object.token = message.token;
+                if (message.assetId != null && message.hasOwnProperty("assetId"))
+                    object.assetId = message.assetId;
+                if (message.skipMentionGeneration != null && message.hasOwnProperty("skipMentionGeneration"))
+                    object.skipMentionGeneration = message.skipMentionGeneration;
+                return object;
+            };
+
+            /**
+             * Converts this Payload to JSON.
+             * @function toJSON
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Payload.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return Payload;
+        })();
 
         return RecordingCognitionCompleted;
     })();

@@ -55,5 +55,17 @@ message RecordingDeleted {
 }
 
 message RecordingCognitionCompleted {
+    message Payload {
+        string job_id = 10;
+        string task_id = 11;
+        string application_id = 12;
+        int64 organization_id = 13;
+        string library_id = 14;
+        string index_override = 15;
+        string token = 16;
+        string asset_id = 17;
+        bool skip_mention_generation = 18;
+    }    
     string recording_id = 10;
+    Payload payload = 11;
 }

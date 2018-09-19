@@ -96,6 +96,7 @@
     - [RecordingAssetCreated](#events.RecordingAssetCreated)
     - [RecordingAudioFragmentCaptured](#events.RecordingAudioFragmentCaptured)
     - [RecordingCognitionCompleted](#events.RecordingCognitionCompleted)
+    - [RecordingCognitionCompleted.Payload](#events.RecordingCognitionCompleted.Payload)
     - [RecordingCompleted](#events.RecordingCompleted)
     - [RecordingCreated](#events.RecordingCreated)
     - [RecordingDeleted](#events.RecordingDeleted)
@@ -1052,6 +1053,30 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | recording_id | [string](#string) |  |  |
+| payload | [RecordingCognitionCompleted.Payload](#events.RecordingCognitionCompleted.Payload) |  |  |
+
+
+
+
+
+
+<a name="events.RecordingCognitionCompleted.Payload"/>
+
+### RecordingCognitionCompleted.Payload
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| job_id | [string](#string) |  |  |
+| task_id | [string](#string) |  |  |
+| application_id | [string](#string) |  |  |
+| organization_id | [int64](#int64) |  |  |
+| library_id | [string](#string) |  |  |
+| index_override | [string](#string) |  |  |
+| token | [string](#string) |  |  |
+| asset_id | [string](#string) |  |  |
+| skip_mention_generation | [bool](#bool) |  |  |
 
 
 
