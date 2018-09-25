@@ -431,23 +431,11 @@
             <ul>
               
                 <li>
-                  <a href="#events.RecordingAssetCreated"><span class="badge">M</span>RecordingAssetCreated</a>
-                </li>
-              
-                <li>
-                  <a href="#events.RecordingAudioFragmentCaptured"><span class="badge">M</span>RecordingAudioFragmentCaptured</a>
-                </li>
-              
-                <li>
                   <a href="#events.RecordingCognitionCompleted"><span class="badge">M</span>RecordingCognitionCompleted</a>
                 </li>
               
                 <li>
                   <a href="#events.RecordingCognitionCompleted.Payload"><span class="badge">M</span>RecordingCognitionCompleted.Payload</a>
-                </li>
-              
-                <li>
-                  <a href="#events.RecordingCompleted"><span class="badge">M</span>RecordingCompleted</a>
                 </li>
               
                 <li>
@@ -459,15 +447,7 @@
                 </li>
               
                 <li>
-                  <a href="#events.RecordingImageExtracted"><span class="badge">M</span>RecordingImageExtracted</a>
-                </li>
-              
-                <li>
                   <a href="#events.RecordingInserted"><span class="badge">M</span>RecordingInserted</a>
-                </li>
-              
-                <li>
-                  <a href="#events.RecordingVideoFragmentCaptured"><span class="badge">M</span>RecordingVideoFragmentCaptured</a>
                 </li>
               
               
@@ -537,14 +517,14 @@
             <tbody>
               
                 <tr>
-                  <td>assetId</td>
+                  <td>asset_id</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
-                  <td>recordingId</td>
+                  <td>recording_id</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
@@ -2471,115 +2451,6 @@ It will be propagate through the system. Similar to correlationId </p></td>
       <p></p>
 
       
-        <h3 id="events.RecordingAssetCreated">RecordingAssetCreated</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>asset_id</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>task_id</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>recording_id</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>asset_type</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>uri</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="events.RecordingAudioFragmentCaptured">RecordingAudioFragmentCaptured</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>job_id</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>task_id</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>sample_index</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>relative_start_time_ms</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>relative_end_time_ms</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>uri</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
         <h3 id="events.RecordingCognitionCompleted">RecordingCognitionCompleted</h3>
         <p></p>
 
@@ -2689,43 +2560,6 @@ It will be propagate through the system. Similar to correlationId </p></td>
 
         
       
-        <h3 id="events.RecordingCompleted">RecordingCompleted</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>job_id</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>task_id</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>recording_id</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
         <h3 id="events.RecordingCreated">RecordingCreated</h3>
         <p></p>
 
@@ -2772,57 +2606,6 @@ It will be propagate through the system. Similar to correlationId </p></td>
 
         
       
-        <h3 id="events.RecordingImageExtracted">RecordingImageExtracted</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>job_id</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>task_id</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>sample_index</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>sample_rate_per_sec</td>
-                  <td><a href="#double">double</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>uri</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
         <h3 id="events.RecordingInserted">RecordingInserted</h3>
         <p></p>
 
@@ -2835,64 +2618,6 @@ It will be propagate through the system. Similar to correlationId </p></td>
               
                 <tr>
                   <td>recording_id</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="events.RecordingVideoFragmentCaptured">RecordingVideoFragmentCaptured</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>job_id</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>task_id</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>sample_index</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>relative_start_time_ms</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>relative_end_time_ms</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>uri</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>

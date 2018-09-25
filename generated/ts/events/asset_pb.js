@@ -59,8 +59,8 @@ proto.events.AssetUploaded.prototype.toObject = function(opt_includeInstance) {
  */
 proto.events.AssetUploaded.toObject = function(includeInstance, msg) {
   var f, obj = {
-    assetid: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    recordingid: jspb.Message.getFieldWithDefault(msg, 11, "")
+    assetId: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    recordingId: jspb.Message.getFieldWithDefault(msg, 11, "")
   };
 
   if (includeInstance) {
@@ -99,11 +99,11 @@ proto.events.AssetUploaded.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 10:
       var value = /** @type {string} */ (reader.readString());
-      msg.setAssetid(value);
+      msg.setAssetId(value);
       break;
     case 11:
       var value = /** @type {string} */ (reader.readString());
-      msg.setRecordingid(value);
+      msg.setRecordingId(value);
       break;
     default:
       reader.skipField();
@@ -134,14 +134,14 @@ proto.events.AssetUploaded.prototype.serializeBinary = function() {
  */
 proto.events.AssetUploaded.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getAssetid();
+  f = message.getAssetId();
   if (f.length > 0) {
     writer.writeString(
       10,
       f
     );
   }
-  f = message.getRecordingid();
+  f = message.getRecordingId();
   if (f.length > 0) {
     writer.writeString(
       11,
@@ -152,31 +152,31 @@ proto.events.AssetUploaded.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string assetId = 10;
+ * optional string asset_id = 10;
  * @return {string}
  */
-proto.events.AssetUploaded.prototype.getAssetid = function() {
+proto.events.AssetUploaded.prototype.getAssetId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
 
 /** @param {string} value */
-proto.events.AssetUploaded.prototype.setAssetid = function(value) {
+proto.events.AssetUploaded.prototype.setAssetId = function(value) {
   jspb.Message.setProto3StringField(this, 10, value);
 };
 
 
 /**
- * optional string recordingId = 11;
+ * optional string recording_id = 11;
  * @return {string}
  */
-proto.events.AssetUploaded.prototype.getRecordingid = function() {
+proto.events.AssetUploaded.prototype.getRecordingId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
 
 /** @param {string} value */
-proto.events.AssetUploaded.prototype.setRecordingid = function(value) {
+proto.events.AssetUploaded.prototype.setRecordingId = function(value) {
   jspb.Message.setProto3StringField(this, 11, value);
 };
 

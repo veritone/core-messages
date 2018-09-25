@@ -4,11 +4,11 @@
 import * as jspb from "google-protobuf";
 
 export class AssetUploaded extends jspb.Message {
-  getAssetid(): string;
-  setAssetid(value: string): void;
+  getAssetId(): string;
+  setAssetId(value: string): void;
 
-  getRecordingid(): string;
-  setRecordingid(value: string): void;
+  getRecordingId(): string;
+  setRecordingId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AssetUploaded.AsObject;
@@ -22,8 +22,8 @@ export class AssetUploaded extends jspb.Message {
 
 export namespace AssetUploaded {
   export type AsObject = {
-    assetid: string,
-    recordingid: string,
+    assetId: string,
+    recordingId: string,
   }
 }
 

@@ -18,356 +18,6 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
-type RecordingImageExtracted struct {
-	JobId                string   `protobuf:"bytes,10,opt,name=job_id,json=jobId,proto3" json:"job_id,omitempty"`
-	TaskId               string   `protobuf:"bytes,11,opt,name=task_id,json=taskId,proto3" json:"task_id,omitempty"`
-	SampleIndex          int32    `protobuf:"varint,12,opt,name=sample_index,json=sampleIndex,proto3" json:"sample_index,omitempty"`
-	SampleRatePerSec     float64  `protobuf:"fixed64,13,opt,name=sample_rate_per_sec,json=sampleRatePerSec,proto3" json:"sample_rate_per_sec,omitempty"`
-	Uri                  string   `protobuf:"bytes,14,opt,name=uri,proto3" json:"uri,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *RecordingImageExtracted) Reset()         { *m = RecordingImageExtracted{} }
-func (m *RecordingImageExtracted) String() string { return proto.CompactTextString(m) }
-func (*RecordingImageExtracted) ProtoMessage()    {}
-func (*RecordingImageExtracted) Descriptor() ([]byte, []int) {
-	return fileDescriptor_recording_af4232a89a7218fe, []int{0}
-}
-func (m *RecordingImageExtracted) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_RecordingImageExtracted.Unmarshal(m, b)
-}
-func (m *RecordingImageExtracted) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_RecordingImageExtracted.Marshal(b, m, deterministic)
-}
-func (dst *RecordingImageExtracted) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RecordingImageExtracted.Merge(dst, src)
-}
-func (m *RecordingImageExtracted) XXX_Size() int {
-	return xxx_messageInfo_RecordingImageExtracted.Size(m)
-}
-func (m *RecordingImageExtracted) XXX_DiscardUnknown() {
-	xxx_messageInfo_RecordingImageExtracted.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_RecordingImageExtracted proto.InternalMessageInfo
-
-func (m *RecordingImageExtracted) GetJobId() string {
-	if m != nil {
-		return m.JobId
-	}
-	return ""
-}
-
-func (m *RecordingImageExtracted) GetTaskId() string {
-	if m != nil {
-		return m.TaskId
-	}
-	return ""
-}
-
-func (m *RecordingImageExtracted) GetSampleIndex() int32 {
-	if m != nil {
-		return m.SampleIndex
-	}
-	return 0
-}
-
-func (m *RecordingImageExtracted) GetSampleRatePerSec() float64 {
-	if m != nil {
-		return m.SampleRatePerSec
-	}
-	return 0
-}
-
-func (m *RecordingImageExtracted) GetUri() string {
-	if m != nil {
-		return m.Uri
-	}
-	return ""
-}
-
-type RecordingVideoFragmentCaptured struct {
-	JobId                string   `protobuf:"bytes,10,opt,name=job_id,json=jobId,proto3" json:"job_id,omitempty"`
-	TaskId               string   `protobuf:"bytes,11,opt,name=task_id,json=taskId,proto3" json:"task_id,omitempty"`
-	SampleIndex          int32    `protobuf:"varint,12,opt,name=sample_index,json=sampleIndex,proto3" json:"sample_index,omitempty"`
-	RelativeStartTimeMs  int32    `protobuf:"varint,13,opt,name=relative_start_time_ms,json=relativeStartTimeMs,proto3" json:"relative_start_time_ms,omitempty"`
-	RelativeEndTimeMs    int32    `protobuf:"varint,14,opt,name=relative_end_time_ms,json=relativeEndTimeMs,proto3" json:"relative_end_time_ms,omitempty"`
-	Uri                  string   `protobuf:"bytes,15,opt,name=uri,proto3" json:"uri,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *RecordingVideoFragmentCaptured) Reset()         { *m = RecordingVideoFragmentCaptured{} }
-func (m *RecordingVideoFragmentCaptured) String() string { return proto.CompactTextString(m) }
-func (*RecordingVideoFragmentCaptured) ProtoMessage()    {}
-func (*RecordingVideoFragmentCaptured) Descriptor() ([]byte, []int) {
-	return fileDescriptor_recording_af4232a89a7218fe, []int{1}
-}
-func (m *RecordingVideoFragmentCaptured) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_RecordingVideoFragmentCaptured.Unmarshal(m, b)
-}
-func (m *RecordingVideoFragmentCaptured) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_RecordingVideoFragmentCaptured.Marshal(b, m, deterministic)
-}
-func (dst *RecordingVideoFragmentCaptured) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RecordingVideoFragmentCaptured.Merge(dst, src)
-}
-func (m *RecordingVideoFragmentCaptured) XXX_Size() int {
-	return xxx_messageInfo_RecordingVideoFragmentCaptured.Size(m)
-}
-func (m *RecordingVideoFragmentCaptured) XXX_DiscardUnknown() {
-	xxx_messageInfo_RecordingVideoFragmentCaptured.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_RecordingVideoFragmentCaptured proto.InternalMessageInfo
-
-func (m *RecordingVideoFragmentCaptured) GetJobId() string {
-	if m != nil {
-		return m.JobId
-	}
-	return ""
-}
-
-func (m *RecordingVideoFragmentCaptured) GetTaskId() string {
-	if m != nil {
-		return m.TaskId
-	}
-	return ""
-}
-
-func (m *RecordingVideoFragmentCaptured) GetSampleIndex() int32 {
-	if m != nil {
-		return m.SampleIndex
-	}
-	return 0
-}
-
-func (m *RecordingVideoFragmentCaptured) GetRelativeStartTimeMs() int32 {
-	if m != nil {
-		return m.RelativeStartTimeMs
-	}
-	return 0
-}
-
-func (m *RecordingVideoFragmentCaptured) GetRelativeEndTimeMs() int32 {
-	if m != nil {
-		return m.RelativeEndTimeMs
-	}
-	return 0
-}
-
-func (m *RecordingVideoFragmentCaptured) GetUri() string {
-	if m != nil {
-		return m.Uri
-	}
-	return ""
-}
-
-type RecordingAudioFragmentCaptured struct {
-	JobId                string   `protobuf:"bytes,10,opt,name=job_id,json=jobId,proto3" json:"job_id,omitempty"`
-	TaskId               string   `protobuf:"bytes,11,opt,name=task_id,json=taskId,proto3" json:"task_id,omitempty"`
-	SampleIndex          int32    `protobuf:"varint,12,opt,name=sample_index,json=sampleIndex,proto3" json:"sample_index,omitempty"`
-	RelativeStartTimeMs  int32    `protobuf:"varint,13,opt,name=relative_start_time_ms,json=relativeStartTimeMs,proto3" json:"relative_start_time_ms,omitempty"`
-	RelativeEndTimeMs    int32    `protobuf:"varint,14,opt,name=relative_end_time_ms,json=relativeEndTimeMs,proto3" json:"relative_end_time_ms,omitempty"`
-	Uri                  string   `protobuf:"bytes,15,opt,name=uri,proto3" json:"uri,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *RecordingAudioFragmentCaptured) Reset()         { *m = RecordingAudioFragmentCaptured{} }
-func (m *RecordingAudioFragmentCaptured) String() string { return proto.CompactTextString(m) }
-func (*RecordingAudioFragmentCaptured) ProtoMessage()    {}
-func (*RecordingAudioFragmentCaptured) Descriptor() ([]byte, []int) {
-	return fileDescriptor_recording_af4232a89a7218fe, []int{2}
-}
-func (m *RecordingAudioFragmentCaptured) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_RecordingAudioFragmentCaptured.Unmarshal(m, b)
-}
-func (m *RecordingAudioFragmentCaptured) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_RecordingAudioFragmentCaptured.Marshal(b, m, deterministic)
-}
-func (dst *RecordingAudioFragmentCaptured) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RecordingAudioFragmentCaptured.Merge(dst, src)
-}
-func (m *RecordingAudioFragmentCaptured) XXX_Size() int {
-	return xxx_messageInfo_RecordingAudioFragmentCaptured.Size(m)
-}
-func (m *RecordingAudioFragmentCaptured) XXX_DiscardUnknown() {
-	xxx_messageInfo_RecordingAudioFragmentCaptured.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_RecordingAudioFragmentCaptured proto.InternalMessageInfo
-
-func (m *RecordingAudioFragmentCaptured) GetJobId() string {
-	if m != nil {
-		return m.JobId
-	}
-	return ""
-}
-
-func (m *RecordingAudioFragmentCaptured) GetTaskId() string {
-	if m != nil {
-		return m.TaskId
-	}
-	return ""
-}
-
-func (m *RecordingAudioFragmentCaptured) GetSampleIndex() int32 {
-	if m != nil {
-		return m.SampleIndex
-	}
-	return 0
-}
-
-func (m *RecordingAudioFragmentCaptured) GetRelativeStartTimeMs() int32 {
-	if m != nil {
-		return m.RelativeStartTimeMs
-	}
-	return 0
-}
-
-func (m *RecordingAudioFragmentCaptured) GetRelativeEndTimeMs() int32 {
-	if m != nil {
-		return m.RelativeEndTimeMs
-	}
-	return 0
-}
-
-func (m *RecordingAudioFragmentCaptured) GetUri() string {
-	if m != nil {
-		return m.Uri
-	}
-	return ""
-}
-
-type RecordingCompleted struct {
-	JobId                string   `protobuf:"bytes,10,opt,name=job_id,json=jobId,proto3" json:"job_id,omitempty"`
-	TaskId               string   `protobuf:"bytes,11,opt,name=task_id,json=taskId,proto3" json:"task_id,omitempty"`
-	RecordingId          string   `protobuf:"bytes,12,opt,name=recording_id,json=recordingId,proto3" json:"recording_id,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *RecordingCompleted) Reset()         { *m = RecordingCompleted{} }
-func (m *RecordingCompleted) String() string { return proto.CompactTextString(m) }
-func (*RecordingCompleted) ProtoMessage()    {}
-func (*RecordingCompleted) Descriptor() ([]byte, []int) {
-	return fileDescriptor_recording_af4232a89a7218fe, []int{3}
-}
-func (m *RecordingCompleted) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_RecordingCompleted.Unmarshal(m, b)
-}
-func (m *RecordingCompleted) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_RecordingCompleted.Marshal(b, m, deterministic)
-}
-func (dst *RecordingCompleted) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RecordingCompleted.Merge(dst, src)
-}
-func (m *RecordingCompleted) XXX_Size() int {
-	return xxx_messageInfo_RecordingCompleted.Size(m)
-}
-func (m *RecordingCompleted) XXX_DiscardUnknown() {
-	xxx_messageInfo_RecordingCompleted.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_RecordingCompleted proto.InternalMessageInfo
-
-func (m *RecordingCompleted) GetJobId() string {
-	if m != nil {
-		return m.JobId
-	}
-	return ""
-}
-
-func (m *RecordingCompleted) GetTaskId() string {
-	if m != nil {
-		return m.TaskId
-	}
-	return ""
-}
-
-func (m *RecordingCompleted) GetRecordingId() string {
-	if m != nil {
-		return m.RecordingId
-	}
-	return ""
-}
-
-type RecordingAssetCreated struct {
-	AssetId              string   `protobuf:"bytes,10,opt,name=asset_id,json=assetId,proto3" json:"asset_id,omitempty"`
-	TaskId               string   `protobuf:"bytes,11,opt,name=task_id,json=taskId,proto3" json:"task_id,omitempty"`
-	RecordingId          string   `protobuf:"bytes,12,opt,name=recording_id,json=recordingId,proto3" json:"recording_id,omitempty"`
-	AssetType            string   `protobuf:"bytes,13,opt,name=asset_type,json=assetType,proto3" json:"asset_type,omitempty"`
-	Uri                  string   `protobuf:"bytes,14,opt,name=uri,proto3" json:"uri,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *RecordingAssetCreated) Reset()         { *m = RecordingAssetCreated{} }
-func (m *RecordingAssetCreated) String() string { return proto.CompactTextString(m) }
-func (*RecordingAssetCreated) ProtoMessage()    {}
-func (*RecordingAssetCreated) Descriptor() ([]byte, []int) {
-	return fileDescriptor_recording_af4232a89a7218fe, []int{4}
-}
-func (m *RecordingAssetCreated) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_RecordingAssetCreated.Unmarshal(m, b)
-}
-func (m *RecordingAssetCreated) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_RecordingAssetCreated.Marshal(b, m, deterministic)
-}
-func (dst *RecordingAssetCreated) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RecordingAssetCreated.Merge(dst, src)
-}
-func (m *RecordingAssetCreated) XXX_Size() int {
-	return xxx_messageInfo_RecordingAssetCreated.Size(m)
-}
-func (m *RecordingAssetCreated) XXX_DiscardUnknown() {
-	xxx_messageInfo_RecordingAssetCreated.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_RecordingAssetCreated proto.InternalMessageInfo
-
-func (m *RecordingAssetCreated) GetAssetId() string {
-	if m != nil {
-		return m.AssetId
-	}
-	return ""
-}
-
-func (m *RecordingAssetCreated) GetTaskId() string {
-	if m != nil {
-		return m.TaskId
-	}
-	return ""
-}
-
-func (m *RecordingAssetCreated) GetRecordingId() string {
-	if m != nil {
-		return m.RecordingId
-	}
-	return ""
-}
-
-func (m *RecordingAssetCreated) GetAssetType() string {
-	if m != nil {
-		return m.AssetType
-	}
-	return ""
-}
-
-func (m *RecordingAssetCreated) GetUri() string {
-	if m != nil {
-		return m.Uri
-	}
-	return ""
-}
-
 type RecordingCreated struct {
 	RecordingId          string   `protobuf:"bytes,10,opt,name=recording_id,json=recordingId,proto3" json:"recording_id,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -379,7 +29,7 @@ func (m *RecordingCreated) Reset()         { *m = RecordingCreated{} }
 func (m *RecordingCreated) String() string { return proto.CompactTextString(m) }
 func (*RecordingCreated) ProtoMessage()    {}
 func (*RecordingCreated) Descriptor() ([]byte, []int) {
-	return fileDescriptor_recording_af4232a89a7218fe, []int{5}
+	return fileDescriptor_recording_7228aeb03cb6a2e4, []int{0}
 }
 func (m *RecordingCreated) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_RecordingCreated.Unmarshal(m, b)
@@ -417,7 +67,7 @@ func (m *RecordingInserted) Reset()         { *m = RecordingInserted{} }
 func (m *RecordingInserted) String() string { return proto.CompactTextString(m) }
 func (*RecordingInserted) ProtoMessage()    {}
 func (*RecordingInserted) Descriptor() ([]byte, []int) {
-	return fileDescriptor_recording_af4232a89a7218fe, []int{6}
+	return fileDescriptor_recording_7228aeb03cb6a2e4, []int{1}
 }
 func (m *RecordingInserted) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_RecordingInserted.Unmarshal(m, b)
@@ -455,7 +105,7 @@ func (m *RecordingDeleted) Reset()         { *m = RecordingDeleted{} }
 func (m *RecordingDeleted) String() string { return proto.CompactTextString(m) }
 func (*RecordingDeleted) ProtoMessage()    {}
 func (*RecordingDeleted) Descriptor() ([]byte, []int) {
-	return fileDescriptor_recording_af4232a89a7218fe, []int{7}
+	return fileDescriptor_recording_7228aeb03cb6a2e4, []int{2}
 }
 func (m *RecordingDeleted) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_RecordingDeleted.Unmarshal(m, b)
@@ -494,7 +144,7 @@ func (m *RecordingCognitionCompleted) Reset()         { *m = RecordingCognitionC
 func (m *RecordingCognitionCompleted) String() string { return proto.CompactTextString(m) }
 func (*RecordingCognitionCompleted) ProtoMessage()    {}
 func (*RecordingCognitionCompleted) Descriptor() ([]byte, []int) {
-	return fileDescriptor_recording_af4232a89a7218fe, []int{8}
+	return fileDescriptor_recording_7228aeb03cb6a2e4, []int{3}
 }
 func (m *RecordingCognitionCompleted) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_RecordingCognitionCompleted.Unmarshal(m, b)
@@ -547,7 +197,7 @@ func (m *RecordingCognitionCompleted_Payload) Reset()         { *m = RecordingCo
 func (m *RecordingCognitionCompleted_Payload) String() string { return proto.CompactTextString(m) }
 func (*RecordingCognitionCompleted_Payload) ProtoMessage()    {}
 func (*RecordingCognitionCompleted_Payload) Descriptor() ([]byte, []int) {
-	return fileDescriptor_recording_af4232a89a7218fe, []int{8, 0}
+	return fileDescriptor_recording_7228aeb03cb6a2e4, []int{3, 0}
 }
 func (m *RecordingCognitionCompleted_Payload) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_RecordingCognitionCompleted_Payload.Unmarshal(m, b)
@@ -631,11 +281,6 @@ func (m *RecordingCognitionCompleted_Payload) GetSkipMentionGeneration() bool {
 }
 
 func init() {
-	proto.RegisterType((*RecordingImageExtracted)(nil), "events.RecordingImageExtracted")
-	proto.RegisterType((*RecordingVideoFragmentCaptured)(nil), "events.RecordingVideoFragmentCaptured")
-	proto.RegisterType((*RecordingAudioFragmentCaptured)(nil), "events.RecordingAudioFragmentCaptured")
-	proto.RegisterType((*RecordingCompleted)(nil), "events.RecordingCompleted")
-	proto.RegisterType((*RecordingAssetCreated)(nil), "events.RecordingAssetCreated")
 	proto.RegisterType((*RecordingCreated)(nil), "events.RecordingCreated")
 	proto.RegisterType((*RecordingInserted)(nil), "events.RecordingInserted")
 	proto.RegisterType((*RecordingDeleted)(nil), "events.RecordingDeleted")
@@ -643,44 +288,30 @@ func init() {
 	proto.RegisterType((*RecordingCognitionCompleted_Payload)(nil), "events.RecordingCognitionCompleted.Payload")
 }
 
-func init() { proto.RegisterFile("events/recording.proto", fileDescriptor_recording_af4232a89a7218fe) }
+func init() { proto.RegisterFile("events/recording.proto", fileDescriptor_recording_7228aeb03cb6a2e4) }
 
-var fileDescriptor_recording_af4232a89a7218fe = []byte{
-	// 568 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xdc, 0x55, 0xcd, 0x6e, 0x13, 0x3d,
-	0x14, 0xd5, 0x7c, 0x55, 0x92, 0xe6, 0xa6, 0x4d, 0x13, 0xb7, 0x69, 0xe6, 0x03, 0x81, 0x42, 0x24,
-	0x44, 0x24, 0x44, 0x2a, 0x51, 0xd1, 0x3d, 0x84, 0x80, 0x66, 0x51, 0x51, 0x4d, 0x2b, 0x16, 0x6c,
-	0x46, 0x4e, 0x7c, 0x35, 0x72, 0x93, 0xb1, 0x47, 0x1e, 0x27, 0x6a, 0x78, 0x19, 0x9e, 0x80, 0x3d,
-	0x6b, 0x5e, 0x87, 0x97, 0x40, 0xb6, 0x27, 0x33, 0x29, 0xbf, 0x05, 0xc4, 0x86, 0xdd, 0xf8, 0x1c,
-	0x1f, 0x9f, 0xfb, 0xe7, 0x31, 0x1c, 0xe2, 0x12, 0x85, 0xce, 0x8e, 0x14, 0x4e, 0xa5, 0x62, 0x5c,
-	0xc4, 0xc3, 0x54, 0x49, 0x2d, 0x49, 0xd5, 0xe1, 0xfd, 0xf7, 0x1e, 0x74, 0xc3, 0x35, 0x17, 0x24,
-	0x34, 0xc6, 0xf1, 0x95, 0x56, 0x74, 0xaa, 0x91, 0x91, 0x0e, 0x54, 0x2f, 0xe5, 0x24, 0xe2, 0xcc,
-	0x87, 0x9e, 0x37, 0xa8, 0x87, 0x95, 0x4b, 0x39, 0x09, 0x18, 0xe9, 0x42, 0x4d, 0xd3, 0x6c, 0x66,
-	0xf0, 0x86, 0xc5, 0xab, 0x66, 0x19, 0x30, 0x72, 0x0f, 0x76, 0x32, 0x9a, 0xa4, 0x73, 0x8c, 0xb8,
-	0x60, 0x78, 0xe5, 0xef, 0xf4, 0xbc, 0x41, 0x25, 0x6c, 0x38, 0x2c, 0x30, 0x10, 0x79, 0x04, 0xfb,
-	0xf9, 0x16, 0x45, 0x35, 0x46, 0x29, 0xaa, 0x28, 0xc3, 0xa9, 0xbf, 0xdb, 0xf3, 0x06, 0x5e, 0xd8,
-	0x72, 0x54, 0x48, 0x35, 0x9e, 0xa1, 0x3a, 0xc7, 0x29, 0x69, 0xc1, 0xd6, 0x42, 0x71, 0xbf, 0x69,
-	0x6d, 0xcc, 0x67, 0xff, 0x93, 0x07, 0x77, 0x8b, 0x78, 0x5f, 0x73, 0x86, 0xf2, 0x85, 0xa2, 0x71,
-	0x82, 0x42, 0x8f, 0x68, 0xaa, 0x17, 0xea, 0xef, 0x84, 0x7d, 0x0c, 0x87, 0x0a, 0xe7, 0x54, 0xf3,
-	0x25, 0x46, 0x99, 0xa6, 0x4a, 0x47, 0x9a, 0x27, 0x18, 0x25, 0x99, 0x8d, 0xbc, 0x12, 0xee, 0xaf,
-	0xd9, 0x73, 0x43, 0x5e, 0xf0, 0x04, 0x4f, 0x33, 0x72, 0x04, 0x07, 0x85, 0x08, 0x05, 0x2b, 0x24,
-	0x4d, 0x2b, 0x69, 0xaf, 0xb9, 0xb1, 0x60, 0xb9, 0x20, 0xcf, 0x76, 0xef, 0x3b, 0xd9, 0x3e, 0x5d,
-	0x30, 0xfe, 0x4f, 0x67, 0x1b, 0x03, 0x29, 0x92, 0x1d, 0x49, 0x13, 0xcf, 0x6f, 0x4e, 0x61, 0x31,
-	0xec, 0x86, 0xdd, 0xb1, 0x6c, 0xa3, 0xc0, 0x02, 0xd6, 0x7f, 0xe7, 0x41, 0xa7, 0x2c, 0x6b, 0x96,
-	0xa1, 0x1e, 0x29, 0xa4, 0xc6, 0xec, 0x7f, 0xd8, 0xa6, 0x66, 0x5d, 0xda, 0xd5, 0xec, 0xfa, 0xcf,
-	0x0c, 0xc9, 0x1d, 0x00, 0x77, 0xac, 0x5e, 0xa5, 0x68, 0xab, 0x58, 0x0f, 0xeb, 0x16, 0xb9, 0x58,
-	0xa5, 0xf8, 0x8d, 0x31, 0x7f, 0x02, 0xad, 0xb2, 0x14, 0x79, 0x6c, 0x5f, 0xfa, 0xc0, 0xd7, 0x89,
-	0x9d, 0x40, 0xbb, 0xbc, 0xcc, 0x22, 0x43, 0x75, 0x43, 0xdd, 0xa6, 0xdd, 0x73, 0x74, 0x75, 0xbf,
-	0x81, 0xec, 0xe3, 0x16, 0xdc, 0xde, 0xe8, 0x58, 0x2c, 0xb8, 0xe6, 0x52, 0x94, 0xad, 0xfb, 0xf9,
-	0x11, 0x64, 0x0c, 0xb5, 0x94, 0xae, 0xe6, 0x92, 0xba, 0xaa, 0x36, 0x1e, 0x3f, 0x1c, 0xba, 0x3f,
-	0xd3, 0xf0, 0x07, 0x07, 0x0f, 0xcf, 0x9c, 0x24, 0x5c, 0x6b, 0x6f, 0x7d, 0xf8, 0x0f, 0x6a, 0x39,
-	0xf8, 0xcb, 0x03, 0x73, 0x1f, 0x9a, 0x34, 0x4d, 0xe7, 0x7c, 0x4a, 0x8d, 0x49, 0xd9, 0xc1, 0xdd,
-	0x0d, 0x34, 0x60, 0xe4, 0x01, 0xec, 0x49, 0x15, 0x53, 0xc1, 0xdf, 0x16, 0xfb, 0x4c, 0x23, 0xb7,
-	0xc2, 0xe6, 0x26, 0xec, 0x9a, 0x3d, 0xe7, 0x13, 0x45, 0xd5, 0xca, 0xec, 0x71, 0x4d, 0xad, 0xe7,
-	0x88, 0xb3, 0xb3, 0x37, 0x2f, 0x92, 0x4b, 0x54, 0x8a, 0x33, 0xcc, 0xaf, 0xc0, 0xae, 0x45, 0x5f,
-	0xe5, 0x20, 0x39, 0x80, 0x8a, 0x96, 0x33, 0x14, 0x7e, 0xcb, 0x25, 0x61, 0x17, 0xd7, 0xe6, 0xb3,
-	0x7d, 0x7d, 0x3e, 0x4f, 0xa0, 0x9b, 0xcd, 0x78, 0x1a, 0x99, 0xbf, 0x83, 0x89, 0x2f, 0x46, 0x81,
-	0xca, 0xc6, 0xe4, 0x93, 0x9e, 0x37, 0xd8, 0x0e, 0x3b, 0x86, 0x3e, 0x75, 0xec, 0xcb, 0x82, 0x7c,
-	0xb6, 0xfd, 0x26, 0x7f, 0x0b, 0x26, 0x55, 0xfb, 0x34, 0x1c, 0x7f, 0x0e, 0x00, 0x00, 0xff, 0xff,
-	0x99, 0x8d, 0x36, 0x0b, 0x34, 0x06, 0x00, 0x00,
+var fileDescriptor_recording_7228aeb03cb6a2e4 = []byte{
+	// 351 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x92, 0xcf, 0x4a, 0xf3, 0x40,
+	0x14, 0xc5, 0xc9, 0x57, 0x9a, 0xb4, 0x37, 0xfd, 0x3b, 0x7c, 0xb5, 0x51, 0x11, 0x62, 0x41, 0x0c,
+	0x08, 0x11, 0x14, 0xfb, 0x00, 0x56, 0x91, 0x2c, 0x44, 0xc9, 0xd2, 0x4d, 0x99, 0x74, 0x2e, 0x61,
+	0xda, 0x74, 0x26, 0x4c, 0x42, 0xb1, 0x3e, 0x99, 0x6b, 0x9f, 0x4c, 0x32, 0x49, 0xd3, 0xae, 0xa4,
+	0xcb, 0xfb, 0x3b, 0xf7, 0x9c, 0x73, 0x13, 0x06, 0x4e, 0x70, 0x83, 0x22, 0xcf, 0x6e, 0x15, 0x2e,
+	0xa4, 0x62, 0x5c, 0xc4, 0x7e, 0xaa, 0x64, 0x2e, 0x89, 0x59, 0xf2, 0xc9, 0x03, 0x0c, 0xc2, 0x9d,
+	0x34, 0x53, 0x48, 0x73, 0x64, 0xe4, 0x12, 0x3a, 0xf5, 0xfa, 0x9c, 0x33, 0x07, 0x5c, 0xc3, 0x6b,
+	0x87, 0x76, 0xcd, 0x02, 0x36, 0x99, 0xc2, 0xb0, 0xb6, 0x05, 0x22, 0x43, 0x75, 0xa4, 0xef, 0xb0,
+	0xee, 0x09, 0x13, 0x3c, 0xd2, 0xf6, 0xd3, 0x80, 0xf3, 0xfd, 0x99, 0x32, 0x16, 0x3c, 0xe7, 0x52,
+	0xcc, 0xe4, 0x3a, 0x3d, 0x36, 0x82, 0x3c, 0x83, 0x95, 0xd2, 0x6d, 0x22, 0x29, 0x73, 0x6c, 0xd7,
+	0xf0, 0xec, 0xbb, 0x1b, 0xbf, 0xfc, 0x05, 0xfe, 0x1f, 0xc1, 0xfe, 0x7b, 0x69, 0x09, 0x77, 0xde,
+	0xb3, 0xef, 0x7f, 0x60, 0x55, 0x90, 0x8c, 0xc0, 0x5c, 0xca, 0x68, 0xdf, 0xd7, 0x5c, 0xca, 0x28,
+	0x60, 0x64, 0x0c, 0x56, 0x4e, 0xb3, 0x55, 0xc1, 0x6d, 0xcd, 0xcd, 0x62, 0x0c, 0x18, 0xb9, 0x82,
+	0x1e, 0x4d, 0xd3, 0x84, 0x2f, 0x68, 0x51, 0x52, 0xe8, 0x1d, 0xad, 0x77, 0x0f, 0x68, 0xc0, 0xc8,
+	0x35, 0xf4, 0xa5, 0x8a, 0xa9, 0xe0, 0x5f, 0xf5, 0x5e, 0xd7, 0x35, 0xbc, 0x46, 0xd8, 0x3b, 0xc4,
+	0x01, 0x23, 0x17, 0x00, 0x09, 0x8f, 0x14, 0x55, 0xdb, 0x62, 0xa7, 0xa7, 0xb3, 0xda, 0x15, 0x29,
+	0xeb, 0xb8, 0x60, 0xf8, 0x39, 0x97, 0x1b, 0x54, 0x8a, 0x33, 0x74, 0xfa, 0x65, 0x9d, 0xa6, 0x6f,
+	0x15, 0x24, 0xff, 0xa1, 0x99, 0xcb, 0x15, 0x0a, 0x67, 0x50, 0x7e, 0x84, 0x1e, 0xc8, 0x29, 0xb4,
+	0x68, 0x96, 0x61, 0x5e, 0x24, 0x0f, 0xb5, 0x60, 0xe9, 0x39, 0x60, 0x64, 0x0a, 0xe3, 0x6c, 0xc5,
+	0xd3, 0xf9, 0x1a, 0x85, 0xbe, 0x2f, 0x46, 0x81, 0x4a, 0xdf, 0xe4, 0x10, 0xd7, 0xf0, 0x5a, 0xe1,
+	0xa8, 0x90, 0x5f, 0x4b, 0xf5, 0xa5, 0x16, 0x1f, 0x5b, 0x1f, 0xd5, 0xa3, 0x8b, 0x4c, 0xfd, 0x06,
+	0xef, 0x7f, 0x03, 0x00, 0x00, 0xff, 0xff, 0x79, 0xb5, 0xe5, 0x96, 0x9d, 0x02, 0x00, 0x00,
 }

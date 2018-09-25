@@ -93,16 +93,11 @@
   
 
 - [events/recording.proto](#events/recording.proto)
-    - [RecordingAssetCreated](#events.RecordingAssetCreated)
-    - [RecordingAudioFragmentCaptured](#events.RecordingAudioFragmentCaptured)
     - [RecordingCognitionCompleted](#events.RecordingCognitionCompleted)
     - [RecordingCognitionCompleted.Payload](#events.RecordingCognitionCompleted.Payload)
-    - [RecordingCompleted](#events.RecordingCompleted)
     - [RecordingCreated](#events.RecordingCreated)
     - [RecordingDeleted](#events.RecordingDeleted)
-    - [RecordingImageExtracted](#events.RecordingImageExtracted)
     - [RecordingInserted](#events.RecordingInserted)
-    - [RecordingVideoFragmentCaptured](#events.RecordingVideoFragmentCaptured)
   
   
   
@@ -143,8 +138,8 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| assetId | [string](#string) |  |  |
-| recordingId | [string](#string) |  |  |
+| asset_id | [string](#string) |  |  |
+| recording_id | [string](#string) |  |  |
 
 
 
@@ -1005,45 +1000,6 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 
 
 
-<a name="events.RecordingAssetCreated"/>
-
-### RecordingAssetCreated
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| asset_id | [string](#string) |  |  |
-| task_id | [string](#string) |  |  |
-| recording_id | [string](#string) |  |  |
-| asset_type | [string](#string) |  |  |
-| uri | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="events.RecordingAudioFragmentCaptured"/>
-
-### RecordingAudioFragmentCaptured
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| job_id | [string](#string) |  |  |
-| task_id | [string](#string) |  |  |
-| sample_index | [int32](#int32) |  |  |
-| relative_start_time_ms | [int32](#int32) |  |  |
-| relative_end_time_ms | [int32](#int32) |  |  |
-| uri | [string](#string) |  |  |
-
-
-
-
-
-
 <a name="events.RecordingCognitionCompleted"/>
 
 ### RecordingCognitionCompleted
@@ -1083,23 +1039,6 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 
 
 
-<a name="events.RecordingCompleted"/>
-
-### RecordingCompleted
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| job_id | [string](#string) |  |  |
-| task_id | [string](#string) |  |  |
-| recording_id | [string](#string) |  |  |
-
-
-
-
-
-
 <a name="events.RecordingCreated"/>
 
 ### RecordingCreated
@@ -1130,25 +1069,6 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 
 
 
-<a name="events.RecordingImageExtracted"/>
-
-### RecordingImageExtracted
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| job_id | [string](#string) |  |  |
-| task_id | [string](#string) |  |  |
-| sample_index | [int32](#int32) |  |  |
-| sample_rate_per_sec | [double](#double) |  |  |
-| uri | [string](#string) |  |  |
-
-
-
-
-
-
 <a name="events.RecordingInserted"/>
 
 ### RecordingInserted
@@ -1158,26 +1078,6 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | recording_id | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="events.RecordingVideoFragmentCaptured"/>
-
-### RecordingVideoFragmentCaptured
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| job_id | [string](#string) |  |  |
-| task_id | [string](#string) |  |  |
-| sample_index | [int32](#int32) |  |  |
-| relative_start_time_ms | [int32](#int32) |  |  |
-| relative_end_time_ms | [int32](#int32) |  |  |
-| uri | [string](#string) |  |  |
 
 
 
