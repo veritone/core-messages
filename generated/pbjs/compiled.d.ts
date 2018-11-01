@@ -3,23 +3,821 @@ import * as $protobuf from "protobufjs";
 /** Namespace events. */
 export namespace events {
 
+    /** Properties of an AssetUploaded. */
+    interface IAssetUploaded {
+
+        /** AssetUploaded assetId */
+        assetId?: (string|null);
+
+        /** AssetUploaded recordingId */
+        recordingId?: (string|null);
+    }
+
+    /** Represents an AssetUploaded. */
+    class AssetUploaded implements IAssetUploaded {
+
+        /**
+         * Constructs a new AssetUploaded.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IAssetUploaded);
+
+        /** AssetUploaded assetId. */
+        public assetId: string;
+
+        /** AssetUploaded recordingId. */
+        public recordingId: string;
+
+        /**
+         * Creates a new AssetUploaded instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns AssetUploaded instance
+         */
+        public static create(properties?: events.IAssetUploaded): events.AssetUploaded;
+
+        /**
+         * Encodes the specified AssetUploaded message. Does not implicitly {@link events.AssetUploaded.verify|verify} messages.
+         * @param message AssetUploaded message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IAssetUploaded, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified AssetUploaded message, length delimited. Does not implicitly {@link events.AssetUploaded.verify|verify} messages.
+         * @param message AssetUploaded message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IAssetUploaded, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an AssetUploaded message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns AssetUploaded
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.AssetUploaded;
+
+        /**
+         * Decodes an AssetUploaded message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns AssetUploaded
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.AssetUploaded;
+
+        /**
+         * Verifies an AssetUploaded message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an AssetUploaded message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns AssetUploaded
+         */
+        public static fromObject(object: { [k: string]: any }): events.AssetUploaded;
+
+        /**
+         * Creates a plain object from an AssetUploaded message. Also converts values to other types if specified.
+         * @param message AssetUploaded
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.AssetUploaded, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this AssetUploaded to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a LoginSucceeded. */
+    interface ILoginSucceeded {
+
+        /** LoginSucceeded userName */
+        userName?: (string|null);
+
+        /** LoginSucceeded userAgent */
+        userAgent?: (string|null);
+
+        /** LoginSucceeded ip */
+        ip?: (string|null);
+
+        /** LoginSucceeded requestUrl */
+        requestUrl?: (string|null);
+
+        /** LoginSucceeded userId */
+        userId?: (string|null);
+
+        /** LoginSucceeded organizationId */
+        organizationId?: (number|Long|null);
+    }
+
+    /** Represents a LoginSucceeded. */
+    class LoginSucceeded implements ILoginSucceeded {
+
+        /**
+         * Constructs a new LoginSucceeded.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.ILoginSucceeded);
+
+        /** LoginSucceeded userName. */
+        public userName: string;
+
+        /** LoginSucceeded userAgent. */
+        public userAgent: string;
+
+        /** LoginSucceeded ip. */
+        public ip: string;
+
+        /** LoginSucceeded requestUrl. */
+        public requestUrl: string;
+
+        /** LoginSucceeded userId. */
+        public userId: string;
+
+        /** LoginSucceeded organizationId. */
+        public organizationId: (number|Long);
+
+        /**
+         * Creates a new LoginSucceeded instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns LoginSucceeded instance
+         */
+        public static create(properties?: events.ILoginSucceeded): events.LoginSucceeded;
+
+        /**
+         * Encodes the specified LoginSucceeded message. Does not implicitly {@link events.LoginSucceeded.verify|verify} messages.
+         * @param message LoginSucceeded message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.ILoginSucceeded, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified LoginSucceeded message, length delimited. Does not implicitly {@link events.LoginSucceeded.verify|verify} messages.
+         * @param message LoginSucceeded message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.ILoginSucceeded, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a LoginSucceeded message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns LoginSucceeded
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.LoginSucceeded;
+
+        /**
+         * Decodes a LoginSucceeded message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns LoginSucceeded
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.LoginSucceeded;
+
+        /**
+         * Verifies a LoginSucceeded message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a LoginSucceeded message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns LoginSucceeded
+         */
+        public static fromObject(object: { [k: string]: any }): events.LoginSucceeded;
+
+        /**
+         * Creates a plain object from a LoginSucceeded message. Also converts values to other types if specified.
+         * @param message LoginSucceeded
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.LoginSucceeded, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this LoginSucceeded to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a LoginFailed. */
+    interface ILoginFailed {
+
+        /** LoginFailed userName */
+        userName?: (string|null);
+
+        /** LoginFailed userAgent */
+        userAgent?: (string|null);
+
+        /** LoginFailed ip */
+        ip?: (string|null);
+
+        /** LoginFailed requestUrl */
+        requestUrl?: (string|null);
+    }
+
+    /** Represents a LoginFailed. */
+    class LoginFailed implements ILoginFailed {
+
+        /**
+         * Constructs a new LoginFailed.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.ILoginFailed);
+
+        /** LoginFailed userName. */
+        public userName: string;
+
+        /** LoginFailed userAgent. */
+        public userAgent: string;
+
+        /** LoginFailed ip. */
+        public ip: string;
+
+        /** LoginFailed requestUrl. */
+        public requestUrl: string;
+
+        /**
+         * Creates a new LoginFailed instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns LoginFailed instance
+         */
+        public static create(properties?: events.ILoginFailed): events.LoginFailed;
+
+        /**
+         * Encodes the specified LoginFailed message. Does not implicitly {@link events.LoginFailed.verify|verify} messages.
+         * @param message LoginFailed message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.ILoginFailed, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified LoginFailed message, length delimited. Does not implicitly {@link events.LoginFailed.verify|verify} messages.
+         * @param message LoginFailed message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.ILoginFailed, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a LoginFailed message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns LoginFailed
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.LoginFailed;
+
+        /**
+         * Decodes a LoginFailed message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns LoginFailed
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.LoginFailed;
+
+        /**
+         * Verifies a LoginFailed message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a LoginFailed message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns LoginFailed
+         */
+        public static fromObject(object: { [k: string]: any }): events.LoginFailed;
+
+        /**
+         * Creates a plain object from a LoginFailed message. Also converts values to other types if specified.
+         * @param message LoginFailed
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.LoginFailed, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this LoginFailed to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a LoginAttemptsExceeded. */
+    interface ILoginAttemptsExceeded {
+
+        /** LoginAttemptsExceeded userName */
+        userName?: (string|null);
+
+        /** LoginAttemptsExceeded userAgent */
+        userAgent?: (string|null);
+
+        /** LoginAttemptsExceeded ip */
+        ip?: (string|null);
+
+        /** LoginAttemptsExceeded requestUrl */
+        requestUrl?: (string|null);
+    }
+
+    /** Represents a LoginAttemptsExceeded. */
+    class LoginAttemptsExceeded implements ILoginAttemptsExceeded {
+
+        /**
+         * Constructs a new LoginAttemptsExceeded.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.ILoginAttemptsExceeded);
+
+        /** LoginAttemptsExceeded userName. */
+        public userName: string;
+
+        /** LoginAttemptsExceeded userAgent. */
+        public userAgent: string;
+
+        /** LoginAttemptsExceeded ip. */
+        public ip: string;
+
+        /** LoginAttemptsExceeded requestUrl. */
+        public requestUrl: string;
+
+        /**
+         * Creates a new LoginAttemptsExceeded instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns LoginAttemptsExceeded instance
+         */
+        public static create(properties?: events.ILoginAttemptsExceeded): events.LoginAttemptsExceeded;
+
+        /**
+         * Encodes the specified LoginAttemptsExceeded message. Does not implicitly {@link events.LoginAttemptsExceeded.verify|verify} messages.
+         * @param message LoginAttemptsExceeded message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.ILoginAttemptsExceeded, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified LoginAttemptsExceeded message, length delimited. Does not implicitly {@link events.LoginAttemptsExceeded.verify|verify} messages.
+         * @param message LoginAttemptsExceeded message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.ILoginAttemptsExceeded, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a LoginAttemptsExceeded message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns LoginAttemptsExceeded
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.LoginAttemptsExceeded;
+
+        /**
+         * Decodes a LoginAttemptsExceeded message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns LoginAttemptsExceeded
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.LoginAttemptsExceeded;
+
+        /**
+         * Verifies a LoginAttemptsExceeded message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a LoginAttemptsExceeded message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns LoginAttemptsExceeded
+         */
+        public static fromObject(object: { [k: string]: any }): events.LoginAttemptsExceeded;
+
+        /**
+         * Creates a plain object from a LoginAttemptsExceeded message. Also converts values to other types if specified.
+         * @param message LoginAttemptsExceeded
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.LoginAttemptsExceeded, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this LoginAttemptsExceeded to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an Impersonated. */
+    interface IImpersonated {
+
+        /** Impersonated userName */
+        userName?: (string|null);
+
+        /** Impersonated userAgent */
+        userAgent?: (string|null);
+
+        /** Impersonated ip */
+        ip?: (string|null);
+
+        /** Impersonated requestUrl */
+        requestUrl?: (string|null);
+
+        /** Impersonated userId */
+        userId?: (string|null);
+
+        /** Impersonated organizationId */
+        organizationId?: (number|Long|null);
+
+        /** Impersonated impersontatedUserId */
+        impersontatedUserId?: (string|null);
+    }
+
+    /** Represents an Impersonated. */
+    class Impersonated implements IImpersonated {
+
+        /**
+         * Constructs a new Impersonated.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IImpersonated);
+
+        /** Impersonated userName. */
+        public userName: string;
+
+        /** Impersonated userAgent. */
+        public userAgent: string;
+
+        /** Impersonated ip. */
+        public ip: string;
+
+        /** Impersonated requestUrl. */
+        public requestUrl: string;
+
+        /** Impersonated userId. */
+        public userId: string;
+
+        /** Impersonated organizationId. */
+        public organizationId: (number|Long);
+
+        /** Impersonated impersontatedUserId. */
+        public impersontatedUserId: string;
+
+        /**
+         * Creates a new Impersonated instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns Impersonated instance
+         */
+        public static create(properties?: events.IImpersonated): events.Impersonated;
+
+        /**
+         * Encodes the specified Impersonated message. Does not implicitly {@link events.Impersonated.verify|verify} messages.
+         * @param message Impersonated message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IImpersonated, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified Impersonated message, length delimited. Does not implicitly {@link events.Impersonated.verify|verify} messages.
+         * @param message Impersonated message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IImpersonated, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an Impersonated message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns Impersonated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.Impersonated;
+
+        /**
+         * Decodes an Impersonated message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns Impersonated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.Impersonated;
+
+        /**
+         * Verifies an Impersonated message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an Impersonated message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns Impersonated
+         */
+        public static fromObject(object: { [k: string]: any }): events.Impersonated;
+
+        /**
+         * Creates a plain object from an Impersonated message. Also converts values to other types if specified.
+         * @param message Impersonated
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.Impersonated, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this Impersonated to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an ActionUserForbidden. */
+    interface IActionUserForbidden {
+
+        /** ActionUserForbidden userName */
+        userName?: (string|null);
+
+        /** ActionUserForbidden userAgent */
+        userAgent?: (string|null);
+
+        /** ActionUserForbidden ip */
+        ip?: (string|null);
+
+        /** ActionUserForbidden requestUrl */
+        requestUrl?: (string|null);
+
+        /** ActionUserForbidden userId */
+        userId?: (string|null);
+
+        /** ActionUserForbidden organizationId */
+        organizationId?: (number|Long|null);
+    }
+
+    /** Represents an ActionUserForbidden. */
+    class ActionUserForbidden implements IActionUserForbidden {
+
+        /**
+         * Constructs a new ActionUserForbidden.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IActionUserForbidden);
+
+        /** ActionUserForbidden userName. */
+        public userName: string;
+
+        /** ActionUserForbidden userAgent. */
+        public userAgent: string;
+
+        /** ActionUserForbidden ip. */
+        public ip: string;
+
+        /** ActionUserForbidden requestUrl. */
+        public requestUrl: string;
+
+        /** ActionUserForbidden userId. */
+        public userId: string;
+
+        /** ActionUserForbidden organizationId. */
+        public organizationId: (number|Long);
+
+        /**
+         * Creates a new ActionUserForbidden instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns ActionUserForbidden instance
+         */
+        public static create(properties?: events.IActionUserForbidden): events.ActionUserForbidden;
+
+        /**
+         * Encodes the specified ActionUserForbidden message. Does not implicitly {@link events.ActionUserForbidden.verify|verify} messages.
+         * @param message ActionUserForbidden message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IActionUserForbidden, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified ActionUserForbidden message, length delimited. Does not implicitly {@link events.ActionUserForbidden.verify|verify} messages.
+         * @param message ActionUserForbidden message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IActionUserForbidden, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an ActionUserForbidden message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns ActionUserForbidden
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.ActionUserForbidden;
+
+        /**
+         * Decodes an ActionUserForbidden message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns ActionUserForbidden
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.ActionUserForbidden;
+
+        /**
+         * Verifies an ActionUserForbidden message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an ActionUserForbidden message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns ActionUserForbidden
+         */
+        public static fromObject(object: { [k: string]: any }): events.ActionUserForbidden;
+
+        /**
+         * Creates a plain object from an ActionUserForbidden message. Also converts values to other types if specified.
+         * @param message ActionUserForbidden
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.ActionUserForbidden, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this ActionUserForbidden to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an ActionTokenForbidden. */
+    interface IActionTokenForbidden {
+
+        /** ActionTokenForbidden userAgent */
+        userAgent?: (string|null);
+
+        /** ActionTokenForbidden ip */
+        ip?: (string|null);
+
+        /** ActionTokenForbidden requestUrl */
+        requestUrl?: (string|null);
+    }
+
+    /** Represents an ActionTokenForbidden. */
+    class ActionTokenForbidden implements IActionTokenForbidden {
+
+        /**
+         * Constructs a new ActionTokenForbidden.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IActionTokenForbidden);
+
+        /** ActionTokenForbidden userAgent. */
+        public userAgent: string;
+
+        /** ActionTokenForbidden ip. */
+        public ip: string;
+
+        /** ActionTokenForbidden requestUrl. */
+        public requestUrl: string;
+
+        /**
+         * Creates a new ActionTokenForbidden instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns ActionTokenForbidden instance
+         */
+        public static create(properties?: events.IActionTokenForbidden): events.ActionTokenForbidden;
+
+        /**
+         * Encodes the specified ActionTokenForbidden message. Does not implicitly {@link events.ActionTokenForbidden.verify|verify} messages.
+         * @param message ActionTokenForbidden message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IActionTokenForbidden, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified ActionTokenForbidden message, length delimited. Does not implicitly {@link events.ActionTokenForbidden.verify|verify} messages.
+         * @param message ActionTokenForbidden message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IActionTokenForbidden, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an ActionTokenForbidden message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns ActionTokenForbidden
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.ActionTokenForbidden;
+
+        /**
+         * Decodes an ActionTokenForbidden message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns ActionTokenForbidden
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.ActionTokenForbidden;
+
+        /**
+         * Verifies an ActionTokenForbidden message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an ActionTokenForbidden message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns ActionTokenForbidden
+         */
+        public static fromObject(object: { [k: string]: any }): events.ActionTokenForbidden;
+
+        /**
+         * Creates a plain object from an ActionTokenForbidden message. Also converts values to other types if specified.
+         * @param message ActionTokenForbidden
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.ActionTokenForbidden, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this ActionTokenForbidden to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
     /** Properties of a Core. */
     interface ICore {
 
         /**
          * Read-only and auto-generated. ID of the message, ID is a uuid v4 auto-generated by messaging library.
-         * It will be propagate through the system
+         * It will be propagate through the system. Similar to correlationId
          */
         id?: (string|null);
 
-        /**
-         * Read-only and auto-generated. The name of the event is automatically computed based on
-         * Protobuf data structure in {VtEvent.data}
-         */
+        /** The name of the event is */
         name?: (string|null);
 
-        /** Read-only and auto-generated. Messaging library will compute the timestamp in UTC when a message is produced. */
+        /** Core timestamp */
         timestamp?: (string|null);
+
+        /** Core type */
+        type?: (string|null);
+
+        /** Core serviceName */
+        serviceName?: (string|null);
+
+        /** Core applicationId */
+        applicationId?: (string|null);
+
+        /** Core eventId */
+        eventId?: (string|null);
+
+        /** Core organizationId */
+        organizationId?: (string|null);
+
+        /** Core userId */
+        userId?: (string|null);
+
+        /** Core tokenId */
+        tokenId?: (string|null);
     }
 
     /** Represents a Core. */
@@ -33,18 +831,36 @@ export namespace events {
 
         /**
          * Read-only and auto-generated. ID of the message, ID is a uuid v4 auto-generated by messaging library.
-         * It will be propagate through the system
+         * It will be propagate through the system. Similar to correlationId
          */
         public id: string;
 
-        /**
-         * Read-only and auto-generated. The name of the event is automatically computed based on
-         * Protobuf data structure in {VtEvent.data}
-         */
+        /** The name of the event is */
         public name: string;
 
-        /** Read-only and auto-generated. Messaging library will compute the timestamp in UTC when a message is produced. */
+        /** Core timestamp. */
         public timestamp: string;
+
+        /** Core type. */
+        public type: string;
+
+        /** Core serviceName. */
+        public serviceName: string;
+
+        /** Core applicationId. */
+        public applicationId: string;
+
+        /** Core eventId. */
+        public eventId: string;
+
+        /** Core organizationId. */
+        public organizationId: string;
+
+        /** Core userId. */
+        public userId: string;
+
+        /** Core tokenId. */
+        public tokenId: string;
 
         /**
          * Creates a new Core instance using the specified properties.
@@ -123,7 +939,7 @@ export namespace events {
         /** Open Tracing trace context. */
         traceContext?: ({ [k: string]: string }|null);
 
-        /** Trace traceTags */
+        /** Open Tracing trace context. */
         traceTags?: ({ [k: string]: string }|null);
 
         /** Trace serviceName */
@@ -142,7 +958,7 @@ export namespace events {
         /** Open Tracing trace context. */
         public traceContext: { [k: string]: string };
 
-        /** Trace traceTags. */
+        /** Open Tracing trace context. */
         public traceTags: { [k: string]: string };
 
         /** Trace serviceName. */
@@ -228,6 +1044,9 @@ export namespace events {
         /** VtEvent trace */
         trace?: (events.ITrace|null);
 
+        /** VtEvent baggage */
+        baggage?: ({ [k: string]: string }|null);
+
         /** VtEvent data */
         data?: (google.protobuf.IAny|null);
     }
@@ -246,6 +1065,9 @@ export namespace events {
 
         /** VtEvent trace. */
         public trace?: (events.ITrace|null);
+
+        /** VtEvent baggage. */
+        public baggage: { [k: string]: string };
 
         /** VtEvent data. */
         public data?: (google.protobuf.IAny|null);
@@ -316,6 +1138,1230 @@ export namespace events {
 
         /**
          * Converts this VtEvent to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an EngineBuildUploadCompleted. */
+    interface IEngineBuildUploadCompleted {
+
+        /** EngineBuildUploadCompleted userId */
+        userId?: (string|null);
+
+        /** EngineBuildUploadCompleted jobId */
+        jobId?: (string|null);
+
+        /** EngineBuildUploadCompleted assetId */
+        assetId?: (string|null);
+
+        /** EngineBuildUploadCompleted success */
+        success?: (boolean|null);
+    }
+
+    /** Represents an EngineBuildUploadCompleted. */
+    class EngineBuildUploadCompleted implements IEngineBuildUploadCompleted {
+
+        /**
+         * Constructs a new EngineBuildUploadCompleted.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IEngineBuildUploadCompleted);
+
+        /** EngineBuildUploadCompleted userId. */
+        public userId: string;
+
+        /** EngineBuildUploadCompleted jobId. */
+        public jobId: string;
+
+        /** EngineBuildUploadCompleted assetId. */
+        public assetId: string;
+
+        /** EngineBuildUploadCompleted success. */
+        public success: boolean;
+
+        /**
+         * Creates a new EngineBuildUploadCompleted instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns EngineBuildUploadCompleted instance
+         */
+        public static create(properties?: events.IEngineBuildUploadCompleted): events.EngineBuildUploadCompleted;
+
+        /**
+         * Encodes the specified EngineBuildUploadCompleted message. Does not implicitly {@link events.EngineBuildUploadCompleted.verify|verify} messages.
+         * @param message EngineBuildUploadCompleted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IEngineBuildUploadCompleted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified EngineBuildUploadCompleted message, length delimited. Does not implicitly {@link events.EngineBuildUploadCompleted.verify|verify} messages.
+         * @param message EngineBuildUploadCompleted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IEngineBuildUploadCompleted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an EngineBuildUploadCompleted message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns EngineBuildUploadCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.EngineBuildUploadCompleted;
+
+        /**
+         * Decodes an EngineBuildUploadCompleted message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns EngineBuildUploadCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.EngineBuildUploadCompleted;
+
+        /**
+         * Verifies an EngineBuildUploadCompleted message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an EngineBuildUploadCompleted message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns EngineBuildUploadCompleted
+         */
+        public static fromObject(object: { [k: string]: any }): events.EngineBuildUploadCompleted;
+
+        /**
+         * Creates a plain object from an EngineBuildUploadCompleted message. Also converts values to other types if specified.
+         * @param message EngineBuildUploadCompleted
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.EngineBuildUploadCompleted, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this EngineBuildUploadCompleted to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an EngineBuildManifestProcessed. */
+    interface IEngineBuildManifestProcessed {
+
+        /** EngineBuildManifestProcessed userId */
+        userId?: (string|null);
+
+        /** EngineBuildManifestProcessed jobId */
+        jobId?: (string|null);
+
+        /** EngineBuildManifestProcessed success */
+        success?: (boolean|null);
+
+        /** EngineBuildManifestProcessed engineId */
+        engineId?: (string|null);
+
+        /** EngineBuildManifestProcessed buildId */
+        buildId?: (string|null);
+    }
+
+    /** Represents an EngineBuildManifestProcessed. */
+    class EngineBuildManifestProcessed implements IEngineBuildManifestProcessed {
+
+        /**
+         * Constructs a new EngineBuildManifestProcessed.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IEngineBuildManifestProcessed);
+
+        /** EngineBuildManifestProcessed userId. */
+        public userId: string;
+
+        /** EngineBuildManifestProcessed jobId. */
+        public jobId: string;
+
+        /** EngineBuildManifestProcessed success. */
+        public success: boolean;
+
+        /** EngineBuildManifestProcessed engineId. */
+        public engineId: string;
+
+        /** EngineBuildManifestProcessed buildId. */
+        public buildId: string;
+
+        /**
+         * Creates a new EngineBuildManifestProcessed instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns EngineBuildManifestProcessed instance
+         */
+        public static create(properties?: events.IEngineBuildManifestProcessed): events.EngineBuildManifestProcessed;
+
+        /**
+         * Encodes the specified EngineBuildManifestProcessed message. Does not implicitly {@link events.EngineBuildManifestProcessed.verify|verify} messages.
+         * @param message EngineBuildManifestProcessed message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IEngineBuildManifestProcessed, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified EngineBuildManifestProcessed message, length delimited. Does not implicitly {@link events.EngineBuildManifestProcessed.verify|verify} messages.
+         * @param message EngineBuildManifestProcessed message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IEngineBuildManifestProcessed, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an EngineBuildManifestProcessed message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns EngineBuildManifestProcessed
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.EngineBuildManifestProcessed;
+
+        /**
+         * Decodes an EngineBuildManifestProcessed message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns EngineBuildManifestProcessed
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.EngineBuildManifestProcessed;
+
+        /**
+         * Verifies an EngineBuildManifestProcessed message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an EngineBuildManifestProcessed message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns EngineBuildManifestProcessed
+         */
+        public static fromObject(object: { [k: string]: any }): events.EngineBuildManifestProcessed;
+
+        /**
+         * Creates a plain object from an EngineBuildManifestProcessed message. Also converts values to other types if specified.
+         * @param message EngineBuildManifestProcessed
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.EngineBuildManifestProcessed, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this EngineBuildManifestProcessed to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an EngineBuildVulnerabilityChecked. */
+    interface IEngineBuildVulnerabilityChecked {
+
+        /** EngineBuildVulnerabilityChecked userId */
+        userId?: (string|null);
+
+        /** EngineBuildVulnerabilityChecked jobId */
+        jobId?: (string|null);
+
+        /** EngineBuildVulnerabilityChecked assetId */
+        assetId?: (string|null);
+
+        /** EngineBuildVulnerabilityChecked success */
+        success?: (boolean|null);
+
+        /** EngineBuildVulnerabilityChecked engineId */
+        engineId?: (string|null);
+
+        /** EngineBuildVulnerabilityChecked buildId */
+        buildId?: (string|null);
+    }
+
+    /** Represents an EngineBuildVulnerabilityChecked. */
+    class EngineBuildVulnerabilityChecked implements IEngineBuildVulnerabilityChecked {
+
+        /**
+         * Constructs a new EngineBuildVulnerabilityChecked.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IEngineBuildVulnerabilityChecked);
+
+        /** EngineBuildVulnerabilityChecked userId. */
+        public userId: string;
+
+        /** EngineBuildVulnerabilityChecked jobId. */
+        public jobId: string;
+
+        /** EngineBuildVulnerabilityChecked assetId. */
+        public assetId: string;
+
+        /** EngineBuildVulnerabilityChecked success. */
+        public success: boolean;
+
+        /** EngineBuildVulnerabilityChecked engineId. */
+        public engineId: string;
+
+        /** EngineBuildVulnerabilityChecked buildId. */
+        public buildId: string;
+
+        /**
+         * Creates a new EngineBuildVulnerabilityChecked instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns EngineBuildVulnerabilityChecked instance
+         */
+        public static create(properties?: events.IEngineBuildVulnerabilityChecked): events.EngineBuildVulnerabilityChecked;
+
+        /**
+         * Encodes the specified EngineBuildVulnerabilityChecked message. Does not implicitly {@link events.EngineBuildVulnerabilityChecked.verify|verify} messages.
+         * @param message EngineBuildVulnerabilityChecked message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IEngineBuildVulnerabilityChecked, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified EngineBuildVulnerabilityChecked message, length delimited. Does not implicitly {@link events.EngineBuildVulnerabilityChecked.verify|verify} messages.
+         * @param message EngineBuildVulnerabilityChecked message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IEngineBuildVulnerabilityChecked, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an EngineBuildVulnerabilityChecked message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns EngineBuildVulnerabilityChecked
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.EngineBuildVulnerabilityChecked;
+
+        /**
+         * Decodes an EngineBuildVulnerabilityChecked message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns EngineBuildVulnerabilityChecked
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.EngineBuildVulnerabilityChecked;
+
+        /**
+         * Verifies an EngineBuildVulnerabilityChecked message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an EngineBuildVulnerabilityChecked message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns EngineBuildVulnerabilityChecked
+         */
+        public static fromObject(object: { [k: string]: any }): events.EngineBuildVulnerabilityChecked;
+
+        /**
+         * Creates a plain object from an EngineBuildVulnerabilityChecked message. Also converts values to other types if specified.
+         * @param message EngineBuildVulnerabilityChecked
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.EngineBuildVulnerabilityChecked, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this EngineBuildVulnerabilityChecked to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an EngineBuildTestReportDone. */
+    interface IEngineBuildTestReportDone {
+
+        /** EngineBuildTestReportDone userId */
+        userId?: (string|null);
+
+        /** EngineBuildTestReportDone jobId */
+        jobId?: (string|null);
+
+        /** EngineBuildTestReportDone success */
+        success?: (boolean|null);
+
+        /** EngineBuildTestReportDone engineId */
+        engineId?: (string|null);
+
+        /** EngineBuildTestReportDone buildId */
+        buildId?: (string|null);
+    }
+
+    /** Represents an EngineBuildTestReportDone. */
+    class EngineBuildTestReportDone implements IEngineBuildTestReportDone {
+
+        /**
+         * Constructs a new EngineBuildTestReportDone.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IEngineBuildTestReportDone);
+
+        /** EngineBuildTestReportDone userId. */
+        public userId: string;
+
+        /** EngineBuildTestReportDone jobId. */
+        public jobId: string;
+
+        /** EngineBuildTestReportDone success. */
+        public success: boolean;
+
+        /** EngineBuildTestReportDone engineId. */
+        public engineId: string;
+
+        /** EngineBuildTestReportDone buildId. */
+        public buildId: string;
+
+        /**
+         * Creates a new EngineBuildTestReportDone instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns EngineBuildTestReportDone instance
+         */
+        public static create(properties?: events.IEngineBuildTestReportDone): events.EngineBuildTestReportDone;
+
+        /**
+         * Encodes the specified EngineBuildTestReportDone message. Does not implicitly {@link events.EngineBuildTestReportDone.verify|verify} messages.
+         * @param message EngineBuildTestReportDone message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IEngineBuildTestReportDone, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified EngineBuildTestReportDone message, length delimited. Does not implicitly {@link events.EngineBuildTestReportDone.verify|verify} messages.
+         * @param message EngineBuildTestReportDone message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IEngineBuildTestReportDone, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an EngineBuildTestReportDone message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns EngineBuildTestReportDone
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.EngineBuildTestReportDone;
+
+        /**
+         * Decodes an EngineBuildTestReportDone message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns EngineBuildTestReportDone
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.EngineBuildTestReportDone;
+
+        /**
+         * Verifies an EngineBuildTestReportDone message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an EngineBuildTestReportDone message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns EngineBuildTestReportDone
+         */
+        public static fromObject(object: { [k: string]: any }): events.EngineBuildTestReportDone;
+
+        /**
+         * Creates a plain object from an EngineBuildTestReportDone message. Also converts values to other types if specified.
+         * @param message EngineBuildTestReportDone
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.EngineBuildTestReportDone, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this EngineBuildTestReportDone to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an engineBuildDeploySuccess. */
+    interface IengineBuildDeploySuccess {
+
+        /** engineBuildDeploySuccess userId */
+        userId?: (string|null);
+
+        /** engineBuildDeploySuccess engineId */
+        engineId?: (string|null);
+
+        /** engineBuildDeploySuccess buildId */
+        buildId?: (string|null);
+    }
+
+    /** Represents an engineBuildDeploySuccess. */
+    class engineBuildDeploySuccess implements IengineBuildDeploySuccess {
+
+        /**
+         * Constructs a new engineBuildDeploySuccess.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IengineBuildDeploySuccess);
+
+        /** engineBuildDeploySuccess userId. */
+        public userId: string;
+
+        /** engineBuildDeploySuccess engineId. */
+        public engineId: string;
+
+        /** engineBuildDeploySuccess buildId. */
+        public buildId: string;
+
+        /**
+         * Creates a new engineBuildDeploySuccess instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns engineBuildDeploySuccess instance
+         */
+        public static create(properties?: events.IengineBuildDeploySuccess): events.engineBuildDeploySuccess;
+
+        /**
+         * Encodes the specified engineBuildDeploySuccess message. Does not implicitly {@link events.engineBuildDeploySuccess.verify|verify} messages.
+         * @param message engineBuildDeploySuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IengineBuildDeploySuccess, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified engineBuildDeploySuccess message, length delimited. Does not implicitly {@link events.engineBuildDeploySuccess.verify|verify} messages.
+         * @param message engineBuildDeploySuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IengineBuildDeploySuccess, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an engineBuildDeploySuccess message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns engineBuildDeploySuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.engineBuildDeploySuccess;
+
+        /**
+         * Decodes an engineBuildDeploySuccess message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns engineBuildDeploySuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.engineBuildDeploySuccess;
+
+        /**
+         * Verifies an engineBuildDeploySuccess message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an engineBuildDeploySuccess message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns engineBuildDeploySuccess
+         */
+        public static fromObject(object: { [k: string]: any }): events.engineBuildDeploySuccess;
+
+        /**
+         * Creates a plain object from an engineBuildDeploySuccess message. Also converts values to other types if specified.
+         * @param message engineBuildDeploySuccess
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.engineBuildDeploySuccess, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this engineBuildDeploySuccess to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an engineBuildDeployFail. */
+    interface IengineBuildDeployFail {
+
+        /** engineBuildDeployFail userId */
+        userId?: (string|null);
+
+        /** engineBuildDeployFail engineId */
+        engineId?: (string|null);
+
+        /** engineBuildDeployFail buildId */
+        buildId?: (string|null);
+    }
+
+    /** Represents an engineBuildDeployFail. */
+    class engineBuildDeployFail implements IengineBuildDeployFail {
+
+        /**
+         * Constructs a new engineBuildDeployFail.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IengineBuildDeployFail);
+
+        /** engineBuildDeployFail userId. */
+        public userId: string;
+
+        /** engineBuildDeployFail engineId. */
+        public engineId: string;
+
+        /** engineBuildDeployFail buildId. */
+        public buildId: string;
+
+        /**
+         * Creates a new engineBuildDeployFail instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns engineBuildDeployFail instance
+         */
+        public static create(properties?: events.IengineBuildDeployFail): events.engineBuildDeployFail;
+
+        /**
+         * Encodes the specified engineBuildDeployFail message. Does not implicitly {@link events.engineBuildDeployFail.verify|verify} messages.
+         * @param message engineBuildDeployFail message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IengineBuildDeployFail, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified engineBuildDeployFail message, length delimited. Does not implicitly {@link events.engineBuildDeployFail.verify|verify} messages.
+         * @param message engineBuildDeployFail message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IengineBuildDeployFail, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an engineBuildDeployFail message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns engineBuildDeployFail
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.engineBuildDeployFail;
+
+        /**
+         * Decodes an engineBuildDeployFail message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns engineBuildDeployFail
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.engineBuildDeployFail;
+
+        /**
+         * Verifies an engineBuildDeployFail message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an engineBuildDeployFail message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns engineBuildDeployFail
+         */
+        public static fromObject(object: { [k: string]: any }): events.engineBuildDeployFail;
+
+        /**
+         * Creates a plain object from an engineBuildDeployFail message. Also converts values to other types if specified.
+         * @param message engineBuildDeployFail
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.engineBuildDeployFail, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this engineBuildDeployFail to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an EngineBuildApproved. */
+    interface IEngineBuildApproved {
+
+        /** EngineBuildApproved userId */
+        userId?: (string|null);
+
+        /** EngineBuildApproved engineId */
+        engineId?: (string|null);
+
+        /** EngineBuildApproved buildId */
+        buildId?: (string|null);
+
+        /** EngineBuildApproved organizationId */
+        organizationId?: (number|Long|null);
+
+        /** EngineBuildApproved statusCode */
+        statusCode?: (number|null);
+
+        /** EngineBuildApproved action */
+        action?: (string|null);
+    }
+
+    /** Represents an EngineBuildApproved. */
+    class EngineBuildApproved implements IEngineBuildApproved {
+
+        /**
+         * Constructs a new EngineBuildApproved.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IEngineBuildApproved);
+
+        /** EngineBuildApproved userId. */
+        public userId: string;
+
+        /** EngineBuildApproved engineId. */
+        public engineId: string;
+
+        /** EngineBuildApproved buildId. */
+        public buildId: string;
+
+        /** EngineBuildApproved organizationId. */
+        public organizationId: (number|Long);
+
+        /** EngineBuildApproved statusCode. */
+        public statusCode: number;
+
+        /** EngineBuildApproved action. */
+        public action: string;
+
+        /**
+         * Creates a new EngineBuildApproved instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns EngineBuildApproved instance
+         */
+        public static create(properties?: events.IEngineBuildApproved): events.EngineBuildApproved;
+
+        /**
+         * Encodes the specified EngineBuildApproved message. Does not implicitly {@link events.EngineBuildApproved.verify|verify} messages.
+         * @param message EngineBuildApproved message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IEngineBuildApproved, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified EngineBuildApproved message, length delimited. Does not implicitly {@link events.EngineBuildApproved.verify|verify} messages.
+         * @param message EngineBuildApproved message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IEngineBuildApproved, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an EngineBuildApproved message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns EngineBuildApproved
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.EngineBuildApproved;
+
+        /**
+         * Decodes an EngineBuildApproved message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns EngineBuildApproved
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.EngineBuildApproved;
+
+        /**
+         * Verifies an EngineBuildApproved message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an EngineBuildApproved message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns EngineBuildApproved
+         */
+        public static fromObject(object: { [k: string]: any }): events.EngineBuildApproved;
+
+        /**
+         * Creates a plain object from an EngineBuildApproved message. Also converts values to other types if specified.
+         * @param message EngineBuildApproved
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.EngineBuildApproved, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this EngineBuildApproved to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an EngineBuildDisapprove. */
+    interface IEngineBuildDisapprove {
+
+        /** EngineBuildDisapprove userId */
+        userId?: (string|null);
+
+        /** EngineBuildDisapprove engineId */
+        engineId?: (string|null);
+
+        /** EngineBuildDisapprove buildId */
+        buildId?: (string|null);
+
+        /** EngineBuildDisapprove organizationId */
+        organizationId?: (number|Long|null);
+
+        /** EngineBuildDisapprove statusCode */
+        statusCode?: (number|null);
+
+        /** EngineBuildDisapprove action */
+        action?: (string|null);
+    }
+
+    /** Represents an EngineBuildDisapprove. */
+    class EngineBuildDisapprove implements IEngineBuildDisapprove {
+
+        /**
+         * Constructs a new EngineBuildDisapprove.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IEngineBuildDisapprove);
+
+        /** EngineBuildDisapprove userId. */
+        public userId: string;
+
+        /** EngineBuildDisapprove engineId. */
+        public engineId: string;
+
+        /** EngineBuildDisapprove buildId. */
+        public buildId: string;
+
+        /** EngineBuildDisapprove organizationId. */
+        public organizationId: (number|Long);
+
+        /** EngineBuildDisapprove statusCode. */
+        public statusCode: number;
+
+        /** EngineBuildDisapprove action. */
+        public action: string;
+
+        /**
+         * Creates a new EngineBuildDisapprove instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns EngineBuildDisapprove instance
+         */
+        public static create(properties?: events.IEngineBuildDisapprove): events.EngineBuildDisapprove;
+
+        /**
+         * Encodes the specified EngineBuildDisapprove message. Does not implicitly {@link events.EngineBuildDisapprove.verify|verify} messages.
+         * @param message EngineBuildDisapprove message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IEngineBuildDisapprove, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified EngineBuildDisapprove message, length delimited. Does not implicitly {@link events.EngineBuildDisapprove.verify|verify} messages.
+         * @param message EngineBuildDisapprove message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IEngineBuildDisapprove, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an EngineBuildDisapprove message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns EngineBuildDisapprove
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.EngineBuildDisapprove;
+
+        /**
+         * Decodes an EngineBuildDisapprove message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns EngineBuildDisapprove
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.EngineBuildDisapprove;
+
+        /**
+         * Verifies an EngineBuildDisapprove message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an EngineBuildDisapprove message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns EngineBuildDisapprove
+         */
+        public static fromObject(object: { [k: string]: any }): events.EngineBuildDisapprove;
+
+        /**
+         * Creates a plain object from an EngineBuildDisapprove message. Also converts values to other types if specified.
+         * @param message EngineBuildDisapprove
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.EngineBuildDisapprove, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this EngineBuildDisapprove to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an EngineBuildCreate. */
+    interface IEngineBuildCreate {
+
+        /** EngineBuildCreate engineId */
+        engineId?: (string|null);
+
+        /** EngineBuildCreate buildId */
+        buildId?: (string|null);
+
+        /** EngineBuildCreate statusCode */
+        statusCode?: (number|null);
+
+        /** EngineBuildCreate action */
+        action?: (string|null);
+    }
+
+    /** Represents an EngineBuildCreate. */
+    class EngineBuildCreate implements IEngineBuildCreate {
+
+        /**
+         * Constructs a new EngineBuildCreate.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IEngineBuildCreate);
+
+        /** EngineBuildCreate engineId. */
+        public engineId: string;
+
+        /** EngineBuildCreate buildId. */
+        public buildId: string;
+
+        /** EngineBuildCreate statusCode. */
+        public statusCode: number;
+
+        /** EngineBuildCreate action. */
+        public action: string;
+
+        /**
+         * Creates a new EngineBuildCreate instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns EngineBuildCreate instance
+         */
+        public static create(properties?: events.IEngineBuildCreate): events.EngineBuildCreate;
+
+        /**
+         * Encodes the specified EngineBuildCreate message. Does not implicitly {@link events.EngineBuildCreate.verify|verify} messages.
+         * @param message EngineBuildCreate message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IEngineBuildCreate, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified EngineBuildCreate message, length delimited. Does not implicitly {@link events.EngineBuildCreate.verify|verify} messages.
+         * @param message EngineBuildCreate message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IEngineBuildCreate, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an EngineBuildCreate message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns EngineBuildCreate
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.EngineBuildCreate;
+
+        /**
+         * Decodes an EngineBuildCreate message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns EngineBuildCreate
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.EngineBuildCreate;
+
+        /**
+         * Verifies an EngineBuildCreate message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an EngineBuildCreate message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns EngineBuildCreate
+         */
+        public static fromObject(object: { [k: string]: any }): events.EngineBuildCreate;
+
+        /**
+         * Creates a plain object from an EngineBuildCreate message. Also converts values to other types if specified.
+         * @param message EngineBuildCreate
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.EngineBuildCreate, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this EngineBuildCreate to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an EngineBuildUpload. */
+    interface IEngineBuildUpload {
+
+        /** EngineBuildUpload engineId */
+        engineId?: (string|null);
+
+        /** EngineBuildUpload buildId */
+        buildId?: (string|null);
+
+        /** EngineBuildUpload statusCode */
+        statusCode?: (number|null);
+
+        /** EngineBuildUpload action */
+        action?: (string|null);
+    }
+
+    /** Represents an EngineBuildUpload. */
+    class EngineBuildUpload implements IEngineBuildUpload {
+
+        /**
+         * Constructs a new EngineBuildUpload.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IEngineBuildUpload);
+
+        /** EngineBuildUpload engineId. */
+        public engineId: string;
+
+        /** EngineBuildUpload buildId. */
+        public buildId: string;
+
+        /** EngineBuildUpload statusCode. */
+        public statusCode: number;
+
+        /** EngineBuildUpload action. */
+        public action: string;
+
+        /**
+         * Creates a new EngineBuildUpload instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns EngineBuildUpload instance
+         */
+        public static create(properties?: events.IEngineBuildUpload): events.EngineBuildUpload;
+
+        /**
+         * Encodes the specified EngineBuildUpload message. Does not implicitly {@link events.EngineBuildUpload.verify|verify} messages.
+         * @param message EngineBuildUpload message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IEngineBuildUpload, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified EngineBuildUpload message, length delimited. Does not implicitly {@link events.EngineBuildUpload.verify|verify} messages.
+         * @param message EngineBuildUpload message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IEngineBuildUpload, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an EngineBuildUpload message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns EngineBuildUpload
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.EngineBuildUpload;
+
+        /**
+         * Decodes an EngineBuildUpload message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns EngineBuildUpload
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.EngineBuildUpload;
+
+        /**
+         * Verifies an EngineBuildUpload message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an EngineBuildUpload message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns EngineBuildUpload
+         */
+        public static fromObject(object: { [k: string]: any }): events.EngineBuildUpload;
+
+        /**
+         * Creates a plain object from an EngineBuildUpload message. Also converts values to other types if specified.
+         * @param message EngineBuildUpload
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.EngineBuildUpload, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this EngineBuildUpload to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an EngineBuildInvalidate. */
+    interface IEngineBuildInvalidate {
+
+        /** EngineBuildInvalidate engineId */
+        engineId?: (string|null);
+
+        /** EngineBuildInvalidate buildId */
+        buildId?: (string|null);
+
+        /** EngineBuildInvalidate statusCode */
+        statusCode?: (number|null);
+
+        /** EngineBuildInvalidate action */
+        action?: (string|null);
+    }
+
+    /** Represents an EngineBuildInvalidate. */
+    class EngineBuildInvalidate implements IEngineBuildInvalidate {
+
+        /**
+         * Constructs a new EngineBuildInvalidate.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IEngineBuildInvalidate);
+
+        /** EngineBuildInvalidate engineId. */
+        public engineId: string;
+
+        /** EngineBuildInvalidate buildId. */
+        public buildId: string;
+
+        /** EngineBuildInvalidate statusCode. */
+        public statusCode: number;
+
+        /** EngineBuildInvalidate action. */
+        public action: string;
+
+        /**
+         * Creates a new EngineBuildInvalidate instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns EngineBuildInvalidate instance
+         */
+        public static create(properties?: events.IEngineBuildInvalidate): events.EngineBuildInvalidate;
+
+        /**
+         * Encodes the specified EngineBuildInvalidate message. Does not implicitly {@link events.EngineBuildInvalidate.verify|verify} messages.
+         * @param message EngineBuildInvalidate message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IEngineBuildInvalidate, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified EngineBuildInvalidate message, length delimited. Does not implicitly {@link events.EngineBuildInvalidate.verify|verify} messages.
+         * @param message EngineBuildInvalidate message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IEngineBuildInvalidate, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an EngineBuildInvalidate message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns EngineBuildInvalidate
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.EngineBuildInvalidate;
+
+        /**
+         * Decodes an EngineBuildInvalidate message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns EngineBuildInvalidate
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.EngineBuildInvalidate;
+
+        /**
+         * Verifies an EngineBuildInvalidate message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an EngineBuildInvalidate message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns EngineBuildInvalidate
+         */
+        public static fromObject(object: { [k: string]: any }): events.EngineBuildInvalidate;
+
+        /**
+         * Creates a plain object from an EngineBuildInvalidate message. Also converts values to other types if specified.
+         * @param message EngineBuildInvalidate
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.EngineBuildInvalidate, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this EngineBuildInvalidate to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
@@ -790,6 +2836,306 @@ export namespace events {
 
         /**
          * Converts this ExampleFour to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a JobCreated. */
+    interface IJobCreated {
+
+        /** JobCreated jobId */
+        jobId?: (string|null);
+
+        /** JobCreated timestampMs */
+        timestampMs?: (string|null);
+    }
+
+    /** Represents a JobCreated. */
+    class JobCreated implements IJobCreated {
+
+        /**
+         * Constructs a new JobCreated.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IJobCreated);
+
+        /** JobCreated jobId. */
+        public jobId: string;
+
+        /** JobCreated timestampMs. */
+        public timestampMs: string;
+
+        /**
+         * Creates a new JobCreated instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns JobCreated instance
+         */
+        public static create(properties?: events.IJobCreated): events.JobCreated;
+
+        /**
+         * Encodes the specified JobCreated message. Does not implicitly {@link events.JobCreated.verify|verify} messages.
+         * @param message JobCreated message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IJobCreated, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified JobCreated message, length delimited. Does not implicitly {@link events.JobCreated.verify|verify} messages.
+         * @param message JobCreated message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IJobCreated, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a JobCreated message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns JobCreated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.JobCreated;
+
+        /**
+         * Decodes a JobCreated message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns JobCreated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.JobCreated;
+
+        /**
+         * Verifies a JobCreated message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a JobCreated message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns JobCreated
+         */
+        public static fromObject(object: { [k: string]: any }): events.JobCreated;
+
+        /**
+         * Creates a plain object from a JobCreated message. Also converts values to other types if specified.
+         * @param message JobCreated
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.JobCreated, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this JobCreated to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a JobCompleted. */
+    interface IJobCompleted {
+
+        /** JobCompleted jobId */
+        jobId?: (string|null);
+
+        /** JobCompleted timestampMs */
+        timestampMs?: (string|null);
+
+        /** JobCompleted jobStatus */
+        jobStatus?: (string|null);
+    }
+
+    /** Represents a JobCompleted. */
+    class JobCompleted implements IJobCompleted {
+
+        /**
+         * Constructs a new JobCompleted.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IJobCompleted);
+
+        /** JobCompleted jobId. */
+        public jobId: string;
+
+        /** JobCompleted timestampMs. */
+        public timestampMs: string;
+
+        /** JobCompleted jobStatus. */
+        public jobStatus: string;
+
+        /**
+         * Creates a new JobCompleted instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns JobCompleted instance
+         */
+        public static create(properties?: events.IJobCompleted): events.JobCompleted;
+
+        /**
+         * Encodes the specified JobCompleted message. Does not implicitly {@link events.JobCompleted.verify|verify} messages.
+         * @param message JobCompleted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IJobCompleted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified JobCompleted message, length delimited. Does not implicitly {@link events.JobCompleted.verify|verify} messages.
+         * @param message JobCompleted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IJobCompleted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a JobCompleted message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns JobCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.JobCompleted;
+
+        /**
+         * Decodes a JobCompleted message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns JobCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.JobCompleted;
+
+        /**
+         * Verifies a JobCompleted message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a JobCompleted message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns JobCompleted
+         */
+        public static fromObject(object: { [k: string]: any }): events.JobCompleted;
+
+        /**
+         * Creates a plain object from a JobCompleted message. Also converts values to other types if specified.
+         * @param message JobCompleted
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.JobCompleted, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this JobCompleted to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a JobFailed. */
+    interface IJobFailed {
+
+        /** JobFailed jobId */
+        jobId?: (string|null);
+
+        /** JobFailed timestampMs */
+        timestampMs?: (string|null);
+
+        /** JobFailed jobStatus */
+        jobStatus?: (string|null);
+    }
+
+    /** Represents a JobFailed. */
+    class JobFailed implements IJobFailed {
+
+        /**
+         * Constructs a new JobFailed.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IJobFailed);
+
+        /** JobFailed jobId. */
+        public jobId: string;
+
+        /** JobFailed timestampMs. */
+        public timestampMs: string;
+
+        /** JobFailed jobStatus. */
+        public jobStatus: string;
+
+        /**
+         * Creates a new JobFailed instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns JobFailed instance
+         */
+        public static create(properties?: events.IJobFailed): events.JobFailed;
+
+        /**
+         * Encodes the specified JobFailed message. Does not implicitly {@link events.JobFailed.verify|verify} messages.
+         * @param message JobFailed message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IJobFailed, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified JobFailed message, length delimited. Does not implicitly {@link events.JobFailed.verify|verify} messages.
+         * @param message JobFailed message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IJobFailed, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a JobFailed message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns JobFailed
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.JobFailed;
+
+        /**
+         * Decodes a JobFailed message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns JobFailed
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.JobFailed;
+
+        /**
+         * Verifies a JobFailed message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a JobFailed message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns JobFailed
+         */
+        public static fromObject(object: { [k: string]: any }): events.JobFailed;
+
+        /**
+         * Creates a plain object from a JobFailed message. Also converts values to other types if specified.
+         * @param message JobFailed
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.JobFailed, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this JobFailed to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
@@ -1825,6 +4171,813 @@ export namespace events {
 
         /**
          * Converts this SMSNotification to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a RecordingCreated. */
+    interface IRecordingCreated {
+
+        /** RecordingCreated recordingId */
+        recordingId?: (string|null);
+    }
+
+    /** Represents a RecordingCreated. */
+    class RecordingCreated implements IRecordingCreated {
+
+        /**
+         * Constructs a new RecordingCreated.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IRecordingCreated);
+
+        /** RecordingCreated recordingId. */
+        public recordingId: string;
+
+        /**
+         * Creates a new RecordingCreated instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns RecordingCreated instance
+         */
+        public static create(properties?: events.IRecordingCreated): events.RecordingCreated;
+
+        /**
+         * Encodes the specified RecordingCreated message. Does not implicitly {@link events.RecordingCreated.verify|verify} messages.
+         * @param message RecordingCreated message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IRecordingCreated, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified RecordingCreated message, length delimited. Does not implicitly {@link events.RecordingCreated.verify|verify} messages.
+         * @param message RecordingCreated message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IRecordingCreated, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a RecordingCreated message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns RecordingCreated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.RecordingCreated;
+
+        /**
+         * Decodes a RecordingCreated message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns RecordingCreated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.RecordingCreated;
+
+        /**
+         * Verifies a RecordingCreated message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a RecordingCreated message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns RecordingCreated
+         */
+        public static fromObject(object: { [k: string]: any }): events.RecordingCreated;
+
+        /**
+         * Creates a plain object from a RecordingCreated message. Also converts values to other types if specified.
+         * @param message RecordingCreated
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.RecordingCreated, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this RecordingCreated to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a RecordingInserted. */
+    interface IRecordingInserted {
+
+        /** RecordingInserted recordingId */
+        recordingId?: (string|null);
+    }
+
+    /** Represents a RecordingInserted. */
+    class RecordingInserted implements IRecordingInserted {
+
+        /**
+         * Constructs a new RecordingInserted.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IRecordingInserted);
+
+        /** RecordingInserted recordingId. */
+        public recordingId: string;
+
+        /**
+         * Creates a new RecordingInserted instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns RecordingInserted instance
+         */
+        public static create(properties?: events.IRecordingInserted): events.RecordingInserted;
+
+        /**
+         * Encodes the specified RecordingInserted message. Does not implicitly {@link events.RecordingInserted.verify|verify} messages.
+         * @param message RecordingInserted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IRecordingInserted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified RecordingInserted message, length delimited. Does not implicitly {@link events.RecordingInserted.verify|verify} messages.
+         * @param message RecordingInserted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IRecordingInserted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a RecordingInserted message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns RecordingInserted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.RecordingInserted;
+
+        /**
+         * Decodes a RecordingInserted message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns RecordingInserted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.RecordingInserted;
+
+        /**
+         * Verifies a RecordingInserted message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a RecordingInserted message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns RecordingInserted
+         */
+        public static fromObject(object: { [k: string]: any }): events.RecordingInserted;
+
+        /**
+         * Creates a plain object from a RecordingInserted message. Also converts values to other types if specified.
+         * @param message RecordingInserted
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.RecordingInserted, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this RecordingInserted to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a RecordingDeleted. */
+    interface IRecordingDeleted {
+
+        /** RecordingDeleted recordingId */
+        recordingId?: (string|null);
+    }
+
+    /** Represents a RecordingDeleted. */
+    class RecordingDeleted implements IRecordingDeleted {
+
+        /**
+         * Constructs a new RecordingDeleted.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IRecordingDeleted);
+
+        /** RecordingDeleted recordingId. */
+        public recordingId: string;
+
+        /**
+         * Creates a new RecordingDeleted instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns RecordingDeleted instance
+         */
+        public static create(properties?: events.IRecordingDeleted): events.RecordingDeleted;
+
+        /**
+         * Encodes the specified RecordingDeleted message. Does not implicitly {@link events.RecordingDeleted.verify|verify} messages.
+         * @param message RecordingDeleted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IRecordingDeleted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified RecordingDeleted message, length delimited. Does not implicitly {@link events.RecordingDeleted.verify|verify} messages.
+         * @param message RecordingDeleted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IRecordingDeleted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a RecordingDeleted message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns RecordingDeleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.RecordingDeleted;
+
+        /**
+         * Decodes a RecordingDeleted message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns RecordingDeleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.RecordingDeleted;
+
+        /**
+         * Verifies a RecordingDeleted message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a RecordingDeleted message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns RecordingDeleted
+         */
+        public static fromObject(object: { [k: string]: any }): events.RecordingDeleted;
+
+        /**
+         * Creates a plain object from a RecordingDeleted message. Also converts values to other types if specified.
+         * @param message RecordingDeleted
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.RecordingDeleted, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this RecordingDeleted to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a RecordingCognitionCompleted. */
+    interface IRecordingCognitionCompleted {
+
+        /** RecordingCognitionCompleted recordingId */
+        recordingId?: (string|null);
+
+        /** RecordingCognitionCompleted payload */
+        payload?: (events.RecordingCognitionCompleted.IPayload|null);
+    }
+
+    /** Represents a RecordingCognitionCompleted. */
+    class RecordingCognitionCompleted implements IRecordingCognitionCompleted {
+
+        /**
+         * Constructs a new RecordingCognitionCompleted.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IRecordingCognitionCompleted);
+
+        /** RecordingCognitionCompleted recordingId. */
+        public recordingId: string;
+
+        /** RecordingCognitionCompleted payload. */
+        public payload?: (events.RecordingCognitionCompleted.IPayload|null);
+
+        /**
+         * Creates a new RecordingCognitionCompleted instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns RecordingCognitionCompleted instance
+         */
+        public static create(properties?: events.IRecordingCognitionCompleted): events.RecordingCognitionCompleted;
+
+        /**
+         * Encodes the specified RecordingCognitionCompleted message. Does not implicitly {@link events.RecordingCognitionCompleted.verify|verify} messages.
+         * @param message RecordingCognitionCompleted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IRecordingCognitionCompleted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified RecordingCognitionCompleted message, length delimited. Does not implicitly {@link events.RecordingCognitionCompleted.verify|verify} messages.
+         * @param message RecordingCognitionCompleted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IRecordingCognitionCompleted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a RecordingCognitionCompleted message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns RecordingCognitionCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.RecordingCognitionCompleted;
+
+        /**
+         * Decodes a RecordingCognitionCompleted message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns RecordingCognitionCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.RecordingCognitionCompleted;
+
+        /**
+         * Verifies a RecordingCognitionCompleted message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a RecordingCognitionCompleted message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns RecordingCognitionCompleted
+         */
+        public static fromObject(object: { [k: string]: any }): events.RecordingCognitionCompleted;
+
+        /**
+         * Creates a plain object from a RecordingCognitionCompleted message. Also converts values to other types if specified.
+         * @param message RecordingCognitionCompleted
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.RecordingCognitionCompleted, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this RecordingCognitionCompleted to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    namespace RecordingCognitionCompleted {
+
+        /** Properties of a Payload. */
+        interface IPayload {
+
+            /** Payload jobId */
+            jobId?: (string|null);
+
+            /** Payload taskId */
+            taskId?: (string|null);
+
+            /** Payload applicationId */
+            applicationId?: (string|null);
+
+            /** Payload organizationId */
+            organizationId?: (number|Long|null);
+
+            /** Payload libraryId */
+            libraryId?: (string|null);
+
+            /** Payload indexOverride */
+            indexOverride?: (string|null);
+
+            /** Payload token */
+            token?: (string|null);
+
+            /** Payload assetId */
+            assetId?: (string|null);
+
+            /** Payload skipMentionGeneration */
+            skipMentionGeneration?: (boolean|null);
+        }
+
+        /** Represents a Payload. */
+        class Payload implements IPayload {
+
+            /**
+             * Constructs a new Payload.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: events.RecordingCognitionCompleted.IPayload);
+
+            /** Payload jobId. */
+            public jobId: string;
+
+            /** Payload taskId. */
+            public taskId: string;
+
+            /** Payload applicationId. */
+            public applicationId: string;
+
+            /** Payload organizationId. */
+            public organizationId: (number|Long);
+
+            /** Payload libraryId. */
+            public libraryId: string;
+
+            /** Payload indexOverride. */
+            public indexOverride: string;
+
+            /** Payload token. */
+            public token: string;
+
+            /** Payload assetId. */
+            public assetId: string;
+
+            /** Payload skipMentionGeneration. */
+            public skipMentionGeneration: boolean;
+
+            /**
+             * Creates a new Payload instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Payload instance
+             */
+            public static create(properties?: events.RecordingCognitionCompleted.IPayload): events.RecordingCognitionCompleted.Payload;
+
+            /**
+             * Encodes the specified Payload message. Does not implicitly {@link events.RecordingCognitionCompleted.Payload.verify|verify} messages.
+             * @param message Payload message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: events.RecordingCognitionCompleted.IPayload, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified Payload message, length delimited. Does not implicitly {@link events.RecordingCognitionCompleted.Payload.verify|verify} messages.
+             * @param message Payload message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: events.RecordingCognitionCompleted.IPayload, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Payload message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Payload
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.RecordingCognitionCompleted.Payload;
+
+            /**
+             * Decodes a Payload message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns Payload
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.RecordingCognitionCompleted.Payload;
+
+            /**
+             * Verifies a Payload message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a Payload message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns Payload
+             */
+            public static fromObject(object: { [k: string]: any }): events.RecordingCognitionCompleted.Payload;
+
+            /**
+             * Creates a plain object from a Payload message. Also converts values to other types if specified.
+             * @param message Payload
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: events.RecordingCognitionCompleted.Payload, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this Payload to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+    }
+
+    /** Properties of a TaskQueued. */
+    interface ITaskQueued {
+
+        /** TaskQueued taskId */
+        taskId?: (string|null);
+
+        /** TaskQueued timestampMs */
+        timestampMs?: (string|null);
+    }
+
+    /** Represents a TaskQueued. */
+    class TaskQueued implements ITaskQueued {
+
+        /**
+         * Constructs a new TaskQueued.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.ITaskQueued);
+
+        /** TaskQueued taskId. */
+        public taskId: string;
+
+        /** TaskQueued timestampMs. */
+        public timestampMs: string;
+
+        /**
+         * Creates a new TaskQueued instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns TaskQueued instance
+         */
+        public static create(properties?: events.ITaskQueued): events.TaskQueued;
+
+        /**
+         * Encodes the specified TaskQueued message. Does not implicitly {@link events.TaskQueued.verify|verify} messages.
+         * @param message TaskQueued message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.ITaskQueued, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified TaskQueued message, length delimited. Does not implicitly {@link events.TaskQueued.verify|verify} messages.
+         * @param message TaskQueued message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.ITaskQueued, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a TaskQueued message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns TaskQueued
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.TaskQueued;
+
+        /**
+         * Decodes a TaskQueued message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns TaskQueued
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.TaskQueued;
+
+        /**
+         * Verifies a TaskQueued message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a TaskQueued message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns TaskQueued
+         */
+        public static fromObject(object: { [k: string]: any }): events.TaskQueued;
+
+        /**
+         * Creates a plain object from a TaskQueued message. Also converts values to other types if specified.
+         * @param message TaskQueued
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.TaskQueued, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this TaskQueued to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a TaskUpdated. */
+    interface ITaskUpdated {
+
+        /** TaskUpdated taskId */
+        taskId?: (string|null);
+
+        /** TaskUpdated timestampMs */
+        timestampMs?: (string|null);
+
+        /** TaskUpdated taskStatus */
+        taskStatus?: (string|null);
+    }
+
+    /** Represents a TaskUpdated. */
+    class TaskUpdated implements ITaskUpdated {
+
+        /**
+         * Constructs a new TaskUpdated.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.ITaskUpdated);
+
+        /** TaskUpdated taskId. */
+        public taskId: string;
+
+        /** TaskUpdated timestampMs. */
+        public timestampMs: string;
+
+        /** TaskUpdated taskStatus. */
+        public taskStatus: string;
+
+        /**
+         * Creates a new TaskUpdated instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns TaskUpdated instance
+         */
+        public static create(properties?: events.ITaskUpdated): events.TaskUpdated;
+
+        /**
+         * Encodes the specified TaskUpdated message. Does not implicitly {@link events.TaskUpdated.verify|verify} messages.
+         * @param message TaskUpdated message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.ITaskUpdated, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified TaskUpdated message, length delimited. Does not implicitly {@link events.TaskUpdated.verify|verify} messages.
+         * @param message TaskUpdated message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.ITaskUpdated, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a TaskUpdated message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns TaskUpdated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.TaskUpdated;
+
+        /**
+         * Decodes a TaskUpdated message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns TaskUpdated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.TaskUpdated;
+
+        /**
+         * Verifies a TaskUpdated message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a TaskUpdated message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns TaskUpdated
+         */
+        public static fromObject(object: { [k: string]: any }): events.TaskUpdated;
+
+        /**
+         * Creates a plain object from a TaskUpdated message. Also converts values to other types if specified.
+         * @param message TaskUpdated
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.TaskUpdated, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this TaskUpdated to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a TaskCompleted. */
+    interface ITaskCompleted {
+
+        /** TaskCompleted taskId */
+        taskId?: (string|null);
+
+        /** TaskCompleted timestampMs */
+        timestampMs?: (string|null);
+
+        /** TaskCompleted taskStatus */
+        taskStatus?: (string|null);
+    }
+
+    /** Represents a TaskCompleted. */
+    class TaskCompleted implements ITaskCompleted {
+
+        /**
+         * Constructs a new TaskCompleted.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.ITaskCompleted);
+
+        /** TaskCompleted taskId. */
+        public taskId: string;
+
+        /** TaskCompleted timestampMs. */
+        public timestampMs: string;
+
+        /** TaskCompleted taskStatus. */
+        public taskStatus: string;
+
+        /**
+         * Creates a new TaskCompleted instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns TaskCompleted instance
+         */
+        public static create(properties?: events.ITaskCompleted): events.TaskCompleted;
+
+        /**
+         * Encodes the specified TaskCompleted message. Does not implicitly {@link events.TaskCompleted.verify|verify} messages.
+         * @param message TaskCompleted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.ITaskCompleted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified TaskCompleted message, length delimited. Does not implicitly {@link events.TaskCompleted.verify|verify} messages.
+         * @param message TaskCompleted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.ITaskCompleted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a TaskCompleted message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns TaskCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.TaskCompleted;
+
+        /**
+         * Decodes a TaskCompleted message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns TaskCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.TaskCompleted;
+
+        /**
+         * Verifies a TaskCompleted message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a TaskCompleted message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns TaskCompleted
+         */
+        public static fromObject(object: { [k: string]: any }): events.TaskCompleted;
+
+        /**
+         * Creates a plain object from a TaskCompleted message. Also converts values to other types if specified.
+         * @param message TaskCompleted
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.TaskCompleted, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this TaskCompleted to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };

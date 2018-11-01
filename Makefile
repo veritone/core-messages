@@ -46,7 +46,7 @@ docs-html:
 	docker run --rm -v $(current_dir):$(current_dir) -w $(current_dir) veritone/protoc \
 	protoc \
 	--plugin="protoc-gen-doc=/go/bin/protoc-gen-doc" \
-	--doc_out=./doc \
+	--doc_out=./docs \
 	--doc_opt=html,index.html \
 	-I=. \
 	events/*.proto

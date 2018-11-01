@@ -3,12 +3,49 @@
 
 ## Table of Contents
 
+- [events/asset.proto](#events/asset.proto)
+    - [AssetUploaded](#events.AssetUploaded)
+  
+  
+  
+  
+
+- [events/authentication.proto](#events/authentication.proto)
+    - [ActionTokenForbidden](#events.ActionTokenForbidden)
+    - [ActionUserForbidden](#events.ActionUserForbidden)
+    - [Impersonated](#events.Impersonated)
+    - [LoginAttemptsExceeded](#events.LoginAttemptsExceeded)
+    - [LoginFailed](#events.LoginFailed)
+    - [LoginSucceeded](#events.LoginSucceeded)
+  
+  
+  
+  
+
 - [events/core.proto](#events/core.proto)
     - [Core](#events.Core)
     - [Trace](#events.Trace)
     - [Trace.TraceContextEntry](#events.Trace.TraceContextEntry)
     - [Trace.TraceTagsEntry](#events.Trace.TraceTagsEntry)
     - [VtEvent](#events.VtEvent)
+    - [VtEvent.BaggageEntry](#events.VtEvent.BaggageEntry)
+  
+  
+  
+  
+
+- [events/engine.proto](#events/engine.proto)
+    - [EngineBuildApproved](#events.EngineBuildApproved)
+    - [EngineBuildCreate](#events.EngineBuildCreate)
+    - [EngineBuildDisapprove](#events.EngineBuildDisapprove)
+    - [EngineBuildInvalidate](#events.EngineBuildInvalidate)
+    - [EngineBuildManifestProcessed](#events.EngineBuildManifestProcessed)
+    - [EngineBuildTestReportDone](#events.EngineBuildTestReportDone)
+    - [EngineBuildUpload](#events.EngineBuildUpload)
+    - [EngineBuildUploadCompleted](#events.EngineBuildUploadCompleted)
+    - [EngineBuildVulnerabilityChecked](#events.EngineBuildVulnerabilityChecked)
+    - [engineBuildDeployFail](#events.engineBuildDeployFail)
+    - [engineBuildDeploySuccess](#events.engineBuildDeploySuccess)
   
   
   
@@ -20,6 +57,15 @@
     - [ExampleOne](#events.ExampleOne)
     - [ExampleThree](#events.ExampleThree)
     - [ExampleTwo](#events.ExampleTwo)
+  
+  
+  
+  
+
+- [events/job.proto](#events/job.proto)
+    - [JobCompleted](#events.JobCompleted)
+    - [JobCreated](#events.JobCreated)
+    - [JobFailed](#events.JobFailed)
   
   
   
@@ -46,6 +92,26 @@
   
   
 
+- [events/recording.proto](#events/recording.proto)
+    - [RecordingCognitionCompleted](#events.RecordingCognitionCompleted)
+    - [RecordingCognitionCompleted.Payload](#events.RecordingCognitionCompleted.Payload)
+    - [RecordingCreated](#events.RecordingCreated)
+    - [RecordingDeleted](#events.RecordingDeleted)
+    - [RecordingInserted](#events.RecordingInserted)
+  
+  
+  
+  
+
+- [events/task.proto](#events/task.proto)
+    - [TaskCompleted](#events.TaskCompleted)
+    - [TaskQueued](#events.TaskQueued)
+    - [TaskUpdated](#events.TaskUpdated)
+  
+  
+  
+  
+
 - [events/trigger.proto](#events/trigger.proto)
     - [TriggerCacheRefresh](#events.TriggerCacheRefresh)
   
@@ -54,6 +120,168 @@
   
 
 - [Scalar Value Types](#scalar-value-types)
+
+
+
+<a name="events/asset.proto"/>
+<p align="right"><a href="#top">Top</a></p>
+
+## events/asset.proto
+
+
+
+<a name="events.AssetUploaded"/>
+
+### AssetUploaded
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| asset_id | [string](#string) |  |  |
+| recording_id | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="events/authentication.proto"/>
+<p align="right"><a href="#top">Top</a></p>
+
+## events/authentication.proto
+
+
+
+<a name="events.ActionTokenForbidden"/>
+
+### ActionTokenForbidden
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_agent | [string](#string) |  |  |
+| ip | [string](#string) |  |  |
+| request_url | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.ActionUserForbidden"/>
+
+### ActionUserForbidden
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_name | [string](#string) |  |  |
+| user_agent | [string](#string) |  |  |
+| ip | [string](#string) |  |  |
+| request_url | [string](#string) |  |  |
+| user_id | [string](#string) |  |  |
+| organization_id | [int64](#int64) |  |  |
+
+
+
+
+
+
+<a name="events.Impersonated"/>
+
+### Impersonated
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_name | [string](#string) |  |  |
+| user_agent | [string](#string) |  |  |
+| ip | [string](#string) |  |  |
+| request_url | [string](#string) |  |  |
+| user_id | [string](#string) |  |  |
+| organization_id | [int64](#int64) |  |  |
+| impersontated_user_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.LoginAttemptsExceeded"/>
+
+### LoginAttemptsExceeded
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_name | [string](#string) |  |  |
+| user_agent | [string](#string) |  |  |
+| ip | [string](#string) |  |  |
+| request_url | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.LoginFailed"/>
+
+### LoginFailed
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_name | [string](#string) |  |  |
+| user_agent | [string](#string) |  |  |
+| ip | [string](#string) |  |  |
+| request_url | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.LoginSucceeded"/>
+
+### LoginSucceeded
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_name | [string](#string) |  |  |
+| user_agent | [string](#string) |  |  |
+| ip | [string](#string) |  |  |
+| request_url | [string](#string) |  |  |
+| user_id | [string](#string) |  |  |
+| organization_id | [int64](#int64) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
 
 
 
@@ -72,9 +300,16 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | Read-only and auto-generated. ID of the message, ID is a uuid v4 auto-generated by messaging library. It will be propagate through the system |
-| name | [string](#string) |  | Read-only and auto-generated. The name of the event is automatically computed based on Protobuf data structure in {VtEvent.data} |
-| timestamp | [string](#string) |  | Read-only and auto-generated. Messaging library will compute the timestamp in UTC when a message is produced. |
+| id | [string](#string) |  | Read-only and auto-generated. ID of the message, ID is a uuid v4 auto-generated by messaging library. It will be propagate through the system. Similar to correlationId |
+| name | [string](#string) |  | The name of the event is |
+| timestamp | [string](#string) |  | Read-only and auto-generated. Messaging library will compute the timestamp in RFC1123Z when a message is produced. |
+| type | [string](#string) |  | the type of the event |
+| service_name | [string](#string) |  | Messaging library will default to value from `hostname` if not set */ |
+| application_id | [string](#string) |  | Application Id which owns the event. For internal components, it should be set to &#34;system&#34; |
+| event_id | [string](#string) |  | The event id that matches with event_id in Event Registry Table |
+| organization_id | [string](#string) |  | The organization where event is generated |
+| user_id | [string](#string) |  | The user who owns the event |
+| token_id | [string](#string) |  | The API token used to generate the event |
 
 
 
@@ -90,7 +325,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | trace_context | [Trace.TraceContextEntry](#events.Trace.TraceContextEntry) | repeated | Open Tracing trace context. |
-| trace_tags | [Trace.TraceTagsEntry](#events.Trace.TraceTagsEntry) | repeated |  |
+| trace_tags | [Trace.TraceTagsEntry](#events.Trace.TraceTagsEntry) | repeated | Open Tracing trace context. |
 | service_name | [string](#string) |  |  |
 
 
@@ -140,7 +375,244 @@
 | ----- | ---- | ----- | ----------- |
 | core | [Core](#events.Core) |  |  |
 | trace | [Trace](#events.Trace) |  |  |
+| baggage | [VtEvent.BaggageEntry](#events.VtEvent.BaggageEntry) | repeated |  |
 | data | [google.protobuf.Any](#google.protobuf.Any) |  |  |
+
+
+
+
+
+
+<a name="events.VtEvent.BaggageEntry"/>
+
+### VtEvent.BaggageEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="events/engine.proto"/>
+<p align="right"><a href="#top">Top</a></p>
+
+## events/engine.proto
+
+
+
+<a name="events.EngineBuildApproved"/>
+
+### EngineBuildApproved
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| engine_id | [string](#string) |  |  |
+| build_id | [string](#string) |  |  |
+| organization_id | [int64](#int64) |  |  |
+| status_code | [int32](#int32) |  |  |
+| action | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.EngineBuildCreate"/>
+
+### EngineBuildCreate
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| engine_id | [string](#string) |  |  |
+| build_id | [string](#string) |  |  |
+| status_code | [int32](#int32) |  |  |
+| action | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.EngineBuildDisapprove"/>
+
+### EngineBuildDisapprove
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| engine_id | [string](#string) |  |  |
+| build_id | [string](#string) |  |  |
+| organization_id | [int64](#int64) |  |  |
+| status_code | [int32](#int32) |  |  |
+| action | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.EngineBuildInvalidate"/>
+
+### EngineBuildInvalidate
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| engine_id | [string](#string) |  |  |
+| build_id | [string](#string) |  |  |
+| status_code | [int32](#int32) |  |  |
+| action | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.EngineBuildManifestProcessed"/>
+
+### EngineBuildManifestProcessed
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| job_id | [string](#string) |  |  |
+| success | [bool](#bool) |  |  |
+| engine_id | [string](#string) |  |  |
+| build_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.EngineBuildTestReportDone"/>
+
+### EngineBuildTestReportDone
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| job_id | [string](#string) |  |  |
+| success | [bool](#bool) |  |  |
+| engine_id | [string](#string) |  |  |
+| build_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.EngineBuildUpload"/>
+
+### EngineBuildUpload
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| engine_id | [string](#string) |  |  |
+| build_id | [string](#string) |  |  |
+| status_code | [int32](#int32) |  |  |
+| action | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.EngineBuildUploadCompleted"/>
+
+### EngineBuildUploadCompleted
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| job_id | [string](#string) |  |  |
+| asset_id | [string](#string) |  |  |
+| success | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="events.EngineBuildVulnerabilityChecked"/>
+
+### EngineBuildVulnerabilityChecked
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| job_id | [string](#string) |  |  |
+| asset_id | [string](#string) |  |  |
+| success | [bool](#bool) |  |  |
+| engine_id | [string](#string) |  |  |
+| build_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.engineBuildDeployFail"/>
+
+### engineBuildDeployFail
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| engine_id | [string](#string) |  |  |
+| build_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.engineBuildDeploySuccess"/>
+
+### engineBuildDeploySuccess
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| engine_id | [string](#string) |  |  |
+| build_id | [string](#string) |  |  |
 
 
 
@@ -236,6 +708,72 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | number | [int64](#int64) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="events/job.proto"/>
+<p align="right"><a href="#top">Top</a></p>
+
+## events/job.proto
+
+
+
+<a name="events.JobCompleted"/>
+
+### JobCompleted
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| job_id | [string](#string) |  |  |
+| timestamp_ms | [string](#string) |  |  |
+| job_status | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.JobCreated"/>
+
+### JobCreated
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| job_id | [string](#string) |  |  |
+| timestamp_ms | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.JobFailed"/>
+
+### JobFailed
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| job_id | [string](#string) |  |  |
+| timestamp_ms | [string](#string) |  |  |
+| job_status | [string](#string) |  |  |
 
 
 
@@ -440,6 +978,172 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 | from_number | [string](#string) |  | SMS number of the recipient (number should follow Twilo format) |
 | to_number | [string](#string) |  | SMS number of the sender (number should follow Twilo format) |
 | message | [string](#string) |  | message payload |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="events/recording.proto"/>
+<p align="right"><a href="#top">Top</a></p>
+
+## events/recording.proto
+
+
+
+<a name="events.RecordingCognitionCompleted"/>
+
+### RecordingCognitionCompleted
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| recording_id | [string](#string) |  |  |
+| payload | [RecordingCognitionCompleted.Payload](#events.RecordingCognitionCompleted.Payload) |  |  |
+
+
+
+
+
+
+<a name="events.RecordingCognitionCompleted.Payload"/>
+
+### RecordingCognitionCompleted.Payload
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| job_id | [string](#string) |  |  |
+| task_id | [string](#string) |  |  |
+| application_id | [string](#string) |  |  |
+| organization_id | [int64](#int64) |  |  |
+| library_id | [string](#string) |  |  |
+| index_override | [string](#string) |  |  |
+| token | [string](#string) |  |  |
+| asset_id | [string](#string) |  |  |
+| skip_mention_generation | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="events.RecordingCreated"/>
+
+### RecordingCreated
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| recording_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.RecordingDeleted"/>
+
+### RecordingDeleted
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| recording_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.RecordingInserted"/>
+
+### RecordingInserted
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| recording_id | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="events/task.proto"/>
+<p align="right"><a href="#top">Top</a></p>
+
+## events/task.proto
+
+
+
+<a name="events.TaskCompleted"/>
+
+### TaskCompleted
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| task_id | [string](#string) |  |  |
+| timestamp_ms | [string](#string) |  |  |
+| task_status | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.TaskQueued"/>
+
+### TaskQueued
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| task_id | [string](#string) |  |  |
+| timestamp_ms | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.TaskUpdated"/>
+
+### TaskUpdated
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| task_id | [string](#string) |  |  |
+| timestamp_ms | [string](#string) |  |  |
+| task_status | [string](#string) |  |  |
 
 
 

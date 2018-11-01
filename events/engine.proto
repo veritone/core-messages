@@ -1,0 +1,88 @@
+syntax = "proto3";
+
+package events;
+
+option go_package = "events";
+
+message EngineBuildUploadCompleted {
+    string user_id = 10;
+    string job_id = 11;
+    string asset_id = 12;
+    bool success = 13;
+}
+
+message EngineBuildManifestProcessed {
+    string user_id = 10;
+    string job_id = 11;
+    bool success = 12;
+    string engine_id = 13;
+    string build_id = 14;
+}
+
+message EngineBuildVulnerabilityChecked {
+    string user_id = 10;
+    string job_id = 11;
+    string asset_id = 12;
+    bool success = 13;
+    string engine_id = 14;
+    string build_id = 15;
+}
+
+message EngineBuildTestReportDone {
+    string user_id = 10;
+    string job_id = 11;
+    bool success = 12;
+    string engine_id = 13;
+    string build_id = 14;
+}
+
+message engineBuildDeploySuccess {
+    string user_id = 10;
+    string engine_id = 11;
+    string build_id = 12;
+}
+
+message engineBuildDeployFail {
+    string user_id = 10;
+    string engine_id = 11;
+    string build_id = 12;
+}
+
+message EngineBuildApproved {
+    string user_id = 10;     
+    string engine_id = 11;       
+    string build_id = 12;          
+    int64 organization_id = 13;             
+    int32 status_code = 14;         
+    string action = 15;         
+}
+
+message EngineBuildDisapprove {
+    string user_id = 10;
+    string engine_id = 11;
+    string build_id = 12;
+    int64 organization_id = 13;
+    int32 status_code = 14;
+    string action = 15;
+}
+
+message EngineBuildCreate {
+    string engine_id = 11;
+    string build_id = 12;
+    int32 status_code = 13;
+    string action = 14;
+}
+
+message EngineBuildUpload {
+    string engine_id = 11;
+    string build_id = 12;
+    int32 status_code = 13;
+    string action = 14;
+}
+
+message EngineBuildInvalidate {
+    string engine_id = 11;
+    string build_id = 12;
+    int32 status_code = 13;
+    string action = 14;
+}

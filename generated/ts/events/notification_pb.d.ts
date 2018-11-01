@@ -2,6 +2,7 @@
 // file: events/notification.proto
 
 import * as jspb from "google-protobuf";
+import * as google_protobuf_any_pb from "google-protobuf/google/protobuf/any_pb";
 
 export class BasicEmail extends jspb.Message {
   getFromAddress(): string;

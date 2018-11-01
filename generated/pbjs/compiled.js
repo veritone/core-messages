@@ -18,6 +18,1914 @@ $root.events = (function() {
      */
     var events = {};
 
+    events.AssetUploaded = (function() {
+
+        /**
+         * Properties of an AssetUploaded.
+         * @memberof events
+         * @interface IAssetUploaded
+         * @property {string|null} [assetId] AssetUploaded assetId
+         * @property {string|null} [recordingId] AssetUploaded recordingId
+         */
+
+        /**
+         * Constructs a new AssetUploaded.
+         * @memberof events
+         * @classdesc Represents an AssetUploaded.
+         * @implements IAssetUploaded
+         * @constructor
+         * @param {events.IAssetUploaded=} [properties] Properties to set
+         */
+        function AssetUploaded(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * AssetUploaded assetId.
+         * @member {string} assetId
+         * @memberof events.AssetUploaded
+         * @instance
+         */
+        AssetUploaded.prototype.assetId = "";
+
+        /**
+         * AssetUploaded recordingId.
+         * @member {string} recordingId
+         * @memberof events.AssetUploaded
+         * @instance
+         */
+        AssetUploaded.prototype.recordingId = "";
+
+        /**
+         * Creates a new AssetUploaded instance using the specified properties.
+         * @function create
+         * @memberof events.AssetUploaded
+         * @static
+         * @param {events.IAssetUploaded=} [properties] Properties to set
+         * @returns {events.AssetUploaded} AssetUploaded instance
+         */
+        AssetUploaded.create = function create(properties) {
+            return new AssetUploaded(properties);
+        };
+
+        /**
+         * Encodes the specified AssetUploaded message. Does not implicitly {@link events.AssetUploaded.verify|verify} messages.
+         * @function encode
+         * @memberof events.AssetUploaded
+         * @static
+         * @param {events.IAssetUploaded} message AssetUploaded message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        AssetUploaded.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.assetId != null && message.hasOwnProperty("assetId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.assetId);
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.recordingId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified AssetUploaded message, length delimited. Does not implicitly {@link events.AssetUploaded.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.AssetUploaded
+         * @static
+         * @param {events.IAssetUploaded} message AssetUploaded message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        AssetUploaded.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an AssetUploaded message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.AssetUploaded
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.AssetUploaded} AssetUploaded
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        AssetUploaded.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.AssetUploaded();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.assetId = reader.string();
+                    break;
+                case 11:
+                    message.recordingId = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an AssetUploaded message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.AssetUploaded
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.AssetUploaded} AssetUploaded
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        AssetUploaded.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an AssetUploaded message.
+         * @function verify
+         * @memberof events.AssetUploaded
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        AssetUploaded.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.assetId != null && message.hasOwnProperty("assetId"))
+                if (!$util.isString(message.assetId))
+                    return "assetId: string expected";
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                if (!$util.isString(message.recordingId))
+                    return "recordingId: string expected";
+            return null;
+        };
+
+        /**
+         * Creates an AssetUploaded message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.AssetUploaded
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.AssetUploaded} AssetUploaded
+         */
+        AssetUploaded.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.AssetUploaded)
+                return object;
+            var message = new $root.events.AssetUploaded();
+            if (object.assetId != null)
+                message.assetId = String(object.assetId);
+            if (object.recordingId != null)
+                message.recordingId = String(object.recordingId);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an AssetUploaded message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.AssetUploaded
+         * @static
+         * @param {events.AssetUploaded} message AssetUploaded
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        AssetUploaded.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.assetId = "";
+                object.recordingId = "";
+            }
+            if (message.assetId != null && message.hasOwnProperty("assetId"))
+                object.assetId = message.assetId;
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                object.recordingId = message.recordingId;
+            return object;
+        };
+
+        /**
+         * Converts this AssetUploaded to JSON.
+         * @function toJSON
+         * @memberof events.AssetUploaded
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        AssetUploaded.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return AssetUploaded;
+    })();
+
+    events.LoginSucceeded = (function() {
+
+        /**
+         * Properties of a LoginSucceeded.
+         * @memberof events
+         * @interface ILoginSucceeded
+         * @property {string|null} [userName] LoginSucceeded userName
+         * @property {string|null} [userAgent] LoginSucceeded userAgent
+         * @property {string|null} [ip] LoginSucceeded ip
+         * @property {string|null} [requestUrl] LoginSucceeded requestUrl
+         * @property {string|null} [userId] LoginSucceeded userId
+         * @property {number|Long|null} [organizationId] LoginSucceeded organizationId
+         */
+
+        /**
+         * Constructs a new LoginSucceeded.
+         * @memberof events
+         * @classdesc Represents a LoginSucceeded.
+         * @implements ILoginSucceeded
+         * @constructor
+         * @param {events.ILoginSucceeded=} [properties] Properties to set
+         */
+        function LoginSucceeded(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * LoginSucceeded userName.
+         * @member {string} userName
+         * @memberof events.LoginSucceeded
+         * @instance
+         */
+        LoginSucceeded.prototype.userName = "";
+
+        /**
+         * LoginSucceeded userAgent.
+         * @member {string} userAgent
+         * @memberof events.LoginSucceeded
+         * @instance
+         */
+        LoginSucceeded.prototype.userAgent = "";
+
+        /**
+         * LoginSucceeded ip.
+         * @member {string} ip
+         * @memberof events.LoginSucceeded
+         * @instance
+         */
+        LoginSucceeded.prototype.ip = "";
+
+        /**
+         * LoginSucceeded requestUrl.
+         * @member {string} requestUrl
+         * @memberof events.LoginSucceeded
+         * @instance
+         */
+        LoginSucceeded.prototype.requestUrl = "";
+
+        /**
+         * LoginSucceeded userId.
+         * @member {string} userId
+         * @memberof events.LoginSucceeded
+         * @instance
+         */
+        LoginSucceeded.prototype.userId = "";
+
+        /**
+         * LoginSucceeded organizationId.
+         * @member {number|Long} organizationId
+         * @memberof events.LoginSucceeded
+         * @instance
+         */
+        LoginSucceeded.prototype.organizationId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+        /**
+         * Creates a new LoginSucceeded instance using the specified properties.
+         * @function create
+         * @memberof events.LoginSucceeded
+         * @static
+         * @param {events.ILoginSucceeded=} [properties] Properties to set
+         * @returns {events.LoginSucceeded} LoginSucceeded instance
+         */
+        LoginSucceeded.create = function create(properties) {
+            return new LoginSucceeded(properties);
+        };
+
+        /**
+         * Encodes the specified LoginSucceeded message. Does not implicitly {@link events.LoginSucceeded.verify|verify} messages.
+         * @function encode
+         * @memberof events.LoginSucceeded
+         * @static
+         * @param {events.ILoginSucceeded} message LoginSucceeded message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        LoginSucceeded.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.userName);
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.userAgent);
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.ip);
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                writer.uint32(/* id 13, wireType 2 =*/106).string(message.requestUrl);
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                writer.uint32(/* id 14, wireType 2 =*/114).string(message.userId);
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                writer.uint32(/* id 15, wireType 0 =*/120).int64(message.organizationId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified LoginSucceeded message, length delimited. Does not implicitly {@link events.LoginSucceeded.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.LoginSucceeded
+         * @static
+         * @param {events.ILoginSucceeded} message LoginSucceeded message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        LoginSucceeded.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a LoginSucceeded message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.LoginSucceeded
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.LoginSucceeded} LoginSucceeded
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        LoginSucceeded.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.LoginSucceeded();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.userName = reader.string();
+                    break;
+                case 11:
+                    message.userAgent = reader.string();
+                    break;
+                case 12:
+                    message.ip = reader.string();
+                    break;
+                case 13:
+                    message.requestUrl = reader.string();
+                    break;
+                case 14:
+                    message.userId = reader.string();
+                    break;
+                case 15:
+                    message.organizationId = reader.int64();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a LoginSucceeded message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.LoginSucceeded
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.LoginSucceeded} LoginSucceeded
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        LoginSucceeded.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a LoginSucceeded message.
+         * @function verify
+         * @memberof events.LoginSucceeded
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        LoginSucceeded.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                if (!$util.isString(message.userName))
+                    return "userName: string expected";
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                if (!$util.isString(message.userAgent))
+                    return "userAgent: string expected";
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                if (!$util.isString(message.ip))
+                    return "ip: string expected";
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                if (!$util.isString(message.requestUrl))
+                    return "requestUrl: string expected";
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                if (!$util.isString(message.userId))
+                    return "userId: string expected";
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                if (!$util.isInteger(message.organizationId) && !(message.organizationId && $util.isInteger(message.organizationId.low) && $util.isInteger(message.organizationId.high)))
+                    return "organizationId: integer|Long expected";
+            return null;
+        };
+
+        /**
+         * Creates a LoginSucceeded message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.LoginSucceeded
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.LoginSucceeded} LoginSucceeded
+         */
+        LoginSucceeded.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.LoginSucceeded)
+                return object;
+            var message = new $root.events.LoginSucceeded();
+            if (object.userName != null)
+                message.userName = String(object.userName);
+            if (object.userAgent != null)
+                message.userAgent = String(object.userAgent);
+            if (object.ip != null)
+                message.ip = String(object.ip);
+            if (object.requestUrl != null)
+                message.requestUrl = String(object.requestUrl);
+            if (object.userId != null)
+                message.userId = String(object.userId);
+            if (object.organizationId != null)
+                if ($util.Long)
+                    (message.organizationId = $util.Long.fromValue(object.organizationId)).unsigned = false;
+                else if (typeof object.organizationId === "string")
+                    message.organizationId = parseInt(object.organizationId, 10);
+                else if (typeof object.organizationId === "number")
+                    message.organizationId = object.organizationId;
+                else if (typeof object.organizationId === "object")
+                    message.organizationId = new $util.LongBits(object.organizationId.low >>> 0, object.organizationId.high >>> 0).toNumber();
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a LoginSucceeded message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.LoginSucceeded
+         * @static
+         * @param {events.LoginSucceeded} message LoginSucceeded
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        LoginSucceeded.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.userName = "";
+                object.userAgent = "";
+                object.ip = "";
+                object.requestUrl = "";
+                object.userId = "";
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.organizationId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.organizationId = options.longs === String ? "0" : 0;
+            }
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                object.userName = message.userName;
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                object.userAgent = message.userAgent;
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                object.ip = message.ip;
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                object.requestUrl = message.requestUrl;
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                object.userId = message.userId;
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                if (typeof message.organizationId === "number")
+                    object.organizationId = options.longs === String ? String(message.organizationId) : message.organizationId;
+                else
+                    object.organizationId = options.longs === String ? $util.Long.prototype.toString.call(message.organizationId) : options.longs === Number ? new $util.LongBits(message.organizationId.low >>> 0, message.organizationId.high >>> 0).toNumber() : message.organizationId;
+            return object;
+        };
+
+        /**
+         * Converts this LoginSucceeded to JSON.
+         * @function toJSON
+         * @memberof events.LoginSucceeded
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        LoginSucceeded.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return LoginSucceeded;
+    })();
+
+    events.LoginFailed = (function() {
+
+        /**
+         * Properties of a LoginFailed.
+         * @memberof events
+         * @interface ILoginFailed
+         * @property {string|null} [userName] LoginFailed userName
+         * @property {string|null} [userAgent] LoginFailed userAgent
+         * @property {string|null} [ip] LoginFailed ip
+         * @property {string|null} [requestUrl] LoginFailed requestUrl
+         */
+
+        /**
+         * Constructs a new LoginFailed.
+         * @memberof events
+         * @classdesc Represents a LoginFailed.
+         * @implements ILoginFailed
+         * @constructor
+         * @param {events.ILoginFailed=} [properties] Properties to set
+         */
+        function LoginFailed(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * LoginFailed userName.
+         * @member {string} userName
+         * @memberof events.LoginFailed
+         * @instance
+         */
+        LoginFailed.prototype.userName = "";
+
+        /**
+         * LoginFailed userAgent.
+         * @member {string} userAgent
+         * @memberof events.LoginFailed
+         * @instance
+         */
+        LoginFailed.prototype.userAgent = "";
+
+        /**
+         * LoginFailed ip.
+         * @member {string} ip
+         * @memberof events.LoginFailed
+         * @instance
+         */
+        LoginFailed.prototype.ip = "";
+
+        /**
+         * LoginFailed requestUrl.
+         * @member {string} requestUrl
+         * @memberof events.LoginFailed
+         * @instance
+         */
+        LoginFailed.prototype.requestUrl = "";
+
+        /**
+         * Creates a new LoginFailed instance using the specified properties.
+         * @function create
+         * @memberof events.LoginFailed
+         * @static
+         * @param {events.ILoginFailed=} [properties] Properties to set
+         * @returns {events.LoginFailed} LoginFailed instance
+         */
+        LoginFailed.create = function create(properties) {
+            return new LoginFailed(properties);
+        };
+
+        /**
+         * Encodes the specified LoginFailed message. Does not implicitly {@link events.LoginFailed.verify|verify} messages.
+         * @function encode
+         * @memberof events.LoginFailed
+         * @static
+         * @param {events.ILoginFailed} message LoginFailed message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        LoginFailed.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.userName);
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.userAgent);
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.ip);
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                writer.uint32(/* id 13, wireType 2 =*/106).string(message.requestUrl);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified LoginFailed message, length delimited. Does not implicitly {@link events.LoginFailed.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.LoginFailed
+         * @static
+         * @param {events.ILoginFailed} message LoginFailed message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        LoginFailed.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a LoginFailed message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.LoginFailed
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.LoginFailed} LoginFailed
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        LoginFailed.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.LoginFailed();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.userName = reader.string();
+                    break;
+                case 11:
+                    message.userAgent = reader.string();
+                    break;
+                case 12:
+                    message.ip = reader.string();
+                    break;
+                case 13:
+                    message.requestUrl = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a LoginFailed message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.LoginFailed
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.LoginFailed} LoginFailed
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        LoginFailed.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a LoginFailed message.
+         * @function verify
+         * @memberof events.LoginFailed
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        LoginFailed.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                if (!$util.isString(message.userName))
+                    return "userName: string expected";
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                if (!$util.isString(message.userAgent))
+                    return "userAgent: string expected";
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                if (!$util.isString(message.ip))
+                    return "ip: string expected";
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                if (!$util.isString(message.requestUrl))
+                    return "requestUrl: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a LoginFailed message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.LoginFailed
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.LoginFailed} LoginFailed
+         */
+        LoginFailed.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.LoginFailed)
+                return object;
+            var message = new $root.events.LoginFailed();
+            if (object.userName != null)
+                message.userName = String(object.userName);
+            if (object.userAgent != null)
+                message.userAgent = String(object.userAgent);
+            if (object.ip != null)
+                message.ip = String(object.ip);
+            if (object.requestUrl != null)
+                message.requestUrl = String(object.requestUrl);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a LoginFailed message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.LoginFailed
+         * @static
+         * @param {events.LoginFailed} message LoginFailed
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        LoginFailed.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.userName = "";
+                object.userAgent = "";
+                object.ip = "";
+                object.requestUrl = "";
+            }
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                object.userName = message.userName;
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                object.userAgent = message.userAgent;
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                object.ip = message.ip;
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                object.requestUrl = message.requestUrl;
+            return object;
+        };
+
+        /**
+         * Converts this LoginFailed to JSON.
+         * @function toJSON
+         * @memberof events.LoginFailed
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        LoginFailed.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return LoginFailed;
+    })();
+
+    events.LoginAttemptsExceeded = (function() {
+
+        /**
+         * Properties of a LoginAttemptsExceeded.
+         * @memberof events
+         * @interface ILoginAttemptsExceeded
+         * @property {string|null} [userName] LoginAttemptsExceeded userName
+         * @property {string|null} [userAgent] LoginAttemptsExceeded userAgent
+         * @property {string|null} [ip] LoginAttemptsExceeded ip
+         * @property {string|null} [requestUrl] LoginAttemptsExceeded requestUrl
+         */
+
+        /**
+         * Constructs a new LoginAttemptsExceeded.
+         * @memberof events
+         * @classdesc Represents a LoginAttemptsExceeded.
+         * @implements ILoginAttemptsExceeded
+         * @constructor
+         * @param {events.ILoginAttemptsExceeded=} [properties] Properties to set
+         */
+        function LoginAttemptsExceeded(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * LoginAttemptsExceeded userName.
+         * @member {string} userName
+         * @memberof events.LoginAttemptsExceeded
+         * @instance
+         */
+        LoginAttemptsExceeded.prototype.userName = "";
+
+        /**
+         * LoginAttemptsExceeded userAgent.
+         * @member {string} userAgent
+         * @memberof events.LoginAttemptsExceeded
+         * @instance
+         */
+        LoginAttemptsExceeded.prototype.userAgent = "";
+
+        /**
+         * LoginAttemptsExceeded ip.
+         * @member {string} ip
+         * @memberof events.LoginAttemptsExceeded
+         * @instance
+         */
+        LoginAttemptsExceeded.prototype.ip = "";
+
+        /**
+         * LoginAttemptsExceeded requestUrl.
+         * @member {string} requestUrl
+         * @memberof events.LoginAttemptsExceeded
+         * @instance
+         */
+        LoginAttemptsExceeded.prototype.requestUrl = "";
+
+        /**
+         * Creates a new LoginAttemptsExceeded instance using the specified properties.
+         * @function create
+         * @memberof events.LoginAttemptsExceeded
+         * @static
+         * @param {events.ILoginAttemptsExceeded=} [properties] Properties to set
+         * @returns {events.LoginAttemptsExceeded} LoginAttemptsExceeded instance
+         */
+        LoginAttemptsExceeded.create = function create(properties) {
+            return new LoginAttemptsExceeded(properties);
+        };
+
+        /**
+         * Encodes the specified LoginAttemptsExceeded message. Does not implicitly {@link events.LoginAttemptsExceeded.verify|verify} messages.
+         * @function encode
+         * @memberof events.LoginAttemptsExceeded
+         * @static
+         * @param {events.ILoginAttemptsExceeded} message LoginAttemptsExceeded message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        LoginAttemptsExceeded.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.userName);
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.userAgent);
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.ip);
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                writer.uint32(/* id 13, wireType 2 =*/106).string(message.requestUrl);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified LoginAttemptsExceeded message, length delimited. Does not implicitly {@link events.LoginAttemptsExceeded.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.LoginAttemptsExceeded
+         * @static
+         * @param {events.ILoginAttemptsExceeded} message LoginAttemptsExceeded message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        LoginAttemptsExceeded.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a LoginAttemptsExceeded message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.LoginAttemptsExceeded
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.LoginAttemptsExceeded} LoginAttemptsExceeded
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        LoginAttemptsExceeded.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.LoginAttemptsExceeded();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.userName = reader.string();
+                    break;
+                case 11:
+                    message.userAgent = reader.string();
+                    break;
+                case 12:
+                    message.ip = reader.string();
+                    break;
+                case 13:
+                    message.requestUrl = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a LoginAttemptsExceeded message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.LoginAttemptsExceeded
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.LoginAttemptsExceeded} LoginAttemptsExceeded
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        LoginAttemptsExceeded.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a LoginAttemptsExceeded message.
+         * @function verify
+         * @memberof events.LoginAttemptsExceeded
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        LoginAttemptsExceeded.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                if (!$util.isString(message.userName))
+                    return "userName: string expected";
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                if (!$util.isString(message.userAgent))
+                    return "userAgent: string expected";
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                if (!$util.isString(message.ip))
+                    return "ip: string expected";
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                if (!$util.isString(message.requestUrl))
+                    return "requestUrl: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a LoginAttemptsExceeded message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.LoginAttemptsExceeded
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.LoginAttemptsExceeded} LoginAttemptsExceeded
+         */
+        LoginAttemptsExceeded.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.LoginAttemptsExceeded)
+                return object;
+            var message = new $root.events.LoginAttemptsExceeded();
+            if (object.userName != null)
+                message.userName = String(object.userName);
+            if (object.userAgent != null)
+                message.userAgent = String(object.userAgent);
+            if (object.ip != null)
+                message.ip = String(object.ip);
+            if (object.requestUrl != null)
+                message.requestUrl = String(object.requestUrl);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a LoginAttemptsExceeded message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.LoginAttemptsExceeded
+         * @static
+         * @param {events.LoginAttemptsExceeded} message LoginAttemptsExceeded
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        LoginAttemptsExceeded.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.userName = "";
+                object.userAgent = "";
+                object.ip = "";
+                object.requestUrl = "";
+            }
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                object.userName = message.userName;
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                object.userAgent = message.userAgent;
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                object.ip = message.ip;
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                object.requestUrl = message.requestUrl;
+            return object;
+        };
+
+        /**
+         * Converts this LoginAttemptsExceeded to JSON.
+         * @function toJSON
+         * @memberof events.LoginAttemptsExceeded
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        LoginAttemptsExceeded.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return LoginAttemptsExceeded;
+    })();
+
+    events.Impersonated = (function() {
+
+        /**
+         * Properties of an Impersonated.
+         * @memberof events
+         * @interface IImpersonated
+         * @property {string|null} [userName] Impersonated userName
+         * @property {string|null} [userAgent] Impersonated userAgent
+         * @property {string|null} [ip] Impersonated ip
+         * @property {string|null} [requestUrl] Impersonated requestUrl
+         * @property {string|null} [userId] Impersonated userId
+         * @property {number|Long|null} [organizationId] Impersonated organizationId
+         * @property {string|null} [impersontatedUserId] Impersonated impersontatedUserId
+         */
+
+        /**
+         * Constructs a new Impersonated.
+         * @memberof events
+         * @classdesc Represents an Impersonated.
+         * @implements IImpersonated
+         * @constructor
+         * @param {events.IImpersonated=} [properties] Properties to set
+         */
+        function Impersonated(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * Impersonated userName.
+         * @member {string} userName
+         * @memberof events.Impersonated
+         * @instance
+         */
+        Impersonated.prototype.userName = "";
+
+        /**
+         * Impersonated userAgent.
+         * @member {string} userAgent
+         * @memberof events.Impersonated
+         * @instance
+         */
+        Impersonated.prototype.userAgent = "";
+
+        /**
+         * Impersonated ip.
+         * @member {string} ip
+         * @memberof events.Impersonated
+         * @instance
+         */
+        Impersonated.prototype.ip = "";
+
+        /**
+         * Impersonated requestUrl.
+         * @member {string} requestUrl
+         * @memberof events.Impersonated
+         * @instance
+         */
+        Impersonated.prototype.requestUrl = "";
+
+        /**
+         * Impersonated userId.
+         * @member {string} userId
+         * @memberof events.Impersonated
+         * @instance
+         */
+        Impersonated.prototype.userId = "";
+
+        /**
+         * Impersonated organizationId.
+         * @member {number|Long} organizationId
+         * @memberof events.Impersonated
+         * @instance
+         */
+        Impersonated.prototype.organizationId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+        /**
+         * Impersonated impersontatedUserId.
+         * @member {string} impersontatedUserId
+         * @memberof events.Impersonated
+         * @instance
+         */
+        Impersonated.prototype.impersontatedUserId = "";
+
+        /**
+         * Creates a new Impersonated instance using the specified properties.
+         * @function create
+         * @memberof events.Impersonated
+         * @static
+         * @param {events.IImpersonated=} [properties] Properties to set
+         * @returns {events.Impersonated} Impersonated instance
+         */
+        Impersonated.create = function create(properties) {
+            return new Impersonated(properties);
+        };
+
+        /**
+         * Encodes the specified Impersonated message. Does not implicitly {@link events.Impersonated.verify|verify} messages.
+         * @function encode
+         * @memberof events.Impersonated
+         * @static
+         * @param {events.IImpersonated} message Impersonated message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        Impersonated.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.userName);
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.userAgent);
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.ip);
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                writer.uint32(/* id 13, wireType 2 =*/106).string(message.requestUrl);
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                writer.uint32(/* id 14, wireType 2 =*/114).string(message.userId);
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                writer.uint32(/* id 15, wireType 0 =*/120).int64(message.organizationId);
+            if (message.impersontatedUserId != null && message.hasOwnProperty("impersontatedUserId"))
+                writer.uint32(/* id 16, wireType 2 =*/130).string(message.impersontatedUserId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified Impersonated message, length delimited. Does not implicitly {@link events.Impersonated.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.Impersonated
+         * @static
+         * @param {events.IImpersonated} message Impersonated message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        Impersonated.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an Impersonated message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.Impersonated
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.Impersonated} Impersonated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        Impersonated.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.Impersonated();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.userName = reader.string();
+                    break;
+                case 11:
+                    message.userAgent = reader.string();
+                    break;
+                case 12:
+                    message.ip = reader.string();
+                    break;
+                case 13:
+                    message.requestUrl = reader.string();
+                    break;
+                case 14:
+                    message.userId = reader.string();
+                    break;
+                case 15:
+                    message.organizationId = reader.int64();
+                    break;
+                case 16:
+                    message.impersontatedUserId = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an Impersonated message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.Impersonated
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.Impersonated} Impersonated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        Impersonated.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an Impersonated message.
+         * @function verify
+         * @memberof events.Impersonated
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        Impersonated.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                if (!$util.isString(message.userName))
+                    return "userName: string expected";
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                if (!$util.isString(message.userAgent))
+                    return "userAgent: string expected";
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                if (!$util.isString(message.ip))
+                    return "ip: string expected";
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                if (!$util.isString(message.requestUrl))
+                    return "requestUrl: string expected";
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                if (!$util.isString(message.userId))
+                    return "userId: string expected";
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                if (!$util.isInteger(message.organizationId) && !(message.organizationId && $util.isInteger(message.organizationId.low) && $util.isInteger(message.organizationId.high)))
+                    return "organizationId: integer|Long expected";
+            if (message.impersontatedUserId != null && message.hasOwnProperty("impersontatedUserId"))
+                if (!$util.isString(message.impersontatedUserId))
+                    return "impersontatedUserId: string expected";
+            return null;
+        };
+
+        /**
+         * Creates an Impersonated message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.Impersonated
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.Impersonated} Impersonated
+         */
+        Impersonated.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.Impersonated)
+                return object;
+            var message = new $root.events.Impersonated();
+            if (object.userName != null)
+                message.userName = String(object.userName);
+            if (object.userAgent != null)
+                message.userAgent = String(object.userAgent);
+            if (object.ip != null)
+                message.ip = String(object.ip);
+            if (object.requestUrl != null)
+                message.requestUrl = String(object.requestUrl);
+            if (object.userId != null)
+                message.userId = String(object.userId);
+            if (object.organizationId != null)
+                if ($util.Long)
+                    (message.organizationId = $util.Long.fromValue(object.organizationId)).unsigned = false;
+                else if (typeof object.organizationId === "string")
+                    message.organizationId = parseInt(object.organizationId, 10);
+                else if (typeof object.organizationId === "number")
+                    message.organizationId = object.organizationId;
+                else if (typeof object.organizationId === "object")
+                    message.organizationId = new $util.LongBits(object.organizationId.low >>> 0, object.organizationId.high >>> 0).toNumber();
+            if (object.impersontatedUserId != null)
+                message.impersontatedUserId = String(object.impersontatedUserId);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an Impersonated message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.Impersonated
+         * @static
+         * @param {events.Impersonated} message Impersonated
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        Impersonated.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.userName = "";
+                object.userAgent = "";
+                object.ip = "";
+                object.requestUrl = "";
+                object.userId = "";
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.organizationId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.organizationId = options.longs === String ? "0" : 0;
+                object.impersontatedUserId = "";
+            }
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                object.userName = message.userName;
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                object.userAgent = message.userAgent;
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                object.ip = message.ip;
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                object.requestUrl = message.requestUrl;
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                object.userId = message.userId;
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                if (typeof message.organizationId === "number")
+                    object.organizationId = options.longs === String ? String(message.organizationId) : message.organizationId;
+                else
+                    object.organizationId = options.longs === String ? $util.Long.prototype.toString.call(message.organizationId) : options.longs === Number ? new $util.LongBits(message.organizationId.low >>> 0, message.organizationId.high >>> 0).toNumber() : message.organizationId;
+            if (message.impersontatedUserId != null && message.hasOwnProperty("impersontatedUserId"))
+                object.impersontatedUserId = message.impersontatedUserId;
+            return object;
+        };
+
+        /**
+         * Converts this Impersonated to JSON.
+         * @function toJSON
+         * @memberof events.Impersonated
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        Impersonated.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return Impersonated;
+    })();
+
+    events.ActionUserForbidden = (function() {
+
+        /**
+         * Properties of an ActionUserForbidden.
+         * @memberof events
+         * @interface IActionUserForbidden
+         * @property {string|null} [userName] ActionUserForbidden userName
+         * @property {string|null} [userAgent] ActionUserForbidden userAgent
+         * @property {string|null} [ip] ActionUserForbidden ip
+         * @property {string|null} [requestUrl] ActionUserForbidden requestUrl
+         * @property {string|null} [userId] ActionUserForbidden userId
+         * @property {number|Long|null} [organizationId] ActionUserForbidden organizationId
+         */
+
+        /**
+         * Constructs a new ActionUserForbidden.
+         * @memberof events
+         * @classdesc Represents an ActionUserForbidden.
+         * @implements IActionUserForbidden
+         * @constructor
+         * @param {events.IActionUserForbidden=} [properties] Properties to set
+         */
+        function ActionUserForbidden(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * ActionUserForbidden userName.
+         * @member {string} userName
+         * @memberof events.ActionUserForbidden
+         * @instance
+         */
+        ActionUserForbidden.prototype.userName = "";
+
+        /**
+         * ActionUserForbidden userAgent.
+         * @member {string} userAgent
+         * @memberof events.ActionUserForbidden
+         * @instance
+         */
+        ActionUserForbidden.prototype.userAgent = "";
+
+        /**
+         * ActionUserForbidden ip.
+         * @member {string} ip
+         * @memberof events.ActionUserForbidden
+         * @instance
+         */
+        ActionUserForbidden.prototype.ip = "";
+
+        /**
+         * ActionUserForbidden requestUrl.
+         * @member {string} requestUrl
+         * @memberof events.ActionUserForbidden
+         * @instance
+         */
+        ActionUserForbidden.prototype.requestUrl = "";
+
+        /**
+         * ActionUserForbidden userId.
+         * @member {string} userId
+         * @memberof events.ActionUserForbidden
+         * @instance
+         */
+        ActionUserForbidden.prototype.userId = "";
+
+        /**
+         * ActionUserForbidden organizationId.
+         * @member {number|Long} organizationId
+         * @memberof events.ActionUserForbidden
+         * @instance
+         */
+        ActionUserForbidden.prototype.organizationId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+        /**
+         * Creates a new ActionUserForbidden instance using the specified properties.
+         * @function create
+         * @memberof events.ActionUserForbidden
+         * @static
+         * @param {events.IActionUserForbidden=} [properties] Properties to set
+         * @returns {events.ActionUserForbidden} ActionUserForbidden instance
+         */
+        ActionUserForbidden.create = function create(properties) {
+            return new ActionUserForbidden(properties);
+        };
+
+        /**
+         * Encodes the specified ActionUserForbidden message. Does not implicitly {@link events.ActionUserForbidden.verify|verify} messages.
+         * @function encode
+         * @memberof events.ActionUserForbidden
+         * @static
+         * @param {events.IActionUserForbidden} message ActionUserForbidden message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        ActionUserForbidden.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.userName);
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.userAgent);
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.ip);
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                writer.uint32(/* id 13, wireType 2 =*/106).string(message.requestUrl);
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                writer.uint32(/* id 14, wireType 2 =*/114).string(message.userId);
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                writer.uint32(/* id 15, wireType 0 =*/120).int64(message.organizationId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified ActionUserForbidden message, length delimited. Does not implicitly {@link events.ActionUserForbidden.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.ActionUserForbidden
+         * @static
+         * @param {events.IActionUserForbidden} message ActionUserForbidden message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        ActionUserForbidden.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an ActionUserForbidden message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.ActionUserForbidden
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.ActionUserForbidden} ActionUserForbidden
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        ActionUserForbidden.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.ActionUserForbidden();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.userName = reader.string();
+                    break;
+                case 11:
+                    message.userAgent = reader.string();
+                    break;
+                case 12:
+                    message.ip = reader.string();
+                    break;
+                case 13:
+                    message.requestUrl = reader.string();
+                    break;
+                case 14:
+                    message.userId = reader.string();
+                    break;
+                case 15:
+                    message.organizationId = reader.int64();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an ActionUserForbidden message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.ActionUserForbidden
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.ActionUserForbidden} ActionUserForbidden
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        ActionUserForbidden.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an ActionUserForbidden message.
+         * @function verify
+         * @memberof events.ActionUserForbidden
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        ActionUserForbidden.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                if (!$util.isString(message.userName))
+                    return "userName: string expected";
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                if (!$util.isString(message.userAgent))
+                    return "userAgent: string expected";
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                if (!$util.isString(message.ip))
+                    return "ip: string expected";
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                if (!$util.isString(message.requestUrl))
+                    return "requestUrl: string expected";
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                if (!$util.isString(message.userId))
+                    return "userId: string expected";
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                if (!$util.isInteger(message.organizationId) && !(message.organizationId && $util.isInteger(message.organizationId.low) && $util.isInteger(message.organizationId.high)))
+                    return "organizationId: integer|Long expected";
+            return null;
+        };
+
+        /**
+         * Creates an ActionUserForbidden message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.ActionUserForbidden
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.ActionUserForbidden} ActionUserForbidden
+         */
+        ActionUserForbidden.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.ActionUserForbidden)
+                return object;
+            var message = new $root.events.ActionUserForbidden();
+            if (object.userName != null)
+                message.userName = String(object.userName);
+            if (object.userAgent != null)
+                message.userAgent = String(object.userAgent);
+            if (object.ip != null)
+                message.ip = String(object.ip);
+            if (object.requestUrl != null)
+                message.requestUrl = String(object.requestUrl);
+            if (object.userId != null)
+                message.userId = String(object.userId);
+            if (object.organizationId != null)
+                if ($util.Long)
+                    (message.organizationId = $util.Long.fromValue(object.organizationId)).unsigned = false;
+                else if (typeof object.organizationId === "string")
+                    message.organizationId = parseInt(object.organizationId, 10);
+                else if (typeof object.organizationId === "number")
+                    message.organizationId = object.organizationId;
+                else if (typeof object.organizationId === "object")
+                    message.organizationId = new $util.LongBits(object.organizationId.low >>> 0, object.organizationId.high >>> 0).toNumber();
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an ActionUserForbidden message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.ActionUserForbidden
+         * @static
+         * @param {events.ActionUserForbidden} message ActionUserForbidden
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        ActionUserForbidden.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.userName = "";
+                object.userAgent = "";
+                object.ip = "";
+                object.requestUrl = "";
+                object.userId = "";
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.organizationId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.organizationId = options.longs === String ? "0" : 0;
+            }
+            if (message.userName != null && message.hasOwnProperty("userName"))
+                object.userName = message.userName;
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                object.userAgent = message.userAgent;
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                object.ip = message.ip;
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                object.requestUrl = message.requestUrl;
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                object.userId = message.userId;
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                if (typeof message.organizationId === "number")
+                    object.organizationId = options.longs === String ? String(message.organizationId) : message.organizationId;
+                else
+                    object.organizationId = options.longs === String ? $util.Long.prototype.toString.call(message.organizationId) : options.longs === Number ? new $util.LongBits(message.organizationId.low >>> 0, message.organizationId.high >>> 0).toNumber() : message.organizationId;
+            return object;
+        };
+
+        /**
+         * Converts this ActionUserForbidden to JSON.
+         * @function toJSON
+         * @memberof events.ActionUserForbidden
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        ActionUserForbidden.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return ActionUserForbidden;
+    })();
+
+    events.ActionTokenForbidden = (function() {
+
+        /**
+         * Properties of an ActionTokenForbidden.
+         * @memberof events
+         * @interface IActionTokenForbidden
+         * @property {string|null} [userAgent] ActionTokenForbidden userAgent
+         * @property {string|null} [ip] ActionTokenForbidden ip
+         * @property {string|null} [requestUrl] ActionTokenForbidden requestUrl
+         */
+
+        /**
+         * Constructs a new ActionTokenForbidden.
+         * @memberof events
+         * @classdesc Represents an ActionTokenForbidden.
+         * @implements IActionTokenForbidden
+         * @constructor
+         * @param {events.IActionTokenForbidden=} [properties] Properties to set
+         */
+        function ActionTokenForbidden(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * ActionTokenForbidden userAgent.
+         * @member {string} userAgent
+         * @memberof events.ActionTokenForbidden
+         * @instance
+         */
+        ActionTokenForbidden.prototype.userAgent = "";
+
+        /**
+         * ActionTokenForbidden ip.
+         * @member {string} ip
+         * @memberof events.ActionTokenForbidden
+         * @instance
+         */
+        ActionTokenForbidden.prototype.ip = "";
+
+        /**
+         * ActionTokenForbidden requestUrl.
+         * @member {string} requestUrl
+         * @memberof events.ActionTokenForbidden
+         * @instance
+         */
+        ActionTokenForbidden.prototype.requestUrl = "";
+
+        /**
+         * Creates a new ActionTokenForbidden instance using the specified properties.
+         * @function create
+         * @memberof events.ActionTokenForbidden
+         * @static
+         * @param {events.IActionTokenForbidden=} [properties] Properties to set
+         * @returns {events.ActionTokenForbidden} ActionTokenForbidden instance
+         */
+        ActionTokenForbidden.create = function create(properties) {
+            return new ActionTokenForbidden(properties);
+        };
+
+        /**
+         * Encodes the specified ActionTokenForbidden message. Does not implicitly {@link events.ActionTokenForbidden.verify|verify} messages.
+         * @function encode
+         * @memberof events.ActionTokenForbidden
+         * @static
+         * @param {events.IActionTokenForbidden} message ActionTokenForbidden message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        ActionTokenForbidden.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.userAgent);
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.ip);
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                writer.uint32(/* id 13, wireType 2 =*/106).string(message.requestUrl);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified ActionTokenForbidden message, length delimited. Does not implicitly {@link events.ActionTokenForbidden.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.ActionTokenForbidden
+         * @static
+         * @param {events.IActionTokenForbidden} message ActionTokenForbidden message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        ActionTokenForbidden.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an ActionTokenForbidden message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.ActionTokenForbidden
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.ActionTokenForbidden} ActionTokenForbidden
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        ActionTokenForbidden.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.ActionTokenForbidden();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 11:
+                    message.userAgent = reader.string();
+                    break;
+                case 12:
+                    message.ip = reader.string();
+                    break;
+                case 13:
+                    message.requestUrl = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an ActionTokenForbidden message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.ActionTokenForbidden
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.ActionTokenForbidden} ActionTokenForbidden
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        ActionTokenForbidden.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an ActionTokenForbidden message.
+         * @function verify
+         * @memberof events.ActionTokenForbidden
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        ActionTokenForbidden.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                if (!$util.isString(message.userAgent))
+                    return "userAgent: string expected";
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                if (!$util.isString(message.ip))
+                    return "ip: string expected";
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                if (!$util.isString(message.requestUrl))
+                    return "requestUrl: string expected";
+            return null;
+        };
+
+        /**
+         * Creates an ActionTokenForbidden message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.ActionTokenForbidden
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.ActionTokenForbidden} ActionTokenForbidden
+         */
+        ActionTokenForbidden.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.ActionTokenForbidden)
+                return object;
+            var message = new $root.events.ActionTokenForbidden();
+            if (object.userAgent != null)
+                message.userAgent = String(object.userAgent);
+            if (object.ip != null)
+                message.ip = String(object.ip);
+            if (object.requestUrl != null)
+                message.requestUrl = String(object.requestUrl);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an ActionTokenForbidden message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.ActionTokenForbidden
+         * @static
+         * @param {events.ActionTokenForbidden} message ActionTokenForbidden
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        ActionTokenForbidden.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.userAgent = "";
+                object.ip = "";
+                object.requestUrl = "";
+            }
+            if (message.userAgent != null && message.hasOwnProperty("userAgent"))
+                object.userAgent = message.userAgent;
+            if (message.ip != null && message.hasOwnProperty("ip"))
+                object.ip = message.ip;
+            if (message.requestUrl != null && message.hasOwnProperty("requestUrl"))
+                object.requestUrl = message.requestUrl;
+            return object;
+        };
+
+        /**
+         * Converts this ActionTokenForbidden to JSON.
+         * @function toJSON
+         * @memberof events.ActionTokenForbidden
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        ActionTokenForbidden.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return ActionTokenForbidden;
+    })();
+
     events.Core = (function() {
 
         /**
@@ -25,10 +1933,16 @@ $root.events = (function() {
          * @memberof events
          * @interface ICore
          * @property {string|null} [id] Read-only and auto-generated. ID of the message, ID is a uuid v4 auto-generated by messaging library.
-         * It will be propagate through the system
-         * @property {string|null} [name] Read-only and auto-generated. The name of the event is automatically computed based on
-         * Protobuf data structure in {VtEvent.data}
-         * @property {string|null} [timestamp] Read-only and auto-generated. Messaging library will compute the timestamp in UTC when a message is produced.
+         * It will be propagate through the system. Similar to correlationId
+         * @property {string|null} [name] The name of the event is
+         * @property {string|null} [timestamp] Core timestamp
+         * @property {string|null} [type] Core type
+         * @property {string|null} [serviceName] Core serviceName
+         * @property {string|null} [applicationId] Core applicationId
+         * @property {string|null} [eventId] Core eventId
+         * @property {string|null} [organizationId] Core organizationId
+         * @property {string|null} [userId] Core userId
+         * @property {string|null} [tokenId] Core tokenId
          */
 
         /**
@@ -48,7 +1962,7 @@ $root.events = (function() {
 
         /**
          * Read-only and auto-generated. ID of the message, ID is a uuid v4 auto-generated by messaging library.
-         * It will be propagate through the system
+         * It will be propagate through the system. Similar to correlationId
          * @member {string} id
          * @memberof events.Core
          * @instance
@@ -56,8 +1970,7 @@ $root.events = (function() {
         Core.prototype.id = "";
 
         /**
-         * Read-only and auto-generated. The name of the event is automatically computed based on
-         * Protobuf data structure in {VtEvent.data}
+         * The name of the event is
          * @member {string} name
          * @memberof events.Core
          * @instance
@@ -65,12 +1978,68 @@ $root.events = (function() {
         Core.prototype.name = "";
 
         /**
-         * Read-only and auto-generated. Messaging library will compute the timestamp in UTC when a message is produced.
+         * Core timestamp.
          * @member {string} timestamp
          * @memberof events.Core
          * @instance
          */
         Core.prototype.timestamp = "";
+
+        /**
+         * Core type.
+         * @member {string} type
+         * @memberof events.Core
+         * @instance
+         */
+        Core.prototype.type = "";
+
+        /**
+         * Core serviceName.
+         * @member {string} serviceName
+         * @memberof events.Core
+         * @instance
+         */
+        Core.prototype.serviceName = "";
+
+        /**
+         * Core applicationId.
+         * @member {string} applicationId
+         * @memberof events.Core
+         * @instance
+         */
+        Core.prototype.applicationId = "";
+
+        /**
+         * Core eventId.
+         * @member {string} eventId
+         * @memberof events.Core
+         * @instance
+         */
+        Core.prototype.eventId = "";
+
+        /**
+         * Core organizationId.
+         * @member {string} organizationId
+         * @memberof events.Core
+         * @instance
+         */
+        Core.prototype.organizationId = "";
+
+        /**
+         * Core userId.
+         * @member {string} userId
+         * @memberof events.Core
+         * @instance
+         */
+        Core.prototype.userId = "";
+
+        /**
+         * Core tokenId.
+         * @member {string} tokenId
+         * @memberof events.Core
+         * @instance
+         */
+        Core.prototype.tokenId = "";
 
         /**
          * Creates a new Core instance using the specified properties.
@@ -102,6 +2071,20 @@ $root.events = (function() {
                 writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
             if (message.timestamp != null && message.hasOwnProperty("timestamp"))
                 writer.uint32(/* id 3, wireType 2 =*/26).string(message.timestamp);
+            if (message.type != null && message.hasOwnProperty("type"))
+                writer.uint32(/* id 4, wireType 2 =*/34).string(message.type);
+            if (message.serviceName != null && message.hasOwnProperty("serviceName"))
+                writer.uint32(/* id 5, wireType 2 =*/42).string(message.serviceName);
+            if (message.applicationId != null && message.hasOwnProperty("applicationId"))
+                writer.uint32(/* id 6, wireType 2 =*/50).string(message.applicationId);
+            if (message.eventId != null && message.hasOwnProperty("eventId"))
+                writer.uint32(/* id 7, wireType 2 =*/58).string(message.eventId);
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                writer.uint32(/* id 8, wireType 2 =*/66).string(message.organizationId);
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                writer.uint32(/* id 9, wireType 2 =*/74).string(message.userId);
+            if (message.tokenId != null && message.hasOwnProperty("tokenId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.tokenId);
             return writer;
         };
 
@@ -144,6 +2127,27 @@ $root.events = (function() {
                     break;
                 case 3:
                     message.timestamp = reader.string();
+                    break;
+                case 4:
+                    message.type = reader.string();
+                    break;
+                case 5:
+                    message.serviceName = reader.string();
+                    break;
+                case 6:
+                    message.applicationId = reader.string();
+                    break;
+                case 7:
+                    message.eventId = reader.string();
+                    break;
+                case 8:
+                    message.organizationId = reader.string();
+                    break;
+                case 9:
+                    message.userId = reader.string();
+                    break;
+                case 10:
+                    message.tokenId = reader.string();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -189,6 +2193,27 @@ $root.events = (function() {
             if (message.timestamp != null && message.hasOwnProperty("timestamp"))
                 if (!$util.isString(message.timestamp))
                     return "timestamp: string expected";
+            if (message.type != null && message.hasOwnProperty("type"))
+                if (!$util.isString(message.type))
+                    return "type: string expected";
+            if (message.serviceName != null && message.hasOwnProperty("serviceName"))
+                if (!$util.isString(message.serviceName))
+                    return "serviceName: string expected";
+            if (message.applicationId != null && message.hasOwnProperty("applicationId"))
+                if (!$util.isString(message.applicationId))
+                    return "applicationId: string expected";
+            if (message.eventId != null && message.hasOwnProperty("eventId"))
+                if (!$util.isString(message.eventId))
+                    return "eventId: string expected";
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                if (!$util.isString(message.organizationId))
+                    return "organizationId: string expected";
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                if (!$util.isString(message.userId))
+                    return "userId: string expected";
+            if (message.tokenId != null && message.hasOwnProperty("tokenId"))
+                if (!$util.isString(message.tokenId))
+                    return "tokenId: string expected";
             return null;
         };
 
@@ -210,6 +2235,20 @@ $root.events = (function() {
                 message.name = String(object.name);
             if (object.timestamp != null)
                 message.timestamp = String(object.timestamp);
+            if (object.type != null)
+                message.type = String(object.type);
+            if (object.serviceName != null)
+                message.serviceName = String(object.serviceName);
+            if (object.applicationId != null)
+                message.applicationId = String(object.applicationId);
+            if (object.eventId != null)
+                message.eventId = String(object.eventId);
+            if (object.organizationId != null)
+                message.organizationId = String(object.organizationId);
+            if (object.userId != null)
+                message.userId = String(object.userId);
+            if (object.tokenId != null)
+                message.tokenId = String(object.tokenId);
             return message;
         };
 
@@ -230,6 +2269,13 @@ $root.events = (function() {
                 object.id = "";
                 object.name = "";
                 object.timestamp = "";
+                object.type = "";
+                object.serviceName = "";
+                object.applicationId = "";
+                object.eventId = "";
+                object.organizationId = "";
+                object.userId = "";
+                object.tokenId = "";
             }
             if (message.id != null && message.hasOwnProperty("id"))
                 object.id = message.id;
@@ -237,6 +2283,20 @@ $root.events = (function() {
                 object.name = message.name;
             if (message.timestamp != null && message.hasOwnProperty("timestamp"))
                 object.timestamp = message.timestamp;
+            if (message.type != null && message.hasOwnProperty("type"))
+                object.type = message.type;
+            if (message.serviceName != null && message.hasOwnProperty("serviceName"))
+                object.serviceName = message.serviceName;
+            if (message.applicationId != null && message.hasOwnProperty("applicationId"))
+                object.applicationId = message.applicationId;
+            if (message.eventId != null && message.hasOwnProperty("eventId"))
+                object.eventId = message.eventId;
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                object.organizationId = message.organizationId;
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                object.userId = message.userId;
+            if (message.tokenId != null && message.hasOwnProperty("tokenId"))
+                object.tokenId = message.tokenId;
             return object;
         };
 
@@ -261,7 +2321,7 @@ $root.events = (function() {
          * @memberof events
          * @interface ITrace
          * @property {Object.<string,string>|null} [traceContext] Open Tracing trace context.
-         * @property {Object.<string,string>|null} [traceTags] Trace traceTags
+         * @property {Object.<string,string>|null} [traceTags] Open Tracing trace context.
          * @property {string|null} [serviceName] Trace serviceName
          */
 
@@ -291,7 +2351,7 @@ $root.events = (function() {
         Trace.prototype.traceContext = $util.emptyObject;
 
         /**
-         * Trace traceTags.
+         * Open Tracing trace context.
          * @member {Object.<string,string>} traceTags
          * @memberof events.Trace
          * @instance
@@ -536,6 +2596,7 @@ $root.events = (function() {
          * @interface IVtEvent
          * @property {events.ICore|null} [core] VtEvent core
          * @property {events.ITrace|null} [trace] VtEvent trace
+         * @property {Object.<string,string>|null} [baggage] VtEvent baggage
          * @property {google.protobuf.IAny|null} [data] VtEvent data
          */
 
@@ -548,6 +2609,7 @@ $root.events = (function() {
          * @param {events.IVtEvent=} [properties] Properties to set
          */
         function VtEvent(properties) {
+            this.baggage = {};
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -569,6 +2631,14 @@ $root.events = (function() {
          * @instance
          */
         VtEvent.prototype.trace = null;
+
+        /**
+         * VtEvent baggage.
+         * @member {Object.<string,string>} baggage
+         * @memberof events.VtEvent
+         * @instance
+         */
+        VtEvent.prototype.baggage = $util.emptyObject;
 
         /**
          * VtEvent data.
@@ -606,6 +2676,9 @@ $root.events = (function() {
                 $root.events.Core.encode(message.core, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
             if (message.trace != null && message.hasOwnProperty("trace"))
                 $root.events.Trace.encode(message.trace, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+            if (message.baggage != null && message.hasOwnProperty("baggage"))
+                for (var keys = Object.keys(message.baggage), i = 0; i < keys.length; ++i)
+                    writer.uint32(/* id 3, wireType 2 =*/26).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.baggage[keys[i]]).ldelim();
             if (message.data != null && message.hasOwnProperty("data"))
                 $root.google.protobuf.Any.encode(message.data, writer.uint32(/* id 15, wireType 2 =*/122).fork()).ldelim();
             return writer;
@@ -638,7 +2711,7 @@ $root.events = (function() {
         VtEvent.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.VtEvent();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.VtEvent(), key;
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
@@ -647,6 +2720,14 @@ $root.events = (function() {
                     break;
                 case 2:
                     message.trace = $root.events.Trace.decode(reader, reader.uint32());
+                    break;
+                case 3:
+                    reader.skip().pos++;
+                    if (message.baggage === $util.emptyObject)
+                        message.baggage = {};
+                    key = reader.string();
+                    reader.pos++;
+                    message.baggage[key] = reader.string();
                     break;
                 case 15:
                     message.data = $root.google.protobuf.Any.decode(reader, reader.uint32());
@@ -696,6 +2777,14 @@ $root.events = (function() {
                 if (error)
                     return "trace." + error;
             }
+            if (message.baggage != null && message.hasOwnProperty("baggage")) {
+                if (!$util.isObject(message.baggage))
+                    return "baggage: object expected";
+                var key = Object.keys(message.baggage);
+                for (var i = 0; i < key.length; ++i)
+                    if (!$util.isString(message.baggage[key[i]]))
+                        return "baggage: string{k:string} expected";
+            }
             if (message.data != null && message.hasOwnProperty("data")) {
                 var error = $root.google.protobuf.Any.verify(message.data);
                 if (error)
@@ -726,6 +2815,13 @@ $root.events = (function() {
                     throw TypeError(".events.VtEvent.trace: object expected");
                 message.trace = $root.events.Trace.fromObject(object.trace);
             }
+            if (object.baggage) {
+                if (typeof object.baggage !== "object")
+                    throw TypeError(".events.VtEvent.baggage: object expected");
+                message.baggage = {};
+                for (var keys = Object.keys(object.baggage), i = 0; i < keys.length; ++i)
+                    message.baggage[keys[i]] = String(object.baggage[keys[i]]);
+            }
             if (object.data != null) {
                 if (typeof object.data !== "object")
                     throw TypeError(".events.VtEvent.data: object expected");
@@ -747,6 +2843,8 @@ $root.events = (function() {
             if (!options)
                 options = {};
             var object = {};
+            if (options.objects || options.defaults)
+                object.baggage = {};
             if (options.defaults) {
                 object.core = null;
                 object.trace = null;
@@ -756,6 +2854,12 @@ $root.events = (function() {
                 object.core = $root.events.Core.toObject(message.core, options);
             if (message.trace != null && message.hasOwnProperty("trace"))
                 object.trace = $root.events.Trace.toObject(message.trace, options);
+            var keys2;
+            if (message.baggage && (keys2 = Object.keys(message.baggage)).length) {
+                object.baggage = {};
+                for (var j = 0; j < keys2.length; ++j)
+                    object.baggage[keys2[j]] = message.baggage[keys2[j]];
+            }
             if (message.data != null && message.hasOwnProperty("data"))
                 object.data = $root.google.protobuf.Any.toObject(message.data, options);
             return object;
@@ -773,6 +2877,2960 @@ $root.events = (function() {
         };
 
         return VtEvent;
+    })();
+
+    events.EngineBuildUploadCompleted = (function() {
+
+        /**
+         * Properties of an EngineBuildUploadCompleted.
+         * @memberof events
+         * @interface IEngineBuildUploadCompleted
+         * @property {string|null} [userId] EngineBuildUploadCompleted userId
+         * @property {string|null} [jobId] EngineBuildUploadCompleted jobId
+         * @property {string|null} [assetId] EngineBuildUploadCompleted assetId
+         * @property {boolean|null} [success] EngineBuildUploadCompleted success
+         */
+
+        /**
+         * Constructs a new EngineBuildUploadCompleted.
+         * @memberof events
+         * @classdesc Represents an EngineBuildUploadCompleted.
+         * @implements IEngineBuildUploadCompleted
+         * @constructor
+         * @param {events.IEngineBuildUploadCompleted=} [properties] Properties to set
+         */
+        function EngineBuildUploadCompleted(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * EngineBuildUploadCompleted userId.
+         * @member {string} userId
+         * @memberof events.EngineBuildUploadCompleted
+         * @instance
+         */
+        EngineBuildUploadCompleted.prototype.userId = "";
+
+        /**
+         * EngineBuildUploadCompleted jobId.
+         * @member {string} jobId
+         * @memberof events.EngineBuildUploadCompleted
+         * @instance
+         */
+        EngineBuildUploadCompleted.prototype.jobId = "";
+
+        /**
+         * EngineBuildUploadCompleted assetId.
+         * @member {string} assetId
+         * @memberof events.EngineBuildUploadCompleted
+         * @instance
+         */
+        EngineBuildUploadCompleted.prototype.assetId = "";
+
+        /**
+         * EngineBuildUploadCompleted success.
+         * @member {boolean} success
+         * @memberof events.EngineBuildUploadCompleted
+         * @instance
+         */
+        EngineBuildUploadCompleted.prototype.success = false;
+
+        /**
+         * Creates a new EngineBuildUploadCompleted instance using the specified properties.
+         * @function create
+         * @memberof events.EngineBuildUploadCompleted
+         * @static
+         * @param {events.IEngineBuildUploadCompleted=} [properties] Properties to set
+         * @returns {events.EngineBuildUploadCompleted} EngineBuildUploadCompleted instance
+         */
+        EngineBuildUploadCompleted.create = function create(properties) {
+            return new EngineBuildUploadCompleted(properties);
+        };
+
+        /**
+         * Encodes the specified EngineBuildUploadCompleted message. Does not implicitly {@link events.EngineBuildUploadCompleted.verify|verify} messages.
+         * @function encode
+         * @memberof events.EngineBuildUploadCompleted
+         * @static
+         * @param {events.IEngineBuildUploadCompleted} message EngineBuildUploadCompleted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildUploadCompleted.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.userId);
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.jobId);
+            if (message.assetId != null && message.hasOwnProperty("assetId"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.assetId);
+            if (message.success != null && message.hasOwnProperty("success"))
+                writer.uint32(/* id 13, wireType 0 =*/104).bool(message.success);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified EngineBuildUploadCompleted message, length delimited. Does not implicitly {@link events.EngineBuildUploadCompleted.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.EngineBuildUploadCompleted
+         * @static
+         * @param {events.IEngineBuildUploadCompleted} message EngineBuildUploadCompleted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildUploadCompleted.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an EngineBuildUploadCompleted message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.EngineBuildUploadCompleted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.EngineBuildUploadCompleted} EngineBuildUploadCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildUploadCompleted.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.EngineBuildUploadCompleted();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.userId = reader.string();
+                    break;
+                case 11:
+                    message.jobId = reader.string();
+                    break;
+                case 12:
+                    message.assetId = reader.string();
+                    break;
+                case 13:
+                    message.success = reader.bool();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an EngineBuildUploadCompleted message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.EngineBuildUploadCompleted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.EngineBuildUploadCompleted} EngineBuildUploadCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildUploadCompleted.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an EngineBuildUploadCompleted message.
+         * @function verify
+         * @memberof events.EngineBuildUploadCompleted
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        EngineBuildUploadCompleted.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                if (!$util.isString(message.userId))
+                    return "userId: string expected";
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                if (!$util.isString(message.jobId))
+                    return "jobId: string expected";
+            if (message.assetId != null && message.hasOwnProperty("assetId"))
+                if (!$util.isString(message.assetId))
+                    return "assetId: string expected";
+            if (message.success != null && message.hasOwnProperty("success"))
+                if (typeof message.success !== "boolean")
+                    return "success: boolean expected";
+            return null;
+        };
+
+        /**
+         * Creates an EngineBuildUploadCompleted message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.EngineBuildUploadCompleted
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.EngineBuildUploadCompleted} EngineBuildUploadCompleted
+         */
+        EngineBuildUploadCompleted.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.EngineBuildUploadCompleted)
+                return object;
+            var message = new $root.events.EngineBuildUploadCompleted();
+            if (object.userId != null)
+                message.userId = String(object.userId);
+            if (object.jobId != null)
+                message.jobId = String(object.jobId);
+            if (object.assetId != null)
+                message.assetId = String(object.assetId);
+            if (object.success != null)
+                message.success = Boolean(object.success);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an EngineBuildUploadCompleted message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.EngineBuildUploadCompleted
+         * @static
+         * @param {events.EngineBuildUploadCompleted} message EngineBuildUploadCompleted
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        EngineBuildUploadCompleted.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.userId = "";
+                object.jobId = "";
+                object.assetId = "";
+                object.success = false;
+            }
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                object.userId = message.userId;
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                object.jobId = message.jobId;
+            if (message.assetId != null && message.hasOwnProperty("assetId"))
+                object.assetId = message.assetId;
+            if (message.success != null && message.hasOwnProperty("success"))
+                object.success = message.success;
+            return object;
+        };
+
+        /**
+         * Converts this EngineBuildUploadCompleted to JSON.
+         * @function toJSON
+         * @memberof events.EngineBuildUploadCompleted
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        EngineBuildUploadCompleted.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return EngineBuildUploadCompleted;
+    })();
+
+    events.EngineBuildManifestProcessed = (function() {
+
+        /**
+         * Properties of an EngineBuildManifestProcessed.
+         * @memberof events
+         * @interface IEngineBuildManifestProcessed
+         * @property {string|null} [userId] EngineBuildManifestProcessed userId
+         * @property {string|null} [jobId] EngineBuildManifestProcessed jobId
+         * @property {boolean|null} [success] EngineBuildManifestProcessed success
+         * @property {string|null} [engineId] EngineBuildManifestProcessed engineId
+         * @property {string|null} [buildId] EngineBuildManifestProcessed buildId
+         */
+
+        /**
+         * Constructs a new EngineBuildManifestProcessed.
+         * @memberof events
+         * @classdesc Represents an EngineBuildManifestProcessed.
+         * @implements IEngineBuildManifestProcessed
+         * @constructor
+         * @param {events.IEngineBuildManifestProcessed=} [properties] Properties to set
+         */
+        function EngineBuildManifestProcessed(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * EngineBuildManifestProcessed userId.
+         * @member {string} userId
+         * @memberof events.EngineBuildManifestProcessed
+         * @instance
+         */
+        EngineBuildManifestProcessed.prototype.userId = "";
+
+        /**
+         * EngineBuildManifestProcessed jobId.
+         * @member {string} jobId
+         * @memberof events.EngineBuildManifestProcessed
+         * @instance
+         */
+        EngineBuildManifestProcessed.prototype.jobId = "";
+
+        /**
+         * EngineBuildManifestProcessed success.
+         * @member {boolean} success
+         * @memberof events.EngineBuildManifestProcessed
+         * @instance
+         */
+        EngineBuildManifestProcessed.prototype.success = false;
+
+        /**
+         * EngineBuildManifestProcessed engineId.
+         * @member {string} engineId
+         * @memberof events.EngineBuildManifestProcessed
+         * @instance
+         */
+        EngineBuildManifestProcessed.prototype.engineId = "";
+
+        /**
+         * EngineBuildManifestProcessed buildId.
+         * @member {string} buildId
+         * @memberof events.EngineBuildManifestProcessed
+         * @instance
+         */
+        EngineBuildManifestProcessed.prototype.buildId = "";
+
+        /**
+         * Creates a new EngineBuildManifestProcessed instance using the specified properties.
+         * @function create
+         * @memberof events.EngineBuildManifestProcessed
+         * @static
+         * @param {events.IEngineBuildManifestProcessed=} [properties] Properties to set
+         * @returns {events.EngineBuildManifestProcessed} EngineBuildManifestProcessed instance
+         */
+        EngineBuildManifestProcessed.create = function create(properties) {
+            return new EngineBuildManifestProcessed(properties);
+        };
+
+        /**
+         * Encodes the specified EngineBuildManifestProcessed message. Does not implicitly {@link events.EngineBuildManifestProcessed.verify|verify} messages.
+         * @function encode
+         * @memberof events.EngineBuildManifestProcessed
+         * @static
+         * @param {events.IEngineBuildManifestProcessed} message EngineBuildManifestProcessed message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildManifestProcessed.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.userId);
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.jobId);
+            if (message.success != null && message.hasOwnProperty("success"))
+                writer.uint32(/* id 12, wireType 0 =*/96).bool(message.success);
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                writer.uint32(/* id 13, wireType 2 =*/106).string(message.engineId);
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                writer.uint32(/* id 14, wireType 2 =*/114).string(message.buildId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified EngineBuildManifestProcessed message, length delimited. Does not implicitly {@link events.EngineBuildManifestProcessed.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.EngineBuildManifestProcessed
+         * @static
+         * @param {events.IEngineBuildManifestProcessed} message EngineBuildManifestProcessed message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildManifestProcessed.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an EngineBuildManifestProcessed message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.EngineBuildManifestProcessed
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.EngineBuildManifestProcessed} EngineBuildManifestProcessed
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildManifestProcessed.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.EngineBuildManifestProcessed();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.userId = reader.string();
+                    break;
+                case 11:
+                    message.jobId = reader.string();
+                    break;
+                case 12:
+                    message.success = reader.bool();
+                    break;
+                case 13:
+                    message.engineId = reader.string();
+                    break;
+                case 14:
+                    message.buildId = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an EngineBuildManifestProcessed message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.EngineBuildManifestProcessed
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.EngineBuildManifestProcessed} EngineBuildManifestProcessed
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildManifestProcessed.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an EngineBuildManifestProcessed message.
+         * @function verify
+         * @memberof events.EngineBuildManifestProcessed
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        EngineBuildManifestProcessed.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                if (!$util.isString(message.userId))
+                    return "userId: string expected";
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                if (!$util.isString(message.jobId))
+                    return "jobId: string expected";
+            if (message.success != null && message.hasOwnProperty("success"))
+                if (typeof message.success !== "boolean")
+                    return "success: boolean expected";
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                if (!$util.isString(message.engineId))
+                    return "engineId: string expected";
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                if (!$util.isString(message.buildId))
+                    return "buildId: string expected";
+            return null;
+        };
+
+        /**
+         * Creates an EngineBuildManifestProcessed message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.EngineBuildManifestProcessed
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.EngineBuildManifestProcessed} EngineBuildManifestProcessed
+         */
+        EngineBuildManifestProcessed.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.EngineBuildManifestProcessed)
+                return object;
+            var message = new $root.events.EngineBuildManifestProcessed();
+            if (object.userId != null)
+                message.userId = String(object.userId);
+            if (object.jobId != null)
+                message.jobId = String(object.jobId);
+            if (object.success != null)
+                message.success = Boolean(object.success);
+            if (object.engineId != null)
+                message.engineId = String(object.engineId);
+            if (object.buildId != null)
+                message.buildId = String(object.buildId);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an EngineBuildManifestProcessed message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.EngineBuildManifestProcessed
+         * @static
+         * @param {events.EngineBuildManifestProcessed} message EngineBuildManifestProcessed
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        EngineBuildManifestProcessed.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.userId = "";
+                object.jobId = "";
+                object.success = false;
+                object.engineId = "";
+                object.buildId = "";
+            }
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                object.userId = message.userId;
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                object.jobId = message.jobId;
+            if (message.success != null && message.hasOwnProperty("success"))
+                object.success = message.success;
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                object.engineId = message.engineId;
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                object.buildId = message.buildId;
+            return object;
+        };
+
+        /**
+         * Converts this EngineBuildManifestProcessed to JSON.
+         * @function toJSON
+         * @memberof events.EngineBuildManifestProcessed
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        EngineBuildManifestProcessed.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return EngineBuildManifestProcessed;
+    })();
+
+    events.EngineBuildVulnerabilityChecked = (function() {
+
+        /**
+         * Properties of an EngineBuildVulnerabilityChecked.
+         * @memberof events
+         * @interface IEngineBuildVulnerabilityChecked
+         * @property {string|null} [userId] EngineBuildVulnerabilityChecked userId
+         * @property {string|null} [jobId] EngineBuildVulnerabilityChecked jobId
+         * @property {string|null} [assetId] EngineBuildVulnerabilityChecked assetId
+         * @property {boolean|null} [success] EngineBuildVulnerabilityChecked success
+         * @property {string|null} [engineId] EngineBuildVulnerabilityChecked engineId
+         * @property {string|null} [buildId] EngineBuildVulnerabilityChecked buildId
+         */
+
+        /**
+         * Constructs a new EngineBuildVulnerabilityChecked.
+         * @memberof events
+         * @classdesc Represents an EngineBuildVulnerabilityChecked.
+         * @implements IEngineBuildVulnerabilityChecked
+         * @constructor
+         * @param {events.IEngineBuildVulnerabilityChecked=} [properties] Properties to set
+         */
+        function EngineBuildVulnerabilityChecked(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * EngineBuildVulnerabilityChecked userId.
+         * @member {string} userId
+         * @memberof events.EngineBuildVulnerabilityChecked
+         * @instance
+         */
+        EngineBuildVulnerabilityChecked.prototype.userId = "";
+
+        /**
+         * EngineBuildVulnerabilityChecked jobId.
+         * @member {string} jobId
+         * @memberof events.EngineBuildVulnerabilityChecked
+         * @instance
+         */
+        EngineBuildVulnerabilityChecked.prototype.jobId = "";
+
+        /**
+         * EngineBuildVulnerabilityChecked assetId.
+         * @member {string} assetId
+         * @memberof events.EngineBuildVulnerabilityChecked
+         * @instance
+         */
+        EngineBuildVulnerabilityChecked.prototype.assetId = "";
+
+        /**
+         * EngineBuildVulnerabilityChecked success.
+         * @member {boolean} success
+         * @memberof events.EngineBuildVulnerabilityChecked
+         * @instance
+         */
+        EngineBuildVulnerabilityChecked.prototype.success = false;
+
+        /**
+         * EngineBuildVulnerabilityChecked engineId.
+         * @member {string} engineId
+         * @memberof events.EngineBuildVulnerabilityChecked
+         * @instance
+         */
+        EngineBuildVulnerabilityChecked.prototype.engineId = "";
+
+        /**
+         * EngineBuildVulnerabilityChecked buildId.
+         * @member {string} buildId
+         * @memberof events.EngineBuildVulnerabilityChecked
+         * @instance
+         */
+        EngineBuildVulnerabilityChecked.prototype.buildId = "";
+
+        /**
+         * Creates a new EngineBuildVulnerabilityChecked instance using the specified properties.
+         * @function create
+         * @memberof events.EngineBuildVulnerabilityChecked
+         * @static
+         * @param {events.IEngineBuildVulnerabilityChecked=} [properties] Properties to set
+         * @returns {events.EngineBuildVulnerabilityChecked} EngineBuildVulnerabilityChecked instance
+         */
+        EngineBuildVulnerabilityChecked.create = function create(properties) {
+            return new EngineBuildVulnerabilityChecked(properties);
+        };
+
+        /**
+         * Encodes the specified EngineBuildVulnerabilityChecked message. Does not implicitly {@link events.EngineBuildVulnerabilityChecked.verify|verify} messages.
+         * @function encode
+         * @memberof events.EngineBuildVulnerabilityChecked
+         * @static
+         * @param {events.IEngineBuildVulnerabilityChecked} message EngineBuildVulnerabilityChecked message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildVulnerabilityChecked.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.userId);
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.jobId);
+            if (message.assetId != null && message.hasOwnProperty("assetId"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.assetId);
+            if (message.success != null && message.hasOwnProperty("success"))
+                writer.uint32(/* id 13, wireType 0 =*/104).bool(message.success);
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                writer.uint32(/* id 14, wireType 2 =*/114).string(message.engineId);
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                writer.uint32(/* id 15, wireType 2 =*/122).string(message.buildId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified EngineBuildVulnerabilityChecked message, length delimited. Does not implicitly {@link events.EngineBuildVulnerabilityChecked.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.EngineBuildVulnerabilityChecked
+         * @static
+         * @param {events.IEngineBuildVulnerabilityChecked} message EngineBuildVulnerabilityChecked message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildVulnerabilityChecked.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an EngineBuildVulnerabilityChecked message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.EngineBuildVulnerabilityChecked
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.EngineBuildVulnerabilityChecked} EngineBuildVulnerabilityChecked
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildVulnerabilityChecked.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.EngineBuildVulnerabilityChecked();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.userId = reader.string();
+                    break;
+                case 11:
+                    message.jobId = reader.string();
+                    break;
+                case 12:
+                    message.assetId = reader.string();
+                    break;
+                case 13:
+                    message.success = reader.bool();
+                    break;
+                case 14:
+                    message.engineId = reader.string();
+                    break;
+                case 15:
+                    message.buildId = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an EngineBuildVulnerabilityChecked message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.EngineBuildVulnerabilityChecked
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.EngineBuildVulnerabilityChecked} EngineBuildVulnerabilityChecked
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildVulnerabilityChecked.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an EngineBuildVulnerabilityChecked message.
+         * @function verify
+         * @memberof events.EngineBuildVulnerabilityChecked
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        EngineBuildVulnerabilityChecked.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                if (!$util.isString(message.userId))
+                    return "userId: string expected";
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                if (!$util.isString(message.jobId))
+                    return "jobId: string expected";
+            if (message.assetId != null && message.hasOwnProperty("assetId"))
+                if (!$util.isString(message.assetId))
+                    return "assetId: string expected";
+            if (message.success != null && message.hasOwnProperty("success"))
+                if (typeof message.success !== "boolean")
+                    return "success: boolean expected";
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                if (!$util.isString(message.engineId))
+                    return "engineId: string expected";
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                if (!$util.isString(message.buildId))
+                    return "buildId: string expected";
+            return null;
+        };
+
+        /**
+         * Creates an EngineBuildVulnerabilityChecked message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.EngineBuildVulnerabilityChecked
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.EngineBuildVulnerabilityChecked} EngineBuildVulnerabilityChecked
+         */
+        EngineBuildVulnerabilityChecked.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.EngineBuildVulnerabilityChecked)
+                return object;
+            var message = new $root.events.EngineBuildVulnerabilityChecked();
+            if (object.userId != null)
+                message.userId = String(object.userId);
+            if (object.jobId != null)
+                message.jobId = String(object.jobId);
+            if (object.assetId != null)
+                message.assetId = String(object.assetId);
+            if (object.success != null)
+                message.success = Boolean(object.success);
+            if (object.engineId != null)
+                message.engineId = String(object.engineId);
+            if (object.buildId != null)
+                message.buildId = String(object.buildId);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an EngineBuildVulnerabilityChecked message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.EngineBuildVulnerabilityChecked
+         * @static
+         * @param {events.EngineBuildVulnerabilityChecked} message EngineBuildVulnerabilityChecked
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        EngineBuildVulnerabilityChecked.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.userId = "";
+                object.jobId = "";
+                object.assetId = "";
+                object.success = false;
+                object.engineId = "";
+                object.buildId = "";
+            }
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                object.userId = message.userId;
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                object.jobId = message.jobId;
+            if (message.assetId != null && message.hasOwnProperty("assetId"))
+                object.assetId = message.assetId;
+            if (message.success != null && message.hasOwnProperty("success"))
+                object.success = message.success;
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                object.engineId = message.engineId;
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                object.buildId = message.buildId;
+            return object;
+        };
+
+        /**
+         * Converts this EngineBuildVulnerabilityChecked to JSON.
+         * @function toJSON
+         * @memberof events.EngineBuildVulnerabilityChecked
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        EngineBuildVulnerabilityChecked.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return EngineBuildVulnerabilityChecked;
+    })();
+
+    events.EngineBuildTestReportDone = (function() {
+
+        /**
+         * Properties of an EngineBuildTestReportDone.
+         * @memberof events
+         * @interface IEngineBuildTestReportDone
+         * @property {string|null} [userId] EngineBuildTestReportDone userId
+         * @property {string|null} [jobId] EngineBuildTestReportDone jobId
+         * @property {boolean|null} [success] EngineBuildTestReportDone success
+         * @property {string|null} [engineId] EngineBuildTestReportDone engineId
+         * @property {string|null} [buildId] EngineBuildTestReportDone buildId
+         */
+
+        /**
+         * Constructs a new EngineBuildTestReportDone.
+         * @memberof events
+         * @classdesc Represents an EngineBuildTestReportDone.
+         * @implements IEngineBuildTestReportDone
+         * @constructor
+         * @param {events.IEngineBuildTestReportDone=} [properties] Properties to set
+         */
+        function EngineBuildTestReportDone(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * EngineBuildTestReportDone userId.
+         * @member {string} userId
+         * @memberof events.EngineBuildTestReportDone
+         * @instance
+         */
+        EngineBuildTestReportDone.prototype.userId = "";
+
+        /**
+         * EngineBuildTestReportDone jobId.
+         * @member {string} jobId
+         * @memberof events.EngineBuildTestReportDone
+         * @instance
+         */
+        EngineBuildTestReportDone.prototype.jobId = "";
+
+        /**
+         * EngineBuildTestReportDone success.
+         * @member {boolean} success
+         * @memberof events.EngineBuildTestReportDone
+         * @instance
+         */
+        EngineBuildTestReportDone.prototype.success = false;
+
+        /**
+         * EngineBuildTestReportDone engineId.
+         * @member {string} engineId
+         * @memberof events.EngineBuildTestReportDone
+         * @instance
+         */
+        EngineBuildTestReportDone.prototype.engineId = "";
+
+        /**
+         * EngineBuildTestReportDone buildId.
+         * @member {string} buildId
+         * @memberof events.EngineBuildTestReportDone
+         * @instance
+         */
+        EngineBuildTestReportDone.prototype.buildId = "";
+
+        /**
+         * Creates a new EngineBuildTestReportDone instance using the specified properties.
+         * @function create
+         * @memberof events.EngineBuildTestReportDone
+         * @static
+         * @param {events.IEngineBuildTestReportDone=} [properties] Properties to set
+         * @returns {events.EngineBuildTestReportDone} EngineBuildTestReportDone instance
+         */
+        EngineBuildTestReportDone.create = function create(properties) {
+            return new EngineBuildTestReportDone(properties);
+        };
+
+        /**
+         * Encodes the specified EngineBuildTestReportDone message. Does not implicitly {@link events.EngineBuildTestReportDone.verify|verify} messages.
+         * @function encode
+         * @memberof events.EngineBuildTestReportDone
+         * @static
+         * @param {events.IEngineBuildTestReportDone} message EngineBuildTestReportDone message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildTestReportDone.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.userId);
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.jobId);
+            if (message.success != null && message.hasOwnProperty("success"))
+                writer.uint32(/* id 12, wireType 0 =*/96).bool(message.success);
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                writer.uint32(/* id 13, wireType 2 =*/106).string(message.engineId);
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                writer.uint32(/* id 14, wireType 2 =*/114).string(message.buildId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified EngineBuildTestReportDone message, length delimited. Does not implicitly {@link events.EngineBuildTestReportDone.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.EngineBuildTestReportDone
+         * @static
+         * @param {events.IEngineBuildTestReportDone} message EngineBuildTestReportDone message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildTestReportDone.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an EngineBuildTestReportDone message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.EngineBuildTestReportDone
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.EngineBuildTestReportDone} EngineBuildTestReportDone
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildTestReportDone.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.EngineBuildTestReportDone();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.userId = reader.string();
+                    break;
+                case 11:
+                    message.jobId = reader.string();
+                    break;
+                case 12:
+                    message.success = reader.bool();
+                    break;
+                case 13:
+                    message.engineId = reader.string();
+                    break;
+                case 14:
+                    message.buildId = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an EngineBuildTestReportDone message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.EngineBuildTestReportDone
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.EngineBuildTestReportDone} EngineBuildTestReportDone
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildTestReportDone.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an EngineBuildTestReportDone message.
+         * @function verify
+         * @memberof events.EngineBuildTestReportDone
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        EngineBuildTestReportDone.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                if (!$util.isString(message.userId))
+                    return "userId: string expected";
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                if (!$util.isString(message.jobId))
+                    return "jobId: string expected";
+            if (message.success != null && message.hasOwnProperty("success"))
+                if (typeof message.success !== "boolean")
+                    return "success: boolean expected";
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                if (!$util.isString(message.engineId))
+                    return "engineId: string expected";
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                if (!$util.isString(message.buildId))
+                    return "buildId: string expected";
+            return null;
+        };
+
+        /**
+         * Creates an EngineBuildTestReportDone message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.EngineBuildTestReportDone
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.EngineBuildTestReportDone} EngineBuildTestReportDone
+         */
+        EngineBuildTestReportDone.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.EngineBuildTestReportDone)
+                return object;
+            var message = new $root.events.EngineBuildTestReportDone();
+            if (object.userId != null)
+                message.userId = String(object.userId);
+            if (object.jobId != null)
+                message.jobId = String(object.jobId);
+            if (object.success != null)
+                message.success = Boolean(object.success);
+            if (object.engineId != null)
+                message.engineId = String(object.engineId);
+            if (object.buildId != null)
+                message.buildId = String(object.buildId);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an EngineBuildTestReportDone message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.EngineBuildTestReportDone
+         * @static
+         * @param {events.EngineBuildTestReportDone} message EngineBuildTestReportDone
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        EngineBuildTestReportDone.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.userId = "";
+                object.jobId = "";
+                object.success = false;
+                object.engineId = "";
+                object.buildId = "";
+            }
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                object.userId = message.userId;
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                object.jobId = message.jobId;
+            if (message.success != null && message.hasOwnProperty("success"))
+                object.success = message.success;
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                object.engineId = message.engineId;
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                object.buildId = message.buildId;
+            return object;
+        };
+
+        /**
+         * Converts this EngineBuildTestReportDone to JSON.
+         * @function toJSON
+         * @memberof events.EngineBuildTestReportDone
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        EngineBuildTestReportDone.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return EngineBuildTestReportDone;
+    })();
+
+    events.engineBuildDeploySuccess = (function() {
+
+        /**
+         * Properties of an engineBuildDeploySuccess.
+         * @memberof events
+         * @interface IengineBuildDeploySuccess
+         * @property {string|null} [userId] engineBuildDeploySuccess userId
+         * @property {string|null} [engineId] engineBuildDeploySuccess engineId
+         * @property {string|null} [buildId] engineBuildDeploySuccess buildId
+         */
+
+        /**
+         * Constructs a new engineBuildDeploySuccess.
+         * @memberof events
+         * @classdesc Represents an engineBuildDeploySuccess.
+         * @implements IengineBuildDeploySuccess
+         * @constructor
+         * @param {events.IengineBuildDeploySuccess=} [properties] Properties to set
+         */
+        function engineBuildDeploySuccess(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * engineBuildDeploySuccess userId.
+         * @member {string} userId
+         * @memberof events.engineBuildDeploySuccess
+         * @instance
+         */
+        engineBuildDeploySuccess.prototype.userId = "";
+
+        /**
+         * engineBuildDeploySuccess engineId.
+         * @member {string} engineId
+         * @memberof events.engineBuildDeploySuccess
+         * @instance
+         */
+        engineBuildDeploySuccess.prototype.engineId = "";
+
+        /**
+         * engineBuildDeploySuccess buildId.
+         * @member {string} buildId
+         * @memberof events.engineBuildDeploySuccess
+         * @instance
+         */
+        engineBuildDeploySuccess.prototype.buildId = "";
+
+        /**
+         * Creates a new engineBuildDeploySuccess instance using the specified properties.
+         * @function create
+         * @memberof events.engineBuildDeploySuccess
+         * @static
+         * @param {events.IengineBuildDeploySuccess=} [properties] Properties to set
+         * @returns {events.engineBuildDeploySuccess} engineBuildDeploySuccess instance
+         */
+        engineBuildDeploySuccess.create = function create(properties) {
+            return new engineBuildDeploySuccess(properties);
+        };
+
+        /**
+         * Encodes the specified engineBuildDeploySuccess message. Does not implicitly {@link events.engineBuildDeploySuccess.verify|verify} messages.
+         * @function encode
+         * @memberof events.engineBuildDeploySuccess
+         * @static
+         * @param {events.IengineBuildDeploySuccess} message engineBuildDeploySuccess message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        engineBuildDeploySuccess.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.userId);
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.engineId);
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.buildId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified engineBuildDeploySuccess message, length delimited. Does not implicitly {@link events.engineBuildDeploySuccess.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.engineBuildDeploySuccess
+         * @static
+         * @param {events.IengineBuildDeploySuccess} message engineBuildDeploySuccess message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        engineBuildDeploySuccess.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an engineBuildDeploySuccess message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.engineBuildDeploySuccess
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.engineBuildDeploySuccess} engineBuildDeploySuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        engineBuildDeploySuccess.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.engineBuildDeploySuccess();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.userId = reader.string();
+                    break;
+                case 11:
+                    message.engineId = reader.string();
+                    break;
+                case 12:
+                    message.buildId = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an engineBuildDeploySuccess message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.engineBuildDeploySuccess
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.engineBuildDeploySuccess} engineBuildDeploySuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        engineBuildDeploySuccess.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an engineBuildDeploySuccess message.
+         * @function verify
+         * @memberof events.engineBuildDeploySuccess
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        engineBuildDeploySuccess.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                if (!$util.isString(message.userId))
+                    return "userId: string expected";
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                if (!$util.isString(message.engineId))
+                    return "engineId: string expected";
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                if (!$util.isString(message.buildId))
+                    return "buildId: string expected";
+            return null;
+        };
+
+        /**
+         * Creates an engineBuildDeploySuccess message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.engineBuildDeploySuccess
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.engineBuildDeploySuccess} engineBuildDeploySuccess
+         */
+        engineBuildDeploySuccess.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.engineBuildDeploySuccess)
+                return object;
+            var message = new $root.events.engineBuildDeploySuccess();
+            if (object.userId != null)
+                message.userId = String(object.userId);
+            if (object.engineId != null)
+                message.engineId = String(object.engineId);
+            if (object.buildId != null)
+                message.buildId = String(object.buildId);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an engineBuildDeploySuccess message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.engineBuildDeploySuccess
+         * @static
+         * @param {events.engineBuildDeploySuccess} message engineBuildDeploySuccess
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        engineBuildDeploySuccess.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.userId = "";
+                object.engineId = "";
+                object.buildId = "";
+            }
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                object.userId = message.userId;
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                object.engineId = message.engineId;
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                object.buildId = message.buildId;
+            return object;
+        };
+
+        /**
+         * Converts this engineBuildDeploySuccess to JSON.
+         * @function toJSON
+         * @memberof events.engineBuildDeploySuccess
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        engineBuildDeploySuccess.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return engineBuildDeploySuccess;
+    })();
+
+    events.engineBuildDeployFail = (function() {
+
+        /**
+         * Properties of an engineBuildDeployFail.
+         * @memberof events
+         * @interface IengineBuildDeployFail
+         * @property {string|null} [userId] engineBuildDeployFail userId
+         * @property {string|null} [engineId] engineBuildDeployFail engineId
+         * @property {string|null} [buildId] engineBuildDeployFail buildId
+         */
+
+        /**
+         * Constructs a new engineBuildDeployFail.
+         * @memberof events
+         * @classdesc Represents an engineBuildDeployFail.
+         * @implements IengineBuildDeployFail
+         * @constructor
+         * @param {events.IengineBuildDeployFail=} [properties] Properties to set
+         */
+        function engineBuildDeployFail(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * engineBuildDeployFail userId.
+         * @member {string} userId
+         * @memberof events.engineBuildDeployFail
+         * @instance
+         */
+        engineBuildDeployFail.prototype.userId = "";
+
+        /**
+         * engineBuildDeployFail engineId.
+         * @member {string} engineId
+         * @memberof events.engineBuildDeployFail
+         * @instance
+         */
+        engineBuildDeployFail.prototype.engineId = "";
+
+        /**
+         * engineBuildDeployFail buildId.
+         * @member {string} buildId
+         * @memberof events.engineBuildDeployFail
+         * @instance
+         */
+        engineBuildDeployFail.prototype.buildId = "";
+
+        /**
+         * Creates a new engineBuildDeployFail instance using the specified properties.
+         * @function create
+         * @memberof events.engineBuildDeployFail
+         * @static
+         * @param {events.IengineBuildDeployFail=} [properties] Properties to set
+         * @returns {events.engineBuildDeployFail} engineBuildDeployFail instance
+         */
+        engineBuildDeployFail.create = function create(properties) {
+            return new engineBuildDeployFail(properties);
+        };
+
+        /**
+         * Encodes the specified engineBuildDeployFail message. Does not implicitly {@link events.engineBuildDeployFail.verify|verify} messages.
+         * @function encode
+         * @memberof events.engineBuildDeployFail
+         * @static
+         * @param {events.IengineBuildDeployFail} message engineBuildDeployFail message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        engineBuildDeployFail.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.userId);
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.engineId);
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.buildId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified engineBuildDeployFail message, length delimited. Does not implicitly {@link events.engineBuildDeployFail.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.engineBuildDeployFail
+         * @static
+         * @param {events.IengineBuildDeployFail} message engineBuildDeployFail message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        engineBuildDeployFail.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an engineBuildDeployFail message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.engineBuildDeployFail
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.engineBuildDeployFail} engineBuildDeployFail
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        engineBuildDeployFail.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.engineBuildDeployFail();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.userId = reader.string();
+                    break;
+                case 11:
+                    message.engineId = reader.string();
+                    break;
+                case 12:
+                    message.buildId = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an engineBuildDeployFail message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.engineBuildDeployFail
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.engineBuildDeployFail} engineBuildDeployFail
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        engineBuildDeployFail.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an engineBuildDeployFail message.
+         * @function verify
+         * @memberof events.engineBuildDeployFail
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        engineBuildDeployFail.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                if (!$util.isString(message.userId))
+                    return "userId: string expected";
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                if (!$util.isString(message.engineId))
+                    return "engineId: string expected";
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                if (!$util.isString(message.buildId))
+                    return "buildId: string expected";
+            return null;
+        };
+
+        /**
+         * Creates an engineBuildDeployFail message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.engineBuildDeployFail
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.engineBuildDeployFail} engineBuildDeployFail
+         */
+        engineBuildDeployFail.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.engineBuildDeployFail)
+                return object;
+            var message = new $root.events.engineBuildDeployFail();
+            if (object.userId != null)
+                message.userId = String(object.userId);
+            if (object.engineId != null)
+                message.engineId = String(object.engineId);
+            if (object.buildId != null)
+                message.buildId = String(object.buildId);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an engineBuildDeployFail message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.engineBuildDeployFail
+         * @static
+         * @param {events.engineBuildDeployFail} message engineBuildDeployFail
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        engineBuildDeployFail.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.userId = "";
+                object.engineId = "";
+                object.buildId = "";
+            }
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                object.userId = message.userId;
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                object.engineId = message.engineId;
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                object.buildId = message.buildId;
+            return object;
+        };
+
+        /**
+         * Converts this engineBuildDeployFail to JSON.
+         * @function toJSON
+         * @memberof events.engineBuildDeployFail
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        engineBuildDeployFail.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return engineBuildDeployFail;
+    })();
+
+    events.EngineBuildApproved = (function() {
+
+        /**
+         * Properties of an EngineBuildApproved.
+         * @memberof events
+         * @interface IEngineBuildApproved
+         * @property {string|null} [userId] EngineBuildApproved userId
+         * @property {string|null} [engineId] EngineBuildApproved engineId
+         * @property {string|null} [buildId] EngineBuildApproved buildId
+         * @property {number|Long|null} [organizationId] EngineBuildApproved organizationId
+         * @property {number|null} [statusCode] EngineBuildApproved statusCode
+         * @property {string|null} [action] EngineBuildApproved action
+         */
+
+        /**
+         * Constructs a new EngineBuildApproved.
+         * @memberof events
+         * @classdesc Represents an EngineBuildApproved.
+         * @implements IEngineBuildApproved
+         * @constructor
+         * @param {events.IEngineBuildApproved=} [properties] Properties to set
+         */
+        function EngineBuildApproved(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * EngineBuildApproved userId.
+         * @member {string} userId
+         * @memberof events.EngineBuildApproved
+         * @instance
+         */
+        EngineBuildApproved.prototype.userId = "";
+
+        /**
+         * EngineBuildApproved engineId.
+         * @member {string} engineId
+         * @memberof events.EngineBuildApproved
+         * @instance
+         */
+        EngineBuildApproved.prototype.engineId = "";
+
+        /**
+         * EngineBuildApproved buildId.
+         * @member {string} buildId
+         * @memberof events.EngineBuildApproved
+         * @instance
+         */
+        EngineBuildApproved.prototype.buildId = "";
+
+        /**
+         * EngineBuildApproved organizationId.
+         * @member {number|Long} organizationId
+         * @memberof events.EngineBuildApproved
+         * @instance
+         */
+        EngineBuildApproved.prototype.organizationId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+        /**
+         * EngineBuildApproved statusCode.
+         * @member {number} statusCode
+         * @memberof events.EngineBuildApproved
+         * @instance
+         */
+        EngineBuildApproved.prototype.statusCode = 0;
+
+        /**
+         * EngineBuildApproved action.
+         * @member {string} action
+         * @memberof events.EngineBuildApproved
+         * @instance
+         */
+        EngineBuildApproved.prototype.action = "";
+
+        /**
+         * Creates a new EngineBuildApproved instance using the specified properties.
+         * @function create
+         * @memberof events.EngineBuildApproved
+         * @static
+         * @param {events.IEngineBuildApproved=} [properties] Properties to set
+         * @returns {events.EngineBuildApproved} EngineBuildApproved instance
+         */
+        EngineBuildApproved.create = function create(properties) {
+            return new EngineBuildApproved(properties);
+        };
+
+        /**
+         * Encodes the specified EngineBuildApproved message. Does not implicitly {@link events.EngineBuildApproved.verify|verify} messages.
+         * @function encode
+         * @memberof events.EngineBuildApproved
+         * @static
+         * @param {events.IEngineBuildApproved} message EngineBuildApproved message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildApproved.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.userId);
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.engineId);
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.buildId);
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                writer.uint32(/* id 13, wireType 0 =*/104).int64(message.organizationId);
+            if (message.statusCode != null && message.hasOwnProperty("statusCode"))
+                writer.uint32(/* id 14, wireType 0 =*/112).int32(message.statusCode);
+            if (message.action != null && message.hasOwnProperty("action"))
+                writer.uint32(/* id 15, wireType 2 =*/122).string(message.action);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified EngineBuildApproved message, length delimited. Does not implicitly {@link events.EngineBuildApproved.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.EngineBuildApproved
+         * @static
+         * @param {events.IEngineBuildApproved} message EngineBuildApproved message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildApproved.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an EngineBuildApproved message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.EngineBuildApproved
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.EngineBuildApproved} EngineBuildApproved
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildApproved.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.EngineBuildApproved();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.userId = reader.string();
+                    break;
+                case 11:
+                    message.engineId = reader.string();
+                    break;
+                case 12:
+                    message.buildId = reader.string();
+                    break;
+                case 13:
+                    message.organizationId = reader.int64();
+                    break;
+                case 14:
+                    message.statusCode = reader.int32();
+                    break;
+                case 15:
+                    message.action = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an EngineBuildApproved message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.EngineBuildApproved
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.EngineBuildApproved} EngineBuildApproved
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildApproved.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an EngineBuildApproved message.
+         * @function verify
+         * @memberof events.EngineBuildApproved
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        EngineBuildApproved.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                if (!$util.isString(message.userId))
+                    return "userId: string expected";
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                if (!$util.isString(message.engineId))
+                    return "engineId: string expected";
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                if (!$util.isString(message.buildId))
+                    return "buildId: string expected";
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                if (!$util.isInteger(message.organizationId) && !(message.organizationId && $util.isInteger(message.organizationId.low) && $util.isInteger(message.organizationId.high)))
+                    return "organizationId: integer|Long expected";
+            if (message.statusCode != null && message.hasOwnProperty("statusCode"))
+                if (!$util.isInteger(message.statusCode))
+                    return "statusCode: integer expected";
+            if (message.action != null && message.hasOwnProperty("action"))
+                if (!$util.isString(message.action))
+                    return "action: string expected";
+            return null;
+        };
+
+        /**
+         * Creates an EngineBuildApproved message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.EngineBuildApproved
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.EngineBuildApproved} EngineBuildApproved
+         */
+        EngineBuildApproved.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.EngineBuildApproved)
+                return object;
+            var message = new $root.events.EngineBuildApproved();
+            if (object.userId != null)
+                message.userId = String(object.userId);
+            if (object.engineId != null)
+                message.engineId = String(object.engineId);
+            if (object.buildId != null)
+                message.buildId = String(object.buildId);
+            if (object.organizationId != null)
+                if ($util.Long)
+                    (message.organizationId = $util.Long.fromValue(object.organizationId)).unsigned = false;
+                else if (typeof object.organizationId === "string")
+                    message.organizationId = parseInt(object.organizationId, 10);
+                else if (typeof object.organizationId === "number")
+                    message.organizationId = object.organizationId;
+                else if (typeof object.organizationId === "object")
+                    message.organizationId = new $util.LongBits(object.organizationId.low >>> 0, object.organizationId.high >>> 0).toNumber();
+            if (object.statusCode != null)
+                message.statusCode = object.statusCode | 0;
+            if (object.action != null)
+                message.action = String(object.action);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an EngineBuildApproved message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.EngineBuildApproved
+         * @static
+         * @param {events.EngineBuildApproved} message EngineBuildApproved
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        EngineBuildApproved.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.userId = "";
+                object.engineId = "";
+                object.buildId = "";
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.organizationId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.organizationId = options.longs === String ? "0" : 0;
+                object.statusCode = 0;
+                object.action = "";
+            }
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                object.userId = message.userId;
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                object.engineId = message.engineId;
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                object.buildId = message.buildId;
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                if (typeof message.organizationId === "number")
+                    object.organizationId = options.longs === String ? String(message.organizationId) : message.organizationId;
+                else
+                    object.organizationId = options.longs === String ? $util.Long.prototype.toString.call(message.organizationId) : options.longs === Number ? new $util.LongBits(message.organizationId.low >>> 0, message.organizationId.high >>> 0).toNumber() : message.organizationId;
+            if (message.statusCode != null && message.hasOwnProperty("statusCode"))
+                object.statusCode = message.statusCode;
+            if (message.action != null && message.hasOwnProperty("action"))
+                object.action = message.action;
+            return object;
+        };
+
+        /**
+         * Converts this EngineBuildApproved to JSON.
+         * @function toJSON
+         * @memberof events.EngineBuildApproved
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        EngineBuildApproved.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return EngineBuildApproved;
+    })();
+
+    events.EngineBuildDisapprove = (function() {
+
+        /**
+         * Properties of an EngineBuildDisapprove.
+         * @memberof events
+         * @interface IEngineBuildDisapprove
+         * @property {string|null} [userId] EngineBuildDisapprove userId
+         * @property {string|null} [engineId] EngineBuildDisapprove engineId
+         * @property {string|null} [buildId] EngineBuildDisapprove buildId
+         * @property {number|Long|null} [organizationId] EngineBuildDisapprove organizationId
+         * @property {number|null} [statusCode] EngineBuildDisapprove statusCode
+         * @property {string|null} [action] EngineBuildDisapprove action
+         */
+
+        /**
+         * Constructs a new EngineBuildDisapprove.
+         * @memberof events
+         * @classdesc Represents an EngineBuildDisapprove.
+         * @implements IEngineBuildDisapprove
+         * @constructor
+         * @param {events.IEngineBuildDisapprove=} [properties] Properties to set
+         */
+        function EngineBuildDisapprove(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * EngineBuildDisapprove userId.
+         * @member {string} userId
+         * @memberof events.EngineBuildDisapprove
+         * @instance
+         */
+        EngineBuildDisapprove.prototype.userId = "";
+
+        /**
+         * EngineBuildDisapprove engineId.
+         * @member {string} engineId
+         * @memberof events.EngineBuildDisapprove
+         * @instance
+         */
+        EngineBuildDisapprove.prototype.engineId = "";
+
+        /**
+         * EngineBuildDisapprove buildId.
+         * @member {string} buildId
+         * @memberof events.EngineBuildDisapprove
+         * @instance
+         */
+        EngineBuildDisapprove.prototype.buildId = "";
+
+        /**
+         * EngineBuildDisapprove organizationId.
+         * @member {number|Long} organizationId
+         * @memberof events.EngineBuildDisapprove
+         * @instance
+         */
+        EngineBuildDisapprove.prototype.organizationId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+        /**
+         * EngineBuildDisapprove statusCode.
+         * @member {number} statusCode
+         * @memberof events.EngineBuildDisapprove
+         * @instance
+         */
+        EngineBuildDisapprove.prototype.statusCode = 0;
+
+        /**
+         * EngineBuildDisapprove action.
+         * @member {string} action
+         * @memberof events.EngineBuildDisapprove
+         * @instance
+         */
+        EngineBuildDisapprove.prototype.action = "";
+
+        /**
+         * Creates a new EngineBuildDisapprove instance using the specified properties.
+         * @function create
+         * @memberof events.EngineBuildDisapprove
+         * @static
+         * @param {events.IEngineBuildDisapprove=} [properties] Properties to set
+         * @returns {events.EngineBuildDisapprove} EngineBuildDisapprove instance
+         */
+        EngineBuildDisapprove.create = function create(properties) {
+            return new EngineBuildDisapprove(properties);
+        };
+
+        /**
+         * Encodes the specified EngineBuildDisapprove message. Does not implicitly {@link events.EngineBuildDisapprove.verify|verify} messages.
+         * @function encode
+         * @memberof events.EngineBuildDisapprove
+         * @static
+         * @param {events.IEngineBuildDisapprove} message EngineBuildDisapprove message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildDisapprove.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.userId);
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.engineId);
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.buildId);
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                writer.uint32(/* id 13, wireType 0 =*/104).int64(message.organizationId);
+            if (message.statusCode != null && message.hasOwnProperty("statusCode"))
+                writer.uint32(/* id 14, wireType 0 =*/112).int32(message.statusCode);
+            if (message.action != null && message.hasOwnProperty("action"))
+                writer.uint32(/* id 15, wireType 2 =*/122).string(message.action);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified EngineBuildDisapprove message, length delimited. Does not implicitly {@link events.EngineBuildDisapprove.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.EngineBuildDisapprove
+         * @static
+         * @param {events.IEngineBuildDisapprove} message EngineBuildDisapprove message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildDisapprove.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an EngineBuildDisapprove message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.EngineBuildDisapprove
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.EngineBuildDisapprove} EngineBuildDisapprove
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildDisapprove.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.EngineBuildDisapprove();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.userId = reader.string();
+                    break;
+                case 11:
+                    message.engineId = reader.string();
+                    break;
+                case 12:
+                    message.buildId = reader.string();
+                    break;
+                case 13:
+                    message.organizationId = reader.int64();
+                    break;
+                case 14:
+                    message.statusCode = reader.int32();
+                    break;
+                case 15:
+                    message.action = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an EngineBuildDisapprove message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.EngineBuildDisapprove
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.EngineBuildDisapprove} EngineBuildDisapprove
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildDisapprove.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an EngineBuildDisapprove message.
+         * @function verify
+         * @memberof events.EngineBuildDisapprove
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        EngineBuildDisapprove.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                if (!$util.isString(message.userId))
+                    return "userId: string expected";
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                if (!$util.isString(message.engineId))
+                    return "engineId: string expected";
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                if (!$util.isString(message.buildId))
+                    return "buildId: string expected";
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                if (!$util.isInteger(message.organizationId) && !(message.organizationId && $util.isInteger(message.organizationId.low) && $util.isInteger(message.organizationId.high)))
+                    return "organizationId: integer|Long expected";
+            if (message.statusCode != null && message.hasOwnProperty("statusCode"))
+                if (!$util.isInteger(message.statusCode))
+                    return "statusCode: integer expected";
+            if (message.action != null && message.hasOwnProperty("action"))
+                if (!$util.isString(message.action))
+                    return "action: string expected";
+            return null;
+        };
+
+        /**
+         * Creates an EngineBuildDisapprove message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.EngineBuildDisapprove
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.EngineBuildDisapprove} EngineBuildDisapprove
+         */
+        EngineBuildDisapprove.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.EngineBuildDisapprove)
+                return object;
+            var message = new $root.events.EngineBuildDisapprove();
+            if (object.userId != null)
+                message.userId = String(object.userId);
+            if (object.engineId != null)
+                message.engineId = String(object.engineId);
+            if (object.buildId != null)
+                message.buildId = String(object.buildId);
+            if (object.organizationId != null)
+                if ($util.Long)
+                    (message.organizationId = $util.Long.fromValue(object.organizationId)).unsigned = false;
+                else if (typeof object.organizationId === "string")
+                    message.organizationId = parseInt(object.organizationId, 10);
+                else if (typeof object.organizationId === "number")
+                    message.organizationId = object.organizationId;
+                else if (typeof object.organizationId === "object")
+                    message.organizationId = new $util.LongBits(object.organizationId.low >>> 0, object.organizationId.high >>> 0).toNumber();
+            if (object.statusCode != null)
+                message.statusCode = object.statusCode | 0;
+            if (object.action != null)
+                message.action = String(object.action);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an EngineBuildDisapprove message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.EngineBuildDisapprove
+         * @static
+         * @param {events.EngineBuildDisapprove} message EngineBuildDisapprove
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        EngineBuildDisapprove.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.userId = "";
+                object.engineId = "";
+                object.buildId = "";
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.organizationId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.organizationId = options.longs === String ? "0" : 0;
+                object.statusCode = 0;
+                object.action = "";
+            }
+            if (message.userId != null && message.hasOwnProperty("userId"))
+                object.userId = message.userId;
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                object.engineId = message.engineId;
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                object.buildId = message.buildId;
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                if (typeof message.organizationId === "number")
+                    object.organizationId = options.longs === String ? String(message.organizationId) : message.organizationId;
+                else
+                    object.organizationId = options.longs === String ? $util.Long.prototype.toString.call(message.organizationId) : options.longs === Number ? new $util.LongBits(message.organizationId.low >>> 0, message.organizationId.high >>> 0).toNumber() : message.organizationId;
+            if (message.statusCode != null && message.hasOwnProperty("statusCode"))
+                object.statusCode = message.statusCode;
+            if (message.action != null && message.hasOwnProperty("action"))
+                object.action = message.action;
+            return object;
+        };
+
+        /**
+         * Converts this EngineBuildDisapprove to JSON.
+         * @function toJSON
+         * @memberof events.EngineBuildDisapprove
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        EngineBuildDisapprove.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return EngineBuildDisapprove;
+    })();
+
+    events.EngineBuildCreate = (function() {
+
+        /**
+         * Properties of an EngineBuildCreate.
+         * @memberof events
+         * @interface IEngineBuildCreate
+         * @property {string|null} [engineId] EngineBuildCreate engineId
+         * @property {string|null} [buildId] EngineBuildCreate buildId
+         * @property {number|null} [statusCode] EngineBuildCreate statusCode
+         * @property {string|null} [action] EngineBuildCreate action
+         */
+
+        /**
+         * Constructs a new EngineBuildCreate.
+         * @memberof events
+         * @classdesc Represents an EngineBuildCreate.
+         * @implements IEngineBuildCreate
+         * @constructor
+         * @param {events.IEngineBuildCreate=} [properties] Properties to set
+         */
+        function EngineBuildCreate(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * EngineBuildCreate engineId.
+         * @member {string} engineId
+         * @memberof events.EngineBuildCreate
+         * @instance
+         */
+        EngineBuildCreate.prototype.engineId = "";
+
+        /**
+         * EngineBuildCreate buildId.
+         * @member {string} buildId
+         * @memberof events.EngineBuildCreate
+         * @instance
+         */
+        EngineBuildCreate.prototype.buildId = "";
+
+        /**
+         * EngineBuildCreate statusCode.
+         * @member {number} statusCode
+         * @memberof events.EngineBuildCreate
+         * @instance
+         */
+        EngineBuildCreate.prototype.statusCode = 0;
+
+        /**
+         * EngineBuildCreate action.
+         * @member {string} action
+         * @memberof events.EngineBuildCreate
+         * @instance
+         */
+        EngineBuildCreate.prototype.action = "";
+
+        /**
+         * Creates a new EngineBuildCreate instance using the specified properties.
+         * @function create
+         * @memberof events.EngineBuildCreate
+         * @static
+         * @param {events.IEngineBuildCreate=} [properties] Properties to set
+         * @returns {events.EngineBuildCreate} EngineBuildCreate instance
+         */
+        EngineBuildCreate.create = function create(properties) {
+            return new EngineBuildCreate(properties);
+        };
+
+        /**
+         * Encodes the specified EngineBuildCreate message. Does not implicitly {@link events.EngineBuildCreate.verify|verify} messages.
+         * @function encode
+         * @memberof events.EngineBuildCreate
+         * @static
+         * @param {events.IEngineBuildCreate} message EngineBuildCreate message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildCreate.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.engineId);
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.buildId);
+            if (message.statusCode != null && message.hasOwnProperty("statusCode"))
+                writer.uint32(/* id 13, wireType 0 =*/104).int32(message.statusCode);
+            if (message.action != null && message.hasOwnProperty("action"))
+                writer.uint32(/* id 14, wireType 2 =*/114).string(message.action);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified EngineBuildCreate message, length delimited. Does not implicitly {@link events.EngineBuildCreate.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.EngineBuildCreate
+         * @static
+         * @param {events.IEngineBuildCreate} message EngineBuildCreate message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildCreate.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an EngineBuildCreate message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.EngineBuildCreate
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.EngineBuildCreate} EngineBuildCreate
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildCreate.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.EngineBuildCreate();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 11:
+                    message.engineId = reader.string();
+                    break;
+                case 12:
+                    message.buildId = reader.string();
+                    break;
+                case 13:
+                    message.statusCode = reader.int32();
+                    break;
+                case 14:
+                    message.action = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an EngineBuildCreate message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.EngineBuildCreate
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.EngineBuildCreate} EngineBuildCreate
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildCreate.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an EngineBuildCreate message.
+         * @function verify
+         * @memberof events.EngineBuildCreate
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        EngineBuildCreate.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                if (!$util.isString(message.engineId))
+                    return "engineId: string expected";
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                if (!$util.isString(message.buildId))
+                    return "buildId: string expected";
+            if (message.statusCode != null && message.hasOwnProperty("statusCode"))
+                if (!$util.isInteger(message.statusCode))
+                    return "statusCode: integer expected";
+            if (message.action != null && message.hasOwnProperty("action"))
+                if (!$util.isString(message.action))
+                    return "action: string expected";
+            return null;
+        };
+
+        /**
+         * Creates an EngineBuildCreate message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.EngineBuildCreate
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.EngineBuildCreate} EngineBuildCreate
+         */
+        EngineBuildCreate.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.EngineBuildCreate)
+                return object;
+            var message = new $root.events.EngineBuildCreate();
+            if (object.engineId != null)
+                message.engineId = String(object.engineId);
+            if (object.buildId != null)
+                message.buildId = String(object.buildId);
+            if (object.statusCode != null)
+                message.statusCode = object.statusCode | 0;
+            if (object.action != null)
+                message.action = String(object.action);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an EngineBuildCreate message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.EngineBuildCreate
+         * @static
+         * @param {events.EngineBuildCreate} message EngineBuildCreate
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        EngineBuildCreate.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.engineId = "";
+                object.buildId = "";
+                object.statusCode = 0;
+                object.action = "";
+            }
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                object.engineId = message.engineId;
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                object.buildId = message.buildId;
+            if (message.statusCode != null && message.hasOwnProperty("statusCode"))
+                object.statusCode = message.statusCode;
+            if (message.action != null && message.hasOwnProperty("action"))
+                object.action = message.action;
+            return object;
+        };
+
+        /**
+         * Converts this EngineBuildCreate to JSON.
+         * @function toJSON
+         * @memberof events.EngineBuildCreate
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        EngineBuildCreate.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return EngineBuildCreate;
+    })();
+
+    events.EngineBuildUpload = (function() {
+
+        /**
+         * Properties of an EngineBuildUpload.
+         * @memberof events
+         * @interface IEngineBuildUpload
+         * @property {string|null} [engineId] EngineBuildUpload engineId
+         * @property {string|null} [buildId] EngineBuildUpload buildId
+         * @property {number|null} [statusCode] EngineBuildUpload statusCode
+         * @property {string|null} [action] EngineBuildUpload action
+         */
+
+        /**
+         * Constructs a new EngineBuildUpload.
+         * @memberof events
+         * @classdesc Represents an EngineBuildUpload.
+         * @implements IEngineBuildUpload
+         * @constructor
+         * @param {events.IEngineBuildUpload=} [properties] Properties to set
+         */
+        function EngineBuildUpload(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * EngineBuildUpload engineId.
+         * @member {string} engineId
+         * @memberof events.EngineBuildUpload
+         * @instance
+         */
+        EngineBuildUpload.prototype.engineId = "";
+
+        /**
+         * EngineBuildUpload buildId.
+         * @member {string} buildId
+         * @memberof events.EngineBuildUpload
+         * @instance
+         */
+        EngineBuildUpload.prototype.buildId = "";
+
+        /**
+         * EngineBuildUpload statusCode.
+         * @member {number} statusCode
+         * @memberof events.EngineBuildUpload
+         * @instance
+         */
+        EngineBuildUpload.prototype.statusCode = 0;
+
+        /**
+         * EngineBuildUpload action.
+         * @member {string} action
+         * @memberof events.EngineBuildUpload
+         * @instance
+         */
+        EngineBuildUpload.prototype.action = "";
+
+        /**
+         * Creates a new EngineBuildUpload instance using the specified properties.
+         * @function create
+         * @memberof events.EngineBuildUpload
+         * @static
+         * @param {events.IEngineBuildUpload=} [properties] Properties to set
+         * @returns {events.EngineBuildUpload} EngineBuildUpload instance
+         */
+        EngineBuildUpload.create = function create(properties) {
+            return new EngineBuildUpload(properties);
+        };
+
+        /**
+         * Encodes the specified EngineBuildUpload message. Does not implicitly {@link events.EngineBuildUpload.verify|verify} messages.
+         * @function encode
+         * @memberof events.EngineBuildUpload
+         * @static
+         * @param {events.IEngineBuildUpload} message EngineBuildUpload message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildUpload.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.engineId);
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.buildId);
+            if (message.statusCode != null && message.hasOwnProperty("statusCode"))
+                writer.uint32(/* id 13, wireType 0 =*/104).int32(message.statusCode);
+            if (message.action != null && message.hasOwnProperty("action"))
+                writer.uint32(/* id 14, wireType 2 =*/114).string(message.action);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified EngineBuildUpload message, length delimited. Does not implicitly {@link events.EngineBuildUpload.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.EngineBuildUpload
+         * @static
+         * @param {events.IEngineBuildUpload} message EngineBuildUpload message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildUpload.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an EngineBuildUpload message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.EngineBuildUpload
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.EngineBuildUpload} EngineBuildUpload
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildUpload.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.EngineBuildUpload();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 11:
+                    message.engineId = reader.string();
+                    break;
+                case 12:
+                    message.buildId = reader.string();
+                    break;
+                case 13:
+                    message.statusCode = reader.int32();
+                    break;
+                case 14:
+                    message.action = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an EngineBuildUpload message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.EngineBuildUpload
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.EngineBuildUpload} EngineBuildUpload
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildUpload.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an EngineBuildUpload message.
+         * @function verify
+         * @memberof events.EngineBuildUpload
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        EngineBuildUpload.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                if (!$util.isString(message.engineId))
+                    return "engineId: string expected";
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                if (!$util.isString(message.buildId))
+                    return "buildId: string expected";
+            if (message.statusCode != null && message.hasOwnProperty("statusCode"))
+                if (!$util.isInteger(message.statusCode))
+                    return "statusCode: integer expected";
+            if (message.action != null && message.hasOwnProperty("action"))
+                if (!$util.isString(message.action))
+                    return "action: string expected";
+            return null;
+        };
+
+        /**
+         * Creates an EngineBuildUpload message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.EngineBuildUpload
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.EngineBuildUpload} EngineBuildUpload
+         */
+        EngineBuildUpload.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.EngineBuildUpload)
+                return object;
+            var message = new $root.events.EngineBuildUpload();
+            if (object.engineId != null)
+                message.engineId = String(object.engineId);
+            if (object.buildId != null)
+                message.buildId = String(object.buildId);
+            if (object.statusCode != null)
+                message.statusCode = object.statusCode | 0;
+            if (object.action != null)
+                message.action = String(object.action);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an EngineBuildUpload message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.EngineBuildUpload
+         * @static
+         * @param {events.EngineBuildUpload} message EngineBuildUpload
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        EngineBuildUpload.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.engineId = "";
+                object.buildId = "";
+                object.statusCode = 0;
+                object.action = "";
+            }
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                object.engineId = message.engineId;
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                object.buildId = message.buildId;
+            if (message.statusCode != null && message.hasOwnProperty("statusCode"))
+                object.statusCode = message.statusCode;
+            if (message.action != null && message.hasOwnProperty("action"))
+                object.action = message.action;
+            return object;
+        };
+
+        /**
+         * Converts this EngineBuildUpload to JSON.
+         * @function toJSON
+         * @memberof events.EngineBuildUpload
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        EngineBuildUpload.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return EngineBuildUpload;
+    })();
+
+    events.EngineBuildInvalidate = (function() {
+
+        /**
+         * Properties of an EngineBuildInvalidate.
+         * @memberof events
+         * @interface IEngineBuildInvalidate
+         * @property {string|null} [engineId] EngineBuildInvalidate engineId
+         * @property {string|null} [buildId] EngineBuildInvalidate buildId
+         * @property {number|null} [statusCode] EngineBuildInvalidate statusCode
+         * @property {string|null} [action] EngineBuildInvalidate action
+         */
+
+        /**
+         * Constructs a new EngineBuildInvalidate.
+         * @memberof events
+         * @classdesc Represents an EngineBuildInvalidate.
+         * @implements IEngineBuildInvalidate
+         * @constructor
+         * @param {events.IEngineBuildInvalidate=} [properties] Properties to set
+         */
+        function EngineBuildInvalidate(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * EngineBuildInvalidate engineId.
+         * @member {string} engineId
+         * @memberof events.EngineBuildInvalidate
+         * @instance
+         */
+        EngineBuildInvalidate.prototype.engineId = "";
+
+        /**
+         * EngineBuildInvalidate buildId.
+         * @member {string} buildId
+         * @memberof events.EngineBuildInvalidate
+         * @instance
+         */
+        EngineBuildInvalidate.prototype.buildId = "";
+
+        /**
+         * EngineBuildInvalidate statusCode.
+         * @member {number} statusCode
+         * @memberof events.EngineBuildInvalidate
+         * @instance
+         */
+        EngineBuildInvalidate.prototype.statusCode = 0;
+
+        /**
+         * EngineBuildInvalidate action.
+         * @member {string} action
+         * @memberof events.EngineBuildInvalidate
+         * @instance
+         */
+        EngineBuildInvalidate.prototype.action = "";
+
+        /**
+         * Creates a new EngineBuildInvalidate instance using the specified properties.
+         * @function create
+         * @memberof events.EngineBuildInvalidate
+         * @static
+         * @param {events.IEngineBuildInvalidate=} [properties] Properties to set
+         * @returns {events.EngineBuildInvalidate} EngineBuildInvalidate instance
+         */
+        EngineBuildInvalidate.create = function create(properties) {
+            return new EngineBuildInvalidate(properties);
+        };
+
+        /**
+         * Encodes the specified EngineBuildInvalidate message. Does not implicitly {@link events.EngineBuildInvalidate.verify|verify} messages.
+         * @function encode
+         * @memberof events.EngineBuildInvalidate
+         * @static
+         * @param {events.IEngineBuildInvalidate} message EngineBuildInvalidate message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildInvalidate.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.engineId);
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.buildId);
+            if (message.statusCode != null && message.hasOwnProperty("statusCode"))
+                writer.uint32(/* id 13, wireType 0 =*/104).int32(message.statusCode);
+            if (message.action != null && message.hasOwnProperty("action"))
+                writer.uint32(/* id 14, wireType 2 =*/114).string(message.action);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified EngineBuildInvalidate message, length delimited. Does not implicitly {@link events.EngineBuildInvalidate.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.EngineBuildInvalidate
+         * @static
+         * @param {events.IEngineBuildInvalidate} message EngineBuildInvalidate message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        EngineBuildInvalidate.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an EngineBuildInvalidate message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.EngineBuildInvalidate
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.EngineBuildInvalidate} EngineBuildInvalidate
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildInvalidate.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.EngineBuildInvalidate();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 11:
+                    message.engineId = reader.string();
+                    break;
+                case 12:
+                    message.buildId = reader.string();
+                    break;
+                case 13:
+                    message.statusCode = reader.int32();
+                    break;
+                case 14:
+                    message.action = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an EngineBuildInvalidate message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.EngineBuildInvalidate
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.EngineBuildInvalidate} EngineBuildInvalidate
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        EngineBuildInvalidate.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an EngineBuildInvalidate message.
+         * @function verify
+         * @memberof events.EngineBuildInvalidate
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        EngineBuildInvalidate.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                if (!$util.isString(message.engineId))
+                    return "engineId: string expected";
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                if (!$util.isString(message.buildId))
+                    return "buildId: string expected";
+            if (message.statusCode != null && message.hasOwnProperty("statusCode"))
+                if (!$util.isInteger(message.statusCode))
+                    return "statusCode: integer expected";
+            if (message.action != null && message.hasOwnProperty("action"))
+                if (!$util.isString(message.action))
+                    return "action: string expected";
+            return null;
+        };
+
+        /**
+         * Creates an EngineBuildInvalidate message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.EngineBuildInvalidate
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.EngineBuildInvalidate} EngineBuildInvalidate
+         */
+        EngineBuildInvalidate.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.EngineBuildInvalidate)
+                return object;
+            var message = new $root.events.EngineBuildInvalidate();
+            if (object.engineId != null)
+                message.engineId = String(object.engineId);
+            if (object.buildId != null)
+                message.buildId = String(object.buildId);
+            if (object.statusCode != null)
+                message.statusCode = object.statusCode | 0;
+            if (object.action != null)
+                message.action = String(object.action);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an EngineBuildInvalidate message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.EngineBuildInvalidate
+         * @static
+         * @param {events.EngineBuildInvalidate} message EngineBuildInvalidate
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        EngineBuildInvalidate.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.engineId = "";
+                object.buildId = "";
+                object.statusCode = 0;
+                object.action = "";
+            }
+            if (message.engineId != null && message.hasOwnProperty("engineId"))
+                object.engineId = message.engineId;
+            if (message.buildId != null && message.hasOwnProperty("buildId"))
+                object.buildId = message.buildId;
+            if (message.statusCode != null && message.hasOwnProperty("statusCode"))
+                object.statusCode = message.statusCode;
+            if (message.action != null && message.hasOwnProperty("action"))
+                object.action = message.action;
+            return object;
+        };
+
+        /**
+         * Converts this EngineBuildInvalidate to JSON.
+         * @function toJSON
+         * @memberof events.EngineBuildInvalidate
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        EngineBuildInvalidate.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return EngineBuildInvalidate;
     })();
 
     events.ExampleEvent = (function() {
@@ -1831,6 +6889,680 @@ $root.events = (function() {
         };
 
         return ExampleFour;
+    })();
+
+    events.JobCreated = (function() {
+
+        /**
+         * Properties of a JobCreated.
+         * @memberof events
+         * @interface IJobCreated
+         * @property {string|null} [jobId] JobCreated jobId
+         * @property {string|null} [timestampMs] JobCreated timestampMs
+         */
+
+        /**
+         * Constructs a new JobCreated.
+         * @memberof events
+         * @classdesc Represents a JobCreated.
+         * @implements IJobCreated
+         * @constructor
+         * @param {events.IJobCreated=} [properties] Properties to set
+         */
+        function JobCreated(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * JobCreated jobId.
+         * @member {string} jobId
+         * @memberof events.JobCreated
+         * @instance
+         */
+        JobCreated.prototype.jobId = "";
+
+        /**
+         * JobCreated timestampMs.
+         * @member {string} timestampMs
+         * @memberof events.JobCreated
+         * @instance
+         */
+        JobCreated.prototype.timestampMs = "";
+
+        /**
+         * Creates a new JobCreated instance using the specified properties.
+         * @function create
+         * @memberof events.JobCreated
+         * @static
+         * @param {events.IJobCreated=} [properties] Properties to set
+         * @returns {events.JobCreated} JobCreated instance
+         */
+        JobCreated.create = function create(properties) {
+            return new JobCreated(properties);
+        };
+
+        /**
+         * Encodes the specified JobCreated message. Does not implicitly {@link events.JobCreated.verify|verify} messages.
+         * @function encode
+         * @memberof events.JobCreated
+         * @static
+         * @param {events.IJobCreated} message JobCreated message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        JobCreated.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.jobId);
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.timestampMs);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified JobCreated message, length delimited. Does not implicitly {@link events.JobCreated.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.JobCreated
+         * @static
+         * @param {events.IJobCreated} message JobCreated message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        JobCreated.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a JobCreated message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.JobCreated
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.JobCreated} JobCreated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        JobCreated.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.JobCreated();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.jobId = reader.string();
+                    break;
+                case 11:
+                    message.timestampMs = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a JobCreated message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.JobCreated
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.JobCreated} JobCreated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        JobCreated.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a JobCreated message.
+         * @function verify
+         * @memberof events.JobCreated
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        JobCreated.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                if (!$util.isString(message.jobId))
+                    return "jobId: string expected";
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                if (!$util.isString(message.timestampMs))
+                    return "timestampMs: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a JobCreated message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.JobCreated
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.JobCreated} JobCreated
+         */
+        JobCreated.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.JobCreated)
+                return object;
+            var message = new $root.events.JobCreated();
+            if (object.jobId != null)
+                message.jobId = String(object.jobId);
+            if (object.timestampMs != null)
+                message.timestampMs = String(object.timestampMs);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a JobCreated message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.JobCreated
+         * @static
+         * @param {events.JobCreated} message JobCreated
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        JobCreated.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.jobId = "";
+                object.timestampMs = "";
+            }
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                object.jobId = message.jobId;
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                object.timestampMs = message.timestampMs;
+            return object;
+        };
+
+        /**
+         * Converts this JobCreated to JSON.
+         * @function toJSON
+         * @memberof events.JobCreated
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        JobCreated.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return JobCreated;
+    })();
+
+    events.JobCompleted = (function() {
+
+        /**
+         * Properties of a JobCompleted.
+         * @memberof events
+         * @interface IJobCompleted
+         * @property {string|null} [jobId] JobCompleted jobId
+         * @property {string|null} [timestampMs] JobCompleted timestampMs
+         * @property {string|null} [jobStatus] JobCompleted jobStatus
+         */
+
+        /**
+         * Constructs a new JobCompleted.
+         * @memberof events
+         * @classdesc Represents a JobCompleted.
+         * @implements IJobCompleted
+         * @constructor
+         * @param {events.IJobCompleted=} [properties] Properties to set
+         */
+        function JobCompleted(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * JobCompleted jobId.
+         * @member {string} jobId
+         * @memberof events.JobCompleted
+         * @instance
+         */
+        JobCompleted.prototype.jobId = "";
+
+        /**
+         * JobCompleted timestampMs.
+         * @member {string} timestampMs
+         * @memberof events.JobCompleted
+         * @instance
+         */
+        JobCompleted.prototype.timestampMs = "";
+
+        /**
+         * JobCompleted jobStatus.
+         * @member {string} jobStatus
+         * @memberof events.JobCompleted
+         * @instance
+         */
+        JobCompleted.prototype.jobStatus = "";
+
+        /**
+         * Creates a new JobCompleted instance using the specified properties.
+         * @function create
+         * @memberof events.JobCompleted
+         * @static
+         * @param {events.IJobCompleted=} [properties] Properties to set
+         * @returns {events.JobCompleted} JobCompleted instance
+         */
+        JobCompleted.create = function create(properties) {
+            return new JobCompleted(properties);
+        };
+
+        /**
+         * Encodes the specified JobCompleted message. Does not implicitly {@link events.JobCompleted.verify|verify} messages.
+         * @function encode
+         * @memberof events.JobCompleted
+         * @static
+         * @param {events.IJobCompleted} message JobCompleted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        JobCompleted.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.jobId);
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.timestampMs);
+            if (message.jobStatus != null && message.hasOwnProperty("jobStatus"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.jobStatus);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified JobCompleted message, length delimited. Does not implicitly {@link events.JobCompleted.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.JobCompleted
+         * @static
+         * @param {events.IJobCompleted} message JobCompleted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        JobCompleted.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a JobCompleted message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.JobCompleted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.JobCompleted} JobCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        JobCompleted.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.JobCompleted();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.jobId = reader.string();
+                    break;
+                case 11:
+                    message.timestampMs = reader.string();
+                    break;
+                case 12:
+                    message.jobStatus = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a JobCompleted message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.JobCompleted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.JobCompleted} JobCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        JobCompleted.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a JobCompleted message.
+         * @function verify
+         * @memberof events.JobCompleted
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        JobCompleted.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                if (!$util.isString(message.jobId))
+                    return "jobId: string expected";
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                if (!$util.isString(message.timestampMs))
+                    return "timestampMs: string expected";
+            if (message.jobStatus != null && message.hasOwnProperty("jobStatus"))
+                if (!$util.isString(message.jobStatus))
+                    return "jobStatus: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a JobCompleted message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.JobCompleted
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.JobCompleted} JobCompleted
+         */
+        JobCompleted.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.JobCompleted)
+                return object;
+            var message = new $root.events.JobCompleted();
+            if (object.jobId != null)
+                message.jobId = String(object.jobId);
+            if (object.timestampMs != null)
+                message.timestampMs = String(object.timestampMs);
+            if (object.jobStatus != null)
+                message.jobStatus = String(object.jobStatus);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a JobCompleted message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.JobCompleted
+         * @static
+         * @param {events.JobCompleted} message JobCompleted
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        JobCompleted.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.jobId = "";
+                object.timestampMs = "";
+                object.jobStatus = "";
+            }
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                object.jobId = message.jobId;
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                object.timestampMs = message.timestampMs;
+            if (message.jobStatus != null && message.hasOwnProperty("jobStatus"))
+                object.jobStatus = message.jobStatus;
+            return object;
+        };
+
+        /**
+         * Converts this JobCompleted to JSON.
+         * @function toJSON
+         * @memberof events.JobCompleted
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        JobCompleted.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return JobCompleted;
+    })();
+
+    events.JobFailed = (function() {
+
+        /**
+         * Properties of a JobFailed.
+         * @memberof events
+         * @interface IJobFailed
+         * @property {string|null} [jobId] JobFailed jobId
+         * @property {string|null} [timestampMs] JobFailed timestampMs
+         * @property {string|null} [jobStatus] JobFailed jobStatus
+         */
+
+        /**
+         * Constructs a new JobFailed.
+         * @memberof events
+         * @classdesc Represents a JobFailed.
+         * @implements IJobFailed
+         * @constructor
+         * @param {events.IJobFailed=} [properties] Properties to set
+         */
+        function JobFailed(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * JobFailed jobId.
+         * @member {string} jobId
+         * @memberof events.JobFailed
+         * @instance
+         */
+        JobFailed.prototype.jobId = "";
+
+        /**
+         * JobFailed timestampMs.
+         * @member {string} timestampMs
+         * @memberof events.JobFailed
+         * @instance
+         */
+        JobFailed.prototype.timestampMs = "";
+
+        /**
+         * JobFailed jobStatus.
+         * @member {string} jobStatus
+         * @memberof events.JobFailed
+         * @instance
+         */
+        JobFailed.prototype.jobStatus = "";
+
+        /**
+         * Creates a new JobFailed instance using the specified properties.
+         * @function create
+         * @memberof events.JobFailed
+         * @static
+         * @param {events.IJobFailed=} [properties] Properties to set
+         * @returns {events.JobFailed} JobFailed instance
+         */
+        JobFailed.create = function create(properties) {
+            return new JobFailed(properties);
+        };
+
+        /**
+         * Encodes the specified JobFailed message. Does not implicitly {@link events.JobFailed.verify|verify} messages.
+         * @function encode
+         * @memberof events.JobFailed
+         * @static
+         * @param {events.IJobFailed} message JobFailed message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        JobFailed.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.jobId);
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.timestampMs);
+            if (message.jobStatus != null && message.hasOwnProperty("jobStatus"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.jobStatus);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified JobFailed message, length delimited. Does not implicitly {@link events.JobFailed.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.JobFailed
+         * @static
+         * @param {events.IJobFailed} message JobFailed message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        JobFailed.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a JobFailed message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.JobFailed
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.JobFailed} JobFailed
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        JobFailed.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.JobFailed();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.jobId = reader.string();
+                    break;
+                case 11:
+                    message.timestampMs = reader.string();
+                    break;
+                case 12:
+                    message.jobStatus = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a JobFailed message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.JobFailed
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.JobFailed} JobFailed
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        JobFailed.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a JobFailed message.
+         * @function verify
+         * @memberof events.JobFailed
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        JobFailed.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                if (!$util.isString(message.jobId))
+                    return "jobId: string expected";
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                if (!$util.isString(message.timestampMs))
+                    return "timestampMs: string expected";
+            if (message.jobStatus != null && message.hasOwnProperty("jobStatus"))
+                if (!$util.isString(message.jobStatus))
+                    return "jobStatus: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a JobFailed message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.JobFailed
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.JobFailed} JobFailed
+         */
+        JobFailed.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.JobFailed)
+                return object;
+            var message = new $root.events.JobFailed();
+            if (object.jobId != null)
+                message.jobId = String(object.jobId);
+            if (object.timestampMs != null)
+                message.timestampMs = String(object.timestampMs);
+            if (object.jobStatus != null)
+                message.jobStatus = String(object.jobStatus);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a JobFailed message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.JobFailed
+         * @static
+         * @param {events.JobFailed} message JobFailed
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        JobFailed.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.jobId = "";
+                object.timestampMs = "";
+                object.jobStatus = "";
+            }
+            if (message.jobId != null && message.hasOwnProperty("jobId"))
+                object.jobId = message.jobId;
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                object.timestampMs = message.timestampMs;
+            if (message.jobStatus != null && message.hasOwnProperty("jobStatus"))
+                object.jobStatus = message.jobStatus;
+            return object;
+        };
+
+        /**
+         * Converts this JobFailed to JSON.
+         * @function toJSON
+         * @memberof events.JobFailed
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        JobFailed.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return JobFailed;
     })();
 
     events.MentionModifiedData = (function() {
@@ -4421,6 +10153,1834 @@ $root.events = (function() {
         };
 
         return SMSNotification;
+    })();
+
+    events.RecordingCreated = (function() {
+
+        /**
+         * Properties of a RecordingCreated.
+         * @memberof events
+         * @interface IRecordingCreated
+         * @property {string|null} [recordingId] RecordingCreated recordingId
+         */
+
+        /**
+         * Constructs a new RecordingCreated.
+         * @memberof events
+         * @classdesc Represents a RecordingCreated.
+         * @implements IRecordingCreated
+         * @constructor
+         * @param {events.IRecordingCreated=} [properties] Properties to set
+         */
+        function RecordingCreated(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * RecordingCreated recordingId.
+         * @member {string} recordingId
+         * @memberof events.RecordingCreated
+         * @instance
+         */
+        RecordingCreated.prototype.recordingId = "";
+
+        /**
+         * Creates a new RecordingCreated instance using the specified properties.
+         * @function create
+         * @memberof events.RecordingCreated
+         * @static
+         * @param {events.IRecordingCreated=} [properties] Properties to set
+         * @returns {events.RecordingCreated} RecordingCreated instance
+         */
+        RecordingCreated.create = function create(properties) {
+            return new RecordingCreated(properties);
+        };
+
+        /**
+         * Encodes the specified RecordingCreated message. Does not implicitly {@link events.RecordingCreated.verify|verify} messages.
+         * @function encode
+         * @memberof events.RecordingCreated
+         * @static
+         * @param {events.IRecordingCreated} message RecordingCreated message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RecordingCreated.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.recordingId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified RecordingCreated message, length delimited. Does not implicitly {@link events.RecordingCreated.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.RecordingCreated
+         * @static
+         * @param {events.IRecordingCreated} message RecordingCreated message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RecordingCreated.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a RecordingCreated message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.RecordingCreated
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.RecordingCreated} RecordingCreated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RecordingCreated.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.RecordingCreated();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.recordingId = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a RecordingCreated message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.RecordingCreated
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.RecordingCreated} RecordingCreated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RecordingCreated.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a RecordingCreated message.
+         * @function verify
+         * @memberof events.RecordingCreated
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        RecordingCreated.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                if (!$util.isString(message.recordingId))
+                    return "recordingId: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a RecordingCreated message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.RecordingCreated
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.RecordingCreated} RecordingCreated
+         */
+        RecordingCreated.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.RecordingCreated)
+                return object;
+            var message = new $root.events.RecordingCreated();
+            if (object.recordingId != null)
+                message.recordingId = String(object.recordingId);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a RecordingCreated message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.RecordingCreated
+         * @static
+         * @param {events.RecordingCreated} message RecordingCreated
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        RecordingCreated.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults)
+                object.recordingId = "";
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                object.recordingId = message.recordingId;
+            return object;
+        };
+
+        /**
+         * Converts this RecordingCreated to JSON.
+         * @function toJSON
+         * @memberof events.RecordingCreated
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        RecordingCreated.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return RecordingCreated;
+    })();
+
+    events.RecordingInserted = (function() {
+
+        /**
+         * Properties of a RecordingInserted.
+         * @memberof events
+         * @interface IRecordingInserted
+         * @property {string|null} [recordingId] RecordingInserted recordingId
+         */
+
+        /**
+         * Constructs a new RecordingInserted.
+         * @memberof events
+         * @classdesc Represents a RecordingInserted.
+         * @implements IRecordingInserted
+         * @constructor
+         * @param {events.IRecordingInserted=} [properties] Properties to set
+         */
+        function RecordingInserted(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * RecordingInserted recordingId.
+         * @member {string} recordingId
+         * @memberof events.RecordingInserted
+         * @instance
+         */
+        RecordingInserted.prototype.recordingId = "";
+
+        /**
+         * Creates a new RecordingInserted instance using the specified properties.
+         * @function create
+         * @memberof events.RecordingInserted
+         * @static
+         * @param {events.IRecordingInserted=} [properties] Properties to set
+         * @returns {events.RecordingInserted} RecordingInserted instance
+         */
+        RecordingInserted.create = function create(properties) {
+            return new RecordingInserted(properties);
+        };
+
+        /**
+         * Encodes the specified RecordingInserted message. Does not implicitly {@link events.RecordingInserted.verify|verify} messages.
+         * @function encode
+         * @memberof events.RecordingInserted
+         * @static
+         * @param {events.IRecordingInserted} message RecordingInserted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RecordingInserted.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.recordingId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified RecordingInserted message, length delimited. Does not implicitly {@link events.RecordingInserted.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.RecordingInserted
+         * @static
+         * @param {events.IRecordingInserted} message RecordingInserted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RecordingInserted.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a RecordingInserted message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.RecordingInserted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.RecordingInserted} RecordingInserted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RecordingInserted.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.RecordingInserted();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.recordingId = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a RecordingInserted message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.RecordingInserted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.RecordingInserted} RecordingInserted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RecordingInserted.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a RecordingInserted message.
+         * @function verify
+         * @memberof events.RecordingInserted
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        RecordingInserted.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                if (!$util.isString(message.recordingId))
+                    return "recordingId: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a RecordingInserted message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.RecordingInserted
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.RecordingInserted} RecordingInserted
+         */
+        RecordingInserted.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.RecordingInserted)
+                return object;
+            var message = new $root.events.RecordingInserted();
+            if (object.recordingId != null)
+                message.recordingId = String(object.recordingId);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a RecordingInserted message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.RecordingInserted
+         * @static
+         * @param {events.RecordingInserted} message RecordingInserted
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        RecordingInserted.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults)
+                object.recordingId = "";
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                object.recordingId = message.recordingId;
+            return object;
+        };
+
+        /**
+         * Converts this RecordingInserted to JSON.
+         * @function toJSON
+         * @memberof events.RecordingInserted
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        RecordingInserted.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return RecordingInserted;
+    })();
+
+    events.RecordingDeleted = (function() {
+
+        /**
+         * Properties of a RecordingDeleted.
+         * @memberof events
+         * @interface IRecordingDeleted
+         * @property {string|null} [recordingId] RecordingDeleted recordingId
+         */
+
+        /**
+         * Constructs a new RecordingDeleted.
+         * @memberof events
+         * @classdesc Represents a RecordingDeleted.
+         * @implements IRecordingDeleted
+         * @constructor
+         * @param {events.IRecordingDeleted=} [properties] Properties to set
+         */
+        function RecordingDeleted(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * RecordingDeleted recordingId.
+         * @member {string} recordingId
+         * @memberof events.RecordingDeleted
+         * @instance
+         */
+        RecordingDeleted.prototype.recordingId = "";
+
+        /**
+         * Creates a new RecordingDeleted instance using the specified properties.
+         * @function create
+         * @memberof events.RecordingDeleted
+         * @static
+         * @param {events.IRecordingDeleted=} [properties] Properties to set
+         * @returns {events.RecordingDeleted} RecordingDeleted instance
+         */
+        RecordingDeleted.create = function create(properties) {
+            return new RecordingDeleted(properties);
+        };
+
+        /**
+         * Encodes the specified RecordingDeleted message. Does not implicitly {@link events.RecordingDeleted.verify|verify} messages.
+         * @function encode
+         * @memberof events.RecordingDeleted
+         * @static
+         * @param {events.IRecordingDeleted} message RecordingDeleted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RecordingDeleted.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.recordingId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified RecordingDeleted message, length delimited. Does not implicitly {@link events.RecordingDeleted.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.RecordingDeleted
+         * @static
+         * @param {events.IRecordingDeleted} message RecordingDeleted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RecordingDeleted.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a RecordingDeleted message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.RecordingDeleted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.RecordingDeleted} RecordingDeleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RecordingDeleted.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.RecordingDeleted();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.recordingId = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a RecordingDeleted message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.RecordingDeleted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.RecordingDeleted} RecordingDeleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RecordingDeleted.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a RecordingDeleted message.
+         * @function verify
+         * @memberof events.RecordingDeleted
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        RecordingDeleted.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                if (!$util.isString(message.recordingId))
+                    return "recordingId: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a RecordingDeleted message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.RecordingDeleted
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.RecordingDeleted} RecordingDeleted
+         */
+        RecordingDeleted.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.RecordingDeleted)
+                return object;
+            var message = new $root.events.RecordingDeleted();
+            if (object.recordingId != null)
+                message.recordingId = String(object.recordingId);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a RecordingDeleted message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.RecordingDeleted
+         * @static
+         * @param {events.RecordingDeleted} message RecordingDeleted
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        RecordingDeleted.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults)
+                object.recordingId = "";
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                object.recordingId = message.recordingId;
+            return object;
+        };
+
+        /**
+         * Converts this RecordingDeleted to JSON.
+         * @function toJSON
+         * @memberof events.RecordingDeleted
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        RecordingDeleted.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return RecordingDeleted;
+    })();
+
+    events.RecordingCognitionCompleted = (function() {
+
+        /**
+         * Properties of a RecordingCognitionCompleted.
+         * @memberof events
+         * @interface IRecordingCognitionCompleted
+         * @property {string|null} [recordingId] RecordingCognitionCompleted recordingId
+         * @property {events.RecordingCognitionCompleted.IPayload|null} [payload] RecordingCognitionCompleted payload
+         */
+
+        /**
+         * Constructs a new RecordingCognitionCompleted.
+         * @memberof events
+         * @classdesc Represents a RecordingCognitionCompleted.
+         * @implements IRecordingCognitionCompleted
+         * @constructor
+         * @param {events.IRecordingCognitionCompleted=} [properties] Properties to set
+         */
+        function RecordingCognitionCompleted(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * RecordingCognitionCompleted recordingId.
+         * @member {string} recordingId
+         * @memberof events.RecordingCognitionCompleted
+         * @instance
+         */
+        RecordingCognitionCompleted.prototype.recordingId = "";
+
+        /**
+         * RecordingCognitionCompleted payload.
+         * @member {events.RecordingCognitionCompleted.IPayload|null|undefined} payload
+         * @memberof events.RecordingCognitionCompleted
+         * @instance
+         */
+        RecordingCognitionCompleted.prototype.payload = null;
+
+        /**
+         * Creates a new RecordingCognitionCompleted instance using the specified properties.
+         * @function create
+         * @memberof events.RecordingCognitionCompleted
+         * @static
+         * @param {events.IRecordingCognitionCompleted=} [properties] Properties to set
+         * @returns {events.RecordingCognitionCompleted} RecordingCognitionCompleted instance
+         */
+        RecordingCognitionCompleted.create = function create(properties) {
+            return new RecordingCognitionCompleted(properties);
+        };
+
+        /**
+         * Encodes the specified RecordingCognitionCompleted message. Does not implicitly {@link events.RecordingCognitionCompleted.verify|verify} messages.
+         * @function encode
+         * @memberof events.RecordingCognitionCompleted
+         * @static
+         * @param {events.IRecordingCognitionCompleted} message RecordingCognitionCompleted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RecordingCognitionCompleted.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.recordingId);
+            if (message.payload != null && message.hasOwnProperty("payload"))
+                $root.events.RecordingCognitionCompleted.Payload.encode(message.payload, writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
+            return writer;
+        };
+
+        /**
+         * Encodes the specified RecordingCognitionCompleted message, length delimited. Does not implicitly {@link events.RecordingCognitionCompleted.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.RecordingCognitionCompleted
+         * @static
+         * @param {events.IRecordingCognitionCompleted} message RecordingCognitionCompleted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RecordingCognitionCompleted.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a RecordingCognitionCompleted message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.RecordingCognitionCompleted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.RecordingCognitionCompleted} RecordingCognitionCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RecordingCognitionCompleted.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.RecordingCognitionCompleted();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.recordingId = reader.string();
+                    break;
+                case 11:
+                    message.payload = $root.events.RecordingCognitionCompleted.Payload.decode(reader, reader.uint32());
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a RecordingCognitionCompleted message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.RecordingCognitionCompleted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.RecordingCognitionCompleted} RecordingCognitionCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RecordingCognitionCompleted.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a RecordingCognitionCompleted message.
+         * @function verify
+         * @memberof events.RecordingCognitionCompleted
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        RecordingCognitionCompleted.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                if (!$util.isString(message.recordingId))
+                    return "recordingId: string expected";
+            if (message.payload != null && message.hasOwnProperty("payload")) {
+                var error = $root.events.RecordingCognitionCompleted.Payload.verify(message.payload);
+                if (error)
+                    return "payload." + error;
+            }
+            return null;
+        };
+
+        /**
+         * Creates a RecordingCognitionCompleted message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.RecordingCognitionCompleted
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.RecordingCognitionCompleted} RecordingCognitionCompleted
+         */
+        RecordingCognitionCompleted.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.RecordingCognitionCompleted)
+                return object;
+            var message = new $root.events.RecordingCognitionCompleted();
+            if (object.recordingId != null)
+                message.recordingId = String(object.recordingId);
+            if (object.payload != null) {
+                if (typeof object.payload !== "object")
+                    throw TypeError(".events.RecordingCognitionCompleted.payload: object expected");
+                message.payload = $root.events.RecordingCognitionCompleted.Payload.fromObject(object.payload);
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a RecordingCognitionCompleted message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.RecordingCognitionCompleted
+         * @static
+         * @param {events.RecordingCognitionCompleted} message RecordingCognitionCompleted
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        RecordingCognitionCompleted.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.recordingId = "";
+                object.payload = null;
+            }
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                object.recordingId = message.recordingId;
+            if (message.payload != null && message.hasOwnProperty("payload"))
+                object.payload = $root.events.RecordingCognitionCompleted.Payload.toObject(message.payload, options);
+            return object;
+        };
+
+        /**
+         * Converts this RecordingCognitionCompleted to JSON.
+         * @function toJSON
+         * @memberof events.RecordingCognitionCompleted
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        RecordingCognitionCompleted.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        RecordingCognitionCompleted.Payload = (function() {
+
+            /**
+             * Properties of a Payload.
+             * @memberof events.RecordingCognitionCompleted
+             * @interface IPayload
+             * @property {string|null} [jobId] Payload jobId
+             * @property {string|null} [taskId] Payload taskId
+             * @property {string|null} [applicationId] Payload applicationId
+             * @property {number|Long|null} [organizationId] Payload organizationId
+             * @property {string|null} [libraryId] Payload libraryId
+             * @property {string|null} [indexOverride] Payload indexOverride
+             * @property {string|null} [token] Payload token
+             * @property {string|null} [assetId] Payload assetId
+             * @property {boolean|null} [skipMentionGeneration] Payload skipMentionGeneration
+             */
+
+            /**
+             * Constructs a new Payload.
+             * @memberof events.RecordingCognitionCompleted
+             * @classdesc Represents a Payload.
+             * @implements IPayload
+             * @constructor
+             * @param {events.RecordingCognitionCompleted.IPayload=} [properties] Properties to set
+             */
+            function Payload(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Payload jobId.
+             * @member {string} jobId
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @instance
+             */
+            Payload.prototype.jobId = "";
+
+            /**
+             * Payload taskId.
+             * @member {string} taskId
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @instance
+             */
+            Payload.prototype.taskId = "";
+
+            /**
+             * Payload applicationId.
+             * @member {string} applicationId
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @instance
+             */
+            Payload.prototype.applicationId = "";
+
+            /**
+             * Payload organizationId.
+             * @member {number|Long} organizationId
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @instance
+             */
+            Payload.prototype.organizationId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * Payload libraryId.
+             * @member {string} libraryId
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @instance
+             */
+            Payload.prototype.libraryId = "";
+
+            /**
+             * Payload indexOverride.
+             * @member {string} indexOverride
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @instance
+             */
+            Payload.prototype.indexOverride = "";
+
+            /**
+             * Payload token.
+             * @member {string} token
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @instance
+             */
+            Payload.prototype.token = "";
+
+            /**
+             * Payload assetId.
+             * @member {string} assetId
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @instance
+             */
+            Payload.prototype.assetId = "";
+
+            /**
+             * Payload skipMentionGeneration.
+             * @member {boolean} skipMentionGeneration
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @instance
+             */
+            Payload.prototype.skipMentionGeneration = false;
+
+            /**
+             * Creates a new Payload instance using the specified properties.
+             * @function create
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @static
+             * @param {events.RecordingCognitionCompleted.IPayload=} [properties] Properties to set
+             * @returns {events.RecordingCognitionCompleted.Payload} Payload instance
+             */
+            Payload.create = function create(properties) {
+                return new Payload(properties);
+            };
+
+            /**
+             * Encodes the specified Payload message. Does not implicitly {@link events.RecordingCognitionCompleted.Payload.verify|verify} messages.
+             * @function encode
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @static
+             * @param {events.RecordingCognitionCompleted.IPayload} message Payload message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Payload.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.jobId != null && message.hasOwnProperty("jobId"))
+                    writer.uint32(/* id 10, wireType 2 =*/82).string(message.jobId);
+                if (message.taskId != null && message.hasOwnProperty("taskId"))
+                    writer.uint32(/* id 11, wireType 2 =*/90).string(message.taskId);
+                if (message.applicationId != null && message.hasOwnProperty("applicationId"))
+                    writer.uint32(/* id 12, wireType 2 =*/98).string(message.applicationId);
+                if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                    writer.uint32(/* id 13, wireType 0 =*/104).int64(message.organizationId);
+                if (message.libraryId != null && message.hasOwnProperty("libraryId"))
+                    writer.uint32(/* id 14, wireType 2 =*/114).string(message.libraryId);
+                if (message.indexOverride != null && message.hasOwnProperty("indexOverride"))
+                    writer.uint32(/* id 15, wireType 2 =*/122).string(message.indexOverride);
+                if (message.token != null && message.hasOwnProperty("token"))
+                    writer.uint32(/* id 16, wireType 2 =*/130).string(message.token);
+                if (message.assetId != null && message.hasOwnProperty("assetId"))
+                    writer.uint32(/* id 17, wireType 2 =*/138).string(message.assetId);
+                if (message.skipMentionGeneration != null && message.hasOwnProperty("skipMentionGeneration"))
+                    writer.uint32(/* id 18, wireType 0 =*/144).bool(message.skipMentionGeneration);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified Payload message, length delimited. Does not implicitly {@link events.RecordingCognitionCompleted.Payload.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @static
+             * @param {events.RecordingCognitionCompleted.IPayload} message Payload message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Payload.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a Payload message from the specified reader or buffer.
+             * @function decode
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {events.RecordingCognitionCompleted.Payload} Payload
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Payload.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.RecordingCognitionCompleted.Payload();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 10:
+                        message.jobId = reader.string();
+                        break;
+                    case 11:
+                        message.taskId = reader.string();
+                        break;
+                    case 12:
+                        message.applicationId = reader.string();
+                        break;
+                    case 13:
+                        message.organizationId = reader.int64();
+                        break;
+                    case 14:
+                        message.libraryId = reader.string();
+                        break;
+                    case 15:
+                        message.indexOverride = reader.string();
+                        break;
+                    case 16:
+                        message.token = reader.string();
+                        break;
+                    case 17:
+                        message.assetId = reader.string();
+                        break;
+                    case 18:
+                        message.skipMentionGeneration = reader.bool();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a Payload message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {events.RecordingCognitionCompleted.Payload} Payload
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Payload.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a Payload message.
+             * @function verify
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Payload.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.jobId != null && message.hasOwnProperty("jobId"))
+                    if (!$util.isString(message.jobId))
+                        return "jobId: string expected";
+                if (message.taskId != null && message.hasOwnProperty("taskId"))
+                    if (!$util.isString(message.taskId))
+                        return "taskId: string expected";
+                if (message.applicationId != null && message.hasOwnProperty("applicationId"))
+                    if (!$util.isString(message.applicationId))
+                        return "applicationId: string expected";
+                if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                    if (!$util.isInteger(message.organizationId) && !(message.organizationId && $util.isInteger(message.organizationId.low) && $util.isInteger(message.organizationId.high)))
+                        return "organizationId: integer|Long expected";
+                if (message.libraryId != null && message.hasOwnProperty("libraryId"))
+                    if (!$util.isString(message.libraryId))
+                        return "libraryId: string expected";
+                if (message.indexOverride != null && message.hasOwnProperty("indexOverride"))
+                    if (!$util.isString(message.indexOverride))
+                        return "indexOverride: string expected";
+                if (message.token != null && message.hasOwnProperty("token"))
+                    if (!$util.isString(message.token))
+                        return "token: string expected";
+                if (message.assetId != null && message.hasOwnProperty("assetId"))
+                    if (!$util.isString(message.assetId))
+                        return "assetId: string expected";
+                if (message.skipMentionGeneration != null && message.hasOwnProperty("skipMentionGeneration"))
+                    if (typeof message.skipMentionGeneration !== "boolean")
+                        return "skipMentionGeneration: boolean expected";
+                return null;
+            };
+
+            /**
+             * Creates a Payload message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {events.RecordingCognitionCompleted.Payload} Payload
+             */
+            Payload.fromObject = function fromObject(object) {
+                if (object instanceof $root.events.RecordingCognitionCompleted.Payload)
+                    return object;
+                var message = new $root.events.RecordingCognitionCompleted.Payload();
+                if (object.jobId != null)
+                    message.jobId = String(object.jobId);
+                if (object.taskId != null)
+                    message.taskId = String(object.taskId);
+                if (object.applicationId != null)
+                    message.applicationId = String(object.applicationId);
+                if (object.organizationId != null)
+                    if ($util.Long)
+                        (message.organizationId = $util.Long.fromValue(object.organizationId)).unsigned = false;
+                    else if (typeof object.organizationId === "string")
+                        message.organizationId = parseInt(object.organizationId, 10);
+                    else if (typeof object.organizationId === "number")
+                        message.organizationId = object.organizationId;
+                    else if (typeof object.organizationId === "object")
+                        message.organizationId = new $util.LongBits(object.organizationId.low >>> 0, object.organizationId.high >>> 0).toNumber();
+                if (object.libraryId != null)
+                    message.libraryId = String(object.libraryId);
+                if (object.indexOverride != null)
+                    message.indexOverride = String(object.indexOverride);
+                if (object.token != null)
+                    message.token = String(object.token);
+                if (object.assetId != null)
+                    message.assetId = String(object.assetId);
+                if (object.skipMentionGeneration != null)
+                    message.skipMentionGeneration = Boolean(object.skipMentionGeneration);
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a Payload message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @static
+             * @param {events.RecordingCognitionCompleted.Payload} message Payload
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Payload.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.jobId = "";
+                    object.taskId = "";
+                    object.applicationId = "";
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.organizationId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.organizationId = options.longs === String ? "0" : 0;
+                    object.libraryId = "";
+                    object.indexOverride = "";
+                    object.token = "";
+                    object.assetId = "";
+                    object.skipMentionGeneration = false;
+                }
+                if (message.jobId != null && message.hasOwnProperty("jobId"))
+                    object.jobId = message.jobId;
+                if (message.taskId != null && message.hasOwnProperty("taskId"))
+                    object.taskId = message.taskId;
+                if (message.applicationId != null && message.hasOwnProperty("applicationId"))
+                    object.applicationId = message.applicationId;
+                if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                    if (typeof message.organizationId === "number")
+                        object.organizationId = options.longs === String ? String(message.organizationId) : message.organizationId;
+                    else
+                        object.organizationId = options.longs === String ? $util.Long.prototype.toString.call(message.organizationId) : options.longs === Number ? new $util.LongBits(message.organizationId.low >>> 0, message.organizationId.high >>> 0).toNumber() : message.organizationId;
+                if (message.libraryId != null && message.hasOwnProperty("libraryId"))
+                    object.libraryId = message.libraryId;
+                if (message.indexOverride != null && message.hasOwnProperty("indexOverride"))
+                    object.indexOverride = message.indexOverride;
+                if (message.token != null && message.hasOwnProperty("token"))
+                    object.token = message.token;
+                if (message.assetId != null && message.hasOwnProperty("assetId"))
+                    object.assetId = message.assetId;
+                if (message.skipMentionGeneration != null && message.hasOwnProperty("skipMentionGeneration"))
+                    object.skipMentionGeneration = message.skipMentionGeneration;
+                return object;
+            };
+
+            /**
+             * Converts this Payload to JSON.
+             * @function toJSON
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Payload.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return Payload;
+        })();
+
+        return RecordingCognitionCompleted;
+    })();
+
+    events.TaskQueued = (function() {
+
+        /**
+         * Properties of a TaskQueued.
+         * @memberof events
+         * @interface ITaskQueued
+         * @property {string|null} [taskId] TaskQueued taskId
+         * @property {string|null} [timestampMs] TaskQueued timestampMs
+         */
+
+        /**
+         * Constructs a new TaskQueued.
+         * @memberof events
+         * @classdesc Represents a TaskQueued.
+         * @implements ITaskQueued
+         * @constructor
+         * @param {events.ITaskQueued=} [properties] Properties to set
+         */
+        function TaskQueued(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * TaskQueued taskId.
+         * @member {string} taskId
+         * @memberof events.TaskQueued
+         * @instance
+         */
+        TaskQueued.prototype.taskId = "";
+
+        /**
+         * TaskQueued timestampMs.
+         * @member {string} timestampMs
+         * @memberof events.TaskQueued
+         * @instance
+         */
+        TaskQueued.prototype.timestampMs = "";
+
+        /**
+         * Creates a new TaskQueued instance using the specified properties.
+         * @function create
+         * @memberof events.TaskQueued
+         * @static
+         * @param {events.ITaskQueued=} [properties] Properties to set
+         * @returns {events.TaskQueued} TaskQueued instance
+         */
+        TaskQueued.create = function create(properties) {
+            return new TaskQueued(properties);
+        };
+
+        /**
+         * Encodes the specified TaskQueued message. Does not implicitly {@link events.TaskQueued.verify|verify} messages.
+         * @function encode
+         * @memberof events.TaskQueued
+         * @static
+         * @param {events.ITaskQueued} message TaskQueued message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        TaskQueued.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.taskId);
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.timestampMs);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified TaskQueued message, length delimited. Does not implicitly {@link events.TaskQueued.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.TaskQueued
+         * @static
+         * @param {events.ITaskQueued} message TaskQueued message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        TaskQueued.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a TaskQueued message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.TaskQueued
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.TaskQueued} TaskQueued
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        TaskQueued.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.TaskQueued();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.taskId = reader.string();
+                    break;
+                case 11:
+                    message.timestampMs = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a TaskQueued message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.TaskQueued
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.TaskQueued} TaskQueued
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        TaskQueued.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a TaskQueued message.
+         * @function verify
+         * @memberof events.TaskQueued
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        TaskQueued.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                if (!$util.isString(message.taskId))
+                    return "taskId: string expected";
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                if (!$util.isString(message.timestampMs))
+                    return "timestampMs: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a TaskQueued message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.TaskQueued
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.TaskQueued} TaskQueued
+         */
+        TaskQueued.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.TaskQueued)
+                return object;
+            var message = new $root.events.TaskQueued();
+            if (object.taskId != null)
+                message.taskId = String(object.taskId);
+            if (object.timestampMs != null)
+                message.timestampMs = String(object.timestampMs);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a TaskQueued message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.TaskQueued
+         * @static
+         * @param {events.TaskQueued} message TaskQueued
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        TaskQueued.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.taskId = "";
+                object.timestampMs = "";
+            }
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                object.taskId = message.taskId;
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                object.timestampMs = message.timestampMs;
+            return object;
+        };
+
+        /**
+         * Converts this TaskQueued to JSON.
+         * @function toJSON
+         * @memberof events.TaskQueued
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        TaskQueued.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return TaskQueued;
+    })();
+
+    events.TaskUpdated = (function() {
+
+        /**
+         * Properties of a TaskUpdated.
+         * @memberof events
+         * @interface ITaskUpdated
+         * @property {string|null} [taskId] TaskUpdated taskId
+         * @property {string|null} [timestampMs] TaskUpdated timestampMs
+         * @property {string|null} [taskStatus] TaskUpdated taskStatus
+         */
+
+        /**
+         * Constructs a new TaskUpdated.
+         * @memberof events
+         * @classdesc Represents a TaskUpdated.
+         * @implements ITaskUpdated
+         * @constructor
+         * @param {events.ITaskUpdated=} [properties] Properties to set
+         */
+        function TaskUpdated(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * TaskUpdated taskId.
+         * @member {string} taskId
+         * @memberof events.TaskUpdated
+         * @instance
+         */
+        TaskUpdated.prototype.taskId = "";
+
+        /**
+         * TaskUpdated timestampMs.
+         * @member {string} timestampMs
+         * @memberof events.TaskUpdated
+         * @instance
+         */
+        TaskUpdated.prototype.timestampMs = "";
+
+        /**
+         * TaskUpdated taskStatus.
+         * @member {string} taskStatus
+         * @memberof events.TaskUpdated
+         * @instance
+         */
+        TaskUpdated.prototype.taskStatus = "";
+
+        /**
+         * Creates a new TaskUpdated instance using the specified properties.
+         * @function create
+         * @memberof events.TaskUpdated
+         * @static
+         * @param {events.ITaskUpdated=} [properties] Properties to set
+         * @returns {events.TaskUpdated} TaskUpdated instance
+         */
+        TaskUpdated.create = function create(properties) {
+            return new TaskUpdated(properties);
+        };
+
+        /**
+         * Encodes the specified TaskUpdated message. Does not implicitly {@link events.TaskUpdated.verify|verify} messages.
+         * @function encode
+         * @memberof events.TaskUpdated
+         * @static
+         * @param {events.ITaskUpdated} message TaskUpdated message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        TaskUpdated.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.taskId);
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.timestampMs);
+            if (message.taskStatus != null && message.hasOwnProperty("taskStatus"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.taskStatus);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified TaskUpdated message, length delimited. Does not implicitly {@link events.TaskUpdated.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.TaskUpdated
+         * @static
+         * @param {events.ITaskUpdated} message TaskUpdated message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        TaskUpdated.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a TaskUpdated message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.TaskUpdated
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.TaskUpdated} TaskUpdated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        TaskUpdated.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.TaskUpdated();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.taskId = reader.string();
+                    break;
+                case 11:
+                    message.timestampMs = reader.string();
+                    break;
+                case 12:
+                    message.taskStatus = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a TaskUpdated message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.TaskUpdated
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.TaskUpdated} TaskUpdated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        TaskUpdated.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a TaskUpdated message.
+         * @function verify
+         * @memberof events.TaskUpdated
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        TaskUpdated.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                if (!$util.isString(message.taskId))
+                    return "taskId: string expected";
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                if (!$util.isString(message.timestampMs))
+                    return "timestampMs: string expected";
+            if (message.taskStatus != null && message.hasOwnProperty("taskStatus"))
+                if (!$util.isString(message.taskStatus))
+                    return "taskStatus: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a TaskUpdated message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.TaskUpdated
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.TaskUpdated} TaskUpdated
+         */
+        TaskUpdated.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.TaskUpdated)
+                return object;
+            var message = new $root.events.TaskUpdated();
+            if (object.taskId != null)
+                message.taskId = String(object.taskId);
+            if (object.timestampMs != null)
+                message.timestampMs = String(object.timestampMs);
+            if (object.taskStatus != null)
+                message.taskStatus = String(object.taskStatus);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a TaskUpdated message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.TaskUpdated
+         * @static
+         * @param {events.TaskUpdated} message TaskUpdated
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        TaskUpdated.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.taskId = "";
+                object.timestampMs = "";
+                object.taskStatus = "";
+            }
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                object.taskId = message.taskId;
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                object.timestampMs = message.timestampMs;
+            if (message.taskStatus != null && message.hasOwnProperty("taskStatus"))
+                object.taskStatus = message.taskStatus;
+            return object;
+        };
+
+        /**
+         * Converts this TaskUpdated to JSON.
+         * @function toJSON
+         * @memberof events.TaskUpdated
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        TaskUpdated.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return TaskUpdated;
+    })();
+
+    events.TaskCompleted = (function() {
+
+        /**
+         * Properties of a TaskCompleted.
+         * @memberof events
+         * @interface ITaskCompleted
+         * @property {string|null} [taskId] TaskCompleted taskId
+         * @property {string|null} [timestampMs] TaskCompleted timestampMs
+         * @property {string|null} [taskStatus] TaskCompleted taskStatus
+         */
+
+        /**
+         * Constructs a new TaskCompleted.
+         * @memberof events
+         * @classdesc Represents a TaskCompleted.
+         * @implements ITaskCompleted
+         * @constructor
+         * @param {events.ITaskCompleted=} [properties] Properties to set
+         */
+        function TaskCompleted(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * TaskCompleted taskId.
+         * @member {string} taskId
+         * @memberof events.TaskCompleted
+         * @instance
+         */
+        TaskCompleted.prototype.taskId = "";
+
+        /**
+         * TaskCompleted timestampMs.
+         * @member {string} timestampMs
+         * @memberof events.TaskCompleted
+         * @instance
+         */
+        TaskCompleted.prototype.timestampMs = "";
+
+        /**
+         * TaskCompleted taskStatus.
+         * @member {string} taskStatus
+         * @memberof events.TaskCompleted
+         * @instance
+         */
+        TaskCompleted.prototype.taskStatus = "";
+
+        /**
+         * Creates a new TaskCompleted instance using the specified properties.
+         * @function create
+         * @memberof events.TaskCompleted
+         * @static
+         * @param {events.ITaskCompleted=} [properties] Properties to set
+         * @returns {events.TaskCompleted} TaskCompleted instance
+         */
+        TaskCompleted.create = function create(properties) {
+            return new TaskCompleted(properties);
+        };
+
+        /**
+         * Encodes the specified TaskCompleted message. Does not implicitly {@link events.TaskCompleted.verify|verify} messages.
+         * @function encode
+         * @memberof events.TaskCompleted
+         * @static
+         * @param {events.ITaskCompleted} message TaskCompleted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        TaskCompleted.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.taskId);
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.timestampMs);
+            if (message.taskStatus != null && message.hasOwnProperty("taskStatus"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.taskStatus);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified TaskCompleted message, length delimited. Does not implicitly {@link events.TaskCompleted.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.TaskCompleted
+         * @static
+         * @param {events.ITaskCompleted} message TaskCompleted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        TaskCompleted.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a TaskCompleted message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.TaskCompleted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.TaskCompleted} TaskCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        TaskCompleted.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.TaskCompleted();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.taskId = reader.string();
+                    break;
+                case 11:
+                    message.timestampMs = reader.string();
+                    break;
+                case 12:
+                    message.taskStatus = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a TaskCompleted message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.TaskCompleted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.TaskCompleted} TaskCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        TaskCompleted.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a TaskCompleted message.
+         * @function verify
+         * @memberof events.TaskCompleted
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        TaskCompleted.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                if (!$util.isString(message.taskId))
+                    return "taskId: string expected";
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                if (!$util.isString(message.timestampMs))
+                    return "timestampMs: string expected";
+            if (message.taskStatus != null && message.hasOwnProperty("taskStatus"))
+                if (!$util.isString(message.taskStatus))
+                    return "taskStatus: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a TaskCompleted message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.TaskCompleted
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.TaskCompleted} TaskCompleted
+         */
+        TaskCompleted.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.TaskCompleted)
+                return object;
+            var message = new $root.events.TaskCompleted();
+            if (object.taskId != null)
+                message.taskId = String(object.taskId);
+            if (object.timestampMs != null)
+                message.timestampMs = String(object.timestampMs);
+            if (object.taskStatus != null)
+                message.taskStatus = String(object.taskStatus);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a TaskCompleted message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.TaskCompleted
+         * @static
+         * @param {events.TaskCompleted} message TaskCompleted
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        TaskCompleted.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.taskId = "";
+                object.timestampMs = "";
+                object.taskStatus = "";
+            }
+            if (message.taskId != null && message.hasOwnProperty("taskId"))
+                object.taskId = message.taskId;
+            if (message.timestampMs != null && message.hasOwnProperty("timestampMs"))
+                object.timestampMs = message.timestampMs;
+            if (message.taskStatus != null && message.hasOwnProperty("taskStatus"))
+                object.taskStatus = message.taskStatus;
+            return object;
+        };
+
+        /**
+         * Converts this TaskCompleted to JSON.
+         * @function toJSON
+         * @memberof events.TaskCompleted
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        TaskCompleted.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return TaskCompleted;
     })();
 
     events.TriggerCacheRefresh = (function() {
