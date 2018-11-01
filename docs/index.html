@@ -4,7 +4,7 @@
   <head>
     <title>Protocol Documentation</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic"/>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic"/>
     <style>
       body {
         width: 60em;
@@ -359,6 +359,21 @@
               
                 <li>
                   <a href="#events.JobFailed"><span class="badge">M</span>JobFailed</a>
+                </li>
+              
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#events%2fmention.proto">events/mention.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#events.MentionGenerated"><span class="badge">M</span>MentionGenerated</a>
                 </li>
               
               
@@ -1935,6 +1950,50 @@ It will be propagate through the system. Similar to correlationId </p></td>
                   <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+
+      
+
+      
+
+      
+    
+      
+      <div class="file-heading">
+        <h2 id="events/mention.proto">events/mention.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id="events.MentionGenerated">MentionGenerated</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>event</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>event name </p></td>
+                </tr>
+              
+                <tr>
+                  <td>type</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>event type </p></td>
                 </tr>
               
             </tbody>

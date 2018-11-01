@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "events/core.proto";
+
+package events;
+
+option go_package = "events";
+
+message MentionGenerated {
+    string event = 1;                 // event name
+    string type = 2;                  // event type
+}

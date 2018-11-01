@@ -7565,6 +7565,216 @@ $root.events = (function() {
         return JobFailed;
     })();
 
+    events.MentionGenerated = (function() {
+
+        /**
+         * Properties of a MentionGenerated.
+         * @memberof events
+         * @interface IMentionGenerated
+         * @property {string|null} [event] MentionGenerated event
+         * @property {string|null} [type] MentionGenerated type
+         */
+
+        /**
+         * Constructs a new MentionGenerated.
+         * @memberof events
+         * @classdesc Represents a MentionGenerated.
+         * @implements IMentionGenerated
+         * @constructor
+         * @param {events.IMentionGenerated=} [properties] Properties to set
+         */
+        function MentionGenerated(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * MentionGenerated event.
+         * @member {string} event
+         * @memberof events.MentionGenerated
+         * @instance
+         */
+        MentionGenerated.prototype.event = "";
+
+        /**
+         * MentionGenerated type.
+         * @member {string} type
+         * @memberof events.MentionGenerated
+         * @instance
+         */
+        MentionGenerated.prototype.type = "";
+
+        /**
+         * Creates a new MentionGenerated instance using the specified properties.
+         * @function create
+         * @memberof events.MentionGenerated
+         * @static
+         * @param {events.IMentionGenerated=} [properties] Properties to set
+         * @returns {events.MentionGenerated} MentionGenerated instance
+         */
+        MentionGenerated.create = function create(properties) {
+            return new MentionGenerated(properties);
+        };
+
+        /**
+         * Encodes the specified MentionGenerated message. Does not implicitly {@link events.MentionGenerated.verify|verify} messages.
+         * @function encode
+         * @memberof events.MentionGenerated
+         * @static
+         * @param {events.IMentionGenerated} message MentionGenerated message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        MentionGenerated.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.event != null && message.hasOwnProperty("event"))
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.event);
+            if (message.type != null && message.hasOwnProperty("type"))
+                writer.uint32(/* id 2, wireType 2 =*/18).string(message.type);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified MentionGenerated message, length delimited. Does not implicitly {@link events.MentionGenerated.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.MentionGenerated
+         * @static
+         * @param {events.IMentionGenerated} message MentionGenerated message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        MentionGenerated.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a MentionGenerated message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.MentionGenerated
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.MentionGenerated} MentionGenerated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        MentionGenerated.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.MentionGenerated();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.event = reader.string();
+                    break;
+                case 2:
+                    message.type = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a MentionGenerated message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.MentionGenerated
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.MentionGenerated} MentionGenerated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        MentionGenerated.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a MentionGenerated message.
+         * @function verify
+         * @memberof events.MentionGenerated
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        MentionGenerated.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.event != null && message.hasOwnProperty("event"))
+                if (!$util.isString(message.event))
+                    return "event: string expected";
+            if (message.type != null && message.hasOwnProperty("type"))
+                if (!$util.isString(message.type))
+                    return "type: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a MentionGenerated message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.MentionGenerated
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.MentionGenerated} MentionGenerated
+         */
+        MentionGenerated.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.MentionGenerated)
+                return object;
+            var message = new $root.events.MentionGenerated();
+            if (object.event != null)
+                message.event = String(object.event);
+            if (object.type != null)
+                message.type = String(object.type);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a MentionGenerated message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.MentionGenerated
+         * @static
+         * @param {events.MentionGenerated} message MentionGenerated
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        MentionGenerated.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.event = "";
+                object.type = "";
+            }
+            if (message.event != null && message.hasOwnProperty("event"))
+                object.event = message.event;
+            if (message.type != null && message.hasOwnProperty("type"))
+                object.type = message.type;
+            return object;
+        };
+
+        /**
+         * Converts this MentionGenerated to JSON.
+         * @function toJSON
+         * @memberof events.MentionGenerated
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        MentionGenerated.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return MentionGenerated;
+    })();
+
     events.MentionModifiedData = (function() {
 
         /**
