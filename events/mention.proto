@@ -7,6 +7,7 @@ package events;
 option go_package = "events";
 
 message MentionGenerated {
-    string event = 1;                 // event name
-    string type = 2;                  // event type
+    int64 mention_id = 1;             // the mention id
+    int64 tracking_unit_id = 2;       // the tracking unit id
+    int64 organization_id = 3;        // the org id
 }
