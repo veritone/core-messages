@@ -2,14 +2,22 @@
 // file: events/mention.proto
 
 import * as jspb from "google-protobuf";
-import * as events_core_pb from "../events/core_pb";
 
 export class MentionGenerated extends jspb.Message {
-  getEvent(): string;
-  setEvent(value: string): void;
+  getMentionId(): number;
+  setMentionId(value: number): void;
 
-  getType(): string;
-  setType(value: string): void;
+  getWatchlistId(): number;
+  setWatchlistId(value: number): void;
+
+  getOrganizationId(): number;
+  setOrganizationId(value: number): void;
+
+  getScheduleId(): number;
+  setScheduleId(value: number): void;
+
+  getTdoId(): number;
+  setTdoId(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MentionGenerated.AsObject;
@@ -23,8 +31,11 @@ export class MentionGenerated extends jspb.Message {
 
 export namespace MentionGenerated {
   export type AsObject = {
-    event: string,
-    type: string,
+    mentionId: number,
+    watchlistId: number,
+    organizationId: number,
+    scheduleId: number,
+    tdoId: number,
   }
 }
 

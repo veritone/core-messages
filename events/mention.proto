@@ -1,16 +1,13 @@
+
 syntax = "proto3";
-
-import "events/core.proto";
-
 package events;
-
 option go_package = "events";
 
 message MentionGenerated {
-    int64 mention_id = 1;             // the mention id
-    int64 watchlist_id = 2;           // the watchlist/tracking unit id
-    int64 organization_id = 3;        // the org id
+    int64 mention_id = 10;             // the mention id
+    int64 watchlist_id = 12;           // the watchlist/tracking unit id
+    int64 organization_id = 14;        // the org id
 
-    int64 schedule_id = 4;            // the schedule/program id
-    int64 tdo_id = 5;                 // the tdo/media/recording id
+    int64 schedule_id = 16;            // the schedule/program id
+    int64 tdo_id = 18;                 // the tdo/media/recording id
 }

@@ -3144,11 +3144,20 @@ export namespace events {
     /** Properties of a MentionGenerated. */
     interface IMentionGenerated {
 
-        /** MentionGenerated event */
-        event?: (string|null);
+        /** MentionGenerated mentionId */
+        mentionId?: (number|Long|null);
 
-        /** MentionGenerated type */
-        type?: (string|null);
+        /** MentionGenerated watchlistId */
+        watchlistId?: (number|Long|null);
+
+        /** MentionGenerated organizationId */
+        organizationId?: (number|Long|null);
+
+        /** MentionGenerated scheduleId */
+        scheduleId?: (number|Long|null);
+
+        /** MentionGenerated tdoId */
+        tdoId?: (number|Long|null);
     }
 
     /** Represents a MentionGenerated. */
@@ -3160,11 +3169,20 @@ export namespace events {
          */
         constructor(properties?: events.IMentionGenerated);
 
-        /** MentionGenerated event. */
-        public event: string;
+        /** MentionGenerated mentionId. */
+        public mentionId: (number|Long);
 
-        /** MentionGenerated type. */
-        public type: string;
+        /** MentionGenerated watchlistId. */
+        public watchlistId: (number|Long);
+
+        /** MentionGenerated organizationId. */
+        public organizationId: (number|Long);
+
+        /** MentionGenerated scheduleId. */
+        public scheduleId: (number|Long);
+
+        /** MentionGenerated tdoId. */
+        public tdoId: (number|Long);
 
         /**
          * Creates a new MentionGenerated instance using the specified properties.
