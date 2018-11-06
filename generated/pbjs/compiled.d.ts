@@ -3150,9 +3150,6 @@ export namespace events {
         /** MentionGenerated watchlistId */
         watchlistId?: (number|Long|null);
 
-        /** MentionGenerated organizationId */
-        organizationId?: (number|Long|null);
-
         /** MentionGenerated scheduleId */
         scheduleId?: (number|Long|null);
 
@@ -3174,9 +3171,6 @@ export namespace events {
 
         /** MentionGenerated watchlistId. */
         public watchlistId: (number|Long);
-
-        /** MentionGenerated organizationId. */
-        public organizationId: (number|Long);
 
         /** MentionGenerated scheduleId. */
         public scheduleId: (number|Long);

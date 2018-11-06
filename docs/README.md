@@ -813,7 +813,6 @@
 | ----- | ---- | ----- | ----------- |
 | mention_id | [int64](#int64) |  | the mention id |
 | watchlist_id | [int64](#int64) |  | the watchlist/tracking unit id |
-| organization_id | [int64](#int64) |  | the org id |
 | schedule_id | [int64](#int64) |  | the schedule/program id |
 | tdo_id | [int64](#int64) |  | the tdo/media/recording id |
 

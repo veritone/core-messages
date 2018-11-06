@@ -61,7 +61,6 @@ proto.events.MentionGenerated.toObject = function(includeInstance, msg) {
   var f, obj = {
     mentionId: jspb.Message.getFieldWithDefault(msg, 10, 0),
     watchlistId: jspb.Message.getFieldWithDefault(msg, 12, 0),
-    organizationId: jspb.Message.getFieldWithDefault(msg, 14, 0),
     scheduleId: jspb.Message.getFieldWithDefault(msg, 16, 0),
     tdoId: jspb.Message.getFieldWithDefault(msg, 18, 0)
   };
@@ -107,10 +106,6 @@ proto.events.MentionGenerated.deserializeBinaryFromReader = function(msg, reader
     case 12:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setWatchlistId(value);
-      break;
-    case 14:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setOrganizationId(value);
       break;
     case 16:
       var value = /** @type {number} */ (reader.readInt64());
@@ -163,13 +158,6 @@ proto.events.MentionGenerated.serializeBinaryToWriter = function(message, writer
       f
     );
   }
-  f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeInt64(
-      14,
-      f
-    );
-  }
   f = message.getScheduleId();
   if (f !== 0) {
     writer.writeInt64(
@@ -214,21 +202,6 @@ proto.events.MentionGenerated.prototype.getWatchlistId = function() {
 /** @param {number} value */
 proto.events.MentionGenerated.prototype.setWatchlistId = function(value) {
   jspb.Message.setProto3IntField(this, 12, value);
-};
-
-
-/**
- * optional int64 organization_id = 14;
- * @return {number}
- */
-proto.events.MentionGenerated.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
-};
-
-
-/** @param {number} value */
-proto.events.MentionGenerated.prototype.setOrganizationId = function(value) {
-  jspb.Message.setProto3IntField(this, 14, value);
 };
 
 

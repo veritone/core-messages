@@ -6,7 +6,6 @@ option go_package = "events";
 message MentionGenerated {
     int64 mention_id = 10;             // the mention id
     int64 watchlist_id = 12;           // the watchlist/tracking unit id
-    int64 organization_id = 14;        // the org id
 
     int64 schedule_id = 16;            // the schedule/program id
     int64 tdo_id = 18;                 // the tdo/media/recording id

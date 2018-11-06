@@ -7573,7 +7573,6 @@ $root.events = (function() {
          * @interface IMentionGenerated
          * @property {number|Long|null} [mentionId] MentionGenerated mentionId
          * @property {number|Long|null} [watchlistId] MentionGenerated watchlistId
-         * @property {number|Long|null} [organizationId] MentionGenerated organizationId
          * @property {number|Long|null} [scheduleId] MentionGenerated scheduleId
          * @property {number|Long|null} [tdoId] MentionGenerated tdoId
          */
@@ -7608,14 +7607,6 @@ $root.events = (function() {
          * @instance
          */
         MentionGenerated.prototype.watchlistId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
-
-        /**
-         * MentionGenerated organizationId.
-         * @member {number|Long} organizationId
-         * @memberof events.MentionGenerated
-         * @instance
-         */
-        MentionGenerated.prototype.organizationId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
         /**
          * MentionGenerated scheduleId.
@@ -7661,8 +7652,6 @@ $root.events = (function() {
                 writer.uint32(/* id 10, wireType 0 =*/80).int64(message.mentionId);
             if (message.watchlistId != null && message.hasOwnProperty("watchlistId"))
                 writer.uint32(/* id 12, wireType 0 =*/96).int64(message.watchlistId);
-            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
-                writer.uint32(/* id 14, wireType 0 =*/112).int64(message.organizationId);
             if (message.scheduleId != null && message.hasOwnProperty("scheduleId"))
                 writer.uint32(/* id 16, wireType 0 =*/128).int64(message.scheduleId);
             if (message.tdoId != null && message.hasOwnProperty("tdoId"))
@@ -7706,9 +7695,6 @@ $root.events = (function() {
                     break;
                 case 12:
                     message.watchlistId = reader.int64();
-                    break;
-                case 14:
-                    message.organizationId = reader.int64();
                     break;
                 case 16:
                     message.scheduleId = reader.int64();
@@ -7757,9 +7743,6 @@ $root.events = (function() {
             if (message.watchlistId != null && message.hasOwnProperty("watchlistId"))
                 if (!$util.isInteger(message.watchlistId) && !(message.watchlistId && $util.isInteger(message.watchlistId.low) && $util.isInteger(message.watchlistId.high)))
                     return "watchlistId: integer|Long expected";
-            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
-                if (!$util.isInteger(message.organizationId) && !(message.organizationId && $util.isInteger(message.organizationId.low) && $util.isInteger(message.organizationId.high)))
-                    return "organizationId: integer|Long expected";
             if (message.scheduleId != null && message.hasOwnProperty("scheduleId"))
                 if (!$util.isInteger(message.scheduleId) && !(message.scheduleId && $util.isInteger(message.scheduleId.low) && $util.isInteger(message.scheduleId.high)))
                     return "scheduleId: integer|Long expected";
@@ -7799,15 +7782,6 @@ $root.events = (function() {
                     message.watchlistId = object.watchlistId;
                 else if (typeof object.watchlistId === "object")
                     message.watchlistId = new $util.LongBits(object.watchlistId.low >>> 0, object.watchlistId.high >>> 0).toNumber();
-            if (object.organizationId != null)
-                if ($util.Long)
-                    (message.organizationId = $util.Long.fromValue(object.organizationId)).unsigned = false;
-                else if (typeof object.organizationId === "string")
-                    message.organizationId = parseInt(object.organizationId, 10);
-                else if (typeof object.organizationId === "number")
-                    message.organizationId = object.organizationId;
-                else if (typeof object.organizationId === "object")
-                    message.organizationId = new $util.LongBits(object.organizationId.low >>> 0, object.organizationId.high >>> 0).toNumber();
             if (object.scheduleId != null)
                 if ($util.Long)
                     (message.scheduleId = $util.Long.fromValue(object.scheduleId)).unsigned = false;
@@ -7855,11 +7829,6 @@ $root.events = (function() {
                     object.watchlistId = options.longs === String ? "0" : 0;
                 if ($util.Long) {
                     var long = new $util.Long(0, 0, false);
-                    object.organizationId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
-                } else
-                    object.organizationId = options.longs === String ? "0" : 0;
-                if ($util.Long) {
-                    var long = new $util.Long(0, 0, false);
                     object.scheduleId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
                 } else
                     object.scheduleId = options.longs === String ? "0" : 0;
@@ -7879,11 +7848,6 @@ $root.events = (function() {
                     object.watchlistId = options.longs === String ? String(message.watchlistId) : message.watchlistId;
                 else
                     object.watchlistId = options.longs === String ? $util.Long.prototype.toString.call(message.watchlistId) : options.longs === Number ? new $util.LongBits(message.watchlistId.low >>> 0, message.watchlistId.high >>> 0).toNumber() : message.watchlistId;
-            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
-                if (typeof message.organizationId === "number")
-                    object.organizationId = options.longs === String ? String(message.organizationId) : message.organizationId;
-                else
-                    object.organizationId = options.longs === String ? $util.Long.prototype.toString.call(message.organizationId) : options.longs === Number ? new $util.LongBits(message.organizationId.low >>> 0, message.organizationId.high >>> 0).toNumber() : message.organizationId;
             if (message.scheduleId != null && message.hasOwnProperty("scheduleId"))
                 if (typeof message.scheduleId === "number")
                     object.scheduleId = options.longs === String ? String(message.scheduleId) : message.scheduleId;

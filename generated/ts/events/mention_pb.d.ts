@@ -10,9 +10,6 @@ export class MentionGenerated extends jspb.Message {
   getWatchlistId(): number;
   setWatchlistId(value: number): void;
 
-  getOrganizationId(): number;
-  setOrganizationId(value: number): void;
-
   getScheduleId(): number;
   setScheduleId(value: number): void;
 
@@ -33,7 +30,6 @@ export namespace MentionGenerated {
   export type AsObject = {
     mentionId: number,
     watchlistId: number,
-    organizationId: number,
     scheduleId: number,
     tdoId: number,
   }
