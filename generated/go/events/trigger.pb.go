@@ -3,9 +3,11 @@
 
 package events
 
-import proto "github.com/golang/protobuf/proto"
-import fmt "fmt"
-import math "math"
+import (
+	fmt "fmt"
+	proto "github.com/golang/protobuf/proto"
+	math "math"
+)
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ = proto.Marshal
@@ -28,16 +30,17 @@ func (m *TriggerCacheRefresh) Reset()         { *m = TriggerCacheRefresh{} }
 func (m *TriggerCacheRefresh) String() string { return proto.CompactTextString(m) }
 func (*TriggerCacheRefresh) ProtoMessage()    {}
 func (*TriggerCacheRefresh) Descriptor() ([]byte, []int) {
-	return fileDescriptor_trigger_0d7e98b4ee5c73ae, []int{0}
+	return fileDescriptor_644e360740f43eb0, []int{0}
 }
+
 func (m *TriggerCacheRefresh) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TriggerCacheRefresh.Unmarshal(m, b)
 }
 func (m *TriggerCacheRefresh) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_TriggerCacheRefresh.Marshal(b, m, deterministic)
 }
-func (dst *TriggerCacheRefresh) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_TriggerCacheRefresh.Merge(dst, src)
+func (m *TriggerCacheRefresh) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_TriggerCacheRefresh.Merge(m, src)
 }
 func (m *TriggerCacheRefresh) XXX_Size() int {
 	return xxx_messageInfo_TriggerCacheRefresh.Size(m)
@@ -52,9 +55,9 @@ func init() {
 	proto.RegisterType((*TriggerCacheRefresh)(nil), "events.TriggerCacheRefresh")
 }
 
-func init() { proto.RegisterFile("events/trigger.proto", fileDescriptor_trigger_0d7e98b4ee5c73ae) }
+func init() { proto.RegisterFile("events/trigger.proto", fileDescriptor_644e360740f43eb0) }
 
-var fileDescriptor_trigger_0d7e98b4ee5c73ae = []byte{
+var fileDescriptor_644e360740f43eb0 = []byte{
 	// 79 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x12, 0x49, 0x2d, 0x4b, 0xcd,
 	0x2b, 0x29, 0xd6, 0x2f, 0x29, 0xca, 0x4c, 0x4f, 0x4f, 0x2d, 0xd2, 0x2b, 0x28, 0xca, 0x2f, 0xc9,

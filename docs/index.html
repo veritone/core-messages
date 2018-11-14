@@ -384,6 +384,25 @@
         
           
           <li>
+            <a href="#events%2fmention_generation.proto">events/mention_generation.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#events.MentionGenerateMediaCompleted"><span class="badge">M</span>MentionGenerateMediaCompleted</a>
+                </li>
+              
+                <li>
+                  <a href="#events.MentionGenerateWatchlistCompleted"><span class="badge">M</span>MentionGenerateWatchlistCompleted</a>
+                </li>
+              
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
             <a href="#events%2fmention_notification.proto">events/mention_notification.proto</a>
             <ul>
               
@@ -2008,6 +2027,115 @@ It will be propagate through the system. Similar to correlationId </p></td>
                   <td><a href="#int64">int64</a></td>
                   <td></td>
                   <td><p>the tdo/media/recording id </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+
+      
+
+      
+
+      
+    
+      
+      <div class="file-heading">
+        <h2 id="events/mention_generation.proto">events/mention_generation.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id="events.MentionGenerateMediaCompleted">MentionGenerateMediaCompleted</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>tdo_id</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>tdo/media/recording id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>elapsed_s</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>time it took to generate mentions in seconds </p></td>
+                </tr>
+              
+                <tr>
+                  <td>watchlist_count</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>total watchlists executed </p></td>
+                </tr>
+              
+                <tr>
+                  <td>mention_count</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>total mentions created </p></td>
+                </tr>
+              
+                <tr>
+                  <td>details</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>arbitrary data </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="events.MentionGenerateWatchlistCompleted">MentionGenerateWatchlistCompleted</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>watchlist_id</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>the watchlist/tracking unit id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>elapsed_s</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>time it took to generate mentions in seconds </p></td>
+                </tr>
+              
+                <tr>
+                  <td>mention_count</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>total mentions created </p></td>
+                </tr>
+              
+                <tr>
+                  <td>mention_limit_exceeded</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>whether mention generation was completed due to exceeding the mention limit for the org </p></td>
                 </tr>
               
             </tbody>

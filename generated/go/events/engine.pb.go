@@ -3,9 +3,11 @@
 
 package events
 
-import proto "github.com/golang/protobuf/proto"
-import fmt "fmt"
-import math "math"
+import (
+	fmt "fmt"
+	proto "github.com/golang/protobuf/proto"
+	math "math"
+)
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ = proto.Marshal
@@ -32,16 +34,17 @@ func (m *EngineBuildUploadCompleted) Reset()         { *m = EngineBuildUploadCom
 func (m *EngineBuildUploadCompleted) String() string { return proto.CompactTextString(m) }
 func (*EngineBuildUploadCompleted) ProtoMessage()    {}
 func (*EngineBuildUploadCompleted) Descriptor() ([]byte, []int) {
-	return fileDescriptor_engine_6b2b5a6182481c0c, []int{0}
+	return fileDescriptor_377bb53959f78c72, []int{0}
 }
+
 func (m *EngineBuildUploadCompleted) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_EngineBuildUploadCompleted.Unmarshal(m, b)
 }
 func (m *EngineBuildUploadCompleted) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_EngineBuildUploadCompleted.Marshal(b, m, deterministic)
 }
-func (dst *EngineBuildUploadCompleted) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_EngineBuildUploadCompleted.Merge(dst, src)
+func (m *EngineBuildUploadCompleted) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_EngineBuildUploadCompleted.Merge(m, src)
 }
 func (m *EngineBuildUploadCompleted) XXX_Size() int {
 	return xxx_messageInfo_EngineBuildUploadCompleted.Size(m)
@@ -95,16 +98,17 @@ func (m *EngineBuildManifestProcessed) Reset()         { *m = EngineBuildManifes
 func (m *EngineBuildManifestProcessed) String() string { return proto.CompactTextString(m) }
 func (*EngineBuildManifestProcessed) ProtoMessage()    {}
 func (*EngineBuildManifestProcessed) Descriptor() ([]byte, []int) {
-	return fileDescriptor_engine_6b2b5a6182481c0c, []int{1}
+	return fileDescriptor_377bb53959f78c72, []int{1}
 }
+
 func (m *EngineBuildManifestProcessed) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_EngineBuildManifestProcessed.Unmarshal(m, b)
 }
 func (m *EngineBuildManifestProcessed) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_EngineBuildManifestProcessed.Marshal(b, m, deterministic)
 }
-func (dst *EngineBuildManifestProcessed) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_EngineBuildManifestProcessed.Merge(dst, src)
+func (m *EngineBuildManifestProcessed) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_EngineBuildManifestProcessed.Merge(m, src)
 }
 func (m *EngineBuildManifestProcessed) XXX_Size() int {
 	return xxx_messageInfo_EngineBuildManifestProcessed.Size(m)
@@ -166,16 +170,17 @@ func (m *EngineBuildVulnerabilityChecked) Reset()         { *m = EngineBuildVuln
 func (m *EngineBuildVulnerabilityChecked) String() string { return proto.CompactTextString(m) }
 func (*EngineBuildVulnerabilityChecked) ProtoMessage()    {}
 func (*EngineBuildVulnerabilityChecked) Descriptor() ([]byte, []int) {
-	return fileDescriptor_engine_6b2b5a6182481c0c, []int{2}
+	return fileDescriptor_377bb53959f78c72, []int{2}
 }
+
 func (m *EngineBuildVulnerabilityChecked) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_EngineBuildVulnerabilityChecked.Unmarshal(m, b)
 }
 func (m *EngineBuildVulnerabilityChecked) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_EngineBuildVulnerabilityChecked.Marshal(b, m, deterministic)
 }
-func (dst *EngineBuildVulnerabilityChecked) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_EngineBuildVulnerabilityChecked.Merge(dst, src)
+func (m *EngineBuildVulnerabilityChecked) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_EngineBuildVulnerabilityChecked.Merge(m, src)
 }
 func (m *EngineBuildVulnerabilityChecked) XXX_Size() int {
 	return xxx_messageInfo_EngineBuildVulnerabilityChecked.Size(m)
@@ -243,16 +248,17 @@ func (m *EngineBuildTestReportDone) Reset()         { *m = EngineBuildTestReport
 func (m *EngineBuildTestReportDone) String() string { return proto.CompactTextString(m) }
 func (*EngineBuildTestReportDone) ProtoMessage()    {}
 func (*EngineBuildTestReportDone) Descriptor() ([]byte, []int) {
-	return fileDescriptor_engine_6b2b5a6182481c0c, []int{3}
+	return fileDescriptor_377bb53959f78c72, []int{3}
 }
+
 func (m *EngineBuildTestReportDone) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_EngineBuildTestReportDone.Unmarshal(m, b)
 }
 func (m *EngineBuildTestReportDone) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_EngineBuildTestReportDone.Marshal(b, m, deterministic)
 }
-func (dst *EngineBuildTestReportDone) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_EngineBuildTestReportDone.Merge(dst, src)
+func (m *EngineBuildTestReportDone) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_EngineBuildTestReportDone.Merge(m, src)
 }
 func (m *EngineBuildTestReportDone) XXX_Size() int {
 	return xxx_messageInfo_EngineBuildTestReportDone.Size(m)
@@ -311,16 +317,17 @@ func (m *EngineBuildDeploySuccess) Reset()         { *m = EngineBuildDeploySucce
 func (m *EngineBuildDeploySuccess) String() string { return proto.CompactTextString(m) }
 func (*EngineBuildDeploySuccess) ProtoMessage()    {}
 func (*EngineBuildDeploySuccess) Descriptor() ([]byte, []int) {
-	return fileDescriptor_engine_6b2b5a6182481c0c, []int{4}
+	return fileDescriptor_377bb53959f78c72, []int{4}
 }
+
 func (m *EngineBuildDeploySuccess) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_EngineBuildDeploySuccess.Unmarshal(m, b)
 }
 func (m *EngineBuildDeploySuccess) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_EngineBuildDeploySuccess.Marshal(b, m, deterministic)
 }
-func (dst *EngineBuildDeploySuccess) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_EngineBuildDeploySuccess.Merge(dst, src)
+func (m *EngineBuildDeploySuccess) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_EngineBuildDeploySuccess.Merge(m, src)
 }
 func (m *EngineBuildDeploySuccess) XXX_Size() int {
 	return xxx_messageInfo_EngineBuildDeploySuccess.Size(m)
@@ -365,16 +372,17 @@ func (m *EngineBuildDeployFail) Reset()         { *m = EngineBuildDeployFail{} }
 func (m *EngineBuildDeployFail) String() string { return proto.CompactTextString(m) }
 func (*EngineBuildDeployFail) ProtoMessage()    {}
 func (*EngineBuildDeployFail) Descriptor() ([]byte, []int) {
-	return fileDescriptor_engine_6b2b5a6182481c0c, []int{5}
+	return fileDescriptor_377bb53959f78c72, []int{5}
 }
+
 func (m *EngineBuildDeployFail) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_EngineBuildDeployFail.Unmarshal(m, b)
 }
 func (m *EngineBuildDeployFail) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_EngineBuildDeployFail.Marshal(b, m, deterministic)
 }
-func (dst *EngineBuildDeployFail) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_EngineBuildDeployFail.Merge(dst, src)
+func (m *EngineBuildDeployFail) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_EngineBuildDeployFail.Merge(m, src)
 }
 func (m *EngineBuildDeployFail) XXX_Size() int {
 	return xxx_messageInfo_EngineBuildDeployFail.Size(m)
@@ -422,16 +430,17 @@ func (m *EngineBuildApproved) Reset()         { *m = EngineBuildApproved{} }
 func (m *EngineBuildApproved) String() string { return proto.CompactTextString(m) }
 func (*EngineBuildApproved) ProtoMessage()    {}
 func (*EngineBuildApproved) Descriptor() ([]byte, []int) {
-	return fileDescriptor_engine_6b2b5a6182481c0c, []int{6}
+	return fileDescriptor_377bb53959f78c72, []int{6}
 }
+
 func (m *EngineBuildApproved) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_EngineBuildApproved.Unmarshal(m, b)
 }
 func (m *EngineBuildApproved) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_EngineBuildApproved.Marshal(b, m, deterministic)
 }
-func (dst *EngineBuildApproved) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_EngineBuildApproved.Merge(dst, src)
+func (m *EngineBuildApproved) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_EngineBuildApproved.Merge(m, src)
 }
 func (m *EngineBuildApproved) XXX_Size() int {
 	return xxx_messageInfo_EngineBuildApproved.Size(m)
@@ -500,16 +509,17 @@ func (m *EngineBuildDisapprove) Reset()         { *m = EngineBuildDisapprove{} }
 func (m *EngineBuildDisapprove) String() string { return proto.CompactTextString(m) }
 func (*EngineBuildDisapprove) ProtoMessage()    {}
 func (*EngineBuildDisapprove) Descriptor() ([]byte, []int) {
-	return fileDescriptor_engine_6b2b5a6182481c0c, []int{7}
+	return fileDescriptor_377bb53959f78c72, []int{7}
 }
+
 func (m *EngineBuildDisapprove) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_EngineBuildDisapprove.Unmarshal(m, b)
 }
 func (m *EngineBuildDisapprove) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_EngineBuildDisapprove.Marshal(b, m, deterministic)
 }
-func (dst *EngineBuildDisapprove) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_EngineBuildDisapprove.Merge(dst, src)
+func (m *EngineBuildDisapprove) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_EngineBuildDisapprove.Merge(m, src)
 }
 func (m *EngineBuildDisapprove) XXX_Size() int {
 	return xxx_messageInfo_EngineBuildDisapprove.Size(m)
@@ -576,16 +586,17 @@ func (m *EngineBuildCreate) Reset()         { *m = EngineBuildCreate{} }
 func (m *EngineBuildCreate) String() string { return proto.CompactTextString(m) }
 func (*EngineBuildCreate) ProtoMessage()    {}
 func (*EngineBuildCreate) Descriptor() ([]byte, []int) {
-	return fileDescriptor_engine_6b2b5a6182481c0c, []int{8}
+	return fileDescriptor_377bb53959f78c72, []int{8}
 }
+
 func (m *EngineBuildCreate) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_EngineBuildCreate.Unmarshal(m, b)
 }
 func (m *EngineBuildCreate) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_EngineBuildCreate.Marshal(b, m, deterministic)
 }
-func (dst *EngineBuildCreate) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_EngineBuildCreate.Merge(dst, src)
+func (m *EngineBuildCreate) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_EngineBuildCreate.Merge(m, src)
 }
 func (m *EngineBuildCreate) XXX_Size() int {
 	return xxx_messageInfo_EngineBuildCreate.Size(m)
@@ -638,16 +649,17 @@ func (m *EngineBuildUpload) Reset()         { *m = EngineBuildUpload{} }
 func (m *EngineBuildUpload) String() string { return proto.CompactTextString(m) }
 func (*EngineBuildUpload) ProtoMessage()    {}
 func (*EngineBuildUpload) Descriptor() ([]byte, []int) {
-	return fileDescriptor_engine_6b2b5a6182481c0c, []int{9}
+	return fileDescriptor_377bb53959f78c72, []int{9}
 }
+
 func (m *EngineBuildUpload) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_EngineBuildUpload.Unmarshal(m, b)
 }
 func (m *EngineBuildUpload) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_EngineBuildUpload.Marshal(b, m, deterministic)
 }
-func (dst *EngineBuildUpload) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_EngineBuildUpload.Merge(dst, src)
+func (m *EngineBuildUpload) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_EngineBuildUpload.Merge(m, src)
 }
 func (m *EngineBuildUpload) XXX_Size() int {
 	return xxx_messageInfo_EngineBuildUpload.Size(m)
@@ -700,16 +712,17 @@ func (m *EngineBuildInvalidate) Reset()         { *m = EngineBuildInvalidate{} }
 func (m *EngineBuildInvalidate) String() string { return proto.CompactTextString(m) }
 func (*EngineBuildInvalidate) ProtoMessage()    {}
 func (*EngineBuildInvalidate) Descriptor() ([]byte, []int) {
-	return fileDescriptor_engine_6b2b5a6182481c0c, []int{10}
+	return fileDescriptor_377bb53959f78c72, []int{10}
 }
+
 func (m *EngineBuildInvalidate) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_EngineBuildInvalidate.Unmarshal(m, b)
 }
 func (m *EngineBuildInvalidate) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_EngineBuildInvalidate.Marshal(b, m, deterministic)
 }
-func (dst *EngineBuildInvalidate) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_EngineBuildInvalidate.Merge(dst, src)
+func (m *EngineBuildInvalidate) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_EngineBuildInvalidate.Merge(m, src)
 }
 func (m *EngineBuildInvalidate) XXX_Size() int {
 	return xxx_messageInfo_EngineBuildInvalidate.Size(m)
@@ -762,9 +775,9 @@ func init() {
 	proto.RegisterType((*EngineBuildInvalidate)(nil), "events.EngineBuildInvalidate")
 }
 
-func init() { proto.RegisterFile("events/engine.proto", fileDescriptor_engine_6b2b5a6182481c0c) }
+func init() { proto.RegisterFile("events/engine.proto", fileDescriptor_377bb53959f78c72) }
 
-var fileDescriptor_engine_6b2b5a6182481c0c = []byte{
+var fileDescriptor_377bb53959f78c72 = []byte{
 	// 445 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xd4, 0x95, 0x4f, 0x6b, 0x14, 0x31,
 	0x18, 0xc6, 0x09, 0xd2, 0xd9, 0xed, 0xbb, 0x7f, 0x8a, 0x29, 0xab, 0x5b, 0x15, 0x5a, 0xf6, 0x62,

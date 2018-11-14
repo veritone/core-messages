@@ -3249,6 +3249,228 @@ export namespace events {
         public toJSON(): { [k: string]: any };
     }
 
+    /** Properties of a MentionGenerateMediaCompleted. */
+    interface IMentionGenerateMediaCompleted {
+
+        /** MentionGenerateMediaCompleted tdoId */
+        tdoId?: (number|Long|null);
+
+        /** MentionGenerateMediaCompleted elapsedS */
+        elapsedS?: (number|null);
+
+        /** MentionGenerateMediaCompleted watchlistCount */
+        watchlistCount?: (number|null);
+
+        /** MentionGenerateMediaCompleted mentionCount */
+        mentionCount?: (number|null);
+
+        /** MentionGenerateMediaCompleted details */
+        details?: (string|null);
+    }
+
+    /** Represents a MentionGenerateMediaCompleted. */
+    class MentionGenerateMediaCompleted implements IMentionGenerateMediaCompleted {
+
+        /**
+         * Constructs a new MentionGenerateMediaCompleted.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IMentionGenerateMediaCompleted);
+
+        /** MentionGenerateMediaCompleted tdoId. */
+        public tdoId: (number|Long);
+
+        /** MentionGenerateMediaCompleted elapsedS. */
+        public elapsedS: number;
+
+        /** MentionGenerateMediaCompleted watchlistCount. */
+        public watchlistCount: number;
+
+        /** MentionGenerateMediaCompleted mentionCount. */
+        public mentionCount: number;
+
+        /** MentionGenerateMediaCompleted details. */
+        public details: string;
+
+        /**
+         * Creates a new MentionGenerateMediaCompleted instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns MentionGenerateMediaCompleted instance
+         */
+        public static create(properties?: events.IMentionGenerateMediaCompleted): events.MentionGenerateMediaCompleted;
+
+        /**
+         * Encodes the specified MentionGenerateMediaCompleted message. Does not implicitly {@link events.MentionGenerateMediaCompleted.verify|verify} messages.
+         * @param message MentionGenerateMediaCompleted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IMentionGenerateMediaCompleted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified MentionGenerateMediaCompleted message, length delimited. Does not implicitly {@link events.MentionGenerateMediaCompleted.verify|verify} messages.
+         * @param message MentionGenerateMediaCompleted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IMentionGenerateMediaCompleted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a MentionGenerateMediaCompleted message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns MentionGenerateMediaCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.MentionGenerateMediaCompleted;
+
+        /**
+         * Decodes a MentionGenerateMediaCompleted message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns MentionGenerateMediaCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.MentionGenerateMediaCompleted;
+
+        /**
+         * Verifies a MentionGenerateMediaCompleted message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a MentionGenerateMediaCompleted message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns MentionGenerateMediaCompleted
+         */
+        public static fromObject(object: { [k: string]: any }): events.MentionGenerateMediaCompleted;
+
+        /**
+         * Creates a plain object from a MentionGenerateMediaCompleted message. Also converts values to other types if specified.
+         * @param message MentionGenerateMediaCompleted
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.MentionGenerateMediaCompleted, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this MentionGenerateMediaCompleted to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a MentionGenerateWatchlistCompleted. */
+    interface IMentionGenerateWatchlistCompleted {
+
+        /** MentionGenerateWatchlistCompleted watchlistId */
+        watchlistId?: (number|Long|null);
+
+        /** MentionGenerateWatchlistCompleted elapsedS */
+        elapsedS?: (number|null);
+
+        /** MentionGenerateWatchlistCompleted mentionCount */
+        mentionCount?: (number|null);
+
+        /** MentionGenerateWatchlistCompleted mentionLimitExceeded */
+        mentionLimitExceeded?: (boolean|null);
+    }
+
+    /** Represents a MentionGenerateWatchlistCompleted. */
+    class MentionGenerateWatchlistCompleted implements IMentionGenerateWatchlistCompleted {
+
+        /**
+         * Constructs a new MentionGenerateWatchlistCompleted.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IMentionGenerateWatchlistCompleted);
+
+        /** MentionGenerateWatchlistCompleted watchlistId. */
+        public watchlistId: (number|Long);
+
+        /** MentionGenerateWatchlistCompleted elapsedS. */
+        public elapsedS: number;
+
+        /** MentionGenerateWatchlistCompleted mentionCount. */
+        public mentionCount: number;
+
+        /** MentionGenerateWatchlistCompleted mentionLimitExceeded. */
+        public mentionLimitExceeded: boolean;
+
+        /**
+         * Creates a new MentionGenerateWatchlistCompleted instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns MentionGenerateWatchlistCompleted instance
+         */
+        public static create(properties?: events.IMentionGenerateWatchlistCompleted): events.MentionGenerateWatchlistCompleted;
+
+        /**
+         * Encodes the specified MentionGenerateWatchlistCompleted message. Does not implicitly {@link events.MentionGenerateWatchlistCompleted.verify|verify} messages.
+         * @param message MentionGenerateWatchlistCompleted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IMentionGenerateWatchlistCompleted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified MentionGenerateWatchlistCompleted message, length delimited. Does not implicitly {@link events.MentionGenerateWatchlistCompleted.verify|verify} messages.
+         * @param message MentionGenerateWatchlistCompleted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IMentionGenerateWatchlistCompleted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a MentionGenerateWatchlistCompleted message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns MentionGenerateWatchlistCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.MentionGenerateWatchlistCompleted;
+
+        /**
+         * Decodes a MentionGenerateWatchlistCompleted message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns MentionGenerateWatchlistCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.MentionGenerateWatchlistCompleted;
+
+        /**
+         * Verifies a MentionGenerateWatchlistCompleted message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a MentionGenerateWatchlistCompleted message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns MentionGenerateWatchlistCompleted
+         */
+        public static fromObject(object: { [k: string]: any }): events.MentionGenerateWatchlistCompleted;
+
+        /**
+         * Creates a plain object from a MentionGenerateWatchlistCompleted message. Also converts values to other types if specified.
+         * @param message MentionGenerateWatchlistCompleted
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.MentionGenerateWatchlistCompleted, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this MentionGenerateWatchlistCompleted to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
     /** Properties of a MentionModifiedData. */
     interface IMentionModifiedData {
 

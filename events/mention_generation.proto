@@ -1,0 +1,19 @@
+
+syntax = "proto3";
+package events;
+option go_package = "events";
+
+message MentionGenerateMediaCompleted {
+    int64 tdo_id = 10;             // tdo/media/recording id
+    uint32 elapsed_s = 12;         // time it took to generate mentions in seconds
+    uint32 watchlist_count = 16;   // total watchlists executed 
+    uint32 mention_count = 18;     // total mentions created
+	string details = 20;		   // arbitrary data
+}
+
+message MentionGenerateWatchlistCompleted {
+    int64 watchlist_id = 10;       // the watchlist/tracking unit id
+    uint32 elapsed_s = 12;         // time it took to generate mentions in seconds
+    uint32 mention_count = 16;     // total mentions created
+	bool mention_limit_exceeded = 18;   // whether mention generation was completed due to exceeding the mention limit for the org 
+}

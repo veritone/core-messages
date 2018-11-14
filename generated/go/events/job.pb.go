@@ -3,9 +3,11 @@
 
 package events
 
-import proto "github.com/golang/protobuf/proto"
-import fmt "fmt"
-import math "math"
+import (
+	fmt "fmt"
+	proto "github.com/golang/protobuf/proto"
+	math "math"
+)
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ = proto.Marshal
@@ -30,16 +32,17 @@ func (m *JobCreated) Reset()         { *m = JobCreated{} }
 func (m *JobCreated) String() string { return proto.CompactTextString(m) }
 func (*JobCreated) ProtoMessage()    {}
 func (*JobCreated) Descriptor() ([]byte, []int) {
-	return fileDescriptor_job_e8198225edb3934a, []int{0}
+	return fileDescriptor_46bd2d30c8895566, []int{0}
 }
+
 func (m *JobCreated) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_JobCreated.Unmarshal(m, b)
 }
 func (m *JobCreated) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_JobCreated.Marshal(b, m, deterministic)
 }
-func (dst *JobCreated) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_JobCreated.Merge(dst, src)
+func (m *JobCreated) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_JobCreated.Merge(m, src)
 }
 func (m *JobCreated) XXX_Size() int {
 	return xxx_messageInfo_JobCreated.Size(m)
@@ -77,16 +80,17 @@ func (m *JobCompleted) Reset()         { *m = JobCompleted{} }
 func (m *JobCompleted) String() string { return proto.CompactTextString(m) }
 func (*JobCompleted) ProtoMessage()    {}
 func (*JobCompleted) Descriptor() ([]byte, []int) {
-	return fileDescriptor_job_e8198225edb3934a, []int{1}
+	return fileDescriptor_46bd2d30c8895566, []int{1}
 }
+
 func (m *JobCompleted) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_JobCompleted.Unmarshal(m, b)
 }
 func (m *JobCompleted) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_JobCompleted.Marshal(b, m, deterministic)
 }
-func (dst *JobCompleted) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_JobCompleted.Merge(dst, src)
+func (m *JobCompleted) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_JobCompleted.Merge(m, src)
 }
 func (m *JobCompleted) XXX_Size() int {
 	return xxx_messageInfo_JobCompleted.Size(m)
@@ -131,16 +135,17 @@ func (m *JobFailed) Reset()         { *m = JobFailed{} }
 func (m *JobFailed) String() string { return proto.CompactTextString(m) }
 func (*JobFailed) ProtoMessage()    {}
 func (*JobFailed) Descriptor() ([]byte, []int) {
-	return fileDescriptor_job_e8198225edb3934a, []int{2}
+	return fileDescriptor_46bd2d30c8895566, []int{2}
 }
+
 func (m *JobFailed) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_JobFailed.Unmarshal(m, b)
 }
 func (m *JobFailed) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_JobFailed.Marshal(b, m, deterministic)
 }
-func (dst *JobFailed) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_JobFailed.Merge(dst, src)
+func (m *JobFailed) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_JobFailed.Merge(m, src)
 }
 func (m *JobFailed) XXX_Size() int {
 	return xxx_messageInfo_JobFailed.Size(m)
@@ -178,9 +183,9 @@ func init() {
 	proto.RegisterType((*JobFailed)(nil), "events.JobFailed")
 }
 
-func init() { proto.RegisterFile("events/job.proto", fileDescriptor_job_e8198225edb3934a) }
+func init() { proto.RegisterFile("events/job.proto", fileDescriptor_46bd2d30c8895566) }
 
-var fileDescriptor_job_e8198225edb3934a = []byte{
+var fileDescriptor_46bd2d30c8895566 = []byte{
 	// 169 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x12, 0x48, 0x2d, 0x4b, 0xcd,
 	0x2b, 0x29, 0xd6, 0xcf, 0xca, 0x4f, 0xd2, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x83, 0x88,

@@ -3,9 +3,11 @@
 
 package events
 
-import proto "github.com/golang/protobuf/proto"
-import fmt "fmt"
-import math "math"
+import (
+	fmt "fmt"
+	proto "github.com/golang/protobuf/proto"
+	math "math"
+)
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ = proto.Marshal
@@ -29,16 +31,17 @@ func (m *RecordingCreated) Reset()         { *m = RecordingCreated{} }
 func (m *RecordingCreated) String() string { return proto.CompactTextString(m) }
 func (*RecordingCreated) ProtoMessage()    {}
 func (*RecordingCreated) Descriptor() ([]byte, []int) {
-	return fileDescriptor_recording_7228aeb03cb6a2e4, []int{0}
+	return fileDescriptor_6afd79699de8d50a, []int{0}
 }
+
 func (m *RecordingCreated) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_RecordingCreated.Unmarshal(m, b)
 }
 func (m *RecordingCreated) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_RecordingCreated.Marshal(b, m, deterministic)
 }
-func (dst *RecordingCreated) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RecordingCreated.Merge(dst, src)
+func (m *RecordingCreated) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RecordingCreated.Merge(m, src)
 }
 func (m *RecordingCreated) XXX_Size() int {
 	return xxx_messageInfo_RecordingCreated.Size(m)
@@ -67,16 +70,17 @@ func (m *RecordingInserted) Reset()         { *m = RecordingInserted{} }
 func (m *RecordingInserted) String() string { return proto.CompactTextString(m) }
 func (*RecordingInserted) ProtoMessage()    {}
 func (*RecordingInserted) Descriptor() ([]byte, []int) {
-	return fileDescriptor_recording_7228aeb03cb6a2e4, []int{1}
+	return fileDescriptor_6afd79699de8d50a, []int{1}
 }
+
 func (m *RecordingInserted) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_RecordingInserted.Unmarshal(m, b)
 }
 func (m *RecordingInserted) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_RecordingInserted.Marshal(b, m, deterministic)
 }
-func (dst *RecordingInserted) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RecordingInserted.Merge(dst, src)
+func (m *RecordingInserted) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RecordingInserted.Merge(m, src)
 }
 func (m *RecordingInserted) XXX_Size() int {
 	return xxx_messageInfo_RecordingInserted.Size(m)
@@ -105,16 +109,17 @@ func (m *RecordingDeleted) Reset()         { *m = RecordingDeleted{} }
 func (m *RecordingDeleted) String() string { return proto.CompactTextString(m) }
 func (*RecordingDeleted) ProtoMessage()    {}
 func (*RecordingDeleted) Descriptor() ([]byte, []int) {
-	return fileDescriptor_recording_7228aeb03cb6a2e4, []int{2}
+	return fileDescriptor_6afd79699de8d50a, []int{2}
 }
+
 func (m *RecordingDeleted) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_RecordingDeleted.Unmarshal(m, b)
 }
 func (m *RecordingDeleted) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_RecordingDeleted.Marshal(b, m, deterministic)
 }
-func (dst *RecordingDeleted) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RecordingDeleted.Merge(dst, src)
+func (m *RecordingDeleted) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RecordingDeleted.Merge(m, src)
 }
 func (m *RecordingDeleted) XXX_Size() int {
 	return xxx_messageInfo_RecordingDeleted.Size(m)
@@ -144,16 +149,17 @@ func (m *RecordingCognitionCompleted) Reset()         { *m = RecordingCognitionC
 func (m *RecordingCognitionCompleted) String() string { return proto.CompactTextString(m) }
 func (*RecordingCognitionCompleted) ProtoMessage()    {}
 func (*RecordingCognitionCompleted) Descriptor() ([]byte, []int) {
-	return fileDescriptor_recording_7228aeb03cb6a2e4, []int{3}
+	return fileDescriptor_6afd79699de8d50a, []int{3}
 }
+
 func (m *RecordingCognitionCompleted) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_RecordingCognitionCompleted.Unmarshal(m, b)
 }
 func (m *RecordingCognitionCompleted) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_RecordingCognitionCompleted.Marshal(b, m, deterministic)
 }
-func (dst *RecordingCognitionCompleted) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RecordingCognitionCompleted.Merge(dst, src)
+func (m *RecordingCognitionCompleted) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RecordingCognitionCompleted.Merge(m, src)
 }
 func (m *RecordingCognitionCompleted) XXX_Size() int {
 	return xxx_messageInfo_RecordingCognitionCompleted.Size(m)
@@ -197,16 +203,17 @@ func (m *RecordingCognitionCompleted_Payload) Reset()         { *m = RecordingCo
 func (m *RecordingCognitionCompleted_Payload) String() string { return proto.CompactTextString(m) }
 func (*RecordingCognitionCompleted_Payload) ProtoMessage()    {}
 func (*RecordingCognitionCompleted_Payload) Descriptor() ([]byte, []int) {
-	return fileDescriptor_recording_7228aeb03cb6a2e4, []int{3, 0}
+	return fileDescriptor_6afd79699de8d50a, []int{3, 0}
 }
+
 func (m *RecordingCognitionCompleted_Payload) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_RecordingCognitionCompleted_Payload.Unmarshal(m, b)
 }
 func (m *RecordingCognitionCompleted_Payload) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_RecordingCognitionCompleted_Payload.Marshal(b, m, deterministic)
 }
-func (dst *RecordingCognitionCompleted_Payload) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RecordingCognitionCompleted_Payload.Merge(dst, src)
+func (m *RecordingCognitionCompleted_Payload) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RecordingCognitionCompleted_Payload.Merge(m, src)
 }
 func (m *RecordingCognitionCompleted_Payload) XXX_Size() int {
 	return xxx_messageInfo_RecordingCognitionCompleted_Payload.Size(m)
@@ -288,9 +295,9 @@ func init() {
 	proto.RegisterType((*RecordingCognitionCompleted_Payload)(nil), "events.RecordingCognitionCompleted.Payload")
 }
 
-func init() { proto.RegisterFile("events/recording.proto", fileDescriptor_recording_7228aeb03cb6a2e4) }
+func init() { proto.RegisterFile("events/recording.proto", fileDescriptor_6afd79699de8d50a) }
 
-var fileDescriptor_recording_7228aeb03cb6a2e4 = []byte{
+var fileDescriptor_6afd79699de8d50a = []byte{
 	// 351 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x92, 0xcf, 0x4a, 0xf3, 0x40,
 	0x14, 0xc5, 0xc9, 0x57, 0x9a, 0xb4, 0x37, 0xfd, 0x3b, 0x7c, 0xb5, 0x51, 0x11, 0x62, 0x41, 0x0c,

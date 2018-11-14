@@ -3,9 +3,11 @@
 
 package events
 
-import proto "github.com/golang/protobuf/proto"
-import fmt "fmt"
-import math "math"
+import (
+	fmt "fmt"
+	proto "github.com/golang/protobuf/proto"
+	math "math"
+)
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ = proto.Marshal
@@ -34,16 +36,17 @@ func (m *LoginSucceeded) Reset()         { *m = LoginSucceeded{} }
 func (m *LoginSucceeded) String() string { return proto.CompactTextString(m) }
 func (*LoginSucceeded) ProtoMessage()    {}
 func (*LoginSucceeded) Descriptor() ([]byte, []int) {
-	return fileDescriptor_authentication_c0559713f9e0e912, []int{0}
+	return fileDescriptor_946d93eb27810f02, []int{0}
 }
+
 func (m *LoginSucceeded) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_LoginSucceeded.Unmarshal(m, b)
 }
 func (m *LoginSucceeded) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_LoginSucceeded.Marshal(b, m, deterministic)
 }
-func (dst *LoginSucceeded) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_LoginSucceeded.Merge(dst, src)
+func (m *LoginSucceeded) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_LoginSucceeded.Merge(m, src)
 }
 func (m *LoginSucceeded) XXX_Size() int {
 	return xxx_messageInfo_LoginSucceeded.Size(m)
@@ -110,16 +113,17 @@ func (m *LoginFailed) Reset()         { *m = LoginFailed{} }
 func (m *LoginFailed) String() string { return proto.CompactTextString(m) }
 func (*LoginFailed) ProtoMessage()    {}
 func (*LoginFailed) Descriptor() ([]byte, []int) {
-	return fileDescriptor_authentication_c0559713f9e0e912, []int{1}
+	return fileDescriptor_946d93eb27810f02, []int{1}
 }
+
 func (m *LoginFailed) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_LoginFailed.Unmarshal(m, b)
 }
 func (m *LoginFailed) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_LoginFailed.Marshal(b, m, deterministic)
 }
-func (dst *LoginFailed) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_LoginFailed.Merge(dst, src)
+func (m *LoginFailed) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_LoginFailed.Merge(m, src)
 }
 func (m *LoginFailed) XXX_Size() int {
 	return xxx_messageInfo_LoginFailed.Size(m)
@@ -172,16 +176,17 @@ func (m *LoginAttemptsExceeded) Reset()         { *m = LoginAttemptsExceeded{} }
 func (m *LoginAttemptsExceeded) String() string { return proto.CompactTextString(m) }
 func (*LoginAttemptsExceeded) ProtoMessage()    {}
 func (*LoginAttemptsExceeded) Descriptor() ([]byte, []int) {
-	return fileDescriptor_authentication_c0559713f9e0e912, []int{2}
+	return fileDescriptor_946d93eb27810f02, []int{2}
 }
+
 func (m *LoginAttemptsExceeded) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_LoginAttemptsExceeded.Unmarshal(m, b)
 }
 func (m *LoginAttemptsExceeded) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_LoginAttemptsExceeded.Marshal(b, m, deterministic)
 }
-func (dst *LoginAttemptsExceeded) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_LoginAttemptsExceeded.Merge(dst, src)
+func (m *LoginAttemptsExceeded) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_LoginAttemptsExceeded.Merge(m, src)
 }
 func (m *LoginAttemptsExceeded) XXX_Size() int {
 	return xxx_messageInfo_LoginAttemptsExceeded.Size(m)
@@ -237,16 +242,17 @@ func (m *Impersonated) Reset()         { *m = Impersonated{} }
 func (m *Impersonated) String() string { return proto.CompactTextString(m) }
 func (*Impersonated) ProtoMessage()    {}
 func (*Impersonated) Descriptor() ([]byte, []int) {
-	return fileDescriptor_authentication_c0559713f9e0e912, []int{3}
+	return fileDescriptor_946d93eb27810f02, []int{3}
 }
+
 func (m *Impersonated) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Impersonated.Unmarshal(m, b)
 }
 func (m *Impersonated) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Impersonated.Marshal(b, m, deterministic)
 }
-func (dst *Impersonated) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Impersonated.Merge(dst, src)
+func (m *Impersonated) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Impersonated.Merge(m, src)
 }
 func (m *Impersonated) XXX_Size() int {
 	return xxx_messageInfo_Impersonated.Size(m)
@@ -322,16 +328,17 @@ func (m *ActionUserForbidden) Reset()         { *m = ActionUserForbidden{} }
 func (m *ActionUserForbidden) String() string { return proto.CompactTextString(m) }
 func (*ActionUserForbidden) ProtoMessage()    {}
 func (*ActionUserForbidden) Descriptor() ([]byte, []int) {
-	return fileDescriptor_authentication_c0559713f9e0e912, []int{4}
+	return fileDescriptor_946d93eb27810f02, []int{4}
 }
+
 func (m *ActionUserForbidden) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ActionUserForbidden.Unmarshal(m, b)
 }
 func (m *ActionUserForbidden) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ActionUserForbidden.Marshal(b, m, deterministic)
 }
-func (dst *ActionUserForbidden) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ActionUserForbidden.Merge(dst, src)
+func (m *ActionUserForbidden) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ActionUserForbidden.Merge(m, src)
 }
 func (m *ActionUserForbidden) XXX_Size() int {
 	return xxx_messageInfo_ActionUserForbidden.Size(m)
@@ -397,16 +404,17 @@ func (m *ActionTokenForbidden) Reset()         { *m = ActionTokenForbidden{} }
 func (m *ActionTokenForbidden) String() string { return proto.CompactTextString(m) }
 func (*ActionTokenForbidden) ProtoMessage()    {}
 func (*ActionTokenForbidden) Descriptor() ([]byte, []int) {
-	return fileDescriptor_authentication_c0559713f9e0e912, []int{5}
+	return fileDescriptor_946d93eb27810f02, []int{5}
 }
+
 func (m *ActionTokenForbidden) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ActionTokenForbidden.Unmarshal(m, b)
 }
 func (m *ActionTokenForbidden) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ActionTokenForbidden.Marshal(b, m, deterministic)
 }
-func (dst *ActionTokenForbidden) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ActionTokenForbidden.Merge(dst, src)
+func (m *ActionTokenForbidden) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ActionTokenForbidden.Merge(m, src)
 }
 func (m *ActionTokenForbidden) XXX_Size() int {
 	return xxx_messageInfo_ActionTokenForbidden.Size(m)
@@ -447,11 +455,9 @@ func init() {
 	proto.RegisterType((*ActionTokenForbidden)(nil), "events.ActionTokenForbidden")
 }
 
-func init() {
-	proto.RegisterFile("events/authentication.proto", fileDescriptor_authentication_c0559713f9e0e912)
-}
+func init() { proto.RegisterFile("events/authentication.proto", fileDescriptor_946d93eb27810f02) }
 
-var fileDescriptor_authentication_c0559713f9e0e912 = []byte{
+var fileDescriptor_946d93eb27810f02 = []byte{
 	// 315 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xd4, 0x94, 0x4f, 0x4b, 0x02, 0x41,
 	0x18, 0xc6, 0x19, 0x03, 0xd3, 0x57, 0x5b, 0x63, 0x4c, 0x5a, 0x90, 0x48, 0xf6, 0x92, 0xa7, 0x82,

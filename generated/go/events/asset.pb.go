@@ -3,9 +3,11 @@
 
 package events
 
-import proto "github.com/golang/protobuf/proto"
-import fmt "fmt"
-import math "math"
+import (
+	fmt "fmt"
+	proto "github.com/golang/protobuf/proto"
+	math "math"
+)
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ = proto.Marshal
@@ -30,16 +32,17 @@ func (m *AssetUploaded) Reset()         { *m = AssetUploaded{} }
 func (m *AssetUploaded) String() string { return proto.CompactTextString(m) }
 func (*AssetUploaded) ProtoMessage()    {}
 func (*AssetUploaded) Descriptor() ([]byte, []int) {
-	return fileDescriptor_asset_3349e6996febe4ca, []int{0}
+	return fileDescriptor_4905cbe039dc50f6, []int{0}
 }
+
 func (m *AssetUploaded) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AssetUploaded.Unmarshal(m, b)
 }
 func (m *AssetUploaded) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_AssetUploaded.Marshal(b, m, deterministic)
 }
-func (dst *AssetUploaded) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_AssetUploaded.Merge(dst, src)
+func (m *AssetUploaded) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_AssetUploaded.Merge(m, src)
 }
 func (m *AssetUploaded) XXX_Size() int {
 	return xxx_messageInfo_AssetUploaded.Size(m)
@@ -68,9 +71,9 @@ func init() {
 	proto.RegisterType((*AssetUploaded)(nil), "events.AssetUploaded")
 }
 
-func init() { proto.RegisterFile("events/asset.proto", fileDescriptor_asset_3349e6996febe4ca) }
+func init() { proto.RegisterFile("events/asset.proto", fileDescriptor_4905cbe039dc50f6) }
 
-var fileDescriptor_asset_3349e6996febe4ca = []byte{
+var fileDescriptor_4905cbe039dc50f6 = []byte{
 	// 116 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x12, 0x4a, 0x2d, 0x4b, 0xcd,
 	0x2b, 0x29, 0xd6, 0x4f, 0x2c, 0x2e, 0x4e, 0x2d, 0xd1, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62,

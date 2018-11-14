@@ -3,9 +3,11 @@
 
 package events
 
-import proto "github.com/golang/protobuf/proto"
-import fmt "fmt"
-import math "math"
+import (
+	fmt "fmt"
+	proto "github.com/golang/protobuf/proto"
+	math "math"
+)
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ = proto.Marshal
@@ -32,16 +34,17 @@ func (m *MentionGenerated) Reset()         { *m = MentionGenerated{} }
 func (m *MentionGenerated) String() string { return proto.CompactTextString(m) }
 func (*MentionGenerated) ProtoMessage()    {}
 func (*MentionGenerated) Descriptor() ([]byte, []int) {
-	return fileDescriptor_mention_e533d97fe321833f, []int{0}
+	return fileDescriptor_329836505c109376, []int{0}
 }
+
 func (m *MentionGenerated) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_MentionGenerated.Unmarshal(m, b)
 }
 func (m *MentionGenerated) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_MentionGenerated.Marshal(b, m, deterministic)
 }
-func (dst *MentionGenerated) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_MentionGenerated.Merge(dst, src)
+func (m *MentionGenerated) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MentionGenerated.Merge(m, src)
 }
 func (m *MentionGenerated) XXX_Size() int {
 	return xxx_messageInfo_MentionGenerated.Size(m)
@@ -84,9 +87,9 @@ func init() {
 	proto.RegisterType((*MentionGenerated)(nil), "events.MentionGenerated")
 }
 
-func init() { proto.RegisterFile("events/mention.proto", fileDescriptor_mention_e533d97fe321833f) }
+func init() { proto.RegisterFile("events/mention.proto", fileDescriptor_329836505c109376) }
 
-var fileDescriptor_mention_e533d97fe321833f = []byte{
+var fileDescriptor_329836505c109376 = []byte{
 	// 161 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x12, 0x49, 0x2d, 0x4b, 0xcd,
 	0x2b, 0x29, 0xd6, 0xcf, 0x4d, 0xcd, 0x2b, 0xc9, 0xcc, 0xcf, 0xd3, 0x2b, 0x28, 0xca, 0x2f, 0xc9,
