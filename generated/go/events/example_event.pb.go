@@ -3,9 +3,11 @@
 
 package events
 
-import proto "github.com/golang/protobuf/proto"
-import fmt "fmt"
-import math "math"
+import (
+	fmt "fmt"
+	proto "github.com/golang/protobuf/proto"
+	math "math"
+)
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ = proto.Marshal
@@ -31,16 +33,17 @@ func (m *ExampleEvent) Reset()         { *m = ExampleEvent{} }
 func (m *ExampleEvent) String() string { return proto.CompactTextString(m) }
 func (*ExampleEvent) ProtoMessage()    {}
 func (*ExampleEvent) Descriptor() ([]byte, []int) {
-	return fileDescriptor_example_event_c4fbf57a97944095, []int{0}
+	return fileDescriptor_c425241637f6333d, []int{0}
 }
+
 func (m *ExampleEvent) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ExampleEvent.Unmarshal(m, b)
 }
 func (m *ExampleEvent) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ExampleEvent.Marshal(b, m, deterministic)
 }
-func (dst *ExampleEvent) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ExampleEvent.Merge(dst, src)
+func (m *ExampleEvent) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ExampleEvent.Merge(m, src)
 }
 func (m *ExampleEvent) XXX_Size() int {
 	return xxx_messageInfo_ExampleEvent.Size(m)
@@ -83,16 +86,17 @@ func (m *ExampleOne) Reset()         { *m = ExampleOne{} }
 func (m *ExampleOne) String() string { return proto.CompactTextString(m) }
 func (*ExampleOne) ProtoMessage()    {}
 func (*ExampleOne) Descriptor() ([]byte, []int) {
-	return fileDescriptor_example_event_c4fbf57a97944095, []int{1}
+	return fileDescriptor_c425241637f6333d, []int{1}
 }
+
 func (m *ExampleOne) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ExampleOne.Unmarshal(m, b)
 }
 func (m *ExampleOne) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ExampleOne.Marshal(b, m, deterministic)
 }
-func (dst *ExampleOne) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ExampleOne.Merge(dst, src)
+func (m *ExampleOne) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ExampleOne.Merge(m, src)
 }
 func (m *ExampleOne) XXX_Size() int {
 	return xxx_messageInfo_ExampleOne.Size(m)
@@ -121,16 +125,17 @@ func (m *ExampleTwo) Reset()         { *m = ExampleTwo{} }
 func (m *ExampleTwo) String() string { return proto.CompactTextString(m) }
 func (*ExampleTwo) ProtoMessage()    {}
 func (*ExampleTwo) Descriptor() ([]byte, []int) {
-	return fileDescriptor_example_event_c4fbf57a97944095, []int{2}
+	return fileDescriptor_c425241637f6333d, []int{2}
 }
+
 func (m *ExampleTwo) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ExampleTwo.Unmarshal(m, b)
 }
 func (m *ExampleTwo) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ExampleTwo.Marshal(b, m, deterministic)
 }
-func (dst *ExampleTwo) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ExampleTwo.Merge(dst, src)
+func (m *ExampleTwo) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ExampleTwo.Merge(m, src)
 }
 func (m *ExampleTwo) XXX_Size() int {
 	return xxx_messageInfo_ExampleTwo.Size(m)
@@ -159,16 +164,17 @@ func (m *ExampleThree) Reset()         { *m = ExampleThree{} }
 func (m *ExampleThree) String() string { return proto.CompactTextString(m) }
 func (*ExampleThree) ProtoMessage()    {}
 func (*ExampleThree) Descriptor() ([]byte, []int) {
-	return fileDescriptor_example_event_c4fbf57a97944095, []int{3}
+	return fileDescriptor_c425241637f6333d, []int{3}
 }
+
 func (m *ExampleThree) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ExampleThree.Unmarshal(m, b)
 }
 func (m *ExampleThree) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ExampleThree.Marshal(b, m, deterministic)
 }
-func (dst *ExampleThree) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ExampleThree.Merge(dst, src)
+func (m *ExampleThree) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ExampleThree.Merge(m, src)
 }
 func (m *ExampleThree) XXX_Size() int {
 	return xxx_messageInfo_ExampleThree.Size(m)
@@ -199,16 +205,17 @@ func (m *ExampleFour) Reset()         { *m = ExampleFour{} }
 func (m *ExampleFour) String() string { return proto.CompactTextString(m) }
 func (*ExampleFour) ProtoMessage()    {}
 func (*ExampleFour) Descriptor() ([]byte, []int) {
-	return fileDescriptor_example_event_c4fbf57a97944095, []int{4}
+	return fileDescriptor_c425241637f6333d, []int{4}
 }
+
 func (m *ExampleFour) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ExampleFour.Unmarshal(m, b)
 }
 func (m *ExampleFour) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ExampleFour.Marshal(b, m, deterministic)
 }
-func (dst *ExampleFour) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ExampleFour.Merge(dst, src)
+func (m *ExampleFour) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ExampleFour.Merge(m, src)
 }
 func (m *ExampleFour) XXX_Size() int {
 	return xxx_messageInfo_ExampleFour.Size(m)
@@ -248,11 +255,9 @@ func init() {
 	proto.RegisterType((*ExampleFour)(nil), "events.ExampleFour")
 }
 
-func init() {
-	proto.RegisterFile("events/example_event.proto", fileDescriptor_example_event_c4fbf57a97944095)
-}
+func init() { proto.RegisterFile("events/example_event.proto", fileDescriptor_c425241637f6333d) }
 
-var fileDescriptor_example_event_c4fbf57a97944095 = []byte{
+var fileDescriptor_c425241637f6333d = []byte{
 	// 241 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x54, 0x90, 0xc1, 0x4a, 0xc3, 0x40,
 	0x10, 0x86, 0x49, 0x13, 0x62, 0x32, 0xed, 0xc5, 0x39, 0x48, 0xa8, 0x08, 0x61, 0xf1, 0x90, 0x53,

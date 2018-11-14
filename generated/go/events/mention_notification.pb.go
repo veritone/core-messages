@@ -3,9 +3,11 @@
 
 package events
 
-import proto "github.com/golang/protobuf/proto"
-import fmt "fmt"
-import math "math"
+import (
+	fmt "fmt"
+	proto "github.com/golang/protobuf/proto"
+	math "math"
+)
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ = proto.Marshal
@@ -33,16 +35,17 @@ func (m *MentionModifiedData) Reset()         { *m = MentionModifiedData{} }
 func (m *MentionModifiedData) String() string { return proto.CompactTextString(m) }
 func (*MentionModifiedData) ProtoMessage()    {}
 func (*MentionModifiedData) Descriptor() ([]byte, []int) {
-	return fileDescriptor_mention_notification_5ca884bae4855ecb, []int{0}
+	return fileDescriptor_d47dc47477657a05, []int{0}
 }
+
 func (m *MentionModifiedData) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_MentionModifiedData.Unmarshal(m, b)
 }
 func (m *MentionModifiedData) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_MentionModifiedData.Marshal(b, m, deterministic)
 }
-func (dst *MentionModifiedData) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_MentionModifiedData.Merge(dst, src)
+func (m *MentionModifiedData) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MentionModifiedData.Merge(m, src)
 }
 func (m *MentionModifiedData) XXX_Size() int {
 	return xxx_messageInfo_MentionModifiedData.Size(m)
@@ -94,16 +97,17 @@ func (m *MentionUpdated) Reset()         { *m = MentionUpdated{} }
 func (m *MentionUpdated) String() string { return proto.CompactTextString(m) }
 func (*MentionUpdated) ProtoMessage()    {}
 func (*MentionUpdated) Descriptor() ([]byte, []int) {
-	return fileDescriptor_mention_notification_5ca884bae4855ecb, []int{1}
+	return fileDescriptor_d47dc47477657a05, []int{1}
 }
+
 func (m *MentionUpdated) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_MentionUpdated.Unmarshal(m, b)
 }
 func (m *MentionUpdated) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_MentionUpdated.Marshal(b, m, deterministic)
 }
-func (dst *MentionUpdated) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_MentionUpdated.Merge(dst, src)
+func (m *MentionUpdated) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MentionUpdated.Merge(m, src)
 }
 func (m *MentionUpdated) XXX_Size() int {
 	return xxx_messageInfo_MentionUpdated.Size(m)
@@ -148,16 +152,17 @@ func (m *MentionDeleted) Reset()         { *m = MentionDeleted{} }
 func (m *MentionDeleted) String() string { return proto.CompactTextString(m) }
 func (*MentionDeleted) ProtoMessage()    {}
 func (*MentionDeleted) Descriptor() ([]byte, []int) {
-	return fileDescriptor_mention_notification_5ca884bae4855ecb, []int{2}
+	return fileDescriptor_d47dc47477657a05, []int{2}
 }
+
 func (m *MentionDeleted) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_MentionDeleted.Unmarshal(m, b)
 }
 func (m *MentionDeleted) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_MentionDeleted.Marshal(b, m, deterministic)
 }
-func (dst *MentionDeleted) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_MentionDeleted.Merge(dst, src)
+func (m *MentionDeleted) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MentionDeleted.Merge(m, src)
 }
 func (m *MentionDeleted) XXX_Size() int {
 	return xxx_messageInfo_MentionDeleted.Size(m)
@@ -202,16 +207,17 @@ func (m *MentionInserted) Reset()         { *m = MentionInserted{} }
 func (m *MentionInserted) String() string { return proto.CompactTextString(m) }
 func (*MentionInserted) ProtoMessage()    {}
 func (*MentionInserted) Descriptor() ([]byte, []int) {
-	return fileDescriptor_mention_notification_5ca884bae4855ecb, []int{3}
+	return fileDescriptor_d47dc47477657a05, []int{3}
 }
+
 func (m *MentionInserted) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_MentionInserted.Unmarshal(m, b)
 }
 func (m *MentionInserted) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_MentionInserted.Marshal(b, m, deterministic)
 }
-func (dst *MentionInserted) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_MentionInserted.Merge(dst, src)
+func (m *MentionInserted) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MentionInserted.Merge(m, src)
 }
 func (m *MentionInserted) XXX_Size() int {
 	return xxx_messageInfo_MentionInserted.Size(m)
@@ -262,16 +268,17 @@ func (m *MentionEmailGenerated) Reset()         { *m = MentionEmailGenerated{} }
 func (m *MentionEmailGenerated) String() string { return proto.CompactTextString(m) }
 func (*MentionEmailGenerated) ProtoMessage()    {}
 func (*MentionEmailGenerated) Descriptor() ([]byte, []int) {
-	return fileDescriptor_mention_notification_5ca884bae4855ecb, []int{4}
+	return fileDescriptor_d47dc47477657a05, []int{4}
 }
+
 func (m *MentionEmailGenerated) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_MentionEmailGenerated.Unmarshal(m, b)
 }
 func (m *MentionEmailGenerated) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_MentionEmailGenerated.Marshal(b, m, deterministic)
 }
-func (dst *MentionEmailGenerated) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_MentionEmailGenerated.Merge(dst, src)
+func (m *MentionEmailGenerated) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MentionEmailGenerated.Merge(m, src)
 }
 func (m *MentionEmailGenerated) XXX_Size() int {
 	return xxx_messageInfo_MentionEmailGenerated.Size(m)
@@ -366,16 +373,17 @@ func (m *MentionEmailGenerated_Mention) Reset()         { *m = MentionEmailGener
 func (m *MentionEmailGenerated_Mention) String() string { return proto.CompactTextString(m) }
 func (*MentionEmailGenerated_Mention) ProtoMessage()    {}
 func (*MentionEmailGenerated_Mention) Descriptor() ([]byte, []int) {
-	return fileDescriptor_mention_notification_5ca884bae4855ecb, []int{4, 0}
+	return fileDescriptor_d47dc47477657a05, []int{4, 0}
 }
+
 func (m *MentionEmailGenerated_Mention) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_MentionEmailGenerated_Mention.Unmarshal(m, b)
 }
 func (m *MentionEmailGenerated_Mention) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_MentionEmailGenerated_Mention.Marshal(b, m, deterministic)
 }
-func (dst *MentionEmailGenerated_Mention) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_MentionEmailGenerated_Mention.Merge(dst, src)
+func (m *MentionEmailGenerated_Mention) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MentionEmailGenerated_Mention.Merge(m, src)
 }
 func (m *MentionEmailGenerated_Mention) XXX_Size() int {
 	return xxx_messageInfo_MentionEmailGenerated_Mention.Size(m)
@@ -477,16 +485,17 @@ func (m *MentionEmailGenerated_PlaceHolders) Reset()         { *m = MentionEmail
 func (m *MentionEmailGenerated_PlaceHolders) String() string { return proto.CompactTextString(m) }
 func (*MentionEmailGenerated_PlaceHolders) ProtoMessage()    {}
 func (*MentionEmailGenerated_PlaceHolders) Descriptor() ([]byte, []int) {
-	return fileDescriptor_mention_notification_5ca884bae4855ecb, []int{4, 1}
+	return fileDescriptor_d47dc47477657a05, []int{4, 1}
 }
+
 func (m *MentionEmailGenerated_PlaceHolders) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_MentionEmailGenerated_PlaceHolders.Unmarshal(m, b)
 }
 func (m *MentionEmailGenerated_PlaceHolders) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_MentionEmailGenerated_PlaceHolders.Marshal(b, m, deterministic)
 }
-func (dst *MentionEmailGenerated_PlaceHolders) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_MentionEmailGenerated_PlaceHolders.Merge(dst, src)
+func (m *MentionEmailGenerated_PlaceHolders) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MentionEmailGenerated_PlaceHolders.Merge(m, src)
 }
 func (m *MentionEmailGenerated_PlaceHolders) XXX_Size() int {
 	return xxx_messageInfo_MentionEmailGenerated_PlaceHolders.Size(m)
@@ -535,11 +544,9 @@ func init() {
 	proto.RegisterType((*MentionEmailGenerated_PlaceHolders)(nil), "events.MentionEmailGenerated.PlaceHolders")
 }
 
-func init() {
-	proto.RegisterFile("events/mention_notification.proto", fileDescriptor_mention_notification_5ca884bae4855ecb)
-}
+func init() { proto.RegisterFile("events/mention_notification.proto", fileDescriptor_d47dc47477657a05) }
 
-var fileDescriptor_mention_notification_5ca884bae4855ecb = []byte{
+var fileDescriptor_d47dc47477657a05 = []byte{
 	// 629 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xbc, 0x54, 0xdd, 0x4e, 0x13, 0x41,
 	0x14, 0x4e, 0x69, 0xa1, 0xdb, 0xb3, 0xdb, 0x82, 0x23, 0x24, 0x6b, 0x89, 0x91, 0x62, 0x88, 0x68,

@@ -3,10 +3,12 @@
 
 package events
 
-import proto "github.com/golang/protobuf/proto"
-import fmt "fmt"
-import math "math"
-import _ "github.com/golang/protobuf/ptypes/any"
+import (
+	fmt "fmt"
+	proto "github.com/golang/protobuf/proto"
+	_ "github.com/golang/protobuf/ptypes/any"
+	math "math"
+)
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ = proto.Marshal
@@ -35,16 +37,17 @@ func (m *BasicEmail) Reset()         { *m = BasicEmail{} }
 func (m *BasicEmail) String() string { return proto.CompactTextString(m) }
 func (*BasicEmail) ProtoMessage()    {}
 func (*BasicEmail) Descriptor() ([]byte, []int) {
-	return fileDescriptor_notification_2d6093b7ad89dc73, []int{0}
+	return fileDescriptor_f67e99c3e6be98f7, []int{0}
 }
+
 func (m *BasicEmail) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_BasicEmail.Unmarshal(m, b)
 }
 func (m *BasicEmail) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_BasicEmail.Marshal(b, m, deterministic)
 }
-func (dst *BasicEmail) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_BasicEmail.Merge(dst, src)
+func (m *BasicEmail) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_BasicEmail.Merge(m, src)
 }
 func (m *BasicEmail) XXX_Size() int {
 	return xxx_messageInfo_BasicEmail.Size(m)
@@ -110,16 +113,17 @@ func (m *SMSNotification) Reset()         { *m = SMSNotification{} }
 func (m *SMSNotification) String() string { return proto.CompactTextString(m) }
 func (*SMSNotification) ProtoMessage()    {}
 func (*SMSNotification) Descriptor() ([]byte, []int) {
-	return fileDescriptor_notification_2d6093b7ad89dc73, []int{1}
+	return fileDescriptor_f67e99c3e6be98f7, []int{1}
 }
+
 func (m *SMSNotification) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SMSNotification.Unmarshal(m, b)
 }
 func (m *SMSNotification) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SMSNotification.Marshal(b, m, deterministic)
 }
-func (dst *SMSNotification) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_SMSNotification.Merge(dst, src)
+func (m *SMSNotification) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SMSNotification.Merge(m, src)
 }
 func (m *SMSNotification) XXX_Size() int {
 	return xxx_messageInfo_SMSNotification.Size(m)
@@ -156,11 +160,9 @@ func init() {
 	proto.RegisterType((*SMSNotification)(nil), "events.SMSNotification")
 }
 
-func init() {
-	proto.RegisterFile("events/notification.proto", fileDescriptor_notification_2d6093b7ad89dc73)
-}
+func init() { proto.RegisterFile("events/notification.proto", fileDescriptor_f67e99c3e6be98f7) }
 
-var fileDescriptor_notification_2d6093b7ad89dc73 = []byte{
+var fileDescriptor_f67e99c3e6be98f7 = []byte{
 	// 257 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x4c, 0x90, 0xc1, 0x4a, 0xc3, 0x40,
 	0x10, 0x86, 0x29, 0x48, 0x9b, 0x4c, 0xab, 0x85, 0x3d, 0x6d, 0x14, 0x51, 0x7b, 0xf2, 0x64, 0x0e,

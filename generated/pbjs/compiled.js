@@ -7875,6 +7875,564 @@ $root.events = (function() {
         return MentionGenerated;
     })();
 
+    events.MentionGenerateMediaCompleted = (function() {
+
+        /**
+         * Properties of a MentionGenerateMediaCompleted.
+         * @memberof events
+         * @interface IMentionGenerateMediaCompleted
+         * @property {number|Long|null} [tdoId] MentionGenerateMediaCompleted tdoId
+         * @property {number|null} [elapsedS] MentionGenerateMediaCompleted elapsedS
+         * @property {number|null} [watchlistCount] MentionGenerateMediaCompleted watchlistCount
+         * @property {number|null} [mentionCount] MentionGenerateMediaCompleted mentionCount
+         * @property {string|null} [details] MentionGenerateMediaCompleted details
+         */
+
+        /**
+         * Constructs a new MentionGenerateMediaCompleted.
+         * @memberof events
+         * @classdesc Represents a MentionGenerateMediaCompleted.
+         * @implements IMentionGenerateMediaCompleted
+         * @constructor
+         * @param {events.IMentionGenerateMediaCompleted=} [properties] Properties to set
+         */
+        function MentionGenerateMediaCompleted(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * MentionGenerateMediaCompleted tdoId.
+         * @member {number|Long} tdoId
+         * @memberof events.MentionGenerateMediaCompleted
+         * @instance
+         */
+        MentionGenerateMediaCompleted.prototype.tdoId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+        /**
+         * MentionGenerateMediaCompleted elapsedS.
+         * @member {number} elapsedS
+         * @memberof events.MentionGenerateMediaCompleted
+         * @instance
+         */
+        MentionGenerateMediaCompleted.prototype.elapsedS = 0;
+
+        /**
+         * MentionGenerateMediaCompleted watchlistCount.
+         * @member {number} watchlistCount
+         * @memberof events.MentionGenerateMediaCompleted
+         * @instance
+         */
+        MentionGenerateMediaCompleted.prototype.watchlistCount = 0;
+
+        /**
+         * MentionGenerateMediaCompleted mentionCount.
+         * @member {number} mentionCount
+         * @memberof events.MentionGenerateMediaCompleted
+         * @instance
+         */
+        MentionGenerateMediaCompleted.prototype.mentionCount = 0;
+
+        /**
+         * MentionGenerateMediaCompleted details.
+         * @member {string} details
+         * @memberof events.MentionGenerateMediaCompleted
+         * @instance
+         */
+        MentionGenerateMediaCompleted.prototype.details = "";
+
+        /**
+         * Creates a new MentionGenerateMediaCompleted instance using the specified properties.
+         * @function create
+         * @memberof events.MentionGenerateMediaCompleted
+         * @static
+         * @param {events.IMentionGenerateMediaCompleted=} [properties] Properties to set
+         * @returns {events.MentionGenerateMediaCompleted} MentionGenerateMediaCompleted instance
+         */
+        MentionGenerateMediaCompleted.create = function create(properties) {
+            return new MentionGenerateMediaCompleted(properties);
+        };
+
+        /**
+         * Encodes the specified MentionGenerateMediaCompleted message. Does not implicitly {@link events.MentionGenerateMediaCompleted.verify|verify} messages.
+         * @function encode
+         * @memberof events.MentionGenerateMediaCompleted
+         * @static
+         * @param {events.IMentionGenerateMediaCompleted} message MentionGenerateMediaCompleted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        MentionGenerateMediaCompleted.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.tdoId != null && message.hasOwnProperty("tdoId"))
+                writer.uint32(/* id 10, wireType 0 =*/80).int64(message.tdoId);
+            if (message.elapsedS != null && message.hasOwnProperty("elapsedS"))
+                writer.uint32(/* id 12, wireType 0 =*/96).uint32(message.elapsedS);
+            if (message.watchlistCount != null && message.hasOwnProperty("watchlistCount"))
+                writer.uint32(/* id 16, wireType 0 =*/128).uint32(message.watchlistCount);
+            if (message.mentionCount != null && message.hasOwnProperty("mentionCount"))
+                writer.uint32(/* id 18, wireType 0 =*/144).uint32(message.mentionCount);
+            if (message.details != null && message.hasOwnProperty("details"))
+                writer.uint32(/* id 20, wireType 2 =*/162).string(message.details);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified MentionGenerateMediaCompleted message, length delimited. Does not implicitly {@link events.MentionGenerateMediaCompleted.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.MentionGenerateMediaCompleted
+         * @static
+         * @param {events.IMentionGenerateMediaCompleted} message MentionGenerateMediaCompleted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        MentionGenerateMediaCompleted.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a MentionGenerateMediaCompleted message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.MentionGenerateMediaCompleted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.MentionGenerateMediaCompleted} MentionGenerateMediaCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        MentionGenerateMediaCompleted.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.MentionGenerateMediaCompleted();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.tdoId = reader.int64();
+                    break;
+                case 12:
+                    message.elapsedS = reader.uint32();
+                    break;
+                case 16:
+                    message.watchlistCount = reader.uint32();
+                    break;
+                case 18:
+                    message.mentionCount = reader.uint32();
+                    break;
+                case 20:
+                    message.details = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a MentionGenerateMediaCompleted message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.MentionGenerateMediaCompleted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.MentionGenerateMediaCompleted} MentionGenerateMediaCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        MentionGenerateMediaCompleted.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a MentionGenerateMediaCompleted message.
+         * @function verify
+         * @memberof events.MentionGenerateMediaCompleted
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        MentionGenerateMediaCompleted.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.tdoId != null && message.hasOwnProperty("tdoId"))
+                if (!$util.isInteger(message.tdoId) && !(message.tdoId && $util.isInteger(message.tdoId.low) && $util.isInteger(message.tdoId.high)))
+                    return "tdoId: integer|Long expected";
+            if (message.elapsedS != null && message.hasOwnProperty("elapsedS"))
+                if (!$util.isInteger(message.elapsedS))
+                    return "elapsedS: integer expected";
+            if (message.watchlistCount != null && message.hasOwnProperty("watchlistCount"))
+                if (!$util.isInteger(message.watchlistCount))
+                    return "watchlistCount: integer expected";
+            if (message.mentionCount != null && message.hasOwnProperty("mentionCount"))
+                if (!$util.isInteger(message.mentionCount))
+                    return "mentionCount: integer expected";
+            if (message.details != null && message.hasOwnProperty("details"))
+                if (!$util.isString(message.details))
+                    return "details: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a MentionGenerateMediaCompleted message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.MentionGenerateMediaCompleted
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.MentionGenerateMediaCompleted} MentionGenerateMediaCompleted
+         */
+        MentionGenerateMediaCompleted.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.MentionGenerateMediaCompleted)
+                return object;
+            var message = new $root.events.MentionGenerateMediaCompleted();
+            if (object.tdoId != null)
+                if ($util.Long)
+                    (message.tdoId = $util.Long.fromValue(object.tdoId)).unsigned = false;
+                else if (typeof object.tdoId === "string")
+                    message.tdoId = parseInt(object.tdoId, 10);
+                else if (typeof object.tdoId === "number")
+                    message.tdoId = object.tdoId;
+                else if (typeof object.tdoId === "object")
+                    message.tdoId = new $util.LongBits(object.tdoId.low >>> 0, object.tdoId.high >>> 0).toNumber();
+            if (object.elapsedS != null)
+                message.elapsedS = object.elapsedS >>> 0;
+            if (object.watchlistCount != null)
+                message.watchlistCount = object.watchlistCount >>> 0;
+            if (object.mentionCount != null)
+                message.mentionCount = object.mentionCount >>> 0;
+            if (object.details != null)
+                message.details = String(object.details);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a MentionGenerateMediaCompleted message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.MentionGenerateMediaCompleted
+         * @static
+         * @param {events.MentionGenerateMediaCompleted} message MentionGenerateMediaCompleted
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        MentionGenerateMediaCompleted.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.tdoId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.tdoId = options.longs === String ? "0" : 0;
+                object.elapsedS = 0;
+                object.watchlistCount = 0;
+                object.mentionCount = 0;
+                object.details = "";
+            }
+            if (message.tdoId != null && message.hasOwnProperty("tdoId"))
+                if (typeof message.tdoId === "number")
+                    object.tdoId = options.longs === String ? String(message.tdoId) : message.tdoId;
+                else
+                    object.tdoId = options.longs === String ? $util.Long.prototype.toString.call(message.tdoId) : options.longs === Number ? new $util.LongBits(message.tdoId.low >>> 0, message.tdoId.high >>> 0).toNumber() : message.tdoId;
+            if (message.elapsedS != null && message.hasOwnProperty("elapsedS"))
+                object.elapsedS = message.elapsedS;
+            if (message.watchlistCount != null && message.hasOwnProperty("watchlistCount"))
+                object.watchlistCount = message.watchlistCount;
+            if (message.mentionCount != null && message.hasOwnProperty("mentionCount"))
+                object.mentionCount = message.mentionCount;
+            if (message.details != null && message.hasOwnProperty("details"))
+                object.details = message.details;
+            return object;
+        };
+
+        /**
+         * Converts this MentionGenerateMediaCompleted to JSON.
+         * @function toJSON
+         * @memberof events.MentionGenerateMediaCompleted
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        MentionGenerateMediaCompleted.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return MentionGenerateMediaCompleted;
+    })();
+
+    events.MentionGenerateWatchlistCompleted = (function() {
+
+        /**
+         * Properties of a MentionGenerateWatchlistCompleted.
+         * @memberof events
+         * @interface IMentionGenerateWatchlistCompleted
+         * @property {number|Long|null} [watchlistId] MentionGenerateWatchlistCompleted watchlistId
+         * @property {number|null} [elapsedS] MentionGenerateWatchlistCompleted elapsedS
+         * @property {number|null} [mentionCount] MentionGenerateWatchlistCompleted mentionCount
+         * @property {boolean|null} [mentionLimitExceeded] MentionGenerateWatchlistCompleted mentionLimitExceeded
+         */
+
+        /**
+         * Constructs a new MentionGenerateWatchlistCompleted.
+         * @memberof events
+         * @classdesc Represents a MentionGenerateWatchlistCompleted.
+         * @implements IMentionGenerateWatchlistCompleted
+         * @constructor
+         * @param {events.IMentionGenerateWatchlistCompleted=} [properties] Properties to set
+         */
+        function MentionGenerateWatchlistCompleted(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * MentionGenerateWatchlistCompleted watchlistId.
+         * @member {number|Long} watchlistId
+         * @memberof events.MentionGenerateWatchlistCompleted
+         * @instance
+         */
+        MentionGenerateWatchlistCompleted.prototype.watchlistId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+        /**
+         * MentionGenerateWatchlistCompleted elapsedS.
+         * @member {number} elapsedS
+         * @memberof events.MentionGenerateWatchlistCompleted
+         * @instance
+         */
+        MentionGenerateWatchlistCompleted.prototype.elapsedS = 0;
+
+        /**
+         * MentionGenerateWatchlistCompleted mentionCount.
+         * @member {number} mentionCount
+         * @memberof events.MentionGenerateWatchlistCompleted
+         * @instance
+         */
+        MentionGenerateWatchlistCompleted.prototype.mentionCount = 0;
+
+        /**
+         * MentionGenerateWatchlistCompleted mentionLimitExceeded.
+         * @member {boolean} mentionLimitExceeded
+         * @memberof events.MentionGenerateWatchlistCompleted
+         * @instance
+         */
+        MentionGenerateWatchlistCompleted.prototype.mentionLimitExceeded = false;
+
+        /**
+         * Creates a new MentionGenerateWatchlistCompleted instance using the specified properties.
+         * @function create
+         * @memberof events.MentionGenerateWatchlistCompleted
+         * @static
+         * @param {events.IMentionGenerateWatchlistCompleted=} [properties] Properties to set
+         * @returns {events.MentionGenerateWatchlistCompleted} MentionGenerateWatchlistCompleted instance
+         */
+        MentionGenerateWatchlistCompleted.create = function create(properties) {
+            return new MentionGenerateWatchlistCompleted(properties);
+        };
+
+        /**
+         * Encodes the specified MentionGenerateWatchlistCompleted message. Does not implicitly {@link events.MentionGenerateWatchlistCompleted.verify|verify} messages.
+         * @function encode
+         * @memberof events.MentionGenerateWatchlistCompleted
+         * @static
+         * @param {events.IMentionGenerateWatchlistCompleted} message MentionGenerateWatchlistCompleted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        MentionGenerateWatchlistCompleted.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.watchlistId != null && message.hasOwnProperty("watchlistId"))
+                writer.uint32(/* id 10, wireType 0 =*/80).int64(message.watchlistId);
+            if (message.elapsedS != null && message.hasOwnProperty("elapsedS"))
+                writer.uint32(/* id 12, wireType 0 =*/96).uint32(message.elapsedS);
+            if (message.mentionCount != null && message.hasOwnProperty("mentionCount"))
+                writer.uint32(/* id 16, wireType 0 =*/128).uint32(message.mentionCount);
+            if (message.mentionLimitExceeded != null && message.hasOwnProperty("mentionLimitExceeded"))
+                writer.uint32(/* id 18, wireType 0 =*/144).bool(message.mentionLimitExceeded);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified MentionGenerateWatchlistCompleted message, length delimited. Does not implicitly {@link events.MentionGenerateWatchlistCompleted.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.MentionGenerateWatchlistCompleted
+         * @static
+         * @param {events.IMentionGenerateWatchlistCompleted} message MentionGenerateWatchlistCompleted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        MentionGenerateWatchlistCompleted.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a MentionGenerateWatchlistCompleted message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.MentionGenerateWatchlistCompleted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.MentionGenerateWatchlistCompleted} MentionGenerateWatchlistCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        MentionGenerateWatchlistCompleted.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.MentionGenerateWatchlistCompleted();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.watchlistId = reader.int64();
+                    break;
+                case 12:
+                    message.elapsedS = reader.uint32();
+                    break;
+                case 16:
+                    message.mentionCount = reader.uint32();
+                    break;
+                case 18:
+                    message.mentionLimitExceeded = reader.bool();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a MentionGenerateWatchlistCompleted message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.MentionGenerateWatchlistCompleted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.MentionGenerateWatchlistCompleted} MentionGenerateWatchlistCompleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        MentionGenerateWatchlistCompleted.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a MentionGenerateWatchlistCompleted message.
+         * @function verify
+         * @memberof events.MentionGenerateWatchlistCompleted
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        MentionGenerateWatchlistCompleted.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.watchlistId != null && message.hasOwnProperty("watchlistId"))
+                if (!$util.isInteger(message.watchlistId) && !(message.watchlistId && $util.isInteger(message.watchlistId.low) && $util.isInteger(message.watchlistId.high)))
+                    return "watchlistId: integer|Long expected";
+            if (message.elapsedS != null && message.hasOwnProperty("elapsedS"))
+                if (!$util.isInteger(message.elapsedS))
+                    return "elapsedS: integer expected";
+            if (message.mentionCount != null && message.hasOwnProperty("mentionCount"))
+                if (!$util.isInteger(message.mentionCount))
+                    return "mentionCount: integer expected";
+            if (message.mentionLimitExceeded != null && message.hasOwnProperty("mentionLimitExceeded"))
+                if (typeof message.mentionLimitExceeded !== "boolean")
+                    return "mentionLimitExceeded: boolean expected";
+            return null;
+        };
+
+        /**
+         * Creates a MentionGenerateWatchlistCompleted message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.MentionGenerateWatchlistCompleted
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.MentionGenerateWatchlistCompleted} MentionGenerateWatchlistCompleted
+         */
+        MentionGenerateWatchlistCompleted.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.MentionGenerateWatchlistCompleted)
+                return object;
+            var message = new $root.events.MentionGenerateWatchlistCompleted();
+            if (object.watchlistId != null)
+                if ($util.Long)
+                    (message.watchlistId = $util.Long.fromValue(object.watchlistId)).unsigned = false;
+                else if (typeof object.watchlistId === "string")
+                    message.watchlistId = parseInt(object.watchlistId, 10);
+                else if (typeof object.watchlistId === "number")
+                    message.watchlistId = object.watchlistId;
+                else if (typeof object.watchlistId === "object")
+                    message.watchlistId = new $util.LongBits(object.watchlistId.low >>> 0, object.watchlistId.high >>> 0).toNumber();
+            if (object.elapsedS != null)
+                message.elapsedS = object.elapsedS >>> 0;
+            if (object.mentionCount != null)
+                message.mentionCount = object.mentionCount >>> 0;
+            if (object.mentionLimitExceeded != null)
+                message.mentionLimitExceeded = Boolean(object.mentionLimitExceeded);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a MentionGenerateWatchlistCompleted message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.MentionGenerateWatchlistCompleted
+         * @static
+         * @param {events.MentionGenerateWatchlistCompleted} message MentionGenerateWatchlistCompleted
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        MentionGenerateWatchlistCompleted.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.watchlistId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.watchlistId = options.longs === String ? "0" : 0;
+                object.elapsedS = 0;
+                object.mentionCount = 0;
+                object.mentionLimitExceeded = false;
+            }
+            if (message.watchlistId != null && message.hasOwnProperty("watchlistId"))
+                if (typeof message.watchlistId === "number")
+                    object.watchlistId = options.longs === String ? String(message.watchlistId) : message.watchlistId;
+                else
+                    object.watchlistId = options.longs === String ? $util.Long.prototype.toString.call(message.watchlistId) : options.longs === Number ? new $util.LongBits(message.watchlistId.low >>> 0, message.watchlistId.high >>> 0).toNumber() : message.watchlistId;
+            if (message.elapsedS != null && message.hasOwnProperty("elapsedS"))
+                object.elapsedS = message.elapsedS;
+            if (message.mentionCount != null && message.hasOwnProperty("mentionCount"))
+                object.mentionCount = message.mentionCount;
+            if (message.mentionLimitExceeded != null && message.hasOwnProperty("mentionLimitExceeded"))
+                object.mentionLimitExceeded = message.mentionLimitExceeded;
+            return object;
+        };
+
+        /**
+         * Converts this MentionGenerateWatchlistCompleted to JSON.
+         * @function toJSON
+         * @memberof events.MentionGenerateWatchlistCompleted
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        MentionGenerateWatchlistCompleted.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return MentionGenerateWatchlistCompleted;
+    })();
+
     events.MentionModifiedData = (function() {
 
         /**

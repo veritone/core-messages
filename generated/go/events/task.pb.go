@@ -3,9 +3,11 @@
 
 package events
 
-import proto "github.com/golang/protobuf/proto"
-import fmt "fmt"
-import math "math"
+import (
+	fmt "fmt"
+	proto "github.com/golang/protobuf/proto"
+	math "math"
+)
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ = proto.Marshal
@@ -30,16 +32,17 @@ func (m *TaskQueued) Reset()         { *m = TaskQueued{} }
 func (m *TaskQueued) String() string { return proto.CompactTextString(m) }
 func (*TaskQueued) ProtoMessage()    {}
 func (*TaskQueued) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_368d860e2c40495c, []int{0}
+	return fileDescriptor_540e9a2e62bbdee6, []int{0}
 }
+
 func (m *TaskQueued) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskQueued.Unmarshal(m, b)
 }
 func (m *TaskQueued) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_TaskQueued.Marshal(b, m, deterministic)
 }
-func (dst *TaskQueued) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_TaskQueued.Merge(dst, src)
+func (m *TaskQueued) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_TaskQueued.Merge(m, src)
 }
 func (m *TaskQueued) XXX_Size() int {
 	return xxx_messageInfo_TaskQueued.Size(m)
@@ -77,16 +80,17 @@ func (m *TaskUpdated) Reset()         { *m = TaskUpdated{} }
 func (m *TaskUpdated) String() string { return proto.CompactTextString(m) }
 func (*TaskUpdated) ProtoMessage()    {}
 func (*TaskUpdated) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_368d860e2c40495c, []int{1}
+	return fileDescriptor_540e9a2e62bbdee6, []int{1}
 }
+
 func (m *TaskUpdated) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskUpdated.Unmarshal(m, b)
 }
 func (m *TaskUpdated) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_TaskUpdated.Marshal(b, m, deterministic)
 }
-func (dst *TaskUpdated) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_TaskUpdated.Merge(dst, src)
+func (m *TaskUpdated) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_TaskUpdated.Merge(m, src)
 }
 func (m *TaskUpdated) XXX_Size() int {
 	return xxx_messageInfo_TaskUpdated.Size(m)
@@ -131,16 +135,17 @@ func (m *TaskCompleted) Reset()         { *m = TaskCompleted{} }
 func (m *TaskCompleted) String() string { return proto.CompactTextString(m) }
 func (*TaskCompleted) ProtoMessage()    {}
 func (*TaskCompleted) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_368d860e2c40495c, []int{2}
+	return fileDescriptor_540e9a2e62bbdee6, []int{2}
 }
+
 func (m *TaskCompleted) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskCompleted.Unmarshal(m, b)
 }
 func (m *TaskCompleted) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_TaskCompleted.Marshal(b, m, deterministic)
 }
-func (dst *TaskCompleted) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_TaskCompleted.Merge(dst, src)
+func (m *TaskCompleted) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_TaskCompleted.Merge(m, src)
 }
 func (m *TaskCompleted) XXX_Size() int {
 	return xxx_messageInfo_TaskCompleted.Size(m)
@@ -178,9 +183,9 @@ func init() {
 	proto.RegisterType((*TaskCompleted)(nil), "events.TaskCompleted")
 }
 
-func init() { proto.RegisterFile("events/task.proto", fileDescriptor_task_368d860e2c40495c) }
+func init() { proto.RegisterFile("events/task.proto", fileDescriptor_540e9a2e62bbdee6) }
 
-var fileDescriptor_task_368d860e2c40495c = []byte{
+var fileDescriptor_540e9a2e62bbdee6 = []byte{
 	// 167 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x12, 0x4c, 0x2d, 0x4b, 0xcd,
 	0x2b, 0x29, 0xd6, 0x2f, 0x49, 0x2c, 0xce, 0xd6, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x83,

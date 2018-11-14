@@ -78,6 +78,14 @@
   
   
 
+- [events/mention_generation.proto](#events/mention_generation.proto)
+    - [MentionGenerateMediaCompleted](#events.MentionGenerateMediaCompleted)
+    - [MentionGenerateWatchlistCompleted](#events.MentionGenerateWatchlistCompleted)
+  
+  
+  
+  
+
 - [events/mention_notification.proto](#events/mention_notification.proto)
     - [MentionDeleted](#events.MentionDeleted)
     - [MentionEmailGenerated](#events.MentionEmailGenerated)
@@ -815,6 +823,59 @@
 | watchlist_id | [int64](#int64) |  | the watchlist/tracking unit id |
 | schedule_id | [int64](#int64) |  | the schedule/program id |
 | tdo_id | [int64](#int64) |  | the tdo/media/recording id |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="events/mention_generation.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## events/mention_generation.proto
+
+
+
+<a name="events.MentionGenerateMediaCompleted"></a>
+
+### MentionGenerateMediaCompleted
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| tdo_id | [int64](#int64) |  | tdo/media/recording id |
+| elapsed_s | [uint32](#uint32) |  | time it took to generate mentions in seconds |
+| watchlist_count | [uint32](#uint32) |  | total watchlists executed |
+| mention_count | [uint32](#uint32) |  | total mentions created |
+| details | [string](#string) |  | arbitrary data |
+
+
+
+
+
+
+<a name="events.MentionGenerateWatchlistCompleted"></a>
+
+### MentionGenerateWatchlistCompleted
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| watchlist_id | [int64](#int64) |  | the watchlist/tracking unit id |
+| elapsed_s | [uint32](#uint32) |  | time it took to generate mentions in seconds |
+| mention_count | [uint32](#uint32) |  | total mentions created |
+| mention_limit_exceeded | [bool](#bool) |  | whether mention generation was completed due to exceeding the mention limit for the org |
 
 
 
