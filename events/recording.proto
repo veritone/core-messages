@@ -29,3 +29,9 @@ message RecordingCognitionCompleted {
     string recording_id = 10;
     Payload payload = 11;
 }
+
+message RecordingInsertFailed {
+    string recording_id = 10;
+    string error = 11;
+    string fauilureType = 12;
+}
