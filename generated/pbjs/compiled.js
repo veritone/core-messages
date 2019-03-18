@@ -12177,6 +12177,238 @@ $root.events = (function() {
         return RecordingCognitionCompleted;
     })();
 
+    events.RecordingInsertFailed = (function() {
+
+        /**
+         * Properties of a RecordingInsertFailed.
+         * @memberof events
+         * @interface IRecordingInsertFailed
+         * @property {string|null} [recordingId] RecordingInsertFailed recordingId
+         * @property {string|null} [error] RecordingInsertFailed error
+         * @property {string|null} [fauilureType] RecordingInsertFailed fauilureType
+         */
+
+        /**
+         * Constructs a new RecordingInsertFailed.
+         * @memberof events
+         * @classdesc Represents a RecordingInsertFailed.
+         * @implements IRecordingInsertFailed
+         * @constructor
+         * @param {events.IRecordingInsertFailed=} [properties] Properties to set
+         */
+        function RecordingInsertFailed(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * RecordingInsertFailed recordingId.
+         * @member {string} recordingId
+         * @memberof events.RecordingInsertFailed
+         * @instance
+         */
+        RecordingInsertFailed.prototype.recordingId = "";
+
+        /**
+         * RecordingInsertFailed error.
+         * @member {string} error
+         * @memberof events.RecordingInsertFailed
+         * @instance
+         */
+        RecordingInsertFailed.prototype.error = "";
+
+        /**
+         * RecordingInsertFailed fauilureType.
+         * @member {string} fauilureType
+         * @memberof events.RecordingInsertFailed
+         * @instance
+         */
+        RecordingInsertFailed.prototype.fauilureType = "";
+
+        /**
+         * Creates a new RecordingInsertFailed instance using the specified properties.
+         * @function create
+         * @memberof events.RecordingInsertFailed
+         * @static
+         * @param {events.IRecordingInsertFailed=} [properties] Properties to set
+         * @returns {events.RecordingInsertFailed} RecordingInsertFailed instance
+         */
+        RecordingInsertFailed.create = function create(properties) {
+            return new RecordingInsertFailed(properties);
+        };
+
+        /**
+         * Encodes the specified RecordingInsertFailed message. Does not implicitly {@link events.RecordingInsertFailed.verify|verify} messages.
+         * @function encode
+         * @memberof events.RecordingInsertFailed
+         * @static
+         * @param {events.IRecordingInsertFailed} message RecordingInsertFailed message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RecordingInsertFailed.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.recordingId);
+            if (message.error != null && message.hasOwnProperty("error"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.error);
+            if (message.fauilureType != null && message.hasOwnProperty("fauilureType"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.fauilureType);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified RecordingInsertFailed message, length delimited. Does not implicitly {@link events.RecordingInsertFailed.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.RecordingInsertFailed
+         * @static
+         * @param {events.IRecordingInsertFailed} message RecordingInsertFailed message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        RecordingInsertFailed.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a RecordingInsertFailed message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.RecordingInsertFailed
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.RecordingInsertFailed} RecordingInsertFailed
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RecordingInsertFailed.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.RecordingInsertFailed();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.recordingId = reader.string();
+                    break;
+                case 11:
+                    message.error = reader.string();
+                    break;
+                case 12:
+                    message.fauilureType = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a RecordingInsertFailed message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.RecordingInsertFailed
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.RecordingInsertFailed} RecordingInsertFailed
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        RecordingInsertFailed.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a RecordingInsertFailed message.
+         * @function verify
+         * @memberof events.RecordingInsertFailed
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        RecordingInsertFailed.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                if (!$util.isString(message.recordingId))
+                    return "recordingId: string expected";
+            if (message.error != null && message.hasOwnProperty("error"))
+                if (!$util.isString(message.error))
+                    return "error: string expected";
+            if (message.fauilureType != null && message.hasOwnProperty("fauilureType"))
+                if (!$util.isString(message.fauilureType))
+                    return "fauilureType: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a RecordingInsertFailed message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.RecordingInsertFailed
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.RecordingInsertFailed} RecordingInsertFailed
+         */
+        RecordingInsertFailed.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.RecordingInsertFailed)
+                return object;
+            var message = new $root.events.RecordingInsertFailed();
+            if (object.recordingId != null)
+                message.recordingId = String(object.recordingId);
+            if (object.error != null)
+                message.error = String(object.error);
+            if (object.fauilureType != null)
+                message.fauilureType = String(object.fauilureType);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a RecordingInsertFailed message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.RecordingInsertFailed
+         * @static
+         * @param {events.RecordingInsertFailed} message RecordingInsertFailed
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        RecordingInsertFailed.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.recordingId = "";
+                object.error = "";
+                object.fauilureType = "";
+            }
+            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                object.recordingId = message.recordingId;
+            if (message.error != null && message.hasOwnProperty("error"))
+                object.error = message.error;
+            if (message.fauilureType != null && message.hasOwnProperty("fauilureType"))
+                object.fauilureType = message.fauilureType;
+            return object;
+        };
+
+        /**
+         * Converts this RecordingInsertFailed to JSON.
+         * @function toJSON
+         * @memberof events.RecordingInsertFailed
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        RecordingInsertFailed.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return RecordingInsertFailed;
+    })();
+
     events.TaskQueued = (function() {
 
         /**

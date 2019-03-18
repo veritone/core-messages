@@ -112,6 +112,7 @@
     - [RecordingCognitionCompleted.Payload](#events.RecordingCognitionCompleted.Payload)
     - [RecordingCreated](#events.RecordingCreated)
     - [RecordingDeleted](#events.RecordingDeleted)
+    - [RecordingInsertFailed](#events.RecordingInsertFailed)
     - [RecordingInserted](#events.RecordingInserted)
   
   
@@ -1165,6 +1166,23 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | recording_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="events.RecordingInsertFailed"></a>
+
+### RecordingInsertFailed
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| recording_id | [string](#string) |  |  |
+| error | [string](#string) |  |  |
+| fauilureType | [string](#string) |  |  |
 
 
 

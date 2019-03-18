@@ -141,3 +141,31 @@ export namespace RecordingCognitionCompleted {
   }
 }
 
+export class RecordingInsertFailed extends jspb.Message {
+  getRecordingId(): string;
+  setRecordingId(value: string): void;
+
+  getError(): string;
+  setError(value: string): void;
+
+  getFauiluretype(): string;
+  setFauiluretype(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RecordingInsertFailed.AsObject;
+  static toObject(includeInstance: boolean, msg: RecordingInsertFailed): RecordingInsertFailed.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RecordingInsertFailed, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RecordingInsertFailed;
+  static deserializeBinaryFromReader(message: RecordingInsertFailed, reader: jspb.BinaryReader): RecordingInsertFailed;
+}
+
+export namespace RecordingInsertFailed {
+  export type AsObject = {
+    recordingId: string,
+    error: string,
+    fauiluretype: string,
+  }
+}
+
