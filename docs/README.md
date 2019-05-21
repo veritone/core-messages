@@ -119,6 +119,14 @@
   
   
 
+- [events/shared_collection.proto](#events/shared_collection.proto)
+    - [NewCollectionShare](#events.NewCollectionShare)
+    - [UpdateCollectionMention](#events.UpdateCollectionMention)
+  
+  
+  
+  
+
 - [events/task.proto](#events/task.proto)
     - [TaskCompleted](#events.TaskCompleted)
     - [TaskQueued](#events.TaskQueued)
@@ -1111,7 +1119,6 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| recording_id | [string](#string) |  |  |
 | payload | [RecordingCognitionCompleted.Payload](#events.RecordingCognitionCompleted.Payload) |  |  |
 
 
@@ -1136,6 +1143,7 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 | token | [string](#string) |  |  |
 | asset_id | [string](#string) |  |  |
 | skip_mention_generation | [bool](#bool) |  |  |
+| recording_id | [string](#string) |  |  |
 
 
 
@@ -1198,6 +1206,56 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | recording_id | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="events/shared_collection.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## events/shared_collection.proto
+
+
+
+<a name="events.NewCollectionShare"></a>
+
+### NewCollectionShare
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| folder_id | [string](#string) |  | Collection Id |
+| share_id | [string](#string) |  | Id of the Share created for the Collection |
+
+
+
+
+
+
+<a name="events.UpdateCollectionMention"></a>
+
+### UpdateCollectionMention
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| folder_id | [string](#string) |  | Collection Id |
+| share_id | [string](#string) |  | Id of the Share created for the Collection |
+| mention_id | [string](#string) |  | Id of the mention added or removed from Collection |
+| update_type | [string](#string) |  | The type of update to collection: Add/Remove |
 
 
 

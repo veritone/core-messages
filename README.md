@@ -17,7 +17,7 @@ Or using go get
 go get github.com:veritone/core-messages
 ```
 
-Install depedencies for typescript: `npm install`
+Install dependencies for typescript: `npm install`
 
 ## Create Builder Image
 

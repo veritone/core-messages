@@ -11590,7 +11590,6 @@ $root.events = (function() {
          * Properties of a RecordingCognitionCompleted.
          * @memberof events
          * @interface IRecordingCognitionCompleted
-         * @property {string|null} [recordingId] RecordingCognitionCompleted recordingId
          * @property {events.RecordingCognitionCompleted.IPayload|null} [payload] RecordingCognitionCompleted payload
          */
 
@@ -11608,14 +11607,6 @@ $root.events = (function() {
                     if (properties[keys[i]] != null)
                         this[keys[i]] = properties[keys[i]];
         }
-
-        /**
-         * RecordingCognitionCompleted recordingId.
-         * @member {string} recordingId
-         * @memberof events.RecordingCognitionCompleted
-         * @instance
-         */
-        RecordingCognitionCompleted.prototype.recordingId = "";
 
         /**
          * RecordingCognitionCompleted payload.
@@ -11649,8 +11640,6 @@ $root.events = (function() {
         RecordingCognitionCompleted.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
-                writer.uint32(/* id 10, wireType 2 =*/82).string(message.recordingId);
             if (message.payload != null && message.hasOwnProperty("payload"))
                 $root.events.RecordingCognitionCompleted.Payload.encode(message.payload, writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
             return writer;
@@ -11687,9 +11676,6 @@ $root.events = (function() {
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
-                case 10:
-                    message.recordingId = reader.string();
-                    break;
                 case 11:
                     message.payload = $root.events.RecordingCognitionCompleted.Payload.decode(reader, reader.uint32());
                     break;
@@ -11728,9 +11714,6 @@ $root.events = (function() {
         RecordingCognitionCompleted.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
-                if (!$util.isString(message.recordingId))
-                    return "recordingId: string expected";
             if (message.payload != null && message.hasOwnProperty("payload")) {
                 var error = $root.events.RecordingCognitionCompleted.Payload.verify(message.payload);
                 if (error)
@@ -11751,8 +11734,6 @@ $root.events = (function() {
             if (object instanceof $root.events.RecordingCognitionCompleted)
                 return object;
             var message = new $root.events.RecordingCognitionCompleted();
-            if (object.recordingId != null)
-                message.recordingId = String(object.recordingId);
             if (object.payload != null) {
                 if (typeof object.payload !== "object")
                     throw TypeError(".events.RecordingCognitionCompleted.payload: object expected");
@@ -11774,12 +11755,8 @@ $root.events = (function() {
             if (!options)
                 options = {};
             var object = {};
-            if (options.defaults) {
-                object.recordingId = "";
+            if (options.defaults)
                 object.payload = null;
-            }
-            if (message.recordingId != null && message.hasOwnProperty("recordingId"))
-                object.recordingId = message.recordingId;
             if (message.payload != null && message.hasOwnProperty("payload"))
                 object.payload = $root.events.RecordingCognitionCompleted.Payload.toObject(message.payload, options);
             return object;
@@ -11811,6 +11788,7 @@ $root.events = (function() {
              * @property {string|null} [token] Payload token
              * @property {string|null} [assetId] Payload assetId
              * @property {boolean|null} [skipMentionGeneration] Payload skipMentionGeneration
+             * @property {string|null} [recordingId] Payload recordingId
              */
 
             /**
@@ -11901,6 +11879,14 @@ $root.events = (function() {
             Payload.prototype.skipMentionGeneration = false;
 
             /**
+             * Payload recordingId.
+             * @member {string} recordingId
+             * @memberof events.RecordingCognitionCompleted.Payload
+             * @instance
+             */
+            Payload.prototype.recordingId = "";
+
+            /**
              * Creates a new Payload instance using the specified properties.
              * @function create
              * @memberof events.RecordingCognitionCompleted.Payload
@@ -11942,6 +11928,8 @@ $root.events = (function() {
                     writer.uint32(/* id 17, wireType 2 =*/138).string(message.assetId);
                 if (message.skipMentionGeneration != null && message.hasOwnProperty("skipMentionGeneration"))
                     writer.uint32(/* id 18, wireType 0 =*/144).bool(message.skipMentionGeneration);
+                if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                    writer.uint32(/* id 19, wireType 2 =*/154).string(message.recordingId);
                 return writer;
             };
 
@@ -12002,6 +11990,9 @@ $root.events = (function() {
                         break;
                     case 18:
                         message.skipMentionGeneration = reader.bool();
+                        break;
+                    case 19:
+                        message.recordingId = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -12065,6 +12056,9 @@ $root.events = (function() {
                 if (message.skipMentionGeneration != null && message.hasOwnProperty("skipMentionGeneration"))
                     if (typeof message.skipMentionGeneration !== "boolean")
                         return "skipMentionGeneration: boolean expected";
+                if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                    if (!$util.isString(message.recordingId))
+                        return "recordingId: string expected";
                 return null;
             };
 
@@ -12105,6 +12099,8 @@ $root.events = (function() {
                     message.assetId = String(object.assetId);
                 if (object.skipMentionGeneration != null)
                     message.skipMentionGeneration = Boolean(object.skipMentionGeneration);
+                if (object.recordingId != null)
+                    message.recordingId = String(object.recordingId);
                 return message;
             };
 
@@ -12135,6 +12131,7 @@ $root.events = (function() {
                     object.token = "";
                     object.assetId = "";
                     object.skipMentionGeneration = false;
+                    object.recordingId = "";
                 }
                 if (message.jobId != null && message.hasOwnProperty("jobId"))
                     object.jobId = message.jobId;
@@ -12157,6 +12154,8 @@ $root.events = (function() {
                     object.assetId = message.assetId;
                 if (message.skipMentionGeneration != null && message.hasOwnProperty("skipMentionGeneration"))
                     object.skipMentionGeneration = message.skipMentionGeneration;
+                if (message.recordingId != null && message.hasOwnProperty("recordingId"))
+                    object.recordingId = message.recordingId;
                 return object;
             };
 
@@ -12407,6 +12406,470 @@ $root.events = (function() {
         };
 
         return RecordingInsertFailed;
+    })();
+
+    events.NewCollectionShare = (function() {
+
+        /**
+         * Properties of a NewCollectionShare.
+         * @memberof events
+         * @interface INewCollectionShare
+         * @property {string|null} [folderId] NewCollectionShare folderId
+         * @property {string|null} [shareId] NewCollectionShare shareId
+         */
+
+        /**
+         * Constructs a new NewCollectionShare.
+         * @memberof events
+         * @classdesc Represents a NewCollectionShare.
+         * @implements INewCollectionShare
+         * @constructor
+         * @param {events.INewCollectionShare=} [properties] Properties to set
+         */
+        function NewCollectionShare(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * NewCollectionShare folderId.
+         * @member {string} folderId
+         * @memberof events.NewCollectionShare
+         * @instance
+         */
+        NewCollectionShare.prototype.folderId = "";
+
+        /**
+         * NewCollectionShare shareId.
+         * @member {string} shareId
+         * @memberof events.NewCollectionShare
+         * @instance
+         */
+        NewCollectionShare.prototype.shareId = "";
+
+        /**
+         * Creates a new NewCollectionShare instance using the specified properties.
+         * @function create
+         * @memberof events.NewCollectionShare
+         * @static
+         * @param {events.INewCollectionShare=} [properties] Properties to set
+         * @returns {events.NewCollectionShare} NewCollectionShare instance
+         */
+        NewCollectionShare.create = function create(properties) {
+            return new NewCollectionShare(properties);
+        };
+
+        /**
+         * Encodes the specified NewCollectionShare message. Does not implicitly {@link events.NewCollectionShare.verify|verify} messages.
+         * @function encode
+         * @memberof events.NewCollectionShare
+         * @static
+         * @param {events.INewCollectionShare} message NewCollectionShare message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        NewCollectionShare.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.folderId != null && message.hasOwnProperty("folderId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.folderId);
+            if (message.shareId != null && message.hasOwnProperty("shareId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.shareId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified NewCollectionShare message, length delimited. Does not implicitly {@link events.NewCollectionShare.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.NewCollectionShare
+         * @static
+         * @param {events.INewCollectionShare} message NewCollectionShare message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        NewCollectionShare.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a NewCollectionShare message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.NewCollectionShare
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.NewCollectionShare} NewCollectionShare
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        NewCollectionShare.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.NewCollectionShare();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.folderId = reader.string();
+                    break;
+                case 11:
+                    message.shareId = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a NewCollectionShare message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.NewCollectionShare
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.NewCollectionShare} NewCollectionShare
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        NewCollectionShare.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a NewCollectionShare message.
+         * @function verify
+         * @memberof events.NewCollectionShare
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        NewCollectionShare.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.folderId != null && message.hasOwnProperty("folderId"))
+                if (!$util.isString(message.folderId))
+                    return "folderId: string expected";
+            if (message.shareId != null && message.hasOwnProperty("shareId"))
+                if (!$util.isString(message.shareId))
+                    return "shareId: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a NewCollectionShare message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.NewCollectionShare
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.NewCollectionShare} NewCollectionShare
+         */
+        NewCollectionShare.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.NewCollectionShare)
+                return object;
+            var message = new $root.events.NewCollectionShare();
+            if (object.folderId != null)
+                message.folderId = String(object.folderId);
+            if (object.shareId != null)
+                message.shareId = String(object.shareId);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a NewCollectionShare message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.NewCollectionShare
+         * @static
+         * @param {events.NewCollectionShare} message NewCollectionShare
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        NewCollectionShare.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.folderId = "";
+                object.shareId = "";
+            }
+            if (message.folderId != null && message.hasOwnProperty("folderId"))
+                object.folderId = message.folderId;
+            if (message.shareId != null && message.hasOwnProperty("shareId"))
+                object.shareId = message.shareId;
+            return object;
+        };
+
+        /**
+         * Converts this NewCollectionShare to JSON.
+         * @function toJSON
+         * @memberof events.NewCollectionShare
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        NewCollectionShare.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return NewCollectionShare;
+    })();
+
+    events.UpdateCollectionMention = (function() {
+
+        /**
+         * Properties of an UpdateCollectionMention.
+         * @memberof events
+         * @interface IUpdateCollectionMention
+         * @property {string|null} [folderId] UpdateCollectionMention folderId
+         * @property {string|null} [shareId] UpdateCollectionMention shareId
+         * @property {string|null} [mentionId] UpdateCollectionMention mentionId
+         * @property {string|null} [updateType] UpdateCollectionMention updateType
+         */
+
+        /**
+         * Constructs a new UpdateCollectionMention.
+         * @memberof events
+         * @classdesc Represents an UpdateCollectionMention.
+         * @implements IUpdateCollectionMention
+         * @constructor
+         * @param {events.IUpdateCollectionMention=} [properties] Properties to set
+         */
+        function UpdateCollectionMention(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * UpdateCollectionMention folderId.
+         * @member {string} folderId
+         * @memberof events.UpdateCollectionMention
+         * @instance
+         */
+        UpdateCollectionMention.prototype.folderId = "";
+
+        /**
+         * UpdateCollectionMention shareId.
+         * @member {string} shareId
+         * @memberof events.UpdateCollectionMention
+         * @instance
+         */
+        UpdateCollectionMention.prototype.shareId = "";
+
+        /**
+         * UpdateCollectionMention mentionId.
+         * @member {string} mentionId
+         * @memberof events.UpdateCollectionMention
+         * @instance
+         */
+        UpdateCollectionMention.prototype.mentionId = "";
+
+        /**
+         * UpdateCollectionMention updateType.
+         * @member {string} updateType
+         * @memberof events.UpdateCollectionMention
+         * @instance
+         */
+        UpdateCollectionMention.prototype.updateType = "";
+
+        /**
+         * Creates a new UpdateCollectionMention instance using the specified properties.
+         * @function create
+         * @memberof events.UpdateCollectionMention
+         * @static
+         * @param {events.IUpdateCollectionMention=} [properties] Properties to set
+         * @returns {events.UpdateCollectionMention} UpdateCollectionMention instance
+         */
+        UpdateCollectionMention.create = function create(properties) {
+            return new UpdateCollectionMention(properties);
+        };
+
+        /**
+         * Encodes the specified UpdateCollectionMention message. Does not implicitly {@link events.UpdateCollectionMention.verify|verify} messages.
+         * @function encode
+         * @memberof events.UpdateCollectionMention
+         * @static
+         * @param {events.IUpdateCollectionMention} message UpdateCollectionMention message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        UpdateCollectionMention.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.folderId != null && message.hasOwnProperty("folderId"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.folderId);
+            if (message.shareId != null && message.hasOwnProperty("shareId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.shareId);
+            if (message.mentionId != null && message.hasOwnProperty("mentionId"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.mentionId);
+            if (message.updateType != null && message.hasOwnProperty("updateType"))
+                writer.uint32(/* id 13, wireType 2 =*/106).string(message.updateType);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified UpdateCollectionMention message, length delimited. Does not implicitly {@link events.UpdateCollectionMention.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.UpdateCollectionMention
+         * @static
+         * @param {events.IUpdateCollectionMention} message UpdateCollectionMention message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        UpdateCollectionMention.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an UpdateCollectionMention message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.UpdateCollectionMention
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.UpdateCollectionMention} UpdateCollectionMention
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        UpdateCollectionMention.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.UpdateCollectionMention();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.folderId = reader.string();
+                    break;
+                case 11:
+                    message.shareId = reader.string();
+                    break;
+                case 12:
+                    message.mentionId = reader.string();
+                    break;
+                case 13:
+                    message.updateType = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an UpdateCollectionMention message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.UpdateCollectionMention
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.UpdateCollectionMention} UpdateCollectionMention
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        UpdateCollectionMention.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an UpdateCollectionMention message.
+         * @function verify
+         * @memberof events.UpdateCollectionMention
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        UpdateCollectionMention.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.folderId != null && message.hasOwnProperty("folderId"))
+                if (!$util.isString(message.folderId))
+                    return "folderId: string expected";
+            if (message.shareId != null && message.hasOwnProperty("shareId"))
+                if (!$util.isString(message.shareId))
+                    return "shareId: string expected";
+            if (message.mentionId != null && message.hasOwnProperty("mentionId"))
+                if (!$util.isString(message.mentionId))
+                    return "mentionId: string expected";
+            if (message.updateType != null && message.hasOwnProperty("updateType"))
+                if (!$util.isString(message.updateType))
+                    return "updateType: string expected";
+            return null;
+        };
+
+        /**
+         * Creates an UpdateCollectionMention message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.UpdateCollectionMention
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.UpdateCollectionMention} UpdateCollectionMention
+         */
+        UpdateCollectionMention.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.UpdateCollectionMention)
+                return object;
+            var message = new $root.events.UpdateCollectionMention();
+            if (object.folderId != null)
+                message.folderId = String(object.folderId);
+            if (object.shareId != null)
+                message.shareId = String(object.shareId);
+            if (object.mentionId != null)
+                message.mentionId = String(object.mentionId);
+            if (object.updateType != null)
+                message.updateType = String(object.updateType);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an UpdateCollectionMention message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.UpdateCollectionMention
+         * @static
+         * @param {events.UpdateCollectionMention} message UpdateCollectionMention
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        UpdateCollectionMention.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.folderId = "";
+                object.shareId = "";
+                object.mentionId = "";
+                object.updateType = "";
+            }
+            if (message.folderId != null && message.hasOwnProperty("folderId"))
+                object.folderId = message.folderId;
+            if (message.shareId != null && message.hasOwnProperty("shareId"))
+                object.shareId = message.shareId;
+            if (message.mentionId != null && message.hasOwnProperty("mentionId"))
+                object.mentionId = message.mentionId;
+            if (message.updateType != null && message.hasOwnProperty("updateType"))
+                object.updateType = message.updateType;
+            return object;
+        };
+
+        /**
+         * Converts this UpdateCollectionMention to JSON.
+         * @function toJSON
+         * @memberof events.UpdateCollectionMention
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        UpdateCollectionMention.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return UpdateCollectionMention;
     })();
 
     events.TaskQueued = (function() {

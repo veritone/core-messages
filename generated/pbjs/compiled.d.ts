@@ -4779,9 +4779,6 @@ export namespace events {
     /** Properties of a RecordingCognitionCompleted. */
     interface IRecordingCognitionCompleted {
 
-        /** RecordingCognitionCompleted recordingId */
-        recordingId?: (string|null);
-
         /** RecordingCognitionCompleted payload */
         payload?: (events.RecordingCognitionCompleted.IPayload|null);
     }
@@ -4794,9 +4791,6 @@ export namespace events {
          * @param [properties] Properties to set
          */
         constructor(properties?: events.IRecordingCognitionCompleted);
-
-        /** RecordingCognitionCompleted recordingId. */
-        public recordingId: string;
 
         /** RecordingCognitionCompleted payload. */
         public payload?: (events.RecordingCognitionCompleted.IPayload|null);
@@ -4903,6 +4897,9 @@ export namespace events {
 
             /** Payload skipMentionGeneration */
             skipMentionGeneration?: (boolean|null);
+
+            /** Payload recordingId */
+            recordingId?: (string|null);
         }
 
         /** Represents a Payload. */
@@ -4940,6 +4937,9 @@ export namespace events {
 
             /** Payload skipMentionGeneration. */
             public skipMentionGeneration: boolean;
+
+            /** Payload recordingId. */
+            public recordingId: string;
 
             /**
              * Creates a new Payload instance using the specified properties.
@@ -5110,6 +5110,210 @@ export namespace events {
 
         /**
          * Converts this RecordingInsertFailed to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a NewCollectionShare. */
+    interface INewCollectionShare {
+
+        /** NewCollectionShare folderId */
+        folderId?: (string|null);
+
+        /** NewCollectionShare shareId */
+        shareId?: (string|null);
+    }
+
+    /** Represents a NewCollectionShare. */
+    class NewCollectionShare implements INewCollectionShare {
+
+        /**
+         * Constructs a new NewCollectionShare.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.INewCollectionShare);
+
+        /** NewCollectionShare folderId. */
+        public folderId: string;
+
+        /** NewCollectionShare shareId. */
+        public shareId: string;
+
+        /**
+         * Creates a new NewCollectionShare instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns NewCollectionShare instance
+         */
+        public static create(properties?: events.INewCollectionShare): events.NewCollectionShare;
+
+        /**
+         * Encodes the specified NewCollectionShare message. Does not implicitly {@link events.NewCollectionShare.verify|verify} messages.
+         * @param message NewCollectionShare message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.INewCollectionShare, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified NewCollectionShare message, length delimited. Does not implicitly {@link events.NewCollectionShare.verify|verify} messages.
+         * @param message NewCollectionShare message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.INewCollectionShare, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a NewCollectionShare message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns NewCollectionShare
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.NewCollectionShare;
+
+        /**
+         * Decodes a NewCollectionShare message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns NewCollectionShare
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.NewCollectionShare;
+
+        /**
+         * Verifies a NewCollectionShare message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a NewCollectionShare message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns NewCollectionShare
+         */
+        public static fromObject(object: { [k: string]: any }): events.NewCollectionShare;
+
+        /**
+         * Creates a plain object from a NewCollectionShare message. Also converts values to other types if specified.
+         * @param message NewCollectionShare
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.NewCollectionShare, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this NewCollectionShare to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an UpdateCollectionMention. */
+    interface IUpdateCollectionMention {
+
+        /** UpdateCollectionMention folderId */
+        folderId?: (string|null);
+
+        /** UpdateCollectionMention shareId */
+        shareId?: (string|null);
+
+        /** UpdateCollectionMention mentionId */
+        mentionId?: (string|null);
+
+        /** UpdateCollectionMention updateType */
+        updateType?: (string|null);
+    }
+
+    /** Represents an UpdateCollectionMention. */
+    class UpdateCollectionMention implements IUpdateCollectionMention {
+
+        /**
+         * Constructs a new UpdateCollectionMention.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IUpdateCollectionMention);
+
+        /** UpdateCollectionMention folderId. */
+        public folderId: string;
+
+        /** UpdateCollectionMention shareId. */
+        public shareId: string;
+
+        /** UpdateCollectionMention mentionId. */
+        public mentionId: string;
+
+        /** UpdateCollectionMention updateType. */
+        public updateType: string;
+
+        /**
+         * Creates a new UpdateCollectionMention instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns UpdateCollectionMention instance
+         */
+        public static create(properties?: events.IUpdateCollectionMention): events.UpdateCollectionMention;
+
+        /**
+         * Encodes the specified UpdateCollectionMention message. Does not implicitly {@link events.UpdateCollectionMention.verify|verify} messages.
+         * @param message UpdateCollectionMention message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IUpdateCollectionMention, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified UpdateCollectionMention message, length delimited. Does not implicitly {@link events.UpdateCollectionMention.verify|verify} messages.
+         * @param message UpdateCollectionMention message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IUpdateCollectionMention, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an UpdateCollectionMention message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns UpdateCollectionMention
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.UpdateCollectionMention;
+
+        /**
+         * Decodes an UpdateCollectionMention message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns UpdateCollectionMention
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.UpdateCollectionMention;
+
+        /**
+         * Verifies an UpdateCollectionMention message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an UpdateCollectionMention message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns UpdateCollectionMention
+         */
+        public static fromObject(object: { [k: string]: any }): events.UpdateCollectionMention;
+
+        /**
+         * Creates a plain object from an UpdateCollectionMention message. Also converts values to other types if specified.
+         * @param message UpdateCollectionMention
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.UpdateCollectionMention, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this UpdateCollectionMention to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
