@@ -10,6 +10,9 @@ export class NewCollectionShare extends jspb.Message {
   getShareId(): string;
   setShareId(value: string): void;
 
+  getHistoryId(): string;
+  setHistoryId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NewCollectionShare.AsObject;
   static toObject(includeInstance: boolean, msg: NewCollectionShare): NewCollectionShare.AsObject;
@@ -24,38 +27,47 @@ export namespace NewCollectionShare {
   export type AsObject = {
     folderId: string,
     shareId: string,
+    historyId: string,
   }
 }
 
-export class UpdateCollectionMention extends jspb.Message {
+export class UpdateCollectionMentions extends jspb.Message {
   getFolderId(): string;
   setFolderId(value: string): void;
 
-  getShareId(): string;
-  setShareId(value: string): void;
+  clearMentionIdsList(): void;
+  getMentionIdsList(): Array<string>;
+  setMentionIdsList(value: Array<string>): void;
+  addMentionIds(value: string, index?: number): string;
 
-  getMentionId(): string;
-  setMentionId(value: string): void;
+  getUpdateType(): UpdateCollectionMentions.UpdateType;
+  setUpdateType(value: UpdateCollectionMentions.UpdateType): void;
 
-  getUpdateType(): string;
-  setUpdateType(value: string): void;
+  getHistoryId(): string;
+  setHistoryId(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpdateCollectionMention.AsObject;
-  static toObject(includeInstance: boolean, msg: UpdateCollectionMention): UpdateCollectionMention.AsObject;
+  toObject(includeInstance?: boolean): UpdateCollectionMentions.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateCollectionMentions): UpdateCollectionMentions.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UpdateCollectionMention, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpdateCollectionMention;
-  static deserializeBinaryFromReader(message: UpdateCollectionMention, reader: jspb.BinaryReader): UpdateCollectionMention;
+  static serializeBinaryToWriter(message: UpdateCollectionMentions, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateCollectionMentions;
+  static deserializeBinaryFromReader(message: UpdateCollectionMentions, reader: jspb.BinaryReader): UpdateCollectionMentions;
 }
 
-export namespace UpdateCollectionMention {
+export namespace UpdateCollectionMentions {
   export type AsObject = {
     folderId: string,
-    shareId: string,
-    mentionId: string,
-    updateType: string,
+    mentionIdsList: Array<string>,
+    updateType: UpdateCollectionMentions.UpdateType,
+    historyId: string,
+  }
+
+  export enum UpdateType {
+    ADDMENTION = 0,
+    REMOVEMENTION = 1,
+    UPDATEMENTION = 2,
   }
 }
 

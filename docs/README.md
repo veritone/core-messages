@@ -121,8 +121,9 @@
 
 - [events/shared_collection.proto](#events/shared_collection.proto)
     - [NewCollectionShare](#events.NewCollectionShare)
-    - [UpdateCollectionMention](#events.UpdateCollectionMention)
+    - [UpdateCollectionMentions](#events.UpdateCollectionMentions)
   
+    - [UpdateCollectionMentions.UpdateType](#events.UpdateCollectionMentions.UpdateType)
   
   
   
@@ -1238,30 +1239,44 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 | ----- | ---- | ----- | ----------- |
 | folder_id | [string](#string) |  | Collection Id |
 | share_id | [string](#string) |  | Id of the Share created for the Collection |
+| history_id | [string](#string) |  | Id of the Share collection history |
 
 
 
 
 
 
-<a name="events.UpdateCollectionMention"></a>
+<a name="events.UpdateCollectionMentions"></a>
 
-### UpdateCollectionMention
+### UpdateCollectionMentions
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | folder_id | [string](#string) |  | Collection Id |
-| share_id | [string](#string) |  | Id of the Share created for the Collection |
-| mention_id | [string](#string) |  | Id of the mention added or removed from Collection |
-| update_type | [string](#string) |  | The type of update to collection: Add/Remove |
+| mention_ids | [string](#string) | repeated | Ids of the mentions added or removed from Collection |
+| update_type | [UpdateCollectionMentions.UpdateType](#events.UpdateCollectionMentions.UpdateType) |  | The type of update to collection: Add/Remove |
+| history_id | [string](#string) |  | Id of the Share collection history |
 
 
 
 
 
  
+
+
+<a name="events.UpdateCollectionMentions.UpdateType"></a>
+
+### UpdateCollectionMentions.UpdateType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| AddMention | 0 |  |
+| RemoveMention | 1 |  |
+| UpdateMention | 2 |  |
+
 
  
 

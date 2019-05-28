@@ -504,9 +504,13 @@
                 </li>
               
                 <li>
-                  <a href="#events.UpdateCollectionMention"><span class="badge">M</span>UpdateCollectionMention</a>
+                  <a href="#events.UpdateCollectionMentions"><span class="badge">M</span>UpdateCollectionMentions</a>
                 </li>
               
+              
+                <li>
+                  <a href="#events.UpdateCollectionMentions.UpdateType"><span class="badge">E</span>UpdateCollectionMentions.UpdateType</a>
+                </li>
               
               
               
@@ -2978,6 +2982,13 @@ It will be propagate through the system. Similar to correlationId </p></td>
                   <td><p>Id of the Share created for the Collection </p></td>
                 </tr>
               
+                <tr>
+                  <td>history_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Id of the Share collection history </p></td>
+                </tr>
+              
             </tbody>
           </table>
 
@@ -2985,7 +2996,7 @@ It will be propagate through the system. Similar to correlationId </p></td>
 
         
       
-        <h3 id="events.UpdateCollectionMention">UpdateCollectionMention</h3>
+        <h3 id="events.UpdateCollectionMentions">UpdateCollectionMentions</h3>
         <p></p>
 
         
@@ -3003,24 +3014,24 @@ It will be propagate through the system. Similar to correlationId </p></td>
                 </tr>
               
                 <tr>
-                  <td>share_id</td>
+                  <td>mention_ids</td>
                   <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p>Id of the Share created for the Collection </p></td>
-                </tr>
-              
-                <tr>
-                  <td>mention_id</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p>Id of the mention added or removed from Collection </p></td>
+                  <td>repeated</td>
+                  <td><p>Ids of the mentions added or removed from Collection </p></td>
                 </tr>
               
                 <tr>
                   <td>update_type</td>
-                  <td><a href="#string">string</a></td>
+                  <td><a href="#events.UpdateCollectionMentions.UpdateType">UpdateCollectionMentions.UpdateType</a></td>
                   <td></td>
                   <td><p>The type of update to collection: Add/Remove </p></td>
+                </tr>
+              
+                <tr>
+                  <td>history_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Id of the Share collection history </p></td>
                 </tr>
               
             </tbody>
@@ -3031,6 +3042,35 @@ It will be propagate through the system. Similar to correlationId </p></td>
         
       
 
+      
+        <h3 id="events.UpdateCollectionMentions.UpdateType">UpdateCollectionMentions.UpdateType</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>AddMention</td>
+                <td>0</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>RemoveMention</td>
+                <td>1</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>UpdateMention</td>
+                <td>2</td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
       
 
       
