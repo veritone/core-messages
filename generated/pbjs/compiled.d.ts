@@ -5223,6 +5223,9 @@ export namespace events {
         /** UpdateCollectionMentions folderId */
         folderId?: (string|null);
 
+        /** UpdateCollectionMentions shareId */
+        shareId?: (string|null);
+
         /** UpdateCollectionMentions mentionIds */
         mentionIds?: (string[]|null);
 
@@ -5244,6 +5247,9 @@ export namespace events {
 
         /** UpdateCollectionMentions folderId. */
         public folderId: string;
+
+        /** UpdateCollectionMentions shareId. */
+        public shareId: string;
 
         /** UpdateCollectionMentions mentionIds. */
         public mentionIds: string[];

@@ -233,7 +233,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.events.UpdateCollectionMentions.repeatedFields_ = [11];
+proto.events.UpdateCollectionMentions.repeatedFields_ = [12];
 
 
 
@@ -265,9 +265,10 @@ proto.events.UpdateCollectionMentions.prototype.toObject = function(opt_includeI
 proto.events.UpdateCollectionMentions.toObject = function(includeInstance, msg) {
   var f, obj = {
     folderId: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    mentionIdsList: jspb.Message.getRepeatedField(msg, 11),
-    updateType: jspb.Message.getFieldWithDefault(msg, 12, 0),
-    historyId: jspb.Message.getFieldWithDefault(msg, 13, "")
+    shareId: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    mentionIdsList: jspb.Message.getRepeatedField(msg, 12),
+    updateType: jspb.Message.getFieldWithDefault(msg, 13, 0),
+    historyId: jspb.Message.getFieldWithDefault(msg, 14, "")
   };
 
   if (includeInstance) {
@@ -310,13 +311,17 @@ proto.events.UpdateCollectionMentions.deserializeBinaryFromReader = function(msg
       break;
     case 11:
       var value = /** @type {string} */ (reader.readString());
-      msg.addMentionIds(value);
+      msg.setShareId(value);
       break;
     case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addMentionIds(value);
+      break;
+    case 13:
       var value = /** @type {!proto.events.UpdateCollectionMentions.UpdateType} */ (reader.readEnum());
       msg.setUpdateType(value);
       break;
-    case 13:
+    case 14:
       var value = /** @type {string} */ (reader.readString());
       msg.setHistoryId(value);
       break;
@@ -356,24 +361,31 @@ proto.events.UpdateCollectionMentions.serializeBinaryToWriter = function(message
       f
     );
   }
+  f = message.getShareId();
+  if (f.length > 0) {
+    writer.writeString(
+      11,
+      f
+    );
+  }
   f = message.getMentionIdsList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      11,
+      12,
       f
     );
   }
   f = message.getUpdateType();
   if (f !== 0.0) {
     writer.writeEnum(
-      12,
+      13,
       f
     );
   }
   f = message.getHistoryId();
   if (f.length > 0) {
     writer.writeString(
-      13,
+      14,
       f
     );
   }
@@ -405,17 +417,32 @@ proto.events.UpdateCollectionMentions.prototype.setFolderId = function(value) {
 
 
 /**
- * repeated string mention_ids = 11;
+ * optional string share_id = 11;
+ * @return {string}
+ */
+proto.events.UpdateCollectionMentions.prototype.getShareId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/** @param {string} value */
+proto.events.UpdateCollectionMentions.prototype.setShareId = function(value) {
+  jspb.Message.setProto3StringField(this, 11, value);
+};
+
+
+/**
+ * repeated string mention_ids = 12;
  * @return {!Array.<string>}
  */
 proto.events.UpdateCollectionMentions.prototype.getMentionIdsList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getRepeatedField(this, 11));
+  return /** @type {!Array.<string>} */ (jspb.Message.getRepeatedField(this, 12));
 };
 
 
 /** @param {!Array.<string>} value */
 proto.events.UpdateCollectionMentions.prototype.setMentionIdsList = function(value) {
-  jspb.Message.setField(this, 11, value || []);
+  jspb.Message.setField(this, 12, value || []);
 };
 
 
@@ -424,7 +451,7 @@ proto.events.UpdateCollectionMentions.prototype.setMentionIdsList = function(val
  * @param {number=} opt_index
  */
 proto.events.UpdateCollectionMentions.prototype.addMentionIds = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 11, value, opt_index);
+  jspb.Message.addToRepeatedField(this, 12, value, opt_index);
 };
 
 
@@ -434,32 +461,32 @@ proto.events.UpdateCollectionMentions.prototype.clearMentionIdsList = function()
 
 
 /**
- * optional UpdateType update_type = 12;
+ * optional UpdateType update_type = 13;
  * @return {!proto.events.UpdateCollectionMentions.UpdateType}
  */
 proto.events.UpdateCollectionMentions.prototype.getUpdateType = function() {
-  return /** @type {!proto.events.UpdateCollectionMentions.UpdateType} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+  return /** @type {!proto.events.UpdateCollectionMentions.UpdateType} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
 };
 
 
 /** @param {!proto.events.UpdateCollectionMentions.UpdateType} value */
 proto.events.UpdateCollectionMentions.prototype.setUpdateType = function(value) {
-  jspb.Message.setProto3EnumField(this, 12, value);
+  jspb.Message.setProto3EnumField(this, 13, value);
 };
 
 
 /**
- * optional string history_id = 13;
+ * optional string history_id = 14;
  * @return {string}
  */
 proto.events.UpdateCollectionMentions.prototype.getHistoryId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
 };
 
 
 /** @param {string} value */
 proto.events.UpdateCollectionMentions.prototype.setHistoryId = function(value) {
-  jspb.Message.setProto3StringField(this, 13, value);
+  jspb.Message.setProto3StringField(this, 14, value);
 };
 
 

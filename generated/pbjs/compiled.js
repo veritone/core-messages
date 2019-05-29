@@ -12647,6 +12647,7 @@ $root.events = (function() {
          * @memberof events
          * @interface IUpdateCollectionMentions
          * @property {string|null} [folderId] UpdateCollectionMentions folderId
+         * @property {string|null} [shareId] UpdateCollectionMentions shareId
          * @property {Array.<string>|null} [mentionIds] UpdateCollectionMentions mentionIds
          * @property {events.UpdateCollectionMentions.UpdateType|null} [updateType] UpdateCollectionMentions updateType
          * @property {string|null} [historyId] UpdateCollectionMentions historyId
@@ -12675,6 +12676,14 @@ $root.events = (function() {
          * @instance
          */
         UpdateCollectionMentions.prototype.folderId = "";
+
+        /**
+         * UpdateCollectionMentions shareId.
+         * @member {string} shareId
+         * @memberof events.UpdateCollectionMentions
+         * @instance
+         */
+        UpdateCollectionMentions.prototype.shareId = "";
 
         /**
          * UpdateCollectionMentions mentionIds.
@@ -12726,13 +12735,15 @@ $root.events = (function() {
                 writer = $Writer.create();
             if (message.folderId != null && message.hasOwnProperty("folderId"))
                 writer.uint32(/* id 10, wireType 2 =*/82).string(message.folderId);
+            if (message.shareId != null && message.hasOwnProperty("shareId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.shareId);
             if (message.mentionIds != null && message.mentionIds.length)
                 for (var i = 0; i < message.mentionIds.length; ++i)
-                    writer.uint32(/* id 11, wireType 2 =*/90).string(message.mentionIds[i]);
+                    writer.uint32(/* id 12, wireType 2 =*/98).string(message.mentionIds[i]);
             if (message.updateType != null && message.hasOwnProperty("updateType"))
-                writer.uint32(/* id 12, wireType 0 =*/96).int32(message.updateType);
+                writer.uint32(/* id 13, wireType 0 =*/104).int32(message.updateType);
             if (message.historyId != null && message.hasOwnProperty("historyId"))
-                writer.uint32(/* id 13, wireType 2 =*/106).string(message.historyId);
+                writer.uint32(/* id 14, wireType 2 =*/114).string(message.historyId);
             return writer;
         };
 
@@ -12771,14 +12782,17 @@ $root.events = (function() {
                     message.folderId = reader.string();
                     break;
                 case 11:
+                    message.shareId = reader.string();
+                    break;
+                case 12:
                     if (!(message.mentionIds && message.mentionIds.length))
                         message.mentionIds = [];
                     message.mentionIds.push(reader.string());
                     break;
-                case 12:
+                case 13:
                     message.updateType = reader.int32();
                     break;
-                case 13:
+                case 14:
                     message.historyId = reader.string();
                     break;
                 default:
@@ -12819,6 +12833,9 @@ $root.events = (function() {
             if (message.folderId != null && message.hasOwnProperty("folderId"))
                 if (!$util.isString(message.folderId))
                     return "folderId: string expected";
+            if (message.shareId != null && message.hasOwnProperty("shareId"))
+                if (!$util.isString(message.shareId))
+                    return "shareId: string expected";
             if (message.mentionIds != null && message.hasOwnProperty("mentionIds")) {
                 if (!Array.isArray(message.mentionIds))
                     return "mentionIds: array expected";
@@ -12855,6 +12872,8 @@ $root.events = (function() {
             var message = new $root.events.UpdateCollectionMentions();
             if (object.folderId != null)
                 message.folderId = String(object.folderId);
+            if (object.shareId != null)
+                message.shareId = String(object.shareId);
             if (object.mentionIds) {
                 if (!Array.isArray(object.mentionIds))
                     throw TypeError(".events.UpdateCollectionMentions.mentionIds: array expected");
@@ -12898,11 +12917,14 @@ $root.events = (function() {
                 object.mentionIds = [];
             if (options.defaults) {
                 object.folderId = "";
+                object.shareId = "";
                 object.updateType = options.enums === String ? "AddMention" : 0;
                 object.historyId = "";
             }
             if (message.folderId != null && message.hasOwnProperty("folderId"))
                 object.folderId = message.folderId;
+            if (message.shareId != null && message.hasOwnProperty("shareId"))
+                object.shareId = message.shareId;
             if (message.mentionIds && message.mentionIds.length) {
                 object.mentionIds = [];
                 for (var j = 0; j < message.mentionIds.length; ++j)

@@ -35,6 +35,9 @@ export class UpdateCollectionMentions extends jspb.Message {
   getFolderId(): string;
   setFolderId(value: string): void;
 
+  getShareId(): string;
+  setShareId(value: string): void;
+
   clearMentionIdsList(): void;
   getMentionIdsList(): Array<string>;
   setMentionIdsList(value: Array<string>): void;
@@ -59,6 +62,7 @@ export class UpdateCollectionMentions extends jspb.Message {
 export namespace UpdateCollectionMentions {
   export type AsObject = {
     folderId: string,
+    shareId: string,
     mentionIdsList: Array<string>,
     updateType: UpdateCollectionMentions.UpdateType,
     historyId: string,

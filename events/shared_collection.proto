@@ -10,13 +10,14 @@ message NewCollectionShare {
 
 message UpdateCollectionMentions {
     string folder_id = 10;            // Collection Id
-    repeated string mention_ids = 11; // Ids of the mentions added or removed from Collection
-    UpdateType update_type = 12;          // The type of update to collection: Add/Remove
-    string history_id = 13;           // Id of the Share collection history
+    string share_id = 11;             // Id of the Share created for the Collection
+    repeated string mention_ids = 12; // Ids of the mentions added or removed from Collection
+    UpdateType update_type = 13;      // The type of update to collection: Add/Remove
+    string history_id = 14;           // Id of the Share collection history
 
     enum UpdateType {
-       AddMention = 0;
-       RemoveMention = 1;
-       UpdateMention = 2;
+       AddMention = 0;     // Add mention to collection
+       RemoveMention = 1;  // Remove mention from collection
+       UpdateMention = 2;  // Update mention details
     }
 }

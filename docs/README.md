@@ -1255,6 +1255,7 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | folder_id | [string](#string) |  | Collection Id |
+| share_id | [string](#string) |  | Id of the Share created for the Collection |
 | mention_ids | [string](#string) | repeated | Ids of the mentions added or removed from Collection |
 | update_type | [UpdateCollectionMentions.UpdateType](#events.UpdateCollectionMentions.UpdateType) |  | The type of update to collection: Add/Remove |
 | history_id | [string](#string) |  | Id of the Share collection history |
