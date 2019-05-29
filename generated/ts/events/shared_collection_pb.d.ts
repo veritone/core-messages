@@ -3,7 +3,7 @@
 
 import * as jspb from "google-protobuf";
 
-export class NewCollectionShare extends jspb.Message {
+export class NewSharedCollection extends jspb.Message {
   getFolderId(): string;
   setFolderId(value: string): void;
 
@@ -14,16 +14,16 @@ export class NewCollectionShare extends jspb.Message {
   setHistoryId(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): NewCollectionShare.AsObject;
-  static toObject(includeInstance: boolean, msg: NewCollectionShare): NewCollectionShare.AsObject;
+  toObject(includeInstance?: boolean): NewSharedCollection.AsObject;
+  static toObject(includeInstance: boolean, msg: NewSharedCollection): NewSharedCollection.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: NewCollectionShare, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): NewCollectionShare;
-  static deserializeBinaryFromReader(message: NewCollectionShare, reader: jspb.BinaryReader): NewCollectionShare;
+  static serializeBinaryToWriter(message: NewSharedCollection, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): NewSharedCollection;
+  static deserializeBinaryFromReader(message: NewSharedCollection, reader: jspb.BinaryReader): NewSharedCollection;
 }
 
-export namespace NewCollectionShare {
+export namespace NewSharedCollection {
   export type AsObject = {
     folderId: string,
     shareId: string,
@@ -38,10 +38,8 @@ export class UpdateSharedCollection extends jspb.Message {
   getShareId(): string;
   setShareId(value: string): void;
 
-  clearMentionIdsList(): void;
-  getMentionIdsList(): Array<string>;
-  setMentionIdsList(value: Array<string>): void;
-  addMentionIds(value: string, index?: number): string;
+  getMentionId(): string;
+  setMentionId(value: string): void;
 
   getUpdateType(): UpdateSharedCollection.UpdateType;
   setUpdateType(value: UpdateSharedCollection.UpdateType): void;
@@ -63,7 +61,7 @@ export namespace UpdateSharedCollection {
   export type AsObject = {
     folderId: string,
     shareId: string,
-    mentionIdsList: Array<string>,
+    mentionId: string,
     updateType: UpdateSharedCollection.UpdateType,
     historyId: string,
   }

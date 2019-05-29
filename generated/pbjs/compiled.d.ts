@@ -5115,103 +5115,103 @@ export namespace events {
         public toJSON(): { [k: string]: any };
     }
 
-    /** Properties of a NewCollectionShare. */
-    interface INewCollectionShare {
+    /** Properties of a NewSharedCollection. */
+    interface INewSharedCollection {
 
-        /** NewCollectionShare folderId */
+        /** NewSharedCollection folderId */
         folderId?: (string|null);
 
-        /** NewCollectionShare shareId */
+        /** NewSharedCollection shareId */
         shareId?: (string|null);
 
-        /** NewCollectionShare historyId */
+        /** NewSharedCollection historyId */
         historyId?: (string|null);
     }
 
-    /** Represents a NewCollectionShare. */
-    class NewCollectionShare implements INewCollectionShare {
+    /** Represents a NewSharedCollection. */
+    class NewSharedCollection implements INewSharedCollection {
 
         /**
-         * Constructs a new NewCollectionShare.
+         * Constructs a new NewSharedCollection.
          * @param [properties] Properties to set
          */
-        constructor(properties?: events.INewCollectionShare);
+        constructor(properties?: events.INewSharedCollection);
 
-        /** NewCollectionShare folderId. */
+        /** NewSharedCollection folderId. */
         public folderId: string;
 
-        /** NewCollectionShare shareId. */
+        /** NewSharedCollection shareId. */
         public shareId: string;
 
-        /** NewCollectionShare historyId. */
+        /** NewSharedCollection historyId. */
         public historyId: string;
 
         /**
-         * Creates a new NewCollectionShare instance using the specified properties.
+         * Creates a new NewSharedCollection instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns NewCollectionShare instance
+         * @returns NewSharedCollection instance
          */
-        public static create(properties?: events.INewCollectionShare): events.NewCollectionShare;
+        public static create(properties?: events.INewSharedCollection): events.NewSharedCollection;
 
         /**
-         * Encodes the specified NewCollectionShare message. Does not implicitly {@link events.NewCollectionShare.verify|verify} messages.
-         * @param message NewCollectionShare message or plain object to encode
+         * Encodes the specified NewSharedCollection message. Does not implicitly {@link events.NewSharedCollection.verify|verify} messages.
+         * @param message NewSharedCollection message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: events.INewCollectionShare, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: events.INewSharedCollection, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified NewCollectionShare message, length delimited. Does not implicitly {@link events.NewCollectionShare.verify|verify} messages.
-         * @param message NewCollectionShare message or plain object to encode
+         * Encodes the specified NewSharedCollection message, length delimited. Does not implicitly {@link events.NewSharedCollection.verify|verify} messages.
+         * @param message NewSharedCollection message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: events.INewCollectionShare, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: events.INewSharedCollection, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes a NewCollectionShare message from the specified reader or buffer.
+         * Decodes a NewSharedCollection message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns NewCollectionShare
+         * @returns NewSharedCollection
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.NewCollectionShare;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.NewSharedCollection;
 
         /**
-         * Decodes a NewCollectionShare message from the specified reader or buffer, length delimited.
+         * Decodes a NewSharedCollection message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns NewCollectionShare
+         * @returns NewSharedCollection
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.NewCollectionShare;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.NewSharedCollection;
 
         /**
-         * Verifies a NewCollectionShare message.
+         * Verifies a NewSharedCollection message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates a NewCollectionShare message from a plain object. Also converts values to their respective internal types.
+         * Creates a NewSharedCollection message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns NewCollectionShare
+         * @returns NewSharedCollection
          */
-        public static fromObject(object: { [k: string]: any }): events.NewCollectionShare;
+        public static fromObject(object: { [k: string]: any }): events.NewSharedCollection;
 
         /**
-         * Creates a plain object from a NewCollectionShare message. Also converts values to other types if specified.
-         * @param message NewCollectionShare
+         * Creates a plain object from a NewSharedCollection message. Also converts values to other types if specified.
+         * @param message NewSharedCollection
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: events.NewCollectionShare, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: events.NewSharedCollection, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this NewCollectionShare to JSON.
+         * Converts this NewSharedCollection to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
@@ -5226,8 +5226,8 @@ export namespace events {
         /** UpdateSharedCollection shareId */
         shareId?: (string|null);
 
-        /** UpdateSharedCollection mentionIds */
-        mentionIds?: (string[]|null);
+        /** UpdateSharedCollection mentionId */
+        mentionId?: (string|null);
 
         /** UpdateSharedCollection updateType */
         updateType?: (events.UpdateSharedCollection.UpdateType|null);
@@ -5251,8 +5251,8 @@ export namespace events {
         /** UpdateSharedCollection shareId. */
         public shareId: string;
 
-        /** UpdateSharedCollection mentionIds. */
-        public mentionIds: string[];
+        /** UpdateSharedCollection mentionId. */
+        public mentionId: string;
 
         /** UpdateSharedCollection updateType. */
         public updateType: events.UpdateSharedCollection.UpdateType;

@@ -11,7 +11,7 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
-goog.exportSymbol('proto.events.NewCollectionShare', null, global);
+goog.exportSymbol('proto.events.NewSharedCollection', null, global);
 goog.exportSymbol('proto.events.UpdateSharedCollection', null, global);
 goog.exportSymbol('proto.events.UpdateSharedCollection.UpdateType', null, global);
 
@@ -25,12 +25,12 @@ goog.exportSymbol('proto.events.UpdateSharedCollection.UpdateType', null, global
  * @extends {jspb.Message}
  * @constructor
  */
-proto.events.NewCollectionShare = function(opt_data) {
+proto.events.NewSharedCollection = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.events.NewCollectionShare, jspb.Message);
+goog.inherits(proto.events.NewSharedCollection, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.events.NewCollectionShare.displayName = 'proto.events.NewCollectionShare';
+  proto.events.NewSharedCollection.displayName = 'proto.events.NewSharedCollection';
 }
 
 
@@ -45,8 +45,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.events.NewCollectionShare.prototype.toObject = function(opt_includeInstance) {
-  return proto.events.NewCollectionShare.toObject(opt_includeInstance, this);
+proto.events.NewSharedCollection.prototype.toObject = function(opt_includeInstance) {
+  return proto.events.NewSharedCollection.toObject(opt_includeInstance, this);
 };
 
 
@@ -55,11 +55,11 @@ proto.events.NewCollectionShare.prototype.toObject = function(opt_includeInstanc
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.events.NewCollectionShare} msg The msg instance to transform.
+ * @param {!proto.events.NewSharedCollection} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.events.NewCollectionShare.toObject = function(includeInstance, msg) {
+proto.events.NewSharedCollection.toObject = function(includeInstance, msg) {
   var f, obj = {
     folderId: jspb.Message.getFieldWithDefault(msg, 10, ""),
     shareId: jspb.Message.getFieldWithDefault(msg, 11, ""),
@@ -77,23 +77,23 @@ proto.events.NewCollectionShare.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.events.NewCollectionShare}
+ * @return {!proto.events.NewSharedCollection}
  */
-proto.events.NewCollectionShare.deserializeBinary = function(bytes) {
+proto.events.NewSharedCollection.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.events.NewCollectionShare;
-  return proto.events.NewCollectionShare.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.events.NewSharedCollection;
+  return proto.events.NewSharedCollection.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.events.NewCollectionShare} msg The message object to deserialize into.
+ * @param {!proto.events.NewSharedCollection} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.events.NewCollectionShare}
+ * @return {!proto.events.NewSharedCollection}
  */
-proto.events.NewCollectionShare.deserializeBinaryFromReader = function(msg, reader) {
+proto.events.NewSharedCollection.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -125,9 +125,9 @@ proto.events.NewCollectionShare.deserializeBinaryFromReader = function(msg, read
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.events.NewCollectionShare.prototype.serializeBinary = function() {
+proto.events.NewSharedCollection.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.events.NewCollectionShare.serializeBinaryToWriter(this, writer);
+  proto.events.NewSharedCollection.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -135,11 +135,11 @@ proto.events.NewCollectionShare.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.events.NewCollectionShare} message
+ * @param {!proto.events.NewSharedCollection} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.events.NewCollectionShare.serializeBinaryToWriter = function(message, writer) {
+proto.events.NewSharedCollection.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getFolderId();
   if (f.length > 0) {
@@ -169,13 +169,13 @@ proto.events.NewCollectionShare.serializeBinaryToWriter = function(message, writ
  * optional string folder_id = 10;
  * @return {string}
  */
-proto.events.NewCollectionShare.prototype.getFolderId = function() {
+proto.events.NewSharedCollection.prototype.getFolderId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
 
 /** @param {string} value */
-proto.events.NewCollectionShare.prototype.setFolderId = function(value) {
+proto.events.NewSharedCollection.prototype.setFolderId = function(value) {
   jspb.Message.setProto3StringField(this, 10, value);
 };
 
@@ -184,13 +184,13 @@ proto.events.NewCollectionShare.prototype.setFolderId = function(value) {
  * optional string share_id = 11;
  * @return {string}
  */
-proto.events.NewCollectionShare.prototype.getShareId = function() {
+proto.events.NewSharedCollection.prototype.getShareId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
 
 /** @param {string} value */
-proto.events.NewCollectionShare.prototype.setShareId = function(value) {
+proto.events.NewSharedCollection.prototype.setShareId = function(value) {
   jspb.Message.setProto3StringField(this, 11, value);
 };
 
@@ -199,13 +199,13 @@ proto.events.NewCollectionShare.prototype.setShareId = function(value) {
  * optional string history_id = 12;
  * @return {string}
  */
-proto.events.NewCollectionShare.prototype.getHistoryId = function() {
+proto.events.NewSharedCollection.prototype.getHistoryId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
 };
 
 
 /** @param {string} value */
-proto.events.NewCollectionShare.prototype.setHistoryId = function(value) {
+proto.events.NewSharedCollection.prototype.setHistoryId = function(value) {
   jspb.Message.setProto3StringField(this, 12, value);
 };
 
@@ -222,19 +222,12 @@ proto.events.NewCollectionShare.prototype.setHistoryId = function(value) {
  * @constructor
  */
 proto.events.UpdateSharedCollection = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.events.UpdateSharedCollection.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.events.UpdateSharedCollection, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   proto.events.UpdateSharedCollection.displayName = 'proto.events.UpdateSharedCollection';
 }
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.events.UpdateSharedCollection.repeatedFields_ = [12];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -266,7 +259,7 @@ proto.events.UpdateSharedCollection.toObject = function(includeInstance, msg) {
   var f, obj = {
     folderId: jspb.Message.getFieldWithDefault(msg, 10, ""),
     shareId: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    mentionIdsList: jspb.Message.getRepeatedField(msg, 12),
+    mentionId: jspb.Message.getFieldWithDefault(msg, 12, ""),
     updateType: jspb.Message.getFieldWithDefault(msg, 13, 0),
     historyId: jspb.Message.getFieldWithDefault(msg, 14, "")
   };
@@ -315,7 +308,7 @@ proto.events.UpdateSharedCollection.deserializeBinaryFromReader = function(msg, 
       break;
     case 12:
       var value = /** @type {string} */ (reader.readString());
-      msg.addMentionIds(value);
+      msg.setMentionId(value);
       break;
     case 13:
       var value = /** @type {!proto.events.UpdateSharedCollection.UpdateType} */ (reader.readEnum());
@@ -368,9 +361,9 @@ proto.events.UpdateSharedCollection.serializeBinaryToWriter = function(message, 
       f
     );
   }
-  f = message.getMentionIdsList();
+  f = message.getMentionId();
   if (f.length > 0) {
-    writer.writeRepeatedString(
+    writer.writeString(
       12,
       f
     );
@@ -432,31 +425,17 @@ proto.events.UpdateSharedCollection.prototype.setShareId = function(value) {
 
 
 /**
- * repeated string mention_ids = 12;
- * @return {!Array.<string>}
+ * optional string mention_id = 12;
+ * @return {string}
  */
-proto.events.UpdateSharedCollection.prototype.getMentionIdsList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getRepeatedField(this, 12));
+proto.events.UpdateSharedCollection.prototype.getMentionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
 };
 
 
-/** @param {!Array.<string>} value */
-proto.events.UpdateSharedCollection.prototype.setMentionIdsList = function(value) {
-  jspb.Message.setField(this, 12, value || []);
-};
-
-
-/**
- * @param {!string} value
- * @param {number=} opt_index
- */
-proto.events.UpdateSharedCollection.prototype.addMentionIds = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 12, value, opt_index);
-};
-
-
-proto.events.UpdateSharedCollection.prototype.clearMentionIdsList = function() {
-  this.setMentionIdsList([]);
+/** @param {string} value */
+proto.events.UpdateSharedCollection.prototype.setMentionId = function(value) {
+  jspb.Message.setProto3StringField(this, 12, value);
 };
 
 

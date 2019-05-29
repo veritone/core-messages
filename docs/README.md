@@ -120,7 +120,7 @@
   
 
 - [events/shared_collection.proto](#events/shared_collection.proto)
-    - [NewCollectionShare](#events.NewCollectionShare)
+    - [NewSharedCollection](#events.NewSharedCollection)
     - [UpdateSharedCollection](#events.UpdateSharedCollection)
   
     - [UpdateSharedCollection.UpdateType](#events.UpdateSharedCollection.UpdateType)
@@ -1229,9 +1229,9 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 
 
 
-<a name="events.NewCollectionShare"></a>
+<a name="events.NewSharedCollection"></a>
 
-### NewCollectionShare
+### NewSharedCollection
 
 
 
@@ -1256,7 +1256,7 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 | ----- | ---- | ----- | ----------- |
 | folder_id | [string](#string) |  | Collection Id |
 | share_id | [string](#string) |  | Id of the Share created for the Collection |
-| mention_ids | [string](#string) | repeated | Ids of the mentions added or removed from Collection |
+| mention_id | [string](#string) |  | Id of the mentions added or removed from Collection |
 | update_type | [UpdateSharedCollection.UpdateType](#events.UpdateSharedCollection.UpdateType) |  | The type of update to collection: Add/Remove |
 | history_id | [string](#string) |  | Id of the Share collection history |
 
