@@ -8,7 +8,7 @@ message NewCollectionShare {
     string history_id = 12; // Id of the Share collection history
 }
 
-message UpdateCollectionMentions {
+message UpdateSharedCollection {
     string folder_id = 10;            // Collection Id
     string share_id = 11;             // Id of the Share created for the Collection
     repeated string mention_ids = 12; // Ids of the mentions added or removed from Collection

@@ -121,9 +121,9 @@
 
 - [events/shared_collection.proto](#events/shared_collection.proto)
     - [NewCollectionShare](#events.NewCollectionShare)
-    - [UpdateCollectionMentions](#events.UpdateCollectionMentions)
+    - [UpdateSharedCollection](#events.UpdateSharedCollection)
   
-    - [UpdateCollectionMentions.UpdateType](#events.UpdateCollectionMentions.UpdateType)
+    - [UpdateSharedCollection.UpdateType](#events.UpdateSharedCollection.UpdateType)
   
   
   
@@ -1246,9 +1246,9 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 
 
 
-<a name="events.UpdateCollectionMentions"></a>
+<a name="events.UpdateSharedCollection"></a>
 
-### UpdateCollectionMentions
+### UpdateSharedCollection
 
 
 
@@ -1257,7 +1257,7 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 | folder_id | [string](#string) |  | Collection Id |
 | share_id | [string](#string) |  | Id of the Share created for the Collection |
 | mention_ids | [string](#string) | repeated | Ids of the mentions added or removed from Collection |
-| update_type | [UpdateCollectionMentions.UpdateType](#events.UpdateCollectionMentions.UpdateType) |  | The type of update to collection: Add/Remove |
+| update_type | [UpdateSharedCollection.UpdateType](#events.UpdateSharedCollection.UpdateType) |  | The type of update to collection: Add/Remove |
 | history_id | [string](#string) |  | Id of the Share collection history |
 
 
@@ -1267,16 +1267,16 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
  
 
 
-<a name="events.UpdateCollectionMentions.UpdateType"></a>
+<a name="events.UpdateSharedCollection.UpdateType"></a>
 
-### UpdateCollectionMentions.UpdateType
+### UpdateSharedCollection.UpdateType
 
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| AddMention | 0 |  |
-| RemoveMention | 1 |  |
-| UpdateMention | 2 |  |
+| AddMention | 0 | Add mention to collection |
+| RemoveMention | 1 | Remove mention from collection |
+| UpdateMention | 2 | Update mention details |
 
 
  

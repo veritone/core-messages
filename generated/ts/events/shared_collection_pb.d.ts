@@ -31,7 +31,7 @@ export namespace NewCollectionShare {
   }
 }
 
-export class UpdateCollectionMentions extends jspb.Message {
+export class UpdateSharedCollection extends jspb.Message {
   getFolderId(): string;
   setFolderId(value: string): void;
 
@@ -43,28 +43,28 @@ export class UpdateCollectionMentions extends jspb.Message {
   setMentionIdsList(value: Array<string>): void;
   addMentionIds(value: string, index?: number): string;
 
-  getUpdateType(): UpdateCollectionMentions.UpdateType;
-  setUpdateType(value: UpdateCollectionMentions.UpdateType): void;
+  getUpdateType(): UpdateSharedCollection.UpdateType;
+  setUpdateType(value: UpdateSharedCollection.UpdateType): void;
 
   getHistoryId(): string;
   setHistoryId(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpdateCollectionMentions.AsObject;
-  static toObject(includeInstance: boolean, msg: UpdateCollectionMentions): UpdateCollectionMentions.AsObject;
+  toObject(includeInstance?: boolean): UpdateSharedCollection.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateSharedCollection): UpdateSharedCollection.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UpdateCollectionMentions, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpdateCollectionMentions;
-  static deserializeBinaryFromReader(message: UpdateCollectionMentions, reader: jspb.BinaryReader): UpdateCollectionMentions;
+  static serializeBinaryToWriter(message: UpdateSharedCollection, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateSharedCollection;
+  static deserializeBinaryFromReader(message: UpdateSharedCollection, reader: jspb.BinaryReader): UpdateSharedCollection;
 }
 
-export namespace UpdateCollectionMentions {
+export namespace UpdateSharedCollection {
   export type AsObject = {
     folderId: string,
     shareId: string,
     mentionIdsList: Array<string>,
-    updateType: UpdateCollectionMentions.UpdateType,
+    updateType: UpdateSharedCollection.UpdateType,
     historyId: string,
   }
 

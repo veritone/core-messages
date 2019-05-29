@@ -5217,121 +5217,121 @@ export namespace events {
         public toJSON(): { [k: string]: any };
     }
 
-    /** Properties of an UpdateCollectionMentions. */
-    interface IUpdateCollectionMentions {
+    /** Properties of an UpdateSharedCollection. */
+    interface IUpdateSharedCollection {
 
-        /** UpdateCollectionMentions folderId */
+        /** UpdateSharedCollection folderId */
         folderId?: (string|null);
 
-        /** UpdateCollectionMentions shareId */
+        /** UpdateSharedCollection shareId */
         shareId?: (string|null);
 
-        /** UpdateCollectionMentions mentionIds */
+        /** UpdateSharedCollection mentionIds */
         mentionIds?: (string[]|null);
 
-        /** UpdateCollectionMentions updateType */
-        updateType?: (events.UpdateCollectionMentions.UpdateType|null);
+        /** UpdateSharedCollection updateType */
+        updateType?: (events.UpdateSharedCollection.UpdateType|null);
 
-        /** UpdateCollectionMentions historyId */
+        /** UpdateSharedCollection historyId */
         historyId?: (string|null);
     }
 
-    /** Represents an UpdateCollectionMentions. */
-    class UpdateCollectionMentions implements IUpdateCollectionMentions {
+    /** Represents an UpdateSharedCollection. */
+    class UpdateSharedCollection implements IUpdateSharedCollection {
 
         /**
-         * Constructs a new UpdateCollectionMentions.
+         * Constructs a new UpdateSharedCollection.
          * @param [properties] Properties to set
          */
-        constructor(properties?: events.IUpdateCollectionMentions);
+        constructor(properties?: events.IUpdateSharedCollection);
 
-        /** UpdateCollectionMentions folderId. */
+        /** UpdateSharedCollection folderId. */
         public folderId: string;
 
-        /** UpdateCollectionMentions shareId. */
+        /** UpdateSharedCollection shareId. */
         public shareId: string;
 
-        /** UpdateCollectionMentions mentionIds. */
+        /** UpdateSharedCollection mentionIds. */
         public mentionIds: string[];
 
-        /** UpdateCollectionMentions updateType. */
-        public updateType: events.UpdateCollectionMentions.UpdateType;
+        /** UpdateSharedCollection updateType. */
+        public updateType: events.UpdateSharedCollection.UpdateType;
 
-        /** UpdateCollectionMentions historyId. */
+        /** UpdateSharedCollection historyId. */
         public historyId: string;
 
         /**
-         * Creates a new UpdateCollectionMentions instance using the specified properties.
+         * Creates a new UpdateSharedCollection instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns UpdateCollectionMentions instance
+         * @returns UpdateSharedCollection instance
          */
-        public static create(properties?: events.IUpdateCollectionMentions): events.UpdateCollectionMentions;
+        public static create(properties?: events.IUpdateSharedCollection): events.UpdateSharedCollection;
 
         /**
-         * Encodes the specified UpdateCollectionMentions message. Does not implicitly {@link events.UpdateCollectionMentions.verify|verify} messages.
-         * @param message UpdateCollectionMentions message or plain object to encode
+         * Encodes the specified UpdateSharedCollection message. Does not implicitly {@link events.UpdateSharedCollection.verify|verify} messages.
+         * @param message UpdateSharedCollection message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: events.IUpdateCollectionMentions, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: events.IUpdateSharedCollection, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified UpdateCollectionMentions message, length delimited. Does not implicitly {@link events.UpdateCollectionMentions.verify|verify} messages.
-         * @param message UpdateCollectionMentions message or plain object to encode
+         * Encodes the specified UpdateSharedCollection message, length delimited. Does not implicitly {@link events.UpdateSharedCollection.verify|verify} messages.
+         * @param message UpdateSharedCollection message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: events.IUpdateCollectionMentions, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: events.IUpdateSharedCollection, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes an UpdateCollectionMentions message from the specified reader or buffer.
+         * Decodes an UpdateSharedCollection message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns UpdateCollectionMentions
+         * @returns UpdateSharedCollection
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.UpdateCollectionMentions;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.UpdateSharedCollection;
 
         /**
-         * Decodes an UpdateCollectionMentions message from the specified reader or buffer, length delimited.
+         * Decodes an UpdateSharedCollection message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns UpdateCollectionMentions
+         * @returns UpdateSharedCollection
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.UpdateCollectionMentions;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.UpdateSharedCollection;
 
         /**
-         * Verifies an UpdateCollectionMentions message.
+         * Verifies an UpdateSharedCollection message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates an UpdateCollectionMentions message from a plain object. Also converts values to their respective internal types.
+         * Creates an UpdateSharedCollection message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns UpdateCollectionMentions
+         * @returns UpdateSharedCollection
          */
-        public static fromObject(object: { [k: string]: any }): events.UpdateCollectionMentions;
+        public static fromObject(object: { [k: string]: any }): events.UpdateSharedCollection;
 
         /**
-         * Creates a plain object from an UpdateCollectionMentions message. Also converts values to other types if specified.
-         * @param message UpdateCollectionMentions
+         * Creates a plain object from an UpdateSharedCollection message. Also converts values to other types if specified.
+         * @param message UpdateSharedCollection
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: events.UpdateCollectionMentions, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: events.UpdateSharedCollection, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this UpdateCollectionMentions to JSON.
+         * Converts this UpdateSharedCollection to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
     }
 
-    namespace UpdateCollectionMentions {
+    namespace UpdateSharedCollection {
 
         /** UpdateType enum. */
         enum UpdateType {
