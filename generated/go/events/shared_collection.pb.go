@@ -20,34 +20,6 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
-type UpdateSharedCollection_UpdateType int32
-
-const (
-	UpdateSharedCollection_AddMention    UpdateSharedCollection_UpdateType = 0
-	UpdateSharedCollection_RemoveMention UpdateSharedCollection_UpdateType = 1
-	UpdateSharedCollection_UpdateMention UpdateSharedCollection_UpdateType = 2
-)
-
-var UpdateSharedCollection_UpdateType_name = map[int32]string{
-	0: "AddMention",
-	1: "RemoveMention",
-	2: "UpdateMention",
-}
-
-var UpdateSharedCollection_UpdateType_value = map[string]int32{
-	"AddMention":    0,
-	"RemoveMention": 1,
-	"UpdateMention": 2,
-}
-
-func (x UpdateSharedCollection_UpdateType) String() string {
-	return proto.EnumName(UpdateSharedCollection_UpdateType_name, int32(x))
-}
-
-func (UpdateSharedCollection_UpdateType) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_b84d98cc82013cd4, []int{1, 0}
-}
-
 type NewSharedCollection struct {
 	FolderId             string   `protobuf:"bytes,10,opt,name=folder_id,json=folderId,proto3" json:"folder_id,omitempty"`
 	ShareId              string   `protobuf:"bytes,11,opt,name=share_id,json=shareId,proto3" json:"share_id,omitempty"`
@@ -104,14 +76,14 @@ func (m *NewSharedCollection) GetHistoryId() string {
 }
 
 type UpdateSharedCollection struct {
-	FolderId             string                            `protobuf:"bytes,10,opt,name=folder_id,json=folderId,proto3" json:"folder_id,omitempty"`
-	ShareId              string                            `protobuf:"bytes,11,opt,name=share_id,json=shareId,proto3" json:"share_id,omitempty"`
-	MentionId            string                            `protobuf:"bytes,12,opt,name=mention_id,json=mentionId,proto3" json:"mention_id,omitempty"`
-	UpdateType           UpdateSharedCollection_UpdateType `protobuf:"varint,13,opt,name=update_type,json=updateType,proto3,enum=events.UpdateSharedCollection_UpdateType" json:"update_type,omitempty"`
-	HistoryId            string                            `protobuf:"bytes,14,opt,name=history_id,json=historyId,proto3" json:"history_id,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                          `json:"-"`
-	XXX_unrecognized     []byte                            `json:"-"`
-	XXX_sizecache        int32                             `json:"-"`
+	FolderId             string   `protobuf:"bytes,10,opt,name=folder_id,json=folderId,proto3" json:"folder_id,omitempty"`
+	ShareId              string   `protobuf:"bytes,11,opt,name=share_id,json=shareId,proto3" json:"share_id,omitempty"`
+	MentionId            string   `protobuf:"bytes,12,opt,name=mention_id,json=mentionId,proto3" json:"mention_id,omitempty"`
+	UpdateType           string   `protobuf:"bytes,13,opt,name=update_type,json=updateType,proto3" json:"update_type,omitempty"`
+	HistoryId            string   `protobuf:"bytes,14,opt,name=history_id,json=historyId,proto3" json:"history_id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
 }
 
 func (m *UpdateSharedCollection) Reset()         { *m = UpdateSharedCollection{} }
@@ -160,11 +132,11 @@ func (m *UpdateSharedCollection) GetMentionId() string {
 	return ""
 }
 
-func (m *UpdateSharedCollection) GetUpdateType() UpdateSharedCollection_UpdateType {
+func (m *UpdateSharedCollection) GetUpdateType() string {
 	if m != nil {
 		return m.UpdateType
 	}
-	return UpdateSharedCollection_AddMention
+	return ""
 }
 
 func (m *UpdateSharedCollection) GetHistoryId() string {
@@ -175,7 +147,6 @@ func (m *UpdateSharedCollection) GetHistoryId() string {
 }
 
 func init() {
-	proto.RegisterEnum("events.UpdateSharedCollection_UpdateType", UpdateSharedCollection_UpdateType_name, UpdateSharedCollection_UpdateType_value)
 	proto.RegisterType((*NewSharedCollection)(nil), "events.NewSharedCollection")
 	proto.RegisterType((*UpdateSharedCollection)(nil), "events.UpdateSharedCollection")
 }
@@ -183,7 +154,7 @@ func init() {
 func init() { proto.RegisterFile("events/shared_collection.proto", fileDescriptor_b84d98cc82013cd4) }
 
 var fileDescriptor_b84d98cc82013cd4 = []byte{
-	// 250 bytes of a gzipped FileDescriptorProto
+	// 198 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x92, 0x4b, 0x2d, 0x4b, 0xcd,
 	0x2b, 0x29, 0xd6, 0x2f, 0xce, 0x48, 0x2c, 0x4a, 0x4d, 0x89, 0x4f, 0xce, 0xcf, 0xc9, 0x49, 0x4d,
 	0x2e, 0xc9, 0xcc, 0xcf, 0xd3, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x83, 0xc8, 0x2b, 0xe5,
@@ -191,13 +162,10 @@ var fileDescriptor_b84d98cc82013cd4 = []byte{
 	0xe5, 0xe7, 0xa4, 0xa4, 0x16, 0xc5, 0x67, 0xa6, 0x48, 0x70, 0x29, 0x30, 0x6a, 0x70, 0x06, 0x71,
 	0x40, 0x04, 0x3c, 0x53, 0x84, 0x24, 0xb9, 0x38, 0xc0, 0xc6, 0x82, 0xe4, 0xb8, 0xc1, 0x72, 0xec,
 	0x60, 0xbe, 0x67, 0x8a, 0x90, 0x2c, 0x17, 0x57, 0x46, 0x66, 0x71, 0x49, 0x7e, 0x51, 0x25, 0x48,
-	0x92, 0x07, 0x2c, 0xc9, 0x09, 0x15, 0xf1, 0x4c, 0x51, 0x9a, 0xc7, 0xc4, 0x25, 0x16, 0x5a, 0x90,
+	0x92, 0x07, 0x2c, 0xc9, 0x09, 0x15, 0xf1, 0x4c, 0x51, 0x5a, 0xcf, 0xc8, 0x25, 0x16, 0x5a, 0x90,
 	0x92, 0x58, 0x92, 0x4a, 0x4d, 0x1b, 0x73, 0x53, 0xf3, 0x40, 0x46, 0x20, 0xd9, 0x08, 0x15, 0xf1,
-	0x4c, 0x11, 0xf2, 0xe2, 0xe2, 0x2e, 0x05, 0x5b, 0x18, 0x5f, 0x52, 0x59, 0x90, 0x2a, 0xc1, 0xab,
-	0xc0, 0xa8, 0xc1, 0x67, 0xa4, 0xa9, 0x07, 0xf1, 0xbd, 0x1e, 0x76, 0xb7, 0x40, 0x85, 0x43, 0x2a,
-	0x0b, 0x52, 0x83, 0xb8, 0x4a, 0xe1, 0x6c, 0x34, 0xcf, 0xf1, 0xa1, 0x7b, 0xce, 0x89, 0x8b, 0x0b,
-	0xa1, 0x51, 0x88, 0x8f, 0x8b, 0xcb, 0x31, 0x25, 0xc5, 0x17, 0xe2, 0x10, 0x01, 0x06, 0x21, 0x41,
-	0x2e, 0xde, 0xa0, 0xd4, 0xdc, 0xfc, 0xb2, 0x54, 0x98, 0x10, 0x23, 0x48, 0x08, 0xa2, 0x01, 0x26,
-	0xc4, 0xe4, 0xc4, 0x11, 0x05, 0x8d, 0x98, 0x24, 0x36, 0x70, 0x3c, 0x19, 0x03, 0x02, 0x00, 0x00,
-	0xff, 0xff, 0xef, 0x9e, 0x4b, 0x9a, 0xc9, 0x01, 0x00, 0x00,
+	0x4c, 0x11, 0x92, 0xe7, 0xe2, 0x2e, 0x05, 0x5b, 0x18, 0x5f, 0x52, 0x59, 0x90, 0x2a, 0xc1, 0x0b,
+	0x96, 0xe7, 0x82, 0x08, 0x85, 0x54, 0x16, 0xa4, 0xa2, 0xb9, 0x98, 0x0f, 0xcd, 0xc5, 0x4e, 0x1c,
+	0x51, 0xd0, 0x90, 0x4a, 0x62, 0x03, 0x07, 0x9c, 0x31, 0x20, 0x00, 0x00, 0xff, 0xff, 0x72, 0xea,
+	0xd1, 0xc1, 0x5a, 0x01, 0x00, 0x00,
 }

@@ -41,8 +41,8 @@ export class UpdateSharedCollection extends jspb.Message {
   getMentionId(): string;
   setMentionId(value: string): void;
 
-  getUpdateType(): UpdateSharedCollection.UpdateType;
-  setUpdateType(value: UpdateSharedCollection.UpdateType): void;
+  getUpdateType(): string;
+  setUpdateType(value: string): void;
 
   getHistoryId(): string;
   setHistoryId(value: string): void;
@@ -62,14 +62,8 @@ export namespace UpdateSharedCollection {
     folderId: string,
     shareId: string,
     mentionId: string,
-    updateType: UpdateSharedCollection.UpdateType,
+    updateType: string,
     historyId: string,
-  }
-
-  export enum UpdateType {
-    ADDMENTION = 0,
-    REMOVEMENTION = 1,
-    UPDATEMENTION = 2,
   }
 }
 

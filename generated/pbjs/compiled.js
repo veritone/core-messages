@@ -12649,7 +12649,7 @@ $root.events = (function() {
          * @property {string|null} [folderId] UpdateSharedCollection folderId
          * @property {string|null} [shareId] UpdateSharedCollection shareId
          * @property {string|null} [mentionId] UpdateSharedCollection mentionId
-         * @property {events.UpdateSharedCollection.UpdateType|null} [updateType] UpdateSharedCollection updateType
+         * @property {string|null} [updateType] UpdateSharedCollection updateType
          * @property {string|null} [historyId] UpdateSharedCollection historyId
          */
 
@@ -12694,11 +12694,11 @@ $root.events = (function() {
 
         /**
          * UpdateSharedCollection updateType.
-         * @member {events.UpdateSharedCollection.UpdateType} updateType
+         * @member {string} updateType
          * @memberof events.UpdateSharedCollection
          * @instance
          */
-        UpdateSharedCollection.prototype.updateType = 0;
+        UpdateSharedCollection.prototype.updateType = "";
 
         /**
          * UpdateSharedCollection historyId.
@@ -12739,7 +12739,7 @@ $root.events = (function() {
             if (message.mentionId != null && message.hasOwnProperty("mentionId"))
                 writer.uint32(/* id 12, wireType 2 =*/98).string(message.mentionId);
             if (message.updateType != null && message.hasOwnProperty("updateType"))
-                writer.uint32(/* id 13, wireType 0 =*/104).int32(message.updateType);
+                writer.uint32(/* id 13, wireType 2 =*/106).string(message.updateType);
             if (message.historyId != null && message.hasOwnProperty("historyId"))
                 writer.uint32(/* id 14, wireType 2 =*/114).string(message.historyId);
             return writer;
@@ -12786,7 +12786,7 @@ $root.events = (function() {
                     message.mentionId = reader.string();
                     break;
                 case 13:
-                    message.updateType = reader.int32();
+                    message.updateType = reader.string();
                     break;
                 case 14:
                     message.historyId = reader.string();
@@ -12836,14 +12836,8 @@ $root.events = (function() {
                 if (!$util.isString(message.mentionId))
                     return "mentionId: string expected";
             if (message.updateType != null && message.hasOwnProperty("updateType"))
-                switch (message.updateType) {
-                default:
-                    return "updateType: enum value expected";
-                case 0:
-                case 1:
-                case 2:
-                    break;
-                }
+                if (!$util.isString(message.updateType))
+                    return "updateType: string expected";
             if (message.historyId != null && message.hasOwnProperty("historyId"))
                 if (!$util.isString(message.historyId))
                     return "historyId: string expected";
@@ -12868,20 +12862,8 @@ $root.events = (function() {
                 message.shareId = String(object.shareId);
             if (object.mentionId != null)
                 message.mentionId = String(object.mentionId);
-            switch (object.updateType) {
-            case "AddMention":
-            case 0:
-                message.updateType = 0;
-                break;
-            case "RemoveMention":
-            case 1:
-                message.updateType = 1;
-                break;
-            case "UpdateMention":
-            case 2:
-                message.updateType = 2;
-                break;
-            }
+            if (object.updateType != null)
+                message.updateType = String(object.updateType);
             if (object.historyId != null)
                 message.historyId = String(object.historyId);
             return message;
@@ -12904,7 +12886,7 @@ $root.events = (function() {
                 object.folderId = "";
                 object.shareId = "";
                 object.mentionId = "";
-                object.updateType = options.enums === String ? "AddMention" : 0;
+                object.updateType = "";
                 object.historyId = "";
             }
             if (message.folderId != null && message.hasOwnProperty("folderId"))
@@ -12914,7 +12896,7 @@ $root.events = (function() {
             if (message.mentionId != null && message.hasOwnProperty("mentionId"))
                 object.mentionId = message.mentionId;
             if (message.updateType != null && message.hasOwnProperty("updateType"))
-                object.updateType = options.enums === String ? $root.events.UpdateSharedCollection.UpdateType[message.updateType] : message.updateType;
+                object.updateType = message.updateType;
             if (message.historyId != null && message.hasOwnProperty("historyId"))
                 object.historyId = message.historyId;
             return object;
@@ -12930,22 +12912,6 @@ $root.events = (function() {
         UpdateSharedCollection.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
-
-        /**
-         * UpdateType enum.
-         * @name events.UpdateSharedCollection.UpdateType
-         * @enum {string}
-         * @property {number} AddMention=0 AddMention value
-         * @property {number} RemoveMention=1 RemoveMention value
-         * @property {number} UpdateMention=2 UpdateMention value
-         */
-        UpdateSharedCollection.UpdateType = (function() {
-            var valuesById = {}, values = Object.create(valuesById);
-            values[valuesById[0] = "AddMention"] = 0;
-            values[valuesById[1] = "RemoveMention"] = 1;
-            values[valuesById[2] = "UpdateMention"] = 2;
-            return values;
-        })();
 
         return UpdateSharedCollection;
     })();

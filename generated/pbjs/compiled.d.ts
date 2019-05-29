@@ -5230,7 +5230,7 @@ export namespace events {
         mentionId?: (string|null);
 
         /** UpdateSharedCollection updateType */
-        updateType?: (events.UpdateSharedCollection.UpdateType|null);
+        updateType?: (string|null);
 
         /** UpdateSharedCollection historyId */
         historyId?: (string|null);
@@ -5255,7 +5255,7 @@ export namespace events {
         public mentionId: string;
 
         /** UpdateSharedCollection updateType. */
-        public updateType: events.UpdateSharedCollection.UpdateType;
+        public updateType: string;
 
         /** UpdateSharedCollection historyId. */
         public historyId: string;
@@ -5329,16 +5329,6 @@ export namespace events {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
-    }
-
-    namespace UpdateSharedCollection {
-
-        /** UpdateType enum. */
-        enum UpdateType {
-            AddMention = 0,
-            RemoveMention = 1,
-            UpdateMention = 2
-        }
     }
 
     /** Properties of a TaskQueued. */
