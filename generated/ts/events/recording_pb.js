@@ -490,7 +490,6 @@ proto.events.RecordingCognitionCompleted.prototype.toObject = function(opt_inclu
  */
 proto.events.RecordingCognitionCompleted.toObject = function(includeInstance, msg) {
   var f, obj = {
-    recordingId: jspb.Message.getFieldWithDefault(msg, 10, ""),
     payload: (f = msg.getPayload()) && proto.events.RecordingCognitionCompleted.Payload.toObject(includeInstance, f)
   };
 
@@ -528,10 +527,6 @@ proto.events.RecordingCognitionCompleted.deserializeBinaryFromReader = function(
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 10:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setRecordingId(value);
-      break;
     case 11:
       var value = new proto.events.RecordingCognitionCompleted.Payload;
       reader.readMessage(value,proto.events.RecordingCognitionCompleted.Payload.deserializeBinaryFromReader);
@@ -566,13 +561,6 @@ proto.events.RecordingCognitionCompleted.prototype.serializeBinary = function() 
  */
 proto.events.RecordingCognitionCompleted.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getRecordingId();
-  if (f.length > 0) {
-    writer.writeString(
-      10,
-      f
-    );
-  }
   f = message.getPayload();
   if (f != null) {
     writer.writeMessage(
@@ -639,7 +627,8 @@ proto.events.RecordingCognitionCompleted.Payload.toObject = function(includeInst
     indexOverride: jspb.Message.getFieldWithDefault(msg, 15, ""),
     token: jspb.Message.getFieldWithDefault(msg, 16, ""),
     assetId: jspb.Message.getFieldWithDefault(msg, 17, ""),
-    skipMentionGeneration: jspb.Message.getFieldWithDefault(msg, 18, false)
+    skipMentionGeneration: jspb.Message.getFieldWithDefault(msg, 18, false),
+    recordingId: jspb.Message.getFieldWithDefault(msg, 19, "")
   };
 
   if (includeInstance) {
@@ -711,6 +700,10 @@ proto.events.RecordingCognitionCompleted.Payload.deserializeBinaryFromReader = f
     case 18:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setSkipMentionGeneration(value);
+      break;
+    case 19:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRecordingId(value);
       break;
     default:
       reader.skipField();
@@ -801,6 +794,13 @@ proto.events.RecordingCognitionCompleted.Payload.serializeBinaryToWriter = funct
   if (f) {
     writer.writeBool(
       18,
+      f
+    );
+  }
+  f = message.getRecordingId();
+  if (f.length > 0) {
+    writer.writeString(
+      19,
       f
     );
   }
@@ -945,17 +945,17 @@ proto.events.RecordingCognitionCompleted.Payload.prototype.setSkipMentionGenerat
 
 
 /**
- * optional string recording_id = 10;
+ * optional string recording_id = 19;
  * @return {string}
  */
-proto.events.RecordingCognitionCompleted.prototype.getRecordingId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+proto.events.RecordingCognitionCompleted.Payload.prototype.getRecordingId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 19, ""));
 };
 
 
 /** @param {string} value */
-proto.events.RecordingCognitionCompleted.prototype.setRecordingId = function(value) {
-  jspb.Message.setProto3StringField(this, 10, value);
+proto.events.RecordingCognitionCompleted.Payload.prototype.setRecordingId = function(value) {
+  jspb.Message.setProto3StringField(this, 19, value);
 };
 
 

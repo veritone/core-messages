@@ -119,6 +119,14 @@
   
   
 
+- [events/shared_collection.proto](#events/shared_collection.proto)
+    - [NewSharedCollection](#events.NewSharedCollection)
+    - [UpdateSharedCollection](#events.UpdateSharedCollection)
+  
+  
+  
+  
+
 - [events/task.proto](#events/task.proto)
     - [TaskCompleted](#events.TaskCompleted)
     - [TaskQueued](#events.TaskQueued)
@@ -1111,7 +1119,6 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| recording_id | [string](#string) |  |  |
 | payload | [RecordingCognitionCompleted.Payload](#events.RecordingCognitionCompleted.Payload) |  |  |
 
 
@@ -1136,6 +1143,7 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 | token | [string](#string) |  |  |
 | asset_id | [string](#string) |  |  |
 | skip_mention_generation | [bool](#bool) |  |  |
+| recording_id | [string](#string) |  |  |
 
 
 
@@ -1198,6 +1206,58 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | recording_id | [string](#string) |  |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="events/shared_collection.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## events/shared_collection.proto
+
+
+
+<a name="events.NewSharedCollection"></a>
+
+### NewSharedCollection
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| folder_id | [string](#string) |  | Collection Id |
+| share_id | [string](#string) |  | Id of the Share created for the Collection |
+| history_id | [string](#string) |  | Id of the Share collection history |
+
+
+
+
+
+
+<a name="events.UpdateSharedCollection"></a>
+
+### UpdateSharedCollection
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| folder_id | [string](#string) |  | Collection Id |
+| share_id | [string](#string) |  | Id of the Share created for the Collection |
+| mention_id | [string](#string) |  | Id of the mentions added or removed from Collection |
+| update_type | [string](#string) |  | The type of update to collection: Add/Remove |
+| history_id | [string](#string) |  | Id of the Share collection history |
 
 
 

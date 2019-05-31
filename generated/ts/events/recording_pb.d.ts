@@ -64,9 +64,6 @@ export namespace RecordingDeleted {
 }
 
 export class RecordingCognitionCompleted extends jspb.Message {
-  getRecordingId(): string;
-  setRecordingId(value: string): void;
-
   hasPayload(): boolean;
   clearPayload(): void;
   getPayload(): RecordingCognitionCompleted.Payload | undefined;
@@ -84,7 +81,6 @@ export class RecordingCognitionCompleted extends jspb.Message {
 
 export namespace RecordingCognitionCompleted {
   export type AsObject = {
-    recordingId: string,
     payload?: RecordingCognitionCompleted.Payload.AsObject,
   }
 
@@ -116,6 +112,9 @@ export namespace RecordingCognitionCompleted {
     getSkipMentionGeneration(): boolean;
     setSkipMentionGeneration(value: boolean): void;
 
+    getRecordingId(): string;
+    setRecordingId(value: string): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Payload.AsObject;
     static toObject(includeInstance: boolean, msg: Payload): Payload.AsObject;
@@ -137,6 +136,7 @@ export namespace RecordingCognitionCompleted {
       token: string,
       assetId: string,
       skipMentionGeneration: boolean,
+      recordingId: string,
     }
   }
 }

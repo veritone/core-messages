@@ -4779,9 +4779,6 @@ export namespace events {
     /** Properties of a RecordingCognitionCompleted. */
     interface IRecordingCognitionCompleted {
 
-        /** RecordingCognitionCompleted recordingId */
-        recordingId?: (string|null);
-
         /** RecordingCognitionCompleted payload */
         payload?: (events.RecordingCognitionCompleted.IPayload|null);
     }
@@ -4794,9 +4791,6 @@ export namespace events {
          * @param [properties] Properties to set
          */
         constructor(properties?: events.IRecordingCognitionCompleted);
-
-        /** RecordingCognitionCompleted recordingId. */
-        public recordingId: string;
 
         /** RecordingCognitionCompleted payload. */
         public payload?: (events.RecordingCognitionCompleted.IPayload|null);
@@ -4903,6 +4897,9 @@ export namespace events {
 
             /** Payload skipMentionGeneration */
             skipMentionGeneration?: (boolean|null);
+
+            /** Payload recordingId */
+            recordingId?: (string|null);
         }
 
         /** Represents a Payload. */
@@ -4940,6 +4937,9 @@ export namespace events {
 
             /** Payload skipMentionGeneration. */
             public skipMentionGeneration: boolean;
+
+            /** Payload recordingId. */
+            public recordingId: string;
 
             /**
              * Creates a new Payload instance using the specified properties.
@@ -5110,6 +5110,222 @@ export namespace events {
 
         /**
          * Converts this RecordingInsertFailed to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a NewSharedCollection. */
+    interface INewSharedCollection {
+
+        /** NewSharedCollection folderId */
+        folderId?: (string|null);
+
+        /** NewSharedCollection shareId */
+        shareId?: (string|null);
+
+        /** NewSharedCollection historyId */
+        historyId?: (string|null);
+    }
+
+    /** Represents a NewSharedCollection. */
+    class NewSharedCollection implements INewSharedCollection {
+
+        /**
+         * Constructs a new NewSharedCollection.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.INewSharedCollection);
+
+        /** NewSharedCollection folderId. */
+        public folderId: string;
+
+        /** NewSharedCollection shareId. */
+        public shareId: string;
+
+        /** NewSharedCollection historyId. */
+        public historyId: string;
+
+        /**
+         * Creates a new NewSharedCollection instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns NewSharedCollection instance
+         */
+        public static create(properties?: events.INewSharedCollection): events.NewSharedCollection;
+
+        /**
+         * Encodes the specified NewSharedCollection message. Does not implicitly {@link events.NewSharedCollection.verify|verify} messages.
+         * @param message NewSharedCollection message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.INewSharedCollection, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified NewSharedCollection message, length delimited. Does not implicitly {@link events.NewSharedCollection.verify|verify} messages.
+         * @param message NewSharedCollection message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.INewSharedCollection, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a NewSharedCollection message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns NewSharedCollection
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.NewSharedCollection;
+
+        /**
+         * Decodes a NewSharedCollection message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns NewSharedCollection
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.NewSharedCollection;
+
+        /**
+         * Verifies a NewSharedCollection message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a NewSharedCollection message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns NewSharedCollection
+         */
+        public static fromObject(object: { [k: string]: any }): events.NewSharedCollection;
+
+        /**
+         * Creates a plain object from a NewSharedCollection message. Also converts values to other types if specified.
+         * @param message NewSharedCollection
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.NewSharedCollection, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this NewSharedCollection to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an UpdateSharedCollection. */
+    interface IUpdateSharedCollection {
+
+        /** UpdateSharedCollection folderId */
+        folderId?: (string|null);
+
+        /** UpdateSharedCollection shareId */
+        shareId?: (string|null);
+
+        /** UpdateSharedCollection mentionId */
+        mentionId?: (string|null);
+
+        /** UpdateSharedCollection updateType */
+        updateType?: (string|null);
+
+        /** UpdateSharedCollection historyId */
+        historyId?: (string|null);
+    }
+
+    /** Represents an UpdateSharedCollection. */
+    class UpdateSharedCollection implements IUpdateSharedCollection {
+
+        /**
+         * Constructs a new UpdateSharedCollection.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IUpdateSharedCollection);
+
+        /** UpdateSharedCollection folderId. */
+        public folderId: string;
+
+        /** UpdateSharedCollection shareId. */
+        public shareId: string;
+
+        /** UpdateSharedCollection mentionId. */
+        public mentionId: string;
+
+        /** UpdateSharedCollection updateType. */
+        public updateType: string;
+
+        /** UpdateSharedCollection historyId. */
+        public historyId: string;
+
+        /**
+         * Creates a new UpdateSharedCollection instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns UpdateSharedCollection instance
+         */
+        public static create(properties?: events.IUpdateSharedCollection): events.UpdateSharedCollection;
+
+        /**
+         * Encodes the specified UpdateSharedCollection message. Does not implicitly {@link events.UpdateSharedCollection.verify|verify} messages.
+         * @param message UpdateSharedCollection message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IUpdateSharedCollection, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified UpdateSharedCollection message, length delimited. Does not implicitly {@link events.UpdateSharedCollection.verify|verify} messages.
+         * @param message UpdateSharedCollection message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IUpdateSharedCollection, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an UpdateSharedCollection message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns UpdateSharedCollection
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.UpdateSharedCollection;
+
+        /**
+         * Decodes an UpdateSharedCollection message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns UpdateSharedCollection
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.UpdateSharedCollection;
+
+        /**
+         * Verifies an UpdateSharedCollection message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an UpdateSharedCollection message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns UpdateSharedCollection
+         */
+        public static fromObject(object: { [k: string]: any }): events.UpdateSharedCollection;
+
+        /**
+         * Creates a plain object from an UpdateSharedCollection message. Also converts values to other types if specified.
+         * @param message UpdateSharedCollection
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.UpdateSharedCollection, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this UpdateSharedCollection to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };

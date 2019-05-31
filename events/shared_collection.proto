@@ -1,0 +1,17 @@
+syntax = "proto3";
+package events;
+option go_package = "events";
+
+message NewSharedCollection {
+    string folder_id = 10;  // Collection Id
+    string share_id = 11;   // Id of the Share created for the Collection
+    string history_id = 12; // Id of the Share collection history
+}
+
+message UpdateSharedCollection {
+    string folder_id = 10;       // Collection Id
+    string share_id = 11;        // Id of the Share created for the Collection
+    string mention_id = 12;      // Id of the mentions added or removed from Collection
+    string update_type = 13;     // The type of update to collection: Add/Remove
+    string history_id = 14;      // Id of the Share collection history
+}
