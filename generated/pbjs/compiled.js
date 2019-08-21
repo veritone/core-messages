@@ -10503,6 +10503,7 @@ $root.events = (function() {
          * @property {string|null} [type] MentionsDeleted type
          * @property {Array.<number|Long>|null} [mentionIds] MentionsDeleted mentionIds
          * @property {number|Long|null} [tdoId] MentionsDeleted tdoId
+         * @property {number|Long|null} [trackingUnitId] MentionsDeleted trackingUnitId
          */
 
         /**
@@ -10554,6 +10555,14 @@ $root.events = (function() {
         MentionsDeleted.prototype.tdoId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
         /**
+         * MentionsDeleted trackingUnitId.
+         * @member {number|Long} trackingUnitId
+         * @memberof events.MentionsDeleted
+         * @instance
+         */
+        MentionsDeleted.prototype.trackingUnitId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+        /**
          * Creates a new MentionsDeleted instance using the specified properties.
          * @function create
          * @memberof events.MentionsDeleted
@@ -10582,13 +10591,15 @@ $root.events = (function() {
             if (message.type != null && message.hasOwnProperty("type"))
                 writer.uint32(/* id 11, wireType 2 =*/90).string(message.type);
             if (message.mentionIds != null && message.mentionIds.length) {
-                writer.uint32(/* id 14, wireType 2 =*/114).fork();
+                writer.uint32(/* id 13, wireType 2 =*/106).fork();
                 for (var i = 0; i < message.mentionIds.length; ++i)
                     writer.int64(message.mentionIds[i]);
                 writer.ldelim();
             }
             if (message.tdoId != null && message.hasOwnProperty("tdoId"))
-                writer.uint32(/* id 15, wireType 0 =*/120).int64(message.tdoId);
+                writer.uint32(/* id 14, wireType 0 =*/112).int64(message.tdoId);
+            if (message.trackingUnitId != null && message.hasOwnProperty("trackingUnitId"))
+                writer.uint32(/* id 15, wireType 0 =*/120).int64(message.trackingUnitId);
             return writer;
         };
 
@@ -10629,7 +10640,7 @@ $root.events = (function() {
                 case 11:
                     message.type = reader.string();
                     break;
-                case 14:
+                case 13:
                     if (!(message.mentionIds && message.mentionIds.length))
                         message.mentionIds = [];
                     if ((tag & 7) === 2) {
@@ -10639,8 +10650,11 @@ $root.events = (function() {
                     } else
                         message.mentionIds.push(reader.int64());
                     break;
-                case 15:
+                case 14:
                     message.tdoId = reader.int64();
+                    break;
+                case 15:
+                    message.trackingUnitId = reader.int64();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -10693,6 +10707,9 @@ $root.events = (function() {
             if (message.tdoId != null && message.hasOwnProperty("tdoId"))
                 if (!$util.isInteger(message.tdoId) && !(message.tdoId && $util.isInteger(message.tdoId.low) && $util.isInteger(message.tdoId.high)))
                     return "tdoId: integer|Long expected";
+            if (message.trackingUnitId != null && message.hasOwnProperty("trackingUnitId"))
+                if (!$util.isInteger(message.trackingUnitId) && !(message.trackingUnitId && $util.isInteger(message.trackingUnitId.low) && $util.isInteger(message.trackingUnitId.high)))
+                    return "trackingUnitId: integer|Long expected";
             return null;
         };
 
@@ -10735,6 +10752,15 @@ $root.events = (function() {
                     message.tdoId = object.tdoId;
                 else if (typeof object.tdoId === "object")
                     message.tdoId = new $util.LongBits(object.tdoId.low >>> 0, object.tdoId.high >>> 0).toNumber();
+            if (object.trackingUnitId != null)
+                if ($util.Long)
+                    (message.trackingUnitId = $util.Long.fromValue(object.trackingUnitId)).unsigned = false;
+                else if (typeof object.trackingUnitId === "string")
+                    message.trackingUnitId = parseInt(object.trackingUnitId, 10);
+                else if (typeof object.trackingUnitId === "number")
+                    message.trackingUnitId = object.trackingUnitId;
+                else if (typeof object.trackingUnitId === "object")
+                    message.trackingUnitId = new $util.LongBits(object.trackingUnitId.low >>> 0, object.trackingUnitId.high >>> 0).toNumber();
             return message;
         };
 
@@ -10761,6 +10787,11 @@ $root.events = (function() {
                     object.tdoId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
                 } else
                     object.tdoId = options.longs === String ? "0" : 0;
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.trackingUnitId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.trackingUnitId = options.longs === String ? "0" : 0;
             }
             if (message.event != null && message.hasOwnProperty("event"))
                 object.event = message.event;
@@ -10779,6 +10810,11 @@ $root.events = (function() {
                     object.tdoId = options.longs === String ? String(message.tdoId) : message.tdoId;
                 else
                     object.tdoId = options.longs === String ? $util.Long.prototype.toString.call(message.tdoId) : options.longs === Number ? new $util.LongBits(message.tdoId.low >>> 0, message.tdoId.high >>> 0).toNumber() : message.tdoId;
+            if (message.trackingUnitId != null && message.hasOwnProperty("trackingUnitId"))
+                if (typeof message.trackingUnitId === "number")
+                    object.trackingUnitId = options.longs === String ? String(message.trackingUnitId) : message.trackingUnitId;
+                else
+                    object.trackingUnitId = options.longs === String ? $util.Long.prototype.toString.call(message.trackingUnitId) : options.longs === Number ? new $util.LongBits(message.trackingUnitId.low >>> 0, message.trackingUnitId.high >>> 0).toNumber() : message.trackingUnitId;
             return object;
         };
 

@@ -4298,6 +4298,9 @@ export namespace events {
 
         /** MentionsDeleted tdoId */
         tdoId?: (number|Long|null);
+
+        /** MentionsDeleted trackingUnitId */
+        trackingUnitId?: (number|Long|null);
     }
 
     /** Represents a MentionsDeleted. */
@@ -4320,6 +4323,9 @@ export namespace events {
 
         /** MentionsDeleted tdoId. */
         public tdoId: (number|Long);
+
+        /** MentionsDeleted trackingUnitId. */
+        public trackingUnitId: (number|Long);
 
         /**
          * Creates a new MentionsDeleted instance using the specified properties.

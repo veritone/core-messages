@@ -1941,7 +1941,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.events.MentionsDeleted.repeatedFields_ = [14];
+proto.events.MentionsDeleted.repeatedFields_ = [13];
 
 
 
@@ -1974,8 +1974,9 @@ proto.events.MentionsDeleted.toObject = function(includeInstance, msg) {
   var f, obj = {
     event: jspb.Message.getFieldWithDefault(msg, 10, ""),
     type: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    mentionIdsList: jspb.Message.getRepeatedField(msg, 14),
-    tdoId: jspb.Message.getFieldWithDefault(msg, 15, 0)
+    mentionIdsList: jspb.Message.getRepeatedField(msg, 13),
+    tdoId: jspb.Message.getFieldWithDefault(msg, 14, 0),
+    trackingUnitId: jspb.Message.getFieldWithDefault(msg, 15, 0)
   };
 
   if (includeInstance) {
@@ -2020,13 +2021,17 @@ proto.events.MentionsDeleted.deserializeBinaryFromReader = function(msg, reader)
       var value = /** @type {string} */ (reader.readString());
       msg.setType(value);
       break;
-    case 14:
+    case 13:
       var value = /** @type {!Array.<number>} */ (reader.readPackedInt64());
       msg.setMentionIdsList(value);
       break;
-    case 15:
+    case 14:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setTdoId(value);
+      break;
+    case 15:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setTrackingUnitId(value);
       break;
     default:
       reader.skipField();
@@ -2074,11 +2079,18 @@ proto.events.MentionsDeleted.serializeBinaryToWriter = function(message, writer)
   f = message.getMentionIdsList();
   if (f.length > 0) {
     writer.writePackedInt64(
-      14,
+      13,
       f
     );
   }
   f = message.getTdoId();
+  if (f !== 0) {
+    writer.writeInt64(
+      14,
+      f
+    );
+  }
+  f = message.getTrackingUnitId();
   if (f !== 0) {
     writer.writeInt64(
       15,
@@ -2119,17 +2131,17 @@ proto.events.MentionsDeleted.prototype.setType = function(value) {
 
 
 /**
- * repeated int64 mention_ids = 14;
+ * repeated int64 mention_ids = 13;
  * @return {!Array.<number>}
  */
 proto.events.MentionsDeleted.prototype.getMentionIdsList = function() {
-  return /** @type {!Array.<number>} */ (jspb.Message.getRepeatedField(this, 14));
+  return /** @type {!Array.<number>} */ (jspb.Message.getRepeatedField(this, 13));
 };
 
 
 /** @param {!Array.<number>} value */
 proto.events.MentionsDeleted.prototype.setMentionIdsList = function(value) {
-  jspb.Message.setField(this, 14, value || []);
+  jspb.Message.setField(this, 13, value || []);
 };
 
 
@@ -2138,7 +2150,7 @@ proto.events.MentionsDeleted.prototype.setMentionIdsList = function(value) {
  * @param {number=} opt_index
  */
 proto.events.MentionsDeleted.prototype.addMentionIds = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 14, value, opt_index);
+  jspb.Message.addToRepeatedField(this, 13, value, opt_index);
 };
 
 
@@ -2148,16 +2160,31 @@ proto.events.MentionsDeleted.prototype.clearMentionIdsList = function() {
 
 
 /**
- * optional int64 tdo_id = 15;
+ * optional int64 tdo_id = 14;
  * @return {number}
  */
 proto.events.MentionsDeleted.prototype.getTdoId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
 };
 
 
 /** @param {number} value */
 proto.events.MentionsDeleted.prototype.setTdoId = function(value) {
+  jspb.Message.setProto3IntField(this, 14, value);
+};
+
+
+/**
+ * optional int64 tracking_unit_id = 15;
+ * @return {number}
+ */
+proto.events.MentionsDeleted.prototype.getTrackingUnitId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
+};
+
+
+/** @param {number} value */
+proto.events.MentionsDeleted.prototype.setTrackingUnitId = function(value) {
   jspb.Message.setProto3IntField(this, 15, value);
 };
 

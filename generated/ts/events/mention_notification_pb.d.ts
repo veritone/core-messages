@@ -289,6 +289,9 @@ export class MentionsDeleted extends jspb.Message {
   getTdoId(): number;
   setTdoId(value: number): void;
 
+  getTrackingUnitId(): number;
+  setTrackingUnitId(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MentionsDeleted.AsObject;
   static toObject(includeInstance: boolean, msg: MentionsDeleted): MentionsDeleted.AsObject;
@@ -305,6 +308,7 @@ export namespace MentionsDeleted {
     type: string,
     mentionIdsList: Array<number>,
     tdoId: number,
+    trackingUnitId: number,
   }
 }
 
