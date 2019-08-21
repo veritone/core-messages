@@ -67,3 +67,9 @@ message MentionEmailGenerated {
     string merge_language = 11;          // merge language, should be either 'handlers' or 'mandril'
 }
 
+message MentionsDeleted {
+    string event = 10;                 // event name
+    string type = 11;                  // event type
+    repeated int64 mention_ids = 14;   // list of mention ids
+    int64 tdo_id = 15;                 // the tdo id
+}

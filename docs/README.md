@@ -94,6 +94,7 @@
     - [MentionInserted](#events.MentionInserted)
     - [MentionModifiedData](#events.MentionModifiedData)
     - [MentionUpdated](#events.MentionUpdated)
+    - [MentionsDeleted](#events.MentionsDeleted)
   
   
   
@@ -1036,6 +1037,24 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 | event | [string](#string) |  | event name |
 | type | [string](#string) |  | event type |
 | payload | [MentionModifiedData](#events.MentionModifiedData) |  |  |
+
+
+
+
+
+
+<a name="events.MentionsDeleted"></a>
+
+### MentionsDeleted
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| event | [string](#string) |  | event name |
+| type | [string](#string) |  | event type |
+| mention_ids | [int64](#int64) | repeated | list of mention ids |
+| tdo_id | [int64](#int64) |  | the tdo id |
 
 
 

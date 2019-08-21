@@ -274,3 +274,37 @@ export namespace MentionEmailGenerated {
   }
 }
 
+export class MentionsDeleted extends jspb.Message {
+  getEvent(): string;
+  setEvent(value: string): void;
+
+  getType(): string;
+  setType(value: string): void;
+
+  clearMentionIdsList(): void;
+  getMentionIdsList(): Array<number>;
+  setMentionIdsList(value: Array<number>): void;
+  addMentionIds(value: number, index?: number): number;
+
+  getTdoId(): number;
+  setTdoId(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MentionsDeleted.AsObject;
+  static toObject(includeInstance: boolean, msg: MentionsDeleted): MentionsDeleted.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: MentionsDeleted, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MentionsDeleted;
+  static deserializeBinaryFromReader(message: MentionsDeleted, reader: jspb.BinaryReader): MentionsDeleted;
+}
+
+export namespace MentionsDeleted {
+  export type AsObject = {
+    event: string,
+    type: string,
+    mentionIdsList: Array<number>,
+    tdoId: number,
+  }
+}
+

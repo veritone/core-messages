@@ -4284,6 +4284,114 @@ export namespace events {
         }
     }
 
+    /** Properties of a MentionsDeleted. */
+    interface IMentionsDeleted {
+
+        /** MentionsDeleted event */
+        event?: (string|null);
+
+        /** MentionsDeleted type */
+        type?: (string|null);
+
+        /** MentionsDeleted mentionIds */
+        mentionIds?: ((number|Long)[]|null);
+
+        /** MentionsDeleted tdoId */
+        tdoId?: (number|Long|null);
+    }
+
+    /** Represents a MentionsDeleted. */
+    class MentionsDeleted implements IMentionsDeleted {
+
+        /**
+         * Constructs a new MentionsDeleted.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: events.IMentionsDeleted);
+
+        /** MentionsDeleted event. */
+        public event: string;
+
+        /** MentionsDeleted type. */
+        public type: string;
+
+        /** MentionsDeleted mentionIds. */
+        public mentionIds: (number|Long)[];
+
+        /** MentionsDeleted tdoId. */
+        public tdoId: (number|Long);
+
+        /**
+         * Creates a new MentionsDeleted instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns MentionsDeleted instance
+         */
+        public static create(properties?: events.IMentionsDeleted): events.MentionsDeleted;
+
+        /**
+         * Encodes the specified MentionsDeleted message. Does not implicitly {@link events.MentionsDeleted.verify|verify} messages.
+         * @param message MentionsDeleted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: events.IMentionsDeleted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified MentionsDeleted message, length delimited. Does not implicitly {@link events.MentionsDeleted.verify|verify} messages.
+         * @param message MentionsDeleted message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: events.IMentionsDeleted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a MentionsDeleted message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns MentionsDeleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): events.MentionsDeleted;
+
+        /**
+         * Decodes a MentionsDeleted message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns MentionsDeleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): events.MentionsDeleted;
+
+        /**
+         * Verifies a MentionsDeleted message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a MentionsDeleted message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns MentionsDeleted
+         */
+        public static fromObject(object: { [k: string]: any }): events.MentionsDeleted;
+
+        /**
+         * Creates a plain object from a MentionsDeleted message. Also converts values to other types if specified.
+         * @param message MentionsDeleted
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: events.MentionsDeleted, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this MentionsDeleted to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
     /** Properties of a BasicEmail. */
     interface IBasicEmail {
 
