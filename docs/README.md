@@ -1053,9 +1053,7 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 | ----- | ---- | ----- | ----------- |
 | event | [string](#string) |  | event name |
 | type | [string](#string) |  | event type |
-| mention_ids | [int64](#int64) | repeated | list of mention ids |
-| tdo_id | [int64](#int64) |  | the tdo id |
-| tracking_unit_id | [int64](#int64) |  | the tracking unit id |
+| mention_ids | [string](#string) | repeated | list of mention ids |
 
 
 

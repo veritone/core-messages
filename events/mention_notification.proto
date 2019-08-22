@@ -70,7 +70,5 @@ message MentionEmailGenerated {
 message MentionsDeleted {
     string event = 10;                 // event name
     string type = 11;                  // event type
-    repeated int64 mention_ids = 13;   // list of mention ids
-    int64 tdo_id = 14;                 // the tdo id
-    int64 tracking_unit_id = 15;       // the tracking unit id
+    repeated string mention_ids = 13;   // list of mention ids
 }

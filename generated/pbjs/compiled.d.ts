@@ -4294,13 +4294,7 @@ export namespace events {
         type?: (string|null);
 
         /** MentionsDeleted mentionIds */
-        mentionIds?: ((number|Long)[]|null);
-
-        /** MentionsDeleted tdoId */
-        tdoId?: (number|Long|null);
-
-        /** MentionsDeleted trackingUnitId */
-        trackingUnitId?: (number|Long|null);
+        mentionIds?: (string[]|null);
     }
 
     /** Represents a MentionsDeleted. */
@@ -4319,13 +4313,7 @@ export namespace events {
         public type: string;
 
         /** MentionsDeleted mentionIds. */
-        public mentionIds: (number|Long)[];
-
-        /** MentionsDeleted tdoId. */
-        public tdoId: (number|Long);
-
-        /** MentionsDeleted trackingUnitId. */
-        public trackingUnitId: (number|Long);
+        public mentionIds: string[];
 
         /**
          * Creates a new MentionsDeleted instance using the specified properties.

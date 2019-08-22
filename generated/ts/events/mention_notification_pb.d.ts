@@ -282,15 +282,9 @@ export class MentionsDeleted extends jspb.Message {
   setType(value: string): void;
 
   clearMentionIdsList(): void;
-  getMentionIdsList(): Array<number>;
-  setMentionIdsList(value: Array<number>): void;
-  addMentionIds(value: number, index?: number): number;
-
-  getTdoId(): number;
-  setTdoId(value: number): void;
-
-  getTrackingUnitId(): number;
-  setTrackingUnitId(value: number): void;
+  getMentionIdsList(): Array<string>;
+  setMentionIdsList(value: Array<string>): void;
+  addMentionIds(value: string, index?: number): string;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MentionsDeleted.AsObject;
@@ -306,9 +300,7 @@ export namespace MentionsDeleted {
   export type AsObject = {
     event: string,
     type: string,
-    mentionIdsList: Array<number>,
-    tdoId: number,
-    trackingUnitId: number,
+    mentionIdsList: Array<string>,
   }
 }
 
