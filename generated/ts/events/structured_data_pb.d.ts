@@ -7,9 +7,6 @@ export class StructuredDataDelete extends jspb.Message {
   getId(): string;
   setId(value: string): void;
 
-  getDataRegistryId(): string;
-  setDataRegistryId(value: string): void;
-
   getSchemaId(): string;
   setSchemaId(value: string): void;
 
@@ -29,7 +26,6 @@ export class StructuredDataDelete extends jspb.Message {
 export namespace StructuredDataDelete {
   export type AsObject = {
     id: string,
-    dataRegistryId: string,
     schemaId: string,
     organizationId: number,
   }

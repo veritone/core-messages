@@ -5439,9 +5439,6 @@ export namespace events {
         /** StructuredDataDelete id */
         id?: (string|null);
 
-        /** StructuredDataDelete dataRegistryId */
-        dataRegistryId?: (string|null);
-
         /** StructuredDataDelete schemaId */
         schemaId?: (string|null);
 
@@ -5460,9 +5457,6 @@ export namespace events {
 
         /** StructuredDataDelete id. */
         public id: string;
-
-        /** StructuredDataDelete dataRegistryId. */
-        public dataRegistryId: string;
 
         /** StructuredDataDelete schemaId. */
         public schemaId: string;

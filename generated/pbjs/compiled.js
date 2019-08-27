@@ -13172,7 +13172,6 @@ $root.events = (function() {
          * @memberof events
          * @interface IStructuredDataDelete
          * @property {string|null} [id] StructuredDataDelete id
-         * @property {string|null} [dataRegistryId] StructuredDataDelete dataRegistryId
          * @property {string|null} [schemaId] StructuredDataDelete schemaId
          * @property {number|Long|null} [organizationId] StructuredDataDelete organizationId
          */
@@ -13199,14 +13198,6 @@ $root.events = (function() {
          * @instance
          */
         StructuredDataDelete.prototype.id = "";
-
-        /**
-         * StructuredDataDelete dataRegistryId.
-         * @member {string} dataRegistryId
-         * @memberof events.StructuredDataDelete
-         * @instance
-         */
-        StructuredDataDelete.prototype.dataRegistryId = "";
 
         /**
          * StructuredDataDelete schemaId.
@@ -13250,12 +13241,10 @@ $root.events = (function() {
                 writer = $Writer.create();
             if (message.id != null && message.hasOwnProperty("id"))
                 writer.uint32(/* id 10, wireType 2 =*/82).string(message.id);
-            if (message.dataRegistryId != null && message.hasOwnProperty("dataRegistryId"))
-                writer.uint32(/* id 11, wireType 2 =*/90).string(message.dataRegistryId);
             if (message.schemaId != null && message.hasOwnProperty("schemaId"))
-                writer.uint32(/* id 12, wireType 2 =*/98).string(message.schemaId);
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.schemaId);
             if (message.organizationId != null && message.hasOwnProperty("organizationId"))
-                writer.uint32(/* id 13, wireType 0 =*/104).int64(message.organizationId);
+                writer.uint32(/* id 12, wireType 0 =*/96).int64(message.organizationId);
             return writer;
         };
 
@@ -13294,12 +13283,9 @@ $root.events = (function() {
                     message.id = reader.string();
                     break;
                 case 11:
-                    message.dataRegistryId = reader.string();
-                    break;
-                case 12:
                     message.schemaId = reader.string();
                     break;
-                case 13:
+                case 12:
                     message.organizationId = reader.int64();
                     break;
                 default:
@@ -13340,9 +13326,6 @@ $root.events = (function() {
             if (message.id != null && message.hasOwnProperty("id"))
                 if (!$util.isString(message.id))
                     return "id: string expected";
-            if (message.dataRegistryId != null && message.hasOwnProperty("dataRegistryId"))
-                if (!$util.isString(message.dataRegistryId))
-                    return "dataRegistryId: string expected";
             if (message.schemaId != null && message.hasOwnProperty("schemaId"))
                 if (!$util.isString(message.schemaId))
                     return "schemaId: string expected";
@@ -13366,8 +13349,6 @@ $root.events = (function() {
             var message = new $root.events.StructuredDataDelete();
             if (object.id != null)
                 message.id = String(object.id);
-            if (object.dataRegistryId != null)
-                message.dataRegistryId = String(object.dataRegistryId);
             if (object.schemaId != null)
                 message.schemaId = String(object.schemaId);
             if (object.organizationId != null)
@@ -13397,7 +13378,6 @@ $root.events = (function() {
             var object = {};
             if (options.defaults) {
                 object.id = "";
-                object.dataRegistryId = "";
                 object.schemaId = "";
                 if ($util.Long) {
                     var long = new $util.Long(0, 0, false);
@@ -13407,8 +13387,6 @@ $root.events = (function() {
             }
             if (message.id != null && message.hasOwnProperty("id"))
                 object.id = message.id;
-            if (message.dataRegistryId != null && message.hasOwnProperty("dataRegistryId"))
-                object.dataRegistryId = message.dataRegistryId;
             if (message.schemaId != null && message.hasOwnProperty("schemaId"))
                 object.schemaId = message.schemaId;
             if (message.organizationId != null && message.hasOwnProperty("organizationId"))
