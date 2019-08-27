@@ -8,5 +8,6 @@ option go_package = "events";
 message StructuredDataDelete {
     string id = 10;
     string data_registry_id = 11;
-    string organization_id = 12;
+    string schema_id = 12;
+    int64 organization_id = 13;
 }
