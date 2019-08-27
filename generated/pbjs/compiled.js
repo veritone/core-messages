@@ -13165,6 +13165,238 @@ $root.events = (function() {
         return UpdateSharedCollection;
     })();
 
+    events.StructuredDataDelete = (function() {
+
+        /**
+         * Properties of a StructuredDataDelete.
+         * @memberof events
+         * @interface IStructuredDataDelete
+         * @property {string|null} [id] StructuredDataDelete id
+         * @property {string|null} [dataRegistryId] StructuredDataDelete dataRegistryId
+         * @property {string|null} [organizationId] StructuredDataDelete organizationId
+         */
+
+        /**
+         * Constructs a new StructuredDataDelete.
+         * @memberof events
+         * @classdesc Represents a StructuredDataDelete.
+         * @implements IStructuredDataDelete
+         * @constructor
+         * @param {events.IStructuredDataDelete=} [properties] Properties to set
+         */
+        function StructuredDataDelete(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * StructuredDataDelete id.
+         * @member {string} id
+         * @memberof events.StructuredDataDelete
+         * @instance
+         */
+        StructuredDataDelete.prototype.id = "";
+
+        /**
+         * StructuredDataDelete dataRegistryId.
+         * @member {string} dataRegistryId
+         * @memberof events.StructuredDataDelete
+         * @instance
+         */
+        StructuredDataDelete.prototype.dataRegistryId = "";
+
+        /**
+         * StructuredDataDelete organizationId.
+         * @member {string} organizationId
+         * @memberof events.StructuredDataDelete
+         * @instance
+         */
+        StructuredDataDelete.prototype.organizationId = "";
+
+        /**
+         * Creates a new StructuredDataDelete instance using the specified properties.
+         * @function create
+         * @memberof events.StructuredDataDelete
+         * @static
+         * @param {events.IStructuredDataDelete=} [properties] Properties to set
+         * @returns {events.StructuredDataDelete} StructuredDataDelete instance
+         */
+        StructuredDataDelete.create = function create(properties) {
+            return new StructuredDataDelete(properties);
+        };
+
+        /**
+         * Encodes the specified StructuredDataDelete message. Does not implicitly {@link events.StructuredDataDelete.verify|verify} messages.
+         * @function encode
+         * @memberof events.StructuredDataDelete
+         * @static
+         * @param {events.IStructuredDataDelete} message StructuredDataDelete message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        StructuredDataDelete.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.id != null && message.hasOwnProperty("id"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.id);
+            if (message.dataRegistryId != null && message.hasOwnProperty("dataRegistryId"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.dataRegistryId);
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.organizationId);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified StructuredDataDelete message, length delimited. Does not implicitly {@link events.StructuredDataDelete.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.StructuredDataDelete
+         * @static
+         * @param {events.IStructuredDataDelete} message StructuredDataDelete message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        StructuredDataDelete.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a StructuredDataDelete message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.StructuredDataDelete
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.StructuredDataDelete} StructuredDataDelete
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        StructuredDataDelete.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.StructuredDataDelete();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.id = reader.string();
+                    break;
+                case 11:
+                    message.dataRegistryId = reader.string();
+                    break;
+                case 12:
+                    message.organizationId = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a StructuredDataDelete message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.StructuredDataDelete
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.StructuredDataDelete} StructuredDataDelete
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        StructuredDataDelete.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a StructuredDataDelete message.
+         * @function verify
+         * @memberof events.StructuredDataDelete
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        StructuredDataDelete.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.id != null && message.hasOwnProperty("id"))
+                if (!$util.isString(message.id))
+                    return "id: string expected";
+            if (message.dataRegistryId != null && message.hasOwnProperty("dataRegistryId"))
+                if (!$util.isString(message.dataRegistryId))
+                    return "dataRegistryId: string expected";
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                if (!$util.isString(message.organizationId))
+                    return "organizationId: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a StructuredDataDelete message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.StructuredDataDelete
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.StructuredDataDelete} StructuredDataDelete
+         */
+        StructuredDataDelete.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.StructuredDataDelete)
+                return object;
+            var message = new $root.events.StructuredDataDelete();
+            if (object.id != null)
+                message.id = String(object.id);
+            if (object.dataRegistryId != null)
+                message.dataRegistryId = String(object.dataRegistryId);
+            if (object.organizationId != null)
+                message.organizationId = String(object.organizationId);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a StructuredDataDelete message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.StructuredDataDelete
+         * @static
+         * @param {events.StructuredDataDelete} message StructuredDataDelete
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        StructuredDataDelete.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.id = "";
+                object.dataRegistryId = "";
+                object.organizationId = "";
+            }
+            if (message.id != null && message.hasOwnProperty("id"))
+                object.id = message.id;
+            if (message.dataRegistryId != null && message.hasOwnProperty("dataRegistryId"))
+                object.dataRegistryId = message.dataRegistryId;
+            if (message.organizationId != null && message.hasOwnProperty("organizationId"))
+                object.organizationId = message.organizationId;
+            return object;
+        };
+
+        /**
+         * Converts this StructuredDataDelete to JSON.
+         * @function toJSON
+         * @memberof events.StructuredDataDelete
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        StructuredDataDelete.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return StructuredDataDelete;
+    })();
+
     events.TaskQueued = (function() {
 
         /**

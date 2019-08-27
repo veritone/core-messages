@@ -128,6 +128,13 @@
   
   
 
+- [events/structured_data.proto](#events/structured_data.proto)
+    - [StructuredDataDelete](#events.StructuredDataDelete)
+  
+  
+  
+  
+
 - [events/task.proto](#events/task.proto)
     - [TaskCompleted](#events.TaskCompleted)
     - [TaskQueued](#events.TaskQueued)
@@ -1276,6 +1283,39 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 | mention_id | [string](#string) |  | Id of the mentions added or removed from Collection |
 | update_type | [string](#string) |  | The type of update to collection: Add/Remove |
 | history_id | [string](#string) |  | Id of the Share collection history |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="events/structured_data.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## events/structured_data.proto
+
+
+
+<a name="events.StructuredDataDelete"></a>
+
+### StructuredDataDelete
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| data_registry_id | [string](#string) |  |  |
+| organization_id | [string](#string) |  |  |
 
 
 
