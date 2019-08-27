@@ -1315,7 +1315,8 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
 | data_registry_id | [string](#string) |  |  |
-| organization_id | [string](#string) |  |  |
+| schema_id | [string](#string) |  |  |
+| organization_id | [int64](#int64) |  |  |
 
 
 

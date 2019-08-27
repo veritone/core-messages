@@ -5442,8 +5442,11 @@ export namespace events {
         /** StructuredDataDelete dataRegistryId */
         dataRegistryId?: (string|null);
 
+        /** StructuredDataDelete schemaId */
+        schemaId?: (string|null);
+
         /** StructuredDataDelete organizationId */
-        organizationId?: (string|null);
+        organizationId?: (number|Long|null);
     }
 
     /** Represents a StructuredDataDelete. */
@@ -5461,8 +5464,11 @@ export namespace events {
         /** StructuredDataDelete dataRegistryId. */
         public dataRegistryId: string;
 
+        /** StructuredDataDelete schemaId. */
+        public schemaId: string;
+
         /** StructuredDataDelete organizationId. */
-        public organizationId: string;
+        public organizationId: (number|Long);
 
         /**
          * Creates a new StructuredDataDelete instance using the specified properties.

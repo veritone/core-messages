@@ -10,8 +10,11 @@ export class StructuredDataDelete extends jspb.Message {
   getDataRegistryId(): string;
   setDataRegistryId(value: string): void;
 
-  getOrganizationId(): string;
-  setOrganizationId(value: string): void;
+  getSchemaId(): string;
+  setSchemaId(value: string): void;
+
+  getOrganizationId(): number;
+  setOrganizationId(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StructuredDataDelete.AsObject;
@@ -27,7 +30,8 @@ export namespace StructuredDataDelete {
   export type AsObject = {
     id: string,
     dataRegistryId: string,
-    organizationId: string,
+    schemaId: string,
+    organizationId: number,
   }
 }
 

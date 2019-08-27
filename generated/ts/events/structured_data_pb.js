@@ -61,7 +61,8 @@ proto.events.StructuredDataDelete.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 10, ""),
     dataRegistryId: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    organizationId: jspb.Message.getFieldWithDefault(msg, 12, "")
+    schemaId: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    organizationId: jspb.Message.getFieldWithDefault(msg, 13, 0)
   };
 
   if (includeInstance) {
@@ -108,6 +109,10 @@ proto.events.StructuredDataDelete.deserializeBinaryFromReader = function(msg, re
       break;
     case 12:
       var value = /** @type {string} */ (reader.readString());
+      msg.setSchemaId(value);
+      break;
+    case 13:
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setOrganizationId(value);
       break;
     default:
@@ -153,10 +158,17 @@ proto.events.StructuredDataDelete.serializeBinaryToWriter = function(message, wr
       f
     );
   }
-  f = message.getOrganizationId();
+  f = message.getSchemaId();
   if (f.length > 0) {
     writer.writeString(
       12,
+      f
+    );
+  }
+  f = message.getOrganizationId();
+  if (f !== 0) {
+    writer.writeInt64(
+      13,
       f
     );
   }
@@ -194,17 +206,32 @@ proto.events.StructuredDataDelete.prototype.setDataRegistryId = function(value) 
 
 
 /**
- * optional string organization_id = 12;
+ * optional string schema_id = 12;
  * @return {string}
  */
-proto.events.StructuredDataDelete.prototype.getOrganizationId = function() {
+proto.events.StructuredDataDelete.prototype.getSchemaId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
 };
 
 
 /** @param {string} value */
-proto.events.StructuredDataDelete.prototype.setOrganizationId = function(value) {
+proto.events.StructuredDataDelete.prototype.setSchemaId = function(value) {
   jspb.Message.setProto3StringField(this, 12, value);
+};
+
+
+/**
+ * optional int64 organization_id = 13;
+ * @return {number}
+ */
+proto.events.StructuredDataDelete.prototype.getOrganizationId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
+};
+
+
+/** @param {number} value */
+proto.events.StructuredDataDelete.prototype.setOrganizationId = function(value) {
+  jspb.Message.setProto3IntField(this, 13, value);
 };
 
 

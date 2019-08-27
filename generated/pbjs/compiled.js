@@ -13173,7 +13173,8 @@ $root.events = (function() {
          * @interface IStructuredDataDelete
          * @property {string|null} [id] StructuredDataDelete id
          * @property {string|null} [dataRegistryId] StructuredDataDelete dataRegistryId
-         * @property {string|null} [organizationId] StructuredDataDelete organizationId
+         * @property {string|null} [schemaId] StructuredDataDelete schemaId
+         * @property {number|Long|null} [organizationId] StructuredDataDelete organizationId
          */
 
         /**
@@ -13208,12 +13209,20 @@ $root.events = (function() {
         StructuredDataDelete.prototype.dataRegistryId = "";
 
         /**
-         * StructuredDataDelete organizationId.
-         * @member {string} organizationId
+         * StructuredDataDelete schemaId.
+         * @member {string} schemaId
          * @memberof events.StructuredDataDelete
          * @instance
          */
-        StructuredDataDelete.prototype.organizationId = "";
+        StructuredDataDelete.prototype.schemaId = "";
+
+        /**
+         * StructuredDataDelete organizationId.
+         * @member {number|Long} organizationId
+         * @memberof events.StructuredDataDelete
+         * @instance
+         */
+        StructuredDataDelete.prototype.organizationId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
         /**
          * Creates a new StructuredDataDelete instance using the specified properties.
@@ -13243,8 +13252,10 @@ $root.events = (function() {
                 writer.uint32(/* id 10, wireType 2 =*/82).string(message.id);
             if (message.dataRegistryId != null && message.hasOwnProperty("dataRegistryId"))
                 writer.uint32(/* id 11, wireType 2 =*/90).string(message.dataRegistryId);
+            if (message.schemaId != null && message.hasOwnProperty("schemaId"))
+                writer.uint32(/* id 12, wireType 2 =*/98).string(message.schemaId);
             if (message.organizationId != null && message.hasOwnProperty("organizationId"))
-                writer.uint32(/* id 12, wireType 2 =*/98).string(message.organizationId);
+                writer.uint32(/* id 13, wireType 0 =*/104).int64(message.organizationId);
             return writer;
         };
 
@@ -13286,7 +13297,10 @@ $root.events = (function() {
                     message.dataRegistryId = reader.string();
                     break;
                 case 12:
-                    message.organizationId = reader.string();
+                    message.schemaId = reader.string();
+                    break;
+                case 13:
+                    message.organizationId = reader.int64();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -13329,9 +13343,12 @@ $root.events = (function() {
             if (message.dataRegistryId != null && message.hasOwnProperty("dataRegistryId"))
                 if (!$util.isString(message.dataRegistryId))
                     return "dataRegistryId: string expected";
+            if (message.schemaId != null && message.hasOwnProperty("schemaId"))
+                if (!$util.isString(message.schemaId))
+                    return "schemaId: string expected";
             if (message.organizationId != null && message.hasOwnProperty("organizationId"))
-                if (!$util.isString(message.organizationId))
-                    return "organizationId: string expected";
+                if (!$util.isInteger(message.organizationId) && !(message.organizationId && $util.isInteger(message.organizationId.low) && $util.isInteger(message.organizationId.high)))
+                    return "organizationId: integer|Long expected";
             return null;
         };
 
@@ -13351,8 +13368,17 @@ $root.events = (function() {
                 message.id = String(object.id);
             if (object.dataRegistryId != null)
                 message.dataRegistryId = String(object.dataRegistryId);
+            if (object.schemaId != null)
+                message.schemaId = String(object.schemaId);
             if (object.organizationId != null)
-                message.organizationId = String(object.organizationId);
+                if ($util.Long)
+                    (message.organizationId = $util.Long.fromValue(object.organizationId)).unsigned = false;
+                else if (typeof object.organizationId === "string")
+                    message.organizationId = parseInt(object.organizationId, 10);
+                else if (typeof object.organizationId === "number")
+                    message.organizationId = object.organizationId;
+                else if (typeof object.organizationId === "object")
+                    message.organizationId = new $util.LongBits(object.organizationId.low >>> 0, object.organizationId.high >>> 0).toNumber();
             return message;
         };
 
@@ -13372,14 +13398,24 @@ $root.events = (function() {
             if (options.defaults) {
                 object.id = "";
                 object.dataRegistryId = "";
-                object.organizationId = "";
+                object.schemaId = "";
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.organizationId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.organizationId = options.longs === String ? "0" : 0;
             }
             if (message.id != null && message.hasOwnProperty("id"))
                 object.id = message.id;
             if (message.dataRegistryId != null && message.hasOwnProperty("dataRegistryId"))
                 object.dataRegistryId = message.dataRegistryId;
+            if (message.schemaId != null && message.hasOwnProperty("schemaId"))
+                object.schemaId = message.schemaId;
             if (message.organizationId != null && message.hasOwnProperty("organizationId"))
-                object.organizationId = message.organizationId;
+                if (typeof message.organizationId === "number")
+                    object.organizationId = options.longs === String ? String(message.organizationId) : message.organizationId;
+                else
+                    object.organizationId = options.longs === String ? $util.Long.prototype.toString.call(message.organizationId) : options.longs === Number ? new $util.LongBits(message.organizationId.low >>> 0, message.organizationId.high >>> 0).toNumber() : message.organizationId;
             return object;
         };
 
