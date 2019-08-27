@@ -434,6 +434,10 @@
                   <a href="#events.MentionUpdated"><span class="badge">M</span>MentionUpdated</a>
                 </li>
               
+                <li>
+                  <a href="#events.MentionsDeleted"><span class="badge">M</span>MentionsDeleted</a>
+                </li>
+              
               
               
               
@@ -2585,6 +2589,44 @@ It will be propagate through the system. Similar to correlationId </p></td>
                   <td><a href="#events.MentionModifiedData">MentionModifiedData</a></td>
                   <td></td>
                   <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="events.MentionsDeleted">MentionsDeleted</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>event</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>event name </p></td>
+                </tr>
+              
+                <tr>
+                  <td>type</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>event type </p></td>
+                </tr>
+              
+                <tr>
+                  <td>mention_ids</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>list of mention ids </p></td>
                 </tr>
               
             </tbody>

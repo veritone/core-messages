@@ -10493,6 +10493,255 @@ $root.events = (function() {
         return MentionEmailGenerated;
     })();
 
+    events.MentionsDeleted = (function() {
+
+        /**
+         * Properties of a MentionsDeleted.
+         * @memberof events
+         * @interface IMentionsDeleted
+         * @property {string|null} [event] MentionsDeleted event
+         * @property {string|null} [type] MentionsDeleted type
+         * @property {Array.<string>|null} [mentionIds] MentionsDeleted mentionIds
+         */
+
+        /**
+         * Constructs a new MentionsDeleted.
+         * @memberof events
+         * @classdesc Represents a MentionsDeleted.
+         * @implements IMentionsDeleted
+         * @constructor
+         * @param {events.IMentionsDeleted=} [properties] Properties to set
+         */
+        function MentionsDeleted(properties) {
+            this.mentionIds = [];
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * MentionsDeleted event.
+         * @member {string} event
+         * @memberof events.MentionsDeleted
+         * @instance
+         */
+        MentionsDeleted.prototype.event = "";
+
+        /**
+         * MentionsDeleted type.
+         * @member {string} type
+         * @memberof events.MentionsDeleted
+         * @instance
+         */
+        MentionsDeleted.prototype.type = "";
+
+        /**
+         * MentionsDeleted mentionIds.
+         * @member {Array.<string>} mentionIds
+         * @memberof events.MentionsDeleted
+         * @instance
+         */
+        MentionsDeleted.prototype.mentionIds = $util.emptyArray;
+
+        /**
+         * Creates a new MentionsDeleted instance using the specified properties.
+         * @function create
+         * @memberof events.MentionsDeleted
+         * @static
+         * @param {events.IMentionsDeleted=} [properties] Properties to set
+         * @returns {events.MentionsDeleted} MentionsDeleted instance
+         */
+        MentionsDeleted.create = function create(properties) {
+            return new MentionsDeleted(properties);
+        };
+
+        /**
+         * Encodes the specified MentionsDeleted message. Does not implicitly {@link events.MentionsDeleted.verify|verify} messages.
+         * @function encode
+         * @memberof events.MentionsDeleted
+         * @static
+         * @param {events.IMentionsDeleted} message MentionsDeleted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        MentionsDeleted.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.event != null && message.hasOwnProperty("event"))
+                writer.uint32(/* id 10, wireType 2 =*/82).string(message.event);
+            if (message.type != null && message.hasOwnProperty("type"))
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.type);
+            if (message.mentionIds != null && message.mentionIds.length)
+                for (var i = 0; i < message.mentionIds.length; ++i)
+                    writer.uint32(/* id 13, wireType 2 =*/106).string(message.mentionIds[i]);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified MentionsDeleted message, length delimited. Does not implicitly {@link events.MentionsDeleted.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof events.MentionsDeleted
+         * @static
+         * @param {events.IMentionsDeleted} message MentionsDeleted message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        MentionsDeleted.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a MentionsDeleted message from the specified reader or buffer.
+         * @function decode
+         * @memberof events.MentionsDeleted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {events.MentionsDeleted} MentionsDeleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        MentionsDeleted.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.events.MentionsDeleted();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 10:
+                    message.event = reader.string();
+                    break;
+                case 11:
+                    message.type = reader.string();
+                    break;
+                case 13:
+                    if (!(message.mentionIds && message.mentionIds.length))
+                        message.mentionIds = [];
+                    message.mentionIds.push(reader.string());
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a MentionsDeleted message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof events.MentionsDeleted
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {events.MentionsDeleted} MentionsDeleted
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        MentionsDeleted.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a MentionsDeleted message.
+         * @function verify
+         * @memberof events.MentionsDeleted
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        MentionsDeleted.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.event != null && message.hasOwnProperty("event"))
+                if (!$util.isString(message.event))
+                    return "event: string expected";
+            if (message.type != null && message.hasOwnProperty("type"))
+                if (!$util.isString(message.type))
+                    return "type: string expected";
+            if (message.mentionIds != null && message.hasOwnProperty("mentionIds")) {
+                if (!Array.isArray(message.mentionIds))
+                    return "mentionIds: array expected";
+                for (var i = 0; i < message.mentionIds.length; ++i)
+                    if (!$util.isString(message.mentionIds[i]))
+                        return "mentionIds: string[] expected";
+            }
+            return null;
+        };
+
+        /**
+         * Creates a MentionsDeleted message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof events.MentionsDeleted
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {events.MentionsDeleted} MentionsDeleted
+         */
+        MentionsDeleted.fromObject = function fromObject(object) {
+            if (object instanceof $root.events.MentionsDeleted)
+                return object;
+            var message = new $root.events.MentionsDeleted();
+            if (object.event != null)
+                message.event = String(object.event);
+            if (object.type != null)
+                message.type = String(object.type);
+            if (object.mentionIds) {
+                if (!Array.isArray(object.mentionIds))
+                    throw TypeError(".events.MentionsDeleted.mentionIds: array expected");
+                message.mentionIds = [];
+                for (var i = 0; i < object.mentionIds.length; ++i)
+                    message.mentionIds[i] = String(object.mentionIds[i]);
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a MentionsDeleted message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof events.MentionsDeleted
+         * @static
+         * @param {events.MentionsDeleted} message MentionsDeleted
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        MentionsDeleted.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults)
+                object.mentionIds = [];
+            if (options.defaults) {
+                object.event = "";
+                object.type = "";
+            }
+            if (message.event != null && message.hasOwnProperty("event"))
+                object.event = message.event;
+            if (message.type != null && message.hasOwnProperty("type"))
+                object.type = message.type;
+            if (message.mentionIds && message.mentionIds.length) {
+                object.mentionIds = [];
+                for (var j = 0; j < message.mentionIds.length; ++j)
+                    object.mentionIds[j] = message.mentionIds[j];
+            }
+            return object;
+        };
+
+        /**
+         * Converts this MentionsDeleted to JSON.
+         * @function toJSON
+         * @memberof events.MentionsDeleted
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        MentionsDeleted.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return MentionsDeleted;
+    })();
+
     events.BasicEmail = (function() {
 
         /**
