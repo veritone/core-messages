@@ -10501,7 +10501,7 @@ $root.events = (function() {
          * @interface IMentionsDeleted
          * @property {string|null} [event] MentionsDeleted event
          * @property {string|null} [type] MentionsDeleted type
-         * @property {Array.<string>|null} [mentionIds] MentionsDeleted mentionIds
+         * @property {Array.<events.IMentionModifiedData>|null} [mentions] MentionsDeleted mentions
          */
 
         /**
@@ -10513,7 +10513,7 @@ $root.events = (function() {
          * @param {events.IMentionsDeleted=} [properties] Properties to set
          */
         function MentionsDeleted(properties) {
-            this.mentionIds = [];
+            this.mentions = [];
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -10537,12 +10537,12 @@ $root.events = (function() {
         MentionsDeleted.prototype.type = "";
 
         /**
-         * MentionsDeleted mentionIds.
-         * @member {Array.<string>} mentionIds
+         * MentionsDeleted mentions.
+         * @member {Array.<events.IMentionModifiedData>} mentions
          * @memberof events.MentionsDeleted
          * @instance
          */
-        MentionsDeleted.prototype.mentionIds = $util.emptyArray;
+        MentionsDeleted.prototype.mentions = $util.emptyArray;
 
         /**
          * Creates a new MentionsDeleted instance using the specified properties.
@@ -10572,9 +10572,9 @@ $root.events = (function() {
                 writer.uint32(/* id 10, wireType 2 =*/82).string(message.event);
             if (message.type != null && message.hasOwnProperty("type"))
                 writer.uint32(/* id 11, wireType 2 =*/90).string(message.type);
-            if (message.mentionIds != null && message.mentionIds.length)
-                for (var i = 0; i < message.mentionIds.length; ++i)
-                    writer.uint32(/* id 13, wireType 2 =*/106).string(message.mentionIds[i]);
+            if (message.mentions != null && message.mentions.length)
+                for (var i = 0; i < message.mentions.length; ++i)
+                    $root.events.MentionModifiedData.encode(message.mentions[i], writer.uint32(/* id 12, wireType 2 =*/98).fork()).ldelim();
             return writer;
         };
 
@@ -10615,10 +10615,10 @@ $root.events = (function() {
                 case 11:
                     message.type = reader.string();
                     break;
-                case 13:
-                    if (!(message.mentionIds && message.mentionIds.length))
-                        message.mentionIds = [];
-                    message.mentionIds.push(reader.string());
+                case 12:
+                    if (!(message.mentions && message.mentions.length))
+                        message.mentions = [];
+                    message.mentions.push($root.events.MentionModifiedData.decode(reader, reader.uint32()));
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -10661,12 +10661,14 @@ $root.events = (function() {
             if (message.type != null && message.hasOwnProperty("type"))
                 if (!$util.isString(message.type))
                     return "type: string expected";
-            if (message.mentionIds != null && message.hasOwnProperty("mentionIds")) {
-                if (!Array.isArray(message.mentionIds))
-                    return "mentionIds: array expected";
-                for (var i = 0; i < message.mentionIds.length; ++i)
-                    if (!$util.isString(message.mentionIds[i]))
-                        return "mentionIds: string[] expected";
+            if (message.mentions != null && message.hasOwnProperty("mentions")) {
+                if (!Array.isArray(message.mentions))
+                    return "mentions: array expected";
+                for (var i = 0; i < message.mentions.length; ++i) {
+                    var error = $root.events.MentionModifiedData.verify(message.mentions[i]);
+                    if (error)
+                        return "mentions." + error;
+                }
             }
             return null;
         };
@@ -10687,12 +10689,15 @@ $root.events = (function() {
                 message.event = String(object.event);
             if (object.type != null)
                 message.type = String(object.type);
-            if (object.mentionIds) {
-                if (!Array.isArray(object.mentionIds))
-                    throw TypeError(".events.MentionsDeleted.mentionIds: array expected");
-                message.mentionIds = [];
-                for (var i = 0; i < object.mentionIds.length; ++i)
-                    message.mentionIds[i] = String(object.mentionIds[i]);
+            if (object.mentions) {
+                if (!Array.isArray(object.mentions))
+                    throw TypeError(".events.MentionsDeleted.mentions: array expected");
+                message.mentions = [];
+                for (var i = 0; i < object.mentions.length; ++i) {
+                    if (typeof object.mentions[i] !== "object")
+                        throw TypeError(".events.MentionsDeleted.mentions: object expected");
+                    message.mentions[i] = $root.events.MentionModifiedData.fromObject(object.mentions[i]);
+                }
             }
             return message;
         };
@@ -10711,7 +10716,7 @@ $root.events = (function() {
                 options = {};
             var object = {};
             if (options.arrays || options.defaults)
-                object.mentionIds = [];
+                object.mentions = [];
             if (options.defaults) {
                 object.event = "";
                 object.type = "";
@@ -10720,10 +10725,10 @@ $root.events = (function() {
                 object.event = message.event;
             if (message.type != null && message.hasOwnProperty("type"))
                 object.type = message.type;
-            if (message.mentionIds && message.mentionIds.length) {
-                object.mentionIds = [];
-                for (var j = 0; j < message.mentionIds.length; ++j)
-                    object.mentionIds[j] = message.mentionIds[j];
+            if (message.mentions && message.mentions.length) {
+                object.mentions = [];
+                for (var j = 0; j < message.mentions.length; ++j)
+                    object.mentions[j] = $root.events.MentionModifiedData.toObject(message.mentions[j], options);
             }
             return object;
         };

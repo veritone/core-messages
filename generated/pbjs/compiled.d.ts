@@ -4293,8 +4293,8 @@ export namespace events {
         /** MentionsDeleted type */
         type?: (string|null);
 
-        /** MentionsDeleted mentionIds */
-        mentionIds?: (string[]|null);
+        /** MentionsDeleted mentions */
+        mentions?: (events.IMentionModifiedData[]|null);
     }
 
     /** Represents a MentionsDeleted. */
@@ -4312,8 +4312,8 @@ export namespace events {
         /** MentionsDeleted type. */
         public type: string;
 
-        /** MentionsDeleted mentionIds. */
-        public mentionIds: string[];
+        /** MentionsDeleted mentions. */
+        public mentions: events.IMentionModifiedData[];
 
         /**
          * Creates a new MentionsDeleted instance using the specified properties.
