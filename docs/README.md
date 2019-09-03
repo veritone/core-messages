@@ -1053,7 +1053,7 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 | ----- | ---- | ----- | ----------- |
 | event | [string](#string) |  | event name |
 | type | [string](#string) |  | event type |
-| mention_ids | [string](#string) | repeated | list of mention ids |
+| mentions | [MentionModifiedData](#events.MentionModifiedData) | repeated | list of mentions |
 
 
 

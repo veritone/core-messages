@@ -1941,7 +1941,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.events.MentionsDeleted.repeatedFields_ = [13];
+proto.events.MentionsDeleted.repeatedFields_ = [12];
 
 
 
@@ -1974,7 +1974,8 @@ proto.events.MentionsDeleted.toObject = function(includeInstance, msg) {
   var f, obj = {
     event: jspb.Message.getFieldWithDefault(msg, 10, ""),
     type: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    mentionIdsList: jspb.Message.getRepeatedField(msg, 13)
+    mentionsList: jspb.Message.toObjectList(msg.getMentionsList(),
+    proto.events.MentionModifiedData.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -2019,9 +2020,10 @@ proto.events.MentionsDeleted.deserializeBinaryFromReader = function(msg, reader)
       var value = /** @type {string} */ (reader.readString());
       msg.setType(value);
       break;
-    case 13:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addMentionIds(value);
+    case 12:
+      var value = new proto.events.MentionModifiedData;
+      reader.readMessage(value,proto.events.MentionModifiedData.deserializeBinaryFromReader);
+      msg.addMentions(value);
       break;
     default:
       reader.skipField();
@@ -2066,11 +2068,12 @@ proto.events.MentionsDeleted.serializeBinaryToWriter = function(message, writer)
       f
     );
   }
-  f = message.getMentionIdsList();
+  f = message.getMentionsList();
   if (f.length > 0) {
-    writer.writeRepeatedString(
-      13,
-      f
+    writer.writeRepeatedMessage(
+      12,
+      f,
+      proto.events.MentionModifiedData.serializeBinaryToWriter
     );
   }
 };
@@ -2107,31 +2110,33 @@ proto.events.MentionsDeleted.prototype.setType = function(value) {
 
 
 /**
- * repeated string mention_ids = 13;
- * @return {!Array.<string>}
+ * repeated MentionModifiedData mentions = 12;
+ * @return {!Array.<!proto.events.MentionModifiedData>}
  */
-proto.events.MentionsDeleted.prototype.getMentionIdsList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getRepeatedField(this, 13));
+proto.events.MentionsDeleted.prototype.getMentionsList = function() {
+  return /** @type{!Array.<!proto.events.MentionModifiedData>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.events.MentionModifiedData, 12));
 };
 
 
-/** @param {!Array.<string>} value */
-proto.events.MentionsDeleted.prototype.setMentionIdsList = function(value) {
-  jspb.Message.setField(this, 13, value || []);
+/** @param {!Array.<!proto.events.MentionModifiedData>} value */
+proto.events.MentionsDeleted.prototype.setMentionsList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 12, value);
 };
 
 
 /**
- * @param {!string} value
+ * @param {!proto.events.MentionModifiedData=} opt_value
  * @param {number=} opt_index
+ * @return {!proto.events.MentionModifiedData}
  */
-proto.events.MentionsDeleted.prototype.addMentionIds = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 13, value, opt_index);
+proto.events.MentionsDeleted.prototype.addMentions = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 12, opt_value, proto.events.MentionModifiedData, opt_index);
 };
 
 
-proto.events.MentionsDeleted.prototype.clearMentionIdsList = function() {
-  this.setMentionIdsList([]);
+proto.events.MentionsDeleted.prototype.clearMentionsList = function() {
+  this.setMentionsList([]);
 };
 
 
