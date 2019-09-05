@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package events;
+
+option go_package = "events";
+
+
+message StructuredDataDelete {
+    string id = 10;
+    string schema_id = 11;
+    int64 organization_id = 12;
+    string create_date_time = 13;
+
+}
