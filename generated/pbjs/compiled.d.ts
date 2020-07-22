@@ -1,5 +1,4 @@
 import * as $protobuf from "protobufjs";
-
 /** Namespace events. */
 export namespace events {
 
@@ -5444,6 +5443,9 @@ export namespace events {
 
         /** StructuredDataDelete organizationId */
         organizationId?: (number|Long|null);
+
+        /** StructuredDataDelete createDateTime */
+        createDateTime?: (string|null);
     }
 
     /** Represents a StructuredDataDelete. */
@@ -5463,6 +5465,9 @@ export namespace events {
 
         /** StructuredDataDelete organizationId. */
         public organizationId: (number|Long);
+
+        /** StructuredDataDelete createDateTime. */
+        public createDateTime: string;
 
         /**
          * Creates a new StructuredDataDelete instance using the specified properties.

@@ -61,7 +61,8 @@ proto.events.StructuredDataDelete.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 10, ""),
     schemaId: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    organizationId: jspb.Message.getFieldWithDefault(msg, 12, 0)
+    organizationId: jspb.Message.getFieldWithDefault(msg, 12, 0),
+    createDateTime: jspb.Message.getFieldWithDefault(msg, 13, "")
   };
 
   if (includeInstance) {
@@ -109,6 +110,10 @@ proto.events.StructuredDataDelete.deserializeBinaryFromReader = function(msg, re
     case 12:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setOrganizationId(value);
+      break;
+    case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCreateDateTime(value);
       break;
     default:
       reader.skipField();
@@ -160,6 +165,13 @@ proto.events.StructuredDataDelete.serializeBinaryToWriter = function(message, wr
       f
     );
   }
+  f = message.getCreateDateTime();
+  if (f.length > 0) {
+    writer.writeString(
+      13,
+      f
+    );
+  }
 };
 
 
@@ -205,6 +217,21 @@ proto.events.StructuredDataDelete.prototype.getOrganizationId = function() {
 /** @param {number} value */
 proto.events.StructuredDataDelete.prototype.setOrganizationId = function(value) {
   jspb.Message.setProto3IntField(this, 12, value);
+};
+
+
+/**
+ * optional string create_date_time = 13;
+ * @return {string}
+ */
+proto.events.StructuredDataDelete.prototype.getCreateDateTime = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+};
+
+
+/** @param {string} value */
+proto.events.StructuredDataDelete.prototype.setCreateDateTime = function(value) {
+  jspb.Message.setProto3StringField(this, 13, value);
 };
 
 
