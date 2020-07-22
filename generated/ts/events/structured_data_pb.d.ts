@@ -13,6 +13,9 @@ export class StructuredDataDelete extends jspb.Message {
   getOrganizationId(): number;
   setOrganizationId(value: number): void;
 
+  getCreateDateTime(): string;
+  setCreateDateTime(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StructuredDataDelete.AsObject;
   static toObject(includeInstance: boolean, msg: StructuredDataDelete): StructuredDataDelete.AsObject;
@@ -28,6 +31,7 @@ export namespace StructuredDataDelete {
     id: string,
     schemaId: string,
     organizationId: number,
+    createDateTime: string,
   }
 }
 
