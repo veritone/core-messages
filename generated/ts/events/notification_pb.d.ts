@@ -23,6 +23,12 @@ export class BasicEmail extends jspb.Message {
   getBodyHtml(): string;
   setBodyHtml(value: string): void;
 
+  getCcAddress(): string;
+  setCcAddress(value: string): void;
+
+  getBccAddress(): string;
+  setBccAddress(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BasicEmail.AsObject;
   static toObject(includeInstance: boolean, msg: BasicEmail): BasicEmail.AsObject;
@@ -41,6 +47,8 @@ export namespace BasicEmail {
     body: string,
     replyTo: string,
     bodyHtml: string,
+    ccAddress: string,
+    bccAddress: string,
   }
 }
 

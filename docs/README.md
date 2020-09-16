@@ -6,10 +6,6 @@
 - [events/asset.proto](#events/asset.proto)
     - [AssetUploaded](#events.AssetUploaded)
   
-  
-  
-  
-
 - [events/authentication.proto](#events/authentication.proto)
     - [ActionTokenForbidden](#events.ActionTokenForbidden)
     - [ActionUserForbidden](#events.ActionUserForbidden)
@@ -18,10 +14,6 @@
     - [LoginFailed](#events.LoginFailed)
     - [LoginSucceeded](#events.LoginSucceeded)
   
-  
-  
-  
-
 - [events/core.proto](#events/core.proto)
     - [Core](#events.Core)
     - [Trace](#events.Trace)
@@ -30,10 +22,6 @@
     - [VtEvent](#events.VtEvent)
     - [VtEvent.BaggageEntry](#events.VtEvent.BaggageEntry)
   
-  
-  
-  
-
 - [events/engine.proto](#events/engine.proto)
     - [EngineBuildApproved](#events.EngineBuildApproved)
     - [EngineBuildCreate](#events.EngineBuildCreate)
@@ -47,10 +35,6 @@
     - [engineBuildDeployFail](#events.engineBuildDeployFail)
     - [engineBuildDeploySuccess](#events.engineBuildDeploySuccess)
   
-  
-  
-  
-
 - [events/example_event.proto](#events/example_event.proto)
     - [ExampleEvent](#events.ExampleEvent)
     - [ExampleFour](#events.ExampleFour)
@@ -58,34 +42,18 @@
     - [ExampleThree](#events.ExampleThree)
     - [ExampleTwo](#events.ExampleTwo)
   
-  
-  
-  
-
 - [events/job.proto](#events/job.proto)
     - [JobCompleted](#events.JobCompleted)
     - [JobCreated](#events.JobCreated)
     - [JobFailed](#events.JobFailed)
   
-  
-  
-  
-
 - [events/mention.proto](#events/mention.proto)
     - [MentionGenerated](#events.MentionGenerated)
   
-  
-  
-  
-
 - [events/mention_generation.proto](#events/mention_generation.proto)
     - [MentionGenerateMediaCompleted](#events.MentionGenerateMediaCompleted)
     - [MentionGenerateWatchlistCompleted](#events.MentionGenerateWatchlistCompleted)
   
-  
-  
-  
-
 - [events/mention_notification.proto](#events/mention_notification.proto)
     - [MentionDeleted](#events.MentionDeleted)
     - [MentionEmailGenerated](#events.MentionEmailGenerated)
@@ -96,18 +64,10 @@
     - [MentionUpdated](#events.MentionUpdated)
     - [MentionsDeleted](#events.MentionsDeleted)
   
-  
-  
-  
-
 - [events/notification.proto](#events/notification.proto)
     - [BasicEmail](#events.BasicEmail)
     - [SMSNotification](#events.SMSNotification)
   
-  
-  
-  
-
 - [events/recording.proto](#events/recording.proto)
     - [RecordingCognitionCompleted](#events.RecordingCognitionCompleted)
     - [RecordingCognitionCompleted.Payload](#events.RecordingCognitionCompleted.Payload)
@@ -116,41 +76,21 @@
     - [RecordingInsertFailed](#events.RecordingInsertFailed)
     - [RecordingInserted](#events.RecordingInserted)
   
-  
-  
-  
-
 - [events/shared_collection.proto](#events/shared_collection.proto)
     - [NewSharedCollection](#events.NewSharedCollection)
     - [UpdateSharedCollection](#events.UpdateSharedCollection)
   
-  
-  
-  
-
 - [events/structured_data.proto](#events/structured_data.proto)
     - [StructuredDataDelete](#events.StructuredDataDelete)
   
-  
-  
-  
-
 - [events/task.proto](#events/task.proto)
     - [TaskCompleted](#events.TaskCompleted)
     - [TaskQueued](#events.TaskQueued)
     - [TaskUpdated](#events.TaskUpdated)
   
-  
-  
-  
-
 - [events/trigger.proto](#events/trigger.proto)
     - [TriggerCacheRefresh](#events.TriggerCacheRefresh)
   
-  
-  
-  
-
 - [Scalar Value Types](#scalar-value-types)
 
 
@@ -1097,6 +1037,8 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 | body | [string](#string) |  | email body, should be just pure text |
 | reply_to | [string](#string) |  | reply_to field of the email. |
 | body_html | [string](#string) |  | email body in HTML syntax, this takes precedence over `body` field |
+| cc_address | [string](#string) |  | email address of cc recipient |
+| bcc_address | [string](#string) |  | email address of bcc recipient |
 
 
 
@@ -1316,6 +1258,7 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 | id | [string](#string) |  |  |
 | schema_id | [string](#string) |  |  |
 | organization_id | [int64](#int64) |  |  |
+| create_date_time | [string](#string) |  |  |
 
 
 
@@ -1425,21 +1368,21 @@ Shared structure for MentionUpdate, MentionDeleted, and MentionInserted
 
 ## Scalar Value Types
 
-| .proto Type | Notes | C++ Type | Java Type | Python Type |
-| ----------- | ----- | -------- | --------- | ----------- |
-| <a name="double" /> double |  | double | double | float |
-| <a name="float" /> float |  | float | float | float |
-| <a name="int32" /> int32 | Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint32 instead. | int32 | int | int |
-| <a name="int64" /> int64 | Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint64 instead. | int64 | long | int/long |
-| <a name="uint32" /> uint32 | Uses variable-length encoding. | uint32 | int | int/long |
-| <a name="uint64" /> uint64 | Uses variable-length encoding. | uint64 | long | int/long |
-| <a name="sint32" /> sint32 | Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s. | int32 | int | int |
-| <a name="sint64" /> sint64 | Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s. | int64 | long | int/long |
-| <a name="fixed32" /> fixed32 | Always four bytes. More efficient than uint32 if values are often greater than 2^28. | uint32 | int | int |
-| <a name="fixed64" /> fixed64 | Always eight bytes. More efficient than uint64 if values are often greater than 2^56. | uint64 | long | int/long |
-| <a name="sfixed32" /> sfixed32 | Always four bytes. | int32 | int | int |
-| <a name="sfixed64" /> sfixed64 | Always eight bytes. | int64 | long | int/long |
-| <a name="bool" /> bool |  | bool | boolean | boolean |
-| <a name="string" /> string | A string must always contain UTF-8 encoded or 7-bit ASCII text. | string | String | str/unicode |
-| <a name="bytes" /> bytes | May contain any arbitrary sequence of bytes. | string | ByteString | str |
+| .proto Type | Notes | C++ | Java | Python | Go | C# | PHP | Ruby |
+| ----------- | ----- | --- | ---- | ------ | -- | -- | --- | ---- |
+| <a name="double" /> double |  | double | double | float | float64 | double | float | Float |
+| <a name="float" /> float |  | float | float | float | float32 | float | float | Float |
+| <a name="int32" /> int32 | Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint32 instead. | int32 | int | int | int32 | int | integer | Bignum or Fixnum (as required) |
+| <a name="int64" /> int64 | Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint64 instead. | int64 | long | int/long | int64 | long | integer/string | Bignum |
+| <a name="uint32" /> uint32 | Uses variable-length encoding. | uint32 | int | int/long | uint32 | uint | integer | Bignum or Fixnum (as required) |
+| <a name="uint64" /> uint64 | Uses variable-length encoding. | uint64 | long | int/long | uint64 | ulong | integer/string | Bignum or Fixnum (as required) |
+| <a name="sint32" /> sint32 | Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s. | int32 | int | int | int32 | int | integer | Bignum or Fixnum (as required) |
+| <a name="sint64" /> sint64 | Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s. | int64 | long | int/long | int64 | long | integer/string | Bignum |
+| <a name="fixed32" /> fixed32 | Always four bytes. More efficient than uint32 if values are often greater than 2^28. | uint32 | int | int | uint32 | uint | integer | Bignum or Fixnum (as required) |
+| <a name="fixed64" /> fixed64 | Always eight bytes. More efficient than uint64 if values are often greater than 2^56. | uint64 | long | int/long | uint64 | ulong | integer/string | Bignum |
+| <a name="sfixed32" /> sfixed32 | Always four bytes. | int32 | int | int | int32 | int | integer | Bignum or Fixnum (as required) |
+| <a name="sfixed64" /> sfixed64 | Always eight bytes. | int64 | long | int/long | int64 | long | integer/string | Bignum |
+| <a name="bool" /> bool |  | bool | boolean | boolean | bool | bool | boolean | TrueClass/FalseClass |
+| <a name="string" /> string | A string must always contain UTF-8 encoded or 7-bit ASCII text. | string | String | str/unicode | string | string | string | String (UTF-8) |
+| <a name="bytes" /> bytes | May contain any arbitrary sequence of bytes. | string | ByteString | str | []byte | ByteString | string | String (ASCII-8BIT) |
 

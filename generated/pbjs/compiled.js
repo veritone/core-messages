@@ -10759,6 +10759,8 @@ $root.events = (function() {
          * @property {string|null} [body] BasicEmail body
          * @property {string|null} [replyTo] BasicEmail replyTo
          * @property {string|null} [bodyHtml] BasicEmail bodyHtml
+         * @property {string|null} [ccAddress] BasicEmail ccAddress
+         * @property {string|null} [bccAddress] BasicEmail bccAddress
          */
 
         /**
@@ -10825,6 +10827,22 @@ $root.events = (function() {
         BasicEmail.prototype.bodyHtml = "";
 
         /**
+         * BasicEmail ccAddress.
+         * @member {string} ccAddress
+         * @memberof events.BasicEmail
+         * @instance
+         */
+        BasicEmail.prototype.ccAddress = "";
+
+        /**
+         * BasicEmail bccAddress.
+         * @member {string} bccAddress
+         * @memberof events.BasicEmail
+         * @instance
+         */
+        BasicEmail.prototype.bccAddress = "";
+
+        /**
          * Creates a new BasicEmail instance using the specified properties.
          * @function create
          * @memberof events.BasicEmail
@@ -10860,6 +10878,10 @@ $root.events = (function() {
                 writer.uint32(/* id 14, wireType 2 =*/114).string(message.replyTo);
             if (message.bodyHtml != null && message.hasOwnProperty("bodyHtml"))
                 writer.uint32(/* id 15, wireType 2 =*/122).string(message.bodyHtml);
+            if (message.ccAddress != null && message.hasOwnProperty("ccAddress"))
+                writer.uint32(/* id 16, wireType 2 =*/130).string(message.ccAddress);
+            if (message.bccAddress != null && message.hasOwnProperty("bccAddress"))
+                writer.uint32(/* id 17, wireType 2 =*/138).string(message.bccAddress);
             return writer;
         };
 
@@ -10911,6 +10933,12 @@ $root.events = (function() {
                     break;
                 case 15:
                     message.bodyHtml = reader.string();
+                    break;
+                case 16:
+                    message.ccAddress = reader.string();
+                    break;
+                case 17:
+                    message.bccAddress = reader.string();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -10965,6 +10993,12 @@ $root.events = (function() {
             if (message.bodyHtml != null && message.hasOwnProperty("bodyHtml"))
                 if (!$util.isString(message.bodyHtml))
                     return "bodyHtml: string expected";
+            if (message.ccAddress != null && message.hasOwnProperty("ccAddress"))
+                if (!$util.isString(message.ccAddress))
+                    return "ccAddress: string expected";
+            if (message.bccAddress != null && message.hasOwnProperty("bccAddress"))
+                if (!$util.isString(message.bccAddress))
+                    return "bccAddress: string expected";
             return null;
         };
 
@@ -10992,6 +11026,10 @@ $root.events = (function() {
                 message.replyTo = String(object.replyTo);
             if (object.bodyHtml != null)
                 message.bodyHtml = String(object.bodyHtml);
+            if (object.ccAddress != null)
+                message.ccAddress = String(object.ccAddress);
+            if (object.bccAddress != null)
+                message.bccAddress = String(object.bccAddress);
             return message;
         };
 
@@ -11015,6 +11053,8 @@ $root.events = (function() {
                 object.body = "";
                 object.replyTo = "";
                 object.bodyHtml = "";
+                object.ccAddress = "";
+                object.bccAddress = "";
             }
             if (message.fromAddress != null && message.hasOwnProperty("fromAddress"))
                 object.fromAddress = message.fromAddress;
@@ -11028,6 +11068,10 @@ $root.events = (function() {
                 object.replyTo = message.replyTo;
             if (message.bodyHtml != null && message.hasOwnProperty("bodyHtml"))
                 object.bodyHtml = message.bodyHtml;
+            if (message.ccAddress != null && message.hasOwnProperty("ccAddress"))
+                object.ccAddress = message.ccAddress;
+            if (message.bccAddress != null && message.hasOwnProperty("bccAddress"))
+                object.bccAddress = message.bccAddress;
             return object;
         };
 
@@ -13179,6 +13223,7 @@ $root.events = (function() {
          * @property {string|null} [id] StructuredDataDelete id
          * @property {string|null} [schemaId] StructuredDataDelete schemaId
          * @property {number|Long|null} [organizationId] StructuredDataDelete organizationId
+         * @property {string|null} [createDateTime] StructuredDataDelete createDateTime
          */
 
         /**
@@ -13221,6 +13266,14 @@ $root.events = (function() {
         StructuredDataDelete.prototype.organizationId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
         /**
+         * StructuredDataDelete createDateTime.
+         * @member {string} createDateTime
+         * @memberof events.StructuredDataDelete
+         * @instance
+         */
+        StructuredDataDelete.prototype.createDateTime = "";
+
+        /**
          * Creates a new StructuredDataDelete instance using the specified properties.
          * @function create
          * @memberof events.StructuredDataDelete
@@ -13250,6 +13303,8 @@ $root.events = (function() {
                 writer.uint32(/* id 11, wireType 2 =*/90).string(message.schemaId);
             if (message.organizationId != null && message.hasOwnProperty("organizationId"))
                 writer.uint32(/* id 12, wireType 0 =*/96).int64(message.organizationId);
+            if (message.createDateTime != null && message.hasOwnProperty("createDateTime"))
+                writer.uint32(/* id 13, wireType 2 =*/106).string(message.createDateTime);
             return writer;
         };
 
@@ -13292,6 +13347,9 @@ $root.events = (function() {
                     break;
                 case 12:
                     message.organizationId = reader.int64();
+                    break;
+                case 13:
+                    message.createDateTime = reader.string();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -13337,6 +13395,9 @@ $root.events = (function() {
             if (message.organizationId != null && message.hasOwnProperty("organizationId"))
                 if (!$util.isInteger(message.organizationId) && !(message.organizationId && $util.isInteger(message.organizationId.low) && $util.isInteger(message.organizationId.high)))
                     return "organizationId: integer|Long expected";
+            if (message.createDateTime != null && message.hasOwnProperty("createDateTime"))
+                if (!$util.isString(message.createDateTime))
+                    return "createDateTime: string expected";
             return null;
         };
 
@@ -13365,6 +13426,8 @@ $root.events = (function() {
                     message.organizationId = object.organizationId;
                 else if (typeof object.organizationId === "object")
                     message.organizationId = new $util.LongBits(object.organizationId.low >>> 0, object.organizationId.high >>> 0).toNumber();
+            if (object.createDateTime != null)
+                message.createDateTime = String(object.createDateTime);
             return message;
         };
 
@@ -13389,6 +13452,7 @@ $root.events = (function() {
                     object.organizationId = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
                 } else
                     object.organizationId = options.longs === String ? "0" : 0;
+                object.createDateTime = "";
             }
             if (message.id != null && message.hasOwnProperty("id"))
                 object.id = message.id;
@@ -13399,6 +13463,8 @@ $root.events = (function() {
                     object.organizationId = options.longs === String ? String(message.organizationId) : message.organizationId;
                 else
                     object.organizationId = options.longs === String ? $util.Long.prototype.toString.call(message.organizationId) : options.longs === Number ? new $util.LongBits(message.organizationId.low >>> 0, message.organizationId.high >>> 0).toNumber() : message.organizationId;
+            if (message.createDateTime != null && message.hasOwnProperty("createDateTime"))
+                object.createDateTime = message.createDateTime;
             return object;
         };
 

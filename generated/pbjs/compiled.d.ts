@@ -4406,6 +4406,12 @@ export namespace events {
 
         /** BasicEmail bodyHtml */
         bodyHtml?: (string|null);
+
+        /** BasicEmail ccAddress */
+        ccAddress?: (string|null);
+
+        /** BasicEmail bccAddress */
+        bccAddress?: (string|null);
     }
 
     /** Represents a BasicEmail. */
@@ -4434,6 +4440,12 @@ export namespace events {
 
         /** BasicEmail bodyHtml. */
         public bodyHtml: string;
+
+        /** BasicEmail ccAddress. */
+        public ccAddress: string;
+
+        /** BasicEmail bccAddress. */
+        public bccAddress: string;
 
         /**
          * Creates a new BasicEmail instance using the specified properties.
@@ -5444,6 +5456,9 @@ export namespace events {
 
         /** StructuredDataDelete organizationId */
         organizationId?: (number|Long|null);
+
+        /** StructuredDataDelete createDateTime */
+        createDateTime?: (string|null);
     }
 
     /** Represents a StructuredDataDelete. */
@@ -5463,6 +5478,9 @@ export namespace events {
 
         /** StructuredDataDelete organizationId. */
         public organizationId: (number|Long);
+
+        /** StructuredDataDelete createDateTime. */
+        public createDateTime: string;
 
         /**
          * Creates a new StructuredDataDelete instance using the specified properties.

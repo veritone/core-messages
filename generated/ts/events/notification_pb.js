@@ -66,7 +66,9 @@ proto.events.BasicEmail.toObject = function(includeInstance, msg) {
     subject: jspb.Message.getFieldWithDefault(msg, 12, ""),
     body: jspb.Message.getFieldWithDefault(msg, 13, ""),
     replyTo: jspb.Message.getFieldWithDefault(msg, 14, ""),
-    bodyHtml: jspb.Message.getFieldWithDefault(msg, 15, "")
+    bodyHtml: jspb.Message.getFieldWithDefault(msg, 15, ""),
+    ccAddress: jspb.Message.getFieldWithDefault(msg, 16, ""),
+    bccAddress: jspb.Message.getFieldWithDefault(msg, 17, "")
   };
 
   if (includeInstance) {
@@ -126,6 +128,14 @@ proto.events.BasicEmail.deserializeBinaryFromReader = function(msg, reader) {
     case 15:
       var value = /** @type {string} */ (reader.readString());
       msg.setBodyHtml(value);
+      break;
+    case 16:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCcAddress(value);
+      break;
+    case 17:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBccAddress(value);
       break;
     default:
       reader.skipField();
@@ -195,6 +205,20 @@ proto.events.BasicEmail.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       15,
+      f
+    );
+  }
+  f = message.getCcAddress();
+  if (f.length > 0) {
+    writer.writeString(
+      16,
+      f
+    );
+  }
+  f = message.getBccAddress();
+  if (f.length > 0) {
+    writer.writeString(
+      17,
       f
     );
   }
@@ -288,6 +312,36 @@ proto.events.BasicEmail.prototype.getBodyHtml = function() {
 /** @param {string} value */
 proto.events.BasicEmail.prototype.setBodyHtml = function(value) {
   jspb.Message.setProto3StringField(this, 15, value);
+};
+
+
+/**
+ * optional string cc_address = 16;
+ * @return {string}
+ */
+proto.events.BasicEmail.prototype.getCcAddress = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
+};
+
+
+/** @param {string} value */
+proto.events.BasicEmail.prototype.setCcAddress = function(value) {
+  jspb.Message.setProto3StringField(this, 16, value);
+};
+
+
+/**
+ * optional string bcc_address = 17;
+ * @return {string}
+ */
+proto.events.BasicEmail.prototype.getBccAddress = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
+};
+
+
+/** @param {string} value */
+proto.events.BasicEmail.prototype.setBccAddress = function(value) {
+  jspb.Message.setProto3StringField(this, 17, value);
 };
 
 
